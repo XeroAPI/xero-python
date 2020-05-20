@@ -1,0 +1,44 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - XXXXX
+      Content-Type:
+      - application/json
+      User-Agent:
+      - xero-python (0.1.0)
+    method: GET
+    uri: https://api.xero.com/connections
+  response:
+    body:
+      string: '[{"id":"f4a87932-0878-4884-abcf-73191dd810ba","tenantId":"a46fcb6f-2773-40c4-a119-8aa08bca1e8e","tenantType":"ORGANISATION","createdDateUtc":"2020-03-18T21:20:07.7179250","updatedDateUtc":"2020-03-30T05:15:13.3513620"}]'
+    headers:
+      Cache-Control:
+      - max-age=0, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '219'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 30 Mar 2020 05:22:00 GMT
+      Expires:
+      - Mon, 30 Mar 2020 05:22:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - Kestrel
+      X-Client-TLS-ver:
+      - tls1.3
+      X-N:
+      - S
+      Xero-Correlation-Id:
+      - 93517e7b-5311-40f9-8047-9a4bbb3e2dc3
+    status:
+      code: 200
+      message: OK
+version: 1

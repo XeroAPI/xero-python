@@ -1,0 +1,634 @@
+interactions:
+- request:
+    body: null
+    headers: {}
+    method: GET
+    uri: https://developer.xero.com/documentation/oauth2/auth-flow
+  response:
+    body:
+      string: "<!DOCTYPE html>\r\n<html lang=\"en\" class=\"xui-html js-sdk--curl\">\r\n
+        \ <head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width,
+        initial-scale=1\">\r\n\r\n    <link rel=\"shortcut icon\" href=\"/static/favicon.ico\"
+        type=\"image/x-icon\">\r\n\r\n    <title>The Code Flow - OAuth 2.0 | Xero
+        Developer</title><meta property=\"og:title\" content=\"The Code Flow - OAuth
+        2.0\" data-rdm/><meta property=\"og:locale\" content=\"en_US\" data-rdm/><meta
+        property=\"og:type\" content=\"website\" data-rdm/><meta property=\"og:image\"
+        content=\"https://pbs.twimg.com/profile_images/758829393087045632/edxlre5Z_400x400.jpg\"
+        data-rdm/><meta property=\"og:description\" content=\"Join a vibrant community
+        of developers whose innovative apps, software and integrations with Xero are
+        shaping the future of small businesses globally.\" data-rdm/><meta property=\"og:url\"
+        content=\"https://developer.xero.com/\" data-rdm/><meta name=\"description\"
+        content=\"Join a vibrant community of developers whose innovative apps, software
+        and integrations with Xero are shaping the future of small businesses globally.\"
+        data-rdm/><link rel=\"canonical\" href=\"https://developer.xero.com/\" data-rdm/>\r\n\r\n
+        \   <meta name=\"robots\" content=\"noodp\" />\r\n    <link rel=\"canonical\"
+        href=\"https://developer.xero.com/\" />\r\n    <meta name=\"twitter:card\"
+        content=\"summary\" />\r\n    <meta name=\"twitter:site\" content=\"@xeroAPI\"
+        />\r\n    <meta name=\"twitter:creator\" content=\"@xeroAPI\" />\r\n    <meta
+        name=\"theme-color\" content=\"#2f2c33\" />\r\n    <meta name=\"twitter:image\"
+        content=\"https://developer.xero.com/static/images/partner-page/advisors.jpg\">\r\n
+        \   <meta name=\"google-site-verification\" content=\"KMbsrJD6cdBy_2-QlSVyQolAa8p9qvsjXJrpyxx4Ee0\"
+        />\r\n\r\n    <link rel=\"stylesheet\" href=\"https://edge.xero.com/style/xui/15.2.2/xui.min.css\"
+        />\r\n    <link rel=\"stylesheet\" href=\"/static/1.1.106/style.css\" />\r\n\r\n
+        \   <script src=\"https://www.google.com/recaptcha/api.js?render=explicit\"
+        async defer></script>\r\n    <script src=\"https://platform.twitter.com/widgets.js\"
+        async></script>\r\n    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js\"></script>\r\n
+        \   <script src=\"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/xml.min.js\"></script>\r\n
+        \   <script src=\"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/json.min.js\"></script>\r\n
+        \   \n<script\n\tid=\"nr-client\"\n\tsrc=\"https://edge.xero.com/banking/newrelic-browser-client/0.1.0/newrelic-browser-client.min.js\"\n\tintegrity=\"sha384-t9cMY6cMed1C43fHTtyvxIqpmfzqHJoYvigbW5cm1o+/EX8kHxvzKPrFuFX6rhkw\"\n\tcrossOrigin=\"anonymous\"\n\tdata-license-key=\"ebfa3688ef35389f439c771216662155fced624c\"\n\tdata-application-id=201221120\n></script>\n<script\n\tid=\"ga-client\"\n\tsrc=\"https://edge.xero.com/common/ga-client/1.5.3/ga-client.js\"\n\tdata-tracker-id=\"UA-3776042-31\"\n\tintegrity=\"sha384-7p8uUP4hgtvEado7qSw6HoWetPzjEc4Iplw/1yx9jFr8JgD3Y5bkG5gGogSl90Rq\"\n\tcrossOrigin=\"anonymous\"\n\tdata-track-errors=\"true\"\n\tdata-autotrack=\"true\"\n\tdata-autotrack-widgets=\"cleanUrlTracker,
+        maxScrollTracker, mediaQueryTracker, urlChangeTracker, hashChangeTracker\"\n\tdata-cleanurltracker-stripquery=\"true\"\n\tdata-cleanurltracker-stripnumericid=\"true\"\n\tdata-env=\"prod\"\n\t\n\t\n></script>\r\n
+        \   \r\n\r\n    <!-- Google Tag Manager -->\r\n    <script>\r\n      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\r\n
+        \     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\r\n
+        \     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\r\n
+        \     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\r\n
+        \     })(window,document,'script','dataLayer','GTM-KGLZ3FC');\r\n    </script>\r\n
+        \   <!-- End Google Tag Manager -->\r\n  </head>\r\n\r\n  <body class=\"xui-body\">\r\n
+        \   <!-- Google Tag Manager (noscript) -->\r\n    <noscript>\r\n      <iframe
+        src=\"https://www.googletagmanager.com/ns.html?id=GTM-KGLZ3FC\"\r\n      height=\"0\"
+        width=\"0\" style=\"display:none;visibility:hidden\"></iframe>\r\n    </noscript>\r\n
+        \   <!-- End Google Tag Manager (noscript) -->\r\n\r\n    \r\n    <script
+        type=\"application/json\" id=\"header-data\" data-render-to=\"#devx-portal-header\">{\"user\":null,\"app\":{\"name\":\"Xero
+        Developer\",\"type\":\"developer\",\"appImage\":{\"imageUrl\":\"https://developer.xero.com/static/images/developer-logo.svg\",\"description\":\"Xero
+        Developer\",\"linkUrl\":\"/\",\"isRouted\":false,\"width\":115,\"height\":30}},\"navigation\":[{\"navigationId\":\"nav-docs\",\"name\":\"Docs\",\"url\":\"/documentation/\",\"isRouted\":false,\"isSelected\":true},{\"navigationId\":\"nav-sdks\",\"name\":\"SDKs\",\"url\":\"/documentation/libraries/overview\",\"isRouted\":false,\"isSelected\":false},{\"navigationId\":\"nav-previewer\",\"name\":\"Previewer\",\"url\":\"https://app.xero.com/Preview/Organisation\",\"isRouted\":false,\"isSelected\":false},{\"navigationId\":\"nav-myapps\",\"name\":\"My
+        Apps\",\"url\":\"/myapps/\",\"isRouted\":false,\"isSelected\":false},{\"navigationId\":\"nav-community\",\"name\":\"Community\",\"url\":\"/community\",\"isRouted\":false,\"isSelected\":false},{\"navigationId\":\"nav-partner\",\"name\":\"Partner\",\"url\":\"/partner/\",\"isRouted\":false,\"isSelected\":false},{\"navigationId\":\"nav-media\",\"name\":\"Media\",\"url\":\"/media/\",\"isRouted\":false,\"isSelected\":false}],\"addons\":[{\"name\":\"Search\",\"type\":\"search\",\"icon\":\"search\",\"visibilityMode\":\"all\"},{\"name\":\"Help\",\"type\":\"menu\",\"icon\":\"help\",\"options\":{\"items\":[{\"name\":\"FAQs\",\"url\":\"/faq/\",\"navigationId\":\"xrh-Help-0\"},{\"name\":\"Support\",\"url\":\"/support/\",\"navigationId\":\"xrh-Help-1\"},{\"name\":\"API
+        Status\",\"url\":\"https://status.developer.xero.com/\",\"navigationId\":\"xrh-Help-2\"}]},\"visibilityMode\":\"all\"}]}</script><div
+        id=\"devx-portal-header\"><header role=\"banner\" class=\"xrh-header xrh-header-developer\"
+        data-automationid=\"xrh-header-container\"><div class=\"xrh-header--main\"><div
+        class=\"xrh-appmenucontainer xrh-hide-if-narrow\" tabIndex=\"-1\" data-header-component=\"menu-parent\"><a
+        href=\"/\" class=\"xrh-applink\" data-navigation-id=\"xrh-appmenuimage\" data-menu-item-type=\"APP_IMAGE\"
+        description=\"Xero Developer\" data-header-component=\"menu-trigger\"><img
+        alt width=\"115\" height=\"30\" class=\"xrh-app-image\" src=\"https://developer.xero.com/static/images/developer-logo.svg\"
+        /></a></div><div class=\"xrh-hide-if-wide xrh-pagetitlewrapper\"><span class=\"xrh-pagetitle\"></span></div><ol
+        class=\"xrh-hide-if-narrow xrh-tabgroup xrh-tabgroup-layout xrh-navigation
+        xrh-header-background-color\" role=\"navigation\"><li class=\"xrh-tab\" aria-haspopup=\"false\"
+        data-header-component=\"menu-parent\" tabIndex=\"-1\" data-automationid=\"xrh-nav-selected-item\"><a
+        data-on=\"click\" data-event-category=\"Nav\" data-event-action=\"Clicked
+        NAVIGATION: nav-docs\" href=\"/documentation/\" tabIndex=\"0\" class=\"xrh-focusable
+        xrh-tab--body xrh-tab--body-is-selected\" data-navigation-id=\"nav-docs\"
+        data-menu-item-type=\"NAVIGATION\" data-header-component=\"menu-trigger\"
+        aria-describedby=\"xrh-access-currently-selected-nav-item\">Docs</a></li><li
+        class=\"xrh-tab\" aria-haspopup=\"false\" data-header-component=\"menu-parent\"
+        tabIndex=\"-1\"><a data-on=\"click\" data-event-category=\"Nav\" data-event-action=\"Clicked
+        NAVIGATION: nav-sdks\" href=\"/documentation/libraries/overview\" tabIndex=\"0\"
+        class=\"xrh-focusable xrh-tab--body\" data-navigation-id=\"nav-sdks\" data-menu-item-type=\"NAVIGATION\"
+        data-header-component=\"menu-trigger\">SDKs</a></li><li class=\"xrh-tab\"
+        aria-haspopup=\"false\" data-header-component=\"menu-parent\" tabIndex=\"-1\"><a
+        data-on=\"click\" data-event-category=\"Nav\" data-event-action=\"Clicked
+        NAVIGATION: nav-previewer\" href=\"https://app.xero.com/Preview/Organisation\"
+        tabIndex=\"0\" class=\"xrh-focusable xrh-tab--body\" data-navigation-id=\"nav-previewer\"
+        data-menu-item-type=\"NAVIGATION\" data-header-component=\"menu-trigger\">Previewer</a></li><li
+        class=\"xrh-tab\" aria-haspopup=\"false\" data-header-component=\"menu-parent\"
+        tabIndex=\"-1\"><a data-on=\"click\" data-event-category=\"Nav\" data-event-action=\"Clicked
+        NAVIGATION: nav-myapps\" href=\"/myapps/\" tabIndex=\"0\" class=\"xrh-focusable
+        xrh-tab--body\" data-navigation-id=\"nav-myapps\" data-menu-item-type=\"NAVIGATION\"
+        data-header-component=\"menu-trigger\">My Apps</a></li><li class=\"xrh-tab\"
+        aria-haspopup=\"false\" data-header-component=\"menu-parent\" tabIndex=\"-1\"><a
+        data-on=\"click\" data-event-category=\"Nav\" data-event-action=\"Clicked
+        NAVIGATION: nav-community\" href=\"/community\" tabIndex=\"0\" class=\"xrh-focusable
+        xrh-tab--body\" data-navigation-id=\"nav-community\" data-menu-item-type=\"NAVIGATION\"
+        data-header-component=\"menu-trigger\">Community</a></li><li class=\"xrh-tab\"
+        aria-haspopup=\"false\" data-header-component=\"menu-parent\" tabIndex=\"-1\"><a
+        data-on=\"click\" data-event-category=\"Nav\" data-event-action=\"Clicked
+        NAVIGATION: nav-partner\" href=\"/partner/\" tabIndex=\"0\" class=\"xrh-focusable
+        xrh-tab--body\" data-navigation-id=\"nav-partner\" data-menu-item-type=\"NAVIGATION\"
+        data-header-component=\"menu-trigger\">Partner</a></li><li class=\"xrh-tab\"
+        aria-haspopup=\"false\" data-header-component=\"menu-parent\" tabIndex=\"-1\"><a
+        data-on=\"click\" data-event-category=\"Nav\" data-event-action=\"Clicked
+        NAVIGATION: nav-media\" href=\"/media/\" tabIndex=\"0\" class=\"xrh-focusable
+        xrh-tab--body\" data-navigation-id=\"nav-media\" data-menu-item-type=\"NAVIGATION\"
+        data-header-component=\"menu-trigger\">Media</a></li></ol><ol class=\"xrh-addons
+        xrh-header-background-color\"><li class=\"xrh-addon xrh-addon-alwaysvisible\"
+        data-header-component=\"menu-parent\" tabIndex=\"-1\"><button type=\"button\"
+        class=\"xrh-button xrh-addon--iconbutton xrh-header--iconbutton xrh-focusable--parent\"
+        title=\"Search\" aria-label=\"Search\" aria-haspopup tabIndex=\"0\" data-header-component=\"menu-trigger\"><div
+        role=\"presentation\" class=\"xrh-focusable--child xrh-iconwrapper\"><svg
+        role=\"presentation\" width=\"15\" height=\"15\" focusable=\"false\" class=\"xrh-icon
+        xrh-icon-svg\" viewBox=\"0 0 15 15\"><path d=\"M11.019 9.588L15 13.57 13.57
+        15l-3.982-3.981a6.048 6.048 0 0 1-3.519 1.12A6.061 6.061 0 0 1 0 6.069 6.061
+        6.061 0 0 1 6.07 0a6.061 6.061 0 0 1 6.069 6.07 6.048 6.048 0 0 1-1.12 3.518zm-4.95
+        1.033a4.546 4.546 0 0 0 4.552-4.552A4.546 4.546 0 0 0 6.07 1.517 4.546 4.546
+        0 0 0 1.517 6.07a4.546 4.546 0 0 0 4.552 4.552z\"></path></svg></div></button><div
+        class=\"xrh-searchaddon--container xrh-u-hidden\" data-header-component=\"menu\"><div
+        class=\"xrh-searchaddon--inputwrapper\"><div class=\"xrh-iconwrapper\"><svg
+        role=\"presentation\" width=\"15\" height=\"15\" focusable=\"false\" class=\"xrh-icon
+        xrh-searchaddon--searchicon xrh-icon-svg\" viewBox=\"0 0 15 15\"><path d=\"M11.019
+        9.588L15 13.57 13.57 15l-3.982-3.981a6.048 6.048 0 0 1-3.519 1.12A6.061 6.061
+        0 0 1 0 6.069 6.061 6.061 0 0 1 6.07 0a6.061 6.061 0 0 1 6.069 6.07 6.048
+        6.048 0 0 1-1.12 3.518zm-4.95 1.033a4.546 4.546 0 0 0 4.552-4.552A4.546 4.546
+        0 0 0 6.07 1.517 4.546 4.546 0 0 0 1.517 6.07a4.546 4.546 0 0 0 4.552 4.552z\"></path></svg></div><input
+        type=\"search\" autocorrect=\"off\" autocomplete=\"off\" autocapitalize=\"off\"
+        class=\"xrh-input xrh-input-search xrh-searchaddon--input\" placeholder=\"Search\"
+        /><button type=\"button\" class=\"xrh-button xrh-iconbutton xrh-searchaddon--clearbutton
+        xrh-u-hidden\" title=\"Clear\" aria-label=\"Clear\"><div role=\"presentation\"
+        class=\"xrh-iconwrapper-small xrh-iconwrapper\"><svg role=\"presentation\"
+        width=\"15\" height=\"15\" focusable=\"false\" class=\"xrh-icon xrh-icon-svg\"
+        viewBox=\"0 0 15 15\"><path d=\"M8.25 7.5L11 4.75 10.25 4 7.5 6.75 4.75 4
+        4 4.75 6.75 7.5 4 10.25l.75.75L7.5 8.25 10.25 11l.75-.75L8.25 7.5zM7.5 15a7.5
+        7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15z\"></path></svg></div></button></div><button
+        type=\"button\" class=\"xrh-button xrh-searchaddon--cancelbutton xrh-focusable--parent
+        xrh-u-hidden\"><div class=\"xrh-searchaddon--cancelbuttonbody xrh-focusable--child\">Cancel</div></button></div></li><li
+        class=\"xrh-addon xrh-addon-alwaysvisible\" tabIndex=\"-1\" data-header-component=\"menu-parent\"><button
+        type=\"button\" class=\"xrh-button xrh-addon--iconbutton xrh-header--iconbutton
+        xrh-focusable--parent\" title=\"Help\" aria-label=\"Help\" aria-haspopup data-header-component=\"menu-trigger\"><div
+        role=\"presentation\" class=\"xrh-focusable--child xrh-iconwrapper\"><svg
+        role=\"presentation\" width=\"15\" height=\"15\" focusable=\"false\" class=\"xrh-icon
+        xrh-icon-svg\" viewBox=\"0 0 15 15\"><path d=\"M7.5 15a7.5 7.5 0 1 0 0-15
+        7.5 7.5 0 0 0 0 15zm-.991-5.002V12H8.55V9.998H6.509zm-2.093-4.29h1.911c0-.234.026-.453.078-.657a1.58
+        1.58 0 0 1 .24-.532c.109-.152.247-.273.417-.365.169-.09.37-.136.604-.136.347
+        0 .617.095.813.286.195.19.292.485.292.884.009.234-.032.429-.123.585-.092.156-.21.299-.358.429-.147.13-.308.26-.481.39s-.338.284-.494.462a2.686
+        2.686 0 0 0-.41.643c-.117.251-.188.563-.214.936v.585h1.755v-.494c.035-.26.12-.477.254-.65.134-.173.288-.327.461-.462.173-.134.357-.268.553-.402a2.532
+        2.532 0 0 0 .936-1.176c.108-.27.162-.612.162-1.028a2.333 2.333 0 0 0-.702-1.625c-.251-.251-.583-.461-.994-.63-.412-.17-.926-.254-1.541-.254-.477
+        0-.908.08-1.293.24a2.87 2.87 0 0 0-.989.67 3.053 3.053 0 0 0-.636 1.014c-.152.39-.232.819-.241
+        1.287z\"></path></svg></div></button><div class=\"xrh-dropdown-layout xrh-addon--dropdown
+        xrh-dropdown-positionright\" aria-hidden data-header-component=\"menu\"><div
+        class=\"xrh-dropdown--mask\"></div><div class=\"xrh-dropdown--panel\" aria-hidden
+        role=\"listbox\" tabIndex=\"-1\"><div class=\"xrh-dropdown--body\"><ol class=\"xrh-verticalmenu\"
+        role=\"navigation\"><li class=\"xrh-verticalmenuitem\" role=\"option\"><a
+        data-on=\"click\" data-event-category=\"Nav\" data-event-action=\"Clicked
+        NAVIGATION_SUBMENU: xrh-Help-0\" class=\"xrh-verticalmenuitem--body\" data-navigation-id=\"xrh-Help-0\"
+        data-menu-item-type=\"NAVIGATION_SUBMENU\" tabIndex=\"-1\" href=\"/faq/\">FAQs</a></li><li
+        class=\"xrh-verticalmenuitem\" role=\"option\"><a data-on=\"click\" data-event-category=\"Nav\"
+        data-event-action=\"Clicked NAVIGATION_SUBMENU: xrh-Help-1\" class=\"xrh-verticalmenuitem--body\"
+        data-navigation-id=\"xrh-Help-1\" data-menu-item-type=\"NAVIGATION_SUBMENU\"
+        tabIndex=\"-1\" href=\"/support/\">Support</a></li><li class=\"xrh-verticalmenuitem\"
+        role=\"option\"><a data-on=\"click\" data-event-category=\"Nav\" data-event-action=\"Clicked
+        NAVIGATION_SUBMENU: xrh-Help-2\" class=\"xrh-verticalmenuitem--body\" data-navigation-id=\"xrh-Help-2\"
+        data-menu-item-type=\"NAVIGATION_SUBMENU\" tabIndex=\"-1\" href=\"https://status.developer.xero.com/\">API
+        Status</a></li></ol></div></div></div></li><li aria-hidden class=\"xrh-addonscriptcontainer
+        xrh-u-hidden\"></li></ol></div><span id=\"xrh-access-currently-selected-nav-item\"
+        class=\"xrh-u-hidden-visually\">Current page</span><span id=\"xrh-access-opens-new-window\"
+        class=\"xrh-u-hidden-visually\">Opens in new window</span></header></div><style>@media(max-width:859px){.xrh-hide-if-narrow{display:none}}@media(min-width:860px){.xrh-hide-if-wide{display:none}}.xrh-tab{-webkit-font-smoothing:antialiased}.xrh-taba{padding:016px}</style>\r\n
+        \   <link rel=\"stylesheet\" href=\"https://edge.xero.com/platform/header/4.9.0/header.min.css\"
+        /><script src=\"https://edge.xero.com/platform/header/4.9.0/header.min.js\"></script>\r\n
+        \   \r\n    <div id=\"devx-app\"><div class=\"devx-app-content\" data-reactroot=\"\"><div
+        class=\"docs-content-page\"><div class=\"docs-left-nav\"><div class=\"docs-nav-dropdown-container\"><div
+        class=\"xui-select\"><select data-automationid=\"page-section-selector\" name=\"pageSectionDropdown\"
+        class=\"xui-select--control pageSectionSelector\"><optgroup label=\"Introduction\"><option
+        value=\"getting-started/getting-started-guide\">Getting Started</option><option
+        selected=\"\" value=\"oauth2/overview\">OAuth 2.0</option><option value=\"auth-and-limits/private-applications\">OAuth
+        1.0a (Deprecated)</option><option value=\"webhooks/overview\">Webhooks</option><option
+        value=\"api-guides/integration-best-practices\">How-to Guides</option></optgroup><optgroup
+        label=\"APIs\"><option value=\"api/api-overview\">Accounting</option><option
+        value=\"payroll-api/overview\">Payroll - Australia</option><option value=\"payroll-api-nz/overview\">Payroll
+        - NZ</option><option value=\"payroll-api-uk/overview\">Payroll - UK</option><option
+        value=\"assets-api/overview\">Assets</option><option value=\"files-api/overview-files\">Files</option><option
+        value=\"projects/overview-projects\">Projects</option><option value=\"bank-feeds-api/overview\">Bank
+        Feeds</option><option value=\"xero-hq/overview-xero-hq-api\">Xero HQ</option><option
+        value=\"practice-manager/overview-practice-manager-api\">Practice Manager</option><option
+        value=\"workflowmax/overview-workflowmax-api\">WorkflowMax</option></optgroup><optgroup
+        label=\"SDKs\"><option value=\"libraries/overview\">Libraries</option><option
+        value=\"tools/overview\">Tools</option></optgroup><optgroup label=\"App Partner
+        Program\"><option value=\"partner-program-guides/overview\">Partner Program
+        Guides</option><option value=\"go-to-market-guides/getting-the-most-out-of-xerocon\">Go
+        To Market Guides</option></optgroup></select><svg focusable=\"false\" class=\"xui-icon
+        xui-select--caret xui-icon-color-standard\" width=\"10\" height=\"5\" viewBox=\"0
+        0 10 5\"><title>caret</title><path d=\"M0 0l5 5 5-5z\" role=\"presentation\"></path></svg></div></div><div
+        class=\"docs-nav-links-container\"><ul class=\"xui-picklist xui-picklist-layout
+        xui-picklist-small xui-padding-left\"><li class=\"xui-pickitem xui-pickitem-small\"><a
+        class=\"xui-pickitem--body\" href=\"/documentation/oauth2/overview\">Overview</a></li><li
+        class=\"xui-pickitem xui-pickitem-is-selected xui-pickitem-small\"><a class=\"xui-pickitem--body\"
+        href=\"/documentation/oauth2/auth-flow\">The Code Flow</a></li><li class=\"xui-pickitem
+        xui-pickitem-small\"><a class=\"xui-pickitem--body\" href=\"/documentation/oauth2/pkce-flow\">The
+        PKCE Flow</a></li><li class=\"xui-pickitem xui-pickitem-small\"><a class=\"xui-pickitem--body\"
+        href=\"/documentation/oauth2/scopes\">Scopes</a></li><li class=\"xui-pickitem
+        xui-pickitem-small\"><a class=\"xui-pickitem--body\" href=\"/documentation/oauth2/limits\">Limits</a></li><li
+        class=\"xui-pickitem xui-pickitem-small\"><a class=\"xui-pickitem--body\"
+        href=\"/documentation/oauth2/troubleshooting\">Troubleshooting</a></li><li
+        class=\"xui-pickitem xui-pickitem-small\"><a class=\"xui-pickitem--body\"
+        href=\"/documentation/oauth2/sign-in\">Sign in with Xero</a></li><li class=\"xui-pickitem
+        xui-pickitem-small\"><a class=\"xui-pickitem--body\" href=\"/documentation/oauth2/migrate\">OAuth
+        1.0a Migration</a></li></ul></div></div><div class=\"content-container\"><div
+        class=\"doc-1col\"><h1>The standard authorization code flow</h1>\r\n<hr>\r\n<p>The
+        standard authorization code flow is suitable for web server applications that
+        can securely store a client secret. If you\u2019re building a native app (desktop
+        or mobile) then you should refer to the <a href=\"pkce-flow\"></a>PKCE flow.<br><br>\r\nTo
+        get started, <a href=\"https://developer.xero.com/myapps\">create an OAuth2.0
+        app</a> and make sure you select the \u201CAuth Code\u201D grant type. Your
+        app is assigned a unique Client ID and you can then generate a Client Secret.
+        The Client Secret is private and should not be shared..</p>\r\n\r\n<hr>\r\n\r\n<h3
+        id=\"tenant\">Introducing Tenant Ids</h3>\r\n<p>Xero is a multi-tenanted platform.
+        The Xero API currently supports organisation (small business) tenants, <a
+        href=\"https://www.workflowmax.com/\">WorkflowMax</a> accounts and <a href=\"https://www.xero.com/features-and-tools/practice-tools/practicemanager/\">Practice
+        Manager</a> accounts. Support for <a href=\"https://www.xero.com/features-and-tools/practice-tools/xero-hq/\">XeroHQ</a>
+        practices is coming soon. A given user may have access to multiple tenants
+        and will choose which ones to connect to your app.<br><br>\r\n\r\nAt the successful
+        completion of an OAuth flow you will be granted an access token to act on
+        behalf of the user. It includes the <a href=\"scopes\">scopes</a> that the
+        user has authorized. You will then use that access token to find out which
+        tenants the user has connected to your app. From there, you can make API calls
+        by providing both a valid access token and authorized tenant id with each
+        request.\r\n\r\n</p>\r\n<img src=\"../../../static/images/documentation/authflow.svg\"
+        /></a>\r\n<hr>\r\n<h3>1. Send a user to authorize your app</h3>\r\n<p>Your
+        app should direct users to the following url:</p>\r\n    <pre class=\"querystring\">https://login.xero.com/identity/connect/authorize?response_type=code&client_id=YOURCLIENTID&redirect_uri=YOURREDIRECTURI&scope=openid
+        profile email accounting.transactions&state=123</pre>\r\n<p>The following
+        values should be passed in as parameters:\r\n<ul>\r\n    <li><strong>response_type=code</strong></li>\r\n
+        \   <li><strong>client_id</strong> issued when you create your app</li>\r\n
+        \   <li><strong>scope</strong> permissions to request (see below)</li>\r\n
+        \   <li><strong>redirect_uri</strong> the URL on your server to redirect back
+        to</li>\r\n    <li><strong>state</strong> a unique string to be passed back
+        on completion (optional) (see below)</li>\r\n</ul></p>\r\n<h4>Scopes</h4>\r\nThe
+        scope parameter is a space-separated list of OAuth scopes, indicating what
+        data you'd like your app to be able to access. You should request the minimum
+        scopes required for whatever the user is doing at the time. The complete list
+        of scopes can be found <a href=\"scopes\">here</a>.</p>\r\n\r\n<h4>State</h4>\r\n<p>The
+        state parameter should be used to avoid forgery attacks. Pass in a value that's
+        unique to the user you're sending through authorisation. It will be passed
+        back after the user completes authorisation.</p>\r\n<hr>\r\n<h3>2. Users are
+        redirected back to you with a code</h3>\r\n<p>If the user authorizes your
+        app, Xero will redirect back to your specified redirect_uri with:</p>\r\n<ul>\r\n
+        \   <li><strong>code</strong> a temporary code that may only be exchanged
+        once and expires 5 minutes after issuance.</li>\r\n    <li><strong>state</strong>
+        (if you provided one). If the states don't match, the request may have been
+        created by a third party and you should abort the process.</li>\r\n</ul>\r\n<p>If
+        any errors occur or the user denies the request,  we redirect back to your
+        redirect_uri with an error parameter. </p>\r\n<hr>\r\n<h3>3. Exchange the
+        code</h3>\r\n<p>You can now exchange the verification code for an access token.
+        You will also receive an identity token if you\u2019ve requested <a href=\"scopes#openid\">OpenID
+        Connect</a> scopes and a refresh token if you\u2019ve requested the <a href=\"scopes#offline-access\">offline_access</a>
+        scope.\r\n<br><br>\r\n<p>To do this you will need to make a POST request to
+        our token endpoint:</p>\r\n<pre class=\"querystring\">https://identity.xero.com/connect/token</pre>\r\n<p>The
+        request will require an authorization header containing your app\u2019s client_id
+        and client_secret</p>\r\n<ul><li><strong>Authorization</strong>: \"Basic \"
+        + base64encode(client_id + \":\" + client_secret)</li></ul>\r\n<p>The request
+        body will need to contain the grant type (authorization_code), code and redirect_uri</p>\r\n<ul>\r\n
+        \   <li><strong>grant_type</strong>=authorization_code</li>\r\n    <li><strong>code</strong>=The
+        authorization code you received in the callback</li>\r\n    <li><strong>redirect_uri</strong>=The
+        same redirect URI that was used when requesting the code</li>\r\n</ul>\r\n\r\n<pre
+        class=\"querystring\">POST https://identity.xero.com/connect/token\r\nauthorization:
+        \"Basic \" + base64encode(client_id + \":\" + client_secret)\r\nContent-Type:
+        application/x-www-form-urlencoded\r\n\r\ngrant_type=authorization_code\r\n&code=xxxxxx\r\n&redirect_uri=https://myapp.com/redirect\r\n</pre>\r\n<hr>\r\n<h4>4.
+        Receive your tokens</h4>\r\n<p>The token endpoint will verify all the parameters
+        in the request, ensuring the code hasn\u2019t expired and that the client
+        ID and secret match. If everything checks out, it will generate your tokens
+        and return them in the response.</p>\r\n\r\n<p>It will contain the following
+        parameters:</p>\r\n<ul>\r\n    <li><strong>access_token</strong> The token
+        used to call the API.</li>\r\n    <li><strong>id_token</strong>The token containing
+        user identity details (only returned if <a href=\"scopes#openid\">OpenID Connect</a>
+        scopes are requested).</li>\r\n    <li><strong>expires_in</strong>The amount
+        of seconds until the access token expires.</li>\r\n    <li><strong>token_type:
+        Bearer</strong></li>\r\n    <li><strong>refresh_token</strong>The token used
+        to refresh the access token once it has expired (only returned if the <a href=\"scopes#offline-access\">offline_access</a>
+        scope is requested).</li>\r\n</ul>\r\n<hr>\r\n<h4>5. Check the full set of
+        tenants you've been authorized to access</h4>\r\n<p>You can verify all the
+        tenants that the user has authorized your app to access by calling the connections
+        endpoint. If the user has authorized your app previously, they may have existing
+        tenant connections. All of the connected tenants can now be accessed with
+        your most recent access token.</p>\r\n<p>Each connection will have a created
+        date and an updated date. If they differ, that means the user is reconnecting
+        this tenant to your app (having previosuly connected and disconnected it).</p>\r\n<pre
+        class=\"code\">GET https://api.xero.com/connections\r\nAuthorization: \"Bearer
+        \" + access_token\r\nContent-Type: application/json\r\n\r\nResponse:\r\n[\r\n
+        \   {\r\n        \"id\": \"c869f3b7-6435-4c7e-8cb2-122721b04a69\",\r\n        \"tenantId\":
+        \"45e4708e-d862-4111-ab3a-dd8cd03913e1\",\r\n        \"tenantType\": \"ORGANISATION\",\r\n
+        \       \"createdDateUtc\": \"2020-02-02T19:17:58.1117990\",\r\n        \"updatedDateUtc\":
+        \"2020-02-02T19:17:58.1117990\"\r\n    },\r\n    {\r\n        \"id\": \"74305bf3-12e0-45e2-8dc8-e3ec73e3b1f9\",\r\n
+        \       \"tenantId\": \"c3d5e782-2153-4cda-bdb4-cec791ceb90d\",\r\n        \"tenantType\":
+        \"ORGANISATION\",\r\n        \"createdDateUtc\": \"2020-01-30T01:33:36.2717380\",\r\n
+        \       \"updatedDateUtc\": \"2020-02-02T19:21:08.5739590\"\r\n    }\r\n]</pre>\r\n<hr>\r\n<h4>6.
+        Call the API</h4>\r\n<p>Make calls against the Xero APIs by simply adding
+        the following headers to your request:\r\n    <ul>\r\n        <li><strong>Authorization</strong>:
+        \"Bearer \" + access_token</li>\r\n        <li><strong>xero-tenant-id</strong>:
+        tenantId</li>\r\n    </ul>\r\n</p>\r\n<pre class=\"querystring\">GET ../api.xro/2.0/Invoices\r\nAuthorization:
+        \"Bearer \" + access_token\r\nAccept: application/json\r\nXero-tenant-id:
+        83299b9e-5747-4a14-a18a-a6c94f824eb7\r\n</pre>\r\n\r\n<hr>\r\n<h3>Refreshing
+        access tokens</h3>\r\n<p>Access tokens expire after 30 minutes. Your app can
+        refresh an access token without user interaction by using a refresh token.
+        You get a refresh token by requesting the <a href=\"scopes#offline-access\">offline_access</a>
+        scope during the initial user authorization.</p>\r\n<p>To refresh your access
+        token you need to POST to the token endpoint:</p>\r\n<pre class=\"code\">https://identity.xero.com/connect/token</pre>\r\n<p>The
+        request will require an authorization header containing your app\u2019s client_id
+        and client_secret</p>\r\n<ul><li><strong>Authorization</strong>: \"Basic \"
+        + base64encode(client_id + \":\" + client_secret)</li></ul>\r\n<p>The request
+        body will need to contain the grant type and refresh token</p>\r\n<ul>\r\n
+        \   <li><strong>grant_type</strong>=refresh_token</li>\r\n    <li><strong>refresh_token</strong>=Your
+        refresh token</li>\r\n</ul>\r\n<pre class=\"querystring\">POST https://identity.xero.com/connect/token\r\nauthorization:
+        \"Basic \" + base64encode(client_id + \":\" + client_secret)\r\nContent-Type:
+        application/x-www-form-urlencoded\r\n\r\ngrant_type=refresh_token\r\n&refresh_token=xxxxxx\r\n</pre>\r\n<p>Each
+        time you perform a token refresh, you should save the new refresh token returned
+        in the response. If, for whatever reason, your app doesn't receive the response
+        you can retry your existing token for a grace period of 30 minutes.</p>\r\n<hr>\r\n<h3>Removing
+        connections</h3>\r\n<p>If you would like to remove a tenant connection from
+        your app (e.g. a user wants to disconnect one of their orgs) you can make
+        a DELETE request on the Connections endpoint:</p>\r\n<pre class=\"querystring\">DELETE
+        https://api.xero.com/connections/{connectionId}</pre>\r\n\r\n\r\n\r\n\r\n</div></div></div></div></div>\r\n\r\n
+        \   <script type=\"application/json\" id=\"init-data\">\r\n      {\"routing\":{\"locationBeforeTransitions\":null},\"user\":{\"isLoggedIn\":false,\"user\":null},\"clientConfig\":{\"title\":\"Xero
+        Developer\",\"version\":\"1.1.106\",\"defaultLocale\":\"en-NZ\",\"logoutUrl\":\"https://login.xero.com/signin/logout?wa=wsignout1.0&wreply=https%3A%2F%2Fdeveloper.xero.com\",\"loginUrl\":\"https://developer.xero.com/devlogin?nextUrl=/fakepreviewer/\",\"authenticatedUrls\":[],\"googleAnalyticsDevPortalKey\":\"UA-3776042-31\"},\"blog\":{\"blogs\":[],\"loading\":false,\"loaded\":false,\"err\":null},\"ui\":{\"currentWidth\":1280,\"numberInterestedInScroll\":0,\"headerShown\":true,\"screenWidths\":{\"narrow\":519,\"medium\":939}},\"mediaVideos\":{\"showMoreClickedTimes\":0},\"form\":{},\"documentation\":{\"searchPhrase\":\"\",\"docs\":{\"sections\":[{\"name\":\"Getting
+        Started\",\"url\":\"getting-started\",\"pages\":[{\"name\":\"Getting Started
+        Guide\",\"url\":\"getting-started-guide\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Development
+        accounts\",\"url\":\"development-accounts\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"API
+        Application Types\",\"url\":\"api-application-types\",\"summary\":\"\",\"twoColumn\":false}]},{\"name\":\"OAuth
+        2.0\",\"url\":\"oauth2\",\"pages\":[{\"name\":\"Overview\",\"url\":\"overview\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"The
+        Code Flow\",\"url\":\"auth-flow\",\"summary\":\"\",\"twoColumn\":false,\"htmlContent\":\"<h1>The
+        standard authorization code flow</h1>\\r\\n<hr>\\r\\n<p>The standard authorization
+        code flow is suitable for web server applications that can securely store
+        a client secret. If you\u2019re building a native app (desktop or mobile)
+        then you should refer to the <a href=\\\"pkce-flow\\\"></a>PKCE flow.<br><br>\\r\\nTo
+        get started, <a href=\\\"https://developer.xero.com/myapps\\\">create an OAuth2.0
+        app</a> and make sure you select the \u201CAuth Code\u201D grant type. Your
+        app is assigned a unique Client ID and you can then generate a Client Secret.
+        The Client Secret is private and should not be shared..</p>\\r\\n\\r\\n<hr>\\r\\n\\r\\n<h3
+        id=\\\"tenant\\\">Introducing Tenant Ids</h3>\\r\\n<p>Xero is a multi-tenanted
+        platform. The Xero API currently supports organisation (small business) tenants,
+        <a href=\\\"https://www.workflowmax.com/\\\">WorkflowMax</a> accounts and
+        <a href=\\\"https://www.xero.com/features-and-tools/practice-tools/practicemanager/\\\">Practice
+        Manager</a> accounts. Support for <a href=\\\"https://www.xero.com/features-and-tools/practice-tools/xero-hq/\\\">XeroHQ</a>
+        practices is coming soon. A given user may have access to multiple tenants
+        and will choose which ones to connect to your app.<br><br>\\r\\n\\r\\nAt the
+        successful completion of an OAuth flow you will be granted an access token
+        to act on behalf of the user. It includes the <a href=\\\"scopes\\\">scopes</a>
+        that the user has authorized. You will then use that access token to find
+        out which tenants the user has connected to your app. From there, you can
+        make API calls by providing both a valid access token and authorized tenant
+        id with each request.\\r\\n\\r\\n</p>\\r\\n<img src=\\\"../../../static/images/documentation/authflow.svg\\\"
+        /></a>\\r\\n<hr>\\r\\n<h3>1. Send a user to authorize your app</h3>\\r\\n<p>Your
+        app should direct users to the following url:</p>\\r\\n    <pre class=\\\"querystring\\\">https://login.xero.com/identity/connect/authorize?response_type=code&client_id=YOURCLIENTID&redirect_uri=YOURREDIRECTURI&scope=openid
+        profile email accounting.transactions&state=123</pre>\\r\\n<p>The following
+        values should be passed in as parameters:\\r\\n<ul>\\r\\n    <li><strong>response_type=code</strong></li>\\r\\n
+        \   <li><strong>client_id</strong> issued when you create your app</li>\\r\\n
+        \   <li><strong>scope</strong> permissions to request (see below)</li>\\r\\n
+        \   <li><strong>redirect_uri</strong> the URL on your server to redirect back
+        to</li>\\r\\n    <li><strong>state</strong> a unique string to be passed back
+        on completion (optional) (see below)</li>\\r\\n</ul></p>\\r\\n<h4>Scopes</h4>\\r\\nThe
+        scope parameter is a space-separated list of OAuth scopes, indicating what
+        data you'd like your app to be able to access. You should request the minimum
+        scopes required for whatever the user is doing at the time. The complete list
+        of scopes can be found <a href=\\\"scopes\\\">here</a>.</p>\\r\\n\\r\\n<h4>State</h4>\\r\\n<p>The
+        state parameter should be used to avoid forgery attacks. Pass in a value that's
+        unique to the user you're sending through authorisation. It will be passed
+        back after the user completes authorisation.</p>\\r\\n<hr>\\r\\n<h3>2. Users
+        are redirected back to you with a code</h3>\\r\\n<p>If the user authorizes
+        your app, Xero will redirect back to your specified redirect_uri with:</p>\\r\\n<ul>\\r\\n
+        \   <li><strong>code</strong> a temporary code that may only be exchanged
+        once and expires 5 minutes after issuance.</li>\\r\\n    <li><strong>state</strong>
+        (if you provided one). If the states don't match, the request may have been
+        created by a third party and you should abort the process.</li>\\r\\n</ul>\\r\\n<p>If
+        any errors occur or the user denies the request,  we redirect back to your
+        redirect_uri with an error parameter. </p>\\r\\n<hr>\\r\\n<h3>3. Exchange
+        the code</h3>\\r\\n<p>You can now exchange the verification code for an access
+        token. You will also receive an identity token if you\u2019ve requested <a
+        href=\\\"scopes#openid\\\">OpenID Connect</a> scopes and a refresh token if
+        you\u2019ve requested the <a href=\\\"scopes#offline-access\\\">offline_access</a>
+        scope.\\r\\n<br><br>\\r\\n<p>To do this you will need to make a POST request
+        to our token endpoint:</p>\\r\\n<pre class=\\\"querystring\\\">https://identity.xero.com/connect/token</pre>\\r\\n<p>The
+        request will require an authorization header containing your app\u2019s client_id
+        and client_secret</p>\\r\\n<ul><li><strong>Authorization</strong>: \\\"Basic
+        \\\" + base64encode(client_id + \\\":\\\" + client_secret)</li></ul>\\r\\n<p>The
+        request body will need to contain the grant type (authorization_code), code
+        and redirect_uri</p>\\r\\n<ul>\\r\\n    <li><strong>grant_type</strong>=authorization_code</li>\\r\\n
+        \   <li><strong>code</strong>=The authorization code you received in the callback</li>\\r\\n
+        \   <li><strong>redirect_uri</strong>=The same redirect URI that was used
+        when requesting the code</li>\\r\\n</ul>\\r\\n\\r\\n<pre class=\\\"querystring\\\">POST
+        https://identity.xero.com/connect/token\\r\\nauthorization: \\\"Basic \\\"
+        + base64encode(client_id + \\\":\\\" + client_secret)\\r\\nContent-Type: application/x-www-form-urlencoded\\r\\n\\r\\ngrant_type=authorization_code\\r\\n&code=xxxxxx\\r\\n&redirect_uri=https://myapp.com/redirect\\r\\n</pre>\\r\\n<hr>\\r\\n<h4>4.
+        Receive your tokens</h4>\\r\\n<p>The token endpoint will verify all the parameters
+        in the request, ensuring the code hasn\u2019t expired and that the client
+        ID and secret match. If everything checks out, it will generate your tokens
+        and return them in the response.</p>\\r\\n\\r\\n<p>It will contain the following
+        parameters:</p>\\r\\n<ul>\\r\\n    <li><strong>access_token</strong> The token
+        used to call the API.</li>\\r\\n    <li><strong>id_token</strong>The token
+        containing user identity details (only returned if <a href=\\\"scopes#openid\\\">OpenID
+        Connect</a> scopes are requested).</li>\\r\\n    <li><strong>expires_in</strong>The
+        amount of seconds until the access token expires.</li>\\r\\n    <li><strong>token_type:
+        Bearer</strong></li>\\r\\n    <li><strong>refresh_token</strong>The token
+        used to refresh the access token once it has expired (only returned if the
+        <a href=\\\"scopes#offline-access\\\">offline_access</a> scope is requested).</li>\\r\\n</ul>\\r\\n<hr>\\r\\n<h4>5.
+        Check the full set of tenants you've been authorized to access</h4>\\r\\n<p>You
+        can verify all the tenants that the user has authorized your app to access
+        by calling the connections endpoint. If the user has authorized your app previously,
+        they may have existing tenant connections. All of the connected tenants can
+        now be accessed with your most recent access token.</p>\\r\\n<p>Each connection
+        will have a created date and an updated date. If they differ, that means the
+        user is reconnecting this tenant to your app (having previosuly connected
+        and disconnected it).</p>\\r\\n<pre class=\\\"code\\\">GET https://api.xero.com/connections\\r\\nAuthorization:
+        \\\"Bearer \\\" + access_token\\r\\nContent-Type: application/json\\r\\n\\r\\nResponse:\\r\\n[\\r\\n
+        \   {\\r\\n        \\\"id\\\": \\\"c869f3b7-6435-4c7e-8cb2-122721b04a69\\\",\\r\\n
+        \       \\\"tenantId\\\": \\\"45e4708e-d862-4111-ab3a-dd8cd03913e1\\\",\\r\\n
+        \       \\\"tenantType\\\": \\\"ORGANISATION\\\",\\r\\n        \\\"createdDateUtc\\\":
+        \\\"2020-02-02T19:17:58.1117990\\\",\\r\\n        \\\"updatedDateUtc\\\":
+        \\\"2020-02-02T19:17:58.1117990\\\"\\r\\n    },\\r\\n    {\\r\\n        \\\"id\\\":
+        \\\"74305bf3-12e0-45e2-8dc8-e3ec73e3b1f9\\\",\\r\\n        \\\"tenantId\\\":
+        \\\"c3d5e782-2153-4cda-bdb4-cec791ceb90d\\\",\\r\\n        \\\"tenantType\\\":
+        \\\"ORGANISATION\\\",\\r\\n        \\\"createdDateUtc\\\": \\\"2020-01-30T01:33:36.2717380\\\",\\r\\n
+        \       \\\"updatedDateUtc\\\": \\\"2020-02-02T19:21:08.5739590\\\"\\r\\n
+        \   }\\r\\n]</pre>\\r\\n<hr>\\r\\n<h4>6. Call the API</h4>\\r\\n<p>Make calls
+        against the Xero APIs by simply adding the following headers to your request:\\r\\n
+        \   <ul>\\r\\n        <li><strong>Authorization</strong>: \\\"Bearer \\\"
+        + access_token</li>\\r\\n        <li><strong>xero-tenant-id</strong>: tenantId</li>\\r\\n
+        \   </ul>\\r\\n</p>\\r\\n<pre class=\\\"querystring\\\">GET ../api.xro/2.0/Invoices\\r\\nAuthorization:
+        \\\"Bearer \\\" + access_token\\r\\nAccept: application/json\\r\\nXero-tenant-id:
+        83299b9e-5747-4a14-a18a-a6c94f824eb7\\r\\n</pre>\\r\\n\\r\\n<hr>\\r\\n<h3>Refreshing
+        access tokens</h3>\\r\\n<p>Access tokens expire after 30 minutes. Your app
+        can refresh an access token without user interaction by using a refresh token.
+        You get a refresh token by requesting the <a href=\\\"scopes#offline-access\\\">offline_access</a>
+        scope during the initial user authorization.</p>\\r\\n<p>To refresh your access
+        token you need to POST to the token endpoint:</p>\\r\\n<pre class=\\\"code\\\">https://identity.xero.com/connect/token</pre>\\r\\n<p>The
+        request will require an authorization header containing your app\u2019s client_id
+        and client_secret</p>\\r\\n<ul><li><strong>Authorization</strong>: \\\"Basic
+        \\\" + base64encode(client_id + \\\":\\\" + client_secret)</li></ul>\\r\\n<p>The
+        request body will need to contain the grant type and refresh token</p>\\r\\n<ul>\\r\\n
+        \   <li><strong>grant_type</strong>=refresh_token</li>\\r\\n    <li><strong>refresh_token</strong>=Your
+        refresh token</li>\\r\\n</ul>\\r\\n<pre class=\\\"querystring\\\">POST https://identity.xero.com/connect/token\\r\\nauthorization:
+        \\\"Basic \\\" + base64encode(client_id + \\\":\\\" + client_secret)\\r\\nContent-Type:
+        application/x-www-form-urlencoded\\r\\n\\r\\ngrant_type=refresh_token\\r\\n&refresh_token=xxxxxx\\r\\n</pre>\\r\\n<p>Each
+        time you perform a token refresh, you should save the new refresh token returned
+        in the response. If, for whatever reason, your app doesn't receive the response
+        you can retry your existing token for a grace period of 30 minutes.</p>\\r\\n<hr>\\r\\n<h3>Removing
+        connections</h3>\\r\\n<p>If you would like to remove a tenant connection from
+        your app (e.g. a user wants to disconnect one of their orgs) you can make
+        a DELETE request on the Connections endpoint:</p>\\r\\n<pre class=\\\"querystring\\\">DELETE
+        https://api.xero.com/connections/{connectionId}</pre>\\r\\n\\r\\n\\r\\n\\r\\n\\r\\n\"},{\"name\":\"The
+        PKCE Flow\",\"url\":\"pkce-flow\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Scopes\",\"url\":\"scopes\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Limits\",\"url\":\"limits\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Troubleshooting\",\"url\":\"troubleshooting\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Sign
+        in with Xero\",\"url\":\"sign-in\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"OAuth
+        1.0a Migration\",\"url\":\"migrate\",\"summary\":\"\",\"twoColumn\":false}]},{\"name\":\"OAuth
+        1.0a (Deprecated)\",\"url\":\"auth-and-limits\",\"pages\":[{\"name\":\"Private
+        Applications\",\"url\":\"private-applications\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Public
+        Applications\",\"url\":\"public-applications\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Partner
+        Applications\",\"url\":\"partner-applications\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"OAuth
+        Callbacks\",\"url\":\"oauth-callback-domains-explained\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"API
+        Limits\",\"url\":\"xero-api-limits\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"OAuth
+        Issues\",\"url\":\"oauth-issues\",\"summary\":\"\",\"twoColumn\":false}]},{\"name\":\"Webhooks\",\"url\":\"webhooks\",\"pages\":[{\"name\":\"Overview\",\"url\":\"overview\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Create
+        a Webhook\",\"url\":\"creating-webhooks\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Server
+        Setup\",\"url\":\"configuring-your-server\",\"summary\":\"\",\"twoColumn\":false}]},{\"name\":\"Accounting\",\"url\":\"api\",\"pages\":[{\"name\":\"Overview\",\"url\":\"api-overview\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Release
+        Notes\",\"url\":\"v2-release-notes\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Requests
+        and Responses\",\"url\":\"requests-and-responses\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Response
+        Codes\",\"url\":\"http-response-codes\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Attachments\",\"url\":\"attachments\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Accounts\",\"url\":\"accounts\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Bank
+        Statements\",\"url\":\"bankstatements\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Bank
+        Transactions\",\"url\":\"banktransactions\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Bank
+        Transfers\",\"url\":\"bank-transfers\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Batch
+        Payments\",\"url\":\"batch-payments\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Branding
+        Themes\",\"url\":\"branding-themes\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Contacts\",\"url\":\"contacts\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Contact
+        Groups\",\"url\":\"contactgroups\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Credit
+        Notes\",\"url\":\"credit-notes\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Currencies\",\"url\":\"currencies\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Employees\",\"url\":\"employees\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Expense
+        Claims (Deprecated)\",\"url\":\"expense-claims\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"History
+        and Notes\",\"url\":\"history-and-notes\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Invoices\",\"url\":\"invoices\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Invoice
+        Reminders\",\"url\":\"invoice-reminders\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Items\",\"url\":\"items\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Journals\",\"url\":\"journals\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Linked
+        Transactions\",\"url\":\"linked-transactions\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Manual
+        Journals\",\"url\":\"manual-journals\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Organisation\",\"url\":\"organisation\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Overpayments\",\"url\":\"overpayments\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Payment
+        Services\",\"url\":\"payment-services\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Payments\",\"url\":\"payments\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Prepayments\",\"url\":\"prepayments\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Purchase
+        Orders\",\"url\":\"purchase-orders\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Quotes\",\"url\":\"quotes\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Receipts
+        (Deprecated)\",\"url\":\"receipts\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Repeating
+        Invoices\",\"url\":\"repeating-invoices\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Reports\",\"url\":\"reports\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Tax
+        Rates\",\"url\":\"tax-rates\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Tracking
+        Categories\",\"url\":\"tracking-categories\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Users\",\"url\":\"users\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Types\",\"url\":\"types\",\"summary\":\"\",\"twoColumn\":false}]},{\"name\":\"Payroll
+        - Australia\",\"url\":\"payroll-api\",\"pages\":[{\"name\":\"Overview\",\"url\":\"overview\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Integration
+        Guide\",\"url\":\"integration-guide\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Release
+        Notes\",\"url\":\"release-notes\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Employees\",\"url\":\"employees\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Leave
+        Applications\",\"url\":\"leaveapplications\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Leave
+        Balances\",\"url\":\"leavebalances\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Pay
+        Items\",\"url\":\"payitems\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Payroll
+        Calendars\",\"url\":\"payrollcalendars\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Pay
+        Runs\",\"url\":\"payruns\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Payslip\",\"url\":\"payslip\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Settings\",\"url\":\"settings\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Super
+        Funds\",\"url\":\"superfunds\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Super
+        Fund Products\",\"url\":\"superfundproducts\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Timesheets\",\"url\":\"timesheets\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Types
+        and Codes\",\"url\":\"types-and-codes\",\"summary\":\"\",\"twoColumn\":false}]},{\"name\":\"Payroll
+        - NZ\",\"url\":\"payroll-api-nz\",\"pages\":[{\"name\":\"Overview\",\"url\":\"overview\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Release
+        Notes\",\"url\":\"release-notes\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Response
+        Codes\",\"url\":\"responsecodes\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Employees\",\"url\":\"employees\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Employment\",\"url\":\"employment\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Employees
+        Tax\",\"url\":\"employeetax\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Employees
+        Leave Setup\",\"url\":\"employeeleavesetup\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Employees
+        Leave\",\"url\":\"employeeleave\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Leave
+        Balances\",\"url\":\"leavebalances\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Payment
+        Methods\",\"url\":\"paymentmethods\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Pay
+        Run Calendars\",\"url\":\"payruncalendars\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Salary
+        and Wages\",\"url\":\"salaryandwages\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Employees
+        Opening Balances\",\"url\":\"employeeopeningbalances\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Employees
+        Leave Periods\",\"url\":\"employeeleaveperiods\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Employees
+        Leave Types\",\"url\":\"employeeleavetypes\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Employees
+        Pay Templates\",\"url\":\"employeepaytemplates\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Earning
+        Rates\",\"url\":\"earningrates\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Deductions\",\"url\":\"deductions\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Leave
+        Types\",\"url\":\"leavetypes\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Reimbursements\",\"url\":\"reimbursements\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Statutory
+        Deductions\",\"url\":\"statutorydeductions\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Superannuation\",\"url\":\"superannuation\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Tax
+        Codes\",\"url\":\"nztaxcodes\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Payruns\",\"url\":\"payruns\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Payslips\",\"url\":\"payslips\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Timesheets\",\"url\":\"timesheets\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Settings\",\"url\":\"settings\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Tracking
+        Categories\",\"url\":\"trackingcategories\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Types
+        and Codes\",\"url\":\"typesandcodes\",\"summary\":\"\",\"twoColumn\":true}]},{\"name\":\"Payroll
+        - UK\",\"url\":\"payroll-api-uk\",\"pages\":[{\"name\":\"Overview\",\"url\":\"overview\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Release
+        Notes\",\"url\":\"release-notes\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Response
+        Codes\",\"url\":\"responsecodes\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Employees\",\"url\":\"employees\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Employment\",\"url\":\"employment\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Employees
+        Tax\",\"url\":\"employeetax\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Employee
+        Opening Balances\",\"url\":\"employeeopeningbalances\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Employees
+        Leave\",\"url\":\"employeeleave\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Employees
+        Leave Balances\",\"url\":\"employeeleavebalances\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Employees
+        Statutory Leave Balance\",\"url\":\"employeestatutoryleavebalance\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Employees
+        Statutory Leave Summary\",\"url\":\"employeestatutoryleavessummary\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Employees
+        Statutory Sick Leave\",\"url\":\"employeestatutorysickleave\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Employees
+        Leave Periods\",\"url\":\"employeeleaveperiods\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Employees
+        Leave Types\",\"url\":\"employeeleavetypes\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Employees
+        Pay Templates\",\"url\":\"employeepaytemplates\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Employer
+        Pensions\",\"url\":\"employerpensions\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Deductions\",\"url\":\"deductions\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Earnings
+        Orders\",\"url\":\"earningsorders\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Earning
+        Rates\",\"url\":\"earningrates\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Leave
+        Types\",\"url\":\"leavetypes\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Reimbursements\",\"url\":\"reimbursements\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Timesheets\",\"url\":\"timesheets\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Payment
+        Methods\",\"url\":\"paymentmethods\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Pay
+        Run Calendars\",\"url\":\"payruncalendars\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Salary
+        and Wages\",\"url\":\"salaryandwages\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Pay
+        Runs\",\"url\":\"payruns\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Payslips\",\"url\":\"payslips\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Settings\",\"url\":\"settings\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Tracking
+        Categories\",\"url\":\"trackingcategories\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Types
+        and Codes\",\"url\":\"typesandcodes\",\"summary\":\"\",\"twoColumn\":false}]},{\"name\":\"Assets\",\"url\":\"assets-api\",\"pages\":[{\"name\":\"Overview\",\"url\":\"overview\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Release
+        Notes\",\"url\":\"release-notes\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Assets\",\"url\":\"assets\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Asset
+        Types\",\"url\":\"asset-types\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Settings\",\"url\":\"settings\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Types\",\"url\":\"types\",\"summary\":\"\",\"twoColumn\":false}]},{\"name\":\"Files\",\"url\":\"files-api\",\"pages\":[{\"name\":\"Overview\",\"url\":\"overview-files\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Release
+        Notes\",\"url\":\"release-notes\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Files\",\"url\":\"files\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Folders\",\"url\":\"folders\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Associations\",\"url\":\"associations\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Types\",\"url\":\"types\",\"summary\":\"\",\"twoColumn\":false}]},{\"name\":\"Projects\",\"url\":\"projects\",\"pages\":[{\"name\":\"Overview\",\"url\":\"overview-projects\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Response
+        Codes\",\"url\":\"projects-response-codes\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Release
+        Notes\",\"url\":\"release-notes\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Projects\",\"url\":\"projects\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Users\",\"url\":\"users\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Tasks\",\"url\":\"tasks\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Time\",\"url\":\"time\",\"summary\":\"\",\"twoColumn\":true}]},{\"name\":\"Bank
+        Feeds\",\"url\":\"bank-feeds-api\",\"pages\":[{\"name\":\"Overview\",\"url\":\"overview\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Feed
+        Connections\",\"url\":\"feed-connections\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Feed
+        Connections Errors\",\"url\":\"feed-connections-errors\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Statements\",\"url\":\"statements\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Statements
+        Errors\",\"url\":\"statements-errors\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Release
+        Notes\",\"url\":\"release-notes\",\"summary\":\"\",\"twoColumn\":false}]},{\"name\":\"Xero
+        HQ\",\"url\":\"xero-hq\",\"pages\":[{\"name\":\"Overview - Xero HQ\",\"url\":\"overview-xero-hq-api\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Release
+        Notes\",\"url\":\"release-notes\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Response
+        Codes\",\"url\":\"response-codes\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Clients\",\"url\":\"clients\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Industries\",\"url\":\"industries\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Alerts\",\"url\":\"alerts\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Staff\",\"url\":\"staff\",\"summary\":\"\",\"twoColumn\":true},{\"name\":\"Types
+        and Codes\",\"url\":\"typesandcodes\",\"summary\":\"\",\"twoColumn\":false}]},{\"name\":\"Practice
+        Manager\",\"url\":\"practice-manager\",\"pages\":[{\"name\":\"Overview - Practice
+        Manager\",\"url\":\"overview-practice-manager-api\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"XPM
+        and WFM API Upgrade Guide\",\"url\":\"api-upgrade\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"XPM
+        migration to v3 API Guide\",\"url\":\"xpmoauth\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Categories\",\"url\":\"categories\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Client
+        Groups\",\"url\":\"client-groups\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Clients\",\"url\":\"clients\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Costs\",\"url\":\"costs\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Custom
+        Fields\",\"url\":\"custom-fields\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Invoices\",\"url\":\"invoices\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Jobs\",\"url\":\"jobs\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Leads\",\"url\":\"leads\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Purchase
+        Orders\",\"url\":\"purchase-orders\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Quotes\",\"url\":\"quotes\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Staff\",\"url\":\"staff\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Suppliers\",\"url\":\"suppliers\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Tasks\",\"url\":\"tasks\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Templates\",\"url\":\"templates\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Time\",\"url\":\"time\",\"summary\":\"\",\"twoColumn\":false}]},{\"name\":\"WorkflowMax\",\"url\":\"workflowmax\",\"pages\":[{\"name\":\"Overview
+        - WorkflowMax\",\"url\":\"overview-workflowmax-api\",\"summary\":\"\",\"twoColumn\":false}]},{\"name\":\"Libraries\",\"url\":\"libraries\",\"pages\":[{\"name\":\"Overview\",\"url\":\"overview\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"C#\",\"url\":\"using-the-xero-api-with-c\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Java\",\"url\":\"java\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Node.js\",\"url\":\"node-js\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"PHP\",\"url\":\"php\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Python\",\"url\":\"python\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Ruby\",\"url\":\"using-the-xero-api-with-ruby\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"OAuth
+        1.0a SDKs\",\"url\":\"oauth1-sdks\",\"summary\":\"\",\"twoColumn\":false}]},{\"name\":\"Tools\",\"url\":\"tools\",\"pages\":[{\"name\":\"Overview\",\"url\":\"overview\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Postman\",\"url\":\"postman\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Linx\",\"url\":\"linx\",\"summary\":\"\",\"twoColumn\":false}]},{\"name\":\"How-to
+        Guides\",\"url\":\"api-guides\",\"pages\":[{\"name\":\"Integration Best Practices\",\"url\":\"integration-best-practices\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Certification
+        Checkpoints\",\"url\":\"certification-checkpoints\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Branding
+        Your Integration\",\"url\":\"branding-your-integration\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Deep
+        link to Xero\",\"url\":\"deep-link-xero\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Create
+        a public/private key\",\"url\":\"create-publicprivate-key\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Machine
+        to Machine Integrations\",\"url\":\"machine-2-machine\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Tax
+        in Xero\",\"url\":\"tax-in-xero\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Rounding
+        in Xero\",\"url\":\"rounding-in-xero\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Accounting
+        for Inventory\",\"url\":\"how-to-integrate-my-inventory-system-with-xero\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Xero
+        Tracked Inventory\",\"url\":\"tracked-inventory-in-xero\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Processing
+        Payments\",\"url\":\"handling-payment-processor-receipts-in-xero\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Conversions
+        Guide\",\"url\":\"conversions\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"CRM
+        and Xero\",\"url\":\"how-to-integrate-my-crm-system-with-xero\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Farming
+        and Xero\",\"url\":\"farming-xero\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Inventory
+        and Xero\",\"url\":\"inventory-integration-options\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Payment
+        services and Xero\",\"url\":\"payment-services-integration-with-xero\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Payroll
+        and Xero\",\"url\":\"how-to-integrate-my-payroll-system-with-xero\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Point
+        of Sale and Xero\",\"url\":\"how-to-integrate-my-pos-system-with-xero\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Xero
+        Connect Integration\",\"url\":\"xeroconnect-integration\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"OAuth
+        1.0a and Mobile/Desktop Solutions\",\"url\":\"oauth1a-mobiledesktop\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Fees
+        and the Xero API\",\"url\":\"fees-and-xero-api\",\"summary\":\"\",\"twoColumn\":false}]},{\"name\":\"Partner
+        Program Guides\",\"url\":\"partner-program-guides\",\"pages\":[{\"name\":\"Overview\",\"url\":\"overview\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"FAQs\",\"url\":\"app-partner-program-faqs\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Marketplace
+        Selfservice\",\"url\":\"marketplace-self-service\",\"summary\":\"\",\"twoColumn\":false}]},{\"name\":\"Go
+        To Market Guides\",\"url\":\"go-to-market-guides\",\"pages\":[{\"name\":\"Getting
+        the most out of Xerocon\",\"url\":\"getting-the-most-out-of-xerocon\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Building
+        Beautiful Blogs\",\"url\":\"building-beautiful-blogs\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Create
+        a Compelling Case Study\",\"url\":\"create-a-compelling-case-study\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Social
+        Media Success\",\"url\":\"social-media-success\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Marketplace
+        Reviews and Ratings\",\"url\":\"marketplace-review-and-ratings\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"App
+        Marketplace FAQs\",\"url\":\"app-marketplace-faqs\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Tracking
+        Referrals to Xero\",\"url\":\"tracking-referrals-to-xero\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Stronger
+        together: Xero + your app\",\"url\":\"stronger-together\",\"summary\":\"\",\"twoColumn\":false},{\"name\":\"Build
+        Your Brand in the Xero community\",\"url\":\"build-your-brand\",\"summary\":\"\",\"twoColumn\":false}]}],\"categories\":[{\"name\":\"Introduction\",\"sections\":[\"getting-started\",\"oauth2\",\"auth-and-limits\",\"webhooks\",\"api-guides\"]},{\"name\":\"APIs\",\"sections\":[\"api\",\"payroll-api\",\"payroll-api-nz\",\"payroll-api-uk\",\"assets-api\",\"files-api\",\"projects\",\"bank-feeds-api\",\"xero-hq\",\"practice-manager\",\"workflowmax\"]},{\"name\":\"SDKs\",\"sections\":[\"libraries\",\"tools\"]},{\"name\":\"App
+        Partner Program\",\"sections\":[\"partner-program-guides\",\"go-to-market-guides\"]}]},\"selectedSectionIdx\":1,\"selectedSectionUrl\":\"oauth2\",\"selectedPageIdx\":1,\"selectedPageUrl\":\"auth-flow\",\"loadState\":\"loaded\",\"loadError\":null},\"search\":{\"searchPhrase\":\"\",\"searchInputValue\":\"\"},\"faqs\":{\"navOpen\":false,\"topics\":null,\"questions\":null,\"selectedTopicIdx\":null,\"selectedQuestionIdx\":null}}\r\n
+        \   </script>\r\n    \r\n    <script src=\"/static/1.1.106/client.js\"></script>
+        \ \r\n    \r\n    <script src=\"https://edge.xero.com/platform/sso/xero-sso.js\"
+        async defer></script>\r\n  </body>\r\n</html>\r\n"
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      - Transfer-Encoding
+      Content-Security-Policy:
+      - 'base-uri ''self'';connect-src ''self'' https://*.googleapis.com https://*.xero.com
+        https://api.mixpanel.com https://bam.nr-data.net https://raw.githubusercontent.com
+        https://ssl.google-analytics.com https://app.launchdarkly.com https://events.launchdarkly.com;default-src
+        https://*.xero.com;font-src ''self'' data: https://*.xero.com https://fonts.gstatic.com;frame-src
+        ''self'' https://*.twitter.com https://*.vimeo.com https://*.xero.com https://*.youtube.com
+        https://www.google.com;img-src ''self'' data: https://*.cdninstagram.com https://*.medium.com
+        https://*.twimg.com https://*.twitter.com https://*.xero.com https://run.pstmn.io
+        https://*.instagram.com https://*.gstatic.com https://*.fbcdn.net https://*.ytimg.com
+        https://img.youtube.com http://www.googletagmanager.com https://bam.nr-data.net
+        https://*.facebook.com;media-src blob: https://*.akamaihd.net https://*.vimeocdn.com
+        https://*.gstatic.com https://*.xero.com;object-src ''none'';script-src ''self''
+        ''unsafe-eval'' ''unsafe-inline'' https://*.akamaihd.net https://*.gstatic.com
+        https://*.newrelic.com https://*.nr-data.net https://*.twimg.com https://*.twitter.com
+        https://*.vimeocdn.com https://*.xero.com https://*.youtube.com https://*.ytimg.com
+        https://api.mixpanel.com https://cdnjs.cloudflare.com https://*.google-analytics.com
+        https://www.googletagmanager.com https://tagmanager.google.com https://www.google.com
+        https://*.facebook.net;style-src ''self'' ''unsafe-inline'' https://*.twimg.com
+        https://*.twitter.com https://fonts.googleapis.com https://*.vimeocdn.com
+        https://*.xero.com https://cdnjs.cloudflare.com https://tagmanager.google.com;report-uri
+        /csp-report'
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Tue, 14 Apr 2020 00:22:54 GMT
+      Expires:
+      - Tue, 14 Apr 2020 00:22:54 GMT
+      Set-Cookie:
+      - bm_sz=33C935F1C81BAB2D78374EAE803D0D7F~YAAQdQeVegFKM2dxAQAAjUIRdgeV5mR6GiBCAI6xGLwRZbTKSuLqogT5PYoeTbAQrqQeD6tWZpXvKNe+M/6ysj9HYRd6dnSY4/+Lfkb1TtjjbGCcCpiemsYxnWBOoH29oDCUBre13xRLZUXhncPfmABK6xVjrOH3V0UBIAZuihyPnNG2opOWpyW/0J7nsQ==;
+        Domain=.xero.com; Path=/; Expires=Tue, 14 Apr 2020 04:22:53 GMT; Max-Age=14399;
+        HttpOnly
+      - _abck=34569F15EE71E8811D1F817741428C02~-1~YAAQdQeVegJKM2dxAQAAjUIRdgOwn8UXw9GE/HBTnPtl8kOr3FvRhYV0AWpQGepOGVnSDtuY+hkvZG5UkLwwmt0o7phnaRz17kGpUabm6ZJ96raeS3e774JGTEt11U7VpuaaHT7vDN2t29GgCQO7TDi5mrO8oFhkNVe6VSrfC4+GRVId2JWFMbhX0TdIyePbWURhxWzM+onYgOqh5Ogl5QGBEVDRhOWk3RMsKp0yvydlfUSYwHDKKY7acqQxID8S36fYb60Ulnud6MjNBcGSp0cEZ8etZidFh5TXe32YQafxVt0IbsOHOg==~-1~-1~-1;
+        Domain=.xero.com; Path=/; Expires=Wed, 14 Apr 2021 00:22:54 GMT; Max-Age=31536000;
+        Secure
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -1,0 +1,4 @@
+# make sure content of this file can be parsed by setup.load_requirements
+python-dateutil
+urllib3
+certifi

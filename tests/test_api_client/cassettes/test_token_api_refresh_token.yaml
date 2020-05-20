@@ -1,0 +1,61 @@
+interactions:
+- request:
+    body: grant_type=refresh_token&scope=email+profile+openid+accounting.reports.read+accounting.attachments.read+accounting.settings+accounting.settings.read+accounting.attachments+accounting.transactions+accounting.journals.read+accounting.transactions.read+accounting.contacts+accounting.contacts.read+offline_access&refresh_token=test-refresh-token&client_id=xero-client-id&client_secret=xero-client-secret
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - xero-python (0.1.0)
+    method: POST
+    uri: https://identity.xero.com/connect/token
+  response:
+    body:
+      string: '{"id_token":"xero-id-token","access_token":"xero-access-token","expires_in":1800,"token_type":"Bearer","refresh_token":"xero-refresh-token","scope":"email
+        profile openid accounting.reports.read accounting.attachments.read accounting.settings
+        accounting.settings.read accounting.attachments accounting.transactions accounting.journals.read
+        accounting.transactions.read accounting.contacts accounting.contacts.read
+        offline_access"}'
+    headers:
+      Cache-Control:
+      - max-age=0, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2981'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Wed, 18 Mar 2020 10:16:17 GMT
+      Expires:
+      - Wed, 18 Mar 2020 10:16:17 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Set-Cookie:
+      - Device=67b265eeeb1f4512bce3ac014a10e5c2; expires=Tue, 18 Mar 2025 10:16:16
+        GMT; path=/; HttpOnly
+      - bm_sz=A6ACB3F1246C5FAD57BC61AE992C0076~YAAQPc9Y29R5XKdwAQAA280k7Qf/BENBy7vhVBmfN4w9K/d7W7Q4SknccRCNSX0y806QX2M9pPzbdV3Jp0nTSEFO4gii20K5dTz55JsXGNe87kgkMCZCJ2Y2kYNH+JGjLgQAnKhLfo+EmrHeQ2io2Hwj9CsKybwdYLvYrq5R3nChNkLDI2nM9Lhq/S2eQw==;
+        Domain=.xero.com; Path=/; Expires=Wed, 18 Mar 2020 14:16:16 GMT; Max-Age=14399;
+        HttpOnly
+      - _abck=E7D28F3B53807DF861DB583BA6C10DE2~-1~YAAQPc9Y29V5XKdwAQAA280k7QMVLYK5l3sUxgfmN7tzXA3R9z7shlkTzUr7rdf//DdFcOsMnSGTG6BLxZi5CGYxrv4OECY5SZwhTy+lFXmXBx6DRDdlqBeBJaXHDojFLQf6E5zcpgh7Y+CWm4pVDruH8/MYKMBYqx18wtkSk0Cg7xMkZCKH60zYMGd97WxLbDmpikNBfKCX6zM4ozek0wJVqKNtKvB9KhtcCiSWhMm3DM4dIlwII4uk3iFkJ3GXjYfAIrq2VAcOJhnfC2if1vkS1WVRhW2or+j2YEEswuf9TJp0ZMFh5g==~-1~-1~-1;
+        Domain=.xero.com; Path=/; Expires=Thu, 18 Mar 2021 10:16:17 GMT; Max-Age=31536000;
+        Secure
+      Vary:
+      - Accept-Encoding
+      Xero-Activity-Id:
+      - d99025746a49498c9b3cbf06be909e09
+      Xero-Causation-Id:
+      - 8f3612a7c1024526832164766d40a7ac
+      Xero-Correlation-Id:
+      - a33da5b7455d4d35a4689793ae74dcaa
+      Xero-Message-Id:
+      - 10139d42fcd74fc7bab53d7be2846ad0
+      Xero-Origin-Id:
+      - IdentityServer.Web
+    status:
+      code: 200
+      message: OK
+version: 1

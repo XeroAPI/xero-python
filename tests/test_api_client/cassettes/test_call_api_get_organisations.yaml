@@ -1,0 +1,70 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - XXXXX
+      Content-Type:
+      - application/json
+      User-Agent:
+      - xero-python (0.1.0)
+      xero-tenant-id:
+      - XXXXX
+    method: GET
+    uri: https://api.xero.com/api.xro/2.0/Organisation
+  response:
+    body:
+      string: "{\r\n  \"Id\": \"01d8d84f-4a48-48d9-abd5-30b60f609da9\",\r\n  \"Status\":
+        \"OK\",\r\n  \"ProviderName\": \"python-sdk\",\r\n  \"DateTimeUTC\": \"\\/Date(1584585851380)\\/\",\r\n
+        \ \"Organisations\": [\r\n    {\r\n      \"Name\": \"Demo Company (NZ)\",\r\n
+        \     \"LegalName\": \"Demo Company (NZ)\",\r\n      \"PaysTax\": true,\r\n
+        \     \"Version\": \"NZ\",\r\n      \"OrganisationType\": \"COMPANY\",\r\n
+        \     \"BaseCurrency\": \"NZD\",\r\n      \"CountryCode\": \"NZ\",\r\n      \"IsDemoCompany\":
+        true,\r\n      \"OrganisationStatus\": \"ACTIVE\",\r\n      \"TaxNumber\":
+        \"111-111-111\",\r\n      \"FinancialYearEndDay\": 31,\r\n      \"FinancialYearEndMonth\":
+        3,\r\n      \"SalesTaxBasis\": \"PAYMENTS\",\r\n      \"SalesTaxPeriod\":
+        \"TWOMONTHS\",\r\n      \"DefaultSalesTax\": \"Remember previous\",\r\n      \"DefaultPurchasesTax\":
+        \"Remember previous\",\r\n      \"PeriodLockDate\": \"\\/Date(1254268800000+0000)\\/\",\r\n
+        \     \"CreatedDateUTC\": \"\\/Date(1584566350680)\\/\",\r\n      \"OrganisationEntityType\":
+        \"COMPANY\",\r\n      \"Timezone\": \"NEWZEALANDSTANDARDTIME\",\r\n      \"ShortCode\":
+        \"!1lqVQ\",\r\n      \"OrganisationID\": \"a46fcb6f-2773-40c4-a119-8aa08bca1e8e\",\r\n
+        \     \"Edition\": \"BUSINESS\",\r\n      \"Class\": \"DEMO\",\r\n      \"Addresses\":
+        [\r\n        {\r\n          \"AddressType\": \"POBOX\",\r\n          \"AddressLine1\":
+        \"23 Main Street\",\r\n          \"AddressLine2\": \"Central City\",\r\n          \"City\":
+        \"Marineville\",\r\n          \"Region\": \"\",\r\n          \"PostalCode\":
+        \"1234\",\r\n          \"Country\": \"\",\r\n          \"AttentionTo\": \"\"\r\n
+        \       }\r\n      ],\r\n      \"Phones\": [\r\n        {\r\n          \"PhoneType\":
+        \"OFFICE\",\r\n          \"PhoneNumber\": \"1234 5678\",\r\n          \"PhoneAreaCode\":
+        \"0800\"\r\n        }\r\n      ],\r\n      \"ExternalLinks\": [],\r\n      \"PaymentTerms\":
+        {}\r\n    }\r\n  ]\r\n}"
+    headers:
+      Cache-Control:
+      - max-age=0, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1641'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 19 Mar 2020 02:44:11 GMT
+      Expires:
+      - Thu, 19 Mar 2020 02:44:11 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - Kestrel
+      X-Client-TLS-ver:
+      - tls1.3
+      X-DayLimit-Remaining:
+      - '4984'
+      X-MinLimit-Remaining:
+      - '59'
+      Xero-Correlation-Id:
+      - 01d8d84f-4a48-48d9-abd5-30b60f609da9
+    status:
+      code: 200
+      message: OK
+version: 1
