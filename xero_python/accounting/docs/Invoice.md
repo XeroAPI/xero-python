@@ -37,7 +37,7 @@ Name | Type | Description | Notes
 **updated_date_utc** | **datetime** | Last modified date UTC format | [optional] 
 **credit_notes** | [**list[CreditNote]**](CreditNote.md) | Details of credit notes that have been applied to an invoice | [optional] 
 **attachments** | [**list[Attachment]**](Attachment.md) | Displays array of attachments from the API | [optional] 
-**has_errors** | **bool** | A boolean to indicate if a invoice has an validation errors | [optional] 
+**has_errors** | **bool** | A boolean to indicate if a invoice has an validation errors | [optional] [default to False]
 **status_attribute_string** | **str** | A string to indicate if a invoice status | [optional] 
 **validation_errors** | [**list[ValidationError]**](ValidationError.md) | Displays array of validation error messages from the API | [optional] 
 **warnings** | [**list[ValidationError]**](ValidationError.md) | Displays array of warning messages from the API | [optional] 

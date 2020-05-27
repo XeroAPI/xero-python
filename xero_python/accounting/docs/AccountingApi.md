@@ -92,6 +92,7 @@ Method | HTTP request | Description
 [**get_contact_attachment_by_file_name**](AccountingApi.md#get_contact_attachment_by_file_name) | **GET** /Contacts/{ContactID}/Attachments/{FileName} | Allows you to retrieve Attachments on Contacts by file name
 [**get_contact_attachment_by_id**](AccountingApi.md#get_contact_attachment_by_id) | **GET** /Contacts/{ContactID}/Attachments/{AttachmentID} | Allows you to retrieve Attachments on Contacts
 [**get_contact_attachments**](AccountingApi.md#get_contact_attachments) | **GET** /Contacts/{ContactID}/Attachments | Allows you to retrieve, add and update contacts in a Xero organisation
+[**get_contact_by_contact_number**](AccountingApi.md#get_contact_by_contact_number) | **GET** /Contacts/{ContactNumber} | Allows you to retrieve a single contact by Contact Number in a Xero organisation
 [**get_contact_cis_settings**](AccountingApi.md#get_contact_cis_settings) | **GET** /Contacts/{ContactID}/CISSettings | Allows you to retrieve CISSettings for a contact in a Xero organisation
 [**get_contact_group**](AccountingApi.md#get_contact_group) | **GET** /ContactGroups/{ContactGroupID} | Allows you to retrieve a unique Contact Group by ID
 [**get_contact_groups**](AccountingApi.md#get_contact_groups) | **GET** /ContactGroups | Allows you to retrieve the ContactID and Name of all the contacts in a contact group
@@ -141,7 +142,6 @@ Method | HTTP request | Description
 [**get_payment_services**](AccountingApi.md#get_payment_services) | **GET** /PaymentServices | Allows you to retrieve payment services
 [**get_payments**](AccountingApi.md#get_payments) | **GET** /Payments | Allows you to retrieve payments for invoices and credit notes
 [**get_prepayment**](AccountingApi.md#get_prepayment) | **GET** /Prepayments/{PrepaymentID} | Allows you to retrieve a specified prepayments
-[**get_prepayment_as_pdf**](AccountingApi.md#get_prepayment_as_pdf) | **GET** /Prepayments/{PrepaymentID}/pdf | Allows you to retrieve prepayments as PDF files
 [**get_prepayment_history**](AccountingApi.md#get_prepayment_history) | **GET** /Prepayments/{PrepaymentID}/History | Allows you to retrieve a history records of an Prepayment
 [**get_prepayments**](AccountingApi.md#get_prepayments) | **GET** /Prepayments | Allows you to retrieve prepayments
 [**get_purchase_order**](AccountingApi.md#get_purchase_order) | **GET** /PurchaseOrders/{PurchaseOrderID} | Allows you to retrieve a specified purchase orders
@@ -5938,6 +5938,69 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_contact_by_contact_number**
+> Contacts get_contact_by_contact_number(xero_tenant_id, contact_number)
+
+Allows you to retrieve a single contact by Contact Number in a Xero organisation
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.accounting import AccountingApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = AccountingApi(api_client)
+
+xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
+contact_number = 'SB2' # str | This field is read only on the Xero contact screen, used to identify contacts in external systems (max length = 50).
+try:
+    # Allows you to retrieve a single contact by Contact Number in a Xero organisation
+    api_response = api_instance.get_contact_by_contact_number(xero_tenant_id, contact_number)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AccountingApi->get_contact_by_contact_number: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **contact_number** | **str**| This field is read only on the Xero contact screen, used to identify contacts in external systems (max length &#x3D; 50). | 
+
+### Return type
+
+[**Contacts**](Contacts.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_contact_cis_settings**
 > CISSettings get_contact_cis_settings(xero_tenant_id, contact_id)
 
@@ -9134,69 +9197,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_prepayment_as_pdf**
-> file get_prepayment_as_pdf(xero_tenant_id, prepayment_id)
-
-Allows you to retrieve prepayments as PDF files
-
-### Example
-
-* OAuth Authentication (OAuth2): 
-```python
-from xero_python.api_client import Configuration, ApiClient
-from xero_python.api_client.oauth2 import OAuth2Token
-from xero_python.exceptions import ApiException
-from xero_python.accounting import AccountingApi
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: OAuth2
-# simplified version, `xero_oauth2_token` represents permanent global token storage
-xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
-# create client configuration with client id and client secret for automatic token refresh
-api_config = Configuration(oauth2_token=OAuth2Token(
-    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
-))
-# configure xero-python sdk client
-api_client = ApiClient(
-    api_config,
-    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
-    oauth2_token_getter=lambda : xero_oauth2_token
-)
-# create an instance of the API class
-api_instance = AccountingApi(api_client)
-
-xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-prepayment_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a PrePayment
-try:
-    # Allows you to retrieve prepayments as PDF files
-    api_response = api_instance.get_prepayment_as_pdf(xero_tenant_id, prepayment_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AccountingApi->get_prepayment_as_pdf: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xero_tenant_id** | **str**| Xero identifier for Tenant | 
- **prepayment_id** | [**str**](.md)| Unique identifier for a PrePayment | 
-
-### Return type
-
-**file**
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/pdf
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

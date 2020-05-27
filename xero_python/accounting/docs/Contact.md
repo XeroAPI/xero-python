@@ -40,7 +40,7 @@ Name | Type | Description | Notes
 **attachments** | [**list[Attachment]**](Attachment.md) | Displays array of attachments from the API | [optional] 
 **has_attachments** | **bool** | A boolean to indicate if a contact has an attachment | [optional] [default to False]
 **validation_errors** | [**list[ValidationError]**](ValidationError.md) | Displays validation errors returned from the API | [optional] 
-**has_validation_errors** | **bool** | A boolean to indicate if a contact has an validation errors | [optional] 
+**has_validation_errors** | **bool** | A boolean to indicate if a contact has an validation errors | [optional] [default to False]
 **status_attribute_string** | **str** | Status of object | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
