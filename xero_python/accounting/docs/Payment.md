@@ -23,8 +23,9 @@ Name | Type | Description | Notes
 **bank_account_number** | **str** | The suppliers bank account number the payment is being made to | [optional] 
 **particulars** | **str** | The suppliers bank account number the payment is being made to | [optional] 
 **details** | **str** | The information to appear on the supplier&#39;s bank account | [optional] 
-**has_account** | **bool** | A boolean to indicate if a contact has an validation errors | [optional] 
-**has_validation_errors** | **bool** | A boolean to indicate if a contact has an validation errors | [optional] 
+**has_account** | **bool** | A boolean to indicate if a contact has an validation errors | [optional] [default to False]
+**has_validation_errors** | **bool** | A boolean to indicate if a contact has an validation errors | [optional] [default to False]
+**status_attribute_string** | **str** | A string to indicate if a invoice status | [optional] 
 **validation_errors** | [**list[ValidationError]**](ValidationError.md) | Displays array of validation error messages from the API | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

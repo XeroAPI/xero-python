@@ -71,7 +71,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_connections**
-> list[Connection] get_connections()
+> list[Connection] get_connections(auth_event_id=auth_event_id)
 
 Allows you to retrieve the connections for this user
 
@@ -103,16 +103,20 @@ api_client = ApiClient(
 # create an instance of the API class
 api_instance = IdentityApi(api_client)
 
+auth_event_id = '00000000-0000-0000-000-000000000000' # str | Filter by authEventId (optional)
 try:
     # Allows you to retrieve the connections for this user
-    api_response = api_instance.get_connections()
+    api_response = api_instance.get_connections(auth_event_id=auth_event_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling IdentityApi->get_connections: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **auth_event_id** | [**str**](.md)| Filter by authEventId | [optional] 
 
 ### Return type
 
