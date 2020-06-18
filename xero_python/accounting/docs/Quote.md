@@ -25,6 +25,8 @@ Name | Type | Description | Notes
 **branding_theme_id** | **str** | See BrandingThemes | [optional] 
 **updated_date_utc** | **datetime** | Last modified date UTC format | [optional] 
 **line_amount_types** | [**QuoteLineAmountTypes**](QuoteLineAmountTypes.md) |  | [optional] 
+**status_attribute_string** | **str** | A string to indicate if a invoice status | [optional] 
+**validation_errors** | [**list[ValidationError]**](ValidationError.md) | Displays array of validation error messages from the API | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

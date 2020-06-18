@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **is_demo_company** | **bool** | Boolean to describe if organisation is a demo company. | [optional] 
 **organisation_status** | **str** | Will be set to ACTIVE if you can connect to organisation via the Xero API | [optional] 
 **registration_number** | **str** | Shows for New Zealand, Australian and UK organisations | [optional] 
+**employer_identification_number** | **str** | Shown if set. US Only. | [optional] 
 **tax_number** | **str** | Shown if set. Displays in the Xero UI as Tax File Number (AU), GST Number (NZ), VAT Number (UK) and Tax ID Number (US &amp; Global). | [optional] 
 **financial_year_end_day** | **int** | Calendar day e.g. 0-31 | [optional] 
 **financial_year_end_month** | **int** | Calendar Month e.g. 1-12 | [optional] 
