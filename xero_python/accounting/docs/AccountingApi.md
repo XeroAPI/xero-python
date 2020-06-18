@@ -9071,7 +9071,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_payments**
-> Payments get_payments(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order)
+> Payments get_payments(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page)
 
 Allows you to retrieve payments for invoices and credit notes
 
@@ -9105,9 +9105,10 @@ xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 if_modified_since = '2020-02-06T12:17:43.202-08:00' # datetime | Only records created or modified since this timestamp will be returned (optional)
 where = 'Status==\"' + Payment.StatusEnum.AUTHORISED + '\"' # str | Filter by an any element (optional)
 order = 'Amount ASC' # str | Order by an any element (optional)
+page = 1 # int | Up to 100 payments will be returned in a single API call (optional)
 try:
     # Allows you to retrieve payments for invoices and credit notes
-    api_response = api_instance.get_payments(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order)
+    api_response = api_instance.get_payments(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->get_payments: %s\n" % e)
@@ -9121,6 +9122,7 @@ Name | Type | Description  | Notes
  **if_modified_since** | **datetime**| Only records created or modified since this timestamp will be returned | [optional] 
  **where** | **str**| Filter by an any element | [optional] 
  **order** | **str**| Order by an any element | [optional] 
+ **page** | **int**| Up to 100 payments will be returned in a single API call | [optional] 
 
 ### Return type
 
