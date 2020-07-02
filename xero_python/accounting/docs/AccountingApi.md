@@ -150,7 +150,7 @@ Method | HTTP request | Description
 [**get_purchase_order_history**](AccountingApi.md#get_purchase_order_history) | **GET** /PurchaseOrders/{PurchaseOrderID}/History | Allows you to retrieve history for PurchaseOrder
 [**get_purchase_orders**](AccountingApi.md#get_purchase_orders) | **GET** /PurchaseOrders | Allows you to retrieve purchase orders
 [**get_quote**](AccountingApi.md#get_quote) | **GET** /Quotes/{QuoteID} | Allows you to retrieve a specified quote
-[**get_quote_as_pdf**](AccountingApi.md#get_quote_as_pdf) | **GET** /Quotes/{QuotesID}/pdf | Allows you to retrieve quotes as PDF files
+[**get_quote_as_pdf**](AccountingApi.md#get_quote_as_pdf) | **GET** /Quotes/{QuoteID}/pdf | Allows you to retrieve quotes as PDF files
 [**get_quote_attachment_by_file_name**](AccountingApi.md#get_quote_attachment_by_file_name) | **GET** /Quotes/{QuoteID}/Attachments/{FileName} | Allows you to retrieve Attachment on Quote by Filename
 [**get_quote_attachment_by_id**](AccountingApi.md#get_quote_attachment_by_id) | **GET** /Quotes/{QuoteID}/Attachments/{AttachmentID} | Allows you to retrieve specific Attachment on Quote
 [**get_quote_attachments**](AccountingApi.md#get_quote_attachments) | **GET** /Quotes/{QuoteID}/Attachments | Allows you to retrieve Attachments for Quotes
@@ -1263,7 +1263,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_credit_note_allocation**
-> Allocations create_credit_note_allocation(xero_tenant_id, credit_note_id, allocations)
+> Allocations create_credit_note_allocation(xero_tenant_id, credit_note_id, allocations, summarize_errors=summarize_errors)
 
 Allows you to create Allocation on CreditNote
 
@@ -1296,9 +1296,10 @@ api_instance = AccountingApi(api_client)
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 credit_note_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Credit Note
 allocations = { allocations:[ { amount:1.0, date:"2019-03-05", invoice:{ invoiceID:"c45720a1-ade3-4a38-a064-d15489be6841", lineItems:[], type: Invoice.TypeEnum.ACCPAY, contact:{} } } ] } # Allocations | Allocations with array of Allocation object in body of request.
+summarize_errors = False # bool | If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional) (default to False)
 try:
     # Allows you to create Allocation on CreditNote
-    api_response = api_instance.create_credit_note_allocation(xero_tenant_id, credit_note_id, allocations)
+    api_response = api_instance.create_credit_note_allocation(xero_tenant_id, credit_note_id, allocations, summarize_errors=summarize_errors)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->create_credit_note_allocation: %s\n" % e)
@@ -1311,6 +1312,7 @@ Name | Type | Description  | Notes
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **credit_note_id** | [**str**](.md)| Unique identifier for a Credit Note | 
  **allocations** | [**Allocations**](Allocations.md)| Allocations with array of Allocation object in body of request. | 
+ **summarize_errors** | **bool**| If false return 200 OK and mix of successfully created obejcts and any with validation errors | [optional] [default to False]
 
 ### Return type
 
