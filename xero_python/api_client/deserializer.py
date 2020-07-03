@@ -14,7 +14,12 @@ LIST_DATA_TYPE = re.compile(r"list\[(.*)\]")
 # taken from https://github.com/django/django/blob/master/django/utils/dateparse.py
 # at 4bbe8261c402694a1da3efcaafe3332f9c57af15
 DATE_RE = re.compile(r"(?P<year>\d{4})-(?P<month>\d{1,2})-(?P<day>\d{1,2})$")
-
+DATETIME_RE = re.compile(
+    r"(?P<year>\d{4})-(?P<month>\d{1,2})-(?P<day>\d{1,2})"
+    r"[T ](?P<hour>\d{1,2}):(?P<minute>\d{1,2})"
+    r"(?::(?P<second>\d{1,2})(?:[\.,](?P<microsecond>\d{1,6})\d{0,6})?)?"
+    r"(?P<tzinfo>Z|[+-]\d{2}(?::?\d{2})?)?$"
+)
 
 MS_DATETIME_RE = re.compile(r"/Date\((?P<timestamp>\d+)(?P<tzinfo>[+-]\d{2,4})?\)/$")
 
@@ -151,9 +156,13 @@ def deserialize_date(data_type, data, model_finder):
     # based on https://github.com/django/django/blob/master/django/utils/dateparse.py
     # at 4bbe8261c402694a1da3efcaafe3332f9c57af15
     match = DATE_RE.match(str(data))
+    match2 = DATETIME_RE.match(str(data))
     if match:
         kw = {k: int(v) for k, v in match.groupdict().items()}
         return datetime.date(**kw)
+    elif match2:
+        dt = isoparse(data)
+        return dt
     else:
         raise ValueError("Invalid date value {!r}".format(data))
 

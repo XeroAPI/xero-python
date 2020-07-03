@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**asset_type_id** | **str** | Xero generated unique identifier for asset types | 
+**asset_type_id** | **str** | Xero generated unique identifier for asset types | [optional] 
 **asset_type_name** | **str** | The name of the asset type | 
 **fixed_asset_account_id** | **str** | The asset account for fixed assets of this type | [optional] 
 **depreciation_expense_account_id** | **str** | The expense account for the depreciation of fixed assets of this type | [optional] 
