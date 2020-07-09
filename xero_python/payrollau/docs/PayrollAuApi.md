@@ -1,0 +1,1928 @@
+# xero_python.payrollau.PayrollAuApi
+
+All URIs are relative to *https://api.xero.com/payroll.xro/1.0*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**create_employee**](PayrollAuApi.md#create_employee) | **POST** /Employees | Use this method to create a payroll employee
+[**create_leave_application**](PayrollAuApi.md#create_leave_application) | **POST** /LeaveApplications | Use this method to create a Leave Application
+[**create_pay_item**](PayrollAuApi.md#create_pay_item) | **POST** /PayItems | Use this method to create a Pay Item
+[**create_pay_run**](PayrollAuApi.md#create_pay_run) | **POST** /PayRuns | Use this method to create a PayRun
+[**create_payroll_calendar**](PayrollAuApi.md#create_payroll_calendar) | **POST** /PayrollCalendars | Use this method to create a Payroll Calendars
+[**create_superfund**](PayrollAuApi.md#create_superfund) | **POST** /Superfunds | Use this method to create a super fund
+[**create_timesheet**](PayrollAuApi.md#create_timesheet) | **POST** /Timesheets | Use this method to create a timesheet
+[**get_employee**](PayrollAuApi.md#get_employee) | **GET** /Employees/{EmployeeId} | searches for an employee by unique id
+[**get_employees**](PayrollAuApi.md#get_employees) | **GET** /Employees | searches employees
+[**get_leave_application**](PayrollAuApi.md#get_leave_application) | **GET** /LeaveApplications/{LeaveApplicationId} | searches for an Leave Application by unique id
+[**get_leave_applications**](PayrollAuApi.md#get_leave_applications) | **GET** /LeaveApplications | searches Leave Applications
+[**get_pay_items**](PayrollAuApi.md#get_pay_items) | **GET** /PayItems | searches Pay Items
+[**get_pay_run**](PayrollAuApi.md#get_pay_run) | **GET** /PayRuns/{PayRunID} | searches for an payrun by unique id
+[**get_pay_runs**](PayrollAuApi.md#get_pay_runs) | **GET** /PayRuns | searches PayRuns
+[**get_payroll_calendar**](PayrollAuApi.md#get_payroll_calendar) | **GET** /PayrollCalendars/{PayrollCalendarID} | searches Payroll Calendars
+[**get_payroll_calendars**](PayrollAuApi.md#get_payroll_calendars) | **GET** /PayrollCalendars | searches Payroll Calendars
+[**get_payslip**](PayrollAuApi.md#get_payslip) | **GET** /Payslip/{PayslipID} | searches for an payslip by unique id
+[**get_settings**](PayrollAuApi.md#get_settings) | **GET** /Settings | retrieve settings
+[**get_superfund**](PayrollAuApi.md#get_superfund) | **GET** /Superfunds/{SuperFundID} | searches for an Superfund by unique id
+[**get_superfund_products**](PayrollAuApi.md#get_superfund_products) | **GET** /SuperfundProducts | searches SuperfundProducts
+[**get_superfunds**](PayrollAuApi.md#get_superfunds) | **GET** /Superfunds | searches SuperFunds
+[**get_timesheet**](PayrollAuApi.md#get_timesheet) | **GET** /Timesheets/{TimesheetID} | searches for an timesheet by unique id
+[**get_timesheets**](PayrollAuApi.md#get_timesheets) | **GET** /Timesheets | searches timesheets
+[**update_employee**](PayrollAuApi.md#update_employee) | **POST** /Employees/{EmployeeId} | Update an Employee
+[**update_leave_application**](PayrollAuApi.md#update_leave_application) | **POST** /LeaveApplications/{LeaveApplicationId} | Use this method to update a Leave Application
+[**update_pay_run**](PayrollAuApi.md#update_pay_run) | **POST** /PayRuns/{PayRunID} | Update a PayRun
+[**update_payslip**](PayrollAuApi.md#update_payslip) | **POST** /Payslip/{PayslipID} | Update a Payslip
+[**update_superfund**](PayrollAuApi.md#update_superfund) | **POST** /Superfunds/{SuperFundID} | Update a Superfund
+[**update_timesheet**](PayrollAuApi.md#update_timesheet) | **POST** /Timesheets/{TimesheetID} | Update a Timesheet
+
+
+# **create_employee**
+> Employees create_employee(xero_tenant_id, employee)
+
+Use this method to create a payroll employee
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.payrollau import PayrollAuApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = PayrollAuApi(api_client)
+
+xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
+employee = [ { "FirstName": "Albus", "LastName": "Dumbledore", "DateOfBirth": "/Date(321523200000+0000)/", "HomeAddress": { "AddressLine1": "101 Green St", "City": "Island Bay", "Region": "NSW", "PostalCode": "6023", "Country": "AUSTRALIA" }, "StartDate": "/Date(321523200000+0000)/", "MiddleNames": "Percival", "Email": "albus39608@hogwarts.edu", "Gender": "M", "Phone": "444-2323", "Mobile": "555-1212", "IsAuthorisedToApproveLeave": true, "IsAuthorisedToApproveTimesheets": true, "JobTitle": "Regional Manager", "Classification": "corporate", "OrdinaryEarningsRateID": "ab874dfb-ab09-4c91-954e-43acf6fc23b4", "Status": "ACTIVE" } ] # list[Employee] | 
+try:
+    # Use this method to create a payroll employee
+    api_response = api_instance.create_employee(xero_tenant_id, employee)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PayrollAuApi->create_employee: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **employee** | [**list[Employee]**](Employee.md)|  | 
+
+### Return type
+
+[**Employees**](Employees.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_leave_application**
+> LeaveApplications create_leave_application(xero_tenant_id, leave_application)
+
+Use this method to create a Leave Application
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.payrollau import PayrollAuApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = PayrollAuApi(api_client)
+
+xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
+leave_application = [ { "EmployeeID": "cdfb8371-0b21-4b8a-8903-1024df6c391e", "LeaveTypeID": "184ea8f7-d143-46dd-bef3-0c60e1aa6fca", "Title": "Hello World", "StartDate": "/Date(1572559200000+0000)/", "EndDate": "/Date(1572645600000+0000)/" } ] # list[LeaveApplication] | 
+try:
+    # Use this method to create a Leave Application
+    api_response = api_instance.create_leave_application(xero_tenant_id, leave_application)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PayrollAuApi->create_leave_application: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **leave_application** | [**list[LeaveApplication]**](LeaveApplication.md)|  | 
+
+### Return type
+
+[**LeaveApplications**](LeaveApplications.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_pay_item**
+> PayItems create_pay_item(xero_tenant_id, pay_item)
+
+Use this method to create a Pay Item
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.payrollau import PayrollAuApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = PayrollAuApi(api_client)
+
+xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
+pay_item = { "EarningsRates": [ { "Name": "MyRate", "AccountCode": "400", "TypeOfUnits": "4.00", "IsExemptFromTax": true, "IsExemptFromSuper": true, "IsReportableAsW1": false, "EarningsType": "ORDINARYTIMEEARNINGS", "EarningsRateID": "1fa4e226-b711-46ba-a8a7-4344c9c5fb87", "RateType": "MULTIPLE", "RatePerUnit": "10.0", "Multiplier": 1.5, "Amount": 5, "EmploymentTerminationPaymentType": "O" } ] } # PayItem | 
+try:
+    # Use this method to create a Pay Item
+    api_response = api_instance.create_pay_item(xero_tenant_id, pay_item)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PayrollAuApi->create_pay_item: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **pay_item** | [**PayItem**](PayItem.md)|  | 
+
+### Return type
+
+[**PayItems**](PayItems.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_pay_run**
+> PayRuns create_pay_run(xero_tenant_id, pay_run)
+
+Use this method to create a PayRun
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.payrollau import PayrollAuApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = PayrollAuApi(api_client)
+
+xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
+pay_run = [ { "PayrollCalendarID": "78bb86b9-e1ea-47ac-b75d-f087a81931de", "PayRunPeriodStartDate": "/Date(1572566400000+0000)/", "PayRunPeriodEndDate": "/Date(1573084800000+0000)/", "PayRunStatus": "DRAFT", "PaymentDate": "/Date(1573171200000+0000)/" } ] # list[PayRun] | 
+try:
+    # Use this method to create a PayRun
+    api_response = api_instance.create_pay_run(xero_tenant_id, pay_run)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PayrollAuApi->create_pay_run: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **pay_run** | [**list[PayRun]**](PayRun.md)|  | 
+
+### Return type
+
+[**PayRuns**](PayRuns.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_payroll_calendar**
+> PayrollCalendars create_payroll_calendar(xero_tenant_id, payroll_calendar)
+
+Use this method to create a Payroll Calendars
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.payrollau import PayrollAuApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = PayrollAuApi(api_client)
+
+xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
+payroll_calendar = [ { "PayrollCalendarID":"78bb86b9-e1ea-47ac-b75d-f087a81931de", "PayRunPeriodStartDate":"/Date(1572566400000+0000)/", "PayRunPeriodEndDate":"/Date(1573084800000+0000)/", "PayRunStatus":"DRAFT", "PaymentDate":"/Date(1573171200000+0000)/" } ] # list[PayrollCalendar] | 
+try:
+    # Use this method to create a Payroll Calendars
+    api_response = api_instance.create_payroll_calendar(xero_tenant_id, payroll_calendar)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PayrollAuApi->create_payroll_calendar: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **payroll_calendar** | [**list[PayrollCalendar]**](PayrollCalendar.md)|  | 
+
+### Return type
+
+[**PayrollCalendars**](PayrollCalendars.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_superfund**
+> SuperFunds create_superfund(xero_tenant_id, super_fund)
+
+Use this method to create a super fund
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.payrollau import PayrollAuApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = PayrollAuApi(api_client)
+
+xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
+super_fund = [ { "usi":"PTC0133AU", "Type":"REGULATED", "Name":"Bar99359", "AccountNumber":"FB36350", "AccountName":"Foo38428", "USI":"PTC0133AU" } ] # list[SuperFund] | 
+try:
+    # Use this method to create a super fund
+    api_response = api_instance.create_superfund(xero_tenant_id, super_fund)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PayrollAuApi->create_superfund: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **super_fund** | [**list[SuperFund]**](SuperFund.md)|  | 
+
+### Return type
+
+[**SuperFunds**](SuperFunds.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_timesheet**
+> Timesheets create_timesheet(xero_tenant_id, timesheet)
+
+Use this method to create a timesheet
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.payrollau import PayrollAuApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = PayrollAuApi(api_client)
+
+xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
+timesheet = [ { "EmployeeID":"b34e89ff-770d-4099-b7e5-f968767118bc", "StartDate":"/Date(1573171200000+0000)/", "EndDate":"/Date(1573689600000+0000)/", "Status":"DRAFT", "TimesheetLines":[ { "EarningsRateID":"ab874dfb-ab09-4c91-954e-43acf6fc23b4", "TrackingItemID":"af5e9ce2-2349-4136-be99-3561b189f473", "NumberOfUnits":[ 2.0, 10.0, 0.0, 0.0, 5.0, 0.0, 5.0 ] } ] } ] # list[Timesheet] | 
+try:
+    # Use this method to create a timesheet
+    api_response = api_instance.create_timesheet(xero_tenant_id, timesheet)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PayrollAuApi->create_timesheet: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **timesheet** | [**list[Timesheet]**](Timesheet.md)|  | 
+
+### Return type
+
+[**Timesheets**](Timesheets.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_employee**
+> Employees get_employee(xero_tenant_id, employee_id)
+
+searches for an employee by unique id
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.payrollau import PayrollAuApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = PayrollAuApi(api_client)
+
+xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
+employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Employee id for single object
+try:
+    # searches for an employee by unique id
+    api_response = api_instance.get_employee(xero_tenant_id, employee_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PayrollAuApi->get_employee: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **employee_id** | [**str**](.md)| Employee id for single object | 
+
+### Return type
+
+[**Employees**](Employees.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_employees**
+> Employees get_employees(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page)
+
+searches employees
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.payrollau import PayrollAuApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = PayrollAuApi(api_client)
+
+xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
+if_modified_since = 'if_modified_since_example' # str | Only records created or modified since this timestamp will be returned (optional)
+where = 'Status==\"ACTIVE\"' # str | Filter by an any element (optional)
+order = 'EmailAddress%20DESC' # str | Order by an any element (optional)
+page = 56 # int | e.g. page=1 – Up to 100 employees will be returned in a single API call (optional)
+try:
+    # searches employees
+    api_response = api_instance.get_employees(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PayrollAuApi->get_employees: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **if_modified_since** | **str**| Only records created or modified since this timestamp will be returned | [optional] 
+ **where** | **str**| Filter by an any element | [optional] 
+ **order** | **str**| Order by an any element | [optional] 
+ **page** | **int**| e.g. page&#x3D;1 – Up to 100 employees will be returned in a single API call | [optional] 
+
+### Return type
+
+[**Employees**](Employees.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_leave_application**
+> LeaveApplications get_leave_application(xero_tenant_id, leave_application_id)
+
+searches for an Leave Application by unique id
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.payrollau import PayrollAuApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = PayrollAuApi(api_client)
+
+xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
+leave_application_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Leave Application id for single object
+try:
+    # searches for an Leave Application by unique id
+    api_response = api_instance.get_leave_application(xero_tenant_id, leave_application_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PayrollAuApi->get_leave_application: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **leave_application_id** | [**str**](.md)| Leave Application id for single object | 
+
+### Return type
+
+[**LeaveApplications**](LeaveApplications.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_leave_applications**
+> LeaveApplications get_leave_applications(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page)
+
+searches Leave Applications
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.payrollau import PayrollAuApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = PayrollAuApi(api_client)
+
+xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
+if_modified_since = 'if_modified_since_example' # str | Only records created or modified since this timestamp will be returned (optional)
+where = 'Status==\"ACTIVE\"' # str | Filter by an any element (optional)
+order = 'EmailAddress%20DESC' # str | Order by an any element (optional)
+page = 56 # int | e.g. page=1 – Up to 100 objects will be returned in a single API call (optional)
+try:
+    # searches Leave Applications
+    api_response = api_instance.get_leave_applications(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PayrollAuApi->get_leave_applications: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **if_modified_since** | **str**| Only records created or modified since this timestamp will be returned | [optional] 
+ **where** | **str**| Filter by an any element | [optional] 
+ **order** | **str**| Order by an any element | [optional] 
+ **page** | **int**| e.g. page&#x3D;1 – Up to 100 objects will be returned in a single API call | [optional] 
+
+### Return type
+
+[**LeaveApplications**](LeaveApplications.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_pay_items**
+> PayItems get_pay_items(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page)
+
+searches Pay Items
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.payrollau import PayrollAuApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = PayrollAuApi(api_client)
+
+xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
+if_modified_since = 'if_modified_since_example' # str | Only records created or modified since this timestamp will be returned (optional)
+where = 'Status==\"ACTIVE\"' # str | Filter by an any element (optional)
+order = 'EmailAddress%20DESC' # str | Order by an any element (optional)
+page = 56 # int | e.g. page=1 – Up to 100 objects will be returned in a single API call (optional)
+try:
+    # searches Pay Items
+    api_response = api_instance.get_pay_items(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PayrollAuApi->get_pay_items: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **if_modified_since** | **str**| Only records created or modified since this timestamp will be returned | [optional] 
+ **where** | **str**| Filter by an any element | [optional] 
+ **order** | **str**| Order by an any element | [optional] 
+ **page** | **int**| e.g. page&#x3D;1 – Up to 100 objects will be returned in a single API call | [optional] 
+
+### Return type
+
+[**PayItems**](PayItems.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_pay_run**
+> PayRuns get_pay_run(xero_tenant_id, pay_run_id)
+
+searches for an payrun by unique id
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.payrollau import PayrollAuApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = PayrollAuApi(api_client)
+
+xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
+pay_run_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | PayRun id for single object
+try:
+    # searches for an payrun by unique id
+    api_response = api_instance.get_pay_run(xero_tenant_id, pay_run_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PayrollAuApi->get_pay_run: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **pay_run_id** | [**str**](.md)| PayRun id for single object | 
+
+### Return type
+
+[**PayRuns**](PayRuns.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_pay_runs**
+> PayRuns get_pay_runs(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page)
+
+searches PayRuns
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.payrollau import PayrollAuApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = PayrollAuApi(api_client)
+
+xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
+if_modified_since = 'if_modified_since_example' # str | Only records created or modified since this timestamp will be returned (optional)
+where = 'Status==\"ACTIVE\"' # str | Filter by an any element (optional)
+order = 'EmailAddress%20DESC' # str | Order by an any element (optional)
+page = 56 # int | e.g. page=1 – Up to 100 PayRuns will be returned in a single API call (optional)
+try:
+    # searches PayRuns
+    api_response = api_instance.get_pay_runs(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PayrollAuApi->get_pay_runs: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **if_modified_since** | **str**| Only records created or modified since this timestamp will be returned | [optional] 
+ **where** | **str**| Filter by an any element | [optional] 
+ **order** | **str**| Order by an any element | [optional] 
+ **page** | **int**| e.g. page&#x3D;1 – Up to 100 PayRuns will be returned in a single API call | [optional] 
+
+### Return type
+
+[**PayRuns**](PayRuns.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_payroll_calendar**
+> PayrollCalendars get_payroll_calendar(xero_tenant_id, payroll_calendar_id)
+
+searches Payroll Calendars
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.payrollau import PayrollAuApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = PayrollAuApi(api_client)
+
+xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
+payroll_calendar_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Payroll Calendar id for single object
+try:
+    # searches Payroll Calendars
+    api_response = api_instance.get_payroll_calendar(xero_tenant_id, payroll_calendar_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PayrollAuApi->get_payroll_calendar: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **payroll_calendar_id** | [**str**](.md)| Payroll Calendar id for single object | 
+
+### Return type
+
+[**PayrollCalendars**](PayrollCalendars.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_payroll_calendars**
+> PayrollCalendars get_payroll_calendars(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page)
+
+searches Payroll Calendars
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.payrollau import PayrollAuApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = PayrollAuApi(api_client)
+
+xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
+if_modified_since = 'if_modified_since_example' # str | Only records created or modified since this timestamp will be returned (optional)
+where = 'Status==\"ACTIVE\"' # str | Filter by an any element (optional)
+order = 'EmailAddress%20DESC' # str | Order by an any element (optional)
+page = 56 # int | e.g. page=1 – Up to 100 objects will be returned in a single API call (optional)
+try:
+    # searches Payroll Calendars
+    api_response = api_instance.get_payroll_calendars(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PayrollAuApi->get_payroll_calendars: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **if_modified_since** | **str**| Only records created or modified since this timestamp will be returned | [optional] 
+ **where** | **str**| Filter by an any element | [optional] 
+ **order** | **str**| Order by an any element | [optional] 
+ **page** | **int**| e.g. page&#x3D;1 – Up to 100 objects will be returned in a single API call | [optional] 
+
+### Return type
+
+[**PayrollCalendars**](PayrollCalendars.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_payslip**
+> PayslipObject get_payslip(xero_tenant_id, payslip_id)
+
+searches for an payslip by unique id
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.payrollau import PayrollAuApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = PayrollAuApi(api_client)
+
+xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
+payslip_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Payslip id for single object
+try:
+    # searches for an payslip by unique id
+    api_response = api_instance.get_payslip(xero_tenant_id, payslip_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PayrollAuApi->get_payslip: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **payslip_id** | [**str**](.md)| Payslip id for single object | 
+
+### Return type
+
+[**PayslipObject**](PayslipObject.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_settings**
+> SettingsObject get_settings(xero_tenant_id)
+
+retrieve settings
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.payrollau import PayrollAuApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = PayrollAuApi(api_client)
+
+xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
+try:
+    # retrieve settings
+    api_response = api_instance.get_settings(xero_tenant_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PayrollAuApi->get_settings: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+
+### Return type
+
+[**SettingsObject**](SettingsObject.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_superfund**
+> SuperFunds get_superfund(xero_tenant_id, super_fund_id)
+
+searches for an Superfund by unique id
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.payrollau import PayrollAuApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = PayrollAuApi(api_client)
+
+xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
+super_fund_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Superfund id for single object
+try:
+    # searches for an Superfund by unique id
+    api_response = api_instance.get_superfund(xero_tenant_id, super_fund_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PayrollAuApi->get_superfund: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **super_fund_id** | [**str**](.md)| Superfund id for single object | 
+
+### Return type
+
+[**SuperFunds**](SuperFunds.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_superfund_products**
+> SuperFundProducts get_superfund_products(xero_tenant_id, abn=abn, usi=usi)
+
+searches SuperfundProducts
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.payrollau import PayrollAuApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = PayrollAuApi(api_client)
+
+xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
+abn = '40022701955' # str | The ABN of the Regulated SuperFund (optional)
+usi = 'OSF0001AU' # str | The USI of the Regulated SuperFund (optional)
+try:
+    # searches SuperfundProducts
+    api_response = api_instance.get_superfund_products(xero_tenant_id, abn=abn, usi=usi)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PayrollAuApi->get_superfund_products: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **abn** | **str**| The ABN of the Regulated SuperFund | [optional] 
+ **usi** | **str**| The USI of the Regulated SuperFund | [optional] 
+
+### Return type
+
+[**SuperFundProducts**](SuperFundProducts.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_superfunds**
+> SuperFunds get_superfunds(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page)
+
+searches SuperFunds
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.payrollau import PayrollAuApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = PayrollAuApi(api_client)
+
+xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
+if_modified_since = 'if_modified_since_example' # str | Only records created or modified since this timestamp will be returned (optional)
+where = 'Status==\"ACTIVE\"' # str | Filter by an any element (optional)
+order = 'EmailAddress%20DESC' # str | Order by an any element (optional)
+page = 56 # int | e.g. page=1 – Up to 100 SuperFunds will be returned in a single API call (optional)
+try:
+    # searches SuperFunds
+    api_response = api_instance.get_superfunds(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PayrollAuApi->get_superfunds: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **if_modified_since** | **str**| Only records created or modified since this timestamp will be returned | [optional] 
+ **where** | **str**| Filter by an any element | [optional] 
+ **order** | **str**| Order by an any element | [optional] 
+ **page** | **int**| e.g. page&#x3D;1 – Up to 100 SuperFunds will be returned in a single API call | [optional] 
+
+### Return type
+
+[**SuperFunds**](SuperFunds.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_timesheet**
+> TimesheetObject get_timesheet(xero_tenant_id, timesheet_id)
+
+searches for an timesheet by unique id
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.payrollau import PayrollAuApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = PayrollAuApi(api_client)
+
+xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
+timesheet_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Timesheet id for single object
+try:
+    # searches for an timesheet by unique id
+    api_response = api_instance.get_timesheet(xero_tenant_id, timesheet_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PayrollAuApi->get_timesheet: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **timesheet_id** | [**str**](.md)| Timesheet id for single object | 
+
+### Return type
+
+[**TimesheetObject**](TimesheetObject.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_timesheets**
+> Timesheets get_timesheets(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page)
+
+searches timesheets
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.payrollau import PayrollAuApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = PayrollAuApi(api_client)
+
+xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
+if_modified_since = 'if_modified_since_example' # str | Only records created or modified since this timestamp will be returned (optional)
+where = 'Status==\"ACTIVE\"' # str | Filter by an any element (optional)
+order = 'EmailAddress%20DESC' # str | Order by an any element (optional)
+page = 56 # int | e.g. page=1 – Up to 100 timesheets will be returned in a single API call (optional)
+try:
+    # searches timesheets
+    api_response = api_instance.get_timesheets(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PayrollAuApi->get_timesheets: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **if_modified_since** | **str**| Only records created or modified since this timestamp will be returned | [optional] 
+ **where** | **str**| Filter by an any element | [optional] 
+ **order** | **str**| Order by an any element | [optional] 
+ **page** | **int**| e.g. page&#x3D;1 – Up to 100 timesheets will be returned in a single API call | [optional] 
+
+### Return type
+
+[**Timesheets**](Timesheets.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_employee**
+> Employees update_employee(xero_tenant_id, employee_id, employee=employee)
+
+Update an Employee
+
+Update properties on a single employee
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.payrollau import PayrollAuApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = PayrollAuApi(api_client)
+
+xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
+employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Employee id for single object
+employee = [ { "MiddleNames": "Frank" } ] # list[Employee] |  (optional)
+try:
+    # Update an Employee
+    api_response = api_instance.update_employee(xero_tenant_id, employee_id, employee=employee)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PayrollAuApi->update_employee: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **employee_id** | [**str**](.md)| Employee id for single object | 
+ **employee** | [**list[Employee]**](Employee.md)|  | [optional] 
+
+### Return type
+
+[**Employees**](Employees.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_leave_application**
+> LeaveApplications update_leave_application(xero_tenant_id, leave_application_id, leave_application)
+
+Use this method to update a Leave Application
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.payrollau import PayrollAuApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = PayrollAuApi(api_client)
+
+xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
+leave_application_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Leave Application id for single object
+leave_application = [ { "EmployeeID": "cdfb8371-0b21-4b8a-8903-1024df6c391e", "LeaveTypeID": "184ea8f7-d143-46dd-bef3-0c60e1aa6fca", "StartDate": "/Date(1572559200000+0000)/", "EndDate": "/Date(1572645600000+0000)/", "Description": "My updated Description" } ] # list[LeaveApplication] | 
+try:
+    # Use this method to update a Leave Application
+    api_response = api_instance.update_leave_application(xero_tenant_id, leave_application_id, leave_application)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PayrollAuApi->update_leave_application: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **leave_application_id** | [**str**](.md)| Leave Application id for single object | 
+ **leave_application** | [**list[LeaveApplication]**](LeaveApplication.md)|  | 
+
+### Return type
+
+[**LeaveApplications**](LeaveApplications.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_pay_run**
+> PayRuns update_pay_run(xero_tenant_id, pay_run_id, pay_run=pay_run)
+
+Update a PayRun
+
+Update properties on a single PayRun
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.payrollau import PayrollAuApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = PayrollAuApi(api_client)
+
+xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
+pay_run_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | PayRun id for single object
+pay_run = [xero_python.payrollau.PayRun()] # list[PayRun] |  (optional)
+try:
+    # Update a PayRun
+    api_response = api_instance.update_pay_run(xero_tenant_id, pay_run_id, pay_run=pay_run)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PayrollAuApi->update_pay_run: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **pay_run_id** | [**str**](.md)| PayRun id for single object | 
+ **pay_run** | [**list[PayRun]**](PayRun.md)|  | [optional] 
+
+### Return type
+
+[**PayRuns**](PayRuns.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_payslip**
+> Payslips update_payslip(xero_tenant_id, payslip_id, payslip_lines=payslip_lines)
+
+Update a Payslip
+
+Update lines on a single payslips
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.payrollau import PayrollAuApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = PayrollAuApi(api_client)
+
+xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
+payslip_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Payslip id for single object
+payslip_lines = { "Payslip": { "EmployeeID": "cdfb8371-0b21-4b8a-8903-1024df6c391e", "DeductionLines": [ { "DeductionTypeID": "727af5e8-b347-4ae7-85fc-9b82266d0aec", "CalculationType": "FIXEDAMOUNT", "NumberOfUnits": 10 } ] } } # list[PayslipLines] |  (optional)
+try:
+    # Update a Payslip
+    api_response = api_instance.update_payslip(xero_tenant_id, payslip_id, payslip_lines=payslip_lines)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PayrollAuApi->update_payslip: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **payslip_id** | [**str**](.md)| Payslip id for single object | 
+ **payslip_lines** | [**list[PayslipLines]**](PayslipLines.md)|  | [optional] 
+
+### Return type
+
+[**Payslips**](Payslips.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_superfund**
+> SuperFunds update_superfund(xero_tenant_id, super_fund_id, super_fund=super_fund)
+
+Update a Superfund
+
+Update properties on a single Superfund
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.payrollau import PayrollAuApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = PayrollAuApi(api_client)
+
+xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
+super_fund_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Superfund id for single object
+super_fund =  [ { "Type":"REGULATED", "Name":"Nice23534" } ] # list[SuperFund] |  (optional)
+try:
+    # Update a Superfund
+    api_response = api_instance.update_superfund(xero_tenant_id, super_fund_id, super_fund=super_fund)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PayrollAuApi->update_superfund: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **super_fund_id** | [**str**](.md)| Superfund id for single object | 
+ **super_fund** | [**list[SuperFund]**](SuperFund.md)|  | [optional] 
+
+### Return type
+
+[**SuperFunds**](SuperFunds.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_timesheet**
+> Timesheets update_timesheet(xero_tenant_id, timesheet_id, timesheet=timesheet)
+
+Update a Timesheet
+
+Update properties on a single timesheet
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.payrollau import PayrollAuApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = PayrollAuApi(api_client)
+
+xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
+timesheet_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Timesheet id for single object
+timesheet = [ { "EmployeeID":"b34e89ff-770d-4099-b7e5-f968767118bc", "StartDate":"/Date(1573171200000+0000)/", "EndDate":"/Date(1573689600000+0000)/", "Status":"APPROVED", "Hours":22.0, "TimesheetID":"a7eb0a79-8511-4ee7-b473-3a25f28abcb9", "TimesheetLines":[ { "EarningsRateID":"ab874dfb-ab09-4c91-954e-43acf6fc23b4", "TrackingItemID":"af5e9ce2-2349-4136-be99-3561b189f473", "NumberOfUnits":[ 2.0, 10.0, 0.0, 0.0, 5.0, 0.0, 5.0 ], "UpdatedDateUTC":"/Date(1573516185127+0000)/" } ] } ] # list[Timesheet] |  (optional)
+try:
+    # Update a Timesheet
+    api_response = api_instance.update_timesheet(xero_tenant_id, timesheet_id, timesheet=timesheet)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PayrollAuApi->update_timesheet: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **timesheet_id** | [**str**](.md)| Timesheet id for single object | 
+ **timesheet** | [**list[Timesheet]**](Timesheet.md)|  | [optional] 
+
+### Return type
+
+[**Timesheets**](Timesheets.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
