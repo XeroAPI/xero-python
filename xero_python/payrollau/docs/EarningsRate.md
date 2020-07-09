@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **accrue_leave** | **bool** | Indicates that this earnings rate should accrue leave. Only applicable if RateType is MULTIPLE | [optional] 
 **amount** | **float** | Optional Amount for FIXEDAMOUNT RateType EarningsRate | [optional] 
 **employment_termination_payment_type** | [**EmploymentTerminationPaymentType**](EmploymentTerminationPaymentType.md) |  | [optional] 
-**updated_date_utc** | **str** | Last modified timestamp | [optional] 
+**updated_date_utc** | **datetime** | Last modified timestamp | [optional] 
 **current_record** | **bool** | Is the current record | [optional] 
 **allowance_type** | [**AllowanceType**](AllowanceType.md) |  | [optional] 
 

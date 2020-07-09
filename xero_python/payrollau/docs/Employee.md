@@ -5,9 +5,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **first_name** | **str** | First name of employee | 
 **last_name** | **str** | Last name of employee | 
-**date_of_birth** | **str** | Date of birth of the employee (YYYY-MM-DD) | 
-**home_address** | [**HomeAddress**](HomeAddress.md) |  | 
-**start_date** | **str** | Start date for an employee (YYYY-MM-DD) | [optional] 
+**date_of_birth** | **date** | Date of birth of the employee (YYYY-MM-DD) | 
+**home_address** | [**HomeAddress**](HomeAddress.md) |  | [optional] 
+**start_date** | **date** | Start date for an employee (YYYY-MM-DD) | [optional] 
 **title** | **str** | Title of the employee | [optional] 
 **middle_names** | **str** | Middle name(s) of the employee | [optional] 
 **email** | **str** | The email address for the employee | [optional] 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **payroll_calendar_id** | **str** | Xero unique identifier for payroll calendar for the employee | [optional] 
 **employee_group_name** | **str** | The Employee Group allows you to report on payroll expenses and liabilities for each group of employees | [optional] 
 **employee_id** | **str** | Xero unique identifier for an Employee | [optional] 
-**termination_date** | **str** | Employee Termination Date (YYYY-MM-DD) | [optional] 
+**termination_date** | **date** | Employee Termination Date (YYYY-MM-DD) | [optional] 
 **bank_accounts** | [**list[BankAccount]**](BankAccount.md) |  | [optional] 
 **pay_template** | [**PayTemplate**](PayTemplate.md) |  | [optional] 
 **opening_balances** | [**OpeningBalances**](OpeningBalances.md) |  | [optional] 
@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 **leave_lines** | [**list[LeaveLine]**](LeaveLine.md) |  | [optional] 
 **super_memberships** | [**list[SuperMembership]**](SuperMembership.md) |  | [optional] 
 **status** | [**EmployeeStatus**](EmployeeStatus.md) |  | [optional] 
-**updated_date_utc** | **str** | Last modified timestamp | [optional] 
+**updated_date_utc** | **datetime** | Last modified timestamp | [optional] 
 **validation_errors** | [**list[ValidationError]**](ValidationError.md) | Displays array of validation error messages from the API | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

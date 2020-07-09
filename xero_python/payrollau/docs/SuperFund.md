@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **employer_number** | **str** | Some funds assign a unique number to each employer | [optional] 
 **spin** | **str** | The SPIN of the Regulated SuperFund. This field has been deprecated. It will only be present for legacy superfunds. New superfunds will not have a SPIN value. The USI field should be used instead of SPIN. | [optional] 
 **usi** | **str** | The USI of the Regulated SuperFund | [optional] 
-**updated_date_utc** | **str** | Last modified timestamp | [optional] 
+**updated_date_utc** | **datetime** | Last modified timestamp | [optional] 
 **validation_errors** | [**list[ValidationError]**](ValidationError.md) | Displays array of validation error messages from the API | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

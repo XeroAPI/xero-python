@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **leave_type_id** | **str** | Xero identifier | [optional] 
 **normal_entitlement** | **float** | The number of units the employee is entitled to each year | [optional] 
 **leave_loading_rate** | **int** | Enter an amount here if your organisation pays an additional percentage on top of ordinary earnings when your employees take leave (typically 17.5%) | [optional] 
-**updated_date_utc** | **str** | Last modified timestamp | [optional] 
+**updated_date_utc** | **datetime** | Last modified timestamp | [optional] 
 **is_paid_leave** | **bool** | Set this to indicate that an employee will be paid when taking this type of leave | [optional] 
 **show_on_payslip** | **bool** | Set this if you want a balance for this leave type to be shown on your employee’s payslips | [optional] 
 **current_record** | **bool** | Is the current record | [optional] 

@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **eligible_to_receive_leave_loading** | **bool** | If the employee is eligible to receive an additional percentage on top of ordinary earnings when they take leave (typically 17.5%). e.g true or false | [optional] 
 **approved_withholding_variation_percentage** | **float** | If the employee has approved withholding variation. e.g (0 - 100) | [optional] 
 **has_student_startup_loan** | **bool** | If the employee is eligible for student startup loan rules | [optional] 
-**updated_date_utc** | **str** | Last modified timestamp | [optional] 
+**updated_date_utc** | **datetime** | Last modified timestamp | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

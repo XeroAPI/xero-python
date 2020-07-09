@@ -5,12 +5,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **payroll_calendar_id** | **str** | Xero identifier for pay run | 
 **pay_run_id** | **str** | Xero identifier for pay run | [optional] 
-**pay_run_period_start_date** | **str** | Period Start Date for the PayRun (YYYY-MM-DD) | [optional] 
-**pay_run_period_end_date** | **str** | Period End Date for the PayRun (YYYY-MM-DD) | [optional] 
+**pay_run_period_start_date** | **date** | Period Start Date for the PayRun (YYYY-MM-DD) | [optional] 
+**pay_run_period_end_date** | **date** | Period End Date for the PayRun (YYYY-MM-DD) | [optional] 
 **pay_run_status** | [**PayRunStatus**](PayRunStatus.md) |  | [optional] 
-**payment_date** | **str** | Payment Date for the PayRun (YYYY-MM-DD) | [optional] 
+**payment_date** | **date** | Payment Date for the PayRun (YYYY-MM-DD) | [optional] 
 **payslip_message** | **str** | Payslip message for the PayRun | [optional] 
-**updated_date_utc** | **str** | Last modified timestamp | [optional] 
+**updated_date_utc** | **datetime** | Last modified timestamp | [optional] 
 **payslips** | [**list[PayslipSummary]**](PayslipSummary.md) | The payslips in the payrun | [optional] 
 **wages** | **float** | The total Wages for the Payrun | [optional] 
 **deductions** | **float** | The total Deductions for the Payrun | [optional] 

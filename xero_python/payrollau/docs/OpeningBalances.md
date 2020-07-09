@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**opening_balance_date** | **str** | Opening Balance Date. (YYYY-MM-DD) | [optional] 
+**opening_balance_date** | **date** | Opening Balance Date. (YYYY-MM-DD) | [optional] 
 **tax** | **str** | Opening Balance tax | [optional] 
 **earnings_lines** | [**list[EarningsLine]**](EarningsLine.md) |  | [optional] 
 **deduction_lines** | [**list[DeductionLine]**](DeductionLine.md) |  | [optional] 

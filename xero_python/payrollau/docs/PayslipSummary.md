@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **super** | **float** | The Super for the Payslip | [optional] 
 **reimbursements** | **float** | The Reimbursements for the Payslip | [optional] 
 **net_pay** | **float** | The NetPay for the Payslip | [optional] 
-**updated_date_utc** | **str** | Last modified timestamp | [optional] 
+**updated_date_utc** | **datetime** | Last modified timestamp | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

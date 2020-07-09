@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **reduces_super** | **bool** | Most deductions don’t reduce your superannuation guarantee contribution liability, so typically you will not set any value for this. | [optional] 
 **is_exempt_from_w1** | **bool** | Boolean to determine if the deduction type is reportable or exempt from W1 | [optional] 
 **deduction_type_id** | **str** | Xero identifier | [optional] 
-**updated_date_utc** | **str** | Last modified timestamp | [optional] 
+**updated_date_utc** | **datetime** | Last modified timestamp | [optional] 
 **deduction_category** | **str** |  | [optional] 
 **current_record** | **bool** | Is the current record | [optional] 
 

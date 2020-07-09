@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **reimbursement_lines** | [**list[ReimbursementLine]**](ReimbursementLine.md) |  | [optional] 
 **superannuation_lines** | [**list[SuperannuationLine]**](SuperannuationLine.md) |  | [optional] 
 **tax_lines** | [**list[TaxLine]**](TaxLine.md) |  | [optional] 
-**updated_date_utc** | **str** | Last modified timestamp | [optional] 
+**updated_date_utc** | **datetime** | Last modified timestamp | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
