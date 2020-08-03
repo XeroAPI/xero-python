@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_account**](AccountingApi.md#create_account) | **PUT** /Accounts | Allows you to create a new chart of accounts
 [**create_account_attachment_by_file_name**](AccountingApi.md#create_account_attachment_by_file_name) | **PUT** /Accounts/{AccountID}/Attachments/{FileName} | Allows you to create Attachment on Account
-[**create_bank_transaction_attachment_by_file_name**](AccountingApi.md#create_bank_transaction_attachment_by_file_name) | **PUT** /BankTransactions/{BankTransactionID}/Attachments/{FileName} | Allows you to createa an Attachment on BankTransaction by Filename
+[**create_bank_transaction_attachment_by_file_name**](AccountingApi.md#create_bank_transaction_attachment_by_file_name) | **PUT** /BankTransactions/{BankTransactionID}/Attachments/{FileName} | Allows you to create an Attachment on BankTransaction by Filename
 [**create_bank_transaction_history_record**](AccountingApi.md#create_bank_transaction_history_record) | **PUT** /BankTransactions/{BankTransactionID}/History | Allows you to create history record for a bank transactions
 [**create_bank_transactions**](AccountingApi.md#create_bank_transactions) | **PUT** /BankTransactions | Allows you to create one or more spend or receive money transaction
 [**create_bank_transfer**](AccountingApi.md#create_bank_transfer) | **PUT** /BankTransfers | Allows you to create a bank transfers
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 # **create_bank_transaction_attachment_by_file_name**
 > Attachments create_bank_transaction_attachment_by_file_name(xero_tenant_id, bank_transaction_id, file_name, body)
 
-Allows you to createa an Attachment on BankTransaction by Filename
+Allows you to create an Attachment on BankTransaction by Filename
 
 ### Example
 
@@ -387,7 +387,7 @@ bank_transaction_id = '00000000-0000-0000-000-000000000000' # str | Xero generat
 file_name = 'xero-dev.jpg' # str | The name of the file being attached
 body = 'body_example' # str | Byte array of file in body of request
 try:
-    # Allows you to createa an Attachment on BankTransaction by Filename
+    # Allows you to create an Attachment on BankTransaction by Filename
     api_response = api_instance.create_bank_transaction_attachment_by_file_name(xero_tenant_id, bank_transaction_id, file_name, body)
     pprint(api_response)
 except ApiException as e:
@@ -515,7 +515,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-bank_transactions = { bankTransactions:[ { type: BankTransaction.TypeEnum.SPEND, contact: { contactID:"00000000-0000-0000-000-000000000000" }, lineItems:[ { description:"Foobar", quantity: 1.0, unitAmount:20.0, accountCode:"000" } ], bankAccount:{ code:"000" } } ] } # BankTransactions | BankTransactions with an array of BankTransaction objects in body of request
+bank_transactions = { bankTransactions: [{ type: BankTransaction.TypeEnum.SPEND, contact: { contactID: "00000000-0000-0000-000-000000000000" }, lineItems: [{ description: "Foobar", quantity: 1.0, unitAmount: 20.0, accountCode: "000" } ], bankAccount: { code: "000" }}]} # BankTransactions | BankTransactions with an array of BankTransaction objects in body of request
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional) (default to False)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
@@ -582,7 +582,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-bank_transfers = { bankTransfers:[ { fromBankAccount: { code:"000", accountID:"00000000-0000-0000-000-000000000000"}, toBankAccount:{ code:"001", accountID:"00000000-0000-0000-000-000000000000"}, amount:"50.00" } ] } # BankTransfers | BankTransfers with array of BankTransfer objects in request body
+bank_transfers = { bankTransfers: [{ fromBankAccount: { code: "000", accountID: "00000000-0000-0000-000-000000000000" }, toBankAccount: { code: "001", accountID: "00000000-0000-0000-000-000000000000" }, amount: "50.00" }]} # BankTransfers | BankTransfers with array of BankTransfer objects in request body
 try:
     # Allows you to create a bank transfers
     api_response = api_instance.create_bank_transfer(xero_tenant_id, bank_transfers)
@@ -906,7 +906,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 branding_theme_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Branding Theme
-payment_service = { paymentServiceID:"dede7858-14e3-4a46-bf95-4d4cc491e645", paymentServiceName:"ACME Payments", paymentServiceUrl:"https://www.payupnow.com/", payNowText:"Pay Now" } # PaymentService | PaymentService object in body of request
+payment_service = {  paymentServiceID: "dede7858-14e3-4a46-bf95-4d4cc491e645", paymentServiceName: "ACME Payments", paymentServiceUrl: "https://www.payupnow.com/", payNowText: "Pay Now" } # PaymentService | PaymentService object in body of request
 try:
     # Allow for the creation of new custom payment service for specified Branding Theme
     api_response = api_instance.create_branding_theme_payment_services(xero_tenant_id, branding_theme_id, payment_service)
@@ -1036,7 +1036,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-contact_groups = { contactGroups:[ { name:"VIPs" } ] } # ContactGroups | ContactGroups with an array of names in request body
+contact_groups = { contactGroups: [{ name: "VIPs" }]} # ContactGroups | ContactGroups with an array of names in request body
 try:
     # Allows you to create a contact group
     api_response = api_instance.create_contact_group(xero_tenant_id, contact_groups)
@@ -1100,7 +1100,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 contact_group_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Contact Group
-contacts = { contacts:[ { contactID:"a3675fc4-f8dd-4f03-ba5b-f1870566bcd7" }, { contactID:"4e1753b9-018a-4775-b6aa-1bc7871cfee3" } ] } # Contacts | Contacts with array of contacts specifiying the ContactID to be added to ContactGroup in body of request
+contacts = { contacts: [{ contactID: "a3675fc4-f8dd-4f03-ba5b-f1870566bcd7" }, { contactID: "4e1753b9-018a-4775-b6aa-1bc7871cfee3" }]} # Contacts | Contacts with array of contacts specifiying the ContactID to be added to ContactGroup in body of request
 try:
     # Allows you to add Contacts to a Contact Group
     api_response = api_instance.create_contact_group_contacts(xero_tenant_id, contact_group_id, contacts)
@@ -1229,7 +1229,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-contacts = {contacts: [{ name:"Bruce Banner", emailAddress:"hulk@avengers.com", phones:[ { phoneType: Phone.PhoneTypeEnum.MOBILE, phoneNumber:"555-1212", phoneAreaCode:"415" } ], paymentTerms:{ bills:{ day:15, type: PaymentTermType.OFCURRENTMONTH }, sales:{ day:10, type: PaymentTermType.DAYSAFTERBILLMONTH } } } ] } # Contacts | Contacts with an array of Contact objects to create in body of request
+contacts = { contacts: [{ name: "Bruce Banner", emailAddress: "hulk@avengers.com", phones: [{ phoneType: Phone.PhoneTypeEnum.MOBILE, phoneNumber: "555-1212", phoneAreaCode: "415" }], paymentTerms: { bills: { day: 15, type: PaymentTermType.OFCURRENTMONTH }, sales: { day: 10, type: PaymentTermType.DAYSAFTERBILLMONTH }}}]} # Contacts | Contacts with an array of Contact objects to create in body of request
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional) (default to False)
 try:
     # Allows you to create a multiple contacts (bulk) in a Xero organisation
@@ -1295,7 +1295,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 credit_note_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Credit Note
-allocations = { allocations:[ { amount:1.0, date:"2019-03-05", invoice:{ invoiceID:"c45720a1-ade3-4a38-a064-d15489be6841", lineItems:[], type: Invoice.TypeEnum.ACCPAY, contact:{} } } ] } # Allocations | Allocations with array of Allocation object in body of request.
+allocations = { allocations: [{ amount: 1.0, date: "2019-03-05", invoice: { invoiceID: "c45720a1-ade3-4a38-a064-d15489be6841", lineItems:[], type: Invoice.TypeEnum.ACCPAY, contact: {}}}]} # Allocations | Allocations with array of Allocation object in body of request.
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional) (default to False)
 try:
     # Allows you to create Allocation on CreditNote
@@ -1495,7 +1495,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-credit_notes = { creditNotes:[ { type: CreditNote.TypeEnum.ACCPAYCREDIT, contact:{ contactID:"430fa14a-f945-44d3-9f97-5df5e28441b8" }, date:"2019-01-05", lineItems:[ { description:"Foobar", quantity:2.0, unitAmount:20.0, accountCode:"400" } ] } ] } # CreditNotes | Credit Notes with array of CreditNote object in body of request
+credit_notes = { creditNotes: [{ type: CreditNote.TypeEnum.ACCPAYCREDIT, contact: { contactID: "430fa14a-f945-44d3-9f97-5df5e28441b8" }, date: "2019-01-05", lineItems: [{ description: "Foobar", quantity: 2.0, unitAmount: 20.0, accountCode: "400" }]}]} # CreditNotes | Credit Notes with array of CreditNote object in body of request
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional) (default to False)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
@@ -1562,7 +1562,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-currency = { code: CurrencyCode.USD, description:"United States Dollar" } # Currency | Currency obejct in the body of request
+currency = { code: CurrencyCode.USD, description: "United States Dollar" } # Currency | Currency obejct in the body of request
 try:
     api_response = api_instance.create_currency(xero_tenant_id, currency)
     pprint(api_response)
@@ -1624,7 +1624,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-employees = { employees:[ { firstName:"Nick", lastName:"Fury", externalLink:{ url:"http://twitter.com/#!/search/Nick+Fury" } } ] } # Employees | Employees with array of Employee object in body of request
+employees = { employees: [{ firstName: "Nick", lastName: "Fury", externalLink: { url: "http://twitter.com/#!/search/Nick+Fury" }}]} # Employees | Employees with array of Employee object in body of request
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional) (default to False)
 try:
     # Allows you to create new employees used in Xero payrun
@@ -1754,7 +1754,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-expense_claims = { expenseClaims:[ { status: ExpenseClaim.StatusEnum.SUBMITTED, user:{ userID:"d1164823-0ac1-41ad-987b-b4e30fe0b273" }, receipts:[ { receiptID:"dc1c7f6d-0a4c-402f-acac-551d62ce5816", lineItems:[], contact: {}, user: {}, date: "2018-01-01" } ] } ] } # ExpenseClaims | ExpenseClaims with array of ExpenseClaim object in body of request
+expense_claims = { expenseClaims: [{ status: ExpenseClaim.StatusEnum.SUBMITTED, user: { userID: "d1164823-0ac1-41ad-987b-b4e30fe0b273" }, receipts: [{ receiptID: "dc1c7f6d-0a4c-402f-acac-551d62ce5816", lineItems: [], contact: {}, user: {}, date: "2018-01-01" }]}]} # ExpenseClaims | ExpenseClaims with array of ExpenseClaim object in body of request
 try:
     # Allows you to retrieve expense claims
     api_response = api_instance.create_expense_claims(xero_tenant_id, expense_claims)
@@ -1951,7 +1951,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-invoices = { invoices:[ { type: Invoice.TypeEnum.ACCREC, contact:{ contactID:"00000000-0000-0000-000-000000000000" }, lineItems:[ { description:"Acme Tires", quantity:2.0, unitAmount:20.0, accountCode:"000", taxType:"NONE", lineAmount:40.0 } ], date:"2019-03-11", dueDate:"2018-12-10", reference:"Website Design", status: Invoice.StatusEnum.DRAFT } ] } # Invoices | Invoices with an array of invoice objects in body of request
+invoices = { invoices: [{ type: Invoice.TypeEnum.ACCREC, contact: { contactID: "00000000-0000-0000-000-000000000000" }, lineItems: [{ description: "Acme Tires", quantity: 2.0, unitAmount: 20.0, accountCode: "000", taxType: TaxType.NONE, lineAmount: 40.0 }], date: "2019-03-11", dueDate: "2018-12-10", reference: "Website Design", status: Invoice.StatusEnum.DRAFT }]} # Invoices | Invoices with an array of invoice objects in body of request
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional) (default to False)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
@@ -2083,7 +2083,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-items = { items:[ { code:"abcXYZ123", name:"HelloWorld11", description:"Foobar", inventoryAssetAccountCode:"140", purchaseDetails: {cOGSAccountCode:"500"} } ] } # Items | Items with an array of Item objects in body of request
+items = { items: [{ code: "abcXYZ123", name: "HelloWorld11", description: "Foobar", inventoryAssetAccountCode: "140", purchaseDetails: { cOGSAccountCode: "500" }}]} # Items | Items with an array of Item objects in body of request
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional) (default to False)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
@@ -2150,7 +2150,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-linked_transaction = { sourceTransactionID:"00000000-0000-0000-000-000000000000", sourceLineItemID:"00000000-0000-0000-000-000000000000"} # LinkedTransaction | LinkedTransaction object in body of request
+linked_transaction = { sourceTransactionID: "00000000-0000-0000-000-000000000000", sourceLineItemID: "00000000-0000-0000-000-000000000000" } # LinkedTransaction | LinkedTransaction object in body of request
 try:
     # Allows you to create linked transactions (billable expenses)
     api_response = api_instance.create_linked_transaction(xero_tenant_id, linked_transaction)
@@ -2280,7 +2280,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-manual_journals = { manualJournals:[ { narration:"Foo bar", journalLines:[ { lineAmount:100.0, accountCode:"400", description:"Hello there" }, { lineAmount:-100.0, accountCode:"400", description:"Goodbye", tracking:[ { name:"Simpsons", option:"Bart" } ] } ], date:"2019-03-14" } ] } # ManualJournals | ManualJournals array with ManualJournal object in body of request
+manual_journals = { manualJournals: [{ narration: "Foo bar", date: "2019-03-14", journalLines: [{ lineAmount: 100.0, accountCode: "400", description: "Hello there" }, { lineAmount: -100.0, accountCode: "400", description: "Goodbye", tracking: [{ name: "Simpson", option: "Bart" }] }]}]} # ManualJournals | ManualJournals array with ManualJournal object in body of request
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional) (default to False)
 try:
     # Allows you to create one or more manual journals
@@ -2346,7 +2346,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 overpayment_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Overpayment
-allocations = { allocations:[ { invoice:{ invoiceID:"00000000-0000-0000-000-000000000000", lineItems:[], contact: {}, type: Invoice.TypeEnum.ACCPAY }, amount:1.0, date:"2019-03-12" } ] } # Allocations | Allocations array with Allocation object in body of request
+allocations = { allocations: [{ invoice: { invoiceID: "00000000-0000-0000-000-000000000000", lineItems: [], contact: {}, type: Invoice.TypeEnum.ACCPAY }, amount: 1.0, date: "2019-03-12" }]} # Allocations | Allocations array with Allocation object in body of request
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional) (default to False)
 try:
     # Allows you to create a single allocation for an overpayment
@@ -2477,7 +2477,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-payment = { invoice:{ invoiceID:"00000000-0000-0000-000-000000000000", lineItems:[], contact: {}, type: Invoice.TypeEnum.ACCPAY }, account:{ code:"970" }, date:"2019-03-12", amount:1.0 } # Payment | Request body with a single Payment object
+payment = { invoice: { invoiceID: "00000000-0000-0000-000-000000000000", lineItems: [], contact: {}, type: Invoice.TypeEnum.ACCPAY }, account: { code: "970" }, date: "2019-03-12", amount: 1.0 } # Payment | Request body with a single Payment object
 try:
     # Allows you to create a single payment for invoices or credit notes
     api_response = api_instance.create_payment(xero_tenant_id, payment)
@@ -2605,7 +2605,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-payment_services = { paymentServices:[ { paymentServiceName:"PayUpNow", paymentServiceUrl:"https://www.payupnow.com/", payNowText:"Time To Pay" } ] } # PaymentServices | PaymentServices array with PaymentService object in body of request
+payment_services = { paymentServices: [{ paymentServiceName: "PayUpNow", paymentServiceUrl: "https://www.payupnow.com/", payNowText: "Time To Pay" }]} # PaymentServices | PaymentServices array with PaymentService object in body of request
 try:
     # Allows you to create payment services
     api_response = api_instance.create_payment_service(xero_tenant_id, payment_services)
@@ -2668,7 +2668,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-payments = { payments:[ { invoice:{ invoiceID:"00000000-0000-0000-000-000000000000", lineItems:[], contact: {}, type: Invoice.TypeEnum.ACCPAY }, account:{ code:"970" }, date:"2019-03-12", amount:1.0 } ] } # Payments | Payments array with Payment object in body of request
+payments = { payments: [{ invoice: { invoiceID: "00000000-0000-0000-000-000000000000", lineItems: [], contact: {}, type: Invoice.TypeEnum.ACCPAY }, account: { code: "970" }, date: "2019-03-12", amount: 1.0 }]} # Payments | Payments array with Payment object in body of request
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional) (default to False)
 try:
     # Allows you to create multiple payments for invoices or credit notes
@@ -2734,7 +2734,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 prepayment_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for Prepayment
-allocations = { allocations:[ { invoice:{ invoiceID:"00000000-0000-0000-000-000000000000", lineItems:[], contact: {}, type: null }, amount:1.0, date:"2019-03-13" } ] } # Allocations | Allocations with an array of Allocation object in body of request
+allocations = { allocations: [{ invoice: { invoiceID: "00000000-0000-0000-000-000000000000", lineItems: [], contact: {}, type: null }, amount: 1.0, date: "2019-03-13" }]} # Allocations | Allocations with an array of Allocation object in body of request
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional) (default to False)
 try:
     # Allows you to create an Allocation for prepayments
@@ -2930,7 +2930,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-purchase_orders = { purchaseOrders:[ { contact:{ contactID:"00000000-0000-0000-000-000000000000" }, lineItems:[ { description:"Foobar", quantity:1.0, unitAmount:20.0, accountCode:"710" } ], date:"2019-03-13" } ] } # PurchaseOrders | PurchaseOrders with an array of PurchaseOrder object in body of request
+purchase_orders = { purchaseOrders: [{ contact: { contactID: "00000000-0000-0000-000-000000000000" }, lineItems: [{ description: "Foobar", quantity: 1.0, unitAmount: 20.0, accountCode: "710" }], date: "2019-03-13" }]} # PurchaseOrders | PurchaseOrders with an array of PurchaseOrder object in body of request
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional) (default to False)
 try:
     # Allows you to create one or more purchase orders
@@ -3127,7 +3127,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-quotes = { quotes:[ { contact:{ contactID:"00000000-0000-0000-000-000000000000" }, lineItems:[ { description:"Foobar", quantity:1.0, unitAmount:20.0, accountCode:"12775" } ], date:"2020-02-01" } ] } # Quotes | Quotes with an array of Quote object in body of request
+quotes = { quotes: [{ contact: { contactID: "00000000-0000-0000-000-000000000000" }, lineItems: [{ description: "Foobar", quantity: 1.0, unitAmount: 20.0, accountCode: "12775" }], date:"2020-02-01" }]} # Quotes | Quotes with an array of Quote object in body of request
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional) (default to False)
 try:
     # Allows you to create one or more quotes
@@ -3192,7 +3192,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-receipts = { receipts:[ { contact:{ contactID:"00000000-0000-0000-000-000000000000" }, lineItems:[ { description:"Foobar", quantity:2.0, unitAmount:20.0, accountCode:"400", taxType:"NONE", lineAmount:40.0 } ], user:{ userID:"00000000-0000-0000-000-000000000000" }, lineAmountTypes: LineAmountTypes.Inclusive, status: Receipt.StatusEnum.DRAFT , date: null} ] } # Receipts | Receipts with an array of Receipt object in body of request
+receipts = { receipts: [{ contact: { contactID: "00000000-0000-0000-000-000000000000" }, lineItems: [{ description: "Foobar", quantity: 2.0, unitAmount: 20.0, accountCode: "400", taxType: TaxType.NONE, lineAmount: 40.0 }], user: { userID: "00000000-0000-0000-000-000000000000" }, lineAmountTypes: LineAmountTypes.Inclusive, status: Receipt.StatusEnum.DRAFT, date: null} ] } # Receipts | Receipts with an array of Receipt object in body of request
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
     # Allows you to create draft expense claim receipts for any user
@@ -3521,7 +3521,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-tax_rates = { taxRates:[ { name:"CA State Tax", taxComponents:[ { name:"State Tax", rate:2.25 } ] } ] } # TaxRates | TaxRates array with TaxRate object in body of request
+tax_rates = { taxRates: [{ name: "CA State Tax", taxComponents: [{ name: "State Tax", rate: 2.25 }]}]} # TaxRates | TaxRates array with TaxRate object in body of request
 try:
     # Allows you to create one or more Tax Rates
     api_response = api_instance.create_tax_rates(xero_tenant_id, tax_rates)
@@ -3584,7 +3584,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-tracking_category = { name:"FooBar" } # TrackingCategory | TrackingCategory object in body of request
+tracking_category = { name: "FooBar" } # TrackingCategory | TrackingCategory object in body of request
 try:
     # Allows you to create tracking categories
     api_response = api_instance.create_tracking_category(xero_tenant_id, tracking_category)
@@ -3648,7 +3648,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 tracking_category_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a TrackingCategory
-tracking_option = { name:"Bar" } # TrackingOption | TrackingOption object in body of request
+tracking_option = { name: " Bar" } # TrackingOption | TrackingOption object in body of request
 try:
     # Allows you to create options for a specified tracking category
     api_response = api_instance.create_tracking_options(xero_tenant_id, tracking_category_id, tracking_option)
@@ -4026,7 +4026,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 payment_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Payment
-payment_delete = { status:"DELETED" } # PaymentDelete | 
+payment_delete = { status: "DELETED" } # PaymentDelete | 
 try:
     # Allows you to update a specified payment for invoices and credit notes
     api_response = api_instance.delete_payment(xero_tenant_id, payment_id, payment_delete)
@@ -4872,7 +4872,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 if_modified_since = '2020-02-06T12:17:43.202-08:00' # datetime | Only records created or modified since this timestamp will be returned (optional)
-where = 'Status==\"' + BankTransaction.StatusEnum.ACTIVE + '\"' # str | Filter by an any element (optional)
+where = 'Status==\"' + BankTransaction.StatusEnum.AUTHORISED + '\"' # str | Filter by an any element (optional)
 order = 'Type ASC' # str | Order by an any element (optional)
 page = 1 # int | Up to 100 bank transactions will be returned in a single API call with line items details (optional)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
@@ -5329,7 +5329,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 if_modified_since = '2020-02-06T12:17:43.202-08:00' # datetime | Only records created or modified since this timestamp will be returned (optional)
-where = 'Status==\"' + BankTransfer.StatusEnum.ACTIVE + '\"' # str | Filter by an any element (optional)
+where = 'HasAttachments==true' # str | Filter by an any element (optional)
 order = 'Amount ASC' # str | Order by an any element (optional)
 try:
     # Allows you to retrieve all bank transfers
@@ -5459,7 +5459,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 if_modified_since = '2020-02-06T12:17:43.202-08:00' # datetime | Only records created or modified since this timestamp will be returned (optional)
-where = 'Status==\"' + BatchPayment.StatusEnum.ACTIVE + '\"' # str | Filter by an any element (optional)
+where = 'Status==\"' + BatchPayment.StatusEnum.AUTHORISED + '\"' # str | Filter by an any element (optional)
 order = 'Date ASC' # str | Order by an any element (optional)
 try:
     # Retrieve either one or many BatchPayments for invoices
@@ -6290,7 +6290,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 if_modified_since = '2020-02-06T12:17:43.202-08:00' # datetime | Only records created or modified since this timestamp will be returned (optional)
-where = 'Status==\"' + Contact.ContactStatusEnum.ACTIVE + '\"' # str | Filter by an any element (optional)
+where = 'ContactStatus==\"' + Contact.ContactStatusEnum.ACTIVE + '\"' # str | Filter by an any element (optional)
 order = 'Name ASC' # str | Order by an any element (optional)
 i_ds = ['00000000-0000-0000-000-000000000000,00000000-0000-0000-000-000000000000'] # list[str] | Filter by a comma separated list of ContactIDs. Allows you to retrieve a specific set of contacts in a single call. (optional)
 page = 1 # int | e.g. page=1 - Up to 100 contacts will be returned in a single API call. (optional)
@@ -12011,7 +12011,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 account_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for retrieving single object
-accounts = { accounts:[ { code:"123456", name:"BarFoo", accountID:"00000000-0000-0000-000-000000000000", type:AccountType.EXPENSE, description:"GoodBye World", taxType:"INPUT" } ] } # Accounts | Request of type Accounts array with one Account
+accounts = { accounts: [{ code: "123456", name: "BarFoo", accountID: "00000000-0000-0000-000-000000000000", type: AccountType.EXPENSE, description: "GoodBye World", taxType: TaxType.INPUT }]} # Accounts | Request of type Accounts array with one Account
 try:
     # Allows you to update a chart of accounts
     api_response = api_instance.update_account(xero_tenant_id, account_id, accounts)
@@ -12143,7 +12143,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 bank_transaction_id = '00000000-0000-0000-000-000000000000' # str | Xero generated unique identifier for a bank transaction
-bank_transactions = { bankTransactions:[ { type: BankTransaction.TypeEnum.SPEND, date:"2019-02-25", reference:"You just updated", status:BankTransaction.StatusEnum.AUTHORISED, bankTransactionID:"00000000-0000-0000-000-000000000000", lineItems: [],contact: {}, bankAccount: {accountID: "00000000-0000-0000-000-000000000000"} } ] } # BankTransactions | 
+bank_transactions = { bankTransactions: [{ type: BankTransaction.TypeEnum.SPEND, date: "2019-02-25", reference: "You just updated", status: BankTransaction.StatusEnum.AUTHORISED, bankTransactionID: "00000000-0000-0000-000-000000000000", lineItems: [], contact: {}, bankAccount: { accountID: "00000000-0000-0000-000-000000000000" }}]} # BankTransactions | 
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
     # Allows you to update a single spend or receive money transaction
@@ -12343,7 +12343,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 contact_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Contact
-contacts = { contacts:[ { contactID:"00000000-0000-0000-000-000000000000", name:"Thanos" } ] } # Contacts | an array of Contacts containing single Contact object with properties to update
+contacts = { contacts: [{ contactID: "00000000-0000-0000-000-000000000000", name: "Thanos" }]} # Contacts | an array of Contacts containing single Contact object with properties to update
 try:
     api_response = api_instance.update_contact(xero_tenant_id, contact_id, contacts)
     pprint(api_response)
@@ -12473,7 +12473,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 contact_group_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Contact Group
-contact_groups = { contactGroups:[ { name:"Vendor" } ] } # ContactGroups | an array of Contact groups with Name of specific group to update
+contact_groups = { contactGroups: [{ name: "Vendor" }]} # ContactGroups | an array of Contact groups with Name of specific group to update
 try:
     # Allows you to update a Contact Group
     api_response = api_instance.update_contact_group(xero_tenant_id, contact_group_id, contact_groups)
@@ -12538,7 +12538,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 credit_note_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Credit Note
-credit_notes = { creditNotes:[ { type:CreditNote.TypeEnum.ACCPAYCREDIT, contact:{ contactID:"00000000-0000-0000-000-000000000000" }, date:"2019-01-05", status: CreditNote.StatusEnum.AUTHORISED, reference: "Mind stone", lineItems:[ { description:"Infinity Stones", quantity:1.0, unitAmount:100.0, accountCode:"400" } ] } ] } # CreditNotes | an array of Credit Notes containing credit note details to update
+credit_notes = { creditNotes: [{ type: CreditNote.TypeEnum.ACCPAYCREDIT, contact: { contactID: "00000000-0000-0000-000-000000000000" }, date: "2019-01-05", status: CreditNote.StatusEnum.AUTHORISED, reference: "Mind stone", lineItems: [{ description: "Infinity Stones", quantity: 1.0, unitAmount: 100.0, accountCode: "400" } ]}]} # CreditNotes | an array of Credit Notes containing credit note details to update
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
     # Allows you to update a specific credit note
@@ -12672,7 +12672,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 expense_claim_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a ExpenseClaim
-expense_claims = { expenseClaims:[ { status:ExpenseClaim.StatusEnum.AUTHORISED, user:{ userID:"00000000-0000-0000-000-000000000000" }, receipts:[ { receiptID:"00000000-0000-0000-000-000000000000", lineItems: [], contact: {}, date:"2020-01-01", user:{} } ] } ] } # ExpenseClaims | 
+expense_claims = { expenseClaims: [{ status: ExpenseClaim.StatusEnum.AUTHORISED, user: { userID: "00000000-0000-0000-000-000000000000" }, receipts: [{ receiptID: "00000000-0000-0000-000-000000000000", lineItems: [], contact: {}, date:"2020-01-01", user: {} }]}]} # ExpenseClaims | 
 try:
     # Allows you to update specified expense claims
     api_response = api_instance.update_expense_claim(xero_tenant_id, expense_claim_id, expense_claims)
@@ -12737,7 +12737,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 invoice_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for an Invoice
-invoices = { invoices:[ { reference:"I am Iron Man", invoiceID:"00000000-0000-0000-000-000000000000", lineItems: [],contact: {},type: Invoice.TypeEnum.ACCPAY } ] } # Invoices | 
+invoices = { invoices: [{ reference: "I am Iron Man", invoiceID: "00000000-0000-0000-000-000000000000", lineItems: [], contact: {}, type: Invoice.TypeEnum.ACCPAY }]} # Invoices | 
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
     # Allows you to update a specified sales invoices or purchase bills
@@ -12938,7 +12938,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 linked_transaction_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a LinkedTransaction
-linked_transactions = { linkedTransactions:[ {sourceLineItemID:"00000000-0000-0000-000-000000000000", contactID:"00000000-0000-0000-000-000000000000" } ] } # LinkedTransactions | 
+linked_transactions = { linkedTransactions: [{ sourceLineItemID: "00000000-0000-0000-000-000000000000", contactID: "00000000-0000-0000-000-000000000000" }]} # LinkedTransactions | 
 try:
     # Allows you to update a specified linked transactions (billable expenses)
     api_response = api_instance.update_linked_transaction(xero_tenant_id, linked_transaction_id, linked_transactions)
@@ -13003,7 +13003,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 manual_journal_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a ManualJournal
-manual_journals = { manualJournals:[ { narration:"Hello Xero", manualJournalID:"00000000-0000-0000-000-000000000000",journalLines:[] } ] } # ManualJournals | 
+manual_journals = { manualJournals: [{ narration: "Hello Xero", manualJournalID: "00000000-0000-0000-000-000000000000", journalLines: [] }]} # ManualJournals | 
 try:
     # Allows you to update a specified manual journal
     api_response = api_instance.update_manual_journal(xero_tenant_id, manual_journal_id, manual_journals)
@@ -13134,7 +13134,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-bank_transactions = { bankTransactions:[ { type: BankTransaction.TypeEnum.SPEND, contact: { contactID:"00000000-0000-0000-000-000000000000" }, lineItems:[ { description:"Foobar", quantity: 1.0, unitAmount:20.0, accountCode:"000" } ], bankAccount:{ code:"000" } } ] } # BankTransactions | 
+bank_transactions = { bankTransactions: [{ type: BankTransaction.TypeEnum.SPEND, contact: { contactID: "00000000-0000-0000-000-000000000000" }, lineItems: [{ description: "Foobar", quantity: 1.0, unitAmount: 20.0, accountCode: "000" } ], bankAccount: { code: "000" }}]} # BankTransactions | 
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional) (default to False)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
@@ -13201,7 +13201,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-contacts = {contacts: [{ name:"Bruce Banner", emailAddress:"hulk@avengers.com", phones:[ { phoneType: Phone.PhoneTypeEnum.MOBILE, phoneNumber:"555-1212", phoneAreaCode:"415" } ], paymentTerms:{ bills:{ day:15, type: PaymentTermType.OFCURRENTMONTH }, sales:{ day:10, type: PaymentTermType.DAYSAFTERBILLMONTH } } } ] } # Contacts | 
+contacts = { contacts: [{ name: "Bruce Banner", emailAddress: "hulk@avengers.com", phones: [{ phoneType: Phone.PhoneTypeEnum.MOBILE, phoneNumber: "555-1212", phoneAreaCode: "415" }], paymentTerms: { bills: { day: 15, type: PaymentTermType.OFCURRENTMONTH }, sales: { day: 10, type: PaymentTermType.DAYSAFTERBILLMONTH }}}]} # Contacts | 
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional) (default to False)
 try:
     # Allows you to update OR create one or more contacts in a Xero organisation
@@ -13266,7 +13266,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-credit_notes = { creditNotes:[ { type: CreditNote.TypeEnum.ACCPAYCREDIT, contact:{ contactID:"00000000-0000-0000-000-000000000000" }, date:"2019-01-05", lineItems:[ { description:"Foobar", quantity:2.0, unitAmount:20.0, accountCode:"400" } ] } ] } # CreditNotes | an array of Credit Notes with a single CreditNote object.
+credit_notes = { creditNotes: [{ type: CreditNote.TypeEnum.ACCPAYCREDIT, contact: { contactID: "00000000-0000-0000-000-000000000000" }, date: "2019-01-05", lineItems: [{ description: "Foobar", quantity: 2.0, unitAmount: 20.0, accountCode: "400" }]}]} # CreditNotes | an array of Credit Notes with a single CreditNote object.
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional) (default to False)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
@@ -13333,7 +13333,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-employees = { employees:[ { firstName:"Nick", lastName:"Fury", externalLink:{ url:"http://twitter.com/#!/search/Nick+Fury" } } ] } # Employees | Employees with array of Employee object in body of request
+employees = { employees: [{ firstName: "Nick", lastName: "Fury", externalLink: { url: "http://twitter.com/#!/search/Nick+Fury" }}]} # Employees | Employees with array of Employee object in body of request
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional) (default to False)
 try:
     # Allows you to create a single new employees used in Xero payrun
@@ -13398,7 +13398,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-invoices = { invoices:[ { type: Invoice.TypeEnum.ACCREC, contact:{ contactID:"00000000-0000-0000-000-000000000000" }, lineItems:[ { description:"Acme Tires", quantity:2.0, unitAmount:20.0, accountCode:"200", taxType:"NONE", lineAmount:40.0 } ], date:"2019-03-11", dueDate:"2018-12-10", reference:"Website Design", status: Invoice.StatusEnum.AUTHORISED } ] } # Invoices | 
+invoices = { invoices: [{ type: Invoice.TypeEnum.ACCREC, contact: { contactID:"00000000-0000-0000-000-000000000000" }, lineItems:[ { description:"Acme Tires", quantity:2.0, unitAmount:20.0, accountCode:"200", taxType:"NONE", lineAmount:40.0 } ], date:"2019-03-11", dueDate:"2018-12-10", reference:"Website Design", status: Invoice.StatusEnum.AUTHORISED } ] } # Invoices | 
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional) (default to False)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
@@ -13465,7 +13465,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-items = { items:[ { code:"abcXYZ", name:"HelloWorld", description:"Foobar" } ] } # Items | 
+items = { items: [{ code: "abcXYZ", name: "HelloWorld", description: "Foobar" }]} # Items | 
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional) (default to False)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
@@ -13532,7 +13532,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-manual_journals = { manualJournals:[ { narration:"Foo bar", journalLines:[ { lineAmount:100.0, accountCode:"400", description:"Hello there" }, { lineAmount:-100.0, accountCode:"400", description:"Goodbye", tracking:[ { name:"Simpsons", option:"Bart" } ] } ], date:"2019-03-14" } ] } # ManualJournals | ManualJournals array with ManualJournal object in body of request
+manual_journals = { manualJournals: [{ narration: "Foo bar", journalLines: [{ lineAmount: 100.0, accountCode: "400", description: "Hello there" },{ lineAmount: -100.0, accountCode: "400", description: "Goodbye", tracking: [{ name: "Simpsons", option: "Bart" }]}], date: "2019-03-14" }]} # ManualJournals | ManualJournals array with ManualJournal object in body of request
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional) (default to False)
 try:
     # Allows you to create a single manual journal
@@ -13597,7 +13597,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-purchase_orders = { purchaseOrders:[ { contact:{ contactID:"00000000-0000-0000-000-000000000000" }, lineItems:[ { description:"Foobar", quantity:1.0, unitAmount:20.0, accountCode:"710" } ], date:"2019-03-13" } ] } # PurchaseOrders | 
+purchase_orders = { purchaseOrders: [ { contact: { contactID: "00000000-0000-0000-000-000000000000" }, lineItems: [{ description: "Foobar", quantity: 1.0, unitAmount: 20.0, accountCode: "710" }], date: "2019-03-13" }]} # PurchaseOrders | 
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional) (default to False)
 try:
     # Allows you to update or create one or more purchase orders
@@ -13662,7 +13662,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-quotes = { quotes:[ { contact:{ contactID:"00000000-0000-0000-000-000000000000" }, lineItems:[ { description:"Foobar", quantity:1.0, unitAmount:20.0, accountCode:"12775" } ], date:"2020-02-01" } ] } # Quotes | 
+quotes = { quotes: [{ contact: { contactID: "00000000-0000-0000-000-000000000000" }, lineItems: [{ description: "Foobar", quantity: 1.0, unitAmount: 20.0, accountCode: "12775" }], date: "2020-02-01" }]} # Quotes | 
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional) (default to False)
 try:
     # Allows you to update OR create one or more quotes
@@ -13728,7 +13728,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 purchase_order_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a PurchaseOrder
-purchase_orders = { purchaseOrders:[ { attentionTo:"Peter Parker",lineItems: [],contact: {} } ] } # PurchaseOrders | 
+purchase_orders = { purchaseOrders:[ { attentionTo: "Peter Parker", lineItems: [], contact: {} }]} # PurchaseOrders | 
 try:
     # Allows you to update a specified purchase order
     api_response = api_instance.update_purchase_order(xero_tenant_id, purchase_order_id, purchase_orders)
@@ -13793,7 +13793,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 quote_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for an Quote
-quotes = {quotes:[{reference:"I am an update",contact:{contactID:"00000000-0000-0000-000-000000000000"},date:"2020-02-01"}]} # Quotes | 
+quotes = { quotes: [{ reference: "I am an update", contact: { contactID: "00000000-0000-0000-000-000000000000" }, date: "2020-02-01" }]} # Quotes | 
 try:
     # Allows you to update a specified quote
     api_response = api_instance.update_quote(xero_tenant_id, quote_id, quotes)
@@ -13925,7 +13925,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 receipt_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Receipt
-receipts = { receipts:[ { user:{ userID:"00000000-0000-0000-000-000000000000" }, reference:"Foobar", date: "2020-01-01",contact: {},lineItems: []} ] } # Receipts | 
+receipts = { receipts: [{ user: { userID: "00000000-0000-0000-000-000000000000" }, reference: "Foobar", date: "2020-01-01", contact: {}, lineItems: [] }]} # Receipts | 
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
     # Allows you to retrieve a specified draft expense claim receipts
@@ -14125,7 +14125,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-tax_rates = { taxRates:[ { name:"State Tax NY", taxComponents:[ { name:"State Tax", rate:2.25 } ], status:"DELETED", reportTaxType:"INPUT" } ] } # TaxRates | 
+tax_rates = { taxRates: [{ name: "State Tax NY", taxComponents: [{ name: "State Tax", rate: 2.25 }], status: TaxRate.StatusEnum.Deleted, reportTaxType: TaxRate.ReportTaxTypeEnum.INPUT }]} # TaxRates | 
 try:
     # Allows you to update Tax Rates
     api_response = api_instance.update_tax_rate(xero_tenant_id, tax_rates)
@@ -14189,7 +14189,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 tracking_category_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a TrackingCategory
-tracking_category = { name:"Avengers" } # TrackingCategory | 
+tracking_category = { name: "Avengers" } # TrackingCategory | 
 try:
     # Allows you to update tracking categories
     api_response = api_instance.update_tracking_category(xero_tenant_id, tracking_category_id, tracking_category)
@@ -14255,7 +14255,7 @@ api_instance = AccountingApi(api_client)
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 tracking_category_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a TrackingCategory
 tracking_option_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Tracking Option
-tracking_option = { name:"Vision" } # TrackingOption | 
+tracking_option = { name: "Vision" } # TrackingOption | 
 try:
     # Allows you to update options for a specified tracking category
     api_response = api_instance.update_tracking_options(xero_tenant_id, tracking_category_id, tracking_option_id, tracking_option)

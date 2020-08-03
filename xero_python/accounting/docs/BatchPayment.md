@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **date_string** | **str** | Date the payment is being made (YYYY-MM-DD) e.g. 2009-09-06 | [optional] 
 **date** | **date** | Date the payment is being made (YYYY-MM-DD) e.g. 2009-09-06 | [optional] 
 **amount** | **float** | The amount of the payment. Must be less than or equal to the outstanding amount owing on the invoice e.g. 200.00 | [optional] 
-**payments** | [**list[Payment]**](Payment.md) |  | [optional] 
+**payments** | [**list[Payment]**](Payment.md) | An array of payments | [optional] 
 **type** | **str** | PAYBATCH for bill payments or RECBATCH for sales invoice payments (read-only) | [optional] 
 **status** | **str** | AUTHORISED or DELETED (read-only). New batch payments will have a status of AUTHORISED. It is not possible to delete batch payments via the API. | [optional] 
 **total_amount** | **str** | The total of the payments that make up the batch (read-only) | [optional] 

@@ -73,6 +73,18 @@ class AccountingBadRequestException(BadRequestException):
         )
 
 
+class PayrollUkBadRequestException(BadRequestException):
+    """Exception if Xero Accounting API received bad request"""
+
+    @property
+    def status(self):
+        return getattr(self.error_data, "Message", None) or super().status
+
+    @property
+    def reason(self):
+        return getvalue(self.error_data, "problem", None) or super().reason
+
+
 class OAuth2InvalidGrantError(BadRequestException, OAuth2Error):
     """Exception if Xero Identity API received bad oauth2 grant token request"""
 

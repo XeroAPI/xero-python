@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **rate_type** | [**RateType**](RateType.md) |  | [optional] 
 **rate_per_unit** | **str** | Default rate per unit (optional). Only applicable if RateType is RATEPERUNIT. | [optional] 
 **multiplier** | **float** | This is the multiplier used to calculate the rate per unit, based on the employee’s ordinary earnings rate. For example, for time and a half enter 1.5. Only applicable if RateType is MULTIPLE | [optional] 
-**accrue_leave** | **bool** | Indicates that this earnings rate should accrue leave. Only applicable if RateType is MULTIPLE | [optional] 
+**accrue_leave** | **float** | Indicates that this earnings rate should accrue leave. Only applicable if RateType is MULTIPLE | [optional] 
 **amount** | **float** | Optional Amount for FIXEDAMOUNT RateType EarningsRate | [optional] 
 **employment_termination_payment_type** | [**EmploymentTerminationPaymentType**](EmploymentTerminationPaymentType.md) |  | [optional] 
 **updated_date_utc** | **datetime** | Last modified timestamp | [optional] 
