@@ -102,7 +102,10 @@ def deserialize_decimal(data_type, data, model_finder):
     :return: deserialized Decimal
 
     """
-    return data if isinstance(data, Decimal) else Decimal(data)
+    if data is not None:
+        return data if isinstance(data, Decimal) else Decimal(data)
+
+    return data
 
 
 @deserialize.register("str")
@@ -131,8 +134,9 @@ def deserialize_bool(data_type, data, model_finder):
 
     """
     # allowed json payload is true or false - parsed to bool via json.loads
-    if not isinstance(data, bool):
-        raise ValueError("Json parsed bool value expected. got {!r}".format(data))
+    if data is not None:
+        if not isinstance(data, bool):
+            raise ValueError("Json parsed bool value expected. got {!r}".format(data))
 
     return bool(data)
 
@@ -157,14 +161,16 @@ def deserialize_date(data_type, data, model_finder):
     # at 4bbe8261c402694a1da3efcaafe3332f9c57af15
     match = DATE_RE.match(str(data))
     match2 = DATETIME_RE.match(str(data))
-    if match:
-        kw = {k: int(v) for k, v in match.groupdict().items()}
-        return datetime.date(**kw)
-    elif match2:
-        dt = isoparse(data)
-        return dt
-    else:
-        raise ValueError("Invalid date value {!r}".format(data))
+
+    if data is not None:
+        if match:
+            kw = {k: int(v) for k, v in match.groupdict().items()}
+            return datetime.date(**kw)
+        elif match2:
+            dt = isoparse(data)
+            return dt
+        else:
+            raise ValueError("Invalid date value {!r}".format(data))
 
 
 @deserialize.register("date[ms-format]")
@@ -258,6 +264,9 @@ def deserialize_model(model, data, model_finder):
     :return: deserialized model instance.
 
     """
+    if data is None:
+        return model("")
+
     if issubclass(model, Enum):
         return model(data)
 
