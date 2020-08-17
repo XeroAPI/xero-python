@@ -38,7 +38,7 @@ We've created [xero-python-outh2-starter](https://github.com/XeroAPI/xero-python
 Here is a [15 min video walkthrough](https://www.youtube.com/watch?v=i8JWtbMo90M) on using the starter project.
 
 ## Kitchen Sync app
-We've created [xero-python-outh2-app](https://github.com/XeroAPI/xero-python-oauth2-starter) a project to demonstrate how to make API calls and displays the python code used to make the call and the JSON response.
+We've created [xero-python-outh2-app](https://github.com/XeroAPI/xero-python-oauth2-app) a project to demonstrate how to make API calls and displays the python code used to make the call and the JSON response.
 
 * oauth 2 flow to obtain a token
 * token refresh
@@ -94,9 +94,6 @@ We've created [xero-python-outh2-app](https://github.com/XeroAPI/xero-python-oau
     * pay slips
     * settings
     * tracking categories
-
-
-
 
 
 
