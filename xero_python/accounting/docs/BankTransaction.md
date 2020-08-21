@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **str** | See Bank Transaction Types | 
-**contact** | [**Contact**](Contact.md) |  | 
+**contact** | [**Contact**](Contact.md) |  | [optional] 
 **line_items** | [**list[LineItem]**](LineItem.md) | See LineItems | 
 **bank_account** | [**Account**](Account.md) |  | 
 **is_reconciled** | **bool** | Boolean to show if transaction is reconciled | [optional] 
