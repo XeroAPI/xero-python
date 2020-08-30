@@ -37,6 +37,8 @@ class LeaveLine(BaseModel):
         "employment_termination_payment_type": "EmploymentTerminationPaymentType",
         "include_superannuation_guarantee_contribution": "bool",
         "number_of_units": "float",
+        "annual_number_of_units": "float",
+        "full_time_number_of_units_per_period": "float",
     }
 
     attribute_map = {
@@ -46,6 +48,8 @@ class LeaveLine(BaseModel):
         "employment_termination_payment_type": "EmploymentTerminationPaymentType",
         "include_superannuation_guarantee_contribution": "IncludeSuperannuationGuaranteeContribution",
         "number_of_units": "NumberOfUnits",
+        "annual_number_of_units": "AnnualNumberOfUnits",
+        "full_time_number_of_units_per_period": "FullTimeNumberOfUnitsPerPeriod",
     }
 
     def __init__(
@@ -56,6 +60,9 @@ class LeaveLine(BaseModel):
         employment_termination_payment_type=None,
         include_superannuation_guarantee_contribution=None,
         number_of_units=None,
+        annual_number_of_units=None,
+        full_time_number_of_units_per_period=None,
+        
     ):  # noqa: E501
         """LeaveLine - a model defined in OpenAPI"""  # noqa: E501
 
@@ -65,6 +72,8 @@ class LeaveLine(BaseModel):
         self._employment_termination_payment_type = None
         self._include_superannuation_guarantee_contribution = None
         self._number_of_units = None
+        self._annual_number_of_units = None
+        self._full_time_number_of_units_per_period = None
         self.discriminator = None
 
         if leave_type_id is not None:
@@ -83,6 +92,10 @@ class LeaveLine(BaseModel):
             )
         if number_of_units is not None:
             self.number_of_units = number_of_units
+        if annual_number_of_units is not None:
+            self.annual_number_of_units = annual_number_of_units
+        if full_time_number_of_units_per_period is not None:
+            self.full_time_number_of_units_per_period = full_time_number_of_units_per_period
 
     @property
     def leave_type_id(self):
@@ -219,3 +232,51 @@ class LeaveLine(BaseModel):
         """
 
         self._number_of_units = number_of_units
+
+    @property
+    def annual_number_of_units(self):
+        """Gets the annual_number_of_units of this LeaveLine.  # noqa: E501
+
+        Leave annual number of units  # noqa: E501
+
+        :return: The annual_number_of_units of this LeaveLine.  # noqa: E501
+        :rtype: float
+        """
+        return self._annual_number_of_units
+
+    @annual_number_of_units.setter
+    def annual_number_of_units(self, annual_number_of_units):
+        """Sets the annual_number_of_units of this LeaveLine.
+
+        Leave annual number of units  # noqa: E501
+
+        :param annual_number_of_units: The annual_number_of_units of this LeaveLine.  # noqa: E501
+        :type: float
+        """
+
+        self._annual_number_of_units = annual_number_of_units
+
+    @property
+    def full_time_number_of_units_per_period(self):
+        """Gets the full_time_number_of_units_per_period of this LeaveLine.  # noqa: E501
+
+        Leave full time number of units per period  # noqa: E501
+
+        :return: The full_time_number_of_units_per_period of this LeaveLine.  # noqa: E501
+        :rtype: float
+        """
+        return self._full_time_number_of_units_per_period
+
+    @full_time_number_of_units_per_period.setter
+    def full_time_number_of_units_per_period(self, full_time_number_of_units_per_period):
+        """Sets the full_time_number_of_units_per_period of this LeaveLine.
+
+        Leave full time number of units per period  # noqa: E501
+
+        :param full_time_number_of_units_per_period: The full_time_number_of_units_per_period of this LeaveLine.  # noqa: E501
+        :type: float
+        """
+
+        self._full_time_number_of_units_per_period = full_time_number_of_units_per_period
+        
+        full_time_number_of_units_per_period
