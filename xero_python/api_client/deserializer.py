@@ -21,7 +21,7 @@ DATETIME_RE = re.compile(
     r"(?P<tzinfo>Z|[+-]\d{2}(?::?\d{2})?)?$"
 )
 
-MS_DATETIME_RE = re.compile(r"/Date\((?P<timestamp>\d+)(?P<tzinfo>[+-]\d{2,4})?\)/$")
+MS_DATETIME_RE = re.compile(r"/Date\((?P<timestamp>-?\d+)(?P<tzinfo>[+-]\d{2,4})?\)/$")
 
 
 def deserialize_routing(data_type, data, model_finder):
