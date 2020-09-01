@@ -164,10 +164,11 @@ class TaxDeclaration(BaseModel):
         :param employee_id: The employee_id of this TaxDeclaration.  # noqa: E501
         :type: str
         """
-        if employee_id is None:
-            raise ValueError(
-                "Invalid value for `employee_id`, must not be `None`"
-            )  # noqa: E501
+        #This causes problems on deserializing
+        #if employee_id is None:
+        #    raise ValueError(
+        #        "Invalid value for `employee_id`, must not be `None`"
+        #    )  # noqa: E501
 
         self._employee_id = employee_id
 
