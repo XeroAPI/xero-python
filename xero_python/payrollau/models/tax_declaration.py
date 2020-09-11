@@ -190,10 +190,11 @@ class TaxDeclaration(BaseModel):
         :param employment_basis: The employment_basis of this TaxDeclaration.  # noqa: E501
         :type: EmploymentBasis
         """
-        if employment_basis is None:
-            raise ValueError(
-                "Invalid value for `employment_basis`, must not be `None`"
-            )  # noqa: E501
+        #This causes problems on deserializing
+        # if employment_basis is None:
+        #     raise ValueError(
+        #         "Invalid value for `employment_basis`, must not be `None`"
+        #     )  # noqa: E501
 
         self._employment_basis = employment_basis
 
