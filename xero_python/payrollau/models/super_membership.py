@@ -33,7 +33,7 @@ class SuperMembership(BaseModel):
     openapi_types = {
         "super_membership_id": "str",
         "super_fund_id": "str",
-        "employee_number": "float",
+        "employee_number": "str",
     }
 
     attribute_map = {
