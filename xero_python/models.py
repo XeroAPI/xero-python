@@ -4,8 +4,7 @@ from functools import singledispatch
 
 
 class BaseModel:
-    """
-    """
+    """"""
 
     """
     Attributes:

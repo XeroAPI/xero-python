@@ -10050,7 +10050,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_quotes**
-> Quotes get_quotes(xero_tenant_id, if_modified_since=if_modified_since, date_from=date_from, date_to=date_to, expiry_date_from=expiry_date_from, expiry_date_to=expiry_date_to, contact_id=contact_id, status=status, page=page, order=order)
+> Quotes get_quotes(xero_tenant_id, if_modified_since=if_modified_since, date_from=date_from, date_to=date_to, expiry_date_from=expiry_date_from, expiry_date_to=expiry_date_to, contact_id=contact_id, status=status, page=page, order=order, quote_number=quote_number)
 
 Allows you to retrieve any sales quotes
 
@@ -10090,9 +10090,10 @@ contact_id = '00000000-0000-0000-000-000000000000' # str | Filter for quotes bel
 status = 'status_example' # str | Filter for quotes of a particular Status (optional)
 page = 1 # int | e.g. page=1 – Up to 100 Quotes will be returned in a single API call with line items shown for each quote (optional)
 order = 'ASC' # str | Order by an any element (optional)
+quote_number = 'quote_number_example' # str | Filter by quote number (e.g. GET https://.../Quotes?QuoteNumber=QU-0001) (optional)
 try:
     # Allows you to retrieve any sales quotes
-    api_response = api_instance.get_quotes(xero_tenant_id, if_modified_since=if_modified_since, date_from=date_from, date_to=date_to, expiry_date_from=expiry_date_from, expiry_date_to=expiry_date_to, contact_id=contact_id, status=status, page=page, order=order)
+    api_response = api_instance.get_quotes(xero_tenant_id, if_modified_since=if_modified_since, date_from=date_from, date_to=date_to, expiry_date_from=expiry_date_from, expiry_date_to=expiry_date_to, contact_id=contact_id, status=status, page=page, order=order, quote_number=quote_number)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->get_quotes: %s\n" % e)
@@ -10112,6 +10113,7 @@ Name | Type | Description  | Notes
  **status** | **str**| Filter for quotes of a particular Status | [optional] 
  **page** | **int**| e.g. page&#x3D;1 – Up to 100 Quotes will be returned in a single API call with line items shown for each quote | [optional] 
  **order** | **str**| Order by an any element | [optional] 
+ **quote_number** | **str**| Filter by quote number (e.g. GET https://.../Quotes?QuoteNumber&#x3D;QU-0001) | [optional] 
 
 ### Return type
 
