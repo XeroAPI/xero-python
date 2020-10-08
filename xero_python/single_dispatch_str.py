@@ -25,9 +25,7 @@ def single_dispatch_str(func=None, key=None):
     func_name = getattr(func, "__name__", "single_dispatch_str function")
 
     def default_get_key(*args, **kwargs):
-        """default strategy implementation, returns string value of its first argument
-
-        """
+        """default strategy implementation, returns string value of its first argument"""
         if not args:
             raise TypeError(
                 "{} requires at least 1 positional argument".format(func_name)

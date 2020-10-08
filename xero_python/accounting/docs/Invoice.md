@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **total** | **float** | Total of Invoice tax inclusive (i.e. SubTotal + TotalTax). This will be ignored if it doesn’t equal the sum of the LineAmounts | [optional] 
 **total_discount** | **float** | Total of discounts applied on the invoice line items | [optional] 
 **invoice_id** | **str** | Xero generated unique identifier for invoice | [optional] 
+**repeating_invoice_id** | **str** | Xero generated unique identifier for repeating invoices | [optional] 
 **has_attachments** | **bool** | boolean to indicate if an invoice has an attachment | [optional] [default to False]
 **is_discounted** | **bool** | boolean to indicate if an invoice has a discount | [optional] 
 **payments** | [**list[Payment]**](Payment.md) | See Payments | [optional] 

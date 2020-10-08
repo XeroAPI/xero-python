@@ -111,7 +111,7 @@ class ApiClient(object):
     @property
     def pool(self):
         """Create thread pool on first request
-         avoids instantiating unused threadpool for blocking clients.
+        avoids instantiating unused threadpool for blocking clients.
         """
         if self._pool is None:
             self._pool = ThreadPool(self.pool_threads)
