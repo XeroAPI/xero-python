@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**employee_id** | **str** | Address line 1 for employee home address | 
+**employee_id** | **str** | Address line 1 for employee home address | [optional] 
 **employment_basis** | [**EmploymentBasis**](EmploymentBasis.md) |  | [optional] 
 **tfn_exemption_type** | [**TFNExemptionType**](TFNExemptionType.md) |  | [optional] 
 **tax_file_number** | **str** | The tax file number e.g 123123123. | [optional] 
