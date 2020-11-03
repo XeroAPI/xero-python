@@ -179,7 +179,7 @@ class OAuth2Token:
         expires_at,
         expires_in,
         token_type,
-        id_token,
+        id_token=None,
     ):
         """
         Set new auth2 token details
@@ -189,7 +189,7 @@ class OAuth2Token:
         :param expires_at: float timestamp
         :param expires_in: number
         :param token_type: str
-        :param id_token: str
+        :param id_token: str (optional)
         """
         self.access_token = access_token
         self.expires_at = expires_at

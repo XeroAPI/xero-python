@@ -127,6 +127,23 @@ def oauth2_token(
         "token_type": "Bearer",
     }
 
+@pytest.fixture()
+def oauth2_token_without_id_token(
+    xero_access_token,
+    xero_refresh_token,
+    xero_scope,
+    xero_expires_in,
+    xero_expires_at,
+):
+    return {
+        "access_token": xero_access_token,
+        "expires_at": xero_expires_at,
+        "expires_in": xero_expires_in,
+        "refresh_token": xero_refresh_token,
+        "scope": xero_scope,
+        "token_type": "Bearer",
+    }
+
 
 @pytest.fixture()
 def oauth2_refresh_token(oauth2_token, xero_refresh_token):

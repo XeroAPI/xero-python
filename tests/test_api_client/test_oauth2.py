@@ -205,6 +205,22 @@ def test_auth2_call_refresh_token_api(oauth2_refresh_token):
     assert call_kwargs == {}
     assert new_token is token
 
+def test_auth2_call_refresh_token_api_without_id_token(oauth2_token_without_id_token):
+    # Given valid refresh token and client credentials without using OpenID scope (id_token absent)
+    oauth2_token = OAuth2Token()
+    oauth2_token.update_token(**oauth2_token_without_id_token)
+    token = {}
+    token_api = FakeClass()
+    token_api.refresh_token = FakeMethod(return_value=token)
+    # When refresh token API endpoint called
+    new_token = oauth2_token.call_refresh_token_api(token_api)
+    # Then new oauth2 token received
+    assert len(token_api.refresh_token.calls) == 1
+    call_args, call_kwargs = token_api.refresh_token.calls[0]
+    assert call_args == (oauth2_token.refresh_token, oauth2_token.scope)
+    assert call_kwargs == {}
+    assert new_token is token
+
 
 def test_token_api_refresh_token(
     xero_client_id, xero_client_secret, xero_scope, vcr, vcr_cassette_name
