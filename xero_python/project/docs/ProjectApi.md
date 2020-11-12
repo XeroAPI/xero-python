@@ -488,7 +488,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_tasks**
-> Tasks get_tasks(xero_tenant_id, project_id, page=page, page_size=page_size, task_ids=task_ids)
+> Tasks get_tasks(xero_tenant_id, project_id, page=page, page_size=page_size, task_ids=task_ids, charge_type=charge_type)
 
 Allows you to retrieve a single project
 
@@ -525,9 +525,10 @@ project_id = 'project_id_example' # str | You can specify an individual project 
 page = 1 # int | Set to 1 by default. The requested number of the page in paged response - Must be a number greater than 0. (optional)
 page_size = 10 # int | Optional, it is set to 50 by default. The number of items to return per page in a paged response - Must be a number between 1 and 500. (optional)
 task_ids = 'task_ids_example' # str | taskIdsSearch for all tasks that match a comma separated list of taskIds, i.e. GET https://.../tasks?taskIds={taskId},{taskId} (optional)
+charge_type = xero_python.project.ChargeType() # ChargeType |  (optional)
 try:
     # Allows you to retrieve a single project
-    api_response = api_instance.get_tasks(xero_tenant_id, project_id, page=page, page_size=page_size, task_ids=task_ids)
+    api_response = api_instance.get_tasks(xero_tenant_id, project_id, page=page, page_size=page_size, task_ids=task_ids, charge_type=charge_type)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->get_tasks: %s\n" % e)
@@ -542,6 +543,7 @@ Name | Type | Description  | Notes
  **page** | **int**| Set to 1 by default. The requested number of the page in paged response - Must be a number greater than 0. | [optional] 
  **page_size** | **int**| Optional, it is set to 50 by default. The number of items to return per page in a paged response - Must be a number between 1 and 500. | [optional] 
  **task_ids** | **str**| taskIdsSearch for all tasks that match a comma separated list of taskIds, i.e. GET https://.../tasks?taskIds&#x3D;{taskId},{taskId} | [optional] 
+ **charge_type** | [**ChargeType**](.md)|  | [optional] 
 
 ### Return type
 
