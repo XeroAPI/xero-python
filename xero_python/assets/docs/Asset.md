@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **asset_number** | **str** | Must be unique. | [optional] 
 **purchase_date** | **date** | The date the asset was purchased YYYY-MM-DD | [optional] 
 **purchase_price** | **float** | The purchase price of the asset | [optional] 
+**disposal_date** | **date** | The date the asset was disposed | [optional] 
 **disposal_price** | **float** | The price the asset was disposed at | [optional] 
 **asset_status** | [**AssetStatus**](AssetStatus.md) |  | [optional] 
 **warranty_expiry_date** | **str** | The date the asset’s warranty expires (if needed) YYYY-MM-DD | [optional] 

@@ -8292,11 +8292,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **page** | **int**| Up to 100 linked transactions will be returned in a single API call. Use the page parameter to specify the page to be returned e.g. page&#x3D;1. | [optional] 
- **linked_transaction_id** | **str**| The Xero identifier for an Linked Transaction | [optional] 
- **source_transaction_id** | **str**| Filter by the SourceTransactionID. Get the linked transactions created from a particular ACCPAY invoice | [optional] 
- **contact_id** | **str**| Filter by the ContactID. Get all the linked transactions that have been assigned to a particular customer. | [optional] 
+ **linked_transaction_id** | [**str**](.md)| The Xero identifier for an Linked Transaction | [optional] 
+ **source_transaction_id** | [**str**](.md)| Filter by the SourceTransactionID. Get the linked transactions created from a particular ACCPAY invoice | [optional] 
+ **contact_id** | [**str**](.md)| Filter by the ContactID. Get all the linked transactions that have been assigned to a particular customer. | [optional] 
  **status** | **str**| Filter by the combination of ContactID and Status. Get  the linked transactions associaed to a  customer and with a status | [optional] 
- **target_transaction_id** | **str**| Filter by the TargetTransactionID. Get all the linked transactions allocated to a particular ACCREC invoice | [optional] 
+ **target_transaction_id** | [**str**](.md)| Filter by the TargetTransactionID. Get all the linked transactions allocated to a particular ACCREC invoice | [optional] 
 
 ### Return type
 
@@ -11668,7 +11668,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-date = '2019-11-01' # str | The date of the Balance Sheet report (optional)
+date = '2019-11-01' # date | The date of the Balance Sheet report (optional)
 periods = 3 # int | The number of periods for the Balance Sheet report (optional)
 timeframe = 'MONTH' # str | The period size to compare to (MONTH, QUARTER, YEAR) (optional)
 tracking_option_id1 = '00000000-0000-0000-000-000000000000' # str | The tracking option 1 for the Balance Sheet report (optional)
@@ -11688,7 +11688,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
- **date** | **str**| The date of the Balance Sheet report | [optional] 
+ **date** | **date**| The date of the Balance Sheet report | [optional] 
  **periods** | **int**| The number of periods for the Balance Sheet report | [optional] 
  **timeframe** | **str**| The period size to compare to (MONTH, QUARTER, YEAR) | [optional] 
  **tracking_option_id1** | **str**| The tracking option 1 for the Balance Sheet report | [optional] 

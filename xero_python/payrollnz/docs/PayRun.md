@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **total_pay** | **float** | Total pay of the pay run | [optional] 
 **pay_run_status** | **str** | Pay run status | [optional] 
 **pay_run_type** | **str** | Pay run type | [optional] 
-**calendar_type** | **str** | Calendar type of the pay run | [optional] 
+**calendar_type** | [**CalendarType**](CalendarType.md) |  | [optional] 
 **posted_date_time** | **date** | Posted date time of the pay run | [optional] 
 **pay_slips** | [**list[PaySlip]**](PaySlip.md) |  | [optional] 
 
