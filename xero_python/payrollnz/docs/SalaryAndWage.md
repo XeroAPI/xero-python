@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **number_of_units_per_week** | **float** | The Number of Units per week for the corresponding salary and wages | 
 **rate_per_unit** | **float** | The rate of each unit for the corresponding salary and wages | [optional] 
 **number_of_units_per_day** | **float** | The Number of Units per day for the corresponding salary and wages | 
-**days_per_week** | **int** | The days per week for the salary. | [optional] 
+**days_per_week** | **float** | The days per week for the salary. | [optional] 
 **effective_from** | **date** | The effective date of the corresponding salary and wages | 
 **annual_salary** | **float** | The annual salary | 
 **status** | **str** | The current status of the corresponding salary and wages | 
