@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**create_bank_transactions**](AccountingApi.md#create_bank_transactions) | **PUT** /BankTransactions | Allows you to create one or more spend or receive money transaction
 [**create_bank_transfer**](AccountingApi.md#create_bank_transfer) | **PUT** /BankTransfers | Allows you to create a bank transfers
 [**create_bank_transfer_attachment_by_file_name**](AccountingApi.md#create_bank_transfer_attachment_by_file_name) | **PUT** /BankTransfers/{BankTransferID}/Attachments/{FileName} | 
-[**create_bank_transfer_history_record**](AccountingApi.md#create_bank_transfer_history_record) | **PUT** /BankTransfers/{BankTransferID}/History | 
+[**create_bank_transfer_history_record**](AccountingApi.md#create_bank_transfer_history_record) | **PUT** /BankTransfers/{BankTransferID}/History | Allows you to create history record for a bank transfers
 [**create_batch_payment**](AccountingApi.md#create_batch_payment) | **PUT** /BatchPayments | Create one or many BatchPayments for invoices
 [**create_batch_payment_history_record**](AccountingApi.md#create_batch_payment_history_record) | **PUT** /BatchPayments/{BatchPaymentID}/History | Allows you to create a history record for a Batch Payment
 [**create_branding_theme_payment_services**](AccountingApi.md#create_branding_theme_payment_services) | **POST** /BrandingThemes/{BrandingThemeID}/PaymentServices | Allow for the creation of new custom payment service for specified Branding Theme
@@ -24,7 +24,7 @@ Method | HTTP request | Description
 [**create_credit_note_attachment_by_file_name**](AccountingApi.md#create_credit_note_attachment_by_file_name) | **PUT** /CreditNotes/{CreditNoteID}/Attachments/{FileName} | Allows you to create Attachments on CreditNote by file name
 [**create_credit_note_history**](AccountingApi.md#create_credit_note_history) | **PUT** /CreditNotes/{CreditNoteID}/History | Allows you to retrieve a history records of an CreditNote
 [**create_credit_notes**](AccountingApi.md#create_credit_notes) | **PUT** /CreditNotes | Allows you to create a credit note
-[**create_currency**](AccountingApi.md#create_currency) | **PUT** /Currencies | 
+[**create_currency**](AccountingApi.md#create_currency) | **PUT** /Currencies | Allows you to create a new currency for an org
 [**create_employees**](AccountingApi.md#create_employees) | **PUT** /Employees | Allows you to create new employees used in Xero payrun
 [**create_expense_claim_history**](AccountingApi.md#create_expense_claim_history) | **PUT** /ExpenseClaims/{ExpenseClaimID}/History | Allows you to create a history records of an ExpenseClaim
 [**create_expense_claims**](AccountingApi.md#create_expense_claims) | **PUT** /ExpenseClaims | Allows you to retrieve expense claims
@@ -197,7 +197,7 @@ Method | HTTP request | Description
 [**update_bank_transaction**](AccountingApi.md#update_bank_transaction) | **POST** /BankTransactions/{BankTransactionID} | Allows you to update a single spend or receive money transaction
 [**update_bank_transaction_attachment_by_file_name**](AccountingApi.md#update_bank_transaction_attachment_by_file_name) | **POST** /BankTransactions/{BankTransactionID}/Attachments/{FileName} | Allows you to update an Attachment on BankTransaction by Filename
 [**update_bank_transfer_attachment_by_file_name**](AccountingApi.md#update_bank_transfer_attachment_by_file_name) | **POST** /BankTransfers/{BankTransferID}/Attachments/{FileName} | 
-[**update_contact**](AccountingApi.md#update_contact) | **POST** /Contacts/{ContactID} | 
+[**update_contact**](AccountingApi.md#update_contact) | **POST** /Contacts/{ContactID} | Allows you to update one contact in a Xero organisation
 [**update_contact_attachment_by_file_name**](AccountingApi.md#update_contact_attachment_by_file_name) | **POST** /Contacts/{ContactID}/Attachments/{FileName} | 
 [**update_contact_group**](AccountingApi.md#update_contact_group) | **POST** /ContactGroups/{ContactGroupID} | Allows you to update a Contact Group
 [**update_credit_note**](AccountingApi.md#update_credit_note) | **POST** /CreditNotes/{CreditNoteID} | Allows you to update a specific credit note
@@ -691,7 +691,7 @@ Name | Type | Description  | Notes
 # **create_bank_transfer_history_record**
 > HistoryRecords create_bank_transfer_history_record(xero_tenant_id, bank_transfer_id, history_records)
 
-
+Allows you to create history record for a bank transfers
 
 ### Example
 
@@ -723,6 +723,7 @@ xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 bank_transfer_id = '00000000-0000-0000-000-000000000000' # str | Xero generated unique identifier for a bank transfer
 history_records = { "HistoryRecords": [ { "Details": "Hello World" } ] } # HistoryRecords | HistoryRecords containing an array of HistoryRecord objects in body of request
 try:
+    # Allows you to create history record for a bank transfers
     api_response = api_instance.create_bank_transfer_history_record(xero_tenant_id, bank_transfer_id, history_records)
     pprint(api_response)
 except ApiException as e:
@@ -1542,7 +1543,7 @@ Name | Type | Description  | Notes
 # **create_currency**
 > Currencies create_currency(xero_tenant_id, currency)
 
-
+Allows you to create a new currency for an org
 
 ### Example
 
@@ -1573,6 +1574,7 @@ api_instance = AccountingApi(api_client)
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 currency = { "Code": "USD", "Description": "United States Dollar" } # Currency | Currency obejct in the body of request
 try:
+    # Allows you to create a new currency for an org
     api_response = api_instance.create_currency(xero_tenant_id, currency)
     pprint(api_response)
 except ApiException as e:
@@ -4684,7 +4686,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 if_modified_since = '2020-02-06T12:17:43.202-08:00' # datetime | Only records created or modified since this timestamp will be returned (optional)
-where = 'Status==\"' + Account.StatusEnum.ACTIVE + '\" AND Type==\"' + Account.BankAccountTypeEnum.BANK + '\"' # str | Filter by an any element (optional)
+where = 'Status==&quot;ACTIVE&quot; AND Type==&quot;BANK&quot;' # str | Filter by an any element (optional)
 order = 'Name ASC' # str | Order by an any element (optional)
 try:
     # Allows you to retrieve the full chart of accounts
@@ -5013,7 +5015,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 if_modified_since = '2020-02-06T12:17:43.202-08:00' # datetime | Only records created or modified since this timestamp will be returned (optional)
-where = 'Status==\"' + BankTransaction.StatusEnum.AUTHORISED + '\"' # str | Filter by an any element (optional)
+where = 'Status==\"AUTHORISED\"' # str | Filter by an any element (optional)
 order = 'Type ASC' # str | Order by an any element (optional)
 page = 1 # int | Up to 100 bank transactions will be returned in a single API call with line items details (optional)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
@@ -5600,7 +5602,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 if_modified_since = '2020-02-06T12:17:43.202-08:00' # datetime | Only records created or modified since this timestamp will be returned (optional)
-where = 'Status==\"' + BatchPayment.StatusEnum.AUTHORISED + '\"' # str | Filter by an any element (optional)
+where = 'Status==\"AUTHORISED\"' # str | Filter by an any element (optional)
 order = 'Date ASC' # str | Order by an any element (optional)
 try:
     # Retrieve either one or many BatchPayments for invoices
@@ -6302,7 +6304,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-where = 'Status==\"' + ContactGroup.StatusEnum.ACTIVE + '\"' # str | Filter by an any element (optional)
+where = 'Status==\"ACTIVE\"' # str | Filter by an any element (optional)
 order = 'Name ASC' # str | Order by an any element (optional)
 try:
     # Allows you to retrieve the ContactID and Name of all the contacts in a contact group
@@ -6431,9 +6433,9 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 if_modified_since = '2020-02-06T12:17:43.202-08:00' # datetime | Only records created or modified since this timestamp will be returned (optional)
-where = 'ContactStatus==\"' + Contact.ContactStatusEnum.ACTIVE + '\"' # str | Filter by an any element (optional)
+where = 'ContactStatus==&quot;ACTIVE&quot;' # str | Filter by an any element (optional)
 order = 'Name ASC' # str | Order by an any element (optional)
-i_ds = ['00000000-0000-0000-000-000000000000,00000000-0000-0000-000-000000000000'] # list[str] | Filter by a comma separated list of ContactIDs. Allows you to retrieve a specific set of contacts in a single call. (optional)
+i_ds = ['&quot;00000000-0000-0000-000-000000000000&quot;'] # list[str] | Filter by a comma separated list of ContactIDs. Allows you to retrieve a specific set of contacts in a single call. (optional)
 page = 1 # int | e.g. page=1 - Up to 100 contacts will be returned in a single API call. (optional)
 include_archived = True # bool | e.g. includeArchived=true - Contacts with a status of ARCHIVED will be included in the response (optional)
 try:
@@ -6892,7 +6894,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 if_modified_since = '2020-02-06T12:17:43.202-08:00' # datetime | Only records created or modified since this timestamp will be returned (optional)
-where = 'Status==\"' + CreditNote.StatusEnum.DRAFT + '\"' # str | Filter by an any element (optional)
+where = 'Status==\"DRAFT\"' # str | Filter by an any element (optional)
 order = 'CreditNoteNumber ASC' # str | Order by an any element (optional)
 page = 1 # int | e.g. page=1 – Up to 100 credit notes will be returned in a single API call with line items shown for each credit note (optional)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
@@ -6962,7 +6964,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-where = 'Status==\"' + Currency.StatusEnum.ACTIVE + '\"' # str | Filter by an any element (optional)
+where = 'Code==\"USD\"' # str | Filter by an any element (optional)
 order = 'Code ASC' # str | Order by an any element (optional)
 try:
     # Allows you to retrieve currencies for your organisation
@@ -7091,8 +7093,8 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 if_modified_since = '2020-02-06T12:17:43.202-08:00' # datetime | Only records created or modified since this timestamp will be returned (optional)
-where = 'Status==\"' + Employee.StatusEnum.ACTIVE + '\"' # str | Filter by an any element (optional)
-order = 'ASC' # str | Order by an any element (optional)
+where = 'Status==\"ACTIVE\"' # str | Filter by an any element (optional)
+order = 'LastName ASC' # str | Order by an any element (optional)
 try:
     # Allows you to retrieve employees used in Xero payrun
     api_response = api_instance.get_employees(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order)
@@ -7284,7 +7286,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 if_modified_since = '2020-02-06T12:17:43.202-08:00' # datetime | Only records created or modified since this timestamp will be returned (optional)
-where = 'Status==\"' + ExpenseClaim.StatusEnum.SUBMITTED + '\"' # str | Filter by an any element (optional)
+where = 'Status==\"SUBMITTED\"' # str | Filter by an any element (optional)
 order = 'Status ASC' # str | Order by an any element (optional)
 try:
     # Allows you to retrieve expense claims
@@ -7800,12 +7802,12 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 if_modified_since = '2020-02-06T12:17:43.202-08:00' # datetime | Only records created or modified since this timestamp will be returned (optional)
-where = 'Status==\"' + Invoice.StatusEnum.DRAFT + '\"' # str | Filter by an any element (optional)
+where = 'Status==\"DRAFT\"' # str | Filter by an any element (optional)
 order = 'InvoiceNumber ASC' # str | Order by an any element (optional)
-i_ds = ['00000000-0000-0000-000-000000000000,00000000-0000-0000-000-000000000000'] # list[str] | Filter by a comma-separated list of InvoicesIDs. (optional)
-invoice_numbers = ['null'] # list[str] | Filter by a comma-separated list of InvoiceNumbers. (optional)
-contact_i_ds = ['00000000-0000-0000-000-000000000000,00000000-0000-0000-000-000000000000'] # list[str] | Filter by a comma-separated list of ContactIDs. (optional)
-statuses = ['null'] # list[str] | Filter by a comma-separated list Statuses. For faster response times we recommend using these explicit parameters instead of passing OR conditions into the Where filter. (optional)
+i_ds = ['&quot;00000000-0000-0000-000-000000000000&quot;'] # list[str] | Filter by a comma-separated list of InvoicesIDs. (optional)
+invoice_numbers = ['&quot;INV-001&quot;, &quot;INV-002&quot;'] # list[str] | Filter by a comma-separated list of InvoiceNumbers. (optional)
+contact_i_ds = ['&quot;00000000-0000-0000-000-000000000000&quot;'] # list[str] | Filter by a comma-separated list of ContactIDs. (optional)
+statuses = ['&quot;DRAFT&quot;, &quot;SUBMITTED&quot;'] # list[str] | Filter by a comma-separated list Statuses. For faster response times we recommend using these explicit parameters instead of passing OR conditions into the Where filter. (optional)
 page = 1 # int | e.g. page=1 – Up to 100 invoices will be returned in a single API call with line items shown for each invoice (optional)
 include_archived = True # bool | e.g. includeArchived=true - Contacts with a status of ARCHIVED will be included in the response (optional)
 created_by_my_app = false # bool | When set to true you'll only retrieve Invoices created by your app (optional)
@@ -8606,7 +8608,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 if_modified_since = '2020-02-06T12:17:43.202-08:00' # datetime | Only records created or modified since this timestamp will be returned (optional)
-where = 'Status==\"' + ManualJournal.StatusEnum.DRAFT + '\"' # str | Filter by an any element (optional)
+where = 'Status==\"DRAFT\"' # str | Filter by an any element (optional)
 order = 'Date ASC' # str | Order by an any element (optional)
 page = 1 # int | e.g. page=1 – Up to 100 manual journals will be returned in a single API call with line items shown for each overpayment (optional)
 try:
@@ -9112,8 +9114,8 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 if_modified_since = '2020-02-06T12:17:43.202-08:00' # datetime | Only records created or modified since this timestamp will be returned (optional)
-where = 'Status==\"' + Overpayment.StatusEnum.AUTHORISED + '\"' # str | Filter by an any element (optional)
-order = 'RemainingCredit ASC' # str | Order by an any element (optional)
+where = 'Status==\"AUTHORISED\"' # str | Filter by an any element (optional)
+order = 'Status ASC' # str | Order by an any element (optional)
 page = 1 # int | e.g. page=1 – Up to 100 overpayments will be returned in a single API call with line items shown for each overpayment (optional)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
@@ -9370,7 +9372,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 if_modified_since = '2020-02-06T12:17:43.202-08:00' # datetime | Only records created or modified since this timestamp will be returned (optional)
-where = 'Status==\"' + Payment.StatusEnum.AUTHORISED + '\"' # str | Filter by an any element (optional)
+where = 'Status==\"AUTHORISED\"' # str | Filter by an any element (optional)
 order = 'Amount ASC' # str | Order by an any element (optional)
 page = 1 # int | Up to 100 payments will be returned in a single API call (optional)
 try:
@@ -9565,7 +9567,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 if_modified_since = '2020-02-06T12:17:43.202-08:00' # datetime | Only records created or modified since this timestamp will be returned (optional)
-where = 'Status==\"' + Prepayment.StatusEnum.AUTHORISED + '\"' # str | Filter by an any element (optional)
+where = 'Status==\"AUTHORISED\"' # str | Filter by an any element (optional)
 order = 'Reference ASC' # str | Order by an any element (optional)
 page = 1 # int | e.g. page=1 – Up to 100 prepayments will be returned in a single API call with line items shown for each overpayment (optional)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
@@ -10549,10 +10551,10 @@ date_to = '2013-10-20' # date | Filter for quotes before a particular date (opti
 expiry_date_from = '2013-10-20' # date | Filter for quotes expiring after a particular date (optional)
 expiry_date_to = '2013-10-20' # date | Filter for quotes before a particular date (optional)
 contact_id = '00000000-0000-0000-000-000000000000' # str | Filter for quotes belonging to a particular contact (optional)
-status = 'status_example' # str | Filter for quotes of a particular Status (optional)
+status = 'DRAFT' # str | Filter for quotes of a particular Status (optional)
 page = 1 # int | e.g. page=1 – Up to 100 Quotes will be returned in a single API call with line items shown for each quote (optional)
-order = 'ASC' # str | Order by an any element (optional)
-quote_number = 'quote_number_example' # str | Filter by quote number (e.g. GET https://.../Quotes?QuoteNumber=QU-0001) (optional)
+order = 'Status ASC' # str | Order by an any element (optional)
+quote_number = 'QU-0001' # str | Filter by quote number (e.g. GET https://.../Quotes?QuoteNumber=QU-0001) (optional)
 try:
     # Allows you to retrieve any sales quotes
     api_response = api_instance.get_quotes(xero_tenant_id, if_modified_since=if_modified_since, date_from=date_from, date_to=date_to, expiry_date_from=expiry_date_from, expiry_date_to=expiry_date_to, contact_id=contact_id, status=status, page=page, order=order, quote_number=quote_number)
@@ -10950,7 +10952,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 if_modified_since = '2020-02-06T12:17:43.202-08:00' # datetime | Only records created or modified since this timestamp will be returned (optional)
-where = 'Status==\"' + Receipt.StatusEnum.DRAFT + '\"' # str | Filter by an any element (optional)
+where = 'Status==\"DRAFT\"' # str | Filter by an any element (optional)
 order = 'ReceiptNumber ASC' # str | Order by an any element (optional)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
@@ -11341,7 +11343,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-where = 'Status==\"' + RepeatingInvoice.StatusEnum.DRAFT + '\"' # str | Filter by an any element (optional)
+where = 'Status==\"DRAFT\"' # str | Filter by an any element (optional)
 order = 'Total ASC' # str | Order by an any element (optional)
 try:
     # Allows you to retrieve any repeating invoices
@@ -12147,7 +12149,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-where = 'Status==\"' + TaxRate.StatusEnum.ACTIVE + '\"' # str | Filter by an any element (optional)
+where = 'Status==\"ACTIVE\"' # str | Filter by an any element (optional)
 order = 'Name ASC' # str | Order by an any element (optional)
 tax_type = 'INPUT' # str | Filter by tax type (optional)
 try:
@@ -12214,7 +12216,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-where = 'Status==\"' + TrackingCategory.StatusEnum.ACTIVE + '\"' # str | Filter by an any element (optional)
+where = 'Status==\"ACTIVE\"' # str | Filter by an any element (optional)
 order = 'Name ASC' # str | Order by an any element (optional)
 include_archived = True # bool | e.g. includeArchived=true - Categories and options with a status of ARCHIVED will be included in the response (optional)
 try:
@@ -12840,7 +12842,7 @@ Name | Type | Description  | Notes
 # **update_contact**
 > Contacts update_contact(xero_tenant_id, contact_id, contacts)
 
-
+Allows you to update one contact in a Xero organisation
 
 ### Example
 
@@ -12872,6 +12874,7 @@ xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 contact_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Contact
 contacts = { "Contacts": [{ "ContactID": "00000000-0000-0000-000-000000000000", "Name": "Thanos" }]} # Contacts | an array of Contacts containing single Contact object with properties to update
 try:
+    # Allows you to update one contact in a Xero organisation
     api_response = api_instance.update_contact(xero_tenant_id, contact_id, contacts)
     pprint(api_response)
 except ApiException as e:
