@@ -120,7 +120,7 @@ class Timesheet(BaseModel):
     def payroll_calendar_id(self):
         """Gets the payroll_calendar_id of this Timesheet.  # noqa: E501
 
-        The Xero identifier for the Payroll Calandar that the Timesheet applies to  # noqa: E501
+        The Xero identifier for the Payroll Calendar that the Timesheet applies to  # noqa: E501
 
         :return: The payroll_calendar_id of this Timesheet.  # noqa: E501
         :rtype: str
@@ -131,7 +131,7 @@ class Timesheet(BaseModel):
     def payroll_calendar_id(self, payroll_calendar_id):
         """Sets the payroll_calendar_id of this Timesheet.
 
-        The Xero identifier for the Payroll Calandar that the Timesheet applies to  # noqa: E501
+        The Xero identifier for the Payroll Calendar that the Timesheet applies to  # noqa: E501
 
         :param payroll_calendar_id: The payroll_calendar_id of this Timesheet.  # noqa: E501
         :type: str

@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Xero Payroll AU
+    Xero Payroll AU API
 
     This is the Xero Payroll API for orgs in Australia region.  # noqa: E501
 
@@ -160,7 +160,7 @@ class SuperLine(BaseModel):
     def minimum_monthly_earnings(self):
         """Gets the minimum_monthly_earnings of this SuperLine.  # noqa: E501
 
-        amount of mimimum earnings  # noqa: E501
+        amount of minimum earnings  # noqa: E501
 
         :return: The minimum_monthly_earnings of this SuperLine.  # noqa: E501
         :rtype: float
@@ -171,7 +171,7 @@ class SuperLine(BaseModel):
     def minimum_monthly_earnings(self, minimum_monthly_earnings):
         """Sets the minimum_monthly_earnings of this SuperLine.
 
-        amount of mimimum earnings  # noqa: E501
+        amount of minimum earnings  # noqa: E501
 
         :param minimum_monthly_earnings: The minimum_monthly_earnings of this SuperLine.  # noqa: E501
         :type: float

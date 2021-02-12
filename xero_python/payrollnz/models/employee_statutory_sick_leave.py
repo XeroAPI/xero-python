@@ -367,7 +367,7 @@ class EmployeeStatutorySickLeave(BaseModel):
     def sufficient_notice(self):
         """Gets the sufficient_notice of this EmployeeStatutorySickLeave.  # noqa: E501
 
-        Whether the employee provided sufficent notice and documentation as required by the employer supporting the sick leave request  # noqa: E501
+        Whether the employee provided sufficient notice and documentation as required by the employer supporting the sick leave request  # noqa: E501
 
         :return: The sufficient_notice of this EmployeeStatutorySickLeave.  # noqa: E501
         :rtype: bool
@@ -378,7 +378,7 @@ class EmployeeStatutorySickLeave(BaseModel):
     def sufficient_notice(self, sufficient_notice):
         """Sets the sufficient_notice of this EmployeeStatutorySickLeave.
 
-        Whether the employee provided sufficent notice and documentation as required by the employer supporting the sick leave request  # noqa: E501
+        Whether the employee provided sufficient notice and documentation as required by the employer supporting the sick leave request  # noqa: E501
 
         :param sufficient_notice: The sufficient_notice of this EmployeeStatutorySickLeave.  # noqa: E501
         :type: bool

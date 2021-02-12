@@ -83,7 +83,7 @@ class SuperannuationLine(BaseModel):
     def superannuation_type_id(self):
         """Gets the superannuation_type_id of this SuperannuationLine.  # noqa: E501
 
-        Xero identifier for payroll superannucation type  # noqa: E501
+        Xero identifier for payroll superannuation type  # noqa: E501
 
         :return: The superannuation_type_id of this SuperannuationLine.  # noqa: E501
         :rtype: str
@@ -94,7 +94,7 @@ class SuperannuationLine(BaseModel):
     def superannuation_type_id(self, superannuation_type_id):
         """Sets the superannuation_type_id of this SuperannuationLine.
 
-        Xero identifier for payroll superannucation type  # noqa: E501
+        Xero identifier for payroll superannuation type  # noqa: E501
 
         :param superannuation_type_id: The superannuation_type_id of this SuperannuationLine.  # noqa: E501
         :type: str
