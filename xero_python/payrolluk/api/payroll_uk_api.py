@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.8.4
+    OpenAPI spec version: 2.9.3
 """
 
 import importlib
@@ -64,7 +64,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """approve a timesheet  # noqa: E501
+        """Approves a specific timesheet  # noqa: E501
         OAuth2 scope: payroll.timesheets
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str timesheet_id: Identifier for the timesheet (required)
@@ -140,7 +140,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """create a new benefit  # noqa: E501
+        """Creates a new employee benefit  # noqa: E501
         OAuth2 scope: payroll.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param Benefit benefit: (required)
@@ -219,7 +219,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """create a new deduction  # noqa: E501
+        """Creates a new deduction  # noqa: E501
         OAuth2 scope: payroll.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param Deduction deduction: (required)
@@ -298,7 +298,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """create a new earnings rate  # noqa: E501
+        """Creates a new earnings rate  # noqa: E501
         OAuth2 scope: payroll.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param EarningsRate earnings_rate: (required)
@@ -377,7 +377,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """creates employees  # noqa: E501
+        """Creates employees  # noqa: E501
         OAuth2 scope: payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param Employee employee: (required)
@@ -457,7 +457,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """creates employee earnings template records  # noqa: E501
+        """Creates an earnings template records for a specific employee  # noqa: E501
         OAuth2 scope: payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
@@ -489,7 +489,7 @@ class PayrollUkApi(object):
 
         collection_formats = {}
         path_params = {
-            "EmployeeId": employee_id,
+            "EmployeeID": employee_id,
         }
 
         query_params = []
@@ -514,7 +514,7 @@ class PayrollUkApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Employees/{EmployeeId}/PayTemplates/earnings")
+        url = self.get_resource_url("/Employees/{EmployeeID}/PayTemplates/earnings")
 
         try:
             return self.api_client.call_api(
@@ -548,7 +548,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """creates employee leave records  # noqa: E501
+        """Creates leave records for a specific employee  # noqa: E501
         OAuth2 scope: payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
@@ -580,7 +580,7 @@ class PayrollUkApi(object):
 
         collection_formats = {}
         path_params = {
-            "EmployeeId": employee_id,
+            "EmployeeID": employee_id,
         }
 
         query_params = []
@@ -605,7 +605,7 @@ class PayrollUkApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Employees/{EmployeeId}/Leave")
+        url = self.get_resource_url("/Employees/{EmployeeID}/Leave")
 
         try:
             return self.api_client.call_api(
@@ -637,7 +637,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """creates employee leave type records  # noqa: E501
+        """Creates employee leave type records  # noqa: E501
         OAuth2 scope: payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
@@ -669,7 +669,7 @@ class PayrollUkApi(object):
 
         collection_formats = {}
         path_params = {
-            "EmployeeId": employee_id,
+            "EmployeeID": employee_id,
         }
 
         query_params = []
@@ -694,7 +694,7 @@ class PayrollUkApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Employees/{EmployeeId}/LeaveTypes")
+        url = self.get_resource_url("/Employees/{EmployeeID}/LeaveTypes")
 
         try:
             return self.api_client.call_api(
@@ -726,7 +726,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """creates employee opening balances  # noqa: E501
+        """Creates an opening balance for a specific employee  # noqa: E501
         OAuth2 scope: payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
@@ -758,7 +758,7 @@ class PayrollUkApi(object):
 
         collection_formats = {}
         path_params = {
-            "EmployeeId": employee_id,
+            "EmployeeID": employee_id,
         }
 
         query_params = []
@@ -783,7 +783,7 @@ class PayrollUkApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Employees/{EmployeeId}/ukopeningbalances")
+        url = self.get_resource_url("/Employees/{EmployeeID}/ukopeningbalances")
 
         try:
             return self.api_client.call_api(
@@ -817,7 +817,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """creates employee payment method  # noqa: E501
+        """Creates an employee payment method  # noqa: E501
         OAuth2 scope: payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
@@ -849,7 +849,7 @@ class PayrollUkApi(object):
 
         collection_formats = {}
         path_params = {
-            "EmployeeId": employee_id,
+            "EmployeeID": employee_id,
         }
 
         query_params = []
@@ -874,7 +874,7 @@ class PayrollUkApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Employees/{EmployeeId}/PaymentMethods")
+        url = self.get_resource_url("/Employees/{EmployeeID}/PaymentMethods")
 
         try:
             return self.api_client.call_api(
@@ -908,7 +908,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """creates employee salary and wage record  # noqa: E501
+        """Creates a salary and wage record for a specific employee  # noqa: E501
         OAuth2 scope: payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
@@ -940,7 +940,7 @@ class PayrollUkApi(object):
 
         collection_formats = {}
         path_params = {
-            "EmployeeId": employee_id,
+            "EmployeeID": employee_id,
         }
 
         query_params = []
@@ -965,7 +965,7 @@ class PayrollUkApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Employees/{EmployeeId}/SalaryAndWages")
+        url = self.get_resource_url("/Employees/{EmployeeID}/SalaryAndWages")
 
         try:
             return self.api_client.call_api(
@@ -998,7 +998,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """creates employee statutory sick leave records  # noqa: E501
+        """Creates statutory sick leave records  # noqa: E501
         OAuth2 scope: payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param EmployeeStatutorySickLeave employee_statutory_sick_leave: (required)
@@ -1080,7 +1080,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """creates employment  # noqa: E501
+        """Creates employment detail for a specific employee using a unique employee ID  # noqa: E501
         OAuth2 scope: payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
@@ -1112,7 +1112,7 @@ class PayrollUkApi(object):
 
         collection_formats = {}
         path_params = {
-            "EmployeeId": employee_id,
+            "EmployeeID": employee_id,
         }
 
         query_params = []
@@ -1137,7 +1137,7 @@ class PayrollUkApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Employees/{EmployeeId}/Employment")
+        url = self.get_resource_url("/Employees/{EmployeeID}/Employment")
 
         try:
             return self.api_client.call_api(
@@ -1168,7 +1168,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """create a new leave type  # noqa: E501
+        """Creates a new leave type  # noqa: E501
         OAuth2 scope: payroll.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param LeaveType leave_type: (required)
@@ -1248,7 +1248,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """creates multiple employee earnings template records  # noqa: E501
+        """Creates multiple earnings template records for a specific employee using a unique employee ID  # noqa: E501
         OAuth2 scope: payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
@@ -1280,7 +1280,7 @@ class PayrollUkApi(object):
 
         collection_formats = {}
         path_params = {
-            "EmployeeId": employee_id,
+            "EmployeeID": employee_id,
         }
 
         query_params = []
@@ -1305,7 +1305,7 @@ class PayrollUkApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Employees/{EmployeeId}/paytemplateearnings")
+        url = self.get_resource_url("/Employees/{EmployeeID}/paytemplateearnings")
 
         try:
             return self.api_client.call_api(
@@ -1338,7 +1338,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """create a new payrun calendar  # noqa: E501
+        """Creates a new payrun calendar  # noqa: E501
         OAuth2 scope: payroll.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param PayRunCalendar pay_run_calendar: (required)
@@ -1417,7 +1417,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """create a new reimbursement  # noqa: E501
+        """Creates a new reimbursement  # noqa: E501
         OAuth2 scope: payroll.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param Reimbursement reimbursement: (required)
@@ -1496,7 +1496,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """create a new timesheet  # noqa: E501
+        """Creates a new timesheet  # noqa: E501
         OAuth2 scope: payroll.timesheets
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param Timesheet timesheet: (required)
@@ -1576,7 +1576,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """create a new timesheet line  # noqa: E501
+        """Creates a new timesheet line for a specific timesheet using a unique timesheet ID  # noqa: E501
         OAuth2 scope: payroll.timesheets
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str timesheet_id: Identifier for the timesheet (required)
@@ -1665,7 +1665,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """deletes an employee earnings template record  # noqa: E501
+        """Deletes a specific employee's earnings template record  # noqa: E501
         OAuth2 scope: payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
@@ -1697,7 +1697,7 @@ class PayrollUkApi(object):
 
         collection_formats = {}
         path_params = {
-            "EmployeeId": employee_id,
+            "EmployeeID": employee_id,
             "PayTemplateEarningID": pay_template_earning_id,
         }
 
@@ -1714,7 +1714,7 @@ class PayrollUkApi(object):
         # Authentication setting
         auth_settings = ["OAuth2"]
         url = self.get_resource_url(
-            "/Employees/{EmployeeId}/PayTemplates/earnings/{PayTemplateEarningID}"
+            "/Employees/{EmployeeID}/PayTemplates/earnings/{PayTemplateEarningID}"
         )
 
         try:
@@ -1749,7 +1749,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """deletes an employee leave record  # noqa: E501
+        """Deletes a specific employee's leave record  # noqa: E501
         OAuth2 scope: payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
@@ -1781,7 +1781,7 @@ class PayrollUkApi(object):
 
         collection_formats = {}
         path_params = {
-            "EmployeeId": employee_id,
+            "EmployeeID": employee_id,
             "LeaveID": leave_id,
         }
 
@@ -1802,7 +1802,7 @@ class PayrollUkApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Employees/{EmployeeId}/Leave/{LeaveID}")
+        url = self.get_resource_url("/Employees/{EmployeeID}/Leave/{LeaveID}")
 
         try:
             return self.api_client.call_api(
@@ -1834,7 +1834,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """deletes an employee salary and wages record  # noqa: E501
+        """Deletes a salary and wages record for a specific employee  # noqa: E501
         OAuth2 scope: payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
@@ -1866,7 +1866,7 @@ class PayrollUkApi(object):
 
         collection_formats = {}
         path_params = {
-            "EmployeeId": employee_id,
+            "EmployeeID": employee_id,
             "SalaryAndWagesID": salary_and_wages_id,
         }
 
@@ -1883,7 +1883,7 @@ class PayrollUkApi(object):
         # Authentication setting
         auth_settings = ["OAuth2"]
         url = self.get_resource_url(
-            "/Employees/{EmployeeId}/SalaryAndWages/{SalaryAndWagesID}"
+            "/Employees/{EmployeeID}/SalaryAndWages/{SalaryAndWagesID}"
         )
 
         try:
@@ -1917,7 +1917,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """delete a timesheet  # noqa: E501
+        """Deletes a specific timesheet  # noqa: E501
         OAuth2 scope: payroll.timesheets
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str timesheet_id: Identifier for the timesheet (required)
@@ -1994,7 +1994,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """delete a timesheet line  # noqa: E501
+        """Deletes a specific timesheet line  # noqa: E501
         OAuth2 scope: payroll.timesheets
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str timesheet_id: Identifier for the timesheet (required)
@@ -2078,7 +2078,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """retrieve a single benefit by id  # noqa: E501
+        """Retrieves a specific benefit by using a unique benefit ID  # noqa: E501
         OAuth2 scope: payroll.settings.read, payroll.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str id: Identifier for the benefit (required)
@@ -2153,7 +2153,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """searches benefits  # noqa: E501
+        """Retrieves employee benefits  # noqa: E501
         OAuth2 scope: payroll.settings.read, payroll.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param int page: Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
@@ -2224,7 +2224,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """retrieve a single deduction by id  # noqa: E501
+        """Retrieves a specific deduction by using a unique deduction ID  # noqa: E501
         OAuth2 scope: payroll.settings.read, payroll.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str deduction_id: Identifier for the deduction (required)
@@ -2300,7 +2300,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """searches deductions  # noqa: E501
+        """Retrieves deductions  # noqa: E501
         OAuth2 scope: payroll.settings.read, payroll.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param int page: Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
@@ -2371,7 +2371,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """retrieve a single deduction by id  # noqa: E501
+        """Retrieves a specific earnings orders by using a unique earnings orders id  # noqa: E501
         OAuth2 scope: payroll.settings.read, payroll.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str id: Identifier for the deduction (required)
@@ -2447,7 +2447,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """searches earnings orders  # noqa: E501
+        """Retrieves earnings orders  # noqa: E501
         OAuth2 scope: payroll.settings.read, payroll.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param int page: Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
@@ -2518,7 +2518,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """retrieve a single earnings rates by id  # noqa: E501
+        """Retrieves a specific earnings rates by using a unique earnings rate id  # noqa: E501
         OAuth2 scope: payroll.settings.read, payroll.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str earnings_rate_id: Identifier for the earnings rate (required)
@@ -2594,7 +2594,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """searches earnings rates  # noqa: E501
+        """Retrieves earnings rates  # noqa: E501
         OAuth2 scope: payroll.settings.read, payroll.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param int page: Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
@@ -2665,7 +2665,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """searches employees  # noqa: E501
+        """Retrieves specific employees by using a unique employee ID  # noqa: E501
         OAuth2 scope: payroll.employees.read, payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
@@ -2690,7 +2690,7 @@ class PayrollUkApi(object):
 
         collection_formats = {}
         path_params = {
-            "EmployeeId": employee_id,
+            "EmployeeID": employee_id,
         }
 
         query_params = []
@@ -2710,7 +2710,7 @@ class PayrollUkApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Employees/{EmployeeId}")
+        url = self.get_resource_url("/Employees/{EmployeeID}")
 
         try:
             return self.api_client.call_api(
@@ -2742,7 +2742,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """retrieve a single employee leave record  # noqa: E501
+        """Retrieves a specific employee's leave record using a unique employee ID  # noqa: E501
         OAuth2 scope: payroll.employees.read, payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
@@ -2774,7 +2774,7 @@ class PayrollUkApi(object):
 
         collection_formats = {}
         path_params = {
-            "EmployeeId": employee_id,
+            "EmployeeID": employee_id,
             "LeaveID": leave_id,
         }
 
@@ -2795,7 +2795,7 @@ class PayrollUkApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Employees/{EmployeeId}/Leave/{LeaveID}")
+        url = self.get_resource_url("/Employees/{EmployeeID}/Leave/{LeaveID}")
 
         try:
             return self.api_client.call_api(
@@ -2826,7 +2826,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """search employee leave balances  # noqa: E501
+        """Retrieves a specific employee's leave balances using a unique employee ID  # noqa: E501
         OAuth2 scope: payroll.employees.read, payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
@@ -2851,7 +2851,7 @@ class PayrollUkApi(object):
 
         collection_formats = {}
         path_params = {
-            "EmployeeId": employee_id,
+            "EmployeeID": employee_id,
         }
 
         query_params = []
@@ -2871,7 +2871,7 @@ class PayrollUkApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Employees/{EmployeeId}/LeaveBalances")
+        url = self.get_resource_url("/Employees/{EmployeeID}/LeaveBalances")
 
         try:
             return self.api_client.call_api(
@@ -2904,7 +2904,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """searches employee leave periods  # noqa: E501
+        """Retrieves a specific employee's leave periods using a unique employee ID  # noqa: E501
         OAuth2 scope: payroll.employees.read, payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
@@ -2931,7 +2931,7 @@ class PayrollUkApi(object):
 
         collection_formats = {}
         path_params = {
-            "EmployeeId": employee_id,
+            "EmployeeID": employee_id,
         }
 
         query_params = []
@@ -2957,7 +2957,7 @@ class PayrollUkApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Employees/{EmployeeId}/LeavePeriods")
+        url = self.get_resource_url("/Employees/{EmployeeID}/LeavePeriods")
 
         try:
             return self.api_client.call_api(
@@ -2988,7 +2988,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """searches employee leave types  # noqa: E501
+        """Retrieves a specific employee's leave types using a unique employee ID  # noqa: E501
         OAuth2 scope: payroll.employees.read, payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
@@ -3013,7 +3013,7 @@ class PayrollUkApi(object):
 
         collection_formats = {}
         path_params = {
-            "EmployeeId": employee_id,
+            "EmployeeID": employee_id,
         }
 
         query_params = []
@@ -3033,7 +3033,7 @@ class PayrollUkApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Employees/{EmployeeId}/LeaveTypes")
+        url = self.get_resource_url("/Employees/{EmployeeID}/LeaveTypes")
 
         try:
             return self.api_client.call_api(
@@ -3064,7 +3064,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """search employee leave records  # noqa: E501
+        """Retrieves a specific employee's leave records using a unique employee ID  # noqa: E501
         OAuth2 scope: payroll.employees.read, payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
@@ -3089,7 +3089,7 @@ class PayrollUkApi(object):
 
         collection_formats = {}
         path_params = {
-            "EmployeeId": employee_id,
+            "EmployeeID": employee_id,
         }
 
         query_params = []
@@ -3109,7 +3109,7 @@ class PayrollUkApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Employees/{EmployeeId}/Leave")
+        url = self.get_resource_url("/Employees/{EmployeeID}/Leave")
 
         try:
             return self.api_client.call_api(
@@ -3140,7 +3140,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """retrieve employee openingbalances  # noqa: E501
+        """Retrieves a specific employee's openingbalances using a unique employee ID  # noqa: E501
         OAuth2 scope: payroll.employees.read, payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
@@ -3165,7 +3165,7 @@ class PayrollUkApi(object):
 
         collection_formats = {}
         path_params = {
-            "EmployeeId": employee_id,
+            "EmployeeID": employee_id,
         }
 
         query_params = []
@@ -3185,7 +3185,7 @@ class PayrollUkApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Employees/{EmployeeId}/ukopeningbalances")
+        url = self.get_resource_url("/Employees/{EmployeeID}/ukopeningbalances")
 
         try:
             return self.api_client.call_api(
@@ -3218,7 +3218,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """searches employee pay templates  # noqa: E501
+        """Retrieves a specific employee pay templates using a unique employee ID  # noqa: E501
         OAuth2 scope: payroll.employees.read, payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
@@ -3243,7 +3243,7 @@ class PayrollUkApi(object):
 
         collection_formats = {}
         path_params = {
-            "EmployeeId": employee_id,
+            "EmployeeID": employee_id,
         }
 
         query_params = []
@@ -3263,7 +3263,7 @@ class PayrollUkApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Employees/{EmployeeId}/PayTemplates")
+        url = self.get_resource_url("/Employees/{EmployeeID}/PayTemplates")
 
         try:
             return self.api_client.call_api(
@@ -3294,7 +3294,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """retrieves an employee's payment method  # noqa: E501
+        """Retrieves a specific employee's payment method using a unique employee ID  # noqa: E501
         OAuth2 scope: payroll.employees.read, payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
@@ -3319,7 +3319,7 @@ class PayrollUkApi(object):
 
         collection_formats = {}
         path_params = {
-            "EmployeeId": employee_id,
+            "EmployeeID": employee_id,
         }
 
         query_params = []
@@ -3339,7 +3339,7 @@ class PayrollUkApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Employees/{EmployeeId}/PaymentMethods")
+        url = self.get_resource_url("/Employees/{EmployeeID}/PaymentMethods")
 
         try:
             return self.api_client.call_api(
@@ -3371,7 +3371,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """get employee salary and wages record by id  # noqa: E501
+        """Retrieves a specific salary and wages record for a specific employee using a unique salary and wage id  # noqa: E501
         OAuth2 scope: payroll.employees, payroll.employees.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
@@ -3403,7 +3403,7 @@ class PayrollUkApi(object):
 
         collection_formats = {}
         path_params = {
-            "EmployeeId": employee_id,
+            "EmployeeID": employee_id,
             "SalaryAndWagesID": salary_and_wages_id,
         }
 
@@ -3425,7 +3425,7 @@ class PayrollUkApi(object):
         # Authentication setting
         auth_settings = ["OAuth2"]
         url = self.get_resource_url(
-            "/Employees/{EmployeeId}/SalaryAndWages/{SalaryAndWagesID}"
+            "/Employees/{EmployeeID}/SalaryAndWages/{SalaryAndWagesID}"
         )
 
         try:
@@ -3460,7 +3460,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """retrieves an employee's salary and wages  # noqa: E501
+        """Retrieves a specific employee's salary and wages by using a unique employee ID  # noqa: E501
         OAuth2 scope: payroll.employees.read, payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
@@ -3486,7 +3486,7 @@ class PayrollUkApi(object):
 
         collection_formats = {}
         path_params = {
-            "EmployeeId": employee_id,
+            "EmployeeID": employee_id,
         }
 
         query_params = []
@@ -3509,7 +3509,7 @@ class PayrollUkApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Employees/{EmployeeId}/SalaryAndWages")
+        url = self.get_resource_url("/Employees/{EmployeeID}/SalaryAndWages")
 
         try:
             return self.api_client.call_api(
@@ -3544,7 +3544,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """search employee leave balances  # noqa: E501
+        """Retrieves a specific employee's leave balances using a unique employee ID  # noqa: E501
         OAuth2 scope: payroll.employees.read, payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
@@ -3571,7 +3571,7 @@ class PayrollUkApi(object):
 
         collection_formats = {}
         path_params = {
-            "EmployeeId": employee_id,
+            "EmployeeID": employee_id,
         }
 
         query_params = []
@@ -3597,7 +3597,7 @@ class PayrollUkApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Employees/{EmployeeId}/StatutoryLeaveBalance")
+        url = self.get_resource_url("/Employees/{EmployeeID}/StatutoryLeaveBalance")
 
         try:
             return self.api_client.call_api(
@@ -3630,7 +3630,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """retrieve a statutory sick leave for an employee  # noqa: E501
+        """Retrieves a statutory sick leave for an employee  # noqa: E501
         OAuth2 scope: payroll.employees.read, payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str statutory_sick_leave_id: Statutory sick leave id for single object (required)
@@ -3708,7 +3708,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """searches tax records for an employee  # noqa: E501
+        """Retrieves tax records for a specific employee using a unique employee ID  # noqa: E501
         OAuth2 scope: payroll.employees.read, payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
@@ -3733,7 +3733,7 @@ class PayrollUkApi(object):
 
         collection_formats = {}
         path_params = {
-            "EmployeeId": employee_id,
+            "EmployeeID": employee_id,
         }
 
         query_params = []
@@ -3753,7 +3753,7 @@ class PayrollUkApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Employees/{EmployeeId}/Tax")
+        url = self.get_resource_url("/Employees/{EmployeeID}/Tax")
 
         try:
             return self.api_client.call_api(
@@ -3786,7 +3786,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """searches employees  # noqa: E501
+        """Retrieves employees  # noqa: E501
         OAuth2 scope: payroll.employees.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str first_name: Filter by first name
@@ -3865,7 +3865,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """retrieve a single leave type by id  # noqa: E501
+        """Retrieves a specific leave type by using a unique leave type ID  # noqa: E501
         OAuth2 scope: payroll.settings.read, payroll.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str leave_type_id: Identifier for the leave type (required)
@@ -3942,7 +3942,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """searches leave types  # noqa: E501
+        """Retrieves leave types  # noqa: E501
         OAuth2 scope: payroll.settings.read, payroll.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param int page: Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
@@ -4017,7 +4017,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """retrieve a single pay run by id  # noqa: E501
+        """Retrieves a specific pay run by using a unique pay run ID  # noqa: E501
         OAuth2 scope: payroll.payruns.read, payroll.payruns
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str pay_run_id: Identifier for the pay run (required)
@@ -4093,7 +4093,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """retrieve a single payrun calendar by id  # noqa: E501
+        """Retrieves a specific payrun calendar by using a unique payrun calendar ID  # noqa: E501
         OAuth2 scope: payroll.settings.read, payroll.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str pay_run_calendar_id: Identifier for the payrun calendars (required)
@@ -4169,7 +4169,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """searches payrun calendars  # noqa: E501
+        """Retrieves payrun calendars  # noqa: E501
         OAuth2 scope: payroll.settings.read, payroll.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param int page: Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
@@ -4241,7 +4241,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """searches pay runs  # noqa: E501
+        """Retrieves pay runs  # noqa: E501
         OAuth2 scope: payroll.payruns.read, payroll.payruns
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param int page: Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
@@ -4316,7 +4316,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """retrieve a single payslip by id  # noqa: E501
+        """Retrieves a specific payslip by using a unique payslip ID  # noqa: E501
         OAuth2 scope: payroll.payslip.read, payroll.payslip
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str payslip_id: Identifier for the payslip (required)
@@ -4393,7 +4393,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """searches payslips  # noqa: E501
+        """Retrieves payslips  # noqa: E501
         OAuth2 scope: payroll.payslip.read, payroll.payslip
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str pay_run_id: PayrunID which specifies the containing payrun of payslips to retrieve. By default, the API does not group payslips by payrun. (required)
@@ -4473,7 +4473,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """retrieve a single reimbursement by id  # noqa: E501
+        """Retrieves a specific reimbursement by using a unique reimbursement id  # noqa: E501
         OAuth2 scope: payroll.settings.read, payroll.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str reimbursement_id: Identifier for the reimbursement (required)
@@ -4549,7 +4549,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """searches reimbursements  # noqa: E501
+        """Retrieves reimbursements  # noqa: E501
         OAuth2 scope: payroll.settings.read, payroll.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param int page: Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
@@ -4619,7 +4619,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """searches settings  # noqa: E501
+        """Retrieves payroll settings  # noqa: E501
         OAuth2 scope: payroll.settings.read, settings.payslip
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param bool _return_http_data_only: return received data only
@@ -4687,7 +4687,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """retrieve a summary of statutory leaves for an employee  # noqa: E501
+        """Retrieves a specific employee's summary of statutory leaves using a unique employee ID  # noqa: E501
         OAuth2 scope: payroll.employees.read, payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
@@ -4713,7 +4713,7 @@ class PayrollUkApi(object):
 
         collection_formats = {}
         path_params = {
-            "EmployeeId": employee_id,
+            "EmployeeID": employee_id,
         }
 
         query_params = []
@@ -4736,7 +4736,7 @@ class PayrollUkApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/statutoryleaves/summary/{EmployeeId}")
+        url = self.get_resource_url("/StatutoryLeaves/Summary/{EmployeeID}")
 
         try:
             return self.api_client.call_api(
@@ -4767,7 +4767,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """retrieve a single timesheet by id  # noqa: E501
+        """Retrieve a specific timesheet by using a unique timesheet ID  # noqa: E501
         OAuth2 scope: payroll.timesheets.read, timesheets.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str timesheet_id: Identifier for the timesheet (required)
@@ -4845,11 +4845,11 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """searches timesheets  # noqa: E501
+        """Retrieves timesheets  # noqa: E501
         OAuth2 scope: payroll.timesheets.read, payroll.timesheets
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param int page: Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
-        :param str employee_id: By default get Timesheets will return the timesheets for all employees in an organization. You can add GET https://…/timesheets?filter=employeeId=={EmployeeId} to get only the timesheets of a particular employee.
+        :param str employee_id: By default get Timesheets will return the timesheets for all employees in an organization. You can add GET https://…/timesheets?filter=employeeId=={EmployeeID} to get only the timesheets of a particular employee.
         :param str payroll_calendar_id: By default get Timesheets will return all the timesheets for an organization. You can add GET https://…/timesheets?filter=payrollCalendarId=={PayrollCalendarID} to filter the timesheets by payroll calendar id
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -4923,7 +4923,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """searches tracking categories  # noqa: E501
+        """Retrieves tracking categories  # noqa: E501
         OAuth2 scope: payroll.settings.read, settings.payslip
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param bool _return_http_data_only: return received data only
@@ -4959,7 +4959,7 @@ class PayrollUkApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/settings/trackingCategories")
+        url = self.get_resource_url("/Settings/trackingCategories")
 
         try:
             return self.api_client.call_api(
@@ -4990,7 +4990,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """revert a timesheet to draft  # noqa: E501
+        """Reverts a specific timesheet to draft  # noqa: E501
         OAuth2 scope: payroll.timesheets
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str timesheet_id: Identifier for the timesheet (required)
@@ -5067,7 +5067,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """updates employee  # noqa: E501
+        """Updates a specific employee's detail  # noqa: E501
         OAuth2 scope: payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
@@ -5099,7 +5099,7 @@ class PayrollUkApi(object):
 
         collection_formats = {}
         path_params = {
-            "EmployeeId": employee_id,
+            "EmployeeID": employee_id,
         }
 
         query_params = []
@@ -5124,7 +5124,7 @@ class PayrollUkApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Employees/{EmployeeId}")
+        url = self.get_resource_url("/Employees/{EmployeeID}")
 
         try:
             return self.api_client.call_api(
@@ -5157,7 +5157,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """updates employee earnings template records  # noqa: E501
+        """Updates a specific employee's earnings template records  # noqa: E501
         OAuth2 scope: payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
@@ -5196,7 +5196,7 @@ class PayrollUkApi(object):
 
         collection_formats = {}
         path_params = {
-            "EmployeeId": employee_id,
+            "EmployeeID": employee_id,
             "PayTemplateEarningID": pay_template_earning_id,
         }
 
@@ -5223,7 +5223,7 @@ class PayrollUkApi(object):
         # Authentication setting
         auth_settings = ["OAuth2"]
         url = self.get_resource_url(
-            "/Employees/{EmployeeId}/PayTemplates/earnings/{PayTemplateEarningID}"
+            "/Employees/{EmployeeID}/PayTemplates/earnings/{PayTemplateEarningID}"
         )
 
         try:
@@ -5259,7 +5259,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """updates employee leave records  # noqa: E501
+        """Updates a specific employee's leave records  # noqa: E501
         OAuth2 scope: payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
@@ -5298,7 +5298,7 @@ class PayrollUkApi(object):
 
         collection_formats = {}
         path_params = {
-            "EmployeeId": employee_id,
+            "EmployeeID": employee_id,
             "LeaveID": leave_id,
         }
 
@@ -5324,7 +5324,7 @@ class PayrollUkApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Employees/{EmployeeId}/Leave/{LeaveID}")
+        url = self.get_resource_url("/Employees/{EmployeeID}/Leave/{LeaveID}")
 
         try:
             return self.api_client.call_api(
@@ -5356,7 +5356,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """updates employee opening balances  # noqa: E501
+        """Updates a specific employee's opening balances  # noqa: E501
         OAuth2 scope: payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
@@ -5388,7 +5388,7 @@ class PayrollUkApi(object):
 
         collection_formats = {}
         path_params = {
-            "EmployeeId": employee_id,
+            "EmployeeID": employee_id,
         }
 
         query_params = []
@@ -5413,7 +5413,7 @@ class PayrollUkApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Employees/{EmployeeId}/ukopeningbalances")
+        url = self.get_resource_url("/Employees/{EmployeeID}/ukopeningbalances")
 
         try:
             return self.api_client.call_api(
@@ -5448,7 +5448,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """updates employee salary and wages record  # noqa: E501
+        """Updates salary and wages record for a specific employee  # noqa: E501
         OAuth2 scope: payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
@@ -5487,7 +5487,7 @@ class PayrollUkApi(object):
 
         collection_formats = {}
         path_params = {
-            "EmployeeId": employee_id,
+            "EmployeeID": employee_id,
             "SalaryAndWagesID": salary_and_wages_id,
         }
 
@@ -5514,7 +5514,7 @@ class PayrollUkApi(object):
         # Authentication setting
         auth_settings = ["OAuth2"]
         url = self.get_resource_url(
-            "/Employees/{EmployeeId}/SalaryAndWages/{SalaryAndWagesID}"
+            "/Employees/{EmployeeID}/SalaryAndWages/{SalaryAndWagesID}"
         )
 
         try:
@@ -5549,7 +5549,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """update a pay run  # noqa: E501
+        """Updates a specific pay run  # noqa: E501
         OAuth2 scope: payroll.payruns
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str pay_run_id: Identifier for the pay run (required)
@@ -5639,7 +5639,7 @@ class PayrollUkApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """update a timesheet line  # noqa: E501
+        """Updates a specific timesheet line for a specific timesheet  # noqa: E501
         OAuth2 scope: payroll.timesheets
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str timesheet_id: Identifier for the timesheet (required)

@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_asset**](AssetApi.md#create_asset) | **POST** /Assets | adds a fixed asset
 [**create_asset_type**](AssetApi.md#create_asset_type) | **POST** /AssetTypes | adds a fixed asset type
-[**get_asset_by_id**](AssetApi.md#get_asset_by_id) | **GET** /Assets/{id} | retrieves fixed asset by id
+[**get_asset_by_id**](AssetApi.md#get_asset_by_id) | **GET** /Assets/{id} | Retrieves fixed asset by id
 [**get_asset_settings**](AssetApi.md#get_asset_settings) | **GET** /Settings | searches fixed asset settings
 [**get_asset_types**](AssetApi.md#get_asset_types) | **GET** /AssetTypes | searches fixed asset types
 [**get_assets**](AssetApi.md#get_assets) | **GET** /Assets | searches fixed asset
@@ -145,7 +145,7 @@ Name | Type | Description  | Notes
 # **get_asset_by_id**
 > Asset get_asset_by_id(xero_tenant_id, id)
 
-retrieves fixed asset by id
+Retrieves fixed asset by id
 
 By passing in the appropriate asset id, you can search for a specific fixed asset in the system 
 
@@ -178,7 +178,7 @@ api_instance = AssetApi(api_client)
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 id = '4f7bcdcb-5ec1-4258-9558-19f662fccdfe' # str | fixed asset id for single object
 try:
-    # retrieves fixed asset by id
+    # Retrieves fixed asset by id
     api_response = api_instance.get_asset_by_id(xero_tenant_id, id)
     pprint(api_response)
 except ApiException as e:
@@ -372,7 +372,7 @@ page = 1 # int | Results are paged. This specifies which page of the results to 
 page_size = 5 # int | The number of records returned per page. By default the number of records returned is 10. (optional)
 order_by = 'AssetName' # str | Requests can be ordered by AssetType, AssetName, AssetNumber, PurchaseDate and PurchasePrice. If the asset status is DISPOSED it also allows DisposalDate and DisposalPrice. (optional)
 sort_direction = 'ASC' # str | ASC or DESC (optional)
-filter_by = 'Draft' # str | A string that can be used to filter the list to only return assets containing the text. Checks it against the AssetName, AssetNumber, Description and AssetTypeName fields. (optional)
+filter_by = 'Company Car' # str | A string that can be used to filter the list to only return assets containing the text. Checks it against the AssetName, AssetNumber, Description and AssetTypeName fields. (optional)
 try:
     # searches fixed asset
     api_response = api_instance.get_assets(xero_tenant_id, status, page=page, page_size=page_size, order_by=order_by, sort_direction=sort_direction, filter_by=filter_by)

@@ -4,14 +4,14 @@ All URIs are relative to *https://api.xero.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**delete_connection**](IdentityApi.md#delete_connection) | **DELETE** /connections/{id} | Allows you to delete a connection for this user (i.e. disconnect a tenant)
-[**get_connections**](IdentityApi.md#get_connections) | **GET** /connections | Allows you to retrieve the connections for this user
+[**delete_connection**](IdentityApi.md#delete_connection) | **DELETE** /Connections/{id} | Deletes a connection for this user (i.e. disconnect a tenant)
+[**get_connections**](IdentityApi.md#get_connections) | **GET** /Connections | Retrieves the connections for this user
 
 
 # **delete_connection**
 > delete_connection(id)
 
-Allows you to delete a connection for this user (i.e. disconnect a tenant)
+Deletes a connection for this user (i.e. disconnect a tenant)
 
 Override the base server url that include version
 
@@ -43,7 +43,7 @@ api_instance = IdentityApi(api_client)
 
 id = 'id_example' # str | Unique identifier for retrieving single object
 try:
-    # Allows you to delete a connection for this user (i.e. disconnect a tenant)
+    # Deletes a connection for this user (i.e. disconnect a tenant)
     api_instance.delete_connection(id)
 except ApiException as e:
     print("Exception when calling IdentityApi->delete_connection: %s\n" % e)
@@ -73,7 +73,7 @@ void (empty response body)
 # **get_connections**
 > list[Connection] get_connections(auth_event_id=auth_event_id)
 
-Allows you to retrieve the connections for this user
+Retrieves the connections for this user
 
 Override the base server url that include version
 
@@ -103,9 +103,9 @@ api_client = ApiClient(
 # create an instance of the API class
 api_instance = IdentityApi(api_client)
 
-auth_event_id = '00000000-0000-0000-000-000000000000' # str | Filter by authEventId (optional)
+auth_event_id = '00000000-0000-0000-0000-000000000000' # str | Filter by authEventId (optional)
 try:
-    # Allows you to retrieve the connections for this user
+    # Retrieves the connections for this user
     api_response = api_instance.get_connections(auth_event_id=auth_event_id)
     pprint(api_response)
 except ApiException as e:

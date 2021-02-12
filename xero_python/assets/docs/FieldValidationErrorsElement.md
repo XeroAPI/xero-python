@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **field_name** | **str** | The field name of the erroneous field | [optional] 
 **value_provided** | **str** | The provided value | [optional] 
-**localised_message** | **str** | Explaination of the field validation error | [optional] 
+**localised_message** | **str** | Explanation of the field validation error | [optional] 
 **type** | **str** | Internal type of the field validation error message | [optional] 
 **title** | **str** | Title of the field validation error | [optional] 
 **detail** | **str** | Detail of the field validation error | [optional] 

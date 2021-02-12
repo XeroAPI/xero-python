@@ -3,7 +3,7 @@
 # flake8: noqa
 
 """
-    Xero Payroll AU
+    Xero Payroll AU API
 
     This is the Xero Payroll API for orgs in Australia region.  # noqa: E501
 

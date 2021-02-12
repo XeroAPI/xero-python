@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **payment_type** | **str** | See Payment Types. | [optional] 
 **updated_date_utc** | **datetime** | UTC timestamp of last update to the payment | [optional] 
 **payment_id** | **str** | The Xero identifier for an Payment e.g. 297c2dc5-cc47-4afd-8ec8-74990b8761e9 | [optional] 
+**batch_payment_id** | **str** | Present if the payment was created as part of a batch. | [optional] 
 **bank_account_number** | **str** | The suppliers bank account number the payment is being made to | [optional] 
 **particulars** | **str** | The suppliers bank account number the payment is being made to | [optional] 
 **details** | **str** | The information to appear on the supplier&#39;s bank account | [optional] 

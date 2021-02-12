@@ -314,7 +314,7 @@ class EarningsLine(BaseModel):
     def is_system_generated(self):
         """Gets the is_system_generated of this EarningsLine.  # noqa: E501
 
-        Flag to indentify whether the earnings line is system generated or not.  # noqa: E501
+        Flag to identify whether the earnings line is system generated or not.  # noqa: E501
 
         :return: The is_system_generated of this EarningsLine.  # noqa: E501
         :rtype: bool
@@ -325,7 +325,7 @@ class EarningsLine(BaseModel):
     def is_system_generated(self, is_system_generated):
         """Sets the is_system_generated of this EarningsLine.
 
-        Flag to indentify whether the earnings line is system generated or not.  # noqa: E501
+        Flag to identify whether the earnings line is system generated or not.  # noqa: E501
 
         :param is_system_generated: The is_system_generated of this EarningsLine.  # noqa: E501
         :type: bool

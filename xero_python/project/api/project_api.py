@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.8.4
+    OpenAPI spec version: 2.9.3
 """
 
 import importlib
@@ -64,7 +64,7 @@ class ProjectApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """create one or more new projects  # noqa: E501
+        """Create one or more new projects  # noqa: E501
         OAuth2 scope: projects.create
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param ProjectCreateOrUpdate project_create_or_update: Create a new project with ProjectCreateOrUpdate object (required)
@@ -112,7 +112,7 @@ class ProjectApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/projects")
+        url = self.get_resource_url("/Projects")
 
         try:
             return self.api_client.call_api(
@@ -144,7 +144,7 @@ class ProjectApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """Allows you to create a task  # noqa: E501
+        """Creates a time entry for a specific project  # noqa: E501
         OAuth2 scope: projects, projects.read
         Allows you to create a specific task  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
@@ -202,7 +202,7 @@ class ProjectApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/projects/{projectId}/time")
+        url = self.get_resource_url("/Projects/{projectId}/Time")
 
         try:
             return self.api_client.call_api(
@@ -234,7 +234,7 @@ class ProjectApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """Allows you to delete a time entry  # noqa: E501
+        """Deletes a time entry for a specific project  # noqa: E501
         OAuth2 scope: projects, projects.read
         Allows you to delete a specific time entry  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
@@ -283,7 +283,7 @@ class ProjectApi(object):
         body_params = None
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/projects/{projectId}/time/{timeEntryId}")
+        url = self.get_resource_url("/Projects/{projectId}/Time/{timeEntryId}")
 
         try:
             return self.api_client.call_api(
@@ -314,9 +314,9 @@ class ProjectApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """Allows you to retrieve a single project  # noqa: E501
+        """Retrieves a single project  # noqa: E501
         OAuth2 scope: projects, projects.read
-        Allows you to retrieve a specific project  # noqa: E501
+        Allows you to retrieve a specific project using the projectId  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str project_id: You can specify an individual project by appending the projectId to the endpoint (required)
         :param bool _return_http_data_only: return received data only
@@ -360,7 +360,7 @@ class ProjectApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/projects/{projectId}")
+        url = self.get_resource_url("/Projects/{projectId}")
 
         try:
             return self.api_client.call_api(
@@ -392,7 +392,7 @@ class ProjectApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """list all project users  # noqa: E501
+        """Retrieves a list of all project users  # noqa: E501
         OAuth2 scope: projects.read
         Allows you to retrieve the users on a projects.  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
@@ -451,7 +451,7 @@ class ProjectApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/projectsusers")
+        url = self.get_resource_url("/ProjectsUsers")
 
         try:
             return self.api_client.call_api(
@@ -486,7 +486,7 @@ class ProjectApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """list all projects  # noqa: E501
+        """Retrieves all projects  # noqa: E501
         OAuth2 scope: projects, projects.read
         Allows you to retrieve, create and update projects.  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
@@ -559,7 +559,7 @@ class ProjectApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/projects")
+        url = self.get_resource_url("/Projects")
 
         try:
             return self.api_client.call_api(
@@ -591,12 +591,12 @@ class ProjectApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """Allows you to retrieve a single project  # noqa: E501
+        """Retrieves a single project task  # noqa: E501
         OAuth2 scope: projects, projects.read
         Allows you to retrieve a specific project  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str project_id: You can specify an individual project by appending the projectId to the endpoint (required)
-        :param str task_id: You can specify an individual task by appending the taskId to the endpoint, i.e. GET https://.../tasks/{taskId} (required)
+        :param str task_id: You can specify an individual task by appending the taskId to the endpoint, i.e. GET https://.../tasks/{taskID} (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -643,7 +643,7 @@ class ProjectApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/projects/{projectId}/tasks/{taskId}")
+        url = self.get_resource_url("/Projects/{projectId}/Tasks/{taskId}")
 
         try:
             return self.api_client.call_api(
@@ -678,14 +678,14 @@ class ProjectApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """Allows you to retrieve a single project  # noqa: E501
+        """Retrieves all project tasks  # noqa: E501
         OAuth2 scope: projects, projects.read
         Allows you to retrieve a specific project  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str project_id: You can specify an individual project by appending the projectId to the endpoint (required)
         :param int page: Set to 1 by default. The requested number of the page in paged response - Must be a number greater than 0.
         :param int page_size: Optional, it is set to 50 by default. The number of items to return per page in a paged response - Must be a number between 1 and 500.
-        :param str task_ids: taskIdsSearch for all tasks that match a comma separated list of taskIds, i.e. GET https://.../tasks?taskIds={taskId},{taskId}
+        :param str task_ids: taskIdsSearch for all tasks that match a comma separated list of taskIds, i.e. GET https://.../tasks?taskIds={taskID},{taskID}
         :param ChargeType charge_type:
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -740,7 +740,7 @@ class ProjectApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/projects/{projectId}/tasks")
+        url = self.get_resource_url("/Projects/{projectId}/Tasks")
 
         try:
             return self.api_client.call_api(
@@ -781,7 +781,7 @@ class ProjectApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """Allows you to retrieve the time entries associated with a specific project  # noqa: E501
+        """Retrieves all time entries associated with a specific project  # noqa: E501
         OAuth2 scope: projects, projects.read
         Allows you to retrieve the time entries associated with a specific project  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
@@ -792,7 +792,7 @@ class ProjectApi(object):
         :param str contact_id: Finds all time entries for this contact identifier.
         :param int page: Set to 1 by default. The requested number of the page in paged response - Must be a number greater than 0.
         :param int page_size: Optional, it is set to 50 by default. The number of items to return per page in a paged response - Must be a number between 1 and 500.
-        :param list[str] states: Comma-separated list of states to find. Will find all time entries that are in the status of whatever’s specified.
+        :param list[str] states: Comma-separated list of states to find. Will find all time entries that are in the status of whatever is specified.
         :param bool is_chargeable: Finds all time entries which relate to tasks with the charge type `TIME` or `FIXED`.
         :param datetime date_after_utc: ISO 8601 UTC date. Finds all time entries on or after this date filtered on the `dateUtc` field.
         :param datetime date_before_utc: ISO 8601 UTC date. Finds all time entries on or before this date filtered on the `dateUtc` field.
@@ -869,7 +869,7 @@ class ProjectApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/projects/{projectId}/time")
+        url = self.get_resource_url("/Projects/{projectId}/Time")
 
         try:
             return self.api_client.call_api(
@@ -901,9 +901,9 @@ class ProjectApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """Allows you to get a single time entry in a project  # noqa: E501
+        """Retrieves a single time entry for a specific project  # noqa: E501
         OAuth2 scope: projects, projects.read
-        Allows you to upget a single time entry in a project  # noqa: E501
+        Allows you to get a single time entry in a project  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str project_id: You can specify an individual project by appending the projectId to the endpoint (required)
         :param str time_entry_id: You can specify an individual time entry by appending the id to the endpoint (required)
@@ -955,7 +955,7 @@ class ProjectApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/projects/{projectId}/time/{timeEntryId}")
+        url = self.get_resource_url("/Projects/{projectId}/Time/{timeEntryId}")
 
         try:
             return self.api_client.call_api(
@@ -1045,7 +1045,7 @@ class ProjectApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/projects/{projectId}")
+        url = self.get_resource_url("/Projects/{projectId}")
 
         try:
             return self.api_client.call_api(
@@ -1077,7 +1077,7 @@ class ProjectApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """update a specific project  # noqa: E501
+        """Updates a specific project  # noqa: E501
         OAuth2 scope: projects.create
         Allows you to update a specific projects.  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
@@ -1135,7 +1135,7 @@ class ProjectApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/projects/{projectId}")
+        url = self.get_resource_url("/Projects/{projectId}")
 
         try:
             return self.api_client.call_api(
@@ -1168,7 +1168,7 @@ class ProjectApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """Allows you to update time entry in a project  # noqa: E501
+        """Updates a time entry for a specific project  # noqa: E501
         OAuth2 scope: projects, projects.read
         Allows you to update time entry in a project  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
@@ -1229,7 +1229,7 @@ class ProjectApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/projects/{projectId}/time/{timeEntryId}")
+        url = self.get_resource_url("/Projects/{projectId}/Time/{timeEntryId}")
 
         try:
             return self.api_client.call_api(

@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Xero Payroll AU
+    Xero Payroll AU API
 
     This is the Xero Payroll API for orgs in Australia region.  # noqa: E501
 
@@ -110,7 +110,7 @@ class SuperMembership(BaseModel):
     def employee_number(self):
         """Gets the employee_number of this SuperMembership.  # noqa: E501
 
-        The memberhsip number assigned to the employee by the super fund.  # noqa: E501
+        The membership number assigned to the employee by the super fund.  # noqa: E501
 
         :return: The employee_number of this SuperMembership.  # noqa: E501
         :rtype: str
@@ -121,7 +121,7 @@ class SuperMembership(BaseModel):
     def employee_number(self, employee_number):
         """Sets the employee_number of this SuperMembership.
 
-        The memberhsip number assigned to the employee by the super fund.  # noqa: E501
+        The membership number assigned to the employee by the super fund.  # noqa: E501
 
         :param employee_number: The employee_number of this SuperMembership.  # noqa: E501
         :type: str

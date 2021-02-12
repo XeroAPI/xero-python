@@ -4,236 +4,236 @@ All URIs are relative to *https://api.xero.com/api.xro/2.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_account**](AccountingApi.md#create_account) | **PUT** /Accounts | Allows you to create a new chart of accounts
-[**create_account_attachment_by_file_name**](AccountingApi.md#create_account_attachment_by_file_name) | **PUT** /Accounts/{AccountID}/Attachments/{FileName} | Allows you to create Attachment on Account
-[**create_bank_transaction_attachment_by_file_name**](AccountingApi.md#create_bank_transaction_attachment_by_file_name) | **PUT** /BankTransactions/{BankTransactionID}/Attachments/{FileName} | Allows you to create an Attachment on BankTransaction by Filename
-[**create_bank_transaction_history_record**](AccountingApi.md#create_bank_transaction_history_record) | **PUT** /BankTransactions/{BankTransactionID}/History | Allows you to create history record for a bank transactions
-[**create_bank_transactions**](AccountingApi.md#create_bank_transactions) | **PUT** /BankTransactions | Allows you to create one or more spend or receive money transaction
-[**create_bank_transfer**](AccountingApi.md#create_bank_transfer) | **PUT** /BankTransfers | Allows you to create a bank transfers
+[**create_account**](AccountingApi.md#create_account) | **PUT** /Accounts | Creates a new chart of accounts
+[**create_account_attachment_by_file_name**](AccountingApi.md#create_account_attachment_by_file_name) | **PUT** /Accounts/{AccountID}/Attachments/{FileName} | Creates an attachment on a specific account
+[**create_bank_transaction_attachment_by_file_name**](AccountingApi.md#create_bank_transaction_attachment_by_file_name) | **PUT** /BankTransactions/{BankTransactionID}/Attachments/{FileName} | Creates an attachment for a specific bank transaction by filename
+[**create_bank_transaction_history_record**](AccountingApi.md#create_bank_transaction_history_record) | **PUT** /BankTransactions/{BankTransactionID}/History | Creates a history record for a specific bank transactions
+[**create_bank_transactions**](AccountingApi.md#create_bank_transactions) | **PUT** /BankTransactions | Creates one or more spent or received money transaction
+[**create_bank_transfer**](AccountingApi.md#create_bank_transfer) | **PUT** /BankTransfers | Creates a bank transfer
 [**create_bank_transfer_attachment_by_file_name**](AccountingApi.md#create_bank_transfer_attachment_by_file_name) | **PUT** /BankTransfers/{BankTransferID}/Attachments/{FileName} | 
-[**create_bank_transfer_history_record**](AccountingApi.md#create_bank_transfer_history_record) | **PUT** /BankTransfers/{BankTransferID}/History | Allows you to create history record for a bank transfers
-[**create_batch_payment**](AccountingApi.md#create_batch_payment) | **PUT** /BatchPayments | Create one or many BatchPayments for invoices
-[**create_batch_payment_history_record**](AccountingApi.md#create_batch_payment_history_record) | **PUT** /BatchPayments/{BatchPaymentID}/History | Allows you to create a history record for a Batch Payment
-[**create_branding_theme_payment_services**](AccountingApi.md#create_branding_theme_payment_services) | **POST** /BrandingThemes/{BrandingThemeID}/PaymentServices | Allow for the creation of new custom payment service for specified Branding Theme
+[**create_bank_transfer_history_record**](AccountingApi.md#create_bank_transfer_history_record) | **PUT** /BankTransfers/{BankTransferID}/History | Creates a history record for a specific bank transfer
+[**create_batch_payment**](AccountingApi.md#create_batch_payment) | **PUT** /BatchPayments | Creates one or many batch payments for invoices
+[**create_batch_payment_history_record**](AccountingApi.md#create_batch_payment_history_record) | **PUT** /BatchPayments/{BatchPaymentID}/History | Creates a history record for a specific batch payment
+[**create_branding_theme_payment_services**](AccountingApi.md#create_branding_theme_payment_services) | **POST** /BrandingThemes/{BrandingThemeID}/PaymentServices | Creates a new custom payment service for a specific branding theme
 [**create_contact_attachment_by_file_name**](AccountingApi.md#create_contact_attachment_by_file_name) | **PUT** /Contacts/{ContactID}/Attachments/{FileName} | 
-[**create_contact_group**](AccountingApi.md#create_contact_group) | **PUT** /ContactGroups | Allows you to create a contact group
-[**create_contact_group_contacts**](AccountingApi.md#create_contact_group_contacts) | **PUT** /ContactGroups/{ContactGroupID}/Contacts | Allows you to add Contacts to a Contact Group
-[**create_contact_history**](AccountingApi.md#create_contact_history) | **PUT** /Contacts/{ContactID}/History | Allows you to retrieve a history records of an Contact
-[**create_contacts**](AccountingApi.md#create_contacts) | **PUT** /Contacts | Allows you to create a multiple contacts (bulk) in a Xero organisation
-[**create_credit_note_allocation**](AccountingApi.md#create_credit_note_allocation) | **PUT** /CreditNotes/{CreditNoteID}/Allocations | Allows you to create Allocation on CreditNote
-[**create_credit_note_attachment_by_file_name**](AccountingApi.md#create_credit_note_attachment_by_file_name) | **PUT** /CreditNotes/{CreditNoteID}/Attachments/{FileName} | Allows you to create Attachments on CreditNote by file name
-[**create_credit_note_history**](AccountingApi.md#create_credit_note_history) | **PUT** /CreditNotes/{CreditNoteID}/History | Allows you to retrieve a history records of an CreditNote
-[**create_credit_notes**](AccountingApi.md#create_credit_notes) | **PUT** /CreditNotes | Allows you to create a credit note
-[**create_currency**](AccountingApi.md#create_currency) | **PUT** /Currencies | Allows you to create a new currency for an org
-[**create_employees**](AccountingApi.md#create_employees) | **PUT** /Employees | Allows you to create new employees used in Xero payrun
-[**create_expense_claim_history**](AccountingApi.md#create_expense_claim_history) | **PUT** /ExpenseClaims/{ExpenseClaimID}/History | Allows you to create a history records of an ExpenseClaim
-[**create_expense_claims**](AccountingApi.md#create_expense_claims) | **PUT** /ExpenseClaims | Allows you to retrieve expense claims
-[**create_invoice_attachment_by_file_name**](AccountingApi.md#create_invoice_attachment_by_file_name) | **PUT** /Invoices/{InvoiceID}/Attachments/{FileName} | Allows you to create an Attachment on invoices or purchase bills by it&#39;s filename
-[**create_invoice_history**](AccountingApi.md#create_invoice_history) | **PUT** /Invoices/{InvoiceID}/History | Allows you to retrieve a history records of an invoice
-[**create_invoices**](AccountingApi.md#create_invoices) | **PUT** /Invoices | Allows you to create one or more sales invoices or purchase bills
-[**create_item_history**](AccountingApi.md#create_item_history) | **PUT** /Items/{ItemID}/History | Allows you to create a history record for items
-[**create_items**](AccountingApi.md#create_items) | **PUT** /Items | Allows you to create one or more items
-[**create_linked_transaction**](AccountingApi.md#create_linked_transaction) | **PUT** /LinkedTransactions | Allows you to create linked transactions (billable expenses)
-[**create_manual_journal_attachment_by_file_name**](AccountingApi.md#create_manual_journal_attachment_by_file_name) | **PUT** /ManualJournals/{ManualJournalID}/Attachments/{FileName} | Allows you to create a specified Attachment on ManualJournal by file name
-[**create_manual_journal_history_record**](AccountingApi.md#create_manual_journal_history_record) | **PUT** /ManualJournals/{ManualJournalID}/History | Allows you to create history record for a manual journal
-[**create_manual_journals**](AccountingApi.md#create_manual_journals) | **PUT** /ManualJournals | Allows you to create one or more manual journals
-[**create_overpayment_allocations**](AccountingApi.md#create_overpayment_allocations) | **PUT** /Overpayments/{OverpaymentID}/Allocations | Allows you to create a single allocation for an overpayment
-[**create_overpayment_history**](AccountingApi.md#create_overpayment_history) | **PUT** /Overpayments/{OverpaymentID}/History | Allows you to create history records of an Overpayment
-[**create_payment**](AccountingApi.md#create_payment) | **POST** /Payments | Allows you to create a single payment for invoices or credit notes
-[**create_payment_history**](AccountingApi.md#create_payment_history) | **PUT** /Payments/{PaymentID}/History | Allows you to create a history record for a payment
-[**create_payment_service**](AccountingApi.md#create_payment_service) | **PUT** /PaymentServices | Allows you to create payment services
-[**create_payments**](AccountingApi.md#create_payments) | **PUT** /Payments | Allows you to create multiple payments for invoices or credit notes
+[**create_contact_group**](AccountingApi.md#create_contact_group) | **PUT** /ContactGroups | Creates a contact group
+[**create_contact_group_contacts**](AccountingApi.md#create_contact_group_contacts) | **PUT** /ContactGroups/{ContactGroupID}/Contacts | Creates contacts to a specific contact group
+[**create_contact_history**](AccountingApi.md#create_contact_history) | **PUT** /Contacts/{ContactID}/History | Creates a new history record for a specific contact
+[**create_contacts**](AccountingApi.md#create_contacts) | **PUT** /Contacts | Creates multiple contacts (bulk) in a Xero organisation
+[**create_credit_note_allocation**](AccountingApi.md#create_credit_note_allocation) | **PUT** /CreditNotes/{CreditNoteID}/Allocations | Creates allocation for a specific credit note
+[**create_credit_note_attachment_by_file_name**](AccountingApi.md#create_credit_note_attachment_by_file_name) | **PUT** /CreditNotes/{CreditNoteID}/Attachments/{FileName} | Creates an attachment for a specific credit note
+[**create_credit_note_history**](AccountingApi.md#create_credit_note_history) | **PUT** /CreditNotes/{CreditNoteID}/History | Retrieves history records of a specific credit note
+[**create_credit_notes**](AccountingApi.md#create_credit_notes) | **PUT** /CreditNotes | Creates a new credit note
+[**create_currency**](AccountingApi.md#create_currency) | **PUT** /Currencies | Create a new currency for a Xero organisation
+[**create_employees**](AccountingApi.md#create_employees) | **PUT** /Employees | Creates new employees used in Xero payrun
+[**create_expense_claim_history**](AccountingApi.md#create_expense_claim_history) | **PUT** /ExpenseClaims/{ExpenseClaimID}/History | Creates a history record for a specific expense claim
+[**create_expense_claims**](AccountingApi.md#create_expense_claims) | **PUT** /ExpenseClaims | Creates expense claims
+[**create_invoice_attachment_by_file_name**](AccountingApi.md#create_invoice_attachment_by_file_name) | **PUT** /Invoices/{InvoiceID}/Attachments/{FileName} | Creates an attachment for a specific invoice or purchase bill by filename
+[**create_invoice_history**](AccountingApi.md#create_invoice_history) | **PUT** /Invoices/{InvoiceID}/History | Creates a history record for a specific invoice
+[**create_invoices**](AccountingApi.md#create_invoices) | **PUT** /Invoices | Creates one or more sales invoices or purchase bills
+[**create_item_history**](AccountingApi.md#create_item_history) | **PUT** /Items/{ItemID}/History | Creates a history record for a specific item
+[**create_items**](AccountingApi.md#create_items) | **PUT** /Items | Creates one or more items
+[**create_linked_transaction**](AccountingApi.md#create_linked_transaction) | **PUT** /LinkedTransactions | Creates linked transactions (billable expenses)
+[**create_manual_journal_attachment_by_file_name**](AccountingApi.md#create_manual_journal_attachment_by_file_name) | **PUT** /ManualJournals/{ManualJournalID}/Attachments/{FileName} | Creates a specific attachment for a specific manual journal by file name
+[**create_manual_journal_history_record**](AccountingApi.md#create_manual_journal_history_record) | **PUT** /ManualJournals/{ManualJournalID}/History | Creates a history record for a specific manual journal
+[**create_manual_journals**](AccountingApi.md#create_manual_journals) | **PUT** /ManualJournals | Creates one or more manual journals
+[**create_overpayment_allocations**](AccountingApi.md#create_overpayment_allocations) | **PUT** /Overpayments/{OverpaymentID}/Allocations | Creates a single allocation for a specific overpayment
+[**create_overpayment_history**](AccountingApi.md#create_overpayment_history) | **PUT** /Overpayments/{OverpaymentID}/History | Creates a history record for a specific overpayment
+[**create_payment**](AccountingApi.md#create_payment) | **POST** /Payments | Creates a single payment for invoice or credit notes
+[**create_payment_history**](AccountingApi.md#create_payment_history) | **PUT** /Payments/{PaymentID}/History | Creates a history record for a specific payment
+[**create_payment_service**](AccountingApi.md#create_payment_service) | **PUT** /PaymentServices | Creates a payment service
+[**create_payments**](AccountingApi.md#create_payments) | **PUT** /Payments | Creates multiple payments for invoices or credit notes
 [**create_prepayment_allocations**](AccountingApi.md#create_prepayment_allocations) | **PUT** /Prepayments/{PrepaymentID}/Allocations | Allows you to create an Allocation for prepayments
-[**create_prepayment_history**](AccountingApi.md#create_prepayment_history) | **PUT** /Prepayments/{PrepaymentID}/History | Allows you to create a history record for an Prepayment
-[**create_purchase_order_attachment_by_file_name**](AccountingApi.md#create_purchase_order_attachment_by_file_name) | **PUT** /PurchaseOrders/{PurchaseOrderID}/Attachments/{FileName} | Allows you to create Attachment on Purchase Order
-[**create_purchase_order_history**](AccountingApi.md#create_purchase_order_history) | **PUT** /PurchaseOrders/{PurchaseOrderID}/History | Allows you to create HistoryRecord for purchase orders
-[**create_purchase_orders**](AccountingApi.md#create_purchase_orders) | **PUT** /PurchaseOrders | Allows you to create one or more purchase orders
-[**create_quote_attachment_by_file_name**](AccountingApi.md#create_quote_attachment_by_file_name) | **PUT** /Quotes/{QuoteID}/Attachments/{FileName} | Allows you to create Attachment on Quote
-[**create_quote_history**](AccountingApi.md#create_quote_history) | **PUT** /Quotes/{QuoteID}/History | Allows you to retrieve a history records of an quote
-[**create_quotes**](AccountingApi.md#create_quotes) | **PUT** /Quotes | Allows you to create one or more quotes
-[**create_receipt**](AccountingApi.md#create_receipt) | **PUT** /Receipts | Allows you to create draft expense claim receipts for any user
-[**create_receipt_attachment_by_file_name**](AccountingApi.md#create_receipt_attachment_by_file_name) | **PUT** /Receipts/{ReceiptID}/Attachments/{FileName} | Allows you to create Attachment on expense claim receipts by file name
-[**create_receipt_history**](AccountingApi.md#create_receipt_history) | **PUT** /Receipts/{ReceiptID}/History | Allows you to retrieve a history records of an Receipt
-[**create_repeating_invoice_attachment_by_file_name**](AccountingApi.md#create_repeating_invoice_attachment_by_file_name) | **PUT** /RepeatingInvoices/{RepeatingInvoiceID}/Attachments/{FileName} | Allows you to create attachment on repeating invoices by file name
-[**create_repeating_invoice_history**](AccountingApi.md#create_repeating_invoice_history) | **PUT** /RepeatingInvoices/{RepeatingInvoiceID}/History | Allows you to create history for a repeating invoice
-[**create_tax_rates**](AccountingApi.md#create_tax_rates) | **PUT** /TaxRates | Allows you to create one or more Tax Rates
-[**create_tracking_category**](AccountingApi.md#create_tracking_category) | **PUT** /TrackingCategories | Allows you to create tracking categories
-[**create_tracking_options**](AccountingApi.md#create_tracking_options) | **PUT** /TrackingCategories/{TrackingCategoryID}/Options | Allows you to create options for a specified tracking category
-[**delete_account**](AccountingApi.md#delete_account) | **DELETE** /Accounts/{AccountID} | Allows you to delete a chart of accounts
-[**delete_contact_group_contact**](AccountingApi.md#delete_contact_group_contact) | **DELETE** /ContactGroups/{ContactGroupID}/Contacts/{ContactID} | Allows you to delete a specific Contact from a Contact Group
-[**delete_contact_group_contacts**](AccountingApi.md#delete_contact_group_contacts) | **DELETE** /ContactGroups/{ContactGroupID}/Contacts | Allows you to delete  all Contacts from a Contact Group
-[**delete_item**](AccountingApi.md#delete_item) | **DELETE** /Items/{ItemID} | Allows you to delete a specified item
-[**delete_linked_transaction**](AccountingApi.md#delete_linked_transaction) | **DELETE** /LinkedTransactions/{LinkedTransactionID} | Allows you to delete a specified linked transactions (billable expenses)
-[**delete_payment**](AccountingApi.md#delete_payment) | **POST** /Payments/{PaymentID} | Allows you to update a specified payment for invoices and credit notes
-[**delete_tracking_category**](AccountingApi.md#delete_tracking_category) | **DELETE** /TrackingCategories/{TrackingCategoryID} | Allows you to delete tracking categories
-[**delete_tracking_options**](AccountingApi.md#delete_tracking_options) | **DELETE** /TrackingCategories/{TrackingCategoryID}/Options/{TrackingOptionID} | Allows you to delete a specified option for a specified tracking category
-[**email_invoice**](AccountingApi.md#email_invoice) | **POST** /Invoices/{InvoiceID}/Email | Allows you to email a copy of invoice to related Contact
-[**get_account**](AccountingApi.md#get_account) | **GET** /Accounts/{AccountID} | Allows you to retrieve a single chart of accounts
-[**get_account_attachment_by_file_name**](AccountingApi.md#get_account_attachment_by_file_name) | **GET** /Accounts/{AccountID}/Attachments/{FileName} | Allows you to retrieve Attachment on Account by Filename
-[**get_account_attachment_by_id**](AccountingApi.md#get_account_attachment_by_id) | **GET** /Accounts/{AccountID}/Attachments/{AttachmentID} | Allows you to retrieve specific Attachment on Account
-[**get_account_attachments**](AccountingApi.md#get_account_attachments) | **GET** /Accounts/{AccountID}/Attachments | Allows you to retrieve Attachments for accounts
-[**get_accounts**](AccountingApi.md#get_accounts) | **GET** /Accounts | Allows you to retrieve the full chart of accounts
-[**get_bank_transaction**](AccountingApi.md#get_bank_transaction) | **GET** /BankTransactions/{BankTransactionID} | Allows you to retrieve a single spend or receive money transaction
-[**get_bank_transaction_attachment_by_file_name**](AccountingApi.md#get_bank_transaction_attachment_by_file_name) | **GET** /BankTransactions/{BankTransactionID}/Attachments/{FileName} | Allows you to retrieve Attachments on BankTransaction by Filename
-[**get_bank_transaction_attachment_by_id**](AccountingApi.md#get_bank_transaction_attachment_by_id) | **GET** /BankTransactions/{BankTransactionID}/Attachments/{AttachmentID} | Allows you to retrieve Attachments on a specific BankTransaction
-[**get_bank_transaction_attachments**](AccountingApi.md#get_bank_transaction_attachments) | **GET** /BankTransactions/{BankTransactionID}/Attachments | Allows you to retrieve any attachments to bank transactions
-[**get_bank_transactions**](AccountingApi.md#get_bank_transactions) | **GET** /BankTransactions | Allows you to retrieve any spend or receive money transactions
-[**get_bank_transactions_history**](AccountingApi.md#get_bank_transactions_history) | **GET** /BankTransactions/{BankTransactionID}/History | Allows you to retrieve history from a bank transactions
-[**get_bank_transfer**](AccountingApi.md#get_bank_transfer) | **GET** /BankTransfers/{BankTransferID} | Allows you to retrieve any bank transfers
-[**get_bank_transfer_attachment_by_file_name**](AccountingApi.md#get_bank_transfer_attachment_by_file_name) | **GET** /BankTransfers/{BankTransferID}/Attachments/{FileName} | Allows you to retrieve Attachments on BankTransfer by file name
-[**get_bank_transfer_attachment_by_id**](AccountingApi.md#get_bank_transfer_attachment_by_id) | **GET** /BankTransfers/{BankTransferID}/Attachments/{AttachmentID} | Allows you to retrieve Attachments on BankTransfer
-[**get_bank_transfer_attachments**](AccountingApi.md#get_bank_transfer_attachments) | **GET** /BankTransfers/{BankTransferID}/Attachments | Allows you to retrieve Attachments from  bank transfers
-[**get_bank_transfer_history**](AccountingApi.md#get_bank_transfer_history) | **GET** /BankTransfers/{BankTransferID}/History | Allows you to retrieve history from a bank transfers
-[**get_bank_transfers**](AccountingApi.md#get_bank_transfers) | **GET** /BankTransfers | Allows you to retrieve all bank transfers
-[**get_batch_payment_history**](AccountingApi.md#get_batch_payment_history) | **GET** /BatchPayments/{BatchPaymentID}/History | Allows you to retrieve history from a Batch Payment
-[**get_batch_payments**](AccountingApi.md#get_batch_payments) | **GET** /BatchPayments | Retrieve either one or many BatchPayments for invoices
-[**get_branding_theme**](AccountingApi.md#get_branding_theme) | **GET** /BrandingThemes/{BrandingThemeID} | Allows you to retrieve a specific BrandingThemes
-[**get_branding_theme_payment_services**](AccountingApi.md#get_branding_theme_payment_services) | **GET** /BrandingThemes/{BrandingThemeID}/PaymentServices | Allows you to retrieve the Payment services for a Branding Theme
-[**get_branding_themes**](AccountingApi.md#get_branding_themes) | **GET** /BrandingThemes | Allows you to retrieve all the BrandingThemes
-[**get_contact**](AccountingApi.md#get_contact) | **GET** /Contacts/{ContactID} | Allows you to retrieve a single contacts in a Xero organisation
-[**get_contact_attachment_by_file_name**](AccountingApi.md#get_contact_attachment_by_file_name) | **GET** /Contacts/{ContactID}/Attachments/{FileName} | Allows you to retrieve Attachments on Contacts by file name
-[**get_contact_attachment_by_id**](AccountingApi.md#get_contact_attachment_by_id) | **GET** /Contacts/{ContactID}/Attachments/{AttachmentID} | Allows you to retrieve Attachments on Contacts
-[**get_contact_attachments**](AccountingApi.md#get_contact_attachments) | **GET** /Contacts/{ContactID}/Attachments | Allows you to retrieve, add and update contacts in a Xero organisation
-[**get_contact_by_contact_number**](AccountingApi.md#get_contact_by_contact_number) | **GET** /Contacts/{ContactNumber} | Allows you to retrieve a single contact by Contact Number in a Xero organisation
-[**get_contact_cis_settings**](AccountingApi.md#get_contact_cis_settings) | **GET** /Contacts/{ContactID}/CISSettings | Allows you to retrieve CISSettings for a contact in a Xero organisation
-[**get_contact_group**](AccountingApi.md#get_contact_group) | **GET** /ContactGroups/{ContactGroupID} | Allows you to retrieve a unique Contact Group by ID
-[**get_contact_groups**](AccountingApi.md#get_contact_groups) | **GET** /ContactGroups | Allows you to retrieve the ContactID and Name of all the contacts in a contact group
-[**get_contact_history**](AccountingApi.md#get_contact_history) | **GET** /Contacts/{ContactID}/History | Allows you to retrieve a history records of an Contact
-[**get_contacts**](AccountingApi.md#get_contacts) | **GET** /Contacts | Allows you to retrieve all contacts in a Xero organisation
-[**get_credit_note**](AccountingApi.md#get_credit_note) | **GET** /CreditNotes/{CreditNoteID} | Allows you to retrieve a specific credit note
-[**get_credit_note_as_pdf**](AccountingApi.md#get_credit_note_as_pdf) | **GET** /CreditNotes/{CreditNoteID}/pdf | Allows you to retrieve Credit Note as PDF files
-[**get_credit_note_attachment_by_file_name**](AccountingApi.md#get_credit_note_attachment_by_file_name) | **GET** /CreditNotes/{CreditNoteID}/Attachments/{FileName} | Allows you to retrieve Attachments on CreditNote by file name
-[**get_credit_note_attachment_by_id**](AccountingApi.md#get_credit_note_attachment_by_id) | **GET** /CreditNotes/{CreditNoteID}/Attachments/{AttachmentID} | Allows you to retrieve Attachments on CreditNote
-[**get_credit_note_attachments**](AccountingApi.md#get_credit_note_attachments) | **GET** /CreditNotes/{CreditNoteID}/Attachments | Allows you to retrieve Attachments for credit notes
-[**get_credit_note_history**](AccountingApi.md#get_credit_note_history) | **GET** /CreditNotes/{CreditNoteID}/History | Allows you to retrieve a history records of an CreditNote
-[**get_credit_notes**](AccountingApi.md#get_credit_notes) | **GET** /CreditNotes | Allows you to retrieve any credit notes
-[**get_currencies**](AccountingApi.md#get_currencies) | **GET** /Currencies | Allows you to retrieve currencies for your organisation
-[**get_employee**](AccountingApi.md#get_employee) | **GET** /Employees/{EmployeeID} | Allows you to retrieve a specific employee used in Xero payrun
-[**get_employees**](AccountingApi.md#get_employees) | **GET** /Employees | Allows you to retrieve employees used in Xero payrun
-[**get_expense_claim**](AccountingApi.md#get_expense_claim) | **GET** /ExpenseClaims/{ExpenseClaimID} | Allows you to retrieve a specified expense claim
-[**get_expense_claim_history**](AccountingApi.md#get_expense_claim_history) | **GET** /ExpenseClaims/{ExpenseClaimID}/History | Allows you to retrieve a history records of an ExpenseClaim
-[**get_expense_claims**](AccountingApi.md#get_expense_claims) | **GET** /ExpenseClaims | Allows you to retrieve expense claims
-[**get_invoice**](AccountingApi.md#get_invoice) | **GET** /Invoices/{InvoiceID} | Allows you to retrieve a specified sales invoice or purchase bill
-[**get_invoice_as_pdf**](AccountingApi.md#get_invoice_as_pdf) | **GET** /Invoices/{InvoiceID}/pdf | Allows you to retrieve invoices or purchase bills as PDF files
-[**get_invoice_attachment_by_file_name**](AccountingApi.md#get_invoice_attachment_by_file_name) | **GET** /Invoices/{InvoiceID}/Attachments/{FileName} | Allows you to retrieve Attachment on invoices or purchase bills by it&#39;s filename
-[**get_invoice_attachment_by_id**](AccountingApi.md#get_invoice_attachment_by_id) | **GET** /Invoices/{InvoiceID}/Attachments/{AttachmentID} | Allows you to retrieve a specified Attachment on invoices or purchase bills by it&#39;s ID
-[**get_invoice_attachments**](AccountingApi.md#get_invoice_attachments) | **GET** /Invoices/{InvoiceID}/Attachments | Allows you to retrieve Attachments on invoices or purchase bills
-[**get_invoice_history**](AccountingApi.md#get_invoice_history) | **GET** /Invoices/{InvoiceID}/History | Allows you to retrieve a history records of an invoice
-[**get_invoice_reminders**](AccountingApi.md#get_invoice_reminders) | **GET** /InvoiceReminders/Settings | Allows you to retrieve invoice reminder settings
-[**get_invoices**](AccountingApi.md#get_invoices) | **GET** /Invoices | Allows you to retrieve any sales invoices or purchase bills
-[**get_item**](AccountingApi.md#get_item) | **GET** /Items/{ItemID} | Allows you to retrieve a specified item
-[**get_item_history**](AccountingApi.md#get_item_history) | **GET** /Items/{ItemID}/History | Allows you to retrieve history for items
-[**get_items**](AccountingApi.md#get_items) | **GET** /Items | Allows you to retrieve any items
-[**get_journal**](AccountingApi.md#get_journal) | **GET** /Journals/{JournalID} | Allows you to retrieve a specified journals.
-[**get_journals**](AccountingApi.md#get_journals) | **GET** /Journals | Allows you to retrieve any journals.
-[**get_linked_transaction**](AccountingApi.md#get_linked_transaction) | **GET** /LinkedTransactions/{LinkedTransactionID} | Allows you to retrieve a specified linked transactions (billable expenses)
-[**get_linked_transactions**](AccountingApi.md#get_linked_transactions) | **GET** /LinkedTransactions | Retrieve linked transactions (billable expenses)
-[**get_manual_journal**](AccountingApi.md#get_manual_journal) | **GET** /ManualJournals/{ManualJournalID} | Allows you to retrieve a specified manual journals
-[**get_manual_journal_attachment_by_file_name**](AccountingApi.md#get_manual_journal_attachment_by_file_name) | **GET** /ManualJournals/{ManualJournalID}/Attachments/{FileName} | Allows you to retrieve specified Attachment on ManualJournal by file name
-[**get_manual_journal_attachment_by_id**](AccountingApi.md#get_manual_journal_attachment_by_id) | **GET** /ManualJournals/{ManualJournalID}/Attachments/{AttachmentID} | Allows you to retrieve specified Attachment on ManualJournals
-[**get_manual_journal_attachments**](AccountingApi.md#get_manual_journal_attachments) | **GET** /ManualJournals/{ManualJournalID}/Attachments | Allows you to retrieve Attachment for manual journals
-[**get_manual_journals**](AccountingApi.md#get_manual_journals) | **GET** /ManualJournals | Allows you to retrieve any manual journals
-[**get_manual_journals_history**](AccountingApi.md#get_manual_journals_history) | **GET** /ManualJournals/{ManualJournalID}/History | Allows you to retrieve history from a manual journal
-[**get_online_invoice**](AccountingApi.md#get_online_invoice) | **GET** /Invoices/{InvoiceID}/OnlineInvoice | Allows you to retrieve a URL to an online invoice
-[**get_organisation_actions**](AccountingApi.md#get_organisation_actions) | **GET** /Organisation/Actions | Retrieve a list of the key actions your app has permission to perform in the connected organisation.
-[**get_organisation_cis_settings**](AccountingApi.md#get_organisation_cis_settings) | **GET** /Organisation/{OrganisationID}/CISSettings | Allows you To verify if an organisation is using contruction industry scheme, you can retrieve the CIS settings for the organistaion.
-[**get_organisations**](AccountingApi.md#get_organisations) | **GET** /Organisation | Allows you to retrieve Organisation details
-[**get_overpayment**](AccountingApi.md#get_overpayment) | **GET** /Overpayments/{OverpaymentID} | Allows you to retrieve a specified overpayments
-[**get_overpayment_history**](AccountingApi.md#get_overpayment_history) | **GET** /Overpayments/{OverpaymentID}/History | Allows you to retrieve a history records of an Overpayment
-[**get_overpayments**](AccountingApi.md#get_overpayments) | **GET** /Overpayments | Allows you to retrieve overpayments
-[**get_payment**](AccountingApi.md#get_payment) | **GET** /Payments/{PaymentID} | Allows you to retrieve a specified payment for invoices and credit notes
-[**get_payment_history**](AccountingApi.md#get_payment_history) | **GET** /Payments/{PaymentID}/History | Allows you to retrieve history records of a payment
-[**get_payment_services**](AccountingApi.md#get_payment_services) | **GET** /PaymentServices | Allows you to retrieve payment services
-[**get_payments**](AccountingApi.md#get_payments) | **GET** /Payments | Allows you to retrieve payments for invoices and credit notes
+[**create_prepayment_history**](AccountingApi.md#create_prepayment_history) | **PUT** /Prepayments/{PrepaymentID}/History | Creates a history record for a specific prepayment
+[**create_purchase_order_attachment_by_file_name**](AccountingApi.md#create_purchase_order_attachment_by_file_name) | **PUT** /PurchaseOrders/{PurchaseOrderID}/Attachments/{FileName} | Creates attachment for a specific purchase order
+[**create_purchase_order_history**](AccountingApi.md#create_purchase_order_history) | **PUT** /PurchaseOrders/{PurchaseOrderID}/History | Creates a history record for a specific purchase orders
+[**create_purchase_orders**](AccountingApi.md#create_purchase_orders) | **PUT** /PurchaseOrders | Creates one or more purchase orders
+[**create_quote_attachment_by_file_name**](AccountingApi.md#create_quote_attachment_by_file_name) | **PUT** /Quotes/{QuoteID}/Attachments/{FileName} | Creates attachment for a specific quote
+[**create_quote_history**](AccountingApi.md#create_quote_history) | **PUT** /Quotes/{QuoteID}/History | Creates a history record for a specific quote
+[**create_quotes**](AccountingApi.md#create_quotes) | **PUT** /Quotes | Create one or more quotes
+[**create_receipt**](AccountingApi.md#create_receipt) | **PUT** /Receipts | Creates draft expense claim receipts for any user
+[**create_receipt_attachment_by_file_name**](AccountingApi.md#create_receipt_attachment_by_file_name) | **PUT** /Receipts/{ReceiptID}/Attachments/{FileName} | Creates an attachment on a specific expense claim receipts by file name
+[**create_receipt_history**](AccountingApi.md#create_receipt_history) | **PUT** /Receipts/{ReceiptID}/History | Creates a history record for a specific receipt
+[**create_repeating_invoice_attachment_by_file_name**](AccountingApi.md#create_repeating_invoice_attachment_by_file_name) | **PUT** /RepeatingInvoices/{RepeatingInvoiceID}/Attachments/{FileName} | Creates an attachment from a specific repeating invoices by file name
+[**create_repeating_invoice_history**](AccountingApi.md#create_repeating_invoice_history) | **PUT** /RepeatingInvoices/{RepeatingInvoiceID}/History | Creates a  history record for a specific repeating invoice
+[**create_tax_rates**](AccountingApi.md#create_tax_rates) | **PUT** /TaxRates | Creates one or more tax rates
+[**create_tracking_category**](AccountingApi.md#create_tracking_category) | **PUT** /TrackingCategories | Create tracking categories
+[**create_tracking_options**](AccountingApi.md#create_tracking_options) | **PUT** /TrackingCategories/{TrackingCategoryID}/Options | Creates options for a specific tracking category
+[**delete_account**](AccountingApi.md#delete_account) | **DELETE** /Accounts/{AccountID} | Deletes a chart of accounts
+[**delete_contact_group_contact**](AccountingApi.md#delete_contact_group_contact) | **DELETE** /ContactGroups/{ContactGroupID}/Contacts/{ContactID} | Deletes a specific contact from a contact group using a unique contact Id
+[**delete_contact_group_contacts**](AccountingApi.md#delete_contact_group_contacts) | **DELETE** /ContactGroups/{ContactGroupID}/Contacts | Deletes all contacts from a specific contact group
+[**delete_item**](AccountingApi.md#delete_item) | **DELETE** /Items/{ItemID} | Deletes a specific item
+[**delete_linked_transaction**](AccountingApi.md#delete_linked_transaction) | **DELETE** /LinkedTransactions/{LinkedTransactionID} | Deletes a specific linked transactions (billable expenses)
+[**delete_payment**](AccountingApi.md#delete_payment) | **POST** /Payments/{PaymentID} | Updates a specific payment for invoices and credit notes
+[**delete_tracking_category**](AccountingApi.md#delete_tracking_category) | **DELETE** /TrackingCategories/{TrackingCategoryID} | Deletes a specific tracking category
+[**delete_tracking_options**](AccountingApi.md#delete_tracking_options) | **DELETE** /TrackingCategories/{TrackingCategoryID}/Options/{TrackingOptionID} | Deletes a specific option for a specific tracking category
+[**email_invoice**](AccountingApi.md#email_invoice) | **POST** /Invoices/{InvoiceID}/Email | Sends a copy of a specific invoice to related contact via email
+[**get_account**](AccountingApi.md#get_account) | **GET** /Accounts/{AccountID} | Retrieves a single chart of accounts by using a unique account Id
+[**get_account_attachment_by_file_name**](AccountingApi.md#get_account_attachment_by_file_name) | **GET** /Accounts/{AccountID}/Attachments/{FileName} | Retrieves an attachment for a specific account by filename
+[**get_account_attachment_by_id**](AccountingApi.md#get_account_attachment_by_id) | **GET** /Accounts/{AccountID}/Attachments/{AttachmentID} | Retrieves a specific attachment from a specific account using a unique attachment Id
+[**get_account_attachments**](AccountingApi.md#get_account_attachments) | **GET** /Accounts/{AccountID}/Attachments | Retrieves attachments for a specific accounts by using a unique account Id
+[**get_accounts**](AccountingApi.md#get_accounts) | **GET** /Accounts | Retrieves the full chart of accounts
+[**get_bank_transaction**](AccountingApi.md#get_bank_transaction) | **GET** /BankTransactions/{BankTransactionID} | Retrieves a single spent or received money transaction by using a unique bank transaction Id
+[**get_bank_transaction_attachment_by_file_name**](AccountingApi.md#get_bank_transaction_attachment_by_file_name) | **GET** /BankTransactions/{BankTransactionID}/Attachments/{FileName} | Retrieves a specific attachment from a specific bank transaction by filename
+[**get_bank_transaction_attachment_by_id**](AccountingApi.md#get_bank_transaction_attachment_by_id) | **GET** /BankTransactions/{BankTransactionID}/Attachments/{AttachmentID} | Retrieves specific attachments from a specific BankTransaction using a unique attachment Id
+[**get_bank_transaction_attachments**](AccountingApi.md#get_bank_transaction_attachments) | **GET** /BankTransactions/{BankTransactionID}/Attachments | Retrieves any attachments from a specific bank transactions
+[**get_bank_transactions**](AccountingApi.md#get_bank_transactions) | **GET** /BankTransactions | Retrieves any spent or received money transactions
+[**get_bank_transactions_history**](AccountingApi.md#get_bank_transactions_history) | **GET** /BankTransactions/{BankTransactionID}/History | Retrieves history from a specific bank transaction using a unique bank transaction Id
+[**get_bank_transfer**](AccountingApi.md#get_bank_transfer) | **GET** /BankTransfers/{BankTransferID} | Retrieves specific bank transfers by using a unique bank transfer Id
+[**get_bank_transfer_attachment_by_file_name**](AccountingApi.md#get_bank_transfer_attachment_by_file_name) | **GET** /BankTransfers/{BankTransferID}/Attachments/{FileName} | Retrieves a specific attachment on a specific bank transfer by file name
+[**get_bank_transfer_attachment_by_id**](AccountingApi.md#get_bank_transfer_attachment_by_id) | **GET** /BankTransfers/{BankTransferID}/Attachments/{AttachmentID} | Retrieves a specific attachment from a specific bank transfer using a unique attachment ID
+[**get_bank_transfer_attachments**](AccountingApi.md#get_bank_transfer_attachments) | **GET** /BankTransfers/{BankTransferID}/Attachments | Retrieves attachments from a specific bank transfer
+[**get_bank_transfer_history**](AccountingApi.md#get_bank_transfer_history) | **GET** /BankTransfers/{BankTransferID}/History | Retrieves history from a specific bank transfer using a unique bank transfer Id
+[**get_bank_transfers**](AccountingApi.md#get_bank_transfers) | **GET** /BankTransfers | Retrieves all bank transfers
+[**get_batch_payment_history**](AccountingApi.md#get_batch_payment_history) | **GET** /BatchPayments/{BatchPaymentID}/History | Retrieves history from a specific batch payment
+[**get_batch_payments**](AccountingApi.md#get_batch_payments) | **GET** /BatchPayments | Retrieves either one or many batch payments for invoices
+[**get_branding_theme**](AccountingApi.md#get_branding_theme) | **GET** /BrandingThemes/{BrandingThemeID} | Retrieves a specific branding theme using a unique branding theme Id
+[**get_branding_theme_payment_services**](AccountingApi.md#get_branding_theme_payment_services) | **GET** /BrandingThemes/{BrandingThemeID}/PaymentServices | Retrieves the payment services for a specific branding theme
+[**get_branding_themes**](AccountingApi.md#get_branding_themes) | **GET** /BrandingThemes | Retrieves all the branding themes
+[**get_contact**](AccountingApi.md#get_contact) | **GET** /Contacts/{ContactID} | Retrieves a specific contacts in a Xero organisation using a unique contact Id
+[**get_contact_attachment_by_file_name**](AccountingApi.md#get_contact_attachment_by_file_name) | **GET** /Contacts/{ContactID}/Attachments/{FileName} | Retrieves a specific attachment from a specific contact by file name
+[**get_contact_attachment_by_id**](AccountingApi.md#get_contact_attachment_by_id) | **GET** /Contacts/{ContactID}/Attachments/{AttachmentID} | Retrieves a specific attachment from a specific contact using a unique attachment Id
+[**get_contact_attachments**](AccountingApi.md#get_contact_attachments) | **GET** /Contacts/{ContactID}/Attachments | Retrieves attachments for a specific contact in a Xero organisation
+[**get_contact_by_contact_number**](AccountingApi.md#get_contact_by_contact_number) | **GET** /Contacts/{ContactNumber} | Retrieves a specific contact by contact number in a Xero organisation
+[**get_contact_cis_settings**](AccountingApi.md#get_contact_cis_settings) | **GET** /Contacts/{ContactID}/CISSettings | Retrieves CIS settings for a specific contact in a Xero organisation
+[**get_contact_group**](AccountingApi.md#get_contact_group) | **GET** /ContactGroups/{ContactGroupID} | Retrieves a specific contact group by using a unique contact group Id
+[**get_contact_groups**](AccountingApi.md#get_contact_groups) | **GET** /ContactGroups | Retrieves the contact Id and name of all the contacts in a contact group
+[**get_contact_history**](AccountingApi.md#get_contact_history) | **GET** /Contacts/{ContactID}/History | Retrieves history records for a specific contact
+[**get_contacts**](AccountingApi.md#get_contacts) | **GET** /Contacts | Retrieves all contacts in a Xero organisation
+[**get_credit_note**](AccountingApi.md#get_credit_note) | **GET** /CreditNotes/{CreditNoteID} | Retrieves a specific credit note using a unique credit note Id
+[**get_credit_note_as_pdf**](AccountingApi.md#get_credit_note_as_pdf) | **GET** /CreditNotes/{CreditNoteID}/pdf | Retrieves credit notes as PDF files
+[**get_credit_note_attachment_by_file_name**](AccountingApi.md#get_credit_note_attachment_by_file_name) | **GET** /CreditNotes/{CreditNoteID}/Attachments/{FileName} | Retrieves a specific attachment on a specific credit note by file name
+[**get_credit_note_attachment_by_id**](AccountingApi.md#get_credit_note_attachment_by_id) | **GET** /CreditNotes/{CreditNoteID}/Attachments/{AttachmentID} | Retrieves a specific attachment from a specific credit note using a unique attachment Id
+[**get_credit_note_attachments**](AccountingApi.md#get_credit_note_attachments) | **GET** /CreditNotes/{CreditNoteID}/Attachments | Retrieves attachments for a specific credit notes
+[**get_credit_note_history**](AccountingApi.md#get_credit_note_history) | **GET** /CreditNotes/{CreditNoteID}/History | Retrieves history records of a specific credit note
+[**get_credit_notes**](AccountingApi.md#get_credit_notes) | **GET** /CreditNotes | Retrieves any credit notes
+[**get_currencies**](AccountingApi.md#get_currencies) | **GET** /Currencies | Retrieves currencies for your Xero organisation
+[**get_employee**](AccountingApi.md#get_employee) | **GET** /Employees/{EmployeeID} | Retrieves a specific employee used in Xero payrun using a unique employee Id
+[**get_employees**](AccountingApi.md#get_employees) | **GET** /Employees | Retrieves employees used in Xero payrun
+[**get_expense_claim**](AccountingApi.md#get_expense_claim) | **GET** /ExpenseClaims/{ExpenseClaimID} | Retrieves a specific expense claim using a unique expense claim Id
+[**get_expense_claim_history**](AccountingApi.md#get_expense_claim_history) | **GET** /ExpenseClaims/{ExpenseClaimID}/History | Retrieves history records of a specific expense claim
+[**get_expense_claims**](AccountingApi.md#get_expense_claims) | **GET** /ExpenseClaims | Retrieves expense claims
+[**get_invoice**](AccountingApi.md#get_invoice) | **GET** /Invoices/{InvoiceID} | Retrieves a specific sales invoice or purchase bill using a unique invoice Id
+[**get_invoice_as_pdf**](AccountingApi.md#get_invoice_as_pdf) | **GET** /Invoices/{InvoiceID}/pdf | Retrieves invoices or purchase bills as PDF files
+[**get_invoice_attachment_by_file_name**](AccountingApi.md#get_invoice_attachment_by_file_name) | **GET** /Invoices/{InvoiceID}/Attachments/{FileName} | Retrieves an attachment from a specific invoice or purchase bill by filename
+[**get_invoice_attachment_by_id**](AccountingApi.md#get_invoice_attachment_by_id) | **GET** /Invoices/{InvoiceID}/Attachments/{AttachmentID} | Retrieves a specific attachment from a specific invoices or purchase bills by using a unique attachment Id
+[**get_invoice_attachments**](AccountingApi.md#get_invoice_attachments) | **GET** /Invoices/{InvoiceID}/Attachments | Retrieves attachments for a specific invoice or purchase bill
+[**get_invoice_history**](AccountingApi.md#get_invoice_history) | **GET** /Invoices/{InvoiceID}/History | Retrieves history records for a specific invoice
+[**get_invoice_reminders**](AccountingApi.md#get_invoice_reminders) | **GET** /InvoiceReminders/Settings | Retrieves invoice reminder settings
+[**get_invoices**](AccountingApi.md#get_invoices) | **GET** /Invoices | Retrieves sales invoices or purchase bills
+[**get_item**](AccountingApi.md#get_item) | **GET** /Items/{ItemID} | Retrieves a specific item using a unique item Id
+[**get_item_history**](AccountingApi.md#get_item_history) | **GET** /Items/{ItemID}/History | Retrieves history for a specific item
+[**get_items**](AccountingApi.md#get_items) | **GET** /Items | Retrieves items
+[**get_journal**](AccountingApi.md#get_journal) | **GET** /Journals/{JournalID} | Retrieves a specific journal using a unique journal Id.
+[**get_journals**](AccountingApi.md#get_journals) | **GET** /Journals | Retrieves journals
+[**get_linked_transaction**](AccountingApi.md#get_linked_transaction) | **GET** /LinkedTransactions/{LinkedTransactionID} | Retrieves a specific linked transaction (billable expenses) using a unique linked transaction Id
+[**get_linked_transactions**](AccountingApi.md#get_linked_transactions) | **GET** /LinkedTransactions | Retrieves linked transactions (billable expenses)
+[**get_manual_journal**](AccountingApi.md#get_manual_journal) | **GET** /ManualJournals/{ManualJournalID} | Retrieves a specific manual journal
+[**get_manual_journal_attachment_by_file_name**](AccountingApi.md#get_manual_journal_attachment_by_file_name) | **GET** /ManualJournals/{ManualJournalID}/Attachments/{FileName} | Retrieves a specific attachment from a specific manual journal by file name
+[**get_manual_journal_attachment_by_id**](AccountingApi.md#get_manual_journal_attachment_by_id) | **GET** /ManualJournals/{ManualJournalID}/Attachments/{AttachmentID} | Allows you to retrieve a specific attachment from a specific manual journal using a unique attachment Id
+[**get_manual_journal_attachments**](AccountingApi.md#get_manual_journal_attachments) | **GET** /ManualJournals/{ManualJournalID}/Attachments | Retrieves attachment for a specific manual journal
+[**get_manual_journals**](AccountingApi.md#get_manual_journals) | **GET** /ManualJournals | Retrieves manual journals
+[**get_manual_journals_history**](AccountingApi.md#get_manual_journals_history) | **GET** /ManualJournals/{ManualJournalID}/History | Retrieves history for a specific manual journal
+[**get_online_invoice**](AccountingApi.md#get_online_invoice) | **GET** /Invoices/{InvoiceID}/OnlineInvoice | Retrieves a URL to an online invoice
+[**get_organisation_actions**](AccountingApi.md#get_organisation_actions) | **GET** /Organisation/Actions | Retrieves a list of the key actions your app has permission to perform in the connected Xero organisation.
+[**get_organisation_cis_settings**](AccountingApi.md#get_organisation_cis_settings) | **GET** /Organisation/{OrganisationID}/CISSettings | Retrieves the CIS settings for the Xero organistaion.
+[**get_organisations**](AccountingApi.md#get_organisations) | **GET** /Organisation | Retrieves Xero organisation details
+[**get_overpayment**](AccountingApi.md#get_overpayment) | **GET** /Overpayments/{OverpaymentID} | Retrieves a specific overpayment using a unique overpayment Id
+[**get_overpayment_history**](AccountingApi.md#get_overpayment_history) | **GET** /Overpayments/{OverpaymentID}/History | Retrieves history records of a specific overpayment
+[**get_overpayments**](AccountingApi.md#get_overpayments) | **GET** /Overpayments | Retrieves overpayments
+[**get_payment**](AccountingApi.md#get_payment) | **GET** /Payments/{PaymentID} | Retrieves a specific payment for invoices and credit notes using a unique payment Id
+[**get_payment_history**](AccountingApi.md#get_payment_history) | **GET** /Payments/{PaymentID}/History | Retrieves history records of a specific payment
+[**get_payment_services**](AccountingApi.md#get_payment_services) | **GET** /PaymentServices | Retrieves payment services
+[**get_payments**](AccountingApi.md#get_payments) | **GET** /Payments | Retrieves payments for invoices and credit notes
 [**get_prepayment**](AccountingApi.md#get_prepayment) | **GET** /Prepayments/{PrepaymentID} | Allows you to retrieve a specified prepayments
-[**get_prepayment_history**](AccountingApi.md#get_prepayment_history) | **GET** /Prepayments/{PrepaymentID}/History | Allows you to retrieve a history records of an Prepayment
-[**get_prepayments**](AccountingApi.md#get_prepayments) | **GET** /Prepayments | Allows you to retrieve prepayments
-[**get_purchase_order**](AccountingApi.md#get_purchase_order) | **GET** /PurchaseOrders/{PurchaseOrderID} | Allows you to retrieve a specified purchase orders
-[**get_purchase_order_as_pdf**](AccountingApi.md#get_purchase_order_as_pdf) | **GET** /PurchaseOrders/{PurchaseOrderID}/pdf | Allows you to retrieve purchase orders as PDF files
-[**get_purchase_order_attachment_by_file_name**](AccountingApi.md#get_purchase_order_attachment_by_file_name) | **GET** /PurchaseOrders/{PurchaseOrderID}/Attachments/{FileName} | Allows you to retrieve Attachment on a Purchase Order by Filename
-[**get_purchase_order_attachment_by_id**](AccountingApi.md#get_purchase_order_attachment_by_id) | **GET** /PurchaseOrders/{PurchaseOrderID}/Attachments/{AttachmentID} | Allows you to retrieve specific Attachment on purchase order
-[**get_purchase_order_attachments**](AccountingApi.md#get_purchase_order_attachments) | **GET** /PurchaseOrders/{PurchaseOrderID}/Attachments | Allows you to retrieve attachments for purchase orders
-[**get_purchase_order_by_number**](AccountingApi.md#get_purchase_order_by_number) | **GET** /PurchaseOrders/{PurchaseOrderNumber} | Allows you to retrieve a specified purchase orders
-[**get_purchase_order_history**](AccountingApi.md#get_purchase_order_history) | **GET** /PurchaseOrders/{PurchaseOrderID}/History | Allows you to retrieve history for PurchaseOrder
-[**get_purchase_orders**](AccountingApi.md#get_purchase_orders) | **GET** /PurchaseOrders | Allows you to retrieve purchase orders
-[**get_quote**](AccountingApi.md#get_quote) | **GET** /Quotes/{QuoteID} | Allows you to retrieve a specified quote
-[**get_quote_as_pdf**](AccountingApi.md#get_quote_as_pdf) | **GET** /Quotes/{QuoteID}/pdf | Allows you to retrieve quotes as PDF files
-[**get_quote_attachment_by_file_name**](AccountingApi.md#get_quote_attachment_by_file_name) | **GET** /Quotes/{QuoteID}/Attachments/{FileName} | Allows you to retrieve Attachment on Quote by Filename
-[**get_quote_attachment_by_id**](AccountingApi.md#get_quote_attachment_by_id) | **GET** /Quotes/{QuoteID}/Attachments/{AttachmentID} | Allows you to retrieve specific Attachment on Quote
-[**get_quote_attachments**](AccountingApi.md#get_quote_attachments) | **GET** /Quotes/{QuoteID}/Attachments | Allows you to retrieve Attachments for Quotes
-[**get_quote_history**](AccountingApi.md#get_quote_history) | **GET** /Quotes/{QuoteID}/History | Allows you to retrieve a history records of an quote
-[**get_quotes**](AccountingApi.md#get_quotes) | **GET** /Quotes | Allows you to retrieve any sales quotes
-[**get_receipt**](AccountingApi.md#get_receipt) | **GET** /Receipts/{ReceiptID} | Allows you to retrieve a specified draft expense claim receipts
-[**get_receipt_attachment_by_file_name**](AccountingApi.md#get_receipt_attachment_by_file_name) | **GET** /Receipts/{ReceiptID}/Attachments/{FileName} | Allows you to retrieve Attachments on expense claim receipts by file name
-[**get_receipt_attachment_by_id**](AccountingApi.md#get_receipt_attachment_by_id) | **GET** /Receipts/{ReceiptID}/Attachments/{AttachmentID} | Allows you to retrieve Attachments on expense claim receipts by ID
-[**get_receipt_attachments**](AccountingApi.md#get_receipt_attachments) | **GET** /Receipts/{ReceiptID}/Attachments | Allows you to retrieve Attachments for expense claim receipts
-[**get_receipt_history**](AccountingApi.md#get_receipt_history) | **GET** /Receipts/{ReceiptID}/History | Allows you to retrieve a history records of an Receipt
-[**get_receipts**](AccountingApi.md#get_receipts) | **GET** /Receipts | Allows you to retrieve draft expense claim receipts for any user
-[**get_repeating_invoice**](AccountingApi.md#get_repeating_invoice) | **GET** /RepeatingInvoices/{RepeatingInvoiceID} | Allows you to retrieve a specified repeating invoice
-[**get_repeating_invoice_attachment_by_file_name**](AccountingApi.md#get_repeating_invoice_attachment_by_file_name) | **GET** /RepeatingInvoices/{RepeatingInvoiceID}/Attachments/{FileName} | Allows you to retrieve specified attachment on repeating invoices by file name
-[**get_repeating_invoice_attachment_by_id**](AccountingApi.md#get_repeating_invoice_attachment_by_id) | **GET** /RepeatingInvoices/{RepeatingInvoiceID}/Attachments/{AttachmentID} | Allows you to retrieve a specified Attachments on repeating invoices
-[**get_repeating_invoice_attachments**](AccountingApi.md#get_repeating_invoice_attachments) | **GET** /RepeatingInvoices/{RepeatingInvoiceID}/Attachments | Allows you to retrieve Attachments on repeating invoice
-[**get_repeating_invoice_history**](AccountingApi.md#get_repeating_invoice_history) | **GET** /RepeatingInvoices/{RepeatingInvoiceID}/History | Allows you to retrieve history for a repeating invoice
-[**get_repeating_invoices**](AccountingApi.md#get_repeating_invoices) | **GET** /RepeatingInvoices | Allows you to retrieve any repeating invoices
-[**get_report_aged_payables_by_contact**](AccountingApi.md#get_report_aged_payables_by_contact) | **GET** /Reports/AgedPayablesByContact | Allows you to retrieve report for AgedPayablesByContact
-[**get_report_aged_receivables_by_contact**](AccountingApi.md#get_report_aged_receivables_by_contact) | **GET** /Reports/AgedReceivablesByContact | Allows you to retrieve report for AgedReceivablesByContact
-[**get_report_ba_sor_gst**](AccountingApi.md#get_report_ba_sor_gst) | **GET** /Reports/{ReportID} | Allows you to retrieve report for BAS only valid for AU orgs
-[**get_report_ba_sor_gst_list**](AccountingApi.md#get_report_ba_sor_gst_list) | **GET** /Reports | Allows you to retrieve report for BAS only valid for AU orgs
-[**get_report_balance_sheet**](AccountingApi.md#get_report_balance_sheet) | **GET** /Reports/BalanceSheet | Allows you to retrieve report for BalanceSheet
-[**get_report_bank_summary**](AccountingApi.md#get_report_bank_summary) | **GET** /Reports/BankSummary | Allows you to retrieve report for BankSummary
-[**get_report_budget_summary**](AccountingApi.md#get_report_budget_summary) | **GET** /Reports/BudgetSummary | Allows you to retrieve report for Budget Summary
-[**get_report_executive_summary**](AccountingApi.md#get_report_executive_summary) | **GET** /Reports/ExecutiveSummary | Allows you to retrieve report for ExecutiveSummary
-[**get_report_profit_and_loss**](AccountingApi.md#get_report_profit_and_loss) | **GET** /Reports/ProfitAndLoss | Allows you to retrieve report for ProfitAndLoss
-[**get_report_ten_ninety_nine**](AccountingApi.md#get_report_ten_ninety_nine) | **GET** /Reports/TenNinetyNine | Allows you to retrieve report for TenNinetyNine
-[**get_report_trial_balance**](AccountingApi.md#get_report_trial_balance) | **GET** /Reports/TrialBalance | Allows you to retrieve report for TrialBalance
-[**get_tax_rates**](AccountingApi.md#get_tax_rates) | **GET** /TaxRates | Allows you to retrieve Tax Rates
-[**get_tracking_categories**](AccountingApi.md#get_tracking_categories) | **GET** /TrackingCategories | Allows you to retrieve tracking categories and options
-[**get_tracking_category**](AccountingApi.md#get_tracking_category) | **GET** /TrackingCategories/{TrackingCategoryID} | Allows you to retrieve tracking categories and options for specified category
-[**get_user**](AccountingApi.md#get_user) | **GET** /Users/{UserID} | Allows you to retrieve a specified user
-[**get_users**](AccountingApi.md#get_users) | **GET** /Users | Allows you to retrieve users
-[**post_setup**](AccountingApi.md#post_setup) | **POST** /Setup | Allows you to set the chart of accounts, the conversion date and conversion balances
-[**update_account**](AccountingApi.md#update_account) | **POST** /Accounts/{AccountID} | Allows you to update a chart of accounts
-[**update_account_attachment_by_file_name**](AccountingApi.md#update_account_attachment_by_file_name) | **POST** /Accounts/{AccountID}/Attachments/{FileName} | Allows you to update Attachment on Account by Filename
-[**update_bank_transaction**](AccountingApi.md#update_bank_transaction) | **POST** /BankTransactions/{BankTransactionID} | Allows you to update a single spend or receive money transaction
-[**update_bank_transaction_attachment_by_file_name**](AccountingApi.md#update_bank_transaction_attachment_by_file_name) | **POST** /BankTransactions/{BankTransactionID}/Attachments/{FileName} | Allows you to update an Attachment on BankTransaction by Filename
+[**get_prepayment_history**](AccountingApi.md#get_prepayment_history) | **GET** /Prepayments/{PrepaymentID}/History | Retrieves history record for a specific prepayment
+[**get_prepayments**](AccountingApi.md#get_prepayments) | **GET** /Prepayments | Retrieves prepayments
+[**get_purchase_order**](AccountingApi.md#get_purchase_order) | **GET** /PurchaseOrders/{PurchaseOrderID} | Retrieves a specific purchase order using a unique purchase order Id
+[**get_purchase_order_as_pdf**](AccountingApi.md#get_purchase_order_as_pdf) | **GET** /PurchaseOrders/{PurchaseOrderID}/pdf | Retrieves specific purchase order as PDF files using a unique purchase order Id
+[**get_purchase_order_attachment_by_file_name**](AccountingApi.md#get_purchase_order_attachment_by_file_name) | **GET** /PurchaseOrders/{PurchaseOrderID}/Attachments/{FileName} | Retrieves a specific attachment for a specific purchase order by filename
+[**get_purchase_order_attachment_by_id**](AccountingApi.md#get_purchase_order_attachment_by_id) | **GET** /PurchaseOrders/{PurchaseOrderID}/Attachments/{AttachmentID} | Retrieves specific attachment for a specific purchase order using a unique attachment Id
+[**get_purchase_order_attachments**](AccountingApi.md#get_purchase_order_attachments) | **GET** /PurchaseOrders/{PurchaseOrderID}/Attachments | Retrieves attachments for a specific purchase order
+[**get_purchase_order_by_number**](AccountingApi.md#get_purchase_order_by_number) | **GET** /PurchaseOrders/{PurchaseOrderNumber} | Retrieves a specific purchase order using purchase order number
+[**get_purchase_order_history**](AccountingApi.md#get_purchase_order_history) | **GET** /PurchaseOrders/{PurchaseOrderID}/History | Retrieves history for a specific purchase order
+[**get_purchase_orders**](AccountingApi.md#get_purchase_orders) | **GET** /PurchaseOrders | Retrieves purchase orders
+[**get_quote**](AccountingApi.md#get_quote) | **GET** /Quotes/{QuoteID} | Retrieves a specific quote using a unique quote Id
+[**get_quote_as_pdf**](AccountingApi.md#get_quote_as_pdf) | **GET** /Quotes/{QuoteID}/pdf | Retrieves a specific quote as a PDF file using a unique quote Id
+[**get_quote_attachment_by_file_name**](AccountingApi.md#get_quote_attachment_by_file_name) | **GET** /Quotes/{QuoteID}/Attachments/{FileName} | Retrieves a specific attachment from a specific quote by filename
+[**get_quote_attachment_by_id**](AccountingApi.md#get_quote_attachment_by_id) | **GET** /Quotes/{QuoteID}/Attachments/{AttachmentID} | Retrieves a specific attachment from a specific quote using a unique attachment Id
+[**get_quote_attachments**](AccountingApi.md#get_quote_attachments) | **GET** /Quotes/{QuoteID}/Attachments | Retrieves attachments for a specific quote
+[**get_quote_history**](AccountingApi.md#get_quote_history) | **GET** /Quotes/{QuoteID}/History | Retrieves history records of a specific quote
+[**get_quotes**](AccountingApi.md#get_quotes) | **GET** /Quotes | Retrieves sales quotes
+[**get_receipt**](AccountingApi.md#get_receipt) | **GET** /Receipts/{ReceiptID} | Retrieves a specific draft expense claim receipt by using a unique receipt Id
+[**get_receipt_attachment_by_file_name**](AccountingApi.md#get_receipt_attachment_by_file_name) | **GET** /Receipts/{ReceiptID}/Attachments/{FileName} | Retrieves a specific attachment from a specific expense claim receipts by file name
+[**get_receipt_attachment_by_id**](AccountingApi.md#get_receipt_attachment_by_id) | **GET** /Receipts/{ReceiptID}/Attachments/{AttachmentID} | Retrieves a specific attachments from a specific expense claim receipts by using a unique attachment Id
+[**get_receipt_attachments**](AccountingApi.md#get_receipt_attachments) | **GET** /Receipts/{ReceiptID}/Attachments | Retrieves attachments for a specific expense claim receipt
+[**get_receipt_history**](AccountingApi.md#get_receipt_history) | **GET** /Receipts/{ReceiptID}/History | Retrieves a history record for a specific receipt
+[**get_receipts**](AccountingApi.md#get_receipts) | **GET** /Receipts | Retrieves draft expense claim receipts for any user
+[**get_repeating_invoice**](AccountingApi.md#get_repeating_invoice) | **GET** /RepeatingInvoices/{RepeatingInvoiceID} | Retrieves a specific repeating invoice by using a unique repeating invoice Id
+[**get_repeating_invoice_attachment_by_file_name**](AccountingApi.md#get_repeating_invoice_attachment_by_file_name) | **GET** /RepeatingInvoices/{RepeatingInvoiceID}/Attachments/{FileName} | Retrieves a specific attachment from a specific repeating invoices by file name
+[**get_repeating_invoice_attachment_by_id**](AccountingApi.md#get_repeating_invoice_attachment_by_id) | **GET** /RepeatingInvoices/{RepeatingInvoiceID}/Attachments/{AttachmentID} | Retrieves a specific attachment from a specific repeating invoice
+[**get_repeating_invoice_attachments**](AccountingApi.md#get_repeating_invoice_attachments) | **GET** /RepeatingInvoices/{RepeatingInvoiceID}/Attachments | Retrieves attachments from a specific repeating invoice
+[**get_repeating_invoice_history**](AccountingApi.md#get_repeating_invoice_history) | **GET** /RepeatingInvoices/{RepeatingInvoiceID}/History | Retrieves history record for a specific repeating invoice
+[**get_repeating_invoices**](AccountingApi.md#get_repeating_invoices) | **GET** /RepeatingInvoices | Retrieves repeating invoices
+[**get_report_aged_payables_by_contact**](AccountingApi.md#get_report_aged_payables_by_contact) | **GET** /Reports/AgedPayablesByContact | Retrieves report for aged payables by contact
+[**get_report_aged_receivables_by_contact**](AccountingApi.md#get_report_aged_receivables_by_contact) | **GET** /Reports/AgedReceivablesByContact | Retrieves report for aged receivables by contact
+[**get_report_ba_sor_gst**](AccountingApi.md#get_report_ba_sor_gst) | **GET** /Reports/{ReportID} | Retrieves a specific report for BAS using a unique report Id (only valid for AU orgs)
+[**get_report_ba_sor_gst_list**](AccountingApi.md#get_report_ba_sor_gst_list) | **GET** /Reports | Retrieves report for BAS (only valid for AU orgs)
+[**get_report_balance_sheet**](AccountingApi.md#get_report_balance_sheet) | **GET** /Reports/BalanceSheet | Retrieves report for balancesheet
+[**get_report_bank_summary**](AccountingApi.md#get_report_bank_summary) | **GET** /Reports/BankSummary | Retrieves report for bank summary
+[**get_report_budget_summary**](AccountingApi.md#get_report_budget_summary) | **GET** /Reports/BudgetSummary | Retrieves report for budget summary
+[**get_report_executive_summary**](AccountingApi.md#get_report_executive_summary) | **GET** /Reports/ExecutiveSummary | Retrieves report for executive summary
+[**get_report_profit_and_loss**](AccountingApi.md#get_report_profit_and_loss) | **GET** /Reports/ProfitAndLoss | Retrieves report for profit and loss
+[**get_report_ten_ninety_nine**](AccountingApi.md#get_report_ten_ninety_nine) | **GET** /Reports/TenNinetyNine | Retrieve reports for 1099
+[**get_report_trial_balance**](AccountingApi.md#get_report_trial_balance) | **GET** /Reports/TrialBalance | Retrieves report for trial balance
+[**get_tax_rates**](AccountingApi.md#get_tax_rates) | **GET** /TaxRates | Retrieves tax rates
+[**get_tracking_categories**](AccountingApi.md#get_tracking_categories) | **GET** /TrackingCategories | Retrieves tracking categories and options
+[**get_tracking_category**](AccountingApi.md#get_tracking_category) | **GET** /TrackingCategories/{TrackingCategoryID} | Retrieves specific tracking categories and options using a unique tracking category Id
+[**get_user**](AccountingApi.md#get_user) | **GET** /Users/{UserID} | Retrieves a specific user
+[**get_users**](AccountingApi.md#get_users) | **GET** /Users | Retrieves users
+[**post_setup**](AccountingApi.md#post_setup) | **POST** /Setup | Sets the chart of accounts, the conversion date and conversion balances
+[**update_account**](AccountingApi.md#update_account) | **POST** /Accounts/{AccountID} | Updates a chart of accounts
+[**update_account_attachment_by_file_name**](AccountingApi.md#update_account_attachment_by_file_name) | **POST** /Accounts/{AccountID}/Attachments/{FileName} | Updates attachment on a specific account by filename
+[**update_bank_transaction**](AccountingApi.md#update_bank_transaction) | **POST** /BankTransactions/{BankTransactionID} | Updates a single spent or received money transaction
+[**update_bank_transaction_attachment_by_file_name**](AccountingApi.md#update_bank_transaction_attachment_by_file_name) | **POST** /BankTransactions/{BankTransactionID}/Attachments/{FileName} | Updates a specific attachment from a specific bank transaction by filename
 [**update_bank_transfer_attachment_by_file_name**](AccountingApi.md#update_bank_transfer_attachment_by_file_name) | **POST** /BankTransfers/{BankTransferID}/Attachments/{FileName} | 
-[**update_contact**](AccountingApi.md#update_contact) | **POST** /Contacts/{ContactID} | Allows you to update one contact in a Xero organisation
+[**update_contact**](AccountingApi.md#update_contact) | **POST** /Contacts/{ContactID} | Updates a specific contact in a Xero organisation
 [**update_contact_attachment_by_file_name**](AccountingApi.md#update_contact_attachment_by_file_name) | **POST** /Contacts/{ContactID}/Attachments/{FileName} | 
-[**update_contact_group**](AccountingApi.md#update_contact_group) | **POST** /ContactGroups/{ContactGroupID} | Allows you to update a Contact Group
-[**update_credit_note**](AccountingApi.md#update_credit_note) | **POST** /CreditNotes/{CreditNoteID} | Allows you to update a specific credit note
-[**update_credit_note_attachment_by_file_name**](AccountingApi.md#update_credit_note_attachment_by_file_name) | **POST** /CreditNotes/{CreditNoteID}/Attachments/{FileName} | Allows you to update Attachments on CreditNote by file name
-[**update_expense_claim**](AccountingApi.md#update_expense_claim) | **POST** /ExpenseClaims/{ExpenseClaimID} | Allows you to update specified expense claims
-[**update_invoice**](AccountingApi.md#update_invoice) | **POST** /Invoices/{InvoiceID} | Allows you to update a specified sales invoices or purchase bills
-[**update_invoice_attachment_by_file_name**](AccountingApi.md#update_invoice_attachment_by_file_name) | **POST** /Invoices/{InvoiceID}/Attachments/{FileName} | Allows you to update Attachment on invoices or purchase bills by it&#39;s filename
-[**update_item**](AccountingApi.md#update_item) | **POST** /Items/{ItemID} | Allows you to update a specified item
-[**update_linked_transaction**](AccountingApi.md#update_linked_transaction) | **POST** /LinkedTransactions/{LinkedTransactionID} | Allows you to update a specified linked transactions (billable expenses)
-[**update_manual_journal**](AccountingApi.md#update_manual_journal) | **POST** /ManualJournals/{ManualJournalID} | Allows you to update a specified manual journal
-[**update_manual_journal_attachment_by_file_name**](AccountingApi.md#update_manual_journal_attachment_by_file_name) | **POST** /ManualJournals/{ManualJournalID}/Attachments/{FileName} | Allows you to update a specified Attachment on ManualJournal by file name
-[**update_or_create_bank_transactions**](AccountingApi.md#update_or_create_bank_transactions) | **POST** /BankTransactions | Allows you to update or create one or more spend or receive money transaction
-[**update_or_create_contacts**](AccountingApi.md#update_or_create_contacts) | **POST** /Contacts | Allows you to update OR create one or more contacts in a Xero organisation
-[**update_or_create_credit_notes**](AccountingApi.md#update_or_create_credit_notes) | **POST** /CreditNotes | Allows you to update OR create one or more credit notes
-[**update_or_create_employees**](AccountingApi.md#update_or_create_employees) | **POST** /Employees | Allows you to create a single new employees used in Xero payrun
-[**update_or_create_invoices**](AccountingApi.md#update_or_create_invoices) | **POST** /Invoices | Allows you to update OR create one or more sales invoices or purchase bills
-[**update_or_create_items**](AccountingApi.md#update_or_create_items) | **POST** /Items | Allows you to update or create one or more items
-[**update_or_create_manual_journals**](AccountingApi.md#update_or_create_manual_journals) | **POST** /ManualJournals | Allows you to create a single manual journal
-[**update_or_create_purchase_orders**](AccountingApi.md#update_or_create_purchase_orders) | **POST** /PurchaseOrders | Allows you to update or create one or more purchase orders
-[**update_or_create_quotes**](AccountingApi.md#update_or_create_quotes) | **POST** /Quotes | Allows you to update OR create one or more quotes
-[**update_purchase_order**](AccountingApi.md#update_purchase_order) | **POST** /PurchaseOrders/{PurchaseOrderID} | Allows you to update a specified purchase order
-[**update_purchase_order_attachment_by_file_name**](AccountingApi.md#update_purchase_order_attachment_by_file_name) | **POST** /PurchaseOrders/{PurchaseOrderID}/Attachments/{FileName} | Allows you to update Attachment on Purchase Order by Filename
-[**update_quote**](AccountingApi.md#update_quote) | **POST** /Quotes/{QuoteID} | Allows you to update a specified quote
-[**update_quote_attachment_by_file_name**](AccountingApi.md#update_quote_attachment_by_file_name) | **POST** /Quotes/{QuoteID}/Attachments/{FileName} | Allows you to update Attachment on Quote by Filename
-[**update_receipt**](AccountingApi.md#update_receipt) | **POST** /Receipts/{ReceiptID} | Allows you to retrieve a specified draft expense claim receipts
-[**update_receipt_attachment_by_file_name**](AccountingApi.md#update_receipt_attachment_by_file_name) | **POST** /Receipts/{ReceiptID}/Attachments/{FileName} | Allows you to update Attachment on expense claim receipts by file name
-[**update_repeating_invoice_attachment_by_file_name**](AccountingApi.md#update_repeating_invoice_attachment_by_file_name) | **POST** /RepeatingInvoices/{RepeatingInvoiceID}/Attachments/{FileName} | Allows you to update specified attachment on repeating invoices by file name
-[**update_tax_rate**](AccountingApi.md#update_tax_rate) | **POST** /TaxRates | Allows you to update Tax Rates
-[**update_tracking_category**](AccountingApi.md#update_tracking_category) | **POST** /TrackingCategories/{TrackingCategoryID} | Allows you to update tracking categories
-[**update_tracking_options**](AccountingApi.md#update_tracking_options) | **POST** /TrackingCategories/{TrackingCategoryID}/Options/{TrackingOptionID} | Allows you to update options for a specified tracking category
+[**update_contact_group**](AccountingApi.md#update_contact_group) | **POST** /ContactGroups/{ContactGroupID} | Updates a specific contact group
+[**update_credit_note**](AccountingApi.md#update_credit_note) | **POST** /CreditNotes/{CreditNoteID} | Updates a specific credit note
+[**update_credit_note_attachment_by_file_name**](AccountingApi.md#update_credit_note_attachment_by_file_name) | **POST** /CreditNotes/{CreditNoteID}/Attachments/{FileName} | Updates attachments on a specific credit note by file name
+[**update_expense_claim**](AccountingApi.md#update_expense_claim) | **POST** /ExpenseClaims/{ExpenseClaimID} | Updates a specific expense claims
+[**update_invoice**](AccountingApi.md#update_invoice) | **POST** /Invoices/{InvoiceID} | Updates a specific sales invoices or purchase bills
+[**update_invoice_attachment_by_file_name**](AccountingApi.md#update_invoice_attachment_by_file_name) | **POST** /Invoices/{InvoiceID}/Attachments/{FileName} | Updates an attachment from a specific invoices or purchase bill by filename
+[**update_item**](AccountingApi.md#update_item) | **POST** /Items/{ItemID} | Updates a specific item
+[**update_linked_transaction**](AccountingApi.md#update_linked_transaction) | **POST** /LinkedTransactions/{LinkedTransactionID} | Updates a specific linked transactions (billable expenses)
+[**update_manual_journal**](AccountingApi.md#update_manual_journal) | **POST** /ManualJournals/{ManualJournalID} | Updates a specific manual journal
+[**update_manual_journal_attachment_by_file_name**](AccountingApi.md#update_manual_journal_attachment_by_file_name) | **POST** /ManualJournals/{ManualJournalID}/Attachments/{FileName} | Updates a specific attachment from a specific manual journal by file name
+[**update_or_create_bank_transactions**](AccountingApi.md#update_or_create_bank_transactions) | **POST** /BankTransactions | Updates or creates one or more spent or received money transaction
+[**update_or_create_contacts**](AccountingApi.md#update_or_create_contacts) | **POST** /Contacts | Updates or creates one or more contacts in a Xero organisation
+[**update_or_create_credit_notes**](AccountingApi.md#update_or_create_credit_notes) | **POST** /CreditNotes | Updates or creates one or more credit notes
+[**update_or_create_employees**](AccountingApi.md#update_or_create_employees) | **POST** /Employees | Creates a single new employees used in Xero payrun
+[**update_or_create_invoices**](AccountingApi.md#update_or_create_invoices) | **POST** /Invoices | Updates or creates one or more sales invoices or purchase bills
+[**update_or_create_items**](AccountingApi.md#update_or_create_items) | **POST** /Items | Updates or creates one or more items
+[**update_or_create_manual_journals**](AccountingApi.md#update_or_create_manual_journals) | **POST** /ManualJournals | Updates or creates a single manual journal
+[**update_or_create_purchase_orders**](AccountingApi.md#update_or_create_purchase_orders) | **POST** /PurchaseOrders | Updates or creates one or more purchase orders
+[**update_or_create_quotes**](AccountingApi.md#update_or_create_quotes) | **POST** /Quotes | Updates or creates one or more quotes
+[**update_purchase_order**](AccountingApi.md#update_purchase_order) | **POST** /PurchaseOrders/{PurchaseOrderID} | Updates a specific purchase order
+[**update_purchase_order_attachment_by_file_name**](AccountingApi.md#update_purchase_order_attachment_by_file_name) | **POST** /PurchaseOrders/{PurchaseOrderID}/Attachments/{FileName} | Updates a specific attachment for a specific purchase order by filename
+[**update_quote**](AccountingApi.md#update_quote) | **POST** /Quotes/{QuoteID} | Updates a specific quote
+[**update_quote_attachment_by_file_name**](AccountingApi.md#update_quote_attachment_by_file_name) | **POST** /Quotes/{QuoteID}/Attachments/{FileName} | Updates a specific attachment from a specific quote by filename
+[**update_receipt**](AccountingApi.md#update_receipt) | **POST** /Receipts/{ReceiptID} | Updates a specific draft expense claim receipts
+[**update_receipt_attachment_by_file_name**](AccountingApi.md#update_receipt_attachment_by_file_name) | **POST** /Receipts/{ReceiptID}/Attachments/{FileName} | Updates a specific attachment on a specific expense claim receipts by file name
+[**update_repeating_invoice_attachment_by_file_name**](AccountingApi.md#update_repeating_invoice_attachment_by_file_name) | **POST** /RepeatingInvoices/{RepeatingInvoiceID}/Attachments/{FileName} | Updates a specific attachment from a specific repeating invoices by file name
+[**update_tax_rate**](AccountingApi.md#update_tax_rate) | **POST** /TaxRates | Updates tax rates
+[**update_tracking_category**](AccountingApi.md#update_tracking_category) | **POST** /TrackingCategories/{TrackingCategoryID} | Updates a specific tracking category
+[**update_tracking_options**](AccountingApi.md#update_tracking_options) | **POST** /TrackingCategories/{TrackingCategoryID}/Options/{TrackingOptionID} | Updates a specific option for a specific tracking category
 
 
 # **create_account**
 > Accounts create_account(xero_tenant_id, account)
 
-Allows you to create a new chart of accounts
+Creates a new chart of accounts
 
 ### Example
 
@@ -264,7 +264,7 @@ api_instance = AccountingApi(api_client)
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 account = { "Code":"123456", "Name":"Foobar", "Type":"EXPENSE", "Description":"Hello World" } # Account | Account object in body of request
 try:
-    # Allows you to create a new chart of accounts
+    # Creates a new chart of accounts
     api_response = api_instance.create_account(xero_tenant_id, account)
     pprint(api_response)
 except ApiException as e:
@@ -296,7 +296,7 @@ Name | Type | Description  | Notes
 # **create_account_attachment_by_file_name**
 > Attachments create_account_attachment_by_file_name(xero_tenant_id, account_id, file_name, body)
 
-Allows you to create Attachment on Account
+Creates an attachment on a specific account
 
 ### Example
 
@@ -325,11 +325,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-account_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for Account object
+account_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Account object
 file_name = 'xero-dev.jpg' # str | Name of the attachment
 body = 'body_example' # str | Byte array of file in body of request
 try:
-    # Allows you to create Attachment on Account
+    # Creates an attachment on a specific account
     api_response = api_instance.create_account_attachment_by_file_name(xero_tenant_id, account_id, file_name, body)
     pprint(api_response)
 except ApiException as e:
@@ -363,7 +363,7 @@ Name | Type | Description  | Notes
 # **create_bank_transaction_attachment_by_file_name**
 > Attachments create_bank_transaction_attachment_by_file_name(xero_tenant_id, bank_transaction_id, file_name, body)
 
-Allows you to create an Attachment on BankTransaction by Filename
+Creates an attachment for a specific bank transaction by filename
 
 ### Example
 
@@ -392,11 +392,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-bank_transaction_id = '00000000-0000-0000-000-000000000000' # str | Xero generated unique identifier for a bank transaction
+bank_transaction_id = '00000000-0000-0000-0000-000000000000' # str | Xero generated unique identifier for a bank transaction
 file_name = 'xero-dev.jpg' # str | The name of the file being attached
 body = 'body_example' # str | Byte array of file in body of request
 try:
-    # Allows you to create an Attachment on BankTransaction by Filename
+    # Creates an attachment for a specific bank transaction by filename
     api_response = api_instance.create_bank_transaction_attachment_by_file_name(xero_tenant_id, bank_transaction_id, file_name, body)
     pprint(api_response)
 except ApiException as e:
@@ -430,7 +430,7 @@ Name | Type | Description  | Notes
 # **create_bank_transaction_history_record**
 > HistoryRecords create_bank_transaction_history_record(xero_tenant_id, bank_transaction_id, history_records)
 
-Allows you to create history record for a bank transactions
+Creates a history record for a specific bank transactions
 
 ### Example
 
@@ -459,10 +459,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-bank_transaction_id = '00000000-0000-0000-000-000000000000' # str | Xero generated unique identifier for a bank transaction
+bank_transaction_id = '00000000-0000-0000-0000-000000000000' # str | Xero generated unique identifier for a bank transaction
 history_records = { "HistoryRecords": [ { "Details": "Hello World" } ] } # HistoryRecords | HistoryRecords containing an array of HistoryRecord objects in body of request
 try:
-    # Allows you to create history record for a bank transactions
+    # Creates a history record for a specific bank transactions
     api_response = api_instance.create_bank_transaction_history_record(xero_tenant_id, bank_transaction_id, history_records)
     pprint(api_response)
 except ApiException as e:
@@ -495,7 +495,7 @@ Name | Type | Description  | Notes
 # **create_bank_transactions**
 > BankTransactions create_bank_transactions(xero_tenant_id, bank_transactions, summarize_errors=summarize_errors, unitdp=unitdp)
 
-Allows you to create one or more spend or receive money transaction
+Creates one or more spent or received money transaction
 
 ### Example
 
@@ -524,11 +524,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-bank_transactions = { bankTransactions: [{ type: BankTransaction.TypeEnum.SPEND, contact: { contactID: "00000000-0000-0000-000-000000000000" }, lineItems: [{ description: "Foobar", quantity: 1.0, unitAmount: 20.0, accountCode: "000" } ], bankAccount: { code: "000" }}]} # BankTransactions | BankTransactions with an array of BankTransaction objects in body of request
+bank_transactions = { bankTransactions: [{ type: BankTransaction.TypeEnum.SPEND, contact: { contactID: "00000000-0000-0000-0000-000000000000" }, lineItems: [{ description: "Foobar", quantity: 1.0, unitAmount: 20.0, accountCode: "000" } ], bankAccount: { code: "000" }}]} # BankTransactions | BankTransactions with an array of BankTransaction objects in body of request
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
-    # Allows you to create one or more spend or receive money transaction
+    # Creates one or more spent or received money transaction
     api_response = api_instance.create_bank_transactions(xero_tenant_id, bank_transactions, summarize_errors=summarize_errors, unitdp=unitdp)
     pprint(api_response)
 except ApiException as e:
@@ -562,7 +562,7 @@ Name | Type | Description  | Notes
 # **create_bank_transfer**
 > BankTransfers create_bank_transfer(xero_tenant_id, bank_transfers)
 
-Allows you to create a bank transfers
+Creates a bank transfer
 
 ### Example
 
@@ -591,9 +591,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-bank_transfers = { "BankTransfers": [ { "FromBankAccount": { "Code": "090", "Name": "My Savings", "AccountID": "00000000-0000-0000-000-000000000000", "Type": "BANK", "BankAccountNumber": "123455", "Status": "ACTIVE", "BankAccountType": "BANK", "CurrencyCode": "USD", "TaxType": "NONE", "EnablePaymentsToAccount": false, "ShowInExpenseClaims": false, "Class": "ASSET", "ReportingCode": "ASS", "ReportingCodeName": "Assets", "HasAttachments": false, "UpdatedDateUTC": "2016-10-17T13:45:33.993-07:00" }, "ToBankAccount": { "Code": "088", "Name": "Business Wells Fargo", "AccountID": "00000000-0000-0000-000-000000000000", "Type": "BANK", "BankAccountNumber": "123455", "Status": "ACTIVE", "BankAccountType": "BANK", "CurrencyCode": "USD", "TaxType": "NONE", "EnablePaymentsToAccount": false, "ShowInExpenseClaims": false, "Class": "ASSET", "ReportingCode": "ASS", "ReportingCodeName": "Assets", "HasAttachments": false, "UpdatedDateUTC": "2016-06-03T08:31:14.517-07:00" }, "Amount": "50.00" } ] } # BankTransfers | BankTransfers with array of BankTransfer objects in request body
+bank_transfers = { "BankTransfers": [ { "FromBankAccount": { "Code": "090", "Name": "My Savings", "AccountID": "00000000-0000-0000-0000-000000000000", "Type": "BANK", "BankAccountNumber": "123455", "Status": "ACTIVE", "BankAccountType": "BANK", "CurrencyCode": "USD", "TaxType": "NONE", "EnablePaymentsToAccount": false, "ShowInExpenseClaims": false, "Class": "ASSET", "ReportingCode": "ASS", "ReportingCodeName": "Assets", "HasAttachments": false, "UpdatedDateUTC": "2016-10-17T13:45:33.993-07:00" }, "ToBankAccount": { "Code": "088", "Name": "Business Wells Fargo", "AccountID": "00000000-0000-0000-0000-000000000000", "Type": "BANK", "BankAccountNumber": "123455", "Status": "ACTIVE", "BankAccountType": "BANK", "CurrencyCode": "USD", "TaxType": "NONE", "EnablePaymentsToAccount": false, "ShowInExpenseClaims": false, "Class": "ASSET", "ReportingCode": "ASS", "ReportingCodeName": "Assets", "HasAttachments": false, "UpdatedDateUTC": "2016-06-03T08:31:14.517-07:00" }, "Amount": "50.00" } ] } # BankTransfers | BankTransfers with array of BankTransfer objects in request body
 try:
-    # Allows you to create a bank transfers
+    # Creates a bank transfer
     api_response = api_instance.create_bank_transfer(xero_tenant_id, bank_transfers)
     pprint(api_response)
 except ApiException as e:
@@ -654,7 +654,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-bank_transfer_id = '00000000-0000-0000-000-000000000000' # str | Xero generated unique identifier for a bank transfer
+bank_transfer_id = '00000000-0000-0000-0000-000000000000' # str | Xero generated unique identifier for a bank transfer
 file_name = 'xero-dev.jpg' # str | The name of the file being attached to a Bank Transfer
 body = 'body_example' # str | Byte array of file in body of request
 try:
@@ -691,7 +691,7 @@ Name | Type | Description  | Notes
 # **create_bank_transfer_history_record**
 > HistoryRecords create_bank_transfer_history_record(xero_tenant_id, bank_transfer_id, history_records)
 
-Allows you to create history record for a bank transfers
+Creates a history record for a specific bank transfer
 
 ### Example
 
@@ -720,10 +720,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-bank_transfer_id = '00000000-0000-0000-000-000000000000' # str | Xero generated unique identifier for a bank transfer
+bank_transfer_id = '00000000-0000-0000-0000-000000000000' # str | Xero generated unique identifier for a bank transfer
 history_records = { "HistoryRecords": [ { "Details": "Hello World" } ] } # HistoryRecords | HistoryRecords containing an array of HistoryRecord objects in body of request
 try:
-    # Allows you to create history record for a bank transfers
+    # Creates a history record for a specific bank transfer
     api_response = api_instance.create_bank_transfer_history_record(xero_tenant_id, bank_transfer_id, history_records)
     pprint(api_response)
 except ApiException as e:
@@ -756,7 +756,7 @@ Name | Type | Description  | Notes
 # **create_batch_payment**
 > BatchPayments create_batch_payment(xero_tenant_id, batch_payments, summarize_errors=summarize_errors)
 
-Create one or many BatchPayments for invoices
+Creates one or many batch payments for invoices
 
 ### Example
 
@@ -785,10 +785,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-batch_payments = { "BatchPayments": [ { "Account": { "AccountID": "00000000-0000-0000-000-000000000000" }, "Reference": "ref", "Date": "2018-08-01", "Payments": [ { "Account": { "Code": "001" }, "Date": "2019-12-31", "Amount": 500, "Invoice": { "InvoiceID": "00000000-0000-0000-000-000000000000", "LineItems": [], "Contact": {}, "Type": "ACCPAY" } } ] } ] } # BatchPayments | BatchPayments with an array of Payments in body of request
+batch_payments = { "BatchPayments": [ { "Account": { "AccountID": "00000000-0000-0000-0000-000000000000" }, "Reference": "ref", "Date": "2018-08-01", "Payments": [ { "Account": { "Code": "001" }, "Date": "2019-12-31", "Amount": 500, "Invoice": { "InvoiceID": "00000000-0000-0000-0000-000000000000", "LineItems": [], "Contact": {}, "Type": "ACCPAY" } } ] } ] } # BatchPayments | BatchPayments with an array of Payments in body of request
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
 try:
-    # Create one or many BatchPayments for invoices
+    # Creates one or many batch payments for invoices
     api_response = api_instance.create_batch_payment(xero_tenant_id, batch_payments, summarize_errors=summarize_errors)
     pprint(api_response)
 except ApiException as e:
@@ -821,7 +821,7 @@ Name | Type | Description  | Notes
 # **create_batch_payment_history_record**
 > HistoryRecords create_batch_payment_history_record(xero_tenant_id, batch_payment_id, history_records)
 
-Allows you to create a history record for a Batch Payment
+Creates a history record for a specific batch payment
 
 ### Example
 
@@ -850,10 +850,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-batch_payment_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for BatchPayment
+batch_payment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for BatchPayment
 history_records = { "HistoryRecords": [ { "Details": "Hello World" } ] } # HistoryRecords | HistoryRecords containing an array of HistoryRecord objects in body of request
 try:
-    # Allows you to create a history record for a Batch Payment
+    # Creates a history record for a specific batch payment
     api_response = api_instance.create_batch_payment_history_record(xero_tenant_id, batch_payment_id, history_records)
     pprint(api_response)
 except ApiException as e:
@@ -886,7 +886,7 @@ Name | Type | Description  | Notes
 # **create_branding_theme_payment_services**
 > PaymentServices create_branding_theme_payment_services(xero_tenant_id, branding_theme_id, payment_service)
 
-Allow for the creation of new custom payment service for specified Branding Theme
+Creates a new custom payment service for a specific branding theme
 
 ### Example
 
@@ -915,10 +915,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-branding_theme_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Branding Theme
+branding_theme_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Branding Theme
 payment_service = { "PaymentServiceID": "00000000-0000-0000-0000-000000000000", "PaymentServiceName": "ACME Payments", "PaymentServiceUrl": "https://www.payupnow.com/", "PayNowText": "Pay Now" } # PaymentService | PaymentService object in body of request
 try:
-    # Allow for the creation of new custom payment service for specified Branding Theme
+    # Creates a new custom payment service for a specific branding theme
     api_response = api_instance.create_branding_theme_payment_services(xero_tenant_id, branding_theme_id, payment_service)
     pprint(api_response)
 except ApiException as e:
@@ -980,7 +980,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-contact_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Contact
+contact_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Contact
 file_name = 'xero-dev.jpg' # str | Name for the file you are attaching
 body = 'body_example' # str | Byte array of file in body of request
 try:
@@ -1017,7 +1017,7 @@ Name | Type | Description  | Notes
 # **create_contact_group**
 > ContactGroups create_contact_group(xero_tenant_id, contact_groups)
 
-Allows you to create a contact group
+Creates a contact group
 
 ### Example
 
@@ -1048,7 +1048,7 @@ api_instance = AccountingApi(api_client)
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 contact_groups = { "ContactGroups": [{ "Name": "VIPs" }]} # ContactGroups | ContactGroups with an array of names in request body
 try:
-    # Allows you to create a contact group
+    # Creates a contact group
     api_response = api_instance.create_contact_group(xero_tenant_id, contact_groups)
     pprint(api_response)
 except ApiException as e:
@@ -1080,7 +1080,7 @@ Name | Type | Description  | Notes
 # **create_contact_group_contacts**
 > Contacts create_contact_group_contacts(xero_tenant_id, contact_group_id, contacts)
 
-Allows you to add Contacts to a Contact Group
+Creates contacts to a specific contact group
 
 ### Example
 
@@ -1109,10 +1109,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-contact_group_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Contact Group
-contacts = { "Contacts": [ { "ContactID": "a3675fc4-f8dd-4f03-ba5b-f1870566bcd7" }, { "ContactID": "4e1753b9-018a-4775-b6aa-1bc7871cfee3" } ] } # Contacts | Contacts with array of contacts specifiying the ContactID to be added to ContactGroup in body of request
+contact_group_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Contact Group
+contacts = { "Contacts": [ { "ContactID": "a3675fc4-f8dd-4f03-ba5b-f1870566bcd7" }, { "ContactID": "4e1753b9-018a-4775-b6aa-1bc7871cfee3" } ] } # Contacts | Contacts with array of contacts specifying the ContactID to be added to ContactGroup in body of request
 try:
-    # Allows you to add Contacts to a Contact Group
+    # Creates contacts to a specific contact group
     api_response = api_instance.create_contact_group_contacts(xero_tenant_id, contact_group_id, contacts)
     pprint(api_response)
 except ApiException as e:
@@ -1125,7 +1125,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **contact_group_id** | [**str**](.md)| Unique identifier for a Contact Group | 
- **contacts** | [**Contacts**](Contacts.md)| Contacts with array of contacts specifiying the ContactID to be added to ContactGroup in body of request | 
+ **contacts** | [**Contacts**](Contacts.md)| Contacts with array of contacts specifying the ContactID to be added to ContactGroup in body of request | 
 
 ### Return type
 
@@ -1145,7 +1145,7 @@ Name | Type | Description  | Notes
 # **create_contact_history**
 > HistoryRecords create_contact_history(xero_tenant_id, contact_id, history_records)
 
-Allows you to retrieve a history records of an Contact
+Creates a new history record for a specific contact
 
 ### Example
 
@@ -1174,10 +1174,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-contact_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Contact
+contact_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Contact
 history_records = { "HistoryRecords": [ { "Details": "Hello World" } ] } # HistoryRecords | HistoryRecords containing an array of HistoryRecord objects in body of request
 try:
-    # Allows you to retrieve a history records of an Contact
+    # Creates a new history record for a specific contact
     api_response = api_instance.create_contact_history(xero_tenant_id, contact_id, history_records)
     pprint(api_response)
 except ApiException as e:
@@ -1210,7 +1210,7 @@ Name | Type | Description  | Notes
 # **create_contacts**
 > Contacts create_contacts(xero_tenant_id, contacts, summarize_errors=summarize_errors)
 
-Allows you to create a multiple contacts (bulk) in a Xero organisation
+Creates multiple contacts (bulk) in a Xero organisation
 
 ### Example
 
@@ -1242,7 +1242,7 @@ xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 contacts = { "Id": "e997d6d7-6dad-4458-beb8-d9c1bf7f2edf", "Status": "OK", "ProviderName": "Xero API Partner", "DateTimeUTC": "/Date(1551399321121)/", "Contacts": [ { "ContactID": "3ff6d40c-af9a-40a3-89ce-3c1556a25591", "ContactStatus": "ACTIVE", "Name": "Foo9987", "EmailAddress": "sid32476@blah.com", "BankAccountDetails": "", "Addresses": [ { "AddressType": "STREET", "City": "", "Region": "", "PostalCode": "", "Country": "" }, { "AddressType": "POBOX", "City": "", "Region": "", "PostalCode": "", "Country": "" } ], "Phones": [ { "PhoneType": "DEFAULT", "PhoneNumber": "", "PhoneAreaCode": "", "PhoneCountryCode": "" }, { "PhoneType": "DDI", "PhoneNumber": "", "PhoneAreaCode": "", "PhoneCountryCode": "" }, { "PhoneType": "FAX", "PhoneNumber": "", "PhoneAreaCode": "", "PhoneCountryCode": "" }, { "PhoneType": "MOBILE", "PhoneNumber": "555-1212", "PhoneAreaCode": "415", "PhoneCountryCode": "" } ], "UpdatedDateUTC": "/Date(1551399321043+0000)/", "ContactGroups": [], "IsSupplier": false, "IsCustomer": false, "SalesTrackingCategories": [], "PurchasesTrackingCategories": [], "PaymentTerms": { "Bills": { "Day": 15, "Type": "OFCURRENTMONTH" }, "Sales": { "Day": 10, "Type": "DAYSAFTERBILLMONTH" } }, "ContactPersons": [], "HasValidationErrors": false } ] } # Contacts | Contacts with an array of Contact objects to create in body of request
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
 try:
-    # Allows you to create a multiple contacts (bulk) in a Xero organisation
+    # Creates multiple contacts (bulk) in a Xero organisation
     api_response = api_instance.create_contacts(xero_tenant_id, contacts, summarize_errors=summarize_errors)
     pprint(api_response)
 except ApiException as e:
@@ -1275,7 +1275,7 @@ Name | Type | Description  | Notes
 # **create_credit_note_allocation**
 > Allocations create_credit_note_allocation(xero_tenant_id, credit_note_id, allocations, summarize_errors=summarize_errors)
 
-Allows you to create Allocation on CreditNote
+Creates allocation for a specific credit note
 
 ### Example
 
@@ -1304,11 +1304,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-credit_note_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Credit Note
+credit_note_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Credit Note
 allocations = { "Allocations": [ { "Invoice": { "LineItems": [], "InvoiceID": "c45720a1-ade3-4a38-a064-d15489be6841" }, "Amount": 1, "Date": "2019-03-05" } ] } # Allocations | Allocations with array of Allocation object in body of request.
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
 try:
-    # Allows you to create Allocation on CreditNote
+    # Creates allocation for a specific credit note
     api_response = api_instance.create_credit_note_allocation(xero_tenant_id, credit_note_id, allocations, summarize_errors=summarize_errors)
     pprint(api_response)
 except ApiException as e:
@@ -1342,7 +1342,7 @@ Name | Type | Description  | Notes
 # **create_credit_note_attachment_by_file_name**
 > Attachments create_credit_note_attachment_by_file_name(xero_tenant_id, credit_note_id, file_name, body, include_online=include_online)
 
-Allows you to create Attachments on CreditNote by file name
+Creates an attachment for a specific credit note
 
 ### Example
 
@@ -1371,12 +1371,12 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-credit_note_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Credit Note
+credit_note_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Credit Note
 file_name = 'xero-dev.jpg' # str | Name of the file you are attaching to Credit Note
 body = 'body_example' # str | Byte array of file in body of request
 include_online = False # bool | Allows an attachment to be seen by the end customer within their online invoice (optional) (default to False)
 try:
-    # Allows you to create Attachments on CreditNote by file name
+    # Creates an attachment for a specific credit note
     api_response = api_instance.create_credit_note_attachment_by_file_name(xero_tenant_id, credit_note_id, file_name, body, include_online=include_online)
     pprint(api_response)
 except ApiException as e:
@@ -1411,7 +1411,7 @@ Name | Type | Description  | Notes
 # **create_credit_note_history**
 > HistoryRecords create_credit_note_history(xero_tenant_id, credit_note_id, history_records)
 
-Allows you to retrieve a history records of an CreditNote
+Retrieves history records of a specific credit note
 
 ### Example
 
@@ -1440,10 +1440,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-credit_note_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Credit Note
+credit_note_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Credit Note
 history_records = { "HistoryRecords": [ { "Details": "Hello World" } ] } # HistoryRecords | HistoryRecords containing an array of HistoryRecord objects in body of request
 try:
-    # Allows you to retrieve a history records of an CreditNote
+    # Retrieves history records of a specific credit note
     api_response = api_instance.create_credit_note_history(xero_tenant_id, credit_note_id, history_records)
     pprint(api_response)
 except ApiException as e:
@@ -1476,7 +1476,7 @@ Name | Type | Description  | Notes
 # **create_credit_notes**
 > CreditNotes create_credit_notes(xero_tenant_id, credit_notes, summarize_errors=summarize_errors, unitdp=unitdp)
 
-Allows you to create a credit note
+Creates a new credit note
 
 ### Example
 
@@ -1509,7 +1509,7 @@ credit_notes = { "CreditNotes":[ { "Type":"ACCPAYCREDIT", "Contact":{ "ContactID
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
-    # Allows you to create a credit note
+    # Creates a new credit note
     api_response = api_instance.create_credit_notes(xero_tenant_id, credit_notes, summarize_errors=summarize_errors, unitdp=unitdp)
     pprint(api_response)
 except ApiException as e:
@@ -1543,7 +1543,7 @@ Name | Type | Description  | Notes
 # **create_currency**
 > Currencies create_currency(xero_tenant_id, currency)
 
-Allows you to create a new currency for an org
+Create a new currency for a Xero organisation
 
 ### Example
 
@@ -1572,9 +1572,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-currency = { "Code": "USD", "Description": "United States Dollar" } # Currency | Currency obejct in the body of request
+currency = { "Code": "USD", "Description": "United States Dollar" } # Currency | Currency object in the body of request
 try:
-    # Allows you to create a new currency for an org
+    # Create a new currency for a Xero organisation
     api_response = api_instance.create_currency(xero_tenant_id, currency)
     pprint(api_response)
 except ApiException as e:
@@ -1586,7 +1586,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
- **currency** | [**Currency**](Currency.md)| Currency obejct in the body of request | 
+ **currency** | [**Currency**](Currency.md)| Currency object in the body of request | 
 
 ### Return type
 
@@ -1606,7 +1606,7 @@ Name | Type | Description  | Notes
 # **create_employees**
 > Employees create_employees(xero_tenant_id, employees, summarize_errors=summarize_errors)
 
-Allows you to create new employees used in Xero payrun
+Creates new employees used in Xero payrun
 
 ### Example
 
@@ -1638,7 +1638,7 @@ xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 employees = { "Employees": [ { "FirstName": "Nick", "LastName": "Fury", "ExternalLink": { "Url": "http://twitter.com/#!/search/Nick+Fury" } } ] } # Employees | Employees with array of Employee object in body of request
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
 try:
-    # Allows you to create new employees used in Xero payrun
+    # Creates new employees used in Xero payrun
     api_response = api_instance.create_employees(xero_tenant_id, employees, summarize_errors=summarize_errors)
     pprint(api_response)
 except ApiException as e:
@@ -1671,7 +1671,7 @@ Name | Type | Description  | Notes
 # **create_expense_claim_history**
 > HistoryRecords create_expense_claim_history(xero_tenant_id, expense_claim_id, history_records)
 
-Allows you to create a history records of an ExpenseClaim
+Creates a history record for a specific expense claim
 
 ### Example
 
@@ -1700,10 +1700,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-expense_claim_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a ExpenseClaim
+expense_claim_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a ExpenseClaim
 history_records = { "HistoryRecords": [ { "Details": "Hello World" } ] } # HistoryRecords | HistoryRecords containing an array of HistoryRecord objects in body of request
 try:
-    # Allows you to create a history records of an ExpenseClaim
+    # Creates a history record for a specific expense claim
     api_response = api_instance.create_expense_claim_history(xero_tenant_id, expense_claim_id, history_records)
     pprint(api_response)
 except ApiException as e:
@@ -1736,7 +1736,7 @@ Name | Type | Description  | Notes
 # **create_expense_claims**
 > ExpenseClaims create_expense_claims(xero_tenant_id, expense_claims)
 
-Allows you to retrieve expense claims
+Creates expense claims
 
 ### Example
 
@@ -1767,7 +1767,7 @@ api_instance = AccountingApi(api_client)
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 expense_claims = { "ExpenseClaims": [ { "Status": "SUBMITTED", "User": { "UserID": "d1164823-0ac1-41ad-987b-b4e30fe0b273" }, "Receipts": [ { "Lineitems": [], "ReceiptID": "dc1c7f6d-0a4c-402f-acac-551d62ce5816" } ] } ] } # ExpenseClaims | ExpenseClaims with array of ExpenseClaim object in body of request
 try:
-    # Allows you to retrieve expense claims
+    # Creates expense claims
     api_response = api_instance.create_expense_claims(xero_tenant_id, expense_claims)
     pprint(api_response)
 except ApiException as e:
@@ -1799,7 +1799,7 @@ Name | Type | Description  | Notes
 # **create_invoice_attachment_by_file_name**
 > Attachments create_invoice_attachment_by_file_name(xero_tenant_id, invoice_id, file_name, body, include_online=include_online)
 
-Allows you to create an Attachment on invoices or purchase bills by it's filename
+Creates an attachment for a specific invoice or purchase bill by filename
 
 ### Example
 
@@ -1828,12 +1828,12 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-invoice_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for an Invoice
+invoice_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Invoice
 file_name = 'xero-dev.jpg' # str | Name of the file you are attaching
 body = 'body_example' # str | Byte array of file in body of request
 include_online = False # bool | Allows an attachment to be seen by the end customer within their online invoice (optional) (default to False)
 try:
-    # Allows you to create an Attachment on invoices or purchase bills by it's filename
+    # Creates an attachment for a specific invoice or purchase bill by filename
     api_response = api_instance.create_invoice_attachment_by_file_name(xero_tenant_id, invoice_id, file_name, body, include_online=include_online)
     pprint(api_response)
 except ApiException as e:
@@ -1868,7 +1868,7 @@ Name | Type | Description  | Notes
 # **create_invoice_history**
 > HistoryRecords create_invoice_history(xero_tenant_id, invoice_id, history_records)
 
-Allows you to retrieve a history records of an invoice
+Creates a history record for a specific invoice
 
 ### Example
 
@@ -1897,10 +1897,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-invoice_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for an Invoice
+invoice_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Invoice
 history_records = { "HistoryRecords": [ { "Details": "Hello World" } ] } # HistoryRecords | HistoryRecords containing an array of HistoryRecord objects in body of request
 try:
-    # Allows you to retrieve a history records of an invoice
+    # Creates a history record for a specific invoice
     api_response = api_instance.create_invoice_history(xero_tenant_id, invoice_id, history_records)
     pprint(api_response)
 except ApiException as e:
@@ -1933,7 +1933,7 @@ Name | Type | Description  | Notes
 # **create_invoices**
 > Invoices create_invoices(xero_tenant_id, invoices, summarize_errors=summarize_errors, unitdp=unitdp)
 
-Allows you to create one or more sales invoices or purchase bills
+Creates one or more sales invoices or purchase bills
 
 ### Example
 
@@ -1966,7 +1966,7 @@ invoices = { "Invoices": [ { "Type": "ACCREC", "Contact": { "ContactID": "430fa1
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
-    # Allows you to create one or more sales invoices or purchase bills
+    # Creates one or more sales invoices or purchase bills
     api_response = api_instance.create_invoices(xero_tenant_id, invoices, summarize_errors=summarize_errors, unitdp=unitdp)
     pprint(api_response)
 except ApiException as e:
@@ -2000,7 +2000,7 @@ Name | Type | Description  | Notes
 # **create_item_history**
 > HistoryRecords create_item_history(xero_tenant_id, item_id, history_records)
 
-Allows you to create a history record for items
+Creates a history record for a specific item
 
 ### Example
 
@@ -2029,10 +2029,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-item_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for an Item
+item_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Item
 history_records = { "HistoryRecords": [ { "Details": "Hello World" } ] } # HistoryRecords | HistoryRecords containing an array of HistoryRecord objects in body of request
 try:
-    # Allows you to create a history record for items
+    # Creates a history record for a specific item
     api_response = api_instance.create_item_history(xero_tenant_id, item_id, history_records)
     pprint(api_response)
 except ApiException as e:
@@ -2065,7 +2065,7 @@ Name | Type | Description  | Notes
 # **create_items**
 > Items create_items(xero_tenant_id, items, summarize_errors=summarize_errors, unitdp=unitdp)
 
-Allows you to create one or more items
+Creates one or more items
 
 ### Example
 
@@ -2098,7 +2098,7 @@ items = { "Items": [ { "Code": "code123", "Name": "Item Name XYZ", "Description"
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
-    # Allows you to create one or more items
+    # Creates one or more items
     api_response = api_instance.create_items(xero_tenant_id, items, summarize_errors=summarize_errors, unitdp=unitdp)
     pprint(api_response)
 except ApiException as e:
@@ -2132,7 +2132,7 @@ Name | Type | Description  | Notes
 # **create_linked_transaction**
 > LinkedTransactions create_linked_transaction(xero_tenant_id, linked_transaction)
 
-Allows you to create linked transactions (billable expenses)
+Creates linked transactions (billable expenses)
 
 ### Example
 
@@ -2163,7 +2163,7 @@ api_instance = AccountingApi(api_client)
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 linked_transaction = { "LinkedTransactions": [ { "SourceTransactionID": "a848644a-f20f-4630-98c3-386bd7505631", "SourceLineItemID": "b0df260d-3cc8-4ced-9bd6-41924f624ed3" } ] } # LinkedTransaction | LinkedTransaction object in body of request
 try:
-    # Allows you to create linked transactions (billable expenses)
+    # Creates linked transactions (billable expenses)
     api_response = api_instance.create_linked_transaction(xero_tenant_id, linked_transaction)
     pprint(api_response)
 except ApiException as e:
@@ -2195,7 +2195,7 @@ Name | Type | Description  | Notes
 # **create_manual_journal_attachment_by_file_name**
 > Attachments create_manual_journal_attachment_by_file_name(xero_tenant_id, manual_journal_id, file_name, body)
 
-Allows you to create a specified Attachment on ManualJournal by file name
+Creates a specific attachment for a specific manual journal by file name
 
 ### Example
 
@@ -2224,11 +2224,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-manual_journal_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a ManualJournal
+manual_journal_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a ManualJournal
 file_name = 'xero-dev.jpg' # str | The name of the file being attached to a ManualJournal
 body = 'body_example' # str | Byte array of file in body of request
 try:
-    # Allows you to create a specified Attachment on ManualJournal by file name
+    # Creates a specific attachment for a specific manual journal by file name
     api_response = api_instance.create_manual_journal_attachment_by_file_name(xero_tenant_id, manual_journal_id, file_name, body)
     pprint(api_response)
 except ApiException as e:
@@ -2262,7 +2262,7 @@ Name | Type | Description  | Notes
 # **create_manual_journal_history_record**
 > HistoryRecords create_manual_journal_history_record(xero_tenant_id, manual_journal_id, history_records)
 
-Allows you to create history record for a manual journal
+Creates a history record for a specific manual journal
 
 ### Example
 
@@ -2291,10 +2291,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-manual_journal_id = '00000000-0000-0000-000-000000000000' # str | Xero generated unique identifier for a manual journal
+manual_journal_id = '00000000-0000-0000-0000-000000000000' # str | Xero generated unique identifier for a manual journal
 history_records = { "HistoryRecords": [ { "Details": "Hello World" } ] } # HistoryRecords | HistoryRecords containing an array of HistoryRecord objects in body of request
 try:
-    # Allows you to create history record for a manual journal
+    # Creates a history record for a specific manual journal
     api_response = api_instance.create_manual_journal_history_record(xero_tenant_id, manual_journal_id, history_records)
     pprint(api_response)
 except ApiException as e:
@@ -2327,7 +2327,7 @@ Name | Type | Description  | Notes
 # **create_manual_journals**
 > ManualJournals create_manual_journals(xero_tenant_id, manual_journals, summarize_errors=summarize_errors)
 
-Allows you to create one or more manual journals
+Creates one or more manual journals
 
 ### Example
 
@@ -2359,7 +2359,7 @@ xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 manual_journals = { "ManualJournals": [ { "Narration": "Journal Desc", "JournalLines": [ { "LineAmount": 100, "AccountCode": "400", "Description": "Money Movement" }, { "LineAmount": -100, "AccountCode": "400", "Description": "Prepayment of things", "Tracking": [ { "Name": "North", "Option": "Region" } ] } ], "Date": "2019-03-14" } ] } # ManualJournals | ManualJournals array with ManualJournal object in body of request
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
 try:
-    # Allows you to create one or more manual journals
+    # Creates one or more manual journals
     api_response = api_instance.create_manual_journals(xero_tenant_id, manual_journals, summarize_errors=summarize_errors)
     pprint(api_response)
 except ApiException as e:
@@ -2392,7 +2392,7 @@ Name | Type | Description  | Notes
 # **create_overpayment_allocations**
 > Allocations create_overpayment_allocations(xero_tenant_id, overpayment_id, allocations, summarize_errors=summarize_errors)
 
-Allows you to create a single allocation for an overpayment
+Creates a single allocation for a specific overpayment
 
 ### Example
 
@@ -2421,11 +2421,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-overpayment_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Overpayment
-allocations = { "Allocations": [ { "Invoice": { "InvoiceID": "00000000-0000-0000-000-000000000000", "LineItems": [], "Contact": {}, "Type": "ACCPAY" }, "Amount": 10.00, "Date": "2019-03-12" } ] } # Allocations | Allocations array with Allocation object in body of request
+overpayment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Overpayment
+allocations = { "Allocations": [ { "Invoice": { "InvoiceID": "00000000-0000-0000-0000-000000000000", "LineItems": [], "Contact": {}, "Type": "ACCPAY" }, "Amount": 10.00, "Date": "2019-03-12" } ] } # Allocations | Allocations array with Allocation object in body of request
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
 try:
-    # Allows you to create a single allocation for an overpayment
+    # Creates a single allocation for a specific overpayment
     api_response = api_instance.create_overpayment_allocations(xero_tenant_id, overpayment_id, allocations, summarize_errors=summarize_errors)
     pprint(api_response)
 except ApiException as e:
@@ -2459,7 +2459,7 @@ Name | Type | Description  | Notes
 # **create_overpayment_history**
 > HistoryRecords create_overpayment_history(xero_tenant_id, overpayment_id, history_records)
 
-Allows you to create history records of an Overpayment
+Creates a history record for a specific overpayment
 
 ### Example
 
@@ -2488,10 +2488,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-overpayment_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Overpayment
+overpayment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Overpayment
 history_records = { "HistoryRecords": [ { "Details": "Hello World" } ] } # HistoryRecords | HistoryRecords containing an array of HistoryRecord objects in body of request
 try:
-    # Allows you to create history records of an Overpayment
+    # Creates a history record for a specific overpayment
     api_response = api_instance.create_overpayment_history(xero_tenant_id, overpayment_id, history_records)
     pprint(api_response)
 except ApiException as e:
@@ -2524,7 +2524,7 @@ Name | Type | Description  | Notes
 # **create_payment**
 > Payments create_payment(xero_tenant_id, payment)
 
-Allows you to create a single payment for invoices or credit notes
+Creates a single payment for invoice or credit notes
 
 ### Example
 
@@ -2553,9 +2553,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-payment = { "Payments": [ { "Invoice": { "LineItems": [], "InvoiceID": "00000000-0000-0000-000-000000000000" }, "Account": { "Code": "970" }, "Date": "2019-03-12", "Amount": 1 } ] } # Payment | Request body with a single Payment object
+payment = { "Payments": [ { "Invoice": { "LineItems": [], "InvoiceID": "00000000-0000-0000-0000-000000000000" }, "Account": { "Code": "970" }, "Date": "2019-03-12", "Amount": 1 } ] } # Payment | Request body with a single Payment object
 try:
-    # Allows you to create a single payment for invoices or credit notes
+    # Creates a single payment for invoice or credit notes
     api_response = api_instance.create_payment(xero_tenant_id, payment)
     pprint(api_response)
 except ApiException as e:
@@ -2587,7 +2587,7 @@ Name | Type | Description  | Notes
 # **create_payment_history**
 > HistoryRecords create_payment_history(xero_tenant_id, payment_id, history_records)
 
-Allows you to create a history record for a payment
+Creates a history record for a specific payment
 
 ### Example
 
@@ -2616,10 +2616,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-payment_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Payment
+payment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Payment
 history_records = { "HistoryRecords": [ { "Details": "Hello World" } ] } # HistoryRecords | HistoryRecords containing an array of HistoryRecord objects in body of request
 try:
-    # Allows you to create a history record for a payment
+    # Creates a history record for a specific payment
     api_response = api_instance.create_payment_history(xero_tenant_id, payment_id, history_records)
     pprint(api_response)
 except ApiException as e:
@@ -2652,7 +2652,7 @@ Name | Type | Description  | Notes
 # **create_payment_service**
 > PaymentServices create_payment_service(xero_tenant_id, payment_services)
 
-Allows you to create payment services
+Creates a payment service
 
 ### Example
 
@@ -2683,7 +2683,7 @@ api_instance = AccountingApi(api_client)
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 payment_services = { "PaymentServices": [ { "PaymentServiceName": "PayUpNow", "PaymentServiceUrl": "https://www.payupnow.com/", "PayNowText": "Time To Pay" } ] } # PaymentServices | PaymentServices array with PaymentService object in body of request
 try:
-    # Allows you to create payment services
+    # Creates a payment service
     api_response = api_instance.create_payment_service(xero_tenant_id, payment_services)
     pprint(api_response)
 except ApiException as e:
@@ -2715,7 +2715,7 @@ Name | Type | Description  | Notes
 # **create_payments**
 > Payments create_payments(xero_tenant_id, payments, summarize_errors=summarize_errors)
 
-Allows you to create multiple payments for invoices or credit notes
+Creates multiple payments for invoices or credit notes
 
 ### Example
 
@@ -2744,10 +2744,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-payments = { "Payments": [ { "Invoice": { "LineItems": [], "InvoiceID": "00000000-0000-0000-000-000000000000" }, "Account": { "Code": "970" }, "Date": "2019-03-12", "Amount": 1 } ] } # Payments | Payments array with Payment object in body of request
+payments = { "Payments": [ { "Invoice": { "LineItems": [], "InvoiceID": "00000000-0000-0000-0000-000000000000" }, "Account": { "Code": "970" }, "Date": "2019-03-12", "Amount": 1 } ] } # Payments | Payments array with Payment object in body of request
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
 try:
-    # Allows you to create multiple payments for invoices or credit notes
+    # Creates multiple payments for invoices or credit notes
     api_response = api_instance.create_payments(xero_tenant_id, payments, summarize_errors=summarize_errors)
     pprint(api_response)
 except ApiException as e:
@@ -2809,8 +2809,8 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-prepayment_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for Prepayment
-allocations = { "Allocations": [ { "Invoice": { "LineItems": [], "InvoiceID": "00000000-0000-0000-000-000000000000" }, "Amount": 1, "Date": "2019-01-10" } ] } # Allocations | Allocations with an array of Allocation object in body of request
+prepayment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Prepayment
+allocations = { "Allocations": [ { "Invoice": { "LineItems": [], "InvoiceID": "00000000-0000-0000-0000-000000000000" }, "Amount": 1, "Date": "2019-01-10" } ] } # Allocations | Allocations with an array of Allocation object in body of request
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
 try:
     # Allows you to create an Allocation for prepayments
@@ -2847,7 +2847,7 @@ Name | Type | Description  | Notes
 # **create_prepayment_history**
 > HistoryRecords create_prepayment_history(xero_tenant_id, prepayment_id, history_records)
 
-Allows you to create a history record for an Prepayment
+Creates a history record for a specific prepayment
 
 ### Example
 
@@ -2876,10 +2876,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-prepayment_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a PrePayment
+prepayment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a PrePayment
 history_records = { "HistoryRecords": [ { "Details": "Hello World" } ] } # HistoryRecords | HistoryRecords containing an array of HistoryRecord objects in body of request
 try:
-    # Allows you to create a history record for an Prepayment
+    # Creates a history record for a specific prepayment
     api_response = api_instance.create_prepayment_history(xero_tenant_id, prepayment_id, history_records)
     pprint(api_response)
 except ApiException as e:
@@ -2912,7 +2912,7 @@ Name | Type | Description  | Notes
 # **create_purchase_order_attachment_by_file_name**
 > Attachments create_purchase_order_attachment_by_file_name(xero_tenant_id, purchase_order_id, file_name, body)
 
-Allows you to create Attachment on Purchase Order
+Creates attachment for a specific purchase order
 
 ### Example
 
@@ -2941,11 +2941,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-purchase_order_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for Purchase Order object
+purchase_order_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Purchase Order object
 file_name = 'xero-dev.png' # str | Name of the attachment
 body = 'body_example' # str | Byte array of file in body of request
 try:
-    # Allows you to create Attachment on Purchase Order
+    # Creates attachment for a specific purchase order
     api_response = api_instance.create_purchase_order_attachment_by_file_name(xero_tenant_id, purchase_order_id, file_name, body)
     pprint(api_response)
 except ApiException as e:
@@ -2979,7 +2979,7 @@ Name | Type | Description  | Notes
 # **create_purchase_order_history**
 > HistoryRecords create_purchase_order_history(xero_tenant_id, purchase_order_id, history_records)
 
-Allows you to create HistoryRecord for purchase orders
+Creates a history record for a specific purchase orders
 
 ### Example
 
@@ -3008,10 +3008,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-purchase_order_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a PurchaseOrder
+purchase_order_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a PurchaseOrder
 history_records = { "HistoryRecords": [ { "Details": "Hello World" } ] } # HistoryRecords | HistoryRecords containing an array of HistoryRecord objects in body of request
 try:
-    # Allows you to create HistoryRecord for purchase orders
+    # Creates a history record for a specific purchase orders
     api_response = api_instance.create_purchase_order_history(xero_tenant_id, purchase_order_id, history_records)
     pprint(api_response)
 except ApiException as e:
@@ -3044,7 +3044,7 @@ Name | Type | Description  | Notes
 # **create_purchase_orders**
 > PurchaseOrders create_purchase_orders(xero_tenant_id, purchase_orders, summarize_errors=summarize_errors)
 
-Allows you to create one or more purchase orders
+Creates one or more purchase orders
 
 ### Example
 
@@ -3073,10 +3073,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-purchase_orders = { "PurchaseOrders": [ { "Contact": { "ContactID": "00000000-0000-0000-000-000000000000" }, "LineItems": [ { "Description": "Foobar", "Quantity": 1, "UnitAmount": 20, "AccountCode": "710" } ], "Date": "2019-03-13" } ] } # PurchaseOrders | PurchaseOrders with an array of PurchaseOrder object in body of request
+purchase_orders = { "PurchaseOrders": [ { "Contact": { "ContactID": "00000000-0000-0000-0000-000000000000" }, "LineItems": [ { "Description": "Foobar", "Quantity": 1, "UnitAmount": 20, "AccountCode": "710" } ], "Date": "2019-03-13" } ] } # PurchaseOrders | PurchaseOrders with an array of PurchaseOrder object in body of request
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
 try:
-    # Allows you to create one or more purchase orders
+    # Creates one or more purchase orders
     api_response = api_instance.create_purchase_orders(xero_tenant_id, purchase_orders, summarize_errors=summarize_errors)
     pprint(api_response)
 except ApiException as e:
@@ -3109,7 +3109,7 @@ Name | Type | Description  | Notes
 # **create_quote_attachment_by_file_name**
 > Attachments create_quote_attachment_by_file_name(xero_tenant_id, quote_id, file_name, body)
 
-Allows you to create Attachment on Quote
+Creates attachment for a specific quote
 
 ### Example
 
@@ -3138,11 +3138,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-quote_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for Quote object
+quote_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Quote object
 file_name = 'xero-dev.jpg' # str | Name of the attachment
 body = 'body_example' # str | Byte array of file in body of request
 try:
-    # Allows you to create Attachment on Quote
+    # Creates attachment for a specific quote
     api_response = api_instance.create_quote_attachment_by_file_name(xero_tenant_id, quote_id, file_name, body)
     pprint(api_response)
 except ApiException as e:
@@ -3176,7 +3176,7 @@ Name | Type | Description  | Notes
 # **create_quote_history**
 > HistoryRecords create_quote_history(xero_tenant_id, quote_id, history_records)
 
-Allows you to retrieve a history records of an quote
+Creates a history record for a specific quote
 
 ### Example
 
@@ -3205,10 +3205,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-quote_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for an Quote
+quote_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Quote
 history_records = { "HistoryRecords": [ { "Details": "Hello World" } ] } # HistoryRecords | HistoryRecords containing an array of HistoryRecord objects in body of request
 try:
-    # Allows you to retrieve a history records of an quote
+    # Creates a history record for a specific quote
     api_response = api_instance.create_quote_history(xero_tenant_id, quote_id, history_records)
     pprint(api_response)
 except ApiException as e:
@@ -3241,7 +3241,7 @@ Name | Type | Description  | Notes
 # **create_quotes**
 > Quotes create_quotes(xero_tenant_id, quotes, summarize_errors=summarize_errors)
 
-Allows you to create one or more quotes
+Create one or more quotes
 
 ### Example
 
@@ -3270,10 +3270,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-quotes = { "Quotes": [ { "Contact": { "ContactID": "00000000-0000-0000-000-000000000000" }, "LineItems": [ { "Description": "Foobar", "Quantity": 1, "UnitAmount": 20, "AccountCode": "12775" } ], "Date": "2020-02-01" } ] } # Quotes | Quotes with an array of Quote object in body of request
+quotes = { "Quotes": [ { "Contact": { "ContactID": "00000000-0000-0000-0000-000000000000" }, "LineItems": [ { "Description": "Foobar", "Quantity": 1, "UnitAmount": 20, "AccountCode": "12775" } ], "Date": "2020-02-01" } ] } # Quotes | Quotes with an array of Quote object in body of request
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
 try:
-    # Allows you to create one or more quotes
+    # Create one or more quotes
     api_response = api_instance.create_quotes(xero_tenant_id, quotes, summarize_errors=summarize_errors)
     pprint(api_response)
 except ApiException as e:
@@ -3306,7 +3306,7 @@ Name | Type | Description  | Notes
 # **create_receipt**
 > Receipts create_receipt(xero_tenant_id, receipts, unitdp=unitdp)
 
-Allows you to create draft expense claim receipts for any user
+Creates draft expense claim receipts for any user
 
 ### Example
 
@@ -3335,10 +3335,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-receipts = { "Receipts": [ { "Contact": { "ContactID": "00000000-0000-0000-000-000000000000" }, "Lineitems": [ { "Description": "Foobar", "Quantity": 2, "UnitAmount": 20, "AccountCode": "400", "TaxType": "NONE", "LineAmount": 40 } ], "User": { "UserID": "00000000-0000-0000-000-000000000000" }, "LineAmountTypes": "NoTax", "Status": "DRAFT" } ] } # Receipts | Receipts with an array of Receipt object in body of request
+receipts = { "Receipts": [ { "Contact": { "ContactID": "00000000-0000-0000-0000-000000000000" }, "Lineitems": [ { "Description": "Foobar", "Quantity": 2, "UnitAmount": 20, "AccountCode": "400", "TaxType": "NONE", "LineAmount": 40 } ], "User": { "UserID": "00000000-0000-0000-0000-000000000000" }, "LineAmountTypes": "NoTax", "Status": "DRAFT" } ] } # Receipts | Receipts with an array of Receipt object in body of request
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
-    # Allows you to create draft expense claim receipts for any user
+    # Creates draft expense claim receipts for any user
     api_response = api_instance.create_receipt(xero_tenant_id, receipts, unitdp=unitdp)
     pprint(api_response)
 except ApiException as e:
@@ -3371,7 +3371,7 @@ Name | Type | Description  | Notes
 # **create_receipt_attachment_by_file_name**
 > Attachments create_receipt_attachment_by_file_name(xero_tenant_id, receipt_id, file_name, body)
 
-Allows you to create Attachment on expense claim receipts by file name
+Creates an attachment on a specific expense claim receipts by file name
 
 ### Example
 
@@ -3400,11 +3400,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-receipt_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Receipt
+receipt_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Receipt
 file_name = 'xero-dev.jpg' # str | The name of the file being attached to the Receipt
 body = 'body_example' # str | Byte array of file in body of request
 try:
-    # Allows you to create Attachment on expense claim receipts by file name
+    # Creates an attachment on a specific expense claim receipts by file name
     api_response = api_instance.create_receipt_attachment_by_file_name(xero_tenant_id, receipt_id, file_name, body)
     pprint(api_response)
 except ApiException as e:
@@ -3438,7 +3438,7 @@ Name | Type | Description  | Notes
 # **create_receipt_history**
 > HistoryRecords create_receipt_history(xero_tenant_id, receipt_id, history_records)
 
-Allows you to retrieve a history records of an Receipt
+Creates a history record for a specific receipt
 
 ### Example
 
@@ -3467,10 +3467,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-receipt_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Receipt
+receipt_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Receipt
 history_records = { "HistoryRecords": [ { "Details": "Hello World" } ] } # HistoryRecords | HistoryRecords containing an array of HistoryRecord objects in body of request
 try:
-    # Allows you to retrieve a history records of an Receipt
+    # Creates a history record for a specific receipt
     api_response = api_instance.create_receipt_history(xero_tenant_id, receipt_id, history_records)
     pprint(api_response)
 except ApiException as e:
@@ -3503,7 +3503,7 @@ Name | Type | Description  | Notes
 # **create_repeating_invoice_attachment_by_file_name**
 > Attachments create_repeating_invoice_attachment_by_file_name(xero_tenant_id, repeating_invoice_id, file_name, body)
 
-Allows you to create attachment on repeating invoices by file name
+Creates an attachment from a specific repeating invoices by file name
 
 ### Example
 
@@ -3532,11 +3532,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-repeating_invoice_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Repeating Invoice
+repeating_invoice_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Repeating Invoice
 file_name = 'xero-dev.jpg' # str | The name of the file being attached to a Repeating Invoice
 body = 'body_example' # str | Byte array of file in body of request
 try:
-    # Allows you to create attachment on repeating invoices by file name
+    # Creates an attachment from a specific repeating invoices by file name
     api_response = api_instance.create_repeating_invoice_attachment_by_file_name(xero_tenant_id, repeating_invoice_id, file_name, body)
     pprint(api_response)
 except ApiException as e:
@@ -3570,7 +3570,7 @@ Name | Type | Description  | Notes
 # **create_repeating_invoice_history**
 > HistoryRecords create_repeating_invoice_history(xero_tenant_id, repeating_invoice_id, history_records)
 
-Allows you to create history for a repeating invoice
+Creates a  history record for a specific repeating invoice
 
 ### Example
 
@@ -3599,10 +3599,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-repeating_invoice_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Repeating Invoice
+repeating_invoice_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Repeating Invoice
 history_records = { "HistoryRecords": [ { "Details": "Hello World" } ] } # HistoryRecords | HistoryRecords containing an array of HistoryRecord objects in body of request
 try:
-    # Allows you to create history for a repeating invoice
+    # Creates a  history record for a specific repeating invoice
     api_response = api_instance.create_repeating_invoice_history(xero_tenant_id, repeating_invoice_id, history_records)
     pprint(api_response)
 except ApiException as e:
@@ -3635,7 +3635,7 @@ Name | Type | Description  | Notes
 # **create_tax_rates**
 > TaxRates create_tax_rates(xero_tenant_id, tax_rates)
 
-Allows you to create one or more Tax Rates
+Creates one or more tax rates
 
 ### Example
 
@@ -3666,7 +3666,7 @@ api_instance = AccountingApi(api_client)
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 tax_rates = { "TaxRates": [ { "Name": "CA State Tax", "TaxComponents": [ { "Name": "State Tax", "Rate": 2.25 } ] } ] } # TaxRates | TaxRates array with TaxRate object in body of request
 try:
-    # Allows you to create one or more Tax Rates
+    # Creates one or more tax rates
     api_response = api_instance.create_tax_rates(xero_tenant_id, tax_rates)
     pprint(api_response)
 except ApiException as e:
@@ -3698,7 +3698,7 @@ Name | Type | Description  | Notes
 # **create_tracking_category**
 > TrackingCategories create_tracking_category(xero_tenant_id, tracking_category)
 
-Allows you to create tracking categories
+Create tracking categories
 
 ### Example
 
@@ -3729,7 +3729,7 @@ api_instance = AccountingApi(api_client)
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 tracking_category = { name: "FooBar" } # TrackingCategory | TrackingCategory object in body of request
 try:
-    # Allows you to create tracking categories
+    # Create tracking categories
     api_response = api_instance.create_tracking_category(xero_tenant_id, tracking_category)
     pprint(api_response)
 except ApiException as e:
@@ -3761,7 +3761,7 @@ Name | Type | Description  | Notes
 # **create_tracking_options**
 > TrackingOptions create_tracking_options(xero_tenant_id, tracking_category_id, tracking_option)
 
-Allows you to create options for a specified tracking category
+Creates options for a specific tracking category
 
 ### Example
 
@@ -3790,10 +3790,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-tracking_category_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a TrackingCategory
+tracking_category_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a TrackingCategory
 tracking_option = { name: " Bar" } # TrackingOption | TrackingOption object in body of request
 try:
-    # Allows you to create options for a specified tracking category
+    # Creates options for a specific tracking category
     api_response = api_instance.create_tracking_options(xero_tenant_id, tracking_category_id, tracking_option)
     pprint(api_response)
 except ApiException as e:
@@ -3826,7 +3826,7 @@ Name | Type | Description  | Notes
 # **delete_account**
 > Accounts delete_account(xero_tenant_id, account_id)
 
-Allows you to delete a chart of accounts
+Deletes a chart of accounts
 
 ### Example
 
@@ -3855,9 +3855,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-account_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for retrieving single object
+account_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for retrieving single object
 try:
-    # Allows you to delete a chart of accounts
+    # Deletes a chart of accounts
     api_response = api_instance.delete_account(xero_tenant_id, account_id)
     pprint(api_response)
 except ApiException as e:
@@ -3889,7 +3889,7 @@ Name | Type | Description  | Notes
 # **delete_contact_group_contact**
 > delete_contact_group_contact(xero_tenant_id, contact_group_id, contact_id)
 
-Allows you to delete a specific Contact from a Contact Group
+Deletes a specific contact from a contact group using a unique contact Id
 
 ### Example
 
@@ -3918,10 +3918,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-contact_group_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Contact Group
-contact_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Contact
+contact_group_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Contact Group
+contact_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Contact
 try:
-    # Allows you to delete a specific Contact from a Contact Group
+    # Deletes a specific contact from a contact group using a unique contact Id
     api_instance.delete_contact_group_contact(xero_tenant_id, contact_group_id, contact_id)
 except ApiException as e:
     print("Exception when calling AccountingApi->delete_contact_group_contact: %s\n" % e)
@@ -3953,7 +3953,7 @@ void (empty response body)
 # **delete_contact_group_contacts**
 > delete_contact_group_contacts(xero_tenant_id, contact_group_id)
 
-Allows you to delete  all Contacts from a Contact Group
+Deletes all contacts from a specific contact group
 
 ### Example
 
@@ -3982,9 +3982,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-contact_group_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Contact Group
+contact_group_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Contact Group
 try:
-    # Allows you to delete  all Contacts from a Contact Group
+    # Deletes all contacts from a specific contact group
     api_instance.delete_contact_group_contacts(xero_tenant_id, contact_group_id)
 except ApiException as e:
     print("Exception when calling AccountingApi->delete_contact_group_contacts: %s\n" % e)
@@ -4015,7 +4015,7 @@ void (empty response body)
 # **delete_item**
 > delete_item(xero_tenant_id, item_id)
 
-Allows you to delete a specified item
+Deletes a specific item
 
 ### Example
 
@@ -4044,9 +4044,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-item_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for an Item
+item_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Item
 try:
-    # Allows you to delete a specified item
+    # Deletes a specific item
     api_instance.delete_item(xero_tenant_id, item_id)
 except ApiException as e:
     print("Exception when calling AccountingApi->delete_item: %s\n" % e)
@@ -4077,7 +4077,7 @@ void (empty response body)
 # **delete_linked_transaction**
 > delete_linked_transaction(xero_tenant_id, linked_transaction_id)
 
-Allows you to delete a specified linked transactions (billable expenses)
+Deletes a specific linked transactions (billable expenses)
 
 ### Example
 
@@ -4106,9 +4106,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-linked_transaction_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a LinkedTransaction
+linked_transaction_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a LinkedTransaction
 try:
-    # Allows you to delete a specified linked transactions (billable expenses)
+    # Deletes a specific linked transactions (billable expenses)
     api_instance.delete_linked_transaction(xero_tenant_id, linked_transaction_id)
 except ApiException as e:
     print("Exception when calling AccountingApi->delete_linked_transaction: %s\n" % e)
@@ -4139,7 +4139,7 @@ void (empty response body)
 # **delete_payment**
 > Payments delete_payment(xero_tenant_id, payment_id, payment_delete)
 
-Allows you to update a specified payment for invoices and credit notes
+Updates a specific payment for invoices and credit notes
 
 ### Example
 
@@ -4168,10 +4168,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-payment_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Payment
+payment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Payment
 payment_delete = { "Payments":[ { "Status":"DELETED" } ] } # PaymentDelete | 
 try:
-    # Allows you to update a specified payment for invoices and credit notes
+    # Updates a specific payment for invoices and credit notes
     api_response = api_instance.delete_payment(xero_tenant_id, payment_id, payment_delete)
     pprint(api_response)
 except ApiException as e:
@@ -4204,7 +4204,7 @@ Name | Type | Description  | Notes
 # **delete_tracking_category**
 > TrackingCategories delete_tracking_category(xero_tenant_id, tracking_category_id)
 
-Allows you to delete tracking categories
+Deletes a specific tracking category
 
 ### Example
 
@@ -4233,9 +4233,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-tracking_category_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a TrackingCategory
+tracking_category_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a TrackingCategory
 try:
-    # Allows you to delete tracking categories
+    # Deletes a specific tracking category
     api_response = api_instance.delete_tracking_category(xero_tenant_id, tracking_category_id)
     pprint(api_response)
 except ApiException as e:
@@ -4267,7 +4267,7 @@ Name | Type | Description  | Notes
 # **delete_tracking_options**
 > TrackingOptions delete_tracking_options(xero_tenant_id, tracking_category_id, tracking_option_id)
 
-Allows you to delete a specified option for a specified tracking category
+Deletes a specific option for a specific tracking category
 
 ### Example
 
@@ -4296,10 +4296,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-tracking_category_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a TrackingCategory
-tracking_option_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Tracking Option
+tracking_category_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a TrackingCategory
+tracking_option_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Tracking Option
 try:
-    # Allows you to delete a specified option for a specified tracking category
+    # Deletes a specific option for a specific tracking category
     api_response = api_instance.delete_tracking_options(xero_tenant_id, tracking_category_id, tracking_option_id)
     pprint(api_response)
 except ApiException as e:
@@ -4332,7 +4332,7 @@ Name | Type | Description  | Notes
 # **email_invoice**
 > email_invoice(xero_tenant_id, invoice_id, request_empty)
 
-Allows you to email a copy of invoice to related Contact
+Sends a copy of a specific invoice to related contact via email
 
 ### Example
 
@@ -4361,10 +4361,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-invoice_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for an Invoice
+invoice_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Invoice
 request_empty = {} # RequestEmpty | 
 try:
-    # Allows you to email a copy of invoice to related Contact
+    # Sends a copy of a specific invoice to related contact via email
     api_instance.email_invoice(xero_tenant_id, invoice_id, request_empty)
 except ApiException as e:
     print("Exception when calling AccountingApi->email_invoice: %s\n" % e)
@@ -4396,7 +4396,7 @@ void (empty response body)
 # **get_account**
 > Accounts get_account(xero_tenant_id, account_id)
 
-Allows you to retrieve a single chart of accounts
+Retrieves a single chart of accounts by using a unique account Id
 
 ### Example
 
@@ -4425,9 +4425,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-account_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for retrieving single object
+account_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for retrieving single object
 try:
-    # Allows you to retrieve a single chart of accounts
+    # Retrieves a single chart of accounts by using a unique account Id
     api_response = api_instance.get_account(xero_tenant_id, account_id)
     pprint(api_response)
 except ApiException as e:
@@ -4459,7 +4459,7 @@ Name | Type | Description  | Notes
 # **get_account_attachment_by_file_name**
 > file get_account_attachment_by_file_name(xero_tenant_id, account_id, file_name, content_type)
 
-Allows you to retrieve Attachment on Account by Filename
+Retrieves an attachment for a specific account by filename
 
 ### Example
 
@@ -4488,11 +4488,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-account_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for Account object
+account_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Account object
 file_name = 'xero-dev.jpg' # str | Name of the attachment
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
-    # Allows you to retrieve Attachment on Account by Filename
+    # Retrieves an attachment for a specific account by filename
     api_response = api_instance.get_account_attachment_by_file_name(xero_tenant_id, account_id, file_name, content_type)
     pprint(api_response)
 except ApiException as e:
@@ -4526,7 +4526,7 @@ Name | Type | Description  | Notes
 # **get_account_attachment_by_id**
 > file get_account_attachment_by_id(xero_tenant_id, account_id, attachment_id, content_type)
 
-Allows you to retrieve specific Attachment on Account
+Retrieves a specific attachment from a specific account using a unique attachment Id
 
 ### Example
 
@@ -4555,11 +4555,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-account_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for Account object
-attachment_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for Attachment object
+account_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Account object
+attachment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Attachment object
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
-    # Allows you to retrieve specific Attachment on Account
+    # Retrieves a specific attachment from a specific account using a unique attachment Id
     api_response = api_instance.get_account_attachment_by_id(xero_tenant_id, account_id, attachment_id, content_type)
     pprint(api_response)
 except ApiException as e:
@@ -4593,7 +4593,7 @@ Name | Type | Description  | Notes
 # **get_account_attachments**
 > Attachments get_account_attachments(xero_tenant_id, account_id)
 
-Allows you to retrieve Attachments for accounts
+Retrieves attachments for a specific accounts by using a unique account Id
 
 ### Example
 
@@ -4622,9 +4622,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-account_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for Account object
+account_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Account object
 try:
-    # Allows you to retrieve Attachments for accounts
+    # Retrieves attachments for a specific accounts by using a unique account Id
     api_response = api_instance.get_account_attachments(xero_tenant_id, account_id)
     pprint(api_response)
 except ApiException as e:
@@ -4656,7 +4656,7 @@ Name | Type | Description  | Notes
 # **get_accounts**
 > Accounts get_accounts(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order)
 
-Allows you to retrieve the full chart of accounts
+Retrieves the full chart of accounts
 
 ### Example
 
@@ -4689,7 +4689,7 @@ if_modified_since = '2020-02-06T12:17:43.202-08:00' # datetime | Only records cr
 where = 'Status==&quot;ACTIVE&quot; AND Type==&quot;BANK&quot;' # str | Filter by an any element (optional)
 order = 'Name ASC' # str | Order by an any element (optional)
 try:
-    # Allows you to retrieve the full chart of accounts
+    # Retrieves the full chart of accounts
     api_response = api_instance.get_accounts(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order)
     pprint(api_response)
 except ApiException as e:
@@ -4723,7 +4723,7 @@ Name | Type | Description  | Notes
 # **get_bank_transaction**
 > BankTransactions get_bank_transaction(xero_tenant_id, bank_transaction_id, unitdp=unitdp)
 
-Allows you to retrieve a single spend or receive money transaction
+Retrieves a single spent or received money transaction by using a unique bank transaction Id
 
 ### Example
 
@@ -4752,10 +4752,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-bank_transaction_id = '00000000-0000-0000-000-000000000000' # str | Xero generated unique identifier for a bank transaction
+bank_transaction_id = '00000000-0000-0000-0000-000000000000' # str | Xero generated unique identifier for a bank transaction
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
-    # Allows you to retrieve a single spend or receive money transaction
+    # Retrieves a single spent or received money transaction by using a unique bank transaction Id
     api_response = api_instance.get_bank_transaction(xero_tenant_id, bank_transaction_id, unitdp=unitdp)
     pprint(api_response)
 except ApiException as e:
@@ -4788,7 +4788,7 @@ Name | Type | Description  | Notes
 # **get_bank_transaction_attachment_by_file_name**
 > file get_bank_transaction_attachment_by_file_name(xero_tenant_id, bank_transaction_id, file_name, content_type)
 
-Allows you to retrieve Attachments on BankTransaction by Filename
+Retrieves a specific attachment from a specific bank transaction by filename
 
 ### Example
 
@@ -4817,11 +4817,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-bank_transaction_id = '00000000-0000-0000-000-000000000000' # str | Xero generated unique identifier for a bank transaction
+bank_transaction_id = '00000000-0000-0000-0000-000000000000' # str | Xero generated unique identifier for a bank transaction
 file_name = 'xero-dev.jpg' # str | The name of the file being attached
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
-    # Allows you to retrieve Attachments on BankTransaction by Filename
+    # Retrieves a specific attachment from a specific bank transaction by filename
     api_response = api_instance.get_bank_transaction_attachment_by_file_name(xero_tenant_id, bank_transaction_id, file_name, content_type)
     pprint(api_response)
 except ApiException as e:
@@ -4855,7 +4855,7 @@ Name | Type | Description  | Notes
 # **get_bank_transaction_attachment_by_id**
 > file get_bank_transaction_attachment_by_id(xero_tenant_id, bank_transaction_id, attachment_id, content_type)
 
-Allows you to retrieve Attachments on a specific BankTransaction
+Retrieves specific attachments from a specific BankTransaction using a unique attachment Id
 
 ### Example
 
@@ -4884,11 +4884,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-bank_transaction_id = '00000000-0000-0000-000-000000000000' # str | Xero generated unique identifier for a bank transaction
-attachment_id = '00000000-0000-0000-000-000000000000' # str | Xero generated unique identifier for an attachment
+bank_transaction_id = '00000000-0000-0000-0000-000000000000' # str | Xero generated unique identifier for a bank transaction
+attachment_id = '00000000-0000-0000-0000-000000000000' # str | Xero generated unique identifier for an attachment
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
-    # Allows you to retrieve Attachments on a specific BankTransaction
+    # Retrieves specific attachments from a specific BankTransaction using a unique attachment Id
     api_response = api_instance.get_bank_transaction_attachment_by_id(xero_tenant_id, bank_transaction_id, attachment_id, content_type)
     pprint(api_response)
 except ApiException as e:
@@ -4922,7 +4922,7 @@ Name | Type | Description  | Notes
 # **get_bank_transaction_attachments**
 > Attachments get_bank_transaction_attachments(xero_tenant_id, bank_transaction_id)
 
-Allows you to retrieve any attachments to bank transactions
+Retrieves any attachments from a specific bank transactions
 
 ### Example
 
@@ -4951,9 +4951,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-bank_transaction_id = '00000000-0000-0000-000-000000000000' # str | Xero generated unique identifier for a bank transaction
+bank_transaction_id = '00000000-0000-0000-0000-000000000000' # str | Xero generated unique identifier for a bank transaction
 try:
-    # Allows you to retrieve any attachments to bank transactions
+    # Retrieves any attachments from a specific bank transactions
     api_response = api_instance.get_bank_transaction_attachments(xero_tenant_id, bank_transaction_id)
     pprint(api_response)
 except ApiException as e:
@@ -4985,7 +4985,7 @@ Name | Type | Description  | Notes
 # **get_bank_transactions**
 > BankTransactions get_bank_transactions(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp)
 
-Allows you to retrieve any spend or receive money transactions
+Retrieves any spent or received money transactions
 
 ### Example
 
@@ -5020,7 +5020,7 @@ order = 'Type ASC' # str | Order by an any element (optional)
 page = 1 # int | Up to 100 bank transactions will be returned in a single API call with line items details (optional)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
-    # Allows you to retrieve any spend or receive money transactions
+    # Retrieves any spent or received money transactions
     api_response = api_instance.get_bank_transactions(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp)
     pprint(api_response)
 except ApiException as e:
@@ -5056,7 +5056,7 @@ Name | Type | Description  | Notes
 # **get_bank_transactions_history**
 > HistoryRecords get_bank_transactions_history(xero_tenant_id, bank_transaction_id)
 
-Allows you to retrieve history from a bank transactions
+Retrieves history from a specific bank transaction using a unique bank transaction Id
 
 ### Example
 
@@ -5085,9 +5085,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-bank_transaction_id = '00000000-0000-0000-000-000000000000' # str | Xero generated unique identifier for a bank transaction
+bank_transaction_id = '00000000-0000-0000-0000-000000000000' # str | Xero generated unique identifier for a bank transaction
 try:
-    # Allows you to retrieve history from a bank transactions
+    # Retrieves history from a specific bank transaction using a unique bank transaction Id
     api_response = api_instance.get_bank_transactions_history(xero_tenant_id, bank_transaction_id)
     pprint(api_response)
 except ApiException as e:
@@ -5119,7 +5119,7 @@ Name | Type | Description  | Notes
 # **get_bank_transfer**
 > BankTransfers get_bank_transfer(xero_tenant_id, bank_transfer_id)
 
-Allows you to retrieve any bank transfers
+Retrieves specific bank transfers by using a unique bank transfer Id
 
 ### Example
 
@@ -5148,9 +5148,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-bank_transfer_id = '00000000-0000-0000-000-000000000000' # str | Xero generated unique identifier for a bank transfer
+bank_transfer_id = '00000000-0000-0000-0000-000000000000' # str | Xero generated unique identifier for a bank transfer
 try:
-    # Allows you to retrieve any bank transfers
+    # Retrieves specific bank transfers by using a unique bank transfer Id
     api_response = api_instance.get_bank_transfer(xero_tenant_id, bank_transfer_id)
     pprint(api_response)
 except ApiException as e:
@@ -5182,7 +5182,7 @@ Name | Type | Description  | Notes
 # **get_bank_transfer_attachment_by_file_name**
 > file get_bank_transfer_attachment_by_file_name(xero_tenant_id, bank_transfer_id, file_name, content_type)
 
-Allows you to retrieve Attachments on BankTransfer by file name
+Retrieves a specific attachment on a specific bank transfer by file name
 
 ### Example
 
@@ -5211,11 +5211,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-bank_transfer_id = '00000000-0000-0000-000-000000000000' # str | Xero generated unique identifier for a bank transfer
+bank_transfer_id = '00000000-0000-0000-0000-000000000000' # str | Xero generated unique identifier for a bank transfer
 file_name = 'xero-dev.jpg' # str | The name of the file being attached to a Bank Transfer
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
-    # Allows you to retrieve Attachments on BankTransfer by file name
+    # Retrieves a specific attachment on a specific bank transfer by file name
     api_response = api_instance.get_bank_transfer_attachment_by_file_name(xero_tenant_id, bank_transfer_id, file_name, content_type)
     pprint(api_response)
 except ApiException as e:
@@ -5249,7 +5249,7 @@ Name | Type | Description  | Notes
 # **get_bank_transfer_attachment_by_id**
 > file get_bank_transfer_attachment_by_id(xero_tenant_id, bank_transfer_id, attachment_id, content_type)
 
-Allows you to retrieve Attachments on BankTransfer
+Retrieves a specific attachment from a specific bank transfer using a unique attachment ID
 
 ### Example
 
@@ -5278,11 +5278,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-bank_transfer_id = '00000000-0000-0000-000-000000000000' # str | Xero generated unique identifier for a bank transfer
-attachment_id = '00000000-0000-0000-000-000000000000' # str | Xero generated unique identifier for an Attachment to a bank transfer
+bank_transfer_id = '00000000-0000-0000-0000-000000000000' # str | Xero generated unique identifier for a bank transfer
+attachment_id = '00000000-0000-0000-0000-000000000000' # str | Xero generated unique identifier for an Attachment to a bank transfer
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
-    # Allows you to retrieve Attachments on BankTransfer
+    # Retrieves a specific attachment from a specific bank transfer using a unique attachment ID
     api_response = api_instance.get_bank_transfer_attachment_by_id(xero_tenant_id, bank_transfer_id, attachment_id, content_type)
     pprint(api_response)
 except ApiException as e:
@@ -5316,7 +5316,7 @@ Name | Type | Description  | Notes
 # **get_bank_transfer_attachments**
 > Attachments get_bank_transfer_attachments(xero_tenant_id, bank_transfer_id)
 
-Allows you to retrieve Attachments from  bank transfers
+Retrieves attachments from a specific bank transfer
 
 ### Example
 
@@ -5345,9 +5345,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-bank_transfer_id = '00000000-0000-0000-000-000000000000' # str | Xero generated unique identifier for a bank transfer
+bank_transfer_id = '00000000-0000-0000-0000-000000000000' # str | Xero generated unique identifier for a bank transfer
 try:
-    # Allows you to retrieve Attachments from  bank transfers
+    # Retrieves attachments from a specific bank transfer
     api_response = api_instance.get_bank_transfer_attachments(xero_tenant_id, bank_transfer_id)
     pprint(api_response)
 except ApiException as e:
@@ -5379,7 +5379,7 @@ Name | Type | Description  | Notes
 # **get_bank_transfer_history**
 > HistoryRecords get_bank_transfer_history(xero_tenant_id, bank_transfer_id)
 
-Allows you to retrieve history from a bank transfers
+Retrieves history from a specific bank transfer using a unique bank transfer Id
 
 ### Example
 
@@ -5408,9 +5408,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-bank_transfer_id = '00000000-0000-0000-000-000000000000' # str | Xero generated unique identifier for a bank transfer
+bank_transfer_id = '00000000-0000-0000-0000-000000000000' # str | Xero generated unique identifier for a bank transfer
 try:
-    # Allows you to retrieve history from a bank transfers
+    # Retrieves history from a specific bank transfer using a unique bank transfer Id
     api_response = api_instance.get_bank_transfer_history(xero_tenant_id, bank_transfer_id)
     pprint(api_response)
 except ApiException as e:
@@ -5442,7 +5442,7 @@ Name | Type | Description  | Notes
 # **get_bank_transfers**
 > BankTransfers get_bank_transfers(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order)
 
-Allows you to retrieve all bank transfers
+Retrieves all bank transfers
 
 ### Example
 
@@ -5475,7 +5475,7 @@ if_modified_since = '2020-02-06T12:17:43.202-08:00' # datetime | Only records cr
 where = 'HasAttachments==true' # str | Filter by an any element (optional)
 order = 'Amount ASC' # str | Order by an any element (optional)
 try:
-    # Allows you to retrieve all bank transfers
+    # Retrieves all bank transfers
     api_response = api_instance.get_bank_transfers(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order)
     pprint(api_response)
 except ApiException as e:
@@ -5509,7 +5509,7 @@ Name | Type | Description  | Notes
 # **get_batch_payment_history**
 > HistoryRecords get_batch_payment_history(xero_tenant_id, batch_payment_id)
 
-Allows you to retrieve history from a Batch Payment
+Retrieves history from a specific batch payment
 
 ### Example
 
@@ -5538,9 +5538,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-batch_payment_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for BatchPayment
+batch_payment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for BatchPayment
 try:
-    # Allows you to retrieve history from a Batch Payment
+    # Retrieves history from a specific batch payment
     api_response = api_instance.get_batch_payment_history(xero_tenant_id, batch_payment_id)
     pprint(api_response)
 except ApiException as e:
@@ -5572,7 +5572,7 @@ Name | Type | Description  | Notes
 # **get_batch_payments**
 > BatchPayments get_batch_payments(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order)
 
-Retrieve either one or many BatchPayments for invoices
+Retrieves either one or many batch payments for invoices
 
 ### Example
 
@@ -5605,7 +5605,7 @@ if_modified_since = '2020-02-06T12:17:43.202-08:00' # datetime | Only records cr
 where = 'Status==\"AUTHORISED\"' # str | Filter by an any element (optional)
 order = 'Date ASC' # str | Order by an any element (optional)
 try:
-    # Retrieve either one or many BatchPayments for invoices
+    # Retrieves either one or many batch payments for invoices
     api_response = api_instance.get_batch_payments(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order)
     pprint(api_response)
 except ApiException as e:
@@ -5639,7 +5639,7 @@ Name | Type | Description  | Notes
 # **get_branding_theme**
 > BrandingThemes get_branding_theme(xero_tenant_id, branding_theme_id)
 
-Allows you to retrieve a specific BrandingThemes
+Retrieves a specific branding theme using a unique branding theme Id
 
 ### Example
 
@@ -5668,9 +5668,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-branding_theme_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Branding Theme
+branding_theme_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Branding Theme
 try:
-    # Allows you to retrieve a specific BrandingThemes
+    # Retrieves a specific branding theme using a unique branding theme Id
     api_response = api_instance.get_branding_theme(xero_tenant_id, branding_theme_id)
     pprint(api_response)
 except ApiException as e:
@@ -5702,7 +5702,7 @@ Name | Type | Description  | Notes
 # **get_branding_theme_payment_services**
 > PaymentServices get_branding_theme_payment_services(xero_tenant_id, branding_theme_id)
 
-Allows you to retrieve the Payment services for a Branding Theme
+Retrieves the payment services for a specific branding theme
 
 ### Example
 
@@ -5731,9 +5731,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-branding_theme_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Branding Theme
+branding_theme_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Branding Theme
 try:
-    # Allows you to retrieve the Payment services for a Branding Theme
+    # Retrieves the payment services for a specific branding theme
     api_response = api_instance.get_branding_theme_payment_services(xero_tenant_id, branding_theme_id)
     pprint(api_response)
 except ApiException as e:
@@ -5765,7 +5765,7 @@ Name | Type | Description  | Notes
 # **get_branding_themes**
 > BrandingThemes get_branding_themes(xero_tenant_id)
 
-Allows you to retrieve all the BrandingThemes
+Retrieves all the branding themes
 
 ### Example
 
@@ -5795,7 +5795,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 try:
-    # Allows you to retrieve all the BrandingThemes
+    # Retrieves all the branding themes
     api_response = api_instance.get_branding_themes(xero_tenant_id)
     pprint(api_response)
 except ApiException as e:
@@ -5826,7 +5826,7 @@ Name | Type | Description  | Notes
 # **get_contact**
 > Contacts get_contact(xero_tenant_id, contact_id)
 
-Allows you to retrieve a single contacts in a Xero organisation
+Retrieves a specific contacts in a Xero organisation using a unique contact Id
 
 ### Example
 
@@ -5855,9 +5855,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-contact_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Contact
+contact_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Contact
 try:
-    # Allows you to retrieve a single contacts in a Xero organisation
+    # Retrieves a specific contacts in a Xero organisation using a unique contact Id
     api_response = api_instance.get_contact(xero_tenant_id, contact_id)
     pprint(api_response)
 except ApiException as e:
@@ -5889,7 +5889,7 @@ Name | Type | Description  | Notes
 # **get_contact_attachment_by_file_name**
 > file get_contact_attachment_by_file_name(xero_tenant_id, contact_id, file_name, content_type)
 
-Allows you to retrieve Attachments on Contacts by file name
+Retrieves a specific attachment from a specific contact by file name
 
 ### Example
 
@@ -5918,11 +5918,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-contact_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Contact
+contact_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Contact
 file_name = 'xero-dev.jpg' # str | Name for the file you are attaching
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
-    # Allows you to retrieve Attachments on Contacts by file name
+    # Retrieves a specific attachment from a specific contact by file name
     api_response = api_instance.get_contact_attachment_by_file_name(xero_tenant_id, contact_id, file_name, content_type)
     pprint(api_response)
 except ApiException as e:
@@ -5956,7 +5956,7 @@ Name | Type | Description  | Notes
 # **get_contact_attachment_by_id**
 > file get_contact_attachment_by_id(xero_tenant_id, contact_id, attachment_id, content_type)
 
-Allows you to retrieve Attachments on Contacts
+Retrieves a specific attachment from a specific contact using a unique attachment Id
 
 ### Example
 
@@ -5985,11 +5985,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-contact_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Contact
-attachment_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Attachment
+contact_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Contact
+attachment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Attachment
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
-    # Allows you to retrieve Attachments on Contacts
+    # Retrieves a specific attachment from a specific contact using a unique attachment Id
     api_response = api_instance.get_contact_attachment_by_id(xero_tenant_id, contact_id, attachment_id, content_type)
     pprint(api_response)
 except ApiException as e:
@@ -6023,7 +6023,7 @@ Name | Type | Description  | Notes
 # **get_contact_attachments**
 > Attachments get_contact_attachments(xero_tenant_id, contact_id)
 
-Allows you to retrieve, add and update contacts in a Xero organisation
+Retrieves attachments for a specific contact in a Xero organisation
 
 ### Example
 
@@ -6052,9 +6052,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-contact_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Contact
+contact_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Contact
 try:
-    # Allows you to retrieve, add and update contacts in a Xero organisation
+    # Retrieves attachments for a specific contact in a Xero organisation
     api_response = api_instance.get_contact_attachments(xero_tenant_id, contact_id)
     pprint(api_response)
 except ApiException as e:
@@ -6086,7 +6086,7 @@ Name | Type | Description  | Notes
 # **get_contact_by_contact_number**
 > Contacts get_contact_by_contact_number(xero_tenant_id, contact_number)
 
-Allows you to retrieve a single contact by Contact Number in a Xero organisation
+Retrieves a specific contact by contact number in a Xero organisation
 
 ### Example
 
@@ -6117,7 +6117,7 @@ api_instance = AccountingApi(api_client)
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 contact_number = 'SB2' # str | This field is read only on the Xero contact screen, used to identify contacts in external systems (max length = 50).
 try:
-    # Allows you to retrieve a single contact by Contact Number in a Xero organisation
+    # Retrieves a specific contact by contact number in a Xero organisation
     api_response = api_instance.get_contact_by_contact_number(xero_tenant_id, contact_number)
     pprint(api_response)
 except ApiException as e:
@@ -6149,7 +6149,7 @@ Name | Type | Description  | Notes
 # **get_contact_cis_settings**
 > CISSettings get_contact_cis_settings(xero_tenant_id, contact_id)
 
-Allows you to retrieve CISSettings for a contact in a Xero organisation
+Retrieves CIS settings for a specific contact in a Xero organisation
 
 ### Example
 
@@ -6178,9 +6178,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-contact_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Contact
+contact_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Contact
 try:
-    # Allows you to retrieve CISSettings for a contact in a Xero organisation
+    # Retrieves CIS settings for a specific contact in a Xero organisation
     api_response = api_instance.get_contact_cis_settings(xero_tenant_id, contact_id)
     pprint(api_response)
 except ApiException as e:
@@ -6212,7 +6212,7 @@ Name | Type | Description  | Notes
 # **get_contact_group**
 > ContactGroups get_contact_group(xero_tenant_id, contact_group_id)
 
-Allows you to retrieve a unique Contact Group by ID
+Retrieves a specific contact group by using a unique contact group Id
 
 ### Example
 
@@ -6241,9 +6241,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-contact_group_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Contact Group
+contact_group_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Contact Group
 try:
-    # Allows you to retrieve a unique Contact Group by ID
+    # Retrieves a specific contact group by using a unique contact group Id
     api_response = api_instance.get_contact_group(xero_tenant_id, contact_group_id)
     pprint(api_response)
 except ApiException as e:
@@ -6275,7 +6275,7 @@ Name | Type | Description  | Notes
 # **get_contact_groups**
 > ContactGroups get_contact_groups(xero_tenant_id, where=where, order=order)
 
-Allows you to retrieve the ContactID and Name of all the contacts in a contact group
+Retrieves the contact Id and name of all the contacts in a contact group
 
 ### Example
 
@@ -6307,7 +6307,7 @@ xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 where = 'Status==\"ACTIVE\"' # str | Filter by an any element (optional)
 order = 'Name ASC' # str | Order by an any element (optional)
 try:
-    # Allows you to retrieve the ContactID and Name of all the contacts in a contact group
+    # Retrieves the contact Id and name of all the contacts in a contact group
     api_response = api_instance.get_contact_groups(xero_tenant_id, where=where, order=order)
     pprint(api_response)
 except ApiException as e:
@@ -6340,7 +6340,7 @@ Name | Type | Description  | Notes
 # **get_contact_history**
 > HistoryRecords get_contact_history(xero_tenant_id, contact_id)
 
-Allows you to retrieve a history records of an Contact
+Retrieves history records for a specific contact
 
 ### Example
 
@@ -6369,9 +6369,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-contact_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Contact
+contact_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Contact
 try:
-    # Allows you to retrieve a history records of an Contact
+    # Retrieves history records for a specific contact
     api_response = api_instance.get_contact_history(xero_tenant_id, contact_id)
     pprint(api_response)
 except ApiException as e:
@@ -6403,7 +6403,7 @@ Name | Type | Description  | Notes
 # **get_contacts**
 > Contacts get_contacts(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, i_ds=i_ds, page=page, include_archived=include_archived)
 
-Allows you to retrieve all contacts in a Xero organisation
+Retrieves all contacts in a Xero organisation
 
 ### Example
 
@@ -6435,11 +6435,11 @@ xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 if_modified_since = '2020-02-06T12:17:43.202-08:00' # datetime | Only records created or modified since this timestamp will be returned (optional)
 where = 'ContactStatus==&quot;ACTIVE&quot;' # str | Filter by an any element (optional)
 order = 'Name ASC' # str | Order by an any element (optional)
-i_ds = ['&quot;00000000-0000-0000-000-000000000000&quot;'] # list[str] | Filter by a comma separated list of ContactIDs. Allows you to retrieve a specific set of contacts in a single call. (optional)
+i_ds = ['&quot;00000000-0000-0000-0000-000000000000&quot;'] # list[str] | Filter by a comma separated list of ContactIDs. Allows you to retrieve a specific set of contacts in a single call. (optional)
 page = 1 # int | e.g. page=1 - Up to 100 contacts will be returned in a single API call. (optional)
 include_archived = True # bool | e.g. includeArchived=true - Contacts with a status of ARCHIVED will be included in the response (optional)
 try:
-    # Allows you to retrieve all contacts in a Xero organisation
+    # Retrieves all contacts in a Xero organisation
     api_response = api_instance.get_contacts(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, i_ds=i_ds, page=page, include_archived=include_archived)
     pprint(api_response)
 except ApiException as e:
@@ -6476,7 +6476,7 @@ Name | Type | Description  | Notes
 # **get_credit_note**
 > CreditNotes get_credit_note(xero_tenant_id, credit_note_id, unitdp=unitdp)
 
-Allows you to retrieve a specific credit note
+Retrieves a specific credit note using a unique credit note Id
 
 ### Example
 
@@ -6505,10 +6505,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-credit_note_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Credit Note
+credit_note_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Credit Note
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
-    # Allows you to retrieve a specific credit note
+    # Retrieves a specific credit note using a unique credit note Id
     api_response = api_instance.get_credit_note(xero_tenant_id, credit_note_id, unitdp=unitdp)
     pprint(api_response)
 except ApiException as e:
@@ -6541,7 +6541,7 @@ Name | Type | Description  | Notes
 # **get_credit_note_as_pdf**
 > file get_credit_note_as_pdf(xero_tenant_id, credit_note_id)
 
-Allows you to retrieve Credit Note as PDF files
+Retrieves credit notes as PDF files
 
 ### Example
 
@@ -6570,9 +6570,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-credit_note_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Credit Note
+credit_note_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Credit Note
 try:
-    # Allows you to retrieve Credit Note as PDF files
+    # Retrieves credit notes as PDF files
     api_response = api_instance.get_credit_note_as_pdf(xero_tenant_id, credit_note_id)
     pprint(api_response)
 except ApiException as e:
@@ -6604,7 +6604,7 @@ Name | Type | Description  | Notes
 # **get_credit_note_attachment_by_file_name**
 > file get_credit_note_attachment_by_file_name(xero_tenant_id, credit_note_id, file_name, content_type)
 
-Allows you to retrieve Attachments on CreditNote by file name
+Retrieves a specific attachment on a specific credit note by file name
 
 ### Example
 
@@ -6633,11 +6633,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-credit_note_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Credit Note
+credit_note_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Credit Note
 file_name = 'xero-dev.jpg' # str | Name of the file you are attaching to Credit Note
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
-    # Allows you to retrieve Attachments on CreditNote by file name
+    # Retrieves a specific attachment on a specific credit note by file name
     api_response = api_instance.get_credit_note_attachment_by_file_name(xero_tenant_id, credit_note_id, file_name, content_type)
     pprint(api_response)
 except ApiException as e:
@@ -6671,7 +6671,7 @@ Name | Type | Description  | Notes
 # **get_credit_note_attachment_by_id**
 > file get_credit_note_attachment_by_id(xero_tenant_id, credit_note_id, attachment_id, content_type)
 
-Allows you to retrieve Attachments on CreditNote
+Retrieves a specific attachment from a specific credit note using a unique attachment Id
 
 ### Example
 
@@ -6700,11 +6700,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-credit_note_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Credit Note
-attachment_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Attachment
+credit_note_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Credit Note
+attachment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Attachment
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
-    # Allows you to retrieve Attachments on CreditNote
+    # Retrieves a specific attachment from a specific credit note using a unique attachment Id
     api_response = api_instance.get_credit_note_attachment_by_id(xero_tenant_id, credit_note_id, attachment_id, content_type)
     pprint(api_response)
 except ApiException as e:
@@ -6738,7 +6738,7 @@ Name | Type | Description  | Notes
 # **get_credit_note_attachments**
 > Attachments get_credit_note_attachments(xero_tenant_id, credit_note_id)
 
-Allows you to retrieve Attachments for credit notes
+Retrieves attachments for a specific credit notes
 
 ### Example
 
@@ -6767,9 +6767,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-credit_note_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Credit Note
+credit_note_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Credit Note
 try:
-    # Allows you to retrieve Attachments for credit notes
+    # Retrieves attachments for a specific credit notes
     api_response = api_instance.get_credit_note_attachments(xero_tenant_id, credit_note_id)
     pprint(api_response)
 except ApiException as e:
@@ -6801,7 +6801,7 @@ Name | Type | Description  | Notes
 # **get_credit_note_history**
 > HistoryRecords get_credit_note_history(xero_tenant_id, credit_note_id)
 
-Allows you to retrieve a history records of an CreditNote
+Retrieves history records of a specific credit note
 
 ### Example
 
@@ -6830,9 +6830,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-credit_note_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Credit Note
+credit_note_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Credit Note
 try:
-    # Allows you to retrieve a history records of an CreditNote
+    # Retrieves history records of a specific credit note
     api_response = api_instance.get_credit_note_history(xero_tenant_id, credit_note_id)
     pprint(api_response)
 except ApiException as e:
@@ -6864,7 +6864,7 @@ Name | Type | Description  | Notes
 # **get_credit_notes**
 > CreditNotes get_credit_notes(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp)
 
-Allows you to retrieve any credit notes
+Retrieves any credit notes
 
 ### Example
 
@@ -6899,7 +6899,7 @@ order = 'CreditNoteNumber ASC' # str | Order by an any element (optional)
 page = 1 # int | e.g. page=1 – Up to 100 credit notes will be returned in a single API call with line items shown for each credit note (optional)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
-    # Allows you to retrieve any credit notes
+    # Retrieves any credit notes
     api_response = api_instance.get_credit_notes(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp)
     pprint(api_response)
 except ApiException as e:
@@ -6935,7 +6935,7 @@ Name | Type | Description  | Notes
 # **get_currencies**
 > Currencies get_currencies(xero_tenant_id, where=where, order=order)
 
-Allows you to retrieve currencies for your organisation
+Retrieves currencies for your Xero organisation
 
 ### Example
 
@@ -6967,7 +6967,7 @@ xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 where = 'Code==\"USD\"' # str | Filter by an any element (optional)
 order = 'Code ASC' # str | Order by an any element (optional)
 try:
-    # Allows you to retrieve currencies for your organisation
+    # Retrieves currencies for your Xero organisation
     api_response = api_instance.get_currencies(xero_tenant_id, where=where, order=order)
     pprint(api_response)
 except ApiException as e:
@@ -7000,7 +7000,7 @@ Name | Type | Description  | Notes
 # **get_employee**
 > Employees get_employee(xero_tenant_id, employee_id)
 
-Allows you to retrieve a specific employee used in Xero payrun
+Retrieves a specific employee used in Xero payrun using a unique employee Id
 
 ### Example
 
@@ -7029,9 +7029,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-employee_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Employee
+employee_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Employee
 try:
-    # Allows you to retrieve a specific employee used in Xero payrun
+    # Retrieves a specific employee used in Xero payrun using a unique employee Id
     api_response = api_instance.get_employee(xero_tenant_id, employee_id)
     pprint(api_response)
 except ApiException as e:
@@ -7063,7 +7063,7 @@ Name | Type | Description  | Notes
 # **get_employees**
 > Employees get_employees(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order)
 
-Allows you to retrieve employees used in Xero payrun
+Retrieves employees used in Xero payrun
 
 ### Example
 
@@ -7096,7 +7096,7 @@ if_modified_since = '2020-02-06T12:17:43.202-08:00' # datetime | Only records cr
 where = 'Status==\"ACTIVE\"' # str | Filter by an any element (optional)
 order = 'LastName ASC' # str | Order by an any element (optional)
 try:
-    # Allows you to retrieve employees used in Xero payrun
+    # Retrieves employees used in Xero payrun
     api_response = api_instance.get_employees(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order)
     pprint(api_response)
 except ApiException as e:
@@ -7130,7 +7130,7 @@ Name | Type | Description  | Notes
 # **get_expense_claim**
 > ExpenseClaims get_expense_claim(xero_tenant_id, expense_claim_id)
 
-Allows you to retrieve a specified expense claim
+Retrieves a specific expense claim using a unique expense claim Id
 
 ### Example
 
@@ -7159,9 +7159,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-expense_claim_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a ExpenseClaim
+expense_claim_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a ExpenseClaim
 try:
-    # Allows you to retrieve a specified expense claim
+    # Retrieves a specific expense claim using a unique expense claim Id
     api_response = api_instance.get_expense_claim(xero_tenant_id, expense_claim_id)
     pprint(api_response)
 except ApiException as e:
@@ -7193,7 +7193,7 @@ Name | Type | Description  | Notes
 # **get_expense_claim_history**
 > HistoryRecords get_expense_claim_history(xero_tenant_id, expense_claim_id)
 
-Allows you to retrieve a history records of an ExpenseClaim
+Retrieves history records of a specific expense claim
 
 ### Example
 
@@ -7222,9 +7222,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-expense_claim_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a ExpenseClaim
+expense_claim_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a ExpenseClaim
 try:
-    # Allows you to retrieve a history records of an ExpenseClaim
+    # Retrieves history records of a specific expense claim
     api_response = api_instance.get_expense_claim_history(xero_tenant_id, expense_claim_id)
     pprint(api_response)
 except ApiException as e:
@@ -7256,7 +7256,7 @@ Name | Type | Description  | Notes
 # **get_expense_claims**
 > ExpenseClaims get_expense_claims(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order)
 
-Allows you to retrieve expense claims
+Retrieves expense claims
 
 ### Example
 
@@ -7289,7 +7289,7 @@ if_modified_since = '2020-02-06T12:17:43.202-08:00' # datetime | Only records cr
 where = 'Status==\"SUBMITTED\"' # str | Filter by an any element (optional)
 order = 'Status ASC' # str | Order by an any element (optional)
 try:
-    # Allows you to retrieve expense claims
+    # Retrieves expense claims
     api_response = api_instance.get_expense_claims(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order)
     pprint(api_response)
 except ApiException as e:
@@ -7323,7 +7323,7 @@ Name | Type | Description  | Notes
 # **get_invoice**
 > Invoices get_invoice(xero_tenant_id, invoice_id, unitdp=unitdp)
 
-Allows you to retrieve a specified sales invoice or purchase bill
+Retrieves a specific sales invoice or purchase bill using a unique invoice Id
 
 ### Example
 
@@ -7352,10 +7352,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-invoice_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for an Invoice
+invoice_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Invoice
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
-    # Allows you to retrieve a specified sales invoice or purchase bill
+    # Retrieves a specific sales invoice or purchase bill using a unique invoice Id
     api_response = api_instance.get_invoice(xero_tenant_id, invoice_id, unitdp=unitdp)
     pprint(api_response)
 except ApiException as e:
@@ -7388,7 +7388,7 @@ Name | Type | Description  | Notes
 # **get_invoice_as_pdf**
 > file get_invoice_as_pdf(xero_tenant_id, invoice_id)
 
-Allows you to retrieve invoices or purchase bills as PDF files
+Retrieves invoices or purchase bills as PDF files
 
 ### Example
 
@@ -7417,9 +7417,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-invoice_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for an Invoice
+invoice_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Invoice
 try:
-    # Allows you to retrieve invoices or purchase bills as PDF files
+    # Retrieves invoices or purchase bills as PDF files
     api_response = api_instance.get_invoice_as_pdf(xero_tenant_id, invoice_id)
     pprint(api_response)
 except ApiException as e:
@@ -7451,7 +7451,7 @@ Name | Type | Description  | Notes
 # **get_invoice_attachment_by_file_name**
 > file get_invoice_attachment_by_file_name(xero_tenant_id, invoice_id, file_name, content_type)
 
-Allows you to retrieve Attachment on invoices or purchase bills by it's filename
+Retrieves an attachment from a specific invoice or purchase bill by filename
 
 ### Example
 
@@ -7480,11 +7480,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-invoice_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for an Invoice
+invoice_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Invoice
 file_name = 'xero-dev.jpg' # str | Name of the file you are attaching
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
-    # Allows you to retrieve Attachment on invoices or purchase bills by it's filename
+    # Retrieves an attachment from a specific invoice or purchase bill by filename
     api_response = api_instance.get_invoice_attachment_by_file_name(xero_tenant_id, invoice_id, file_name, content_type)
     pprint(api_response)
 except ApiException as e:
@@ -7518,7 +7518,7 @@ Name | Type | Description  | Notes
 # **get_invoice_attachment_by_id**
 > file get_invoice_attachment_by_id(xero_tenant_id, invoice_id, attachment_id, content_type)
 
-Allows you to retrieve a specified Attachment on invoices or purchase bills by it's ID
+Retrieves a specific attachment from a specific invoices or purchase bills by using a unique attachment Id
 
 ### Example
 
@@ -7547,11 +7547,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-invoice_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for an Invoice
-attachment_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for an Attachment
+invoice_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Invoice
+attachment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Attachment
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
-    # Allows you to retrieve a specified Attachment on invoices or purchase bills by it's ID
+    # Retrieves a specific attachment from a specific invoices or purchase bills by using a unique attachment Id
     api_response = api_instance.get_invoice_attachment_by_id(xero_tenant_id, invoice_id, attachment_id, content_type)
     pprint(api_response)
 except ApiException as e:
@@ -7585,7 +7585,7 @@ Name | Type | Description  | Notes
 # **get_invoice_attachments**
 > Attachments get_invoice_attachments(xero_tenant_id, invoice_id)
 
-Allows you to retrieve Attachments on invoices or purchase bills
+Retrieves attachments for a specific invoice or purchase bill
 
 ### Example
 
@@ -7614,9 +7614,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-invoice_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for an Invoice
+invoice_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Invoice
 try:
-    # Allows you to retrieve Attachments on invoices or purchase bills
+    # Retrieves attachments for a specific invoice or purchase bill
     api_response = api_instance.get_invoice_attachments(xero_tenant_id, invoice_id)
     pprint(api_response)
 except ApiException as e:
@@ -7648,7 +7648,7 @@ Name | Type | Description  | Notes
 # **get_invoice_history**
 > HistoryRecords get_invoice_history(xero_tenant_id, invoice_id)
 
-Allows you to retrieve a history records of an invoice
+Retrieves history records for a specific invoice
 
 ### Example
 
@@ -7677,9 +7677,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-invoice_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for an Invoice
+invoice_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Invoice
 try:
-    # Allows you to retrieve a history records of an invoice
+    # Retrieves history records for a specific invoice
     api_response = api_instance.get_invoice_history(xero_tenant_id, invoice_id)
     pprint(api_response)
 except ApiException as e:
@@ -7711,7 +7711,7 @@ Name | Type | Description  | Notes
 # **get_invoice_reminders**
 > InvoiceReminders get_invoice_reminders(xero_tenant_id)
 
-Allows you to retrieve invoice reminder settings
+Retrieves invoice reminder settings
 
 ### Example
 
@@ -7741,7 +7741,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 try:
-    # Allows you to retrieve invoice reminder settings
+    # Retrieves invoice reminder settings
     api_response = api_instance.get_invoice_reminders(xero_tenant_id)
     pprint(api_response)
 except ApiException as e:
@@ -7772,7 +7772,7 @@ Name | Type | Description  | Notes
 # **get_invoices**
 > Invoices get_invoices(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, i_ds=i_ds, invoice_numbers=invoice_numbers, contact_i_ds=contact_i_ds, statuses=statuses, page=page, include_archived=include_archived, created_by_my_app=created_by_my_app, unitdp=unitdp)
 
-Allows you to retrieve any sales invoices or purchase bills
+Retrieves sales invoices or purchase bills
 
 ### Example
 
@@ -7804,16 +7804,16 @@ xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 if_modified_since = '2020-02-06T12:17:43.202-08:00' # datetime | Only records created or modified since this timestamp will be returned (optional)
 where = 'Status==\"DRAFT\"' # str | Filter by an any element (optional)
 order = 'InvoiceNumber ASC' # str | Order by an any element (optional)
-i_ds = ['&quot;00000000-0000-0000-000-000000000000&quot;'] # list[str] | Filter by a comma-separated list of InvoicesIDs. (optional)
+i_ds = ['&quot;00000000-0000-0000-0000-000000000000&quot;'] # list[str] | Filter by a comma-separated list of InvoicesIDs. (optional)
 invoice_numbers = ['&quot;INV-001&quot;, &quot;INV-002&quot;'] # list[str] | Filter by a comma-separated list of InvoiceNumbers. (optional)
-contact_i_ds = ['&quot;00000000-0000-0000-000-000000000000&quot;'] # list[str] | Filter by a comma-separated list of ContactIDs. (optional)
+contact_i_ds = ['&quot;00000000-0000-0000-0000-000000000000&quot;'] # list[str] | Filter by a comma-separated list of ContactIDs. (optional)
 statuses = ['&quot;DRAFT&quot;, &quot;SUBMITTED&quot;'] # list[str] | Filter by a comma-separated list Statuses. For faster response times we recommend using these explicit parameters instead of passing OR conditions into the Where filter. (optional)
 page = 1 # int | e.g. page=1 – Up to 100 invoices will be returned in a single API call with line items shown for each invoice (optional)
 include_archived = True # bool | e.g. includeArchived=true - Contacts with a status of ARCHIVED will be included in the response (optional)
 created_by_my_app = false # bool | When set to true you'll only retrieve Invoices created by your app (optional)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
-    # Allows you to retrieve any sales invoices or purchase bills
+    # Retrieves sales invoices or purchase bills
     api_response = api_instance.get_invoices(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, i_ds=i_ds, invoice_numbers=invoice_numbers, contact_i_ds=contact_i_ds, statuses=statuses, page=page, include_archived=include_archived, created_by_my_app=created_by_my_app, unitdp=unitdp)
     pprint(api_response)
 except ApiException as e:
@@ -7855,7 +7855,7 @@ Name | Type | Description  | Notes
 # **get_item**
 > Items get_item(xero_tenant_id, item_id, unitdp=unitdp)
 
-Allows you to retrieve a specified item
+Retrieves a specific item using a unique item Id
 
 ### Example
 
@@ -7884,10 +7884,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-item_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for an Item
+item_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Item
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
-    # Allows you to retrieve a specified item
+    # Retrieves a specific item using a unique item Id
     api_response = api_instance.get_item(xero_tenant_id, item_id, unitdp=unitdp)
     pprint(api_response)
 except ApiException as e:
@@ -7920,7 +7920,7 @@ Name | Type | Description  | Notes
 # **get_item_history**
 > HistoryRecords get_item_history(xero_tenant_id, item_id)
 
-Allows you to retrieve history for items
+Retrieves history for a specific item
 
 ### Example
 
@@ -7949,9 +7949,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-item_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for an Item
+item_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Item
 try:
-    # Allows you to retrieve history for items
+    # Retrieves history for a specific item
     api_response = api_instance.get_item_history(xero_tenant_id, item_id)
     pprint(api_response)
 except ApiException as e:
@@ -7983,7 +7983,7 @@ Name | Type | Description  | Notes
 # **get_items**
 > Items get_items(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, unitdp=unitdp)
 
-Allows you to retrieve any items
+Retrieves items
 
 ### Example
 
@@ -8017,7 +8017,7 @@ where = 'IsSold==true' # str | Filter by an any element (optional)
 order = 'Code ASC' # str | Order by an any element (optional)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
-    # Allows you to retrieve any items
+    # Retrieves items
     api_response = api_instance.get_items(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, unitdp=unitdp)
     pprint(api_response)
 except ApiException as e:
@@ -8052,7 +8052,7 @@ Name | Type | Description  | Notes
 # **get_journal**
 > Journals get_journal(xero_tenant_id, journal_id)
 
-Allows you to retrieve a specified journals.
+Retrieves a specific journal using a unique journal Id.
 
 ### Example
 
@@ -8081,9 +8081,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-journal_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Journal
+journal_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Journal
 try:
-    # Allows you to retrieve a specified journals.
+    # Retrieves a specific journal using a unique journal Id.
     api_response = api_instance.get_journal(xero_tenant_id, journal_id)
     pprint(api_response)
 except ApiException as e:
@@ -8115,7 +8115,7 @@ Name | Type | Description  | Notes
 # **get_journals**
 > Journals get_journals(xero_tenant_id, if_modified_since=if_modified_since, offset=offset, payments_only=payments_only)
 
-Allows you to retrieve any journals.
+Retrieves journals
 
 ### Example
 
@@ -8148,7 +8148,7 @@ if_modified_since = '2020-02-06T12:17:43.202-08:00' # datetime | Only records cr
 offset = 10 # int | Offset by a specified journal number. e.g. journals with a JournalNumber greater than the offset will be returned (optional)
 payments_only = True # bool | Filter to retrieve journals on a cash basis. Journals are returned on an accrual basis by default. (optional)
 try:
-    # Allows you to retrieve any journals.
+    # Retrieves journals
     api_response = api_instance.get_journals(xero_tenant_id, if_modified_since=if_modified_since, offset=offset, payments_only=payments_only)
     pprint(api_response)
 except ApiException as e:
@@ -8182,7 +8182,7 @@ Name | Type | Description  | Notes
 # **get_linked_transaction**
 > LinkedTransactions get_linked_transaction(xero_tenant_id, linked_transaction_id)
 
-Allows you to retrieve a specified linked transactions (billable expenses)
+Retrieves a specific linked transaction (billable expenses) using a unique linked transaction Id
 
 ### Example
 
@@ -8211,9 +8211,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-linked_transaction_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a LinkedTransaction
+linked_transaction_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a LinkedTransaction
 try:
-    # Allows you to retrieve a specified linked transactions (billable expenses)
+    # Retrieves a specific linked transaction (billable expenses) using a unique linked transaction Id
     api_response = api_instance.get_linked_transaction(xero_tenant_id, linked_transaction_id)
     pprint(api_response)
 except ApiException as e:
@@ -8245,7 +8245,7 @@ Name | Type | Description  | Notes
 # **get_linked_transactions**
 > LinkedTransactions get_linked_transactions(xero_tenant_id, page=page, linked_transaction_id=linked_transaction_id, source_transaction_id=source_transaction_id, contact_id=contact_id, status=status, target_transaction_id=target_transaction_id)
 
-Retrieve linked transactions (billable expenses)
+Retrieves linked transactions (billable expenses)
 
 ### Example
 
@@ -8275,13 +8275,13 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 page = 1 # int | Up to 100 linked transactions will be returned in a single API call. Use the page parameter to specify the page to be returned e.g. page=1. (optional)
-linked_transaction_id = '00000000-0000-0000-000-000000000000' # str | The Xero identifier for an Linked Transaction (optional)
-source_transaction_id = '00000000-0000-0000-000-000000000000' # str | Filter by the SourceTransactionID. Get the linked transactions created from a particular ACCPAY invoice (optional)
-contact_id = '00000000-0000-0000-000-000000000000' # str | Filter by the ContactID. Get all the linked transactions that have been assigned to a particular customer. (optional)
-status = 'APPROVED' # str | Filter by the combination of ContactID and Status. Get  the linked transactions associaed to a  customer and with a status (optional)
-target_transaction_id = '00000000-0000-0000-000-000000000000' # str | Filter by the TargetTransactionID. Get all the linked transactions allocated to a particular ACCREC invoice (optional)
+linked_transaction_id = '00000000-0000-0000-0000-000000000000' # str | The Xero identifier for an Linked Transaction (optional)
+source_transaction_id = '00000000-0000-0000-0000-000000000000' # str | Filter by the SourceTransactionID. Get the linked transactions created from a particular ACCPAY invoice (optional)
+contact_id = '00000000-0000-0000-0000-000000000000' # str | Filter by the ContactID. Get all the linked transactions that have been assigned to a particular customer. (optional)
+status = 'APPROVED' # str | Filter by the combination of ContactID and Status. Get  the linked transactions associated to a  customer and with a status (optional)
+target_transaction_id = '00000000-0000-0000-0000-000000000000' # str | Filter by the TargetTransactionID. Get all the linked transactions allocated to a particular ACCREC invoice (optional)
 try:
-    # Retrieve linked transactions (billable expenses)
+    # Retrieves linked transactions (billable expenses)
     api_response = api_instance.get_linked_transactions(xero_tenant_id, page=page, linked_transaction_id=linked_transaction_id, source_transaction_id=source_transaction_id, contact_id=contact_id, status=status, target_transaction_id=target_transaction_id)
     pprint(api_response)
 except ApiException as e:
@@ -8297,7 +8297,7 @@ Name | Type | Description  | Notes
  **linked_transaction_id** | [**str**](.md)| The Xero identifier for an Linked Transaction | [optional] 
  **source_transaction_id** | [**str**](.md)| Filter by the SourceTransactionID. Get the linked transactions created from a particular ACCPAY invoice | [optional] 
  **contact_id** | [**str**](.md)| Filter by the ContactID. Get all the linked transactions that have been assigned to a particular customer. | [optional] 
- **status** | **str**| Filter by the combination of ContactID and Status. Get  the linked transactions associaed to a  customer and with a status | [optional] 
+ **status** | **str**| Filter by the combination of ContactID and Status. Get  the linked transactions associated to a  customer and with a status | [optional] 
  **target_transaction_id** | [**str**](.md)| Filter by the TargetTransactionID. Get all the linked transactions allocated to a particular ACCREC invoice | [optional] 
 
 ### Return type
@@ -8318,7 +8318,7 @@ Name | Type | Description  | Notes
 # **get_manual_journal**
 > ManualJournals get_manual_journal(xero_tenant_id, manual_journal_id)
 
-Allows you to retrieve a specified manual journals
+Retrieves a specific manual journal
 
 ### Example
 
@@ -8347,9 +8347,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-manual_journal_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a ManualJournal
+manual_journal_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a ManualJournal
 try:
-    # Allows you to retrieve a specified manual journals
+    # Retrieves a specific manual journal
     api_response = api_instance.get_manual_journal(xero_tenant_id, manual_journal_id)
     pprint(api_response)
 except ApiException as e:
@@ -8381,7 +8381,7 @@ Name | Type | Description  | Notes
 # **get_manual_journal_attachment_by_file_name**
 > file get_manual_journal_attachment_by_file_name(xero_tenant_id, manual_journal_id, file_name, content_type)
 
-Allows you to retrieve specified Attachment on ManualJournal by file name
+Retrieves a specific attachment from a specific manual journal by file name
 
 ### Example
 
@@ -8410,11 +8410,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-manual_journal_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a ManualJournal
+manual_journal_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a ManualJournal
 file_name = 'xero-dev.jpg' # str | The name of the file being attached to a ManualJournal
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
-    # Allows you to retrieve specified Attachment on ManualJournal by file name
+    # Retrieves a specific attachment from a specific manual journal by file name
     api_response = api_instance.get_manual_journal_attachment_by_file_name(xero_tenant_id, manual_journal_id, file_name, content_type)
     pprint(api_response)
 except ApiException as e:
@@ -8448,7 +8448,7 @@ Name | Type | Description  | Notes
 # **get_manual_journal_attachment_by_id**
 > file get_manual_journal_attachment_by_id(xero_tenant_id, manual_journal_id, attachment_id, content_type)
 
-Allows you to retrieve specified Attachment on ManualJournals
+Allows you to retrieve a specific attachment from a specific manual journal using a unique attachment Id
 
 ### Example
 
@@ -8477,11 +8477,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-manual_journal_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a ManualJournal
-attachment_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Attachment
+manual_journal_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a ManualJournal
+attachment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Attachment
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
-    # Allows you to retrieve specified Attachment on ManualJournals
+    # Allows you to retrieve a specific attachment from a specific manual journal using a unique attachment Id
     api_response = api_instance.get_manual_journal_attachment_by_id(xero_tenant_id, manual_journal_id, attachment_id, content_type)
     pprint(api_response)
 except ApiException as e:
@@ -8515,7 +8515,7 @@ Name | Type | Description  | Notes
 # **get_manual_journal_attachments**
 > Attachments get_manual_journal_attachments(xero_tenant_id, manual_journal_id)
 
-Allows you to retrieve Attachment for manual journals
+Retrieves attachment for a specific manual journal
 
 ### Example
 
@@ -8544,9 +8544,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-manual_journal_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a ManualJournal
+manual_journal_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a ManualJournal
 try:
-    # Allows you to retrieve Attachment for manual journals
+    # Retrieves attachment for a specific manual journal
     api_response = api_instance.get_manual_journal_attachments(xero_tenant_id, manual_journal_id)
     pprint(api_response)
 except ApiException as e:
@@ -8578,7 +8578,7 @@ Name | Type | Description  | Notes
 # **get_manual_journals**
 > ManualJournals get_manual_journals(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page)
 
-Allows you to retrieve any manual journals
+Retrieves manual journals
 
 ### Example
 
@@ -8612,7 +8612,7 @@ where = 'Status==\"DRAFT\"' # str | Filter by an any element (optional)
 order = 'Date ASC' # str | Order by an any element (optional)
 page = 1 # int | e.g. page=1 – Up to 100 manual journals will be returned in a single API call with line items shown for each overpayment (optional)
 try:
-    # Allows you to retrieve any manual journals
+    # Retrieves manual journals
     api_response = api_instance.get_manual_journals(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page)
     pprint(api_response)
 except ApiException as e:
@@ -8647,7 +8647,7 @@ Name | Type | Description  | Notes
 # **get_manual_journals_history**
 > HistoryRecords get_manual_journals_history(xero_tenant_id, manual_journal_id)
 
-Allows you to retrieve history from a manual journal
+Retrieves history for a specific manual journal
 
 ### Example
 
@@ -8676,9 +8676,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-manual_journal_id = '00000000-0000-0000-000-000000000000' # str | Xero generated unique identifier for a manual journal
+manual_journal_id = '00000000-0000-0000-0000-000000000000' # str | Xero generated unique identifier for a manual journal
 try:
-    # Allows you to retrieve history from a manual journal
+    # Retrieves history for a specific manual journal
     api_response = api_instance.get_manual_journals_history(xero_tenant_id, manual_journal_id)
     pprint(api_response)
 except ApiException as e:
@@ -8710,7 +8710,7 @@ Name | Type | Description  | Notes
 # **get_online_invoice**
 > OnlineInvoices get_online_invoice(xero_tenant_id, invoice_id)
 
-Allows you to retrieve a URL to an online invoice
+Retrieves a URL to an online invoice
 
 ### Example
 
@@ -8739,9 +8739,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-invoice_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for an Invoice
+invoice_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Invoice
 try:
-    # Allows you to retrieve a URL to an online invoice
+    # Retrieves a URL to an online invoice
     api_response = api_instance.get_online_invoice(xero_tenant_id, invoice_id)
     pprint(api_response)
 except ApiException as e:
@@ -8773,7 +8773,7 @@ Name | Type | Description  | Notes
 # **get_organisation_actions**
 > Actions get_organisation_actions(xero_tenant_id)
 
-Retrieve a list of the key actions your app has permission to perform in the connected organisation.
+Retrieves a list of the key actions your app has permission to perform in the connected Xero organisation.
 
 ### Example
 
@@ -8803,7 +8803,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 try:
-    # Retrieve a list of the key actions your app has permission to perform in the connected organisation.
+    # Retrieves a list of the key actions your app has permission to perform in the connected Xero organisation.
     api_response = api_instance.get_organisation_actions(xero_tenant_id)
     pprint(api_response)
 except ApiException as e:
@@ -8832,9 +8832,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_organisation_cis_settings**
-> CISOrgSetting get_organisation_cis_settings(xero_tenant_id, organisation_id)
+> CISOrgSettings get_organisation_cis_settings(xero_tenant_id, organisation_id)
 
-Allows you To verify if an organisation is using contruction industry scheme, you can retrieve the CIS settings for the organistaion.
+Retrieves the CIS settings for the Xero organistaion.
 
 ### Example
 
@@ -8863,9 +8863,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-organisation_id = '00000000-0000-0000-000-000000000000' # str | The unique Xero identifier for an organisation
+organisation_id = '00000000-0000-0000-0000-000000000000' # str | The unique Xero identifier for an organisation
 try:
-    # Allows you To verify if an organisation is using contruction industry scheme, you can retrieve the CIS settings for the organistaion.
+    # Retrieves the CIS settings for the Xero organistaion.
     api_response = api_instance.get_organisation_cis_settings(xero_tenant_id, organisation_id)
     pprint(api_response)
 except ApiException as e:
@@ -8881,7 +8881,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CISOrgSetting**](CISOrgSetting.md)
+[**CISOrgSettings**](CISOrgSettings.md)
 
 ### Authorization
 
@@ -8897,7 +8897,7 @@ Name | Type | Description  | Notes
 # **get_organisations**
 > Organisations get_organisations(xero_tenant_id)
 
-Allows you to retrieve Organisation details
+Retrieves Xero organisation details
 
 ### Example
 
@@ -8927,7 +8927,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 try:
-    # Allows you to retrieve Organisation details
+    # Retrieves Xero organisation details
     api_response = api_instance.get_organisations(xero_tenant_id)
     pprint(api_response)
 except ApiException as e:
@@ -8958,7 +8958,7 @@ Name | Type | Description  | Notes
 # **get_overpayment**
 > Overpayments get_overpayment(xero_tenant_id, overpayment_id)
 
-Allows you to retrieve a specified overpayments
+Retrieves a specific overpayment using a unique overpayment Id
 
 ### Example
 
@@ -8987,9 +8987,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-overpayment_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Overpayment
+overpayment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Overpayment
 try:
-    # Allows you to retrieve a specified overpayments
+    # Retrieves a specific overpayment using a unique overpayment Id
     api_response = api_instance.get_overpayment(xero_tenant_id, overpayment_id)
     pprint(api_response)
 except ApiException as e:
@@ -9021,7 +9021,7 @@ Name | Type | Description  | Notes
 # **get_overpayment_history**
 > HistoryRecords get_overpayment_history(xero_tenant_id, overpayment_id)
 
-Allows you to retrieve a history records of an Overpayment
+Retrieves history records of a specific overpayment
 
 ### Example
 
@@ -9050,9 +9050,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-overpayment_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Overpayment
+overpayment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Overpayment
 try:
-    # Allows you to retrieve a history records of an Overpayment
+    # Retrieves history records of a specific overpayment
     api_response = api_instance.get_overpayment_history(xero_tenant_id, overpayment_id)
     pprint(api_response)
 except ApiException as e:
@@ -9084,7 +9084,7 @@ Name | Type | Description  | Notes
 # **get_overpayments**
 > Overpayments get_overpayments(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp)
 
-Allows you to retrieve overpayments
+Retrieves overpayments
 
 ### Example
 
@@ -9119,7 +9119,7 @@ order = 'Status ASC' # str | Order by an any element (optional)
 page = 1 # int | e.g. page=1 – Up to 100 overpayments will be returned in a single API call with line items shown for each overpayment (optional)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
-    # Allows you to retrieve overpayments
+    # Retrieves overpayments
     api_response = api_instance.get_overpayments(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp)
     pprint(api_response)
 except ApiException as e:
@@ -9155,7 +9155,7 @@ Name | Type | Description  | Notes
 # **get_payment**
 > Payments get_payment(xero_tenant_id, payment_id)
 
-Allows you to retrieve a specified payment for invoices and credit notes
+Retrieves a specific payment for invoices and credit notes using a unique payment Id
 
 ### Example
 
@@ -9184,9 +9184,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-payment_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Payment
+payment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Payment
 try:
-    # Allows you to retrieve a specified payment for invoices and credit notes
+    # Retrieves a specific payment for invoices and credit notes using a unique payment Id
     api_response = api_instance.get_payment(xero_tenant_id, payment_id)
     pprint(api_response)
 except ApiException as e:
@@ -9218,7 +9218,7 @@ Name | Type | Description  | Notes
 # **get_payment_history**
 > HistoryRecords get_payment_history(xero_tenant_id, payment_id)
 
-Allows you to retrieve history records of a payment
+Retrieves history records of a specific payment
 
 ### Example
 
@@ -9247,9 +9247,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-payment_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Payment
+payment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Payment
 try:
-    # Allows you to retrieve history records of a payment
+    # Retrieves history records of a specific payment
     api_response = api_instance.get_payment_history(xero_tenant_id, payment_id)
     pprint(api_response)
 except ApiException as e:
@@ -9281,7 +9281,7 @@ Name | Type | Description  | Notes
 # **get_payment_services**
 > PaymentServices get_payment_services(xero_tenant_id)
 
-Allows you to retrieve payment services
+Retrieves payment services
 
 ### Example
 
@@ -9311,7 +9311,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 try:
-    # Allows you to retrieve payment services
+    # Retrieves payment services
     api_response = api_instance.get_payment_services(xero_tenant_id)
     pprint(api_response)
 except ApiException as e:
@@ -9342,7 +9342,7 @@ Name | Type | Description  | Notes
 # **get_payments**
 > Payments get_payments(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page)
 
-Allows you to retrieve payments for invoices and credit notes
+Retrieves payments for invoices and credit notes
 
 ### Example
 
@@ -9376,7 +9376,7 @@ where = 'Status==\"AUTHORISED\"' # str | Filter by an any element (optional)
 order = 'Amount ASC' # str | Order by an any element (optional)
 page = 1 # int | Up to 100 payments will be returned in a single API call (optional)
 try:
-    # Allows you to retrieve payments for invoices and credit notes
+    # Retrieves payments for invoices and credit notes
     api_response = api_instance.get_payments(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page)
     pprint(api_response)
 except ApiException as e:
@@ -9440,7 +9440,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-prepayment_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a PrePayment
+prepayment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a PrePayment
 try:
     # Allows you to retrieve a specified prepayments
     api_response = api_instance.get_prepayment(xero_tenant_id, prepayment_id)
@@ -9474,7 +9474,7 @@ Name | Type | Description  | Notes
 # **get_prepayment_history**
 > HistoryRecords get_prepayment_history(xero_tenant_id, prepayment_id)
 
-Allows you to retrieve a history records of an Prepayment
+Retrieves history record for a specific prepayment
 
 ### Example
 
@@ -9503,9 +9503,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-prepayment_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a PrePayment
+prepayment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a PrePayment
 try:
-    # Allows you to retrieve a history records of an Prepayment
+    # Retrieves history record for a specific prepayment
     api_response = api_instance.get_prepayment_history(xero_tenant_id, prepayment_id)
     pprint(api_response)
 except ApiException as e:
@@ -9537,7 +9537,7 @@ Name | Type | Description  | Notes
 # **get_prepayments**
 > Prepayments get_prepayments(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp)
 
-Allows you to retrieve prepayments
+Retrieves prepayments
 
 ### Example
 
@@ -9572,7 +9572,7 @@ order = 'Reference ASC' # str | Order by an any element (optional)
 page = 1 # int | e.g. page=1 – Up to 100 prepayments will be returned in a single API call with line items shown for each overpayment (optional)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
-    # Allows you to retrieve prepayments
+    # Retrieves prepayments
     api_response = api_instance.get_prepayments(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp)
     pprint(api_response)
 except ApiException as e:
@@ -9608,7 +9608,7 @@ Name | Type | Description  | Notes
 # **get_purchase_order**
 > PurchaseOrders get_purchase_order(xero_tenant_id, purchase_order_id)
 
-Allows you to retrieve a specified purchase orders
+Retrieves a specific purchase order using a unique purchase order Id
 
 ### Example
 
@@ -9637,9 +9637,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-purchase_order_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a PurchaseOrder
+purchase_order_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a PurchaseOrder
 try:
-    # Allows you to retrieve a specified purchase orders
+    # Retrieves a specific purchase order using a unique purchase order Id
     api_response = api_instance.get_purchase_order(xero_tenant_id, purchase_order_id)
     pprint(api_response)
 except ApiException as e:
@@ -9671,7 +9671,7 @@ Name | Type | Description  | Notes
 # **get_purchase_order_as_pdf**
 > file get_purchase_order_as_pdf(xero_tenant_id, purchase_order_id)
 
-Allows you to retrieve purchase orders as PDF files
+Retrieves specific purchase order as PDF files using a unique purchase order Id
 
 ### Example
 
@@ -9700,9 +9700,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-purchase_order_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for an Purchase Order
+purchase_order_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Purchase Order
 try:
-    # Allows you to retrieve purchase orders as PDF files
+    # Retrieves specific purchase order as PDF files using a unique purchase order Id
     api_response = api_instance.get_purchase_order_as_pdf(xero_tenant_id, purchase_order_id)
     pprint(api_response)
 except ApiException as e:
@@ -9734,7 +9734,7 @@ Name | Type | Description  | Notes
 # **get_purchase_order_attachment_by_file_name**
 > file get_purchase_order_attachment_by_file_name(xero_tenant_id, purchase_order_id, file_name, content_type)
 
-Allows you to retrieve Attachment on a Purchase Order by Filename
+Retrieves a specific attachment for a specific purchase order by filename
 
 ### Example
 
@@ -9763,11 +9763,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-purchase_order_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for Purchase Order object
+purchase_order_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Purchase Order object
 file_name = 'xero-dev.jpg' # str | Name of the attachment
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
-    # Allows you to retrieve Attachment on a Purchase Order by Filename
+    # Retrieves a specific attachment for a specific purchase order by filename
     api_response = api_instance.get_purchase_order_attachment_by_file_name(xero_tenant_id, purchase_order_id, file_name, content_type)
     pprint(api_response)
 except ApiException as e:
@@ -9801,7 +9801,7 @@ Name | Type | Description  | Notes
 # **get_purchase_order_attachment_by_id**
 > file get_purchase_order_attachment_by_id(xero_tenant_id, purchase_order_id, attachment_id, content_type)
 
-Allows you to retrieve specific Attachment on purchase order
+Retrieves specific attachment for a specific purchase order using a unique attachment Id
 
 ### Example
 
@@ -9830,11 +9830,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-purchase_order_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for Purchase Order object
-attachment_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for Attachment object
+purchase_order_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Purchase Order object
+attachment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Attachment object
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
-    # Allows you to retrieve specific Attachment on purchase order
+    # Retrieves specific attachment for a specific purchase order using a unique attachment Id
     api_response = api_instance.get_purchase_order_attachment_by_id(xero_tenant_id, purchase_order_id, attachment_id, content_type)
     pprint(api_response)
 except ApiException as e:
@@ -9868,7 +9868,7 @@ Name | Type | Description  | Notes
 # **get_purchase_order_attachments**
 > Attachments get_purchase_order_attachments(xero_tenant_id, purchase_order_id)
 
-Allows you to retrieve attachments for purchase orders
+Retrieves attachments for a specific purchase order
 
 ### Example
 
@@ -9897,9 +9897,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-purchase_order_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for Purchase Orders object
+purchase_order_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Purchase Orders object
 try:
-    # Allows you to retrieve attachments for purchase orders
+    # Retrieves attachments for a specific purchase order
     api_response = api_instance.get_purchase_order_attachments(xero_tenant_id, purchase_order_id)
     pprint(api_response)
 except ApiException as e:
@@ -9931,7 +9931,7 @@ Name | Type | Description  | Notes
 # **get_purchase_order_by_number**
 > PurchaseOrders get_purchase_order_by_number(xero_tenant_id, purchase_order_number)
 
-Allows you to retrieve a specified purchase orders
+Retrieves a specific purchase order using purchase order number
 
 ### Example
 
@@ -9962,7 +9962,7 @@ api_instance = AccountingApi(api_client)
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 purchase_order_number = 'PO1234' # str | Unique identifier for a PurchaseOrder
 try:
-    # Allows you to retrieve a specified purchase orders
+    # Retrieves a specific purchase order using purchase order number
     api_response = api_instance.get_purchase_order_by_number(xero_tenant_id, purchase_order_number)
     pprint(api_response)
 except ApiException as e:
@@ -9994,7 +9994,7 @@ Name | Type | Description  | Notes
 # **get_purchase_order_history**
 > HistoryRecords get_purchase_order_history(xero_tenant_id, purchase_order_id)
 
-Allows you to retrieve history for PurchaseOrder
+Retrieves history for a specific purchase order
 
 ### Example
 
@@ -10023,9 +10023,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-purchase_order_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a PurchaseOrder
+purchase_order_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a PurchaseOrder
 try:
-    # Allows you to retrieve history for PurchaseOrder
+    # Retrieves history for a specific purchase order
     api_response = api_instance.get_purchase_order_history(xero_tenant_id, purchase_order_id)
     pprint(api_response)
 except ApiException as e:
@@ -10057,7 +10057,7 @@ Name | Type | Description  | Notes
 # **get_purchase_orders**
 > PurchaseOrders get_purchase_orders(xero_tenant_id, if_modified_since=if_modified_since, status=status, date_from=date_from, date_to=date_to, order=order, page=page)
 
-Allows you to retrieve purchase orders
+Retrieves purchase orders
 
 ### Example
 
@@ -10093,7 +10093,7 @@ date_to = '2019-12-31' # str | Filter by purchase order date (e.g. GET https://.
 order = 'PurchaseOrderNumber ASC' # str | Order by an any element (optional)
 page = 1 # int | To specify a page, append the page parameter to the URL e.g. ?page=1. If there are 100 records in the response you will need to check if there is any more data by fetching the next page e.g ?page=2 and continuing this process until no more results are returned. (optional)
 try:
-    # Allows you to retrieve purchase orders
+    # Retrieves purchase orders
     api_response = api_instance.get_purchase_orders(xero_tenant_id, if_modified_since=if_modified_since, status=status, date_from=date_from, date_to=date_to, order=order, page=page)
     pprint(api_response)
 except ApiException as e:
@@ -10130,7 +10130,7 @@ Name | Type | Description  | Notes
 # **get_quote**
 > Quotes get_quote(xero_tenant_id, quote_id)
 
-Allows you to retrieve a specified quote
+Retrieves a specific quote using a unique quote Id
 
 ### Example
 
@@ -10159,9 +10159,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-quote_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for an Quote
+quote_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Quote
 try:
-    # Allows you to retrieve a specified quote
+    # Retrieves a specific quote using a unique quote Id
     api_response = api_instance.get_quote(xero_tenant_id, quote_id)
     pprint(api_response)
 except ApiException as e:
@@ -10193,7 +10193,7 @@ Name | Type | Description  | Notes
 # **get_quote_as_pdf**
 > file get_quote_as_pdf(xero_tenant_id, quote_id)
 
-Allows you to retrieve quotes as PDF files
+Retrieves a specific quote as a PDF file using a unique quote Id
 
 ### Example
 
@@ -10222,9 +10222,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-quote_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for an Quote
+quote_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Quote
 try:
-    # Allows you to retrieve quotes as PDF files
+    # Retrieves a specific quote as a PDF file using a unique quote Id
     api_response = api_instance.get_quote_as_pdf(xero_tenant_id, quote_id)
     pprint(api_response)
 except ApiException as e:
@@ -10256,7 +10256,7 @@ Name | Type | Description  | Notes
 # **get_quote_attachment_by_file_name**
 > file get_quote_attachment_by_file_name(xero_tenant_id, quote_id, file_name, content_type)
 
-Allows you to retrieve Attachment on Quote by Filename
+Retrieves a specific attachment from a specific quote by filename
 
 ### Example
 
@@ -10285,11 +10285,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-quote_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for Quote object
+quote_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Quote object
 file_name = 'xero-dev.jpg' # str | Name of the attachment
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
-    # Allows you to retrieve Attachment on Quote by Filename
+    # Retrieves a specific attachment from a specific quote by filename
     api_response = api_instance.get_quote_attachment_by_file_name(xero_tenant_id, quote_id, file_name, content_type)
     pprint(api_response)
 except ApiException as e:
@@ -10323,7 +10323,7 @@ Name | Type | Description  | Notes
 # **get_quote_attachment_by_id**
 > file get_quote_attachment_by_id(xero_tenant_id, quote_id, attachment_id, content_type)
 
-Allows you to retrieve specific Attachment on Quote
+Retrieves a specific attachment from a specific quote using a unique attachment Id
 
 ### Example
 
@@ -10352,11 +10352,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-quote_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for Quote object
-attachment_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for Attachment object
+quote_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Quote object
+attachment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Attachment object
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
-    # Allows you to retrieve specific Attachment on Quote
+    # Retrieves a specific attachment from a specific quote using a unique attachment Id
     api_response = api_instance.get_quote_attachment_by_id(xero_tenant_id, quote_id, attachment_id, content_type)
     pprint(api_response)
 except ApiException as e:
@@ -10390,7 +10390,7 @@ Name | Type | Description  | Notes
 # **get_quote_attachments**
 > Attachments get_quote_attachments(xero_tenant_id, quote_id)
 
-Allows you to retrieve Attachments for Quotes
+Retrieves attachments for a specific quote
 
 ### Example
 
@@ -10419,9 +10419,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-quote_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for Quote object
+quote_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Quote object
 try:
-    # Allows you to retrieve Attachments for Quotes
+    # Retrieves attachments for a specific quote
     api_response = api_instance.get_quote_attachments(xero_tenant_id, quote_id)
     pprint(api_response)
 except ApiException as e:
@@ -10453,7 +10453,7 @@ Name | Type | Description  | Notes
 # **get_quote_history**
 > HistoryRecords get_quote_history(xero_tenant_id, quote_id)
 
-Allows you to retrieve a history records of an quote
+Retrieves history records of a specific quote
 
 ### Example
 
@@ -10482,9 +10482,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-quote_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for an Quote
+quote_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Quote
 try:
-    # Allows you to retrieve a history records of an quote
+    # Retrieves history records of a specific quote
     api_response = api_instance.get_quote_history(xero_tenant_id, quote_id)
     pprint(api_response)
 except ApiException as e:
@@ -10516,7 +10516,7 @@ Name | Type | Description  | Notes
 # **get_quotes**
 > Quotes get_quotes(xero_tenant_id, if_modified_since=if_modified_since, date_from=date_from, date_to=date_to, expiry_date_from=expiry_date_from, expiry_date_to=expiry_date_to, contact_id=contact_id, status=status, page=page, order=order, quote_number=quote_number)
 
-Allows you to retrieve any sales quotes
+Retrieves sales quotes
 
 ### Example
 
@@ -10550,13 +10550,13 @@ date_from = '2013-10-20' # date | Filter for quotes after a particular date (opt
 date_to = '2013-10-20' # date | Filter for quotes before a particular date (optional)
 expiry_date_from = '2013-10-20' # date | Filter for quotes expiring after a particular date (optional)
 expiry_date_to = '2013-10-20' # date | Filter for quotes before a particular date (optional)
-contact_id = '00000000-0000-0000-000-000000000000' # str | Filter for quotes belonging to a particular contact (optional)
+contact_id = '00000000-0000-0000-0000-000000000000' # str | Filter for quotes belonging to a particular contact (optional)
 status = 'DRAFT' # str | Filter for quotes of a particular Status (optional)
 page = 1 # int | e.g. page=1 – Up to 100 Quotes will be returned in a single API call with line items shown for each quote (optional)
 order = 'Status ASC' # str | Order by an any element (optional)
 quote_number = 'QU-0001' # str | Filter by quote number (e.g. GET https://.../Quotes?QuoteNumber=QU-0001) (optional)
 try:
-    # Allows you to retrieve any sales quotes
+    # Retrieves sales quotes
     api_response = api_instance.get_quotes(xero_tenant_id, if_modified_since=if_modified_since, date_from=date_from, date_to=date_to, expiry_date_from=expiry_date_from, expiry_date_to=expiry_date_to, contact_id=contact_id, status=status, page=page, order=order, quote_number=quote_number)
     pprint(api_response)
 except ApiException as e:
@@ -10597,7 +10597,7 @@ Name | Type | Description  | Notes
 # **get_receipt**
 > Receipts get_receipt(xero_tenant_id, receipt_id, unitdp=unitdp)
 
-Allows you to retrieve a specified draft expense claim receipts
+Retrieves a specific draft expense claim receipt by using a unique receipt Id
 
 ### Example
 
@@ -10626,10 +10626,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-receipt_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Receipt
+receipt_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Receipt
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
-    # Allows you to retrieve a specified draft expense claim receipts
+    # Retrieves a specific draft expense claim receipt by using a unique receipt Id
     api_response = api_instance.get_receipt(xero_tenant_id, receipt_id, unitdp=unitdp)
     pprint(api_response)
 except ApiException as e:
@@ -10662,7 +10662,7 @@ Name | Type | Description  | Notes
 # **get_receipt_attachment_by_file_name**
 > file get_receipt_attachment_by_file_name(xero_tenant_id, receipt_id, file_name, content_type)
 
-Allows you to retrieve Attachments on expense claim receipts by file name
+Retrieves a specific attachment from a specific expense claim receipts by file name
 
 ### Example
 
@@ -10691,11 +10691,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-receipt_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Receipt
+receipt_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Receipt
 file_name = 'xero-dev.jpg' # str | The name of the file being attached to the Receipt
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
-    # Allows you to retrieve Attachments on expense claim receipts by file name
+    # Retrieves a specific attachment from a specific expense claim receipts by file name
     api_response = api_instance.get_receipt_attachment_by_file_name(xero_tenant_id, receipt_id, file_name, content_type)
     pprint(api_response)
 except ApiException as e:
@@ -10729,7 +10729,7 @@ Name | Type | Description  | Notes
 # **get_receipt_attachment_by_id**
 > file get_receipt_attachment_by_id(xero_tenant_id, receipt_id, attachment_id, content_type)
 
-Allows you to retrieve Attachments on expense claim receipts by ID
+Retrieves a specific attachments from a specific expense claim receipts by using a unique attachment Id
 
 ### Example
 
@@ -10758,11 +10758,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-receipt_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Receipt
-attachment_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Attachment
+receipt_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Receipt
+attachment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Attachment
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
-    # Allows you to retrieve Attachments on expense claim receipts by ID
+    # Retrieves a specific attachments from a specific expense claim receipts by using a unique attachment Id
     api_response = api_instance.get_receipt_attachment_by_id(xero_tenant_id, receipt_id, attachment_id, content_type)
     pprint(api_response)
 except ApiException as e:
@@ -10796,7 +10796,7 @@ Name | Type | Description  | Notes
 # **get_receipt_attachments**
 > Attachments get_receipt_attachments(xero_tenant_id, receipt_id)
 
-Allows you to retrieve Attachments for expense claim receipts
+Retrieves attachments for a specific expense claim receipt
 
 ### Example
 
@@ -10825,9 +10825,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-receipt_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Receipt
+receipt_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Receipt
 try:
-    # Allows you to retrieve Attachments for expense claim receipts
+    # Retrieves attachments for a specific expense claim receipt
     api_response = api_instance.get_receipt_attachments(xero_tenant_id, receipt_id)
     pprint(api_response)
 except ApiException as e:
@@ -10859,7 +10859,7 @@ Name | Type | Description  | Notes
 # **get_receipt_history**
 > HistoryRecords get_receipt_history(xero_tenant_id, receipt_id)
 
-Allows you to retrieve a history records of an Receipt
+Retrieves a history record for a specific receipt
 
 ### Example
 
@@ -10888,9 +10888,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-receipt_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Receipt
+receipt_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Receipt
 try:
-    # Allows you to retrieve a history records of an Receipt
+    # Retrieves a history record for a specific receipt
     api_response = api_instance.get_receipt_history(xero_tenant_id, receipt_id)
     pprint(api_response)
 except ApiException as e:
@@ -10922,7 +10922,7 @@ Name | Type | Description  | Notes
 # **get_receipts**
 > Receipts get_receipts(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, unitdp=unitdp)
 
-Allows you to retrieve draft expense claim receipts for any user
+Retrieves draft expense claim receipts for any user
 
 ### Example
 
@@ -10956,7 +10956,7 @@ where = 'Status==\"DRAFT\"' # str | Filter by an any element (optional)
 order = 'ReceiptNumber ASC' # str | Order by an any element (optional)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
-    # Allows you to retrieve draft expense claim receipts for any user
+    # Retrieves draft expense claim receipts for any user
     api_response = api_instance.get_receipts(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, unitdp=unitdp)
     pprint(api_response)
 except ApiException as e:
@@ -10991,7 +10991,7 @@ Name | Type | Description  | Notes
 # **get_repeating_invoice**
 > RepeatingInvoices get_repeating_invoice(xero_tenant_id, repeating_invoice_id)
 
-Allows you to retrieve a specified repeating invoice
+Retrieves a specific repeating invoice by using a unique repeating invoice Id
 
 ### Example
 
@@ -11020,9 +11020,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-repeating_invoice_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Repeating Invoice
+repeating_invoice_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Repeating Invoice
 try:
-    # Allows you to retrieve a specified repeating invoice
+    # Retrieves a specific repeating invoice by using a unique repeating invoice Id
     api_response = api_instance.get_repeating_invoice(xero_tenant_id, repeating_invoice_id)
     pprint(api_response)
 except ApiException as e:
@@ -11054,7 +11054,7 @@ Name | Type | Description  | Notes
 # **get_repeating_invoice_attachment_by_file_name**
 > file get_repeating_invoice_attachment_by_file_name(xero_tenant_id, repeating_invoice_id, file_name, content_type)
 
-Allows you to retrieve specified attachment on repeating invoices by file name
+Retrieves a specific attachment from a specific repeating invoices by file name
 
 ### Example
 
@@ -11083,11 +11083,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-repeating_invoice_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Repeating Invoice
+repeating_invoice_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Repeating Invoice
 file_name = 'xero-dev.jpg' # str | The name of the file being attached to a Repeating Invoice
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
-    # Allows you to retrieve specified attachment on repeating invoices by file name
+    # Retrieves a specific attachment from a specific repeating invoices by file name
     api_response = api_instance.get_repeating_invoice_attachment_by_file_name(xero_tenant_id, repeating_invoice_id, file_name, content_type)
     pprint(api_response)
 except ApiException as e:
@@ -11121,7 +11121,7 @@ Name | Type | Description  | Notes
 # **get_repeating_invoice_attachment_by_id**
 > file get_repeating_invoice_attachment_by_id(xero_tenant_id, repeating_invoice_id, attachment_id, content_type)
 
-Allows you to retrieve a specified Attachments on repeating invoices
+Retrieves a specific attachment from a specific repeating invoice
 
 ### Example
 
@@ -11150,11 +11150,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-repeating_invoice_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Repeating Invoice
-attachment_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Attachment
+repeating_invoice_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Repeating Invoice
+attachment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Attachment
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
-    # Allows you to retrieve a specified Attachments on repeating invoices
+    # Retrieves a specific attachment from a specific repeating invoice
     api_response = api_instance.get_repeating_invoice_attachment_by_id(xero_tenant_id, repeating_invoice_id, attachment_id, content_type)
     pprint(api_response)
 except ApiException as e:
@@ -11188,7 +11188,7 @@ Name | Type | Description  | Notes
 # **get_repeating_invoice_attachments**
 > Attachments get_repeating_invoice_attachments(xero_tenant_id, repeating_invoice_id)
 
-Allows you to retrieve Attachments on repeating invoice
+Retrieves attachments from a specific repeating invoice
 
 ### Example
 
@@ -11217,9 +11217,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-repeating_invoice_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Repeating Invoice
+repeating_invoice_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Repeating Invoice
 try:
-    # Allows you to retrieve Attachments on repeating invoice
+    # Retrieves attachments from a specific repeating invoice
     api_response = api_instance.get_repeating_invoice_attachments(xero_tenant_id, repeating_invoice_id)
     pprint(api_response)
 except ApiException as e:
@@ -11251,7 +11251,7 @@ Name | Type | Description  | Notes
 # **get_repeating_invoice_history**
 > HistoryRecords get_repeating_invoice_history(xero_tenant_id, repeating_invoice_id)
 
-Allows you to retrieve history for a repeating invoice
+Retrieves history record for a specific repeating invoice
 
 ### Example
 
@@ -11280,9 +11280,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-repeating_invoice_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Repeating Invoice
+repeating_invoice_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Repeating Invoice
 try:
-    # Allows you to retrieve history for a repeating invoice
+    # Retrieves history record for a specific repeating invoice
     api_response = api_instance.get_repeating_invoice_history(xero_tenant_id, repeating_invoice_id)
     pprint(api_response)
 except ApiException as e:
@@ -11314,7 +11314,7 @@ Name | Type | Description  | Notes
 # **get_repeating_invoices**
 > RepeatingInvoices get_repeating_invoices(xero_tenant_id, where=where, order=order)
 
-Allows you to retrieve any repeating invoices
+Retrieves repeating invoices
 
 ### Example
 
@@ -11346,7 +11346,7 @@ xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 where = 'Status==\"DRAFT\"' # str | Filter by an any element (optional)
 order = 'Total ASC' # str | Order by an any element (optional)
 try:
-    # Allows you to retrieve any repeating invoices
+    # Retrieves repeating invoices
     api_response = api_instance.get_repeating_invoices(xero_tenant_id, where=where, order=order)
     pprint(api_response)
 except ApiException as e:
@@ -11379,7 +11379,7 @@ Name | Type | Description  | Notes
 # **get_report_aged_payables_by_contact**
 > ReportWithRows get_report_aged_payables_by_contact(xero_tenant_id, contact_id, date=date, from_date=from_date, to_date=to_date)
 
-Allows you to retrieve report for AgedPayablesByContact
+Retrieves report for aged payables by contact
 
 ### Example
 
@@ -11408,12 +11408,12 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-contact_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Contact
+contact_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Contact
 date = '2013-10-20' # date | The date of the Aged Payables By Contact report (optional)
 from_date = '2013-10-20' # date | The from date of the Aged Payables By Contact report (optional)
 to_date = '2013-10-20' # date | The to date of the Aged Payables By Contact report (optional)
 try:
-    # Allows you to retrieve report for AgedPayablesByContact
+    # Retrieves report for aged payables by contact
     api_response = api_instance.get_report_aged_payables_by_contact(xero_tenant_id, contact_id, date=date, from_date=from_date, to_date=to_date)
     pprint(api_response)
 except ApiException as e:
@@ -11448,7 +11448,7 @@ Name | Type | Description  | Notes
 # **get_report_aged_receivables_by_contact**
 > ReportWithRows get_report_aged_receivables_by_contact(xero_tenant_id, contact_id, date=date, from_date=from_date, to_date=to_date)
 
-Allows you to retrieve report for AgedReceivablesByContact
+Retrieves report for aged receivables by contact
 
 ### Example
 
@@ -11477,12 +11477,12 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-contact_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Contact
+contact_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Contact
 date = '2013-10-20' # date | The date of the Aged Receivables By Contact report (optional)
 from_date = '2013-10-20' # date | The from date of the Aged Receivables By Contact report (optional)
 to_date = '2013-10-20' # date | The to date of the Aged Receivables By Contact report (optional)
 try:
-    # Allows you to retrieve report for AgedReceivablesByContact
+    # Retrieves report for aged receivables by contact
     api_response = api_instance.get_report_aged_receivables_by_contact(xero_tenant_id, contact_id, date=date, from_date=from_date, to_date=to_date)
     pprint(api_response)
 except ApiException as e:
@@ -11517,7 +11517,7 @@ Name | Type | Description  | Notes
 # **get_report_ba_sor_gst**
 > ReportWithRows get_report_ba_sor_gst(xero_tenant_id, report_id)
 
-Allows you to retrieve report for BAS only valid for AU orgs
+Retrieves a specific report for BAS using a unique report Id (only valid for AU orgs)
 
 ### Example
 
@@ -11546,9 +11546,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-report_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Report
+report_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Report
 try:
-    # Allows you to retrieve report for BAS only valid for AU orgs
+    # Retrieves a specific report for BAS using a unique report Id (only valid for AU orgs)
     api_response = api_instance.get_report_ba_sor_gst(xero_tenant_id, report_id)
     pprint(api_response)
 except ApiException as e:
@@ -11580,7 +11580,7 @@ Name | Type | Description  | Notes
 # **get_report_ba_sor_gst_list**
 > ReportWithRows get_report_ba_sor_gst_list(xero_tenant_id)
 
-Allows you to retrieve report for BAS only valid for AU orgs
+Retrieves report for BAS (only valid for AU orgs)
 
 ### Example
 
@@ -11610,7 +11610,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 try:
-    # Allows you to retrieve report for BAS only valid for AU orgs
+    # Retrieves report for BAS (only valid for AU orgs)
     api_response = api_instance.get_report_ba_sor_gst_list(xero_tenant_id)
     pprint(api_response)
 except ApiException as e:
@@ -11641,7 +11641,7 @@ Name | Type | Description  | Notes
 # **get_report_balance_sheet**
 > ReportWithRows get_report_balance_sheet(xero_tenant_id, date=date, periods=periods, timeframe=timeframe, tracking_option_id1=tracking_option_id1, tracking_option_id2=tracking_option_id2, standard_layout=standard_layout, payments_only=payments_only)
 
-Allows you to retrieve report for BalanceSheet
+Retrieves report for balancesheet
 
 ### Example
 
@@ -11673,12 +11673,12 @@ xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 date = '2019-11-01' # date | The date of the Balance Sheet report (optional)
 periods = 3 # int | The number of periods for the Balance Sheet report (optional)
 timeframe = 'MONTH' # str | The period size to compare to (MONTH, QUARTER, YEAR) (optional)
-tracking_option_id1 = '00000000-0000-0000-000-000000000000' # str | The tracking option 1 for the Balance Sheet report (optional)
-tracking_option_id2 = '00000000-0000-0000-000-000000000000' # str | The tracking option 2 for the Balance Sheet report (optional)
+tracking_option_id1 = '00000000-0000-0000-0000-000000000000' # str | The tracking option 1 for the Balance Sheet report (optional)
+tracking_option_id2 = '00000000-0000-0000-0000-000000000000' # str | The tracking option 2 for the Balance Sheet report (optional)
 standard_layout = true # bool | The standard layout boolean for the Balance Sheet report (optional)
 payments_only = false # bool | return a cash basis for the Balance Sheet report (optional)
 try:
-    # Allows you to retrieve report for BalanceSheet
+    # Retrieves report for balancesheet
     api_response = api_instance.get_report_balance_sheet(xero_tenant_id, date=date, periods=periods, timeframe=timeframe, tracking_option_id1=tracking_option_id1, tracking_option_id2=tracking_option_id2, standard_layout=standard_layout, payments_only=payments_only)
     pprint(api_response)
 except ApiException as e:
@@ -11716,7 +11716,7 @@ Name | Type | Description  | Notes
 # **get_report_bank_summary**
 > ReportWithRows get_report_bank_summary(xero_tenant_id, from_date=from_date, to_date=to_date)
 
-Allows you to retrieve report for BankSummary
+Retrieves report for bank summary
 
 ### Example
 
@@ -11748,7 +11748,7 @@ xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 from_date = '2019-11-01' # date | The from date for the Bank Summary report e.g. 2018-03-31 (optional)
 to_date = '2019-11-30' # date | The to date for the Bank Summary report e.g. 2018-03-31 (optional)
 try:
-    # Allows you to retrieve report for BankSummary
+    # Retrieves report for bank summary
     api_response = api_instance.get_report_bank_summary(xero_tenant_id, from_date=from_date, to_date=to_date)
     pprint(api_response)
 except ApiException as e:
@@ -11781,7 +11781,7 @@ Name | Type | Description  | Notes
 # **get_report_budget_summary**
 > ReportWithRows get_report_budget_summary(xero_tenant_id, date=date, period=period, timeframe=timeframe)
 
-Allows you to retrieve report for Budget Summary
+Retrieves report for budget summary
 
 ### Example
 
@@ -11814,7 +11814,7 @@ date = '2019-03-31' # date | The date for the Bank Summary report e.g. 2018-03-3
 period = 2 # int | The number of periods to compare (integer between 1 and 12) (optional)
 timeframe = 3 # int | The period size to compare to (1=month, 3=quarter, 12=year) (optional)
 try:
-    # Allows you to retrieve report for Budget Summary
+    # Retrieves report for budget summary
     api_response = api_instance.get_report_budget_summary(xero_tenant_id, date=date, period=period, timeframe=timeframe)
     pprint(api_response)
 except ApiException as e:
@@ -11848,7 +11848,7 @@ Name | Type | Description  | Notes
 # **get_report_executive_summary**
 > ReportWithRows get_report_executive_summary(xero_tenant_id, date=date)
 
-Allows you to retrieve report for ExecutiveSummary
+Retrieves report for executive summary
 
 ### Example
 
@@ -11879,7 +11879,7 @@ api_instance = AccountingApi(api_client)
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 date = '2019-03-31' # date | The date for the Bank Summary report e.g. 2018-03-31 (optional)
 try:
-    # Allows you to retrieve report for ExecutiveSummary
+    # Retrieves report for executive summary
     api_response = api_instance.get_report_executive_summary(xero_tenant_id, date=date)
     pprint(api_response)
 except ApiException as e:
@@ -11911,7 +11911,7 @@ Name | Type | Description  | Notes
 # **get_report_profit_and_loss**
 > ReportWithRows get_report_profit_and_loss(xero_tenant_id, from_date=from_date, to_date=to_date, periods=periods, timeframe=timeframe, tracking_category_id=tracking_category_id, tracking_category_id2=tracking_category_id2, tracking_option_id=tracking_option_id, tracking_option_id2=tracking_option_id2, standard_layout=standard_layout, payments_only=payments_only)
 
-Allows you to retrieve report for ProfitAndLoss
+Retrieves report for profit and loss
 
 ### Example
 
@@ -11944,14 +11944,14 @@ from_date = '2019-03-01' # date | The from date for the ProfitAndLoss report e.g
 to_date = '2019-03-31' # date | The to date for the ProfitAndLoss report e.g. 2018-03-31 (optional)
 periods = 3 # int | The number of periods to compare (integer between 1 and 12) (optional)
 timeframe = 'MONTH' # str | The period size to compare to (MONTH, QUARTER, YEAR) (optional)
-tracking_category_id = '00000000-0000-0000-000-000000000000' # str | The trackingCategory 1 for the ProfitAndLoss report (optional)
-tracking_category_id2 = '00000000-0000-0000-000-000000000000' # str | The trackingCategory 2 for the ProfitAndLoss report (optional)
-tracking_option_id = '00000000-0000-0000-000-000000000000' # str | The tracking option 1 for the ProfitAndLoss report (optional)
-tracking_option_id2 = '00000000-0000-0000-000-000000000000' # str | The tracking option 2 for the ProfitAndLoss report (optional)
+tracking_category_id = '00000000-0000-0000-0000-000000000000' # str | The trackingCategory 1 for the ProfitAndLoss report (optional)
+tracking_category_id2 = '00000000-0000-0000-0000-000000000000' # str | The trackingCategory 2 for the ProfitAndLoss report (optional)
+tracking_option_id = '00000000-0000-0000-0000-000000000000' # str | The tracking option 1 for the ProfitAndLoss report (optional)
+tracking_option_id2 = '00000000-0000-0000-0000-000000000000' # str | The tracking option 2 for the ProfitAndLoss report (optional)
 standard_layout = true # bool | Return the standard layout for the ProfitAndLoss report (optional)
 payments_only = false # bool | Return cash only basis for the ProfitAndLoss report (optional)
 try:
-    # Allows you to retrieve report for ProfitAndLoss
+    # Retrieves report for profit and loss
     api_response = api_instance.get_report_profit_and_loss(xero_tenant_id, from_date=from_date, to_date=to_date, periods=periods, timeframe=timeframe, tracking_category_id=tracking_category_id, tracking_category_id2=tracking_category_id2, tracking_option_id=tracking_option_id, tracking_option_id2=tracking_option_id2, standard_layout=standard_layout, payments_only=payments_only)
     pprint(api_response)
 except ApiException as e:
@@ -11992,7 +11992,7 @@ Name | Type | Description  | Notes
 # **get_report_ten_ninety_nine**
 > Reports get_report_ten_ninety_nine(xero_tenant_id, report_year=report_year)
 
-Allows you to retrieve report for TenNinetyNine
+Retrieve reports for 1099
 
 ### Example
 
@@ -12023,7 +12023,7 @@ api_instance = AccountingApi(api_client)
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 report_year = '2019' # str | The year of the 1099 report (optional)
 try:
-    # Allows you to retrieve report for TenNinetyNine
+    # Retrieve reports for 1099
     api_response = api_instance.get_report_ten_ninety_nine(xero_tenant_id, report_year=report_year)
     pprint(api_response)
 except ApiException as e:
@@ -12055,7 +12055,7 @@ Name | Type | Description  | Notes
 # **get_report_trial_balance**
 > ReportWithRows get_report_trial_balance(xero_tenant_id, date=date, payments_only=payments_only)
 
-Allows you to retrieve report for TrialBalance
+Retrieves report for trial balance
 
 ### Example
 
@@ -12087,7 +12087,7 @@ xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 date = '2019-10-31' # date | The date for the Trial Balance report e.g. 2018-03-31 (optional)
 payments_only = true # bool | Return cash only basis for the Trial Balance report (optional)
 try:
-    # Allows you to retrieve report for TrialBalance
+    # Retrieves report for trial balance
     api_response = api_instance.get_report_trial_balance(xero_tenant_id, date=date, payments_only=payments_only)
     pprint(api_response)
 except ApiException as e:
@@ -12120,7 +12120,7 @@ Name | Type | Description  | Notes
 # **get_tax_rates**
 > TaxRates get_tax_rates(xero_tenant_id, where=where, order=order, tax_type=tax_type)
 
-Allows you to retrieve Tax Rates
+Retrieves tax rates
 
 ### Example
 
@@ -12153,7 +12153,7 @@ where = 'Status==\"ACTIVE\"' # str | Filter by an any element (optional)
 order = 'Name ASC' # str | Order by an any element (optional)
 tax_type = 'INPUT' # str | Filter by tax type (optional)
 try:
-    # Allows you to retrieve Tax Rates
+    # Retrieves tax rates
     api_response = api_instance.get_tax_rates(xero_tenant_id, where=where, order=order, tax_type=tax_type)
     pprint(api_response)
 except ApiException as e:
@@ -12187,7 +12187,7 @@ Name | Type | Description  | Notes
 # **get_tracking_categories**
 > TrackingCategories get_tracking_categories(xero_tenant_id, where=where, order=order, include_archived=include_archived)
 
-Allows you to retrieve tracking categories and options
+Retrieves tracking categories and options
 
 ### Example
 
@@ -12220,7 +12220,7 @@ where = 'Status==\"ACTIVE\"' # str | Filter by an any element (optional)
 order = 'Name ASC' # str | Order by an any element (optional)
 include_archived = True # bool | e.g. includeArchived=true - Categories and options with a status of ARCHIVED will be included in the response (optional)
 try:
-    # Allows you to retrieve tracking categories and options
+    # Retrieves tracking categories and options
     api_response = api_instance.get_tracking_categories(xero_tenant_id, where=where, order=order, include_archived=include_archived)
     pprint(api_response)
 except ApiException as e:
@@ -12254,7 +12254,7 @@ Name | Type | Description  | Notes
 # **get_tracking_category**
 > TrackingCategories get_tracking_category(xero_tenant_id, tracking_category_id)
 
-Allows you to retrieve tracking categories and options for specified category
+Retrieves specific tracking categories and options using a unique tracking category Id
 
 ### Example
 
@@ -12283,9 +12283,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-tracking_category_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a TrackingCategory
+tracking_category_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a TrackingCategory
 try:
-    # Allows you to retrieve tracking categories and options for specified category
+    # Retrieves specific tracking categories and options using a unique tracking category Id
     api_response = api_instance.get_tracking_category(xero_tenant_id, tracking_category_id)
     pprint(api_response)
 except ApiException as e:
@@ -12317,7 +12317,7 @@ Name | Type | Description  | Notes
 # **get_user**
 > Users get_user(xero_tenant_id, user_id)
 
-Allows you to retrieve a specified user
+Retrieves a specific user
 
 ### Example
 
@@ -12346,9 +12346,9 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-user_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a User
+user_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a User
 try:
-    # Allows you to retrieve a specified user
+    # Retrieves a specific user
     api_response = api_instance.get_user(xero_tenant_id, user_id)
     pprint(api_response)
 except ApiException as e:
@@ -12380,7 +12380,7 @@ Name | Type | Description  | Notes
 # **get_users**
 > Users get_users(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order)
 
-Allows you to retrieve users
+Retrieves users
 
 ### Example
 
@@ -12413,7 +12413,7 @@ if_modified_since = '2020-02-06T12:17:43.202-08:00' # datetime | Only records cr
 where = 'IsSubscriber==true' # str | Filter by an any element (optional)
 order = 'LastName ASC' # str | Order by an any element (optional)
 try:
-    # Allows you to retrieve users
+    # Retrieves users
     api_response = api_instance.get_users(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order)
     pprint(api_response)
 except ApiException as e:
@@ -12447,7 +12447,7 @@ Name | Type | Description  | Notes
 # **post_setup**
 > ImportSummaryObject post_setup(xero_tenant_id, setup)
 
-Allows you to set the chart of accounts, the conversion date and conversion balances
+Sets the chart of accounts, the conversion date and conversion balances
 
 ### Example
 
@@ -12478,7 +12478,7 @@ api_instance = AccountingApi(api_client)
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 setup = { "ConversionDate": {}, "ConversionBalances": [], "Accounts": [ { "Code": "200", "Name": "Sales", "Type": "SALES", "ReportingCode": "REV.TRA.GOO" }, { "Code": "400", "Name": "Advertising", "Type": "OVERHEADS", "ReportingCode": "EXP" }, { "Code": "610", "Name": "Accounts Receivable", "Type": "CURRENT", "SystemAccount": "DEBTORS", "ReportingCode": "ASS.CUR.REC.TRA" }, { "Code": "800", "Name": "Accounts Payable", "Type": "CURRLIAB", "SystemAccount": "CREDITORS", "ReportingCode": "LIA.CUR.PAY" } ] } # Setup | Object including an accounts array, a conversion balances array and a conversion date object in body of request
 try:
-    # Allows you to set the chart of accounts, the conversion date and conversion balances
+    # Sets the chart of accounts, the conversion date and conversion balances
     api_response = api_instance.post_setup(xero_tenant_id, setup)
     pprint(api_response)
 except ApiException as e:
@@ -12510,7 +12510,7 @@ Name | Type | Description  | Notes
 # **update_account**
 > Accounts update_account(xero_tenant_id, account_id, accounts)
 
-Allows you to update a chart of accounts
+Updates a chart of accounts
 
 ### Example
 
@@ -12539,10 +12539,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-account_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for retrieving single object
+account_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for retrieving single object
 accounts = { "Accounts":[ { "Code":"123456", "Name":"BarFoo", "AccountID":"99ce6032-0678-4aa0-8148-240c75fee33a", "Type":"EXPENSE", "Description":"GoodBye World", "TaxType":"INPUT", "EnablePaymentsToAccount":false, "ShowInExpenseClaims":false, "Class":"EXPENSE", "ReportingCode":"EXP", "ReportingCodeName":"Expense", "UpdatedDateUTC":"2019-02-21T16:29:47.96-08:00" } ] } # Accounts | Request of type Accounts array with one Account
 try:
-    # Allows you to update a chart of accounts
+    # Updates a chart of accounts
     api_response = api_instance.update_account(xero_tenant_id, account_id, accounts)
     pprint(api_response)
 except ApiException as e:
@@ -12575,7 +12575,7 @@ Name | Type | Description  | Notes
 # **update_account_attachment_by_file_name**
 > Attachments update_account_attachment_by_file_name(xero_tenant_id, account_id, file_name, body)
 
-Allows you to update Attachment on Account by Filename
+Updates attachment on a specific account by filename
 
 ### Example
 
@@ -12604,11 +12604,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-account_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for Account object
+account_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Account object
 file_name = 'xero-dev.jpg' # str | Name of the attachment
 body = 'body_example' # str | Byte array of file in body of request
 try:
-    # Allows you to update Attachment on Account by Filename
+    # Updates attachment on a specific account by filename
     api_response = api_instance.update_account_attachment_by_file_name(xero_tenant_id, account_id, file_name, body)
     pprint(api_response)
 except ApiException as e:
@@ -12642,7 +12642,7 @@ Name | Type | Description  | Notes
 # **update_bank_transaction**
 > BankTransactions update_bank_transaction(xero_tenant_id, bank_transaction_id, bank_transactions, unitdp=unitdp)
 
-Allows you to update a single spend or receive money transaction
+Updates a single spent or received money transaction
 
 ### Example
 
@@ -12671,11 +12671,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-bank_transaction_id = '00000000-0000-0000-000-000000000000' # str | Xero generated unique identifier for a bank transaction
-bank_transactions = { "BankTransactions": [ { "Type": "SPEND", "Contact": { "ContactID": "00000000-0000-0000-000-000000000000", "ContactStatus": "ACTIVE", "Name": "Buzz Lightyear", "FirstName": "Buzz", "LastName": "Lightyear", "EmailAddress": "buzz.Lightyear@email.com", "ContactPersons": [], "BankAccountDetails": "", "Addresses": [ { "AddressType": "STREET", "City": "", "Region": "", "PostalCode": "", "Country": "" }, { "AddressType": "POBOX", "AddressLine1": "", "AddressLine2": "", "AddressLine3": "", "AddressLine4": "", "City": "Palo Alto", "Region": "CA", "PostalCode": "94020", "Country": "United States" } ], "Phones": [ { "PhoneType": "DEFAULT", "PhoneNumber": "847-1294", "PhoneAreaCode": "(626)", "PhoneCountryCode": "" }, { "PhoneType": "DDI", "PhoneNumber": "", "PhoneAreaCode": "", "PhoneCountryCode": "" }, { "PhoneType": "FAX", "PhoneNumber": "", "PhoneAreaCode": "", "PhoneCountryCode": "" }, { "PhoneType": "MOBILE", "PhoneNumber": "", "PhoneAreaCode": "", "PhoneCountryCode": "" } ], "UpdatedDateUTC": "2017-08-21T13:49:04.227-07:00", "ContactGroups": [] }, "Lineitems": [], "BankAccount": { "Code": "088", "Name": "Business Wells Fargo", "AccountID": "00000000-0000-0000-000-000000000000" }, "IsReconciled": false, "Date": "2019-02-25", "Reference": "You just updated", "CurrencyCode": "USD", "CurrencyRate": 1, "Status": "AUTHORISED", "LineAmountTypes": "Inclusive", "TotalTax": 1.74, "BankTransactionID": "00000000-0000-0000-000-000000000000", "UpdatedDateUTC": "2019-02-26T12:39:27.813-08:00" } ] } # BankTransactions | 
+bank_transaction_id = '00000000-0000-0000-0000-000000000000' # str | Xero generated unique identifier for a bank transaction
+bank_transactions = { "BankTransactions": [ { "Type": "SPEND", "Contact": { "ContactID": "00000000-0000-0000-0000-000000000000", "ContactStatus": "ACTIVE", "Name": "Buzz Lightyear", "FirstName": "Buzz", "LastName": "Lightyear", "EmailAddress": "buzz.Lightyear@email.com", "ContactPersons": [], "BankAccountDetails": "", "Addresses": [ { "AddressType": "STREET", "City": "", "Region": "", "PostalCode": "", "Country": "" }, { "AddressType": "POBOX", "AddressLine1": "", "AddressLine2": "", "AddressLine3": "", "AddressLine4": "", "City": "Palo Alto", "Region": "CA", "PostalCode": "94020", "Country": "United States" } ], "Phones": [ { "PhoneType": "DEFAULT", "PhoneNumber": "847-1294", "PhoneAreaCode": "(626)", "PhoneCountryCode": "" }, { "PhoneType": "DDI", "PhoneNumber": "", "PhoneAreaCode": "", "PhoneCountryCode": "" }, { "PhoneType": "FAX", "PhoneNumber": "", "PhoneAreaCode": "", "PhoneCountryCode": "" }, { "PhoneType": "MOBILE", "PhoneNumber": "", "PhoneAreaCode": "", "PhoneCountryCode": "" } ], "UpdatedDateUTC": "2017-08-21T13:49:04.227-07:00", "ContactGroups": [] }, "Lineitems": [], "BankAccount": { "Code": "088", "Name": "Business Wells Fargo", "AccountID": "00000000-0000-0000-0000-000000000000" }, "IsReconciled": false, "Date": "2019-02-25", "Reference": "You just updated", "CurrencyCode": "USD", "CurrencyRate": 1, "Status": "AUTHORISED", "LineAmountTypes": "Inclusive", "TotalTax": 1.74, "BankTransactionID": "00000000-0000-0000-0000-000000000000", "UpdatedDateUTC": "2019-02-26T12:39:27.813-08:00" } ] } # BankTransactions | 
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
-    # Allows you to update a single spend or receive money transaction
+    # Updates a single spent or received money transaction
     api_response = api_instance.update_bank_transaction(xero_tenant_id, bank_transaction_id, bank_transactions, unitdp=unitdp)
     pprint(api_response)
 except ApiException as e:
@@ -12709,7 +12709,7 @@ Name | Type | Description  | Notes
 # **update_bank_transaction_attachment_by_file_name**
 > Attachments update_bank_transaction_attachment_by_file_name(xero_tenant_id, bank_transaction_id, file_name, body)
 
-Allows you to update an Attachment on BankTransaction by Filename
+Updates a specific attachment from a specific bank transaction by filename
 
 ### Example
 
@@ -12738,11 +12738,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-bank_transaction_id = '00000000-0000-0000-000-000000000000' # str | Xero generated unique identifier for a bank transaction
+bank_transaction_id = '00000000-0000-0000-0000-000000000000' # str | Xero generated unique identifier for a bank transaction
 file_name = 'xero-dev.jpg' # str | The name of the file being attached
 body = 'body_example' # str | Byte array of file in body of request
 try:
-    # Allows you to update an Attachment on BankTransaction by Filename
+    # Updates a specific attachment from a specific bank transaction by filename
     api_response = api_instance.update_bank_transaction_attachment_by_file_name(xero_tenant_id, bank_transaction_id, file_name, body)
     pprint(api_response)
 except ApiException as e:
@@ -12805,7 +12805,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-bank_transfer_id = '00000000-0000-0000-000-000000000000' # str | Xero generated unique identifier for a bank transfer
+bank_transfer_id = '00000000-0000-0000-0000-000000000000' # str | Xero generated unique identifier for a bank transfer
 file_name = 'xero-dev.jpg' # str | The name of the file being attached to a Bank Transfer
 body = 'body_example' # str | Byte array of file in body of request
 try:
@@ -12842,7 +12842,7 @@ Name | Type | Description  | Notes
 # **update_contact**
 > Contacts update_contact(xero_tenant_id, contact_id, contacts)
 
-Allows you to update one contact in a Xero organisation
+Updates a specific contact in a Xero organisation
 
 ### Example
 
@@ -12871,10 +12871,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-contact_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Contact
-contacts = { "Contacts": [{ "ContactID": "00000000-0000-0000-000-000000000000", "Name": "Thanos" }]} # Contacts | an array of Contacts containing single Contact object with properties to update
+contact_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Contact
+contacts = { "Contacts": [{ "ContactID": "00000000-0000-0000-0000-000000000000", "Name": "Thanos" }]} # Contacts | an array of Contacts containing single Contact object with properties to update
 try:
-    # Allows you to update one contact in a Xero organisation
+    # Updates a specific contact in a Xero organisation
     api_response = api_instance.update_contact(xero_tenant_id, contact_id, contacts)
     pprint(api_response)
 except ApiException as e:
@@ -12936,7 +12936,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-contact_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Contact
+contact_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Contact
 file_name = 'xero-dev.jpg' # str | Name for the file you are attaching
 body = 'body_example' # str | Byte array of file in body of request
 try:
@@ -12973,7 +12973,7 @@ Name | Type | Description  | Notes
 # **update_contact_group**
 > ContactGroups update_contact_group(xero_tenant_id, contact_group_id, contact_groups)
 
-Allows you to update a Contact Group
+Updates a specific contact group
 
 ### Example
 
@@ -13002,10 +13002,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-contact_group_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Contact Group
+contact_group_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Contact Group
 contact_groups = { "ContactGroups":[ { "Name":"Suppliers" } ] } # ContactGroups | an array of Contact groups with Name of specific group to update
 try:
-    # Allows you to update a Contact Group
+    # Updates a specific contact group
     api_response = api_instance.update_contact_group(xero_tenant_id, contact_group_id, contact_groups)
     pprint(api_response)
 except ApiException as e:
@@ -13038,7 +13038,7 @@ Name | Type | Description  | Notes
 # **update_credit_note**
 > CreditNotes update_credit_note(xero_tenant_id, credit_note_id, credit_notes, unitdp=unitdp)
 
-Allows you to update a specific credit note
+Updates a specific credit note
 
 ### Example
 
@@ -13067,11 +13067,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-credit_note_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Credit Note
+credit_note_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Credit Note
 credit_notes = { "CreditNotes": [ { "Type": "ACCPAYCREDIT", "Contact": { "ContactID": "430fa14a-f945-44d3-9f97-5df5e28441b8" }, "Date": "2019-01-05", "Status": "AUTHORISED", "Reference": "HelloWorld", "LineItems": [ { "Description": "Foobar", "Quantity": 2, "UnitAmount": 20, "AccountCode": "400" } ] } ] } # CreditNotes | an array of Credit Notes containing credit note details to update
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
-    # Allows you to update a specific credit note
+    # Updates a specific credit note
     api_response = api_instance.update_credit_note(xero_tenant_id, credit_note_id, credit_notes, unitdp=unitdp)
     pprint(api_response)
 except ApiException as e:
@@ -13105,7 +13105,7 @@ Name | Type | Description  | Notes
 # **update_credit_note_attachment_by_file_name**
 > Attachments update_credit_note_attachment_by_file_name(xero_tenant_id, credit_note_id, file_name, body)
 
-Allows you to update Attachments on CreditNote by file name
+Updates attachments on a specific credit note by file name
 
 ### Example
 
@@ -13134,11 +13134,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-credit_note_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Credit Note
+credit_note_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Credit Note
 file_name = 'xero-dev.jpg' # str | Name of the file you are attaching to Credit Note
 body = 'body_example' # str | Byte array of file in body of request
 try:
-    # Allows you to update Attachments on CreditNote by file name
+    # Updates attachments on a specific credit note by file name
     api_response = api_instance.update_credit_note_attachment_by_file_name(xero_tenant_id, credit_note_id, file_name, body)
     pprint(api_response)
 except ApiException as e:
@@ -13172,7 +13172,7 @@ Name | Type | Description  | Notes
 # **update_expense_claim**
 > ExpenseClaims update_expense_claim(xero_tenant_id, expense_claim_id, expense_claims)
 
-Allows you to update specified expense claims
+Updates a specific expense claims
 
 ### Example
 
@@ -13201,10 +13201,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-expense_claim_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a ExpenseClaim
+expense_claim_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a ExpenseClaim
 expense_claims = { "ExpenseClaims": [ { "Status": "SUBMITTED", "User": { "UserID": "d1164823-0ac1-41ad-987b-b4e30fe0b273" }, "Receipts": [ { "Lineitems": [], "ReceiptID": "dc1c7f6d-0a4c-402f-acac-551d62ce5816" } ] } ] } # ExpenseClaims | 
 try:
-    # Allows you to update specified expense claims
+    # Updates a specific expense claims
     api_response = api_instance.update_expense_claim(xero_tenant_id, expense_claim_id, expense_claims)
     pprint(api_response)
 except ApiException as e:
@@ -13237,7 +13237,7 @@ Name | Type | Description  | Notes
 # **update_invoice**
 > Invoices update_invoice(xero_tenant_id, invoice_id, invoices, unitdp=unitdp)
 
-Allows you to update a specified sales invoices or purchase bills
+Updates a specific sales invoices or purchase bills
 
 ### Example
 
@@ -13266,11 +13266,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-invoice_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for an Invoice
-invoices = { "Invoices": [{ Reference: "May the force be with you", "InvoiceID": "00000000-0000-0000-000-000000000000", "LineItems": [], "Contact": {}, "Type": "ACCPAY" }]} # Invoices | 
+invoice_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Invoice
+invoices = { "Invoices": [{ Reference: "May the force be with you", "InvoiceID": "00000000-0000-0000-0000-000000000000", "LineItems": [], "Contact": {}, "Type": "ACCPAY" }]} # Invoices | 
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
-    # Allows you to update a specified sales invoices or purchase bills
+    # Updates a specific sales invoices or purchase bills
     api_response = api_instance.update_invoice(xero_tenant_id, invoice_id, invoices, unitdp=unitdp)
     pprint(api_response)
 except ApiException as e:
@@ -13304,7 +13304,7 @@ Name | Type | Description  | Notes
 # **update_invoice_attachment_by_file_name**
 > Attachments update_invoice_attachment_by_file_name(xero_tenant_id, invoice_id, file_name, body)
 
-Allows you to update Attachment on invoices or purchase bills by it's filename
+Updates an attachment from a specific invoices or purchase bill by filename
 
 ### Example
 
@@ -13333,11 +13333,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-invoice_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for an Invoice
+invoice_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Invoice
 file_name = 'xero-dev.jpg' # str | Name of the file you are attaching
 body = 'body_example' # str | Byte array of file in body of request
 try:
-    # Allows you to update Attachment on invoices or purchase bills by it's filename
+    # Updates an attachment from a specific invoices or purchase bill by filename
     api_response = api_instance.update_invoice_attachment_by_file_name(xero_tenant_id, invoice_id, file_name, body)
     pprint(api_response)
 except ApiException as e:
@@ -13371,7 +13371,7 @@ Name | Type | Description  | Notes
 # **update_item**
 > Items update_item(xero_tenant_id, item_id, items, unitdp=unitdp)
 
-Allows you to update a specified item
+Updates a specific item
 
 ### Example
 
@@ -13400,11 +13400,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-item_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for an Item
+item_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Item
 items = { "Items": [ { "Code": "ItemCode123", "Description": "Description 123" } ] } # Items | 
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
-    # Allows you to update a specified item
+    # Updates a specific item
     api_response = api_instance.update_item(xero_tenant_id, item_id, items, unitdp=unitdp)
     pprint(api_response)
 except ApiException as e:
@@ -13438,7 +13438,7 @@ Name | Type | Description  | Notes
 # **update_linked_transaction**
 > LinkedTransactions update_linked_transaction(xero_tenant_id, linked_transaction_id, linked_transactions)
 
-Allows you to update a specified linked transactions (billable expenses)
+Updates a specific linked transactions (billable expenses)
 
 ### Example
 
@@ -13467,10 +13467,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-linked_transaction_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a LinkedTransaction
-linked_transactions = { "LinkedTransactions": [ { "SourceTransactionID": "00000000-0000-0000-000-000000000000", "SourceLineItemID": "00000000-0000-0000-000-000000000000" } ] } # LinkedTransactions | 
+linked_transaction_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a LinkedTransaction
+linked_transactions = { "LinkedTransactions": [ { "SourceTransactionID": "00000000-0000-0000-0000-000000000000", "SourceLineItemID": "00000000-0000-0000-0000-000000000000" } ] } # LinkedTransactions | 
 try:
-    # Allows you to update a specified linked transactions (billable expenses)
+    # Updates a specific linked transactions (billable expenses)
     api_response = api_instance.update_linked_transaction(xero_tenant_id, linked_transaction_id, linked_transactions)
     pprint(api_response)
 except ApiException as e:
@@ -13503,7 +13503,7 @@ Name | Type | Description  | Notes
 # **update_manual_journal**
 > ManualJournals update_manual_journal(xero_tenant_id, manual_journal_id, manual_journals)
 
-Allows you to update a specified manual journal
+Updates a specific manual journal
 
 ### Example
 
@@ -13532,10 +13532,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-manual_journal_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a ManualJournal
-manual_journals = { "ManualJournals": [ { "Narration": "Hello Xero", "ManualJournalID": "00000000-0000-0000-000-000000000000", "JournalLines": [] } ] } # ManualJournals | 
+manual_journal_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a ManualJournal
+manual_journals = { "ManualJournals": [ { "Narration": "Hello Xero", "ManualJournalID": "00000000-0000-0000-0000-000000000000", "JournalLines": [] } ] } # ManualJournals | 
 try:
-    # Allows you to update a specified manual journal
+    # Updates a specific manual journal
     api_response = api_instance.update_manual_journal(xero_tenant_id, manual_journal_id, manual_journals)
     pprint(api_response)
 except ApiException as e:
@@ -13568,7 +13568,7 @@ Name | Type | Description  | Notes
 # **update_manual_journal_attachment_by_file_name**
 > Attachments update_manual_journal_attachment_by_file_name(xero_tenant_id, manual_journal_id, file_name, body)
 
-Allows you to update a specified Attachment on ManualJournal by file name
+Updates a specific attachment from a specific manual journal by file name
 
 ### Example
 
@@ -13597,11 +13597,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-manual_journal_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a ManualJournal
+manual_journal_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a ManualJournal
 file_name = 'xero-dev.jpg' # str | The name of the file being attached to a ManualJournal
 body = 'body_example' # str | Byte array of file in body of request
 try:
-    # Allows you to update a specified Attachment on ManualJournal by file name
+    # Updates a specific attachment from a specific manual journal by file name
     api_response = api_instance.update_manual_journal_attachment_by_file_name(xero_tenant_id, manual_journal_id, file_name, body)
     pprint(api_response)
 except ApiException as e:
@@ -13635,7 +13635,7 @@ Name | Type | Description  | Notes
 # **update_or_create_bank_transactions**
 > BankTransactions update_or_create_bank_transactions(xero_tenant_id, bank_transactions, summarize_errors=summarize_errors, unitdp=unitdp)
 
-Allows you to update or create one or more spend or receive money transaction
+Updates or creates one or more spent or received money transaction
 
 ### Example
 
@@ -13664,11 +13664,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-bank_transactions = { "BankTransactions": [ { "Type": "SPEND", "Contact": { "ContactID": "00000000-0000-0000-000-000000000000" }, "Lineitems": [ { "Description": "Foobar", "Quantity": 1, "UnitAmount": 20, "AccountCode": "400" } ], "BankAccount": { "Code": "088" } } ] } # BankTransactions | 
+bank_transactions = { "BankTransactions": [ { "Type": "SPEND", "Contact": { "ContactID": "00000000-0000-0000-0000-000000000000" }, "Lineitems": [ { "Description": "Foobar", "Quantity": 1, "UnitAmount": 20, "AccountCode": "400" } ], "BankAccount": { "Code": "088" } } ] } # BankTransactions | 
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
-    # Allows you to update or create one or more spend or receive money transaction
+    # Updates or creates one or more spent or received money transaction
     api_response = api_instance.update_or_create_bank_transactions(xero_tenant_id, bank_transactions, summarize_errors=summarize_errors, unitdp=unitdp)
     pprint(api_response)
 except ApiException as e:
@@ -13702,7 +13702,7 @@ Name | Type | Description  | Notes
 # **update_or_create_contacts**
 > Contacts update_or_create_contacts(xero_tenant_id, contacts, summarize_errors=summarize_errors)
 
-Allows you to update OR create one or more contacts in a Xero organisation
+Updates or creates one or more contacts in a Xero organisation
 
 ### Example
 
@@ -13734,7 +13734,7 @@ xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 contacts = { "Contacts": [ { "Name": "Bruce Banner", "EmailAddress": "hulk@avengers.com", "Phones": [ { "PhoneType": "MOBILE", "PhoneNumber": "555-1212", "PhoneAreaCode": "415" } ], "PaymentTerms": { "Bills": { "Day": 15, "Type": "OFCURRENTMONTH" }, "Sales": { "Day": 10, "Type": "DAYSAFTERBILLMONTH" } } } ] } # Contacts | 
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
 try:
-    # Allows you to update OR create one or more contacts in a Xero organisation
+    # Updates or creates one or more contacts in a Xero organisation
     api_response = api_instance.update_or_create_contacts(xero_tenant_id, contacts, summarize_errors=summarize_errors)
     pprint(api_response)
 except ApiException as e:
@@ -13767,7 +13767,7 @@ Name | Type | Description  | Notes
 # **update_or_create_credit_notes**
 > CreditNotes update_or_create_credit_notes(xero_tenant_id, credit_notes, summarize_errors=summarize_errors, unitdp=unitdp)
 
-Allows you to update OR create one or more credit notes
+Updates or creates one or more credit notes
 
 ### Example
 
@@ -13800,7 +13800,7 @@ credit_notes = { "CreditNotes":[ { "Type":"ACCPAYCREDIT", "Contact":{ "ContactID
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
-    # Allows you to update OR create one or more credit notes
+    # Updates or creates one or more credit notes
     api_response = api_instance.update_or_create_credit_notes(xero_tenant_id, credit_notes, summarize_errors=summarize_errors, unitdp=unitdp)
     pprint(api_response)
 except ApiException as e:
@@ -13834,7 +13834,7 @@ Name | Type | Description  | Notes
 # **update_or_create_employees**
 > Employees update_or_create_employees(xero_tenant_id, employees, summarize_errors=summarize_errors)
 
-Allows you to create a single new employees used in Xero payrun
+Creates a single new employees used in Xero payrun
 
 ### Example
 
@@ -13866,7 +13866,7 @@ xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 employees = { "Employees": [ { "FirstName": "Nick", "LastName": "Fury", "ExternalLink": { "Url": "http://twitter.com/#!/search/Nick+Fury" } } ] } # Employees | Employees with array of Employee object in body of request
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
 try:
-    # Allows you to create a single new employees used in Xero payrun
+    # Creates a single new employees used in Xero payrun
     api_response = api_instance.update_or_create_employees(xero_tenant_id, employees, summarize_errors=summarize_errors)
     pprint(api_response)
 except ApiException as e:
@@ -13899,7 +13899,7 @@ Name | Type | Description  | Notes
 # **update_or_create_invoices**
 > Invoices update_or_create_invoices(xero_tenant_id, invoices, summarize_errors=summarize_errors, unitdp=unitdp)
 
-Allows you to update OR create one or more sales invoices or purchase bills
+Updates or creates one or more sales invoices or purchase bills
 
 ### Example
 
@@ -13932,7 +13932,7 @@ invoices = { "Invoices": [ { "Type": "ACCREC", "Contact": { "ContactID": "430fa1
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
-    # Allows you to update OR create one or more sales invoices or purchase bills
+    # Updates or creates one or more sales invoices or purchase bills
     api_response = api_instance.update_or_create_invoices(xero_tenant_id, invoices, summarize_errors=summarize_errors, unitdp=unitdp)
     pprint(api_response)
 except ApiException as e:
@@ -13966,7 +13966,7 @@ Name | Type | Description  | Notes
 # **update_or_create_items**
 > Items update_or_create_items(xero_tenant_id, items, summarize_errors=summarize_errors, unitdp=unitdp)
 
-Allows you to update or create one or more items
+Updates or creates one or more items
 
 ### Example
 
@@ -13999,7 +13999,7 @@ items = { "Items": [ { "Code": "ItemCode123", "Name": "ItemName XYZ", "Descripti
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
-    # Allows you to update or create one or more items
+    # Updates or creates one or more items
     api_response = api_instance.update_or_create_items(xero_tenant_id, items, summarize_errors=summarize_errors, unitdp=unitdp)
     pprint(api_response)
 except ApiException as e:
@@ -14033,7 +14033,7 @@ Name | Type | Description  | Notes
 # **update_or_create_manual_journals**
 > ManualJournals update_or_create_manual_journals(xero_tenant_id, manual_journals, summarize_errors=summarize_errors)
 
-Allows you to create a single manual journal
+Updates or creates a single manual journal
 
 ### Example
 
@@ -14065,7 +14065,7 @@ xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 manual_journals = { "ManualJournals": [ { "Narration": "Journal Desc", "JournalLines": [ { "LineAmount": 100, "AccountCode": "400", "Description": "Money Movement" }, { "LineAmount": -100, "AccountCode": "400", "Description": "Prepayment of things", "Tracking": [ { "Name": "North", "Option": "Region" } ] } ], "Date": "2019-03-14" } ] } # ManualJournals | ManualJournals array with ManualJournal object in body of request
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
 try:
-    # Allows you to create a single manual journal
+    # Updates or creates a single manual journal
     api_response = api_instance.update_or_create_manual_journals(xero_tenant_id, manual_journals, summarize_errors=summarize_errors)
     pprint(api_response)
 except ApiException as e:
@@ -14098,7 +14098,7 @@ Name | Type | Description  | Notes
 # **update_or_create_purchase_orders**
 > PurchaseOrders update_or_create_purchase_orders(xero_tenant_id, purchase_orders, summarize_errors=summarize_errors)
 
-Allows you to update or create one or more purchase orders
+Updates or creates one or more purchase orders
 
 ### Example
 
@@ -14127,10 +14127,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-purchase_orders = { "PurchaseOrders": [ { "Contact": { "ContactID": "00000000-0000-0000-000-000000000000" }, "LineItems": [ { "Description": "Foobar", "Quantity": 1, "UnitAmount": 20, "AccountCode": "710" } ], "Date": "2019-03-13" } ] } # PurchaseOrders | 
+purchase_orders = { "PurchaseOrders": [ { "Contact": { "ContactID": "00000000-0000-0000-0000-000000000000" }, "LineItems": [ { "Description": "Foobar", "Quantity": 1, "UnitAmount": 20, "AccountCode": "710" } ], "Date": "2019-03-13" } ] } # PurchaseOrders | 
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
 try:
-    # Allows you to update or create one or more purchase orders
+    # Updates or creates one or more purchase orders
     api_response = api_instance.update_or_create_purchase_orders(xero_tenant_id, purchase_orders, summarize_errors=summarize_errors)
     pprint(api_response)
 except ApiException as e:
@@ -14163,7 +14163,7 @@ Name | Type | Description  | Notes
 # **update_or_create_quotes**
 > Quotes update_or_create_quotes(xero_tenant_id, quotes, summarize_errors=summarize_errors)
 
-Allows you to update OR create one or more quotes
+Updates or creates one or more quotes
 
 ### Example
 
@@ -14192,10 +14192,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-quotes = { "Quotes": [ { "Contact": { "ContactID": "00000000-0000-0000-000-000000000000" }, "LineItems": [ { "Description": "Foobar", "Quantity": 1, "UnitAmount": 20, "AccountCode": "12775" } ], "Date": "2020-02-01" } ] } # Quotes | 
+quotes = { "Quotes": [ { "Contact": { "ContactID": "00000000-0000-0000-0000-000000000000" }, "LineItems": [ { "Description": "Foobar", "Quantity": 1, "UnitAmount": 20, "AccountCode": "12775" } ], "Date": "2020-02-01" } ] } # Quotes | 
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
 try:
-    # Allows you to update OR create one or more quotes
+    # Updates or creates one or more quotes
     api_response = api_instance.update_or_create_quotes(xero_tenant_id, quotes, summarize_errors=summarize_errors)
     pprint(api_response)
 except ApiException as e:
@@ -14228,7 +14228,7 @@ Name | Type | Description  | Notes
 # **update_purchase_order**
 > PurchaseOrders update_purchase_order(xero_tenant_id, purchase_order_id, purchase_orders)
 
-Allows you to update a specified purchase order
+Updates a specific purchase order
 
 ### Example
 
@@ -14257,10 +14257,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-purchase_order_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a PurchaseOrder
+purchase_order_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a PurchaseOrder
 purchase_orders = { "PurchaseOrders": [ { "AttentionTo": "Peter Parker", "LineItems": [], "Contact": {} } ] } # PurchaseOrders | 
 try:
-    # Allows you to update a specified purchase order
+    # Updates a specific purchase order
     api_response = api_instance.update_purchase_order(xero_tenant_id, purchase_order_id, purchase_orders)
     pprint(api_response)
 except ApiException as e:
@@ -14293,7 +14293,7 @@ Name | Type | Description  | Notes
 # **update_purchase_order_attachment_by_file_name**
 > Attachments update_purchase_order_attachment_by_file_name(xero_tenant_id, purchase_order_id, file_name, body)
 
-Allows you to update Attachment on Purchase Order by Filename
+Updates a specific attachment for a specific purchase order by filename
 
 ### Example
 
@@ -14322,11 +14322,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-purchase_order_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for Purchase Order object
+purchase_order_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Purchase Order object
 file_name = 'xero-dev.png' # str | Name of the attachment
 body = 'body_example' # str | Byte array of file in body of request
 try:
-    # Allows you to update Attachment on Purchase Order by Filename
+    # Updates a specific attachment for a specific purchase order by filename
     api_response = api_instance.update_purchase_order_attachment_by_file_name(xero_tenant_id, purchase_order_id, file_name, body)
     pprint(api_response)
 except ApiException as e:
@@ -14360,7 +14360,7 @@ Name | Type | Description  | Notes
 # **update_quote**
 > Quotes update_quote(xero_tenant_id, quote_id, quotes)
 
-Allows you to update a specified quote
+Updates a specific quote
 
 ### Example
 
@@ -14389,10 +14389,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-quote_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for an Quote
-quotes = { "Quotes": [ { "Reference": "I am an update", "Contact": { "ContactID": "00000000-0000-0000-000-000000000000" }, "Date": "2020-02-01" } ] } # Quotes | 
+quote_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Quote
+quotes = { "Quotes": [ { "Reference": "I am an update", "Contact": { "ContactID": "00000000-0000-0000-0000-000000000000" }, "Date": "2020-02-01" } ] } # Quotes | 
 try:
-    # Allows you to update a specified quote
+    # Updates a specific quote
     api_response = api_instance.update_quote(xero_tenant_id, quote_id, quotes)
     pprint(api_response)
 except ApiException as e:
@@ -14425,7 +14425,7 @@ Name | Type | Description  | Notes
 # **update_quote_attachment_by_file_name**
 > Attachments update_quote_attachment_by_file_name(xero_tenant_id, quote_id, file_name, body)
 
-Allows you to update Attachment on Quote by Filename
+Updates a specific attachment from a specific quote by filename
 
 ### Example
 
@@ -14454,11 +14454,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-quote_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for Quote object
+quote_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Quote object
 file_name = 'xero-dev.jpg' # str | Name of the attachment
 body = 'body_example' # str | Byte array of file in body of request
 try:
-    # Allows you to update Attachment on Quote by Filename
+    # Updates a specific attachment from a specific quote by filename
     api_response = api_instance.update_quote_attachment_by_file_name(xero_tenant_id, quote_id, file_name, body)
     pprint(api_response)
 except ApiException as e:
@@ -14492,7 +14492,7 @@ Name | Type | Description  | Notes
 # **update_receipt**
 > Receipts update_receipt(xero_tenant_id, receipt_id, receipts, unitdp=unitdp)
 
-Allows you to retrieve a specified draft expense claim receipts
+Updates a specific draft expense claim receipts
 
 ### Example
 
@@ -14521,11 +14521,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-receipt_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Receipt
-receipts = { "Receipts": [ { "Lineitems": [], "User": { "UserID": "00000000-0000-0000-000-000000000000" }, "Reference": "Foobar" } ] } # Receipts | 
+receipt_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Receipt
+receipts = { "Receipts": [ { "Lineitems": [], "User": { "UserID": "00000000-0000-0000-0000-000000000000" }, "Reference": "Foobar" } ] } # Receipts | 
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
-    # Allows you to retrieve a specified draft expense claim receipts
+    # Updates a specific draft expense claim receipts
     api_response = api_instance.update_receipt(xero_tenant_id, receipt_id, receipts, unitdp=unitdp)
     pprint(api_response)
 except ApiException as e:
@@ -14559,7 +14559,7 @@ Name | Type | Description  | Notes
 # **update_receipt_attachment_by_file_name**
 > Attachments update_receipt_attachment_by_file_name(xero_tenant_id, receipt_id, file_name, body)
 
-Allows you to update Attachment on expense claim receipts by file name
+Updates a specific attachment on a specific expense claim receipts by file name
 
 ### Example
 
@@ -14588,11 +14588,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-receipt_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Receipt
+receipt_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Receipt
 file_name = 'xero-dev.jpg' # str | The name of the file being attached to the Receipt
 body = 'body_example' # str | Byte array of file in body of request
 try:
-    # Allows you to update Attachment on expense claim receipts by file name
+    # Updates a specific attachment on a specific expense claim receipts by file name
     api_response = api_instance.update_receipt_attachment_by_file_name(xero_tenant_id, receipt_id, file_name, body)
     pprint(api_response)
 except ApiException as e:
@@ -14626,7 +14626,7 @@ Name | Type | Description  | Notes
 # **update_repeating_invoice_attachment_by_file_name**
 > Attachments update_repeating_invoice_attachment_by_file_name(xero_tenant_id, repeating_invoice_id, file_name, body)
 
-Allows you to update specified attachment on repeating invoices by file name
+Updates a specific attachment from a specific repeating invoices by file name
 
 ### Example
 
@@ -14655,11 +14655,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-repeating_invoice_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Repeating Invoice
+repeating_invoice_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Repeating Invoice
 file_name = 'xero-dev.jpg' # str | The name of the file being attached to a Repeating Invoice
 body = 'body_example' # str | Byte array of file in body of request
 try:
-    # Allows you to update specified attachment on repeating invoices by file name
+    # Updates a specific attachment from a specific repeating invoices by file name
     api_response = api_instance.update_repeating_invoice_attachment_by_file_name(xero_tenant_id, repeating_invoice_id, file_name, body)
     pprint(api_response)
 except ApiException as e:
@@ -14693,7 +14693,7 @@ Name | Type | Description  | Notes
 # **update_tax_rate**
 > TaxRates update_tax_rate(xero_tenant_id, tax_rates)
 
-Allows you to update Tax Rates
+Updates tax rates
 
 ### Example
 
@@ -14724,7 +14724,7 @@ api_instance = AccountingApi(api_client)
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 tax_rates = { "TaxRates": [ { "Name": "State Tax NY", "TaxComponents": [ { "Name": "State Tax", "Rate": 2.25 } ], "Status": "DELETED", "ReportTaxType": "INPUT" } ] } # TaxRates | 
 try:
-    # Allows you to update Tax Rates
+    # Updates tax rates
     api_response = api_instance.update_tax_rate(xero_tenant_id, tax_rates)
     pprint(api_response)
 except ApiException as e:
@@ -14756,7 +14756,7 @@ Name | Type | Description  | Notes
 # **update_tracking_category**
 > TrackingCategories update_tracking_category(xero_tenant_id, tracking_category_id, tracking_category)
 
-Allows you to update tracking categories
+Updates a specific tracking category
 
 ### Example
 
@@ -14785,10 +14785,10 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-tracking_category_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a TrackingCategory
+tracking_category_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a TrackingCategory
 tracking_category = { "Name": "Avengers" } # TrackingCategory | 
 try:
-    # Allows you to update tracking categories
+    # Updates a specific tracking category
     api_response = api_instance.update_tracking_category(xero_tenant_id, tracking_category_id, tracking_category)
     pprint(api_response)
 except ApiException as e:
@@ -14821,7 +14821,7 @@ Name | Type | Description  | Notes
 # **update_tracking_options**
 > TrackingOptions update_tracking_options(xero_tenant_id, tracking_category_id, tracking_option_id, tracking_option)
 
-Allows you to update options for a specified tracking category
+Updates a specific option for a specific tracking category
 
 ### Example
 
@@ -14850,11 +14850,11 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-tracking_category_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a TrackingCategory
-tracking_option_id = '00000000-0000-0000-000-000000000000' # str | Unique identifier for a Tracking Option
+tracking_category_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a TrackingCategory
+tracking_option_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Tracking Option
 tracking_option = { name: "Vision" } # TrackingOption | 
 try:
-    # Allows you to update options for a specified tracking category
+    # Updates a specific option for a specific tracking category
     api_response = api_instance.update_tracking_options(xero_tenant_id, tracking_category_id, tracking_option_id, tracking_option)
     pprint(api_response)
 except ApiException as e:
