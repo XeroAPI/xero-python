@@ -46,6 +46,7 @@ class BatchPayment(BaseModel):
         "total_amount": "str",
         "updated_date_utc": "datetime[ms-format]",
         "is_reconciled": "str",
+        "validation_errors": "list[ValidationError]",
     }
 
     attribute_map = {
@@ -65,6 +66,7 @@ class BatchPayment(BaseModel):
         "total_amount": "TotalAmount",
         "updated_date_utc": "UpdatedDateUTC",
         "is_reconciled": "IsReconciled",
+        "validation_errors": "ValidationErrors",
     }
 
     def __init__(
@@ -85,6 +87,7 @@ class BatchPayment(BaseModel):
         total_amount=None,
         updated_date_utc=None,
         is_reconciled=None,
+        validation_errors=None,
     ):  # noqa: E501
         """BatchPayment - a model defined in OpenAPI"""  # noqa: E501
 
@@ -104,6 +107,7 @@ class BatchPayment(BaseModel):
         self._total_amount = None
         self._updated_date_utc = None
         self._is_reconciled = None
+        self._validation_errors = None
         self.discriminator = None
 
         if account is not None:
@@ -138,6 +142,8 @@ class BatchPayment(BaseModel):
             self.updated_date_utc = updated_date_utc
         if is_reconciled is not None:
             self.is_reconciled = is_reconciled
+        if validation_errors is not None:
+            self.validation_errors = validation_errors
 
     @property
     def account(self):
@@ -541,3 +547,26 @@ class BatchPayment(BaseModel):
         """
 
         self._is_reconciled = is_reconciled
+
+    @property
+    def validation_errors(self):
+        """Gets the validation_errors of this BatchPayment.  # noqa: E501
+
+        Displays array of validation error messages from the API  # noqa: E501
+
+        :return: The validation_errors of this BatchPayment.  # noqa: E501
+        :rtype: list[ValidationError]
+        """
+        return self._validation_errors
+
+    @validation_errors.setter
+    def validation_errors(self, validation_errors):
+        """Sets the validation_errors of this BatchPayment.
+
+        Displays array of validation error messages from the API  # noqa: E501
+
+        :param validation_errors: The validation_errors of this BatchPayment.  # noqa: E501
+        :type: list[ValidationError]
+        """
+
+        self._validation_errors = validation_errors

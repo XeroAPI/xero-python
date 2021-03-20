@@ -3013,7 +3013,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_employees**
-> Employees get_employees(xero_tenant_id, first_name=first_name, last_name=last_name, page=page)
+> Employees get_employees(xero_tenant_id, filter=filter, page=page)
 
 Retrieves employees
 
@@ -3044,12 +3044,11 @@ api_client = ApiClient(
 api_instance = PayrollUkApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
-first_name = 'John' # str | Filter by first name (optional)
-last_name = 'Johnson' # str | Filter by last name (optional)
+filter = 'firstName==John,lastName==Smith' # str | Filter by first name and/or lastname (optional)
 page = 56 # int | Page number which specifies the set of records to retrieve. By default the number of the records per set is 100. (optional)
 try:
     # Retrieves employees
-    api_response = api_instance.get_employees(xero_tenant_id, first_name=first_name, last_name=last_name, page=page)
+    api_response = api_instance.get_employees(xero_tenant_id, filter=filter, page=page)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PayrollUkApi->get_employees: %s\n" % e)
@@ -3060,8 +3059,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
- **first_name** | **str**| Filter by first name | [optional] 
- **last_name** | **str**| Filter by last name | [optional] 
+ **filter** | **str**| Filter by first name and/or lastname | [optional] 
  **page** | **int**| Page number which specifies the set of records to retrieve. By default the number of the records per set is 100. | [optional] 
 
 ### Return type
@@ -3905,7 +3903,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_timesheets**
-> Timesheets get_timesheets(xero_tenant_id, page=page, employee_id=employee_id, payroll_calendar_id=payroll_calendar_id)
+> Timesheets get_timesheets(xero_tenant_id, page=page, filter=filter)
 
 Retrieves timesheets
 
@@ -3937,11 +3935,10 @@ api_instance = PayrollUkApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 page = 56 # int | Page number which specifies the set of records to retrieve. By default the number of the records per set is 100. (optional)
-employee_id = 'employee_id_example' # str | By default get Timesheets will return the timesheets for all employees in an organization. You can add GET https://…/timesheets?filter=employeeId=={EmployeeID} to get only the timesheets of a particular employee. (optional)
-payroll_calendar_id = 'payroll_calendar_id_example' # str | By default get Timesheets will return all the timesheets for an organization. You can add GET https://…/timesheets?filter=payrollCalendarId=={PayrollCalendarID} to filter the timesheets by payroll calendar id (optional)
+filter = 'employeeId==00000000-0000-0000-0000-000000000000,payrollCalendarId==00000000-0000-0000-0000-000000000000' # str | Filter by first name and/or lastname (optional)
 try:
     # Retrieves timesheets
-    api_response = api_instance.get_timesheets(xero_tenant_id, page=page, employee_id=employee_id, payroll_calendar_id=payroll_calendar_id)
+    api_response = api_instance.get_timesheets(xero_tenant_id, page=page, filter=filter)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PayrollUkApi->get_timesheets: %s\n" % e)
@@ -3953,8 +3950,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **page** | **int**| Page number which specifies the set of records to retrieve. By default the number of the records per set is 100. | [optional] 
- **employee_id** | [**str**](.md)| By default get Timesheets will return the timesheets for all employees in an organization. You can add GET https://…/timesheets?filter&#x3D;employeeId&#x3D;&#x3D;{EmployeeID} to get only the timesheets of a particular employee. | [optional] 
- **payroll_calendar_id** | [**str**](.md)| By default get Timesheets will return all the timesheets for an organization. You can add GET https://…/timesheets?filter&#x3D;payrollCalendarId&#x3D;&#x3D;{PayrollCalendarID} to filter the timesheets by payroll calendar id | [optional] 
+ **filter** | **str**| Filter by first name and/or lastname | [optional] 
 
 ### Return type
 
