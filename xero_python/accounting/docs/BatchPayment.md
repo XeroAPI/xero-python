@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **total_amount** | **str** | The total of the payments that make up the batch (read-only) | [optional] 
 **updated_date_utc** | **datetime** | UTC timestamp of last update to the payment | [optional] 
 **is_reconciled** | **str** | Booelan that tells you if the batch payment has been reconciled (read-only) | [optional] 
+**validation_errors** | [**list[ValidationError]**](ValidationError.md) | Displays array of validation error messages from the API | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

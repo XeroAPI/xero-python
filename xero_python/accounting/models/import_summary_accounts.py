@@ -30,15 +30,15 @@ class ImportSummaryAccounts(BaseModel):
                             and the value is json key in definition.
     """
     openapi_types = {
-        "total": "float",
-        "new": "float",
-        "updated": "float",
-        "deleted": "float",
-        "locked": "float",
-        "system": "float",
-        "errored": "float",
+        "total": "int",
+        "new": "int",
+        "updated": "int",
+        "deleted": "int",
+        "locked": "int",
+        "system": "int",
+        "errored": "int",
         "present": "bool",
-        "new_or_updated": "float",
+        "new_or_updated": "int",
     }
 
     attribute_map = {
@@ -104,7 +104,7 @@ class ImportSummaryAccounts(BaseModel):
         The total number of accounts in the org  # noqa: E501
 
         :return: The total of this ImportSummaryAccounts.  # noqa: E501
-        :rtype: float
+        :rtype: int
         """
         return self._total
 
@@ -115,7 +115,7 @@ class ImportSummaryAccounts(BaseModel):
         The total number of accounts in the org  # noqa: E501
 
         :param total: The total of this ImportSummaryAccounts.  # noqa: E501
-        :type: float
+        :type: int
         """
 
         self._total = total
@@ -127,7 +127,7 @@ class ImportSummaryAccounts(BaseModel):
         The number of new accounts created  # noqa: E501
 
         :return: The new of this ImportSummaryAccounts.  # noqa: E501
-        :rtype: float
+        :rtype: int
         """
         return self._new
 
@@ -138,7 +138,7 @@ class ImportSummaryAccounts(BaseModel):
         The number of new accounts created  # noqa: E501
 
         :param new: The new of this ImportSummaryAccounts.  # noqa: E501
-        :type: float
+        :type: int
         """
 
         self._new = new
@@ -150,7 +150,7 @@ class ImportSummaryAccounts(BaseModel):
         The number of accounts updated  # noqa: E501
 
         :return: The updated of this ImportSummaryAccounts.  # noqa: E501
-        :rtype: float
+        :rtype: int
         """
         return self._updated
 
@@ -161,7 +161,7 @@ class ImportSummaryAccounts(BaseModel):
         The number of accounts updated  # noqa: E501
 
         :param updated: The updated of this ImportSummaryAccounts.  # noqa: E501
-        :type: float
+        :type: int
         """
 
         self._updated = updated
@@ -173,7 +173,7 @@ class ImportSummaryAccounts(BaseModel):
         The number of accounts deleted  # noqa: E501
 
         :return: The deleted of this ImportSummaryAccounts.  # noqa: E501
-        :rtype: float
+        :rtype: int
         """
         return self._deleted
 
@@ -184,7 +184,7 @@ class ImportSummaryAccounts(BaseModel):
         The number of accounts deleted  # noqa: E501
 
         :param deleted: The deleted of this ImportSummaryAccounts.  # noqa: E501
-        :type: float
+        :type: int
         """
 
         self._deleted = deleted
@@ -196,7 +196,7 @@ class ImportSummaryAccounts(BaseModel):
         The number of locked accounts  # noqa: E501
 
         :return: The locked of this ImportSummaryAccounts.  # noqa: E501
-        :rtype: float
+        :rtype: int
         """
         return self._locked
 
@@ -207,7 +207,7 @@ class ImportSummaryAccounts(BaseModel):
         The number of locked accounts  # noqa: E501
 
         :param locked: The locked of this ImportSummaryAccounts.  # noqa: E501
-        :type: float
+        :type: int
         """
 
         self._locked = locked
@@ -219,7 +219,7 @@ class ImportSummaryAccounts(BaseModel):
         The number of system accounts  # noqa: E501
 
         :return: The system of this ImportSummaryAccounts.  # noqa: E501
-        :rtype: float
+        :rtype: int
         """
         return self._system
 
@@ -230,7 +230,7 @@ class ImportSummaryAccounts(BaseModel):
         The number of system accounts  # noqa: E501
 
         :param system: The system of this ImportSummaryAccounts.  # noqa: E501
-        :type: float
+        :type: int
         """
 
         self._system = system
@@ -242,7 +242,7 @@ class ImportSummaryAccounts(BaseModel):
         The number of accounts that had an error  # noqa: E501
 
         :return: The errored of this ImportSummaryAccounts.  # noqa: E501
-        :rtype: float
+        :rtype: int
         """
         return self._errored
 
@@ -253,7 +253,7 @@ class ImportSummaryAccounts(BaseModel):
         The number of accounts that had an error  # noqa: E501
 
         :param errored: The errored of this ImportSummaryAccounts.  # noqa: E501
-        :type: float
+        :type: int
         """
 
         self._errored = errored
@@ -286,7 +286,7 @@ class ImportSummaryAccounts(BaseModel):
         The number of new or updated accounts  # noqa: E501
 
         :return: The new_or_updated of this ImportSummaryAccounts.  # noqa: E501
-        :rtype: float
+        :rtype: int
         """
         return self._new_or_updated
 
@@ -297,7 +297,7 @@ class ImportSummaryAccounts(BaseModel):
         The number of new or updated accounts  # noqa: E501
 
         :param new_or_updated: The new_or_updated of this ImportSummaryAccounts.  # noqa: E501
-        :type: float
+        :type: int
         """
 
         self._new_or_updated = new_or_updated

@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.9.3
+    OpenAPI spec version: 2.10.1
 """
 
 import importlib
@@ -3779,8 +3779,7 @@ class PayrollUkApi(object):
     def get_employees(
         self,
         xero_tenant_id,
-        first_name=empty,
-        last_name=empty,
+        filter=empty,
         page=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -3789,8 +3788,7 @@ class PayrollUkApi(object):
         """Retrieves employees  # noqa: E501
         OAuth2 scope: payroll.employees.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
-        :param str first_name: Filter by first name
-        :param str last_name: Filter by last name
+        :param str filter: Filter by first name and/or lastname
         :param int page: Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -3810,11 +3808,8 @@ class PayrollUkApi(object):
 
         query_params = []
 
-        if first_name is not empty:
-            query_params.append(("firstName", first_name))
-
-        if last_name is not empty:
-            query_params.append(("lastName", last_name))
+        if filter is not empty:
+            query_params.append(("filter", filter))
 
         if page is not empty:
             query_params.append(("page", page))
@@ -4839,8 +4834,7 @@ class PayrollUkApi(object):
         self,
         xero_tenant_id,
         page=empty,
-        employee_id=empty,
-        payroll_calendar_id=empty,
+        filter=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -4849,8 +4843,7 @@ class PayrollUkApi(object):
         OAuth2 scope: payroll.timesheets.read, payroll.timesheets
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param int page: Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
-        :param str employee_id: By default get Timesheets will return the timesheets for all employees in an organization. You can add GET https://…/timesheets?filter=employeeId=={EmployeeID} to get only the timesheets of a particular employee.
-        :param str payroll_calendar_id: By default get Timesheets will return all the timesheets for an organization. You can add GET https://…/timesheets?filter=payrollCalendarId=={PayrollCalendarID} to filter the timesheets by payroll calendar id
+        :param str filter: Filter by first name and/or lastname
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -4872,11 +4865,8 @@ class PayrollUkApi(object):
         if page is not empty:
             query_params.append(("page", page))
 
-        if employee_id is not empty:
-            query_params.append(("employeeId", employee_id))
-
-        if payroll_calendar_id is not empty:
-            query_params.append(("payrollCalendarId", payroll_calendar_id))
+        if filter is not empty:
+            query_params.append(("filter", filter))
 
         header_params = {
             "Xero-Tenant-Id": xero_tenant_id,

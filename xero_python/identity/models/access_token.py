@@ -32,7 +32,7 @@ class AccessToken(BaseModel):
     openapi_types = {
         "id_token": "str",
         "access_token": "str",
-        "expires_in": "float",
+        "expires_in": "int",
         "token_type": "str",
         "refresh_token": "str",
     }
@@ -123,10 +123,10 @@ class AccessToken(BaseModel):
     def expires_in(self):
         """Gets the expires_in of this AccessToken.  # noqa: E501
 
-        time in milliseconds until access token expires.  # noqa: E501
+        time in seconds until access token expires.  # noqa: E501
 
         :return: The expires_in of this AccessToken.  # noqa: E501
-        :rtype: float
+        :rtype: int
         """
         return self._expires_in
 
@@ -134,10 +134,10 @@ class AccessToken(BaseModel):
     def expires_in(self, expires_in):
         """Sets the expires_in of this AccessToken.
 
-        time in milliseconds until access token expires.  # noqa: E501
+        time in seconds until access token expires.  # noqa: E501
 
         :param expires_in: The expires_in of this AccessToken.  # noqa: E501
-        :type: float
+        :type: int
         """
 
         self._expires_in = expires_in
