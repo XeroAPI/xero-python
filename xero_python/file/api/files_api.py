@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.10.1
+    OpenAPI spec version: 2.10.2
 """
 
 import importlib
@@ -1231,7 +1231,6 @@ class FilesApi(object):
     def upload_file(
         self,
         xero_tenant_id,
-        folder_id=empty,
         body=empty,
         name=empty,
         filename=empty,
@@ -1240,10 +1239,9 @@ class FilesApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """Uploads a File  # noqa: E501
+        """Uploads a File to the inbox  # noqa: E501
         OAuth2 scope: files
         :param str xero_tenant_id: Xero identifier for Tenant (required)
-        :param str folder_id: pass an optional folder id to save file to specific folder
         :param str body:
         :param str name: exact name of the file you are uploading
         :param str filename:
@@ -1265,9 +1263,6 @@ class FilesApi(object):
         path_params = {}
 
         query_params = []
-
-        if folder_id is not empty:
-            query_params.append(("FolderId", folder_id))
 
         header_params = {
             "xero-tenant-id": xero_tenant_id,
@@ -1317,3 +1312,98 @@ class FilesApi(object):
             )
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "upload_file")
+
+    def upload_file_to_folder(
+        self,
+        xero_tenant_id,
+        folder_id,
+        body=empty,
+        name=empty,
+        filename=empty,
+        mime_type=empty,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
+        """Uploads a File to a specific folder  # noqa: E501
+        OAuth2 scope: files
+        :param str xero_tenant_id: Xero identifier for Tenant (required)
+        :param str folder_id: pass required folder id to save file to specific folder (required)
+        :param str body:
+        :param str name: exact name of the file you are uploading
+        :param str filename:
+        :param str mime_type:
+        :param bool _return_http_data_only: return received data only
+        :param bool _preload_content: load received data in models
+        :param bool _request_timeout: maximum wait time for response
+        :return: FileObject
+        """
+
+        # verify the required parameter 'xero_tenant_id' is set
+        if xero_tenant_id is None:
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `upload_file_to_folder`"
+            )
+        # verify the required parameter 'folder_id' is set
+        if folder_id is None:
+            raise ValueError(
+                "Missing the required parameter `folder_id` "
+                "when calling `upload_file_to_folder`"
+            )
+
+        collection_formats = {}
+        path_params = {
+            "FolderId": folder_id,
+        }
+
+        query_params = []
+
+        header_params = {
+            "xero-tenant-id": xero_tenant_id,
+        }
+
+        local_var_files = {}
+        form_params = [
+            ("body", body),
+            ("name", name),
+            ("filename", filename),
+            ("mimeType", mime_type),
+        ]
+
+        body_params = None
+        body_params = body
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["multipart/form-data"]
+        )
+
+        # Authentication setting
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/Folders/{FolderId}")
+
+        try:
+            return self.api_client.call_api(
+                url,
+                "POST",
+                path_params,
+                query_params,
+                header_params,
+                body=body_params,
+                post_params=form_params,
+                files=local_var_files,
+                response_type="FileObject",
+                response_model_finder=self.get_model_finder(),
+                auth_settings=auth_settings,
+                _return_http_data_only=_return_http_data_only,
+                _preload_content=_preload_content,
+                _request_timeout=_request_timeout,
+                collection_formats=collection_formats,
+            )
+        except exceptions.HTTPStatusException as error:
+            raise translate_status_exception(error, self, "upload_file_to_folder")

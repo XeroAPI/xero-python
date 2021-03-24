@@ -19,7 +19,8 @@ Method | HTTP request | Description
 [**get_inbox**](FilesApi.md#get_inbox) | **GET** /Inbox | Retrieves inbox folder
 [**update_file**](FilesApi.md#update_file) | **PUT** /Files/{FileId} | Update a file
 [**update_folder**](FilesApi.md#update_folder) | **PUT** /Folders/{FolderId} | Updates an existing folder
-[**upload_file**](FilesApi.md#upload_file) | **POST** /Files | Uploads a File
+[**upload_file**](FilesApi.md#upload_file) | **POST** /Files | Uploads a File to the inbox
+[**upload_file_to_folder**](FilesApi.md#upload_file_to_folder) | **POST** /Folders/{FolderId} | Uploads a File to a specific folder
 
 
 # **create_file_association**
@@ -1001,9 +1002,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **upload_file**
-> FileObject upload_file(xero_tenant_id, folder_id=folder_id, body=body, name=name, filename=filename, mime_type=mime_type)
+> FileObject upload_file(xero_tenant_id, body=body, name=name, filename=filename, mime_type=mime_type)
 
-Uploads a File
+Uploads a File to the inbox
 
 ### Example
 
@@ -1032,14 +1033,13 @@ api_client = ApiClient(
 api_instance = FilesApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-folder_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | pass an optional folder id to save file to specific folder (optional)
 body = 'body_example' # str |  (optional)
 name = 'name_example' # str | exact name of the file you are uploading (optional)
 filename = 'filename_example' # str |  (optional)
 mime_type = 'mime_type_example' # str |  (optional)
 try:
-    # Uploads a File
-    api_response = api_instance.upload_file(xero_tenant_id, folder_id=folder_id, body=body, name=name, filename=filename, mime_type=mime_type)
+    # Uploads a File to the inbox
+    api_response = api_instance.upload_file(xero_tenant_id, body=body, name=name, filename=filename, mime_type=mime_type)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FilesApi->upload_file: %s\n" % e)
@@ -1050,7 +1050,77 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
- **folder_id** | [**str**](.md)| pass an optional folder id to save file to specific folder | [optional] 
+ **body** | **str**|  | [optional] 
+ **name** | **str**| exact name of the file you are uploading | [optional] 
+ **filename** | **str**|  | [optional] 
+ **mime_type** | **str**|  | [optional] 
+
+### Return type
+
+[**FileObject**](FileObject.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **upload_file_to_folder**
+> FileObject upload_file_to_folder(xero_tenant_id, folder_id, body=body, name=name, filename=filename, mime_type=mime_type)
+
+Uploads a File to a specific folder
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.file import FilesApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = FilesApi(api_client)
+
+xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
+folder_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | pass required folder id to save file to specific folder
+body = 'body_example' # str |  (optional)
+name = 'name_example' # str | exact name of the file you are uploading (optional)
+filename = 'filename_example' # str |  (optional)
+mime_type = 'mime_type_example' # str |  (optional)
+try:
+    # Uploads a File to a specific folder
+    api_response = api_instance.upload_file_to_folder(xero_tenant_id, folder_id, body=body, name=name, filename=filename, mime_type=mime_type)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling FilesApi->upload_file_to_folder: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **folder_id** | [**str**](.md)| pass required folder id to save file to specific folder | 
  **body** | **str**|  | [optional] 
  **name** | **str**| exact name of the file you are uploading | [optional] 
  **filename** | **str**|  | [optional] 
