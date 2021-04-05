@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.10.2
+    OpenAPI spec version: 2.10.4
 """
 
 import importlib
@@ -1231,9 +1231,9 @@ class FilesApi(object):
     def upload_file(
         self,
         xero_tenant_id,
-        body=empty,
-        name=empty,
-        filename=empty,
+        body,
+        name,
+        filename,
         mime_type=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -1242,9 +1242,9 @@ class FilesApi(object):
         """Uploads a File to the inbox  # noqa: E501
         OAuth2 scope: files
         :param str xero_tenant_id: Xero identifier for Tenant (required)
-        :param str body:
-        :param str name: exact name of the file you are uploading
-        :param str filename:
+        :param str body: (required)
+        :param str name: exact name of the file you are uploading (required)
+        :param str filename: (required)
         :param str mime_type:
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -1256,6 +1256,22 @@ class FilesApi(object):
         if xero_tenant_id is None:
             raise ValueError(
                 "Missing the required parameter `xero_tenant_id` "
+                "when calling `upload_file`"
+            )
+        # verify the required parameter 'body' is set
+        if body is None:
+            raise ValueError(
+                "Missing the required parameter `body` " "when calling `upload_file`"
+            )
+        # verify the required parameter 'name' is set
+        if name is None:
+            raise ValueError(
+                "Missing the required parameter `name` " "when calling `upload_file`"
+            )
+        # verify the required parameter 'filename' is set
+        if filename is None:
+            raise ValueError(
+                "Missing the required parameter `filename` "
                 "when calling `upload_file`"
             )
 
@@ -1317,9 +1333,9 @@ class FilesApi(object):
         self,
         xero_tenant_id,
         folder_id,
-        body=empty,
-        name=empty,
-        filename=empty,
+        body,
+        name,
+        filename,
         mime_type=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -1329,9 +1345,9 @@ class FilesApi(object):
         OAuth2 scope: files
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str folder_id: pass required folder id to save file to specific folder (required)
-        :param str body:
-        :param str name: exact name of the file you are uploading
-        :param str filename:
+        :param str body: (required)
+        :param str name: exact name of the file you are uploading (required)
+        :param str filename: (required)
         :param str mime_type:
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -1349,6 +1365,24 @@ class FilesApi(object):
         if folder_id is None:
             raise ValueError(
                 "Missing the required parameter `folder_id` "
+                "when calling `upload_file_to_folder`"
+            )
+        # verify the required parameter 'body' is set
+        if body is None:
+            raise ValueError(
+                "Missing the required parameter `body` "
+                "when calling `upload_file_to_folder`"
+            )
+        # verify the required parameter 'name' is set
+        if name is None:
+            raise ValueError(
+                "Missing the required parameter `name` "
+                "when calling `upload_file_to_folder`"
+            )
+        # verify the required parameter 'filename' is set
+        if filename is None:
+            raise ValueError(
+                "Missing the required parameter `filename` "
                 "when calling `upload_file_to_folder`"
             )
 
@@ -1385,7 +1419,7 @@ class FilesApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Folders/{FolderId}")
+        url = self.get_resource_url("/Files/{FolderId}")
 
         try:
             return self.api_client.call_api(

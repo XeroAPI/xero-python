@@ -20,7 +20,7 @@ Method | HTTP request | Description
 [**update_file**](FilesApi.md#update_file) | **PUT** /Files/{FileId} | Update a file
 [**update_folder**](FilesApi.md#update_folder) | **PUT** /Folders/{FolderId} | Updates an existing folder
 [**upload_file**](FilesApi.md#upload_file) | **POST** /Files | Uploads a File to the inbox
-[**upload_file_to_folder**](FilesApi.md#upload_file_to_folder) | **POST** /Folders/{FolderId} | Uploads a File to a specific folder
+[**upload_file_to_folder**](FilesApi.md#upload_file_to_folder) | **POST** /Files/{FolderId} | Uploads a File to a specific folder
 
 
 # **create_file_association**
@@ -1002,7 +1002,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **upload_file**
-> FileObject upload_file(xero_tenant_id, body=body, name=name, filename=filename, mime_type=mime_type)
+> FileObject upload_file(xero_tenant_id, body, name, filename, mime_type=mime_type)
 
 Uploads a File to the inbox
 
@@ -1033,13 +1033,13 @@ api_client = ApiClient(
 api_instance = FilesApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-body = 'body_example' # str |  (optional)
-name = 'name_example' # str | exact name of the file you are uploading (optional)
-filename = 'filename_example' # str |  (optional)
+body = 'body_example' # str | 
+name = 'name_example' # str | exact name of the file you are uploading
+filename = 'filename_example' # str | 
 mime_type = 'mime_type_example' # str |  (optional)
 try:
     # Uploads a File to the inbox
-    api_response = api_instance.upload_file(xero_tenant_id, body=body, name=name, filename=filename, mime_type=mime_type)
+    api_response = api_instance.upload_file(xero_tenant_id, body, name, filename, mime_type=mime_type)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FilesApi->upload_file: %s\n" % e)
@@ -1050,9 +1050,9 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
- **body** | **str**|  | [optional] 
- **name** | **str**| exact name of the file you are uploading | [optional] 
- **filename** | **str**|  | [optional] 
+ **body** | **str**|  | 
+ **name** | **str**| exact name of the file you are uploading | 
+ **filename** | **str**|  | 
  **mime_type** | **str**|  | [optional] 
 
 ### Return type
@@ -1071,7 +1071,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **upload_file_to_folder**
-> FileObject upload_file_to_folder(xero_tenant_id, folder_id, body=body, name=name, filename=filename, mime_type=mime_type)
+> FileObject upload_file_to_folder(xero_tenant_id, folder_id, body, name, filename, mime_type=mime_type)
 
 Uploads a File to a specific folder
 
@@ -1103,13 +1103,13 @@ api_instance = FilesApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 folder_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | pass required folder id to save file to specific folder
-body = 'body_example' # str |  (optional)
-name = 'name_example' # str | exact name of the file you are uploading (optional)
-filename = 'filename_example' # str |  (optional)
+body = 'body_example' # str | 
+name = 'name_example' # str | exact name of the file you are uploading
+filename = 'filename_example' # str | 
 mime_type = 'mime_type_example' # str |  (optional)
 try:
     # Uploads a File to a specific folder
-    api_response = api_instance.upload_file_to_folder(xero_tenant_id, folder_id, body=body, name=name, filename=filename, mime_type=mime_type)
+    api_response = api_instance.upload_file_to_folder(xero_tenant_id, folder_id, body, name, filename, mime_type=mime_type)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FilesApi->upload_file_to_folder: %s\n" % e)
@@ -1121,9 +1121,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **folder_id** | [**str**](.md)| pass required folder id to save file to specific folder | 
- **body** | **str**|  | [optional] 
- **name** | **str**| exact name of the file you are uploading | [optional] 
- **filename** | **str**|  | [optional] 
+ **body** | **str**|  | 
+ **name** | **str**| exact name of the file you are uploading | 
+ **filename** | **str**|  | 
  **mime_type** | **str**|  | [optional] 
 
 ### Return type
