@@ -244,7 +244,13 @@ class Timesheet(BaseModel):
         :param status: The status of this Timesheet.  # noqa: E501
         :type: str
         """
-        allowed_values = ["Draft", "Approved", "Completed", "None"]  # noqa: E501
+        allowed_values = [
+            "Draft",
+            "Approved",
+            "Completed",
+            "Requested",
+            "None",
+        ]  # noqa: E501
 
         if status:
             if status not in allowed_values:

@@ -324,7 +324,7 @@ class SalaryAndWage(BaseModel):
             raise ValueError(
                 "Invalid value for `status`, must not be `None`"
             )  # noqa: E501
-        allowed_values = ["Active", "Pending", "None"]  # noqa: E501
+        allowed_values = ["Active", "Pending", "History", "None"]  # noqa: E501
 
         if status:
             if status not in allowed_values:
