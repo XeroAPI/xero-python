@@ -328,7 +328,7 @@ class SalaryAndWage(BaseModel):
             raise ValueError(
                 "Invalid value for `payment_type`, must not be `None`"
             )  # noqa: E501
-        allowed_values = ["Salary", "None"]  # noqa: E501
+        allowed_values = ["Salary", "Hourly", "None"]  # noqa: E501
 
         if payment_type:
             if payment_type not in allowed_values:

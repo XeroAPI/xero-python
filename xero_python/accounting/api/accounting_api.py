@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.10.2
+    OpenAPI spec version: 2.10.4
 """
 
 import importlib
@@ -249,7 +249,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.attachments
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str bank_transaction_id: Xero generated unique identifier for a bank transaction (required)
-        :param str file_name: The name of the file being attached (required)
+        :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -610,7 +610,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.attachments
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str bank_transfer_id: Xero generated unique identifier for a bank transfer (required)
-        :param str file_name: The name of the file being attached to a Bank Transfer (required)
+        :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -1069,7 +1069,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.attachments
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str contact_id: Unique identifier for a Contact (required)
-        :param str file_name: Name for the file you are attaching (required)
+        :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -1609,7 +1609,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.attachments
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str credit_note_id: Unique identifier for a Credit Note (required)
-        :param str file_name: Name of the file you are attaching to Credit Note (required)
+        :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
         :param bool include_online: Allows an attachment to be seen by the end customer within their online invoice
         :param bool _return_http_data_only: return received data only
@@ -2227,7 +2227,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.attachments
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str invoice_id: Unique identifier for an Invoice (required)
-        :param str file_name: Name of the file you are attaching (required)
+        :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
         :param bool include_online: Allows an attachment to be seen by the end customer within their online invoice
         :param bool _return_http_data_only: return received data only
@@ -2765,7 +2765,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.attachments
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str manual_journal_id: Unique identifier for a ManualJournal (required)
-        :param str file_name: The name of the file being attached to a ManualJournal (required)
+        :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -2865,7 +2865,7 @@ class AccountingApi(object):
         """Creates a history record for a specific manual journal  # noqa: E501
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
-        :param str manual_journal_id: Xero generated unique identifier for a manual journal (required)
+        :param str manual_journal_id: Unique identifier for a ManualJournal (required)
         :param HistoryRecords history_records: HistoryRecords containing an array of HistoryRecord objects in body of request (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -3557,7 +3557,7 @@ class AccountingApi(object):
         """Allows you to create an Allocation for prepayments  # noqa: E501
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
-        :param str prepayment_id: Unique identifier for Prepayment (required)
+        :param str prepayment_id: Unique identifier for a PrePayment (required)
         :param Allocations allocations: Allocations with an array of Allocation object in body of request (required)
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
         :param bool _return_http_data_only: return received data only
@@ -3742,7 +3742,7 @@ class AccountingApi(object):
         """Creates attachment for a specific purchase order  # noqa: E501
         OAuth2 scope: accounting.attachments
         :param str xero_tenant_id: Xero identifier for Tenant (required)
-        :param str purchase_order_id: Unique identifier for Purchase Order object (required)
+        :param str purchase_order_id: Unique identifier for an Purchase Order (required)
         :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
         :param bool _return_http_data_only: return received data only
@@ -3843,7 +3843,7 @@ class AccountingApi(object):
         """Creates a history record for a specific purchase orders  # noqa: E501
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
-        :param str purchase_order_id: Unique identifier for a PurchaseOrder (required)
+        :param str purchase_order_id: Unique identifier for an Purchase Order (required)
         :param HistoryRecords history_records: HistoryRecords containing an array of HistoryRecord objects in body of request (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -4019,7 +4019,7 @@ class AccountingApi(object):
         """Creates attachment for a specific quote  # noqa: E501
         OAuth2 scope: accounting.attachments
         :param str xero_tenant_id: Xero identifier for Tenant (required)
-        :param str quote_id: Unique identifier for Quote object (required)
+        :param str quote_id: Unique identifier for an Quote (required)
         :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
         :param bool _return_http_data_only: return received data only
@@ -4377,7 +4377,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.attachments
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str receipt_id: Unique identifier for a Receipt (required)
-        :param str file_name: The name of the file being attached to the Receipt (required)
+        :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -4566,7 +4566,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.attachments
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str repeating_invoice_id: Unique identifier for a Repeating Invoice (required)
-        :param str file_name: The name of the file being attached to a Repeating Invoice (required)
+        :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -5003,7 +5003,7 @@ class AccountingApi(object):
         """Deletes a chart of accounts  # noqa: E501
         OAuth2 scope: accounting.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
-        :param str account_id: Unique identifier for retrieving single object (required)
+        :param str account_id: Unique identifier for Account object (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -5733,7 +5733,7 @@ class AccountingApi(object):
         """Retrieves a single chart of accounts by using a unique account Id  # noqa: E501
         OAuth2 scope: accounting.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
-        :param str account_id: Unique identifier for retrieving single object (required)
+        :param str account_id: Unique identifier for Account object (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -6242,7 +6242,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str bank_transaction_id: Xero generated unique identifier for a bank transaction (required)
-        :param str file_name: The name of the file being attached (required)
+        :param str file_name: Name of the attachment (required)
         :param str content_type: The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -6340,7 +6340,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str bank_transaction_id: Xero generated unique identifier for a bank transaction (required)
-        :param str attachment_id: Xero generated unique identifier for an attachment (required)
+        :param str attachment_id: Unique identifier for Attachment object (required)
         :param str content_type: The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -6761,7 +6761,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str bank_transfer_id: Xero generated unique identifier for a bank transfer (required)
-        :param str file_name: The name of the file being attached to a Bank Transfer (required)
+        :param str file_name: Name of the attachment (required)
         :param str content_type: The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -6859,7 +6859,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str bank_transfer_id: Xero generated unique identifier for a bank transfer (required)
-        :param str attachment_id: Xero generated unique identifier for an Attachment to a bank transfer (required)
+        :param str attachment_id: Unique identifier for Attachment object (required)
         :param str content_type: The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -7645,7 +7645,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str contact_id: Unique identifier for a Contact (required)
-        :param str file_name: Name for the file you are attaching (required)
+        :param str file_name: Name of the attachment (required)
         :param str content_type: The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -7741,7 +7741,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str contact_id: Unique identifier for a Contact (required)
-        :param str attachment_id: Unique identifier for a Attachment (required)
+        :param str attachment_id: Unique identifier for Attachment object (required)
         :param str content_type: The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -8550,7 +8550,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str credit_note_id: Unique identifier for a Credit Note (required)
-        :param str file_name: Name of the file you are attaching to Credit Note (required)
+        :param str file_name: Name of the attachment (required)
         :param str content_type: The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -8648,7 +8648,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str credit_note_id: Unique identifier for a Credit Note (required)
-        :param str attachment_id: Unique identifier for a Attachment (required)
+        :param str attachment_id: Unique identifier for Attachment object (required)
         :param str content_type: The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -9612,7 +9612,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str invoice_id: Unique identifier for an Invoice (required)
-        :param str file_name: Name of the file you are attaching (required)
+        :param str file_name: Name of the attachment (required)
         :param str content_type: The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -9708,7 +9708,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str invoice_id: Unique identifier for an Invoice (required)
-        :param str attachment_id: Unique identifier for an Attachment (required)
+        :param str attachment_id: Unique identifier for Attachment object (required)
         :param str content_type: The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -10037,7 +10037,7 @@ class AccountingApi(object):
         :param list[str] contact_i_ds: Filter by a comma-separated list of ContactIDs.
         :param list[str] statuses: Filter by a comma-separated list Statuses. For faster response times we recommend using these explicit parameters instead of passing OR conditions into the Where filter.
         :param int page: e.g. page=1 – Up to 100 invoices will be returned in a single API call with line items shown for each invoice
-        :param bool include_archived: e.g. includeArchived=true - Contacts with a status of ARCHIVED will be included in the response
+        :param bool include_archived: e.g. includeArchived=true - Invoices with a status of ARCHIVED will be included in the response
         :param bool created_by_my_app: When set to true you'll only retrieve Invoices created by your app
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
         :param bool _return_http_data_only: return received data only
@@ -10795,7 +10795,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str manual_journal_id: Unique identifier for a ManualJournal (required)
-        :param str file_name: The name of the file being attached to a ManualJournal (required)
+        :param str file_name: Name of the attachment (required)
         :param str content_type: The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -10893,7 +10893,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str manual_journal_id: Unique identifier for a ManualJournal (required)
-        :param str attachment_id: Unique identifier for a Attachment (required)
+        :param str attachment_id: Unique identifier for Attachment object (required)
         :param str content_type: The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -11152,7 +11152,7 @@ class AccountingApi(object):
         """Retrieves history for a specific manual journal  # noqa: E501
         OAuth2 scope: accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
-        :param str manual_journal_id: Xero generated unique identifier for a manual journal (required)
+        :param str manual_journal_id: Unique identifier for a ManualJournal (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -12304,7 +12304,7 @@ class AccountingApi(object):
         """Retrieves a specific purchase order using a unique purchase order Id  # noqa: E501
         OAuth2 scope: accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
-        :param str purchase_order_id: Unique identifier for a PurchaseOrder (required)
+        :param str purchase_order_id: Unique identifier for an Purchase Order (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -12458,7 +12458,7 @@ class AccountingApi(object):
         """Retrieves a specific attachment for a specific purchase order by filename  # noqa: E501
         OAuth2 scope: accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
-        :param str purchase_order_id: Unique identifier for Purchase Order object (required)
+        :param str purchase_order_id: Unique identifier for an Purchase Order (required)
         :param str file_name: Name of the attachment (required)
         :param str content_type: The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf (required)
         :param bool _return_http_data_only: return received data only
@@ -12556,7 +12556,7 @@ class AccountingApi(object):
         """Retrieves specific attachment for a specific purchase order using a unique attachment Id  # noqa: E501
         OAuth2 scope: accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
-        :param str purchase_order_id: Unique identifier for Purchase Order object (required)
+        :param str purchase_order_id: Unique identifier for an Purchase Order (required)
         :param str attachment_id: Unique identifier for Attachment object (required)
         :param str content_type: The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf (required)
         :param bool _return_http_data_only: return received data only
@@ -12652,7 +12652,7 @@ class AccountingApi(object):
         """Retrieves attachments for a specific purchase order  # noqa: E501
         OAuth2 scope: accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
-        :param str purchase_order_id: Unique identifier for Purchase Orders object (required)
+        :param str purchase_order_id: Unique identifier for an Purchase Order (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -12808,7 +12808,7 @@ class AccountingApi(object):
         """Retrieves history for a specific purchase order  # noqa: E501
         OAuth2 scope: accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
-        :param str purchase_order_id: Unique identifier for a PurchaseOrder (required)
+        :param str purchase_order_id: Unique identifier for an Purchase Order (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -13133,7 +13133,7 @@ class AccountingApi(object):
         """Retrieves a specific attachment from a specific quote by filename  # noqa: E501
         OAuth2 scope: accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
-        :param str quote_id: Unique identifier for Quote object (required)
+        :param str quote_id: Unique identifier for an Quote (required)
         :param str file_name: Name of the attachment (required)
         :param str content_type: The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf (required)
         :param bool _return_http_data_only: return received data only
@@ -13229,7 +13229,7 @@ class AccountingApi(object):
         """Retrieves a specific attachment from a specific quote using a unique attachment Id  # noqa: E501
         OAuth2 scope: accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
-        :param str quote_id: Unique identifier for Quote object (required)
+        :param str quote_id: Unique identifier for an Quote (required)
         :param str attachment_id: Unique identifier for Attachment object (required)
         :param str content_type: The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf (required)
         :param bool _return_http_data_only: return received data only
@@ -13321,7 +13321,7 @@ class AccountingApi(object):
         """Retrieves attachments for a specific quote  # noqa: E501
         OAuth2 scope: accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
-        :param str quote_id: Unique identifier for Quote object (required)
+        :param str quote_id: Unique identifier for an Quote (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -13673,7 +13673,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str receipt_id: Unique identifier for a Receipt (required)
-        :param str file_name: The name of the file being attached to the Receipt (required)
+        :param str file_name: Name of the attachment (required)
         :param str content_type: The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -13769,7 +13769,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str receipt_id: Unique identifier for a Receipt (required)
-        :param str attachment_id: Unique identifier for a Attachment (required)
+        :param str attachment_id: Unique identifier for Attachment object (required)
         :param str content_type: The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -14179,7 +14179,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str repeating_invoice_id: Unique identifier for a Repeating Invoice (required)
-        :param str file_name: The name of the file being attached to a Repeating Invoice (required)
+        :param str file_name: Name of the attachment (required)
         :param str content_type: The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -14277,7 +14277,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str repeating_invoice_id: Unique identifier for a Repeating Invoice (required)
-        :param str attachment_id: Unique identifier for a Attachment (required)
+        :param str attachment_id: Unique identifier for Attachment object (required)
         :param str content_type: The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -14611,8 +14611,8 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str contact_id: Unique identifier for a Contact (required)
         :param date date: The date of the Aged Payables By Contact report
-        :param date from_date: The from date of the Aged Payables By Contact report
-        :param date to_date: The to date of the Aged Payables By Contact report
+        :param date from_date: filter by the from date of the report e.g. 2021-02-01
+        :param date to_date: filter by the to date of the report e.g. 2021-02-28
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -14704,8 +14704,8 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str contact_id: Unique identifier for a Contact (required)
         :param date date: The date of the Aged Receivables By Contact report
-        :param date from_date: The from date of the Aged Receivables By Contact report
-        :param date to_date: The to date of the Aged Receivables By Contact report
+        :param date from_date: filter by the from date of the report e.g. 2021-02-01
+        :param date to_date: filter by the to date of the report e.g. 2021-02-28
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -15036,8 +15036,8 @@ class AccountingApi(object):
         """Retrieves report for bank summary  # noqa: E501
         OAuth2 scope: accounting.reports.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
-        :param date from_date: The from date for the Bank Summary report e.g. 2018-03-31
-        :param date to_date: The to date for the Bank Summary report e.g. 2018-03-31
+        :param date from_date: filter by the from date of the report e.g. 2021-02-01
+        :param date to_date: filter by the to date of the report e.g. 2021-02-28
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -15274,8 +15274,8 @@ class AccountingApi(object):
         """Retrieves report for profit and loss  # noqa: E501
         OAuth2 scope: accounting.reports.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
-        :param date from_date: The from date for the ProfitAndLoss report e.g. 2018-03-31
-        :param date to_date: The to date for the ProfitAndLoss report e.g. 2018-03-31
+        :param date from_date: filter by the from date of the report e.g. 2021-02-01
+        :param date to_date: filter by the to date of the report e.g. 2021-02-28
         :param int periods: The number of periods to compare (integer between 1 and 12)
         :param str timeframe: The period size to compare to (MONTH, QUARTER, YEAR)
         :param str tracking_category_id: The trackingCategory 1 for the ProfitAndLoss report
@@ -16001,7 +16001,7 @@ class AccountingApi(object):
         """Updates a chart of accounts  # noqa: E501
         OAuth2 scope: accounting.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
-        :param str account_id: Unique identifier for retrieving single object (required)
+        :param str account_id: Unique identifier for Account object (required)
         :param Accounts accounts: Request of type Accounts array with one Account (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -16286,7 +16286,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.attachments
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str bank_transaction_id: Xero generated unique identifier for a bank transaction (required)
-        :param str file_name: The name of the file being attached (required)
+        :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -16388,7 +16388,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.attachments
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str bank_transfer_id: Xero generated unique identifier for a bank transfer (required)
-        :param str file_name: The name of the file being attached to a Bank Transfer (required)
+        :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -16579,7 +16579,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.attachments
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str contact_id: Unique identifier for a Contact (required)
-        :param str file_name: Name for the file you are attaching (required)
+        :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -16862,7 +16862,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.attachments
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str credit_note_id: Unique identifier for a Credit Note (required)
-        :param str file_name: Name of the file you are attaching to Credit Note (required)
+        :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -17147,7 +17147,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.attachments
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str invoice_id: Unique identifier for an Invoice (required)
-        :param str file_name: Name of the file you are attaching (required)
+        :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -17517,7 +17517,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.attachments
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str manual_journal_id: Unique identifier for a ManualJournal (required)
-        :param str file_name: The name of the file being attached to a ManualJournal (required)
+        :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -18401,7 +18401,7 @@ class AccountingApi(object):
         """Updates a specific purchase order  # noqa: E501
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
-        :param str purchase_order_id: Unique identifier for a PurchaseOrder (required)
+        :param str purchase_order_id: Unique identifier for an Purchase Order (required)
         :param PurchaseOrders purchase_orders: (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -18491,7 +18491,7 @@ class AccountingApi(object):
         """Updates a specific attachment for a specific purchase order by filename  # noqa: E501
         OAuth2 scope: accounting.attachments
         :param str xero_tenant_id: Xero identifier for Tenant (required)
-        :param str purchase_order_id: Unique identifier for Purchase Order object (required)
+        :param str purchase_order_id: Unique identifier for an Purchase Order (required)
         :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
         :param bool _return_http_data_only: return received data only
@@ -18681,7 +18681,7 @@ class AccountingApi(object):
         """Updates a specific attachment from a specific quote by filename  # noqa: E501
         OAuth2 scope: accounting.attachments
         :param str xero_tenant_id: Xero identifier for Tenant (required)
-        :param str quote_id: Unique identifier for Quote object (required)
+        :param str quote_id: Unique identifier for an Quote (required)
         :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
         :param bool _return_http_data_only: return received data only
@@ -18876,7 +18876,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.attachments
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str receipt_id: Unique identifier for a Receipt (required)
-        :param str file_name: The name of the file being attached to the Receipt (required)
+        :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -18976,7 +18976,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.attachments
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str repeating_invoice_id: Unique identifier for a Repeating Invoice (required)
-        :param str file_name: The name of the file being attached to a Repeating Invoice (required)
+        :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models

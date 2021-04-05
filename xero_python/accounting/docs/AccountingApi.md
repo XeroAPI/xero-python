@@ -393,7 +393,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 bank_transaction_id = '00000000-0000-0000-0000-000000000000' # str | Xero generated unique identifier for a bank transaction
-file_name = 'xero-dev.jpg' # str | The name of the file being attached
+file_name = 'xero-dev.jpg' # str | Name of the attachment
 body = 'body_example' # str | Byte array of file in body of request
 try:
     # Creates an attachment for a specific bank transaction by filename
@@ -409,7 +409,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **bank_transaction_id** | [**str**](.md)| Xero generated unique identifier for a bank transaction | 
- **file_name** | **str**| The name of the file being attached | 
+ **file_name** | **str**| Name of the attachment | 
  **body** | **str**| Byte array of file in body of request | 
 
 ### Return type
@@ -655,7 +655,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 bank_transfer_id = '00000000-0000-0000-0000-000000000000' # str | Xero generated unique identifier for a bank transfer
-file_name = 'xero-dev.jpg' # str | The name of the file being attached to a Bank Transfer
+file_name = 'xero-dev.jpg' # str | Name of the attachment
 body = 'body_example' # str | Byte array of file in body of request
 try:
     api_response = api_instance.create_bank_transfer_attachment_by_file_name(xero_tenant_id, bank_transfer_id, file_name, body)
@@ -670,7 +670,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **bank_transfer_id** | [**str**](.md)| Xero generated unique identifier for a bank transfer | 
- **file_name** | **str**| The name of the file being attached to a Bank Transfer | 
+ **file_name** | **str**| Name of the attachment | 
  **body** | **str**| Byte array of file in body of request | 
 
 ### Return type
@@ -981,7 +981,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 contact_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Contact
-file_name = 'xero-dev.jpg' # str | Name for the file you are attaching
+file_name = 'xero-dev.jpg' # str | Name of the attachment
 body = 'body_example' # str | Byte array of file in body of request
 try:
     api_response = api_instance.create_contact_attachment_by_file_name(xero_tenant_id, contact_id, file_name, body)
@@ -996,7 +996,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **contact_id** | [**str**](.md)| Unique identifier for a Contact | 
- **file_name** | **str**| Name for the file you are attaching | 
+ **file_name** | **str**| Name of the attachment | 
  **body** | **str**| Byte array of file in body of request | 
 
 ### Return type
@@ -1372,7 +1372,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 credit_note_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Credit Note
-file_name = 'xero-dev.jpg' # str | Name of the file you are attaching to Credit Note
+file_name = 'xero-dev.jpg' # str | Name of the attachment
 body = 'body_example' # str | Byte array of file in body of request
 include_online = False # bool | Allows an attachment to be seen by the end customer within their online invoice (optional) (default to False)
 try:
@@ -1389,7 +1389,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **credit_note_id** | [**str**](.md)| Unique identifier for a Credit Note | 
- **file_name** | **str**| Name of the file you are attaching to Credit Note | 
+ **file_name** | **str**| Name of the attachment | 
  **body** | **str**| Byte array of file in body of request | 
  **include_online** | **bool**| Allows an attachment to be seen by the end customer within their online invoice | [optional] [default to False]
 
@@ -1829,7 +1829,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 invoice_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Invoice
-file_name = 'xero-dev.jpg' # str | Name of the file you are attaching
+file_name = 'xero-dev.jpg' # str | Name of the attachment
 body = 'body_example' # str | Byte array of file in body of request
 include_online = False # bool | Allows an attachment to be seen by the end customer within their online invoice (optional) (default to False)
 try:
@@ -1846,7 +1846,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **invoice_id** | [**str**](.md)| Unique identifier for an Invoice | 
- **file_name** | **str**| Name of the file you are attaching | 
+ **file_name** | **str**| Name of the attachment | 
  **body** | **str**| Byte array of file in body of request | 
  **include_online** | **bool**| Allows an attachment to be seen by the end customer within their online invoice | [optional] [default to False]
 
@@ -2225,7 +2225,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 manual_journal_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a ManualJournal
-file_name = 'xero-dev.jpg' # str | The name of the file being attached to a ManualJournal
+file_name = 'xero-dev.jpg' # str | Name of the attachment
 body = 'body_example' # str | Byte array of file in body of request
 try:
     # Creates a specific attachment for a specific manual journal by file name
@@ -2241,7 +2241,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **manual_journal_id** | [**str**](.md)| Unique identifier for a ManualJournal | 
- **file_name** | **str**| The name of the file being attached to a ManualJournal | 
+ **file_name** | **str**| Name of the attachment | 
  **body** | **str**| Byte array of file in body of request | 
 
 ### Return type
@@ -2291,7 +2291,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-manual_journal_id = '00000000-0000-0000-0000-000000000000' # str | Xero generated unique identifier for a manual journal
+manual_journal_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a ManualJournal
 history_records = { "HistoryRecords": [ { "Details": "Hello World" } ] } # HistoryRecords | HistoryRecords containing an array of HistoryRecord objects in body of request
 try:
     # Creates a history record for a specific manual journal
@@ -2306,7 +2306,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
- **manual_journal_id** | [**str**](.md)| Xero generated unique identifier for a manual journal | 
+ **manual_journal_id** | [**str**](.md)| Unique identifier for a ManualJournal | 
  **history_records** | [**HistoryRecords**](HistoryRecords.md)| HistoryRecords containing an array of HistoryRecord objects in body of request | 
 
 ### Return type
@@ -2809,7 +2809,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-prepayment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Prepayment
+prepayment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a PrePayment
 allocations = { "Allocations": [ { "Invoice": { "LineItems": [], "InvoiceID": "00000000-0000-0000-0000-000000000000" }, "Amount": 1, "Date": "2019-01-10" } ] } # Allocations | Allocations with an array of Allocation object in body of request
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
 try:
@@ -2825,7 +2825,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
- **prepayment_id** | [**str**](.md)| Unique identifier for Prepayment | 
+ **prepayment_id** | [**str**](.md)| Unique identifier for a PrePayment | 
  **allocations** | [**Allocations**](Allocations.md)| Allocations with an array of Allocation object in body of request | 
  **summarize_errors** | **bool**| If false return 200 OK and mix of successfully created objects and any with validation errors | [optional] [default to False]
 
@@ -2941,8 +2941,8 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-purchase_order_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Purchase Order object
-file_name = 'xero-dev.png' # str | Name of the attachment
+purchase_order_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Purchase Order
+file_name = 'xero-dev.jpg' # str | Name of the attachment
 body = 'body_example' # str | Byte array of file in body of request
 try:
     # Creates attachment for a specific purchase order
@@ -2957,7 +2957,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
- **purchase_order_id** | [**str**](.md)| Unique identifier for Purchase Order object | 
+ **purchase_order_id** | [**str**](.md)| Unique identifier for an Purchase Order | 
  **file_name** | **str**| Name of the attachment | 
  **body** | **str**| Byte array of file in body of request | 
 
@@ -3008,7 +3008,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-purchase_order_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a PurchaseOrder
+purchase_order_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Purchase Order
 history_records = { "HistoryRecords": [ { "Details": "Hello World" } ] } # HistoryRecords | HistoryRecords containing an array of HistoryRecord objects in body of request
 try:
     # Creates a history record for a specific purchase orders
@@ -3023,7 +3023,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
- **purchase_order_id** | [**str**](.md)| Unique identifier for a PurchaseOrder | 
+ **purchase_order_id** | [**str**](.md)| Unique identifier for an Purchase Order | 
  **history_records** | [**HistoryRecords**](HistoryRecords.md)| HistoryRecords containing an array of HistoryRecord objects in body of request | 
 
 ### Return type
@@ -3138,7 +3138,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-quote_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Quote object
+quote_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Quote
 file_name = 'xero-dev.jpg' # str | Name of the attachment
 body = 'body_example' # str | Byte array of file in body of request
 try:
@@ -3154,7 +3154,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
- **quote_id** | [**str**](.md)| Unique identifier for Quote object | 
+ **quote_id** | [**str**](.md)| Unique identifier for an Quote | 
  **file_name** | **str**| Name of the attachment | 
  **body** | **str**| Byte array of file in body of request | 
 
@@ -3401,7 +3401,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 receipt_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Receipt
-file_name = 'xero-dev.jpg' # str | The name of the file being attached to the Receipt
+file_name = 'xero-dev.jpg' # str | Name of the attachment
 body = 'body_example' # str | Byte array of file in body of request
 try:
     # Creates an attachment on a specific expense claim receipts by file name
@@ -3417,7 +3417,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **receipt_id** | [**str**](.md)| Unique identifier for a Receipt | 
- **file_name** | **str**| The name of the file being attached to the Receipt | 
+ **file_name** | **str**| Name of the attachment | 
  **body** | **str**| Byte array of file in body of request | 
 
 ### Return type
@@ -3533,7 +3533,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 repeating_invoice_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Repeating Invoice
-file_name = 'xero-dev.jpg' # str | The name of the file being attached to a Repeating Invoice
+file_name = 'xero-dev.jpg' # str | Name of the attachment
 body = 'body_example' # str | Byte array of file in body of request
 try:
     # Creates an attachment from a specific repeating invoices by file name
@@ -3549,7 +3549,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **repeating_invoice_id** | [**str**](.md)| Unique identifier for a Repeating Invoice | 
- **file_name** | **str**| The name of the file being attached to a Repeating Invoice | 
+ **file_name** | **str**| Name of the attachment | 
  **body** | **str**| Byte array of file in body of request | 
 
 ### Return type
@@ -3855,7 +3855,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-account_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for retrieving single object
+account_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Account object
 try:
     # Deletes a chart of accounts
     api_response = api_instance.delete_account(xero_tenant_id, account_id)
@@ -3869,7 +3869,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
- **account_id** | [**str**](.md)| Unique identifier for retrieving single object | 
+ **account_id** | [**str**](.md)| Unique identifier for Account object | 
 
 ### Return type
 
@@ -4425,7 +4425,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-account_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for retrieving single object
+account_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Account object
 try:
     # Retrieves a single chart of accounts by using a unique account Id
     api_response = api_instance.get_account(xero_tenant_id, account_id)
@@ -4439,7 +4439,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
- **account_id** | [**str**](.md)| Unique identifier for retrieving single object | 
+ **account_id** | [**str**](.md)| Unique identifier for Account object | 
 
 ### Return type
 
@@ -4818,7 +4818,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 bank_transaction_id = '00000000-0000-0000-0000-000000000000' # str | Xero generated unique identifier for a bank transaction
-file_name = 'xero-dev.jpg' # str | The name of the file being attached
+file_name = 'xero-dev.jpg' # str | Name of the attachment
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
     # Retrieves a specific attachment from a specific bank transaction by filename
@@ -4834,7 +4834,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **bank_transaction_id** | [**str**](.md)| Xero generated unique identifier for a bank transaction | 
- **file_name** | **str**| The name of the file being attached | 
+ **file_name** | **str**| Name of the attachment | 
  **content_type** | **str**| The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf | 
 
 ### Return type
@@ -4885,7 +4885,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 bank_transaction_id = '00000000-0000-0000-0000-000000000000' # str | Xero generated unique identifier for a bank transaction
-attachment_id = '00000000-0000-0000-0000-000000000000' # str | Xero generated unique identifier for an attachment
+attachment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Attachment object
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
     # Retrieves specific attachments from a specific BankTransaction using a unique attachment Id
@@ -4901,7 +4901,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **bank_transaction_id** | [**str**](.md)| Xero generated unique identifier for a bank transaction | 
- **attachment_id** | [**str**](.md)| Xero generated unique identifier for an attachment | 
+ **attachment_id** | [**str**](.md)| Unique identifier for Attachment object | 
  **content_type** | **str**| The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf | 
 
 ### Return type
@@ -5212,7 +5212,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 bank_transfer_id = '00000000-0000-0000-0000-000000000000' # str | Xero generated unique identifier for a bank transfer
-file_name = 'xero-dev.jpg' # str | The name of the file being attached to a Bank Transfer
+file_name = 'xero-dev.jpg' # str | Name of the attachment
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
     # Retrieves a specific attachment on a specific bank transfer by file name
@@ -5228,7 +5228,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **bank_transfer_id** | [**str**](.md)| Xero generated unique identifier for a bank transfer | 
- **file_name** | **str**| The name of the file being attached to a Bank Transfer | 
+ **file_name** | **str**| Name of the attachment | 
  **content_type** | **str**| The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf | 
 
 ### Return type
@@ -5279,7 +5279,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 bank_transfer_id = '00000000-0000-0000-0000-000000000000' # str | Xero generated unique identifier for a bank transfer
-attachment_id = '00000000-0000-0000-0000-000000000000' # str | Xero generated unique identifier for an Attachment to a bank transfer
+attachment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Attachment object
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
     # Retrieves a specific attachment from a specific bank transfer using a unique attachment ID
@@ -5295,7 +5295,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **bank_transfer_id** | [**str**](.md)| Xero generated unique identifier for a bank transfer | 
- **attachment_id** | [**str**](.md)| Xero generated unique identifier for an Attachment to a bank transfer | 
+ **attachment_id** | [**str**](.md)| Unique identifier for Attachment object | 
  **content_type** | **str**| The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf | 
 
 ### Return type
@@ -5919,7 +5919,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 contact_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Contact
-file_name = 'xero-dev.jpg' # str | Name for the file you are attaching
+file_name = 'xero-dev.jpg' # str | Name of the attachment
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
     # Retrieves a specific attachment from a specific contact by file name
@@ -5935,7 +5935,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **contact_id** | [**str**](.md)| Unique identifier for a Contact | 
- **file_name** | **str**| Name for the file you are attaching | 
+ **file_name** | **str**| Name of the attachment | 
  **content_type** | **str**| The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf | 
 
 ### Return type
@@ -5986,7 +5986,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 contact_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Contact
-attachment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Attachment
+attachment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Attachment object
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
     # Retrieves a specific attachment from a specific contact using a unique attachment Id
@@ -6002,7 +6002,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **contact_id** | [**str**](.md)| Unique identifier for a Contact | 
- **attachment_id** | [**str**](.md)| Unique identifier for a Attachment | 
+ **attachment_id** | [**str**](.md)| Unique identifier for Attachment object | 
  **content_type** | **str**| The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf | 
 
 ### Return type
@@ -6634,7 +6634,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 credit_note_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Credit Note
-file_name = 'xero-dev.jpg' # str | Name of the file you are attaching to Credit Note
+file_name = 'xero-dev.jpg' # str | Name of the attachment
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
     # Retrieves a specific attachment on a specific credit note by file name
@@ -6650,7 +6650,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **credit_note_id** | [**str**](.md)| Unique identifier for a Credit Note | 
- **file_name** | **str**| Name of the file you are attaching to Credit Note | 
+ **file_name** | **str**| Name of the attachment | 
  **content_type** | **str**| The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf | 
 
 ### Return type
@@ -6701,7 +6701,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 credit_note_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Credit Note
-attachment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Attachment
+attachment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Attachment object
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
     # Retrieves a specific attachment from a specific credit note using a unique attachment Id
@@ -6717,7 +6717,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **credit_note_id** | [**str**](.md)| Unique identifier for a Credit Note | 
- **attachment_id** | [**str**](.md)| Unique identifier for a Attachment | 
+ **attachment_id** | [**str**](.md)| Unique identifier for Attachment object | 
  **content_type** | **str**| The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf | 
 
 ### Return type
@@ -7481,7 +7481,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 invoice_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Invoice
-file_name = 'xero-dev.jpg' # str | Name of the file you are attaching
+file_name = 'xero-dev.jpg' # str | Name of the attachment
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
     # Retrieves an attachment from a specific invoice or purchase bill by filename
@@ -7497,7 +7497,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **invoice_id** | [**str**](.md)| Unique identifier for an Invoice | 
- **file_name** | **str**| Name of the file you are attaching | 
+ **file_name** | **str**| Name of the attachment | 
  **content_type** | **str**| The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf | 
 
 ### Return type
@@ -7548,7 +7548,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 invoice_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Invoice
-attachment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Attachment
+attachment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Attachment object
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
     # Retrieves a specific attachment from a specific invoices or purchase bills by using a unique attachment Id
@@ -7564,7 +7564,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **invoice_id** | [**str**](.md)| Unique identifier for an Invoice | 
- **attachment_id** | [**str**](.md)| Unique identifier for an Attachment | 
+ **attachment_id** | [**str**](.md)| Unique identifier for Attachment object | 
  **content_type** | **str**| The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf | 
 
 ### Return type
@@ -7809,7 +7809,7 @@ invoice_numbers = ['&quot;INV-001&quot;, &quot;INV-002&quot;'] # list[str] | Fil
 contact_i_ds = ['&quot;00000000-0000-0000-0000-000000000000&quot;'] # list[str] | Filter by a comma-separated list of ContactIDs. (optional)
 statuses = ['&quot;DRAFT&quot;, &quot;SUBMITTED&quot;'] # list[str] | Filter by a comma-separated list Statuses. For faster response times we recommend using these explicit parameters instead of passing OR conditions into the Where filter. (optional)
 page = 1 # int | e.g. page=1 – Up to 100 invoices will be returned in a single API call with line items shown for each invoice (optional)
-include_archived = True # bool | e.g. includeArchived=true - Contacts with a status of ARCHIVED will be included in the response (optional)
+include_archived = True # bool | e.g. includeArchived=true - Invoices with a status of ARCHIVED will be included in the response (optional)
 created_by_my_app = false # bool | When set to true you'll only retrieve Invoices created by your app (optional)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
@@ -7833,7 +7833,7 @@ Name | Type | Description  | Notes
  **contact_i_ds** | [**list[str]**](str.md)| Filter by a comma-separated list of ContactIDs. | [optional] 
  **statuses** | [**list[str]**](str.md)| Filter by a comma-separated list Statuses. For faster response times we recommend using these explicit parameters instead of passing OR conditions into the Where filter. | [optional] 
  **page** | **int**| e.g. page&#x3D;1 – Up to 100 invoices will be returned in a single API call with line items shown for each invoice | [optional] 
- **include_archived** | **bool**| e.g. includeArchived&#x3D;true - Contacts with a status of ARCHIVED will be included in the response | [optional] 
+ **include_archived** | **bool**| e.g. includeArchived&#x3D;true - Invoices with a status of ARCHIVED will be included in the response | [optional] 
  **created_by_my_app** | **bool**| When set to true you&#39;ll only retrieve Invoices created by your app | [optional] 
  **unitdp** | **int**| e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts | [optional] 
 
@@ -8411,7 +8411,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 manual_journal_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a ManualJournal
-file_name = 'xero-dev.jpg' # str | The name of the file being attached to a ManualJournal
+file_name = 'xero-dev.jpg' # str | Name of the attachment
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
     # Retrieves a specific attachment from a specific manual journal by file name
@@ -8427,7 +8427,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **manual_journal_id** | [**str**](.md)| Unique identifier for a ManualJournal | 
- **file_name** | **str**| The name of the file being attached to a ManualJournal | 
+ **file_name** | **str**| Name of the attachment | 
  **content_type** | **str**| The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf | 
 
 ### Return type
@@ -8478,7 +8478,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 manual_journal_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a ManualJournal
-attachment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Attachment
+attachment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Attachment object
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
     # Allows you to retrieve a specific attachment from a specific manual journal using a unique attachment Id
@@ -8494,7 +8494,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **manual_journal_id** | [**str**](.md)| Unique identifier for a ManualJournal | 
- **attachment_id** | [**str**](.md)| Unique identifier for a Attachment | 
+ **attachment_id** | [**str**](.md)| Unique identifier for Attachment object | 
  **content_type** | **str**| The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf | 
 
 ### Return type
@@ -8676,7 +8676,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-manual_journal_id = '00000000-0000-0000-0000-000000000000' # str | Xero generated unique identifier for a manual journal
+manual_journal_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a ManualJournal
 try:
     # Retrieves history for a specific manual journal
     api_response = api_instance.get_manual_journals_history(xero_tenant_id, manual_journal_id)
@@ -8690,7 +8690,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
- **manual_journal_id** | [**str**](.md)| Xero generated unique identifier for a manual journal | 
+ **manual_journal_id** | [**str**](.md)| Unique identifier for a ManualJournal | 
 
 ### Return type
 
@@ -9637,7 +9637,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-purchase_order_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a PurchaseOrder
+purchase_order_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Purchase Order
 try:
     # Retrieves a specific purchase order using a unique purchase order Id
     api_response = api_instance.get_purchase_order(xero_tenant_id, purchase_order_id)
@@ -9651,7 +9651,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
- **purchase_order_id** | [**str**](.md)| Unique identifier for a PurchaseOrder | 
+ **purchase_order_id** | [**str**](.md)| Unique identifier for an Purchase Order | 
 
 ### Return type
 
@@ -9763,7 +9763,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-purchase_order_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Purchase Order object
+purchase_order_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Purchase Order
 file_name = 'xero-dev.jpg' # str | Name of the attachment
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
@@ -9779,7 +9779,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
- **purchase_order_id** | [**str**](.md)| Unique identifier for Purchase Order object | 
+ **purchase_order_id** | [**str**](.md)| Unique identifier for an Purchase Order | 
  **file_name** | **str**| Name of the attachment | 
  **content_type** | **str**| The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf | 
 
@@ -9830,7 +9830,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-purchase_order_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Purchase Order object
+purchase_order_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Purchase Order
 attachment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Attachment object
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
@@ -9846,7 +9846,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
- **purchase_order_id** | [**str**](.md)| Unique identifier for Purchase Order object | 
+ **purchase_order_id** | [**str**](.md)| Unique identifier for an Purchase Order | 
  **attachment_id** | [**str**](.md)| Unique identifier for Attachment object | 
  **content_type** | **str**| The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf | 
 
@@ -9897,7 +9897,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-purchase_order_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Purchase Orders object
+purchase_order_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Purchase Order
 try:
     # Retrieves attachments for a specific purchase order
     api_response = api_instance.get_purchase_order_attachments(xero_tenant_id, purchase_order_id)
@@ -9911,7 +9911,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
- **purchase_order_id** | [**str**](.md)| Unique identifier for Purchase Orders object | 
+ **purchase_order_id** | [**str**](.md)| Unique identifier for an Purchase Order | 
 
 ### Return type
 
@@ -10023,7 +10023,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-purchase_order_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a PurchaseOrder
+purchase_order_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Purchase Order
 try:
     # Retrieves history for a specific purchase order
     api_response = api_instance.get_purchase_order_history(xero_tenant_id, purchase_order_id)
@@ -10037,7 +10037,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
- **purchase_order_id** | [**str**](.md)| Unique identifier for a PurchaseOrder | 
+ **purchase_order_id** | [**str**](.md)| Unique identifier for an Purchase Order | 
 
 ### Return type
 
@@ -10285,7 +10285,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-quote_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Quote object
+quote_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Quote
 file_name = 'xero-dev.jpg' # str | Name of the attachment
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
@@ -10301,7 +10301,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
- **quote_id** | [**str**](.md)| Unique identifier for Quote object | 
+ **quote_id** | [**str**](.md)| Unique identifier for an Quote | 
  **file_name** | **str**| Name of the attachment | 
  **content_type** | **str**| The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf | 
 
@@ -10352,7 +10352,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-quote_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Quote object
+quote_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Quote
 attachment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Attachment object
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
@@ -10368,7 +10368,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
- **quote_id** | [**str**](.md)| Unique identifier for Quote object | 
+ **quote_id** | [**str**](.md)| Unique identifier for an Quote | 
  **attachment_id** | [**str**](.md)| Unique identifier for Attachment object | 
  **content_type** | **str**| The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf | 
 
@@ -10419,7 +10419,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-quote_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Quote object
+quote_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Quote
 try:
     # Retrieves attachments for a specific quote
     api_response = api_instance.get_quote_attachments(xero_tenant_id, quote_id)
@@ -10433,7 +10433,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
- **quote_id** | [**str**](.md)| Unique identifier for Quote object | 
+ **quote_id** | [**str**](.md)| Unique identifier for an Quote | 
 
 ### Return type
 
@@ -10692,7 +10692,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 receipt_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Receipt
-file_name = 'xero-dev.jpg' # str | The name of the file being attached to the Receipt
+file_name = 'xero-dev.jpg' # str | Name of the attachment
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
     # Retrieves a specific attachment from a specific expense claim receipts by file name
@@ -10708,7 +10708,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **receipt_id** | [**str**](.md)| Unique identifier for a Receipt | 
- **file_name** | **str**| The name of the file being attached to the Receipt | 
+ **file_name** | **str**| Name of the attachment | 
  **content_type** | **str**| The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf | 
 
 ### Return type
@@ -10759,7 +10759,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 receipt_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Receipt
-attachment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Attachment
+attachment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Attachment object
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
     # Retrieves a specific attachments from a specific expense claim receipts by using a unique attachment Id
@@ -10775,7 +10775,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **receipt_id** | [**str**](.md)| Unique identifier for a Receipt | 
- **attachment_id** | [**str**](.md)| Unique identifier for a Attachment | 
+ **attachment_id** | [**str**](.md)| Unique identifier for Attachment object | 
  **content_type** | **str**| The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf | 
 
 ### Return type
@@ -11084,7 +11084,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 repeating_invoice_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Repeating Invoice
-file_name = 'xero-dev.jpg' # str | The name of the file being attached to a Repeating Invoice
+file_name = 'xero-dev.jpg' # str | Name of the attachment
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
     # Retrieves a specific attachment from a specific repeating invoices by file name
@@ -11100,7 +11100,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **repeating_invoice_id** | [**str**](.md)| Unique identifier for a Repeating Invoice | 
- **file_name** | **str**| The name of the file being attached to a Repeating Invoice | 
+ **file_name** | **str**| Name of the attachment | 
  **content_type** | **str**| The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf | 
 
 ### Return type
@@ -11151,7 +11151,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 repeating_invoice_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Repeating Invoice
-attachment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Attachment
+attachment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Attachment object
 content_type = 'image/jpg' # str | The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf
 try:
     # Retrieves a specific attachment from a specific repeating invoice
@@ -11167,7 +11167,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **repeating_invoice_id** | [**str**](.md)| Unique identifier for a Repeating Invoice | 
- **attachment_id** | [**str**](.md)| Unique identifier for a Attachment | 
+ **attachment_id** | [**str**](.md)| Unique identifier for Attachment object | 
  **content_type** | **str**| The mime type of the attachment file you are retrieving i.e image/jpg, application/pdf | 
 
 ### Return type
@@ -11410,8 +11410,8 @@ api_instance = AccountingApi(api_client)
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 contact_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Contact
 date = '2013-10-20' # date | The date of the Aged Payables By Contact report (optional)
-from_date = '2013-10-20' # date | The from date of the Aged Payables By Contact report (optional)
-to_date = '2013-10-20' # date | The to date of the Aged Payables By Contact report (optional)
+from_date = '2013-10-20' # date | filter by the from date of the report e.g. 2021-02-01 (optional)
+to_date = '2013-10-20' # date | filter by the to date of the report e.g. 2021-02-28 (optional)
 try:
     # Retrieves report for aged payables by contact
     api_response = api_instance.get_report_aged_payables_by_contact(xero_tenant_id, contact_id, date=date, from_date=from_date, to_date=to_date)
@@ -11427,8 +11427,8 @@ Name | Type | Description  | Notes
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **contact_id** | [**str**](.md)| Unique identifier for a Contact | 
  **date** | **date**| The date of the Aged Payables By Contact report | [optional] 
- **from_date** | **date**| The from date of the Aged Payables By Contact report | [optional] 
- **to_date** | **date**| The to date of the Aged Payables By Contact report | [optional] 
+ **from_date** | **date**| filter by the from date of the report e.g. 2021-02-01 | [optional] 
+ **to_date** | **date**| filter by the to date of the report e.g. 2021-02-28 | [optional] 
 
 ### Return type
 
@@ -11479,8 +11479,8 @@ api_instance = AccountingApi(api_client)
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 contact_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Contact
 date = '2013-10-20' # date | The date of the Aged Receivables By Contact report (optional)
-from_date = '2013-10-20' # date | The from date of the Aged Receivables By Contact report (optional)
-to_date = '2013-10-20' # date | The to date of the Aged Receivables By Contact report (optional)
+from_date = '2013-10-20' # date | filter by the from date of the report e.g. 2021-02-01 (optional)
+to_date = '2013-10-20' # date | filter by the to date of the report e.g. 2021-02-28 (optional)
 try:
     # Retrieves report for aged receivables by contact
     api_response = api_instance.get_report_aged_receivables_by_contact(xero_tenant_id, contact_id, date=date, from_date=from_date, to_date=to_date)
@@ -11496,8 +11496,8 @@ Name | Type | Description  | Notes
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **contact_id** | [**str**](.md)| Unique identifier for a Contact | 
  **date** | **date**| The date of the Aged Receivables By Contact report | [optional] 
- **from_date** | **date**| The from date of the Aged Receivables By Contact report | [optional] 
- **to_date** | **date**| The to date of the Aged Receivables By Contact report | [optional] 
+ **from_date** | **date**| filter by the from date of the report e.g. 2021-02-01 | [optional] 
+ **to_date** | **date**| filter by the to date of the report e.g. 2021-02-28 | [optional] 
 
 ### Return type
 
@@ -11745,8 +11745,8 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-from_date = '2019-11-01' # date | The from date for the Bank Summary report e.g. 2018-03-31 (optional)
-to_date = '2019-11-30' # date | The to date for the Bank Summary report e.g. 2018-03-31 (optional)
+from_date = '2013-10-20' # date | filter by the from date of the report e.g. 2021-02-01 (optional)
+to_date = '2013-10-20' # date | filter by the to date of the report e.g. 2021-02-28 (optional)
 try:
     # Retrieves report for bank summary
     api_response = api_instance.get_report_bank_summary(xero_tenant_id, from_date=from_date, to_date=to_date)
@@ -11760,8 +11760,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
- **from_date** | **date**| The from date for the Bank Summary report e.g. 2018-03-31 | [optional] 
- **to_date** | **date**| The to date for the Bank Summary report e.g. 2018-03-31 | [optional] 
+ **from_date** | **date**| filter by the from date of the report e.g. 2021-02-01 | [optional] 
+ **to_date** | **date**| filter by the to date of the report e.g. 2021-02-28 | [optional] 
 
 ### Return type
 
@@ -11940,8 +11940,8 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-from_date = '2019-03-01' # date | The from date for the ProfitAndLoss report e.g. 2018-03-31 (optional)
-to_date = '2019-03-31' # date | The to date for the ProfitAndLoss report e.g. 2018-03-31 (optional)
+from_date = '2013-10-20' # date | filter by the from date of the report e.g. 2021-02-01 (optional)
+to_date = '2013-10-20' # date | filter by the to date of the report e.g. 2021-02-28 (optional)
 periods = 3 # int | The number of periods to compare (integer between 1 and 12) (optional)
 timeframe = 'MONTH' # str | The period size to compare to (MONTH, QUARTER, YEAR) (optional)
 tracking_category_id = '00000000-0000-0000-0000-000000000000' # str | The trackingCategory 1 for the ProfitAndLoss report (optional)
@@ -11963,8 +11963,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
- **from_date** | **date**| The from date for the ProfitAndLoss report e.g. 2018-03-31 | [optional] 
- **to_date** | **date**| The to date for the ProfitAndLoss report e.g. 2018-03-31 | [optional] 
+ **from_date** | **date**| filter by the from date of the report e.g. 2021-02-01 | [optional] 
+ **to_date** | **date**| filter by the to date of the report e.g. 2021-02-28 | [optional] 
  **periods** | **int**| The number of periods to compare (integer between 1 and 12) | [optional] 
  **timeframe** | **str**| The period size to compare to (MONTH, QUARTER, YEAR) | [optional] 
  **tracking_category_id** | **str**| The trackingCategory 1 for the ProfitAndLoss report | [optional] 
@@ -12539,7 +12539,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-account_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for retrieving single object
+account_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Account object
 accounts = { "Accounts":[ { "Code":"123456", "Name":"BarFoo", "AccountID":"99ce6032-0678-4aa0-8148-240c75fee33a", "Type":"EXPENSE", "Description":"GoodBye World", "TaxType":"INPUT", "EnablePaymentsToAccount":false, "ShowInExpenseClaims":false, "Class":"EXPENSE", "ReportingCode":"EXP", "ReportingCodeName":"Expense", "UpdatedDateUTC":"2019-02-21T16:29:47.96-08:00" } ] } # Accounts | Request of type Accounts array with one Account
 try:
     # Updates a chart of accounts
@@ -12554,7 +12554,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
- **account_id** | [**str**](.md)| Unique identifier for retrieving single object | 
+ **account_id** | [**str**](.md)| Unique identifier for Account object | 
  **accounts** | [**Accounts**](Accounts.md)| Request of type Accounts array with one Account | 
 
 ### Return type
@@ -12739,7 +12739,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 bank_transaction_id = '00000000-0000-0000-0000-000000000000' # str | Xero generated unique identifier for a bank transaction
-file_name = 'xero-dev.jpg' # str | The name of the file being attached
+file_name = 'xero-dev.jpg' # str | Name of the attachment
 body = 'body_example' # str | Byte array of file in body of request
 try:
     # Updates a specific attachment from a specific bank transaction by filename
@@ -12755,7 +12755,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **bank_transaction_id** | [**str**](.md)| Xero generated unique identifier for a bank transaction | 
- **file_name** | **str**| The name of the file being attached | 
+ **file_name** | **str**| Name of the attachment | 
  **body** | **str**| Byte array of file in body of request | 
 
 ### Return type
@@ -12806,7 +12806,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 bank_transfer_id = '00000000-0000-0000-0000-000000000000' # str | Xero generated unique identifier for a bank transfer
-file_name = 'xero-dev.jpg' # str | The name of the file being attached to a Bank Transfer
+file_name = 'xero-dev.jpg' # str | Name of the attachment
 body = 'body_example' # str | Byte array of file in body of request
 try:
     api_response = api_instance.update_bank_transfer_attachment_by_file_name(xero_tenant_id, bank_transfer_id, file_name, body)
@@ -12821,7 +12821,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **bank_transfer_id** | [**str**](.md)| Xero generated unique identifier for a bank transfer | 
- **file_name** | **str**| The name of the file being attached to a Bank Transfer | 
+ **file_name** | **str**| Name of the attachment | 
  **body** | **str**| Byte array of file in body of request | 
 
 ### Return type
@@ -12937,7 +12937,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 contact_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Contact
-file_name = 'xero-dev.jpg' # str | Name for the file you are attaching
+file_name = 'xero-dev.jpg' # str | Name of the attachment
 body = 'body_example' # str | Byte array of file in body of request
 try:
     api_response = api_instance.update_contact_attachment_by_file_name(xero_tenant_id, contact_id, file_name, body)
@@ -12952,7 +12952,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **contact_id** | [**str**](.md)| Unique identifier for a Contact | 
- **file_name** | **str**| Name for the file you are attaching | 
+ **file_name** | **str**| Name of the attachment | 
  **body** | **str**| Byte array of file in body of request | 
 
 ### Return type
@@ -13135,7 +13135,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 credit_note_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Credit Note
-file_name = 'xero-dev.jpg' # str | Name of the file you are attaching to Credit Note
+file_name = 'xero-dev.jpg' # str | Name of the attachment
 body = 'body_example' # str | Byte array of file in body of request
 try:
     # Updates attachments on a specific credit note by file name
@@ -13151,7 +13151,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **credit_note_id** | [**str**](.md)| Unique identifier for a Credit Note | 
- **file_name** | **str**| Name of the file you are attaching to Credit Note | 
+ **file_name** | **str**| Name of the attachment | 
  **body** | **str**| Byte array of file in body of request | 
 
 ### Return type
@@ -13334,7 +13334,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 invoice_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Invoice
-file_name = 'xero-dev.jpg' # str | Name of the file you are attaching
+file_name = 'xero-dev.jpg' # str | Name of the attachment
 body = 'body_example' # str | Byte array of file in body of request
 try:
     # Updates an attachment from a specific invoices or purchase bill by filename
@@ -13350,7 +13350,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **invoice_id** | [**str**](.md)| Unique identifier for an Invoice | 
- **file_name** | **str**| Name of the file you are attaching | 
+ **file_name** | **str**| Name of the attachment | 
  **body** | **str**| Byte array of file in body of request | 
 
 ### Return type
@@ -13598,7 +13598,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 manual_journal_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a ManualJournal
-file_name = 'xero-dev.jpg' # str | The name of the file being attached to a ManualJournal
+file_name = 'xero-dev.jpg' # str | Name of the attachment
 body = 'body_example' # str | Byte array of file in body of request
 try:
     # Updates a specific attachment from a specific manual journal by file name
@@ -13614,7 +13614,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **manual_journal_id** | [**str**](.md)| Unique identifier for a ManualJournal | 
- **file_name** | **str**| The name of the file being attached to a ManualJournal | 
+ **file_name** | **str**| Name of the attachment | 
  **body** | **str**| Byte array of file in body of request | 
 
 ### Return type
@@ -14257,7 +14257,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-purchase_order_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a PurchaseOrder
+purchase_order_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Purchase Order
 purchase_orders = { "PurchaseOrders": [ { "AttentionTo": "Peter Parker", "LineItems": [], "Contact": {} } ] } # PurchaseOrders | 
 try:
     # Updates a specific purchase order
@@ -14272,7 +14272,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
- **purchase_order_id** | [**str**](.md)| Unique identifier for a PurchaseOrder | 
+ **purchase_order_id** | [**str**](.md)| Unique identifier for an Purchase Order | 
  **purchase_orders** | [**PurchaseOrders**](PurchaseOrders.md)|  | 
 
 ### Return type
@@ -14322,8 +14322,8 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-purchase_order_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Purchase Order object
-file_name = 'xero-dev.png' # str | Name of the attachment
+purchase_order_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Purchase Order
+file_name = 'xero-dev.jpg' # str | Name of the attachment
 body = 'body_example' # str | Byte array of file in body of request
 try:
     # Updates a specific attachment for a specific purchase order by filename
@@ -14338,7 +14338,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
- **purchase_order_id** | [**str**](.md)| Unique identifier for Purchase Order object | 
+ **purchase_order_id** | [**str**](.md)| Unique identifier for an Purchase Order | 
  **file_name** | **str**| Name of the attachment | 
  **body** | **str**| Byte array of file in body of request | 
 
@@ -14454,7 +14454,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-quote_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Quote object
+quote_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Quote
 file_name = 'xero-dev.jpg' # str | Name of the attachment
 body = 'body_example' # str | Byte array of file in body of request
 try:
@@ -14470,7 +14470,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
- **quote_id** | [**str**](.md)| Unique identifier for Quote object | 
+ **quote_id** | [**str**](.md)| Unique identifier for an Quote | 
  **file_name** | **str**| Name of the attachment | 
  **body** | **str**| Byte array of file in body of request | 
 
@@ -14589,7 +14589,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 receipt_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Receipt
-file_name = 'xero-dev.jpg' # str | The name of the file being attached to the Receipt
+file_name = 'xero-dev.jpg' # str | Name of the attachment
 body = 'body_example' # str | Byte array of file in body of request
 try:
     # Updates a specific attachment on a specific expense claim receipts by file name
@@ -14605,7 +14605,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **receipt_id** | [**str**](.md)| Unique identifier for a Receipt | 
- **file_name** | **str**| The name of the file being attached to the Receipt | 
+ **file_name** | **str**| Name of the attachment | 
  **body** | **str**| Byte array of file in body of request | 
 
 ### Return type
@@ -14656,7 +14656,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 repeating_invoice_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Repeating Invoice
-file_name = 'xero-dev.jpg' # str | The name of the file being attached to a Repeating Invoice
+file_name = 'xero-dev.jpg' # str | Name of the attachment
 body = 'body_example' # str | Byte array of file in body of request
 try:
     # Updates a specific attachment from a specific repeating invoices by file name
@@ -14672,7 +14672,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **repeating_invoice_id** | [**str**](.md)| Unique identifier for a Repeating Invoice | 
- **file_name** | **str**| The name of the file being attached to a Repeating Invoice | 
+ **file_name** | **str**| Name of the attachment | 
  **body** | **str**| Byte array of file in body of request | 
 
 ### Return type

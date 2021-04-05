@@ -22,8 +22,7 @@ from xero_python.file.models.file_object import FileObject
 from xero_python.file.models.files import Files
 from xero_python.file.models.folder import Folder
 from xero_python.file.models.folders import Folders
-from xero_python.file.models.inline_object import InlineObject
-from xero_python.file.models.inline_object1 import InlineObject1
 from xero_python.file.models.object_group import ObjectGroup
 from xero_python.file.models.object_type import ObjectType
+from xero_python.file.models.upload_object import UploadObject
 from xero_python.file.models.user import User
