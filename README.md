@@ -109,34 +109,15 @@ We've created [xero-python-outh2-app](https://github.com/XeroAPI/xero-python-oau
 [audreyr/cookiecutter-pypackage](https://github.com/audreyr/cookiecutter-pypackage)
 project template.
 
+## Participating in Xero’s developer community
+This SDK is one of a number of SDK’s that the Xero Developer team builds and maintains. We are grateful for all the contributions that the community makes. 
 
-## Contribution
+Here are a few things you should be aware of as a contributor:
+* Xero has adopted the Contributor Covenant [Code of Conduct](https://github.com/XeroAPI/xero-python/blob/master/CODE_OF_CONDUCT.md), we expect all contributors in our community to adhere to it
+* If you raise an issue then please make sure to fill out the github issue template, doing so helps us help you 
+* You’re welcome to raise PRs. As our SDKs are generated we may use your code in the core SDK build instead of merging your code
+* We have a [contribution guide](https://github.com/XeroAPI/xero-python/blob/master/CONTRIBUTING.md) for you to follow when contributing to this SDK
+* Curious about how we generate our SDK’s? Have a [read of our process](https://devblog.xero.com/building-sdks-for-the-future-b79ff726dfd6) and have a look at our [OpenAPISpec](https://github.com/XeroAPI/Xero-OpenAPI)
+* This software is published under the [MIT License](https://github.com/XeroAPI/xero-python/blob/master/LICENSE)
 
-Please read [contribution](https://github.com/xero-github/xero-python/blob/master/CONTRIBUTING.md) guidelines.
-
-## License
-
-This software is published under the [MIT License](http://en.wikipedia.org/wiki/MIT_License).
-
-	Copyright (c) 2020 Xero Limited
-
-	Permission is hereby granted, free of charge, to any person
-	obtaining a copy of this software and associated documentation
-	files (the "Software"), to deal in the Software without
-	restriction, including without limitation the rights to use,
-	copy, modify, merge, publish, distribute, sublicense, and/or sell
-	copies of the Software, and to permit persons to whom the
-	Software is furnished to do so, subject to the following
-	conditions:
-
-	The above copyright notice and this permission notice shall be
-	included in all copies or substantial portions of the Software.
-
-	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-	EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-	OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-	NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-	HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-	FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-	OTHER DEALINGS IN THE SOFTWARE.
+For questions that aren’t related to SDKs please refer to our [developer support page](https://developer.xero.com/support/).
