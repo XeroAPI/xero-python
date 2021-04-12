@@ -11,6 +11,7 @@ class TokenApi:
     """
 
     refresh_token_url = "https://identity.xero.com/connect/token"
+    revoke_token_url = "https://identity.xero.com/connect/revocation"
 
     def __init__(self, api_client, client_id, client_secret):
         self.api_client = api_client
@@ -49,6 +50,35 @@ class TokenApi:
             )
         # todo validate response is json
         return self.parse_token_response(response)
+    
+    def revoke_token(self, refresh_token):
+        """
+        Call xero identity API to revoke access tokens and remove all a user's connections using refresh token
+        :param refresh_token: str auth2 refresh token
+        :return: status response
+        """
+        post_data = {
+            "token": refresh_token,
+            "client_id": self.client_id,
+            "client_secret": self.client_secret,
+        }
+        response, status, headers = self.api_client.call_api(
+            self.revoke_token_url,
+            "POST",
+            header_params={
+                "Accept": "application/json",
+                "Content-Type": "application/x-www-form-urlencoded",
+            },
+            post_params=post_data,
+            auth_settings=None,  # important to prevent infinite recursive loop
+            _preload_content=False,
+        )
+        if status != 200:
+            # todo improve error handling
+            raise Exception(
+                "refresh token status {} {} {!r}".format(status, response, headers)
+            )
+        return status
 
     def parse_token_response(self, response):
         """
@@ -167,6 +197,30 @@ class OAuth2Token:
             return False
         token_api = TokenApi(api_client, self.client_id, self.client_secret)
         new_token = self.fetch_access_token(token_api)
+        self.update_token(**new_token)
+        api_client.set_oauth2_token(new_token)
+        return True
+
+    def revoke_access_token(self, api_client):
+        """
+        Perform auth2 revoke token call.
+        :param api_client:  ApiClient instance used to perform refresh token API call.
+        :return: bool - True if success
+        :raise: http request related errors
+        """
+        if not self.can_refresh_access_token():
+            return False
+        token_api = TokenApi(api_client, self.client_id, self.client_secret)
+        token_api.revoke_token(self.refresh_token)
+        new_token = {
+            "access_token": None,
+            "refresh_token": None,
+            "scope": None,
+            "expires_at": None,
+            "expires_in": None,
+            "token_type": "Bearer",
+            "id_token": None,
+        }
         self.update_token(**new_token)
         api_client.set_oauth2_token(new_token)
         return True

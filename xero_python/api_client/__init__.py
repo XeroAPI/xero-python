@@ -748,6 +748,16 @@ class ApiClient(object):
         if oauth2_token.refresh_access_token(self):
             return self.get_oauth2_token()
 
+    def revoke_oauth2_token(self):
+        """
+        Force revoke oauth2 token
+        :return: empty oauth2 token
+        """
+        oauth2_token = self.configuration.oauth2_token
+        oauth2_token.update_token(**self.get_oauth2_token())
+        if oauth2_token.revoke_access_token(self):
+            return self.get_oauth2_token()
+
     def oauth2_token_getter(self, token_getter):
         """
         A decorator to register a callback function for getting oauth2 token
