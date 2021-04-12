@@ -50,7 +50,7 @@ class TokenApi:
             )
         # todo validate response is json
         return self.parse_token_response(response)
-    
+
     def revoke_token(self, refresh_token):
         """
         Call xero identity API to revoke access tokens and remove all a user's connections using refresh token
