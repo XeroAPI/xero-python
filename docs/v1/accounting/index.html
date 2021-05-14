@@ -3662,7 +3662,6 @@ ul.nav-tabs {
       "type" : "number",
       "description" : "The calculated tax amount based on the TaxType and LineAmount",
       "format" : "double",
-      "readOnly" : true,
       "example" : 0.0,
       "x-is-money" : true
     },
@@ -4371,6 +4370,13 @@ ul.nav-tabs {
       "description" : "See Allocations",
       "items" : {
         "$ref" : "#/components/schemas/Allocation"
+      }
+    },
+    "Payments" : {
+      "type" : "array",
+      "description" : "See Payments",
+      "items" : {
+        "$ref" : "#/components/schemas/Payment"
       }
     },
     "AppliedAmount" : {
@@ -5789,7 +5795,7 @@ ul.nav-tabs {
             } else if (location.includes('php')){
               sdkLang = 'php'
               sdkName = 'xero-php-oauth2'
-            } else if (location.includes('dotnet')){
+            } else if (location.includes('xero-netstandard') || location.includes('csharp')){
               sdkLang = 'dotnet'
               sdkName = 'Xero-NetStandard'
             } else if (location.includes('java')){
@@ -5813,7 +5819,7 @@ ul.nav-tabs {
           <nav id="scrollingNav">
             <ul class="sidenav nav nav-list">
               <li class="nav-header" data-group="Accounting"><strong>SDK: </strong><span id='sdk-name'></span></li>
-              <li class="nav-header" data-group="Accounting"><strong>VSN: </strong>1.5.3</li>
+              <li class="nav-header" data-group="Accounting"><strong>VSN: </strong>1.6.0</li>
               <li class="nav-header" data-group="Accounting"><a href="#api-Accounting">Methods</a></li>
               <li data-group="Accounting" data-name="createAccount" class="">
                 <a href="#api-Accounting-createAccount">createAccount</a>
@@ -21692,9 +21698,10 @@ def accounting_get_contacts():
     order = 'Name ASC'
     ids = [&quot;00000000-0000-0000-0000-000000000000&quot;]
     include_archived = 'true'
+    summary_only = 'true'
     
     try:
-        api_response = api_instance.get_contacts(xero_tenant_id, if_modified_since, where, order, ids, page, include_archived)
+        api_response = api_instance.get_contacts(xero_tenant_id, if_modified_since, where, order, ids, page, include_archived, summary_only)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->getContacts: %s\n" % e)</code></pre>
@@ -21865,6 +21872,26 @@ e.g. page=1 - Up to 100 contacts will be returned in a single API call.
 
                     <div class="inner description marked">
 e.g. includeArchived=true - Contacts with a status of ARCHIVED will be included in the response
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">summaryOnly</td>
+<td>
+
+
+    <div id="d2e199_getContacts_summaryOnly">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    Boolean
+                </span>
+
+                    <div class="inner description marked">
+Use summaryOnly=true in GET Contacts and Invoices endpoint to retrieve a smaller version of the response object. This returns only lightweight fields, excluding computation-heavy fields from the response, making the API calls quick and efficient.
                     </div>
             </div>
         </div>
@@ -24794,9 +24821,10 @@ def accounting_get_invoices():
     statuses = [&quot;DRAFT&quot;, &quot;SUBMITTED&quot;]
     include_archived = 'true'
     created_by_my_app = 'false'
+    summary_only = 'true'
     
     try:
-        api_response = api_instance.get_invoices(xero_tenant_id, if_modified_since, where, order, ids, invoice_numbers, contact_ids, statuses, page, include_archived, created_by_my_app, unitdp)
+        api_response = api_instance.get_invoices(xero_tenant_id, if_modified_since, where, order, ids, invoice_numbers, contact_ids, statuses, page, include_archived, created_by_my_app, summary_only, unitdp)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->getInvoices: %s\n" % e)</code></pre>
@@ -25050,6 +25078,26 @@ e.g. includeArchived=true - Invoices with a status of ARCHIVED will be included 
 
                     <div class="inner description marked">
 When set to true you'll only retrieve Invoices created by your app
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">summaryOnly</td>
+<td>
+
+
+    <div id="d2e199_getInvoices_summaryOnly">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    Boolean
+                </span>
+
+                    <div class="inner description marked">
+Use summaryOnly=true in GET Contacts and Invoices endpoint to retrieve a smaller version of the response object. This returns only lightweight fields, excluding computation-heavy fields from the response, making the API calls quick and efficient.
                     </div>
             </div>
         </div>

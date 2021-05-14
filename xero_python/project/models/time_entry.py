@@ -301,7 +301,7 @@ class TimeEntry(BaseModel):
         :param status: The status of this TimeEntry.  # noqa: E501
         :type: str
         """
-        allowed_values = ["ACTIVE", "LOCKED", "None"]  # noqa: E501
+        allowed_values = ["ACTIVE", "LOCKED", "INVOICED", "None"]  # noqa: E501
 
         if status:
             if status not in allowed_values:

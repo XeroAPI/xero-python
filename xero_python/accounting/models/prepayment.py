@@ -46,6 +46,7 @@ class Prepayment(BaseModel):
         "currency_rate": "float",
         "remaining_credit": "float",
         "allocations": "list[Allocation]",
+        "payments": "list[Payment]",
         "applied_amount": "float",
         "has_attachments": "bool",
         "attachments": "list[Attachment]",
@@ -68,6 +69,7 @@ class Prepayment(BaseModel):
         "currency_rate": "CurrencyRate",
         "remaining_credit": "RemainingCredit",
         "allocations": "Allocations",
+        "payments": "Payments",
         "applied_amount": "AppliedAmount",
         "has_attachments": "HasAttachments",
         "attachments": "Attachments",
@@ -91,6 +93,7 @@ class Prepayment(BaseModel):
         currency_rate=None,
         remaining_credit=None,
         allocations=None,
+        payments=None,
         applied_amount=None,
         has_attachments=False,
         attachments=None,
@@ -113,6 +116,7 @@ class Prepayment(BaseModel):
         self._currency_rate = None
         self._remaining_credit = None
         self._allocations = None
+        self._payments = None
         self._applied_amount = None
         self._has_attachments = None
         self._attachments = None
@@ -150,6 +154,8 @@ class Prepayment(BaseModel):
             self.remaining_credit = remaining_credit
         if allocations is not None:
             self.allocations = allocations
+        if payments is not None:
+            self.payments = payments
         if applied_amount is not None:
             self.applied_amount = applied_amount
         if has_attachments is not None:
@@ -542,6 +548,29 @@ class Prepayment(BaseModel):
         """
 
         self._allocations = allocations
+
+    @property
+    def payments(self):
+        """Gets the payments of this Prepayment.  # noqa: E501
+
+        See Payments  # noqa: E501
+
+        :return: The payments of this Prepayment.  # noqa: E501
+        :rtype: list[Payment]
+        """
+        return self._payments
+
+    @payments.setter
+    def payments(self, payments):
+        """Sets the payments of this Prepayment.
+
+        See Payments  # noqa: E501
+
+        :param payments: The payments of this Prepayment.  # noqa: E501
+        :type: list[Payment]
+        """
+
+        self._payments = payments
 
     @property
     def applied_amount(self):

@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.10.4
+    OpenAPI spec version: 2.12.0
 """
 
 import importlib
@@ -8290,6 +8290,7 @@ class AccountingApi(object):
         i_ds=empty,
         page=empty,
         include_archived=empty,
+        summary_only=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -8303,6 +8304,7 @@ class AccountingApi(object):
         :param list[str] i_ds: Filter by a comma separated list of ContactIDs. Allows you to retrieve a specific set of contacts in a single call.
         :param int page: e.g. page=1 - Up to 100 contacts will be returned in a single API call.
         :param bool include_archived: e.g. includeArchived=true - Contacts with a status of ARCHIVED will be included in the response
+        :param bool summary_only: Use summaryOnly=true in GET Contacts and Invoices endpoint to retrieve a smaller version of the response object. This returns only lightweight fields, excluding computation-heavy fields from the response, making the API calls quick and efficient.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -8337,6 +8339,9 @@ class AccountingApi(object):
 
         if include_archived is not empty:
             query_params.append(("includeArchived", include_archived))
+
+        if summary_only is not empty:
+            query_params.append(("summaryOnly", summary_only))
 
         header_params = {
             "xero-tenant-id": xero_tenant_id,
@@ -10021,6 +10026,7 @@ class AccountingApi(object):
         page=empty,
         include_archived=empty,
         created_by_my_app=empty,
+        summary_only=empty,
         unitdp=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -10039,6 +10045,7 @@ class AccountingApi(object):
         :param int page: e.g. page=1 – Up to 100 invoices will be returned in a single API call with line items shown for each invoice
         :param bool include_archived: e.g. includeArchived=true - Invoices with a status of ARCHIVED will be included in the response
         :param bool created_by_my_app: When set to true you'll only retrieve Invoices created by your app
+        :param bool summary_only: Use summaryOnly=true in GET Contacts and Invoices endpoint to retrieve a smaller version of the response object. This returns only lightweight fields, excluding computation-heavy fields from the response, making the API calls quick and efficient.
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -10089,6 +10096,9 @@ class AccountingApi(object):
 
         if created_by_my_app is not empty:
             query_params.append(("createdByMyApp", created_by_my_app))
+
+        if summary_only is not empty:
+            query_params.append(("summaryOnly", summary_only))
 
         if unitdp is not empty:
             query_params.append(("unitdp", unitdp))

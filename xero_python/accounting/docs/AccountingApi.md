@@ -6401,7 +6401,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_contacts**
-> Contacts get_contacts(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, i_ds=i_ds, page=page, include_archived=include_archived)
+> Contacts get_contacts(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, i_ds=i_ds, page=page, include_archived=include_archived, summary_only=summary_only)
 
 Retrieves all contacts in a Xero organisation
 
@@ -6438,9 +6438,10 @@ order = 'Name ASC' # str | Order by an any element (optional)
 i_ds = ['&quot;00000000-0000-0000-0000-000000000000&quot;'] # list[str] | Filter by a comma separated list of ContactIDs. Allows you to retrieve a specific set of contacts in a single call. (optional)
 page = 1 # int | e.g. page=1 - Up to 100 contacts will be returned in a single API call. (optional)
 include_archived = True # bool | e.g. includeArchived=true - Contacts with a status of ARCHIVED will be included in the response (optional)
+summary_only = False # bool | Use summaryOnly=true in GET Contacts and Invoices endpoint to retrieve a smaller version of the response object. This returns only lightweight fields, excluding computation-heavy fields from the response, making the API calls quick and efficient. (optional) (default to False)
 try:
     # Retrieves all contacts in a Xero organisation
-    api_response = api_instance.get_contacts(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, i_ds=i_ds, page=page, include_archived=include_archived)
+    api_response = api_instance.get_contacts(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, i_ds=i_ds, page=page, include_archived=include_archived, summary_only=summary_only)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->get_contacts: %s\n" % e)
@@ -6457,6 +6458,7 @@ Name | Type | Description  | Notes
  **i_ds** | [**list[str]**](str.md)| Filter by a comma separated list of ContactIDs. Allows you to retrieve a specific set of contacts in a single call. | [optional] 
  **page** | **int**| e.g. page&#x3D;1 - Up to 100 contacts will be returned in a single API call. | [optional] 
  **include_archived** | **bool**| e.g. includeArchived&#x3D;true - Contacts with a status of ARCHIVED will be included in the response | [optional] 
+ **summary_only** | **bool**| Use summaryOnly&#x3D;true in GET Contacts and Invoices endpoint to retrieve a smaller version of the response object. This returns only lightweight fields, excluding computation-heavy fields from the response, making the API calls quick and efficient. | [optional] [default to False]
 
 ### Return type
 
@@ -7770,7 +7772,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_invoices**
-> Invoices get_invoices(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, i_ds=i_ds, invoice_numbers=invoice_numbers, contact_i_ds=contact_i_ds, statuses=statuses, page=page, include_archived=include_archived, created_by_my_app=created_by_my_app, unitdp=unitdp)
+> Invoices get_invoices(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, i_ds=i_ds, invoice_numbers=invoice_numbers, contact_i_ds=contact_i_ds, statuses=statuses, page=page, include_archived=include_archived, created_by_my_app=created_by_my_app, summary_only=summary_only, unitdp=unitdp)
 
 Retrieves sales invoices or purchase bills
 
@@ -7811,10 +7813,11 @@ statuses = ['&quot;DRAFT&quot;, &quot;SUBMITTED&quot;'] # list[str] | Filter by 
 page = 1 # int | e.g. page=1 – Up to 100 invoices will be returned in a single API call with line items shown for each invoice (optional)
 include_archived = True # bool | e.g. includeArchived=true - Invoices with a status of ARCHIVED will be included in the response (optional)
 created_by_my_app = false # bool | When set to true you'll only retrieve Invoices created by your app (optional)
+summary_only = False # bool | Use summaryOnly=true in GET Contacts and Invoices endpoint to retrieve a smaller version of the response object. This returns only lightweight fields, excluding computation-heavy fields from the response, making the API calls quick and efficient. (optional) (default to False)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 try:
     # Retrieves sales invoices or purchase bills
-    api_response = api_instance.get_invoices(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, i_ds=i_ds, invoice_numbers=invoice_numbers, contact_i_ds=contact_i_ds, statuses=statuses, page=page, include_archived=include_archived, created_by_my_app=created_by_my_app, unitdp=unitdp)
+    api_response = api_instance.get_invoices(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, i_ds=i_ds, invoice_numbers=invoice_numbers, contact_i_ds=contact_i_ds, statuses=statuses, page=page, include_archived=include_archived, created_by_my_app=created_by_my_app, summary_only=summary_only, unitdp=unitdp)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->get_invoices: %s\n" % e)
@@ -7835,6 +7838,7 @@ Name | Type | Description  | Notes
  **page** | **int**| e.g. page&#x3D;1 – Up to 100 invoices will be returned in a single API call with line items shown for each invoice | [optional] 
  **include_archived** | **bool**| e.g. includeArchived&#x3D;true - Invoices with a status of ARCHIVED will be included in the response | [optional] 
  **created_by_my_app** | **bool**| When set to true you&#39;ll only retrieve Invoices created by your app | [optional] 
+ **summary_only** | **bool**| Use summaryOnly&#x3D;true in GET Contacts and Invoices endpoint to retrieve a smaller version of the response object. This returns only lightweight fields, excluding computation-heavy fields from the response, making the API calls quick and efficient. | [optional] [default to False]
  **unitdp** | **int**| e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts | [optional] 
 
 ### Return type
