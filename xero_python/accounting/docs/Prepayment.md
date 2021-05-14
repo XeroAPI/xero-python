@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **currency_rate** | **float** | The currency rate for a multicurrency prepayment. If no rate is specified, the XE.com day rate is used | [optional] 
 **remaining_credit** | **float** | The remaining credit balance on the prepayment | [optional] 
 **allocations** | [**list[Allocation]**](Allocation.md) | See Allocations | [optional] 
+**payments** | [**list[Payment]**](Payment.md) | See Payments | [optional] 
 **applied_amount** | **float** | The amount of applied to an invoice | [optional] 
 **has_attachments** | **bool** | boolean to indicate if a prepayment has an attachment | [optional] [default to False]
 **attachments** | [**list[Attachment]**](Attachment.md) | See Attachments | [optional] 

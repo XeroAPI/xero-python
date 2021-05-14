@@ -63,7 +63,8 @@ class DeductionLine(BaseModel):
         self.discriminator = None
 
         self.deduction_type_id = deduction_type_id
-        self.calculation_type = calculation_type
+        if calculation_type is not None:
+            self.calculation_type = calculation_type
         if amount is not None:
             self.amount = amount
         if percentage is not None:
@@ -116,10 +117,6 @@ class DeductionLine(BaseModel):
         :param calculation_type: The calculation_type of this DeductionLine.  # noqa: E501
         :type: DeductionTypeCalculationType
         """
-        if calculation_type is None:
-            raise ValueError(
-                "Invalid value for `calculation_type`, must not be `None`"
-            )  # noqa: E501
 
         self._calculation_type = calculation_type
 

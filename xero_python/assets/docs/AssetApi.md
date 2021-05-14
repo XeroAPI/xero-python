@@ -176,7 +176,7 @@ api_client = ApiClient(
 api_instance = AssetApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-id = '4f7bcdcb-5ec1-4258-9558-19f662fccdfe' # str | fixed asset id for single object
+id = '00000000-0000-0000-0000-000000000000' # str | fixed asset id for single object
 try:
     # Retrieves fixed asset by id
     api_response = api_instance.get_asset_by_id(xero_tenant_id, id)
