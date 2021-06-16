@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**report_id** | **str** | Report id | [optional] 
+**report_id** | **str** | ID of the Report | [optional] 
 **report_name** | **str** | Name of the report | [optional] 
 **report_title** | **str** | Title of the report | [optional] 
 **report_type** | **str** | The type of report (BalanceSheet,ProfitLoss, etc) | [optional] 

@@ -195,6 +195,7 @@ class EarningsRate(BaseModel):
             "StatutorySickPayNonPensionable",
             "Tips(Direct)",
             "Tips(Non-Direct)",
+            "TerminationPay",
             "None",
         ]  # noqa: E501
 

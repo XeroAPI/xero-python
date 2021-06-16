@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**report_id** | **str** | See Prepayment Types | [optional] 
 **report_name** | **str** | See Prepayment Types | [optional] 
 **report_type** | **str** | See Prepayment Types | [optional] 
 **report_title** | **str** | See Prepayment Types | [optional] 

@@ -101,7 +101,7 @@ class ReportWithRow(BaseModel):
     def report_id(self):
         """Gets the report_id of this ReportWithRow.  # noqa: E501
 
-        Report id  # noqa: E501
+        ID of the Report  # noqa: E501
 
         :return: The report_id of this ReportWithRow.  # noqa: E501
         :rtype: str
@@ -112,7 +112,7 @@ class ReportWithRow(BaseModel):
     def report_id(self, report_id):
         """Sets the report_id of this ReportWithRow.
 
-        Report id  # noqa: E501
+        ID of the Report  # noqa: E501
 
         :param report_id: The report_id of this ReportWithRow.  # noqa: E501
         :type: str

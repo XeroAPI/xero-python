@@ -24,11 +24,11 @@ def translate_status_exception(error, api_instance, api_method):
 
 
 class HTTPStatusException(ApiException):
-    """Exception for http status != 2xx """
+    """Exception for http status != 2xx"""
 
 
 class RateLimitException(HTTPStatusException):
-    """Exception if Xero API rate limit reached """
+    """Exception if Xero API rate limit reached"""
 
     @property
     def rate_limit(self):
