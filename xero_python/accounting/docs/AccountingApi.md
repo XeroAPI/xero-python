@@ -90,6 +90,8 @@ Method | HTTP request | Description
 [**get_branding_theme**](AccountingApi.md#get_branding_theme) | **GET** /BrandingThemes/{BrandingThemeID} | Retrieves a specific branding theme using a unique branding theme Id
 [**get_branding_theme_payment_services**](AccountingApi.md#get_branding_theme_payment_services) | **GET** /BrandingThemes/{BrandingThemeID}/PaymentServices | Retrieves the payment services for a specific branding theme
 [**get_branding_themes**](AccountingApi.md#get_branding_themes) | **GET** /BrandingThemes | Retrieves all the branding themes
+[**get_budget**](AccountingApi.md#get_budget) | **GET** /Budgets/{BudgetID} | Retrieves a specific budgets, which includes budget lines
+[**get_budgets**](AccountingApi.md#get_budgets) | **GET** /Budgets | Retrieve a list of budgets
 [**get_contact**](AccountingApi.md#get_contact) | **GET** /Contacts/{ContactID} | Retrieves a specific contacts in a Xero organisation using a unique contact Id
 [**get_contact_attachment_by_file_name**](AccountingApi.md#get_contact_attachment_by_file_name) | **GET** /Contacts/{ContactID}/Attachments/{FileName} | Retrieves a specific attachment from a specific contact by file name
 [**get_contact_attachment_by_id**](AccountingApi.md#get_contact_attachment_by_id) | **GET** /Contacts/{ContactID}/Attachments/{AttachmentID} | Retrieves a specific attachment from a specific contact using a unique attachment Id
@@ -97,7 +99,7 @@ Method | HTTP request | Description
 [**get_contact_by_contact_number**](AccountingApi.md#get_contact_by_contact_number) | **GET** /Contacts/{ContactNumber} | Retrieves a specific contact by contact number in a Xero organisation
 [**get_contact_cis_settings**](AccountingApi.md#get_contact_cis_settings) | **GET** /Contacts/{ContactID}/CISSettings | Retrieves CIS settings for a specific contact in a Xero organisation
 [**get_contact_group**](AccountingApi.md#get_contact_group) | **GET** /ContactGroups/{ContactGroupID} | Retrieves a specific contact group by using a unique contact group Id
-[**get_contact_groups**](AccountingApi.md#get_contact_groups) | **GET** /ContactGroups | Retrieves the contact Id and name of all the contacts in a contact group
+[**get_contact_groups**](AccountingApi.md#get_contact_groups) | **GET** /ContactGroups | Retrieves the contact Id and name of each contact group
 [**get_contact_history**](AccountingApi.md#get_contact_history) | **GET** /Contacts/{ContactID}/History | Retrieves history records for a specific contact
 [**get_contacts**](AccountingApi.md#get_contacts) | **GET** /Contacts | Retrieves all contacts in a Xero organisation
 [**get_credit_note**](AccountingApi.md#get_credit_note) | **GET** /CreditNotes/{CreditNoteID} | Retrieves a specific credit note using a unique credit note Id
@@ -177,15 +179,15 @@ Method | HTTP request | Description
 [**get_repeating_invoices**](AccountingApi.md#get_repeating_invoices) | **GET** /RepeatingInvoices | Retrieves repeating invoices
 [**get_report_aged_payables_by_contact**](AccountingApi.md#get_report_aged_payables_by_contact) | **GET** /Reports/AgedPayablesByContact | Retrieves report for aged payables by contact
 [**get_report_aged_receivables_by_contact**](AccountingApi.md#get_report_aged_receivables_by_contact) | **GET** /Reports/AgedReceivablesByContact | Retrieves report for aged receivables by contact
-[**get_report_ba_sor_gst**](AccountingApi.md#get_report_ba_sor_gst) | **GET** /Reports/{ReportID} | Retrieves a specific report for BAS using a unique report Id (only valid for AU orgs)
-[**get_report_ba_sor_gst_list**](AccountingApi.md#get_report_ba_sor_gst_list) | **GET** /Reports | Retrieves report for BAS (only valid for AU orgs)
 [**get_report_balance_sheet**](AccountingApi.md#get_report_balance_sheet) | **GET** /Reports/BalanceSheet | Retrieves report for balancesheet
 [**get_report_bank_summary**](AccountingApi.md#get_report_bank_summary) | **GET** /Reports/BankSummary | Retrieves report for bank summary
 [**get_report_budget_summary**](AccountingApi.md#get_report_budget_summary) | **GET** /Reports/BudgetSummary | Retrieves report for budget summary
 [**get_report_executive_summary**](AccountingApi.md#get_report_executive_summary) | **GET** /Reports/ExecutiveSummary | Retrieves report for executive summary
+[**get_report_from_id**](AccountingApi.md#get_report_from_id) | **GET** /Reports/{ReportID} | Retrieves a specific report using a unique ReportID
 [**get_report_profit_and_loss**](AccountingApi.md#get_report_profit_and_loss) | **GET** /Reports/ProfitAndLoss | Retrieves report for profit and loss
 [**get_report_ten_ninety_nine**](AccountingApi.md#get_report_ten_ninety_nine) | **GET** /Reports/TenNinetyNine | Retrieve reports for 1099
 [**get_report_trial_balance**](AccountingApi.md#get_report_trial_balance) | **GET** /Reports/TrialBalance | Retrieves report for trial balance
+[**get_reports_list**](AccountingApi.md#get_reports_list) | **GET** /Reports | Retrieves a list of the organistaions unique reports that require a uuid to fetch
 [**get_tax_rates**](AccountingApi.md#get_tax_rates) | **GET** /TaxRates | Retrieves tax rates
 [**get_tracking_categories**](AccountingApi.md#get_tracking_categories) | **GET** /TrackingCategories | Retrieves tracking categories and options
 [**get_tracking_category**](AccountingApi.md#get_tracking_category) | **GET** /TrackingCategories/{TrackingCategoryID} | Retrieves specific tracking categories and options using a unique tracking category Id
@@ -916,7 +918,7 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 branding_theme_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Branding Theme
-payment_service = { "PaymentServiceID": "00000000-0000-0000-0000-000000000000", "PaymentServiceName": "ACME Payments", "PaymentServiceUrl": "https://www.payupnow.com/", "PayNowText": "Pay Now" } # PaymentService | PaymentService object in body of request
+payment_service = { "PaymentServiceID": "00000000-0000-0000-0000-000000000000", "PaymentServiceName": "Payments Service", "PaymentServiceUrl": "https://www.paymentservice.com/", "PayNowText": "Pay Now" } # PaymentService | PaymentService object in body of request
 try:
     # Creates a new custom payment service for a specific branding theme
     api_response = api_instance.create_branding_theme_payment_services(xero_tenant_id, branding_theme_id, payment_service)
@@ -5823,6 +5825,136 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_budget**
+> Budgets get_budget(xero_tenant_id, budget_id)
+
+Retrieves a specific budgets, which includes budget lines
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.accounting import AccountingApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = AccountingApi(api_client)
+
+xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
+budget_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Budgets
+try:
+    # Retrieves a specific budgets, which includes budget lines
+    api_response = api_instance.get_budget(xero_tenant_id, budget_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AccountingApi->get_budget: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **budget_id** | [**str**](.md)| Unique identifier for Budgets | 
+
+### Return type
+
+[**Budgets**](Budgets.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_budgets**
+> Budgets get_budgets(xero_tenant_id, i_ds=i_ds, date_to=date_to, date_from=date_from)
+
+Retrieve a list of budgets
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.accounting import AccountingApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = AccountingApi(api_client)
+
+xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
+i_ds = ['&quot;00000000-0000-0000-0000-000000000000&quot;'] # list[str] | Filter by BudgetID. Allows you to retrieve a specific individual budget. (optional)
+date_to = '2013-10-20' # date | Filter by start date (optional)
+date_from = '2013-10-20' # date | Filter by end date (optional)
+try:
+    # Retrieve a list of budgets
+    api_response = api_instance.get_budgets(xero_tenant_id, i_ds=i_ds, date_to=date_to, date_from=date_from)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AccountingApi->get_budgets: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **i_ds** | [**list[str]**](str.md)| Filter by BudgetID. Allows you to retrieve a specific individual budget. | [optional] 
+ **date_to** | **date**| Filter by start date | [optional] 
+ **date_from** | **date**| Filter by end date | [optional] 
+
+### Return type
+
+[**Budgets**](Budgets.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_contact**
 > Contacts get_contact(xero_tenant_id, contact_id)
 
@@ -6275,7 +6407,7 @@ Name | Type | Description  | Notes
 # **get_contact_groups**
 > ContactGroups get_contact_groups(xero_tenant_id, where=where, order=order)
 
-Retrieves the contact Id and name of all the contacts in a contact group
+Retrieves the contact Id and name of each contact group
 
 ### Example
 
@@ -6307,7 +6439,7 @@ xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 where = 'Status==\"ACTIVE\"' # str | Filter by an any element (optional)
 order = 'Name ASC' # str | Order by an any element (optional)
 try:
-    # Retrieves the contact Id and name of all the contacts in a contact group
+    # Retrieves the contact Id and name of each contact group
     api_response = api_instance.get_contact_groups(xero_tenant_id, where=where, order=order)
     pprint(api_response)
 except ApiException as e:
@@ -7772,7 +7904,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_invoices**
-> Invoices get_invoices(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, i_ds=i_ds, invoice_numbers=invoice_numbers, contact_i_ds=contact_i_ds, statuses=statuses, page=page, include_archived=include_archived, created_by_my_app=created_by_my_app, summary_only=summary_only, unitdp=unitdp)
+> Invoices get_invoices(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, i_ds=i_ds, invoice_numbers=invoice_numbers, contact_i_ds=contact_i_ds, statuses=statuses, page=page, include_archived=include_archived, created_by_my_app=created_by_my_app, unitdp=unitdp, summary_only=summary_only)
 
 Retrieves sales invoices or purchase bills
 
@@ -7813,11 +7945,11 @@ statuses = ['&quot;DRAFT&quot;, &quot;SUBMITTED&quot;'] # list[str] | Filter by 
 page = 1 # int | e.g. page=1 – Up to 100 invoices will be returned in a single API call with line items shown for each invoice (optional)
 include_archived = True # bool | e.g. includeArchived=true - Invoices with a status of ARCHIVED will be included in the response (optional)
 created_by_my_app = false # bool | When set to true you'll only retrieve Invoices created by your app (optional)
-summary_only = False # bool | Use summaryOnly=true in GET Contacts and Invoices endpoint to retrieve a smaller version of the response object. This returns only lightweight fields, excluding computation-heavy fields from the response, making the API calls quick and efficient. (optional) (default to False)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
+summary_only = False # bool | Use summaryOnly=true in GET Contacts and Invoices endpoint to retrieve a smaller version of the response object. This returns only lightweight fields, excluding computation-heavy fields from the response, making the API calls quick and efficient. (optional) (default to False)
 try:
     # Retrieves sales invoices or purchase bills
-    api_response = api_instance.get_invoices(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, i_ds=i_ds, invoice_numbers=invoice_numbers, contact_i_ds=contact_i_ds, statuses=statuses, page=page, include_archived=include_archived, created_by_my_app=created_by_my_app, summary_only=summary_only, unitdp=unitdp)
+    api_response = api_instance.get_invoices(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, i_ds=i_ds, invoice_numbers=invoice_numbers, contact_i_ds=contact_i_ds, statuses=statuses, page=page, include_archived=include_archived, created_by_my_app=created_by_my_app, unitdp=unitdp, summary_only=summary_only)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->get_invoices: %s\n" % e)
@@ -7838,8 +7970,8 @@ Name | Type | Description  | Notes
  **page** | **int**| e.g. page&#x3D;1 – Up to 100 invoices will be returned in a single API call with line items shown for each invoice | [optional] 
  **include_archived** | **bool**| e.g. includeArchived&#x3D;true - Invoices with a status of ARCHIVED will be included in the response | [optional] 
  **created_by_my_app** | **bool**| When set to true you&#39;ll only retrieve Invoices created by your app | [optional] 
- **summary_only** | **bool**| Use summaryOnly&#x3D;true in GET Contacts and Invoices endpoint to retrieve a smaller version of the response object. This returns only lightweight fields, excluding computation-heavy fields from the response, making the API calls quick and efficient. | [optional] [default to False]
  **unitdp** | **int**| e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts | [optional] 
+ **summary_only** | **bool**| Use summaryOnly&#x3D;true in GET Contacts and Invoices endpoint to retrieve a smaller version of the response object. This returns only lightweight fields, excluding computation-heavy fields from the response, making the API calls quick and efficient. | [optional] [default to False]
 
 ### Return type
 
@@ -11518,130 +11650,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_report_ba_sor_gst**
-> ReportWithRows get_report_ba_sor_gst(xero_tenant_id, report_id)
-
-Retrieves a specific report for BAS using a unique report Id (only valid for AU orgs)
-
-### Example
-
-* OAuth Authentication (OAuth2): 
-```python
-from xero_python.api_client import Configuration, ApiClient
-from xero_python.api_client.oauth2 import OAuth2Token
-from xero_python.exceptions import ApiException
-from xero_python.accounting import AccountingApi
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: OAuth2
-# simplified version, `xero_oauth2_token` represents permanent global token storage
-xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
-# create client configuration with client id and client secret for automatic token refresh
-api_config = Configuration(oauth2_token=OAuth2Token(
-    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
-))
-# configure xero-python sdk client
-api_client = ApiClient(
-    api_config,
-    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
-    oauth2_token_getter=lambda : xero_oauth2_token
-)
-# create an instance of the API class
-api_instance = AccountingApi(api_client)
-
-xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-report_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Report
-try:
-    # Retrieves a specific report for BAS using a unique report Id (only valid for AU orgs)
-    api_response = api_instance.get_report_ba_sor_gst(xero_tenant_id, report_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AccountingApi->get_report_ba_sor_gst: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xero_tenant_id** | **str**| Xero identifier for Tenant | 
- **report_id** | **str**| Unique identifier for a Report | 
-
-### Return type
-
-[**ReportWithRows**](ReportWithRows.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_report_ba_sor_gst_list**
-> ReportWithRows get_report_ba_sor_gst_list(xero_tenant_id)
-
-Retrieves report for BAS (only valid for AU orgs)
-
-### Example
-
-* OAuth Authentication (OAuth2): 
-```python
-from xero_python.api_client import Configuration, ApiClient
-from xero_python.api_client.oauth2 import OAuth2Token
-from xero_python.exceptions import ApiException
-from xero_python.accounting import AccountingApi
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: OAuth2
-# simplified version, `xero_oauth2_token` represents permanent global token storage
-xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
-# create client configuration with client id and client secret for automatic token refresh
-api_config = Configuration(oauth2_token=OAuth2Token(
-    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
-))
-# configure xero-python sdk client
-api_client = ApiClient(
-    api_config,
-    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
-    oauth2_token_getter=lambda : xero_oauth2_token
-)
-# create an instance of the API class
-api_instance = AccountingApi(api_client)
-
-xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-try:
-    # Retrieves report for BAS (only valid for AU orgs)
-    api_response = api_instance.get_report_ba_sor_gst_list(xero_tenant_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AccountingApi->get_report_ba_sor_gst_list: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xero_tenant_id** | **str**| Xero identifier for Tenant | 
-
-### Return type
-
-[**ReportWithRows**](ReportWithRows.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **get_report_balance_sheet**
 > ReportWithRows get_report_balance_sheet(xero_tenant_id, date=date, periods=periods, timeframe=timeframe, tracking_option_id1=tracking_option_id1, tracking_option_id2=tracking_option_id2, standard_layout=standard_layout, payments_only=payments_only)
 
@@ -11783,7 +11791,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_report_budget_summary**
-> ReportWithRows get_report_budget_summary(xero_tenant_id, date=date, period=period, timeframe=timeframe)
+> ReportWithRows get_report_budget_summary(xero_tenant_id, date=date, periods=periods, timeframe=timeframe)
 
 Retrieves report for budget summary
 
@@ -11815,11 +11823,11 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 date = '2019-03-31' # date | The date for the Bank Summary report e.g. 2018-03-31 (optional)
-period = 2 # int | The number of periods to compare (integer between 1 and 12) (optional)
+periods = 2 # int | The number of periods to compare (integer between 1 and 12) (optional)
 timeframe = 3 # int | The period size to compare to (1=month, 3=quarter, 12=year) (optional)
 try:
     # Retrieves report for budget summary
-    api_response = api_instance.get_report_budget_summary(xero_tenant_id, date=date, period=period, timeframe=timeframe)
+    api_response = api_instance.get_report_budget_summary(xero_tenant_id, date=date, periods=periods, timeframe=timeframe)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->get_report_budget_summary: %s\n" % e)
@@ -11831,7 +11839,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **date** | **date**| The date for the Bank Summary report e.g. 2018-03-31 | [optional] 
- **period** | **int**| The number of periods to compare (integer between 1 and 12) | [optional] 
+ **periods** | **int**| The number of periods to compare (integer between 1 and 12) | [optional] 
  **timeframe** | **int**| The period size to compare to (1&#x3D;month, 3&#x3D;quarter, 12&#x3D;year) | [optional] 
 
 ### Return type
@@ -11896,6 +11904,69 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **date** | **date**| The date for the Bank Summary report e.g. 2018-03-31 | [optional] 
+
+### Return type
+
+[**ReportWithRows**](ReportWithRows.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_report_from_id**
+> ReportWithRows get_report_from_id(xero_tenant_id, report_id)
+
+Retrieves a specific report using a unique ReportID
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.accounting import AccountingApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = AccountingApi(api_client)
+
+xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
+report_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Report
+try:
+    # Retrieves a specific report using a unique ReportID
+    api_response = api_instance.get_report_from_id(xero_tenant_id, report_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AccountingApi->get_report_from_id: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **report_id** | **str**| Unique identifier for a Report | 
 
 ### Return type
 
@@ -12105,6 +12176,67 @@ Name | Type | Description  | Notes
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **date** | **date**| The date for the Trial Balance report e.g. 2018-03-31 | [optional] 
  **payments_only** | **bool**| Return cash only basis for the Trial Balance report | [optional] 
+
+### Return type
+
+[**ReportWithRows**](ReportWithRows.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_reports_list**
+> ReportWithRows get_reports_list(xero_tenant_id)
+
+Retrieves a list of the organistaions unique reports that require a uuid to fetch
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.accounting import AccountingApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = AccountingApi(api_client)
+
+xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
+try:
+    # Retrieves a list of the organistaions unique reports that require a uuid to fetch
+    api_response = api_instance.get_reports_list(xero_tenant_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AccountingApi->get_reports_list: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
 
 ### Return type
 

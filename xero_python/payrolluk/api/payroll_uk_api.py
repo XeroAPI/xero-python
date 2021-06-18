@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.12.0
+    OpenAPI spec version: 2.13.2
 """
 
 import importlib
@@ -26,7 +26,7 @@ except ImportError:
 
 
 class empty:
-    """ empty object to mark optional parameter not set """
+    """empty object to mark optional parameter not set"""
 
 
 class PayrollUkApi(object):

@@ -30,7 +30,6 @@ class Report(BaseModel):
                             and the value is json key in definition.
     """
     openapi_types = {
-        "report_id": "str",
         "report_name": "str",
         "report_type": "str",
         "report_title": "str",
@@ -40,7 +39,6 @@ class Report(BaseModel):
     }
 
     attribute_map = {
-        "report_id": "ReportID",
         "report_name": "ReportName",
         "report_type": "ReportType",
         "report_title": "ReportTitle",
@@ -51,7 +49,6 @@ class Report(BaseModel):
 
     def __init__(
         self,
-        report_id=None,
         report_name=None,
         report_type=None,
         report_title=None,
@@ -61,7 +58,6 @@ class Report(BaseModel):
     ):  # noqa: E501
         """Report - a model defined in OpenAPI"""  # noqa: E501
 
-        self._report_id = None
         self._report_name = None
         self._report_type = None
         self._report_title = None
@@ -70,8 +66,6 @@ class Report(BaseModel):
         self._contacts = None
         self.discriminator = None
 
-        if report_id is not None:
-            self.report_id = report_id
         if report_name is not None:
             self.report_name = report_name
         if report_type is not None:
@@ -84,29 +78,6 @@ class Report(BaseModel):
             self.updated_date_utc = updated_date_utc
         if contacts is not None:
             self.contacts = contacts
-
-    @property
-    def report_id(self):
-        """Gets the report_id of this Report.  # noqa: E501
-
-        See Prepayment Types  # noqa: E501
-
-        :return: The report_id of this Report.  # noqa: E501
-        :rtype: str
-        """
-        return self._report_id
-
-    @report_id.setter
-    def report_id(self, report_id):
-        """Sets the report_id of this Report.
-
-        See Prepayment Types  # noqa: E501
-
-        :param report_id: The report_id of this Report.  # noqa: E501
-        :type: str
-        """
-
-        self._report_id = report_id
 
     @property
     def report_name(self):

@@ -36,6 +36,7 @@ class LineItem(BaseModel):
         "unit_amount": "float",
         "item_code": "str",
         "account_code": "str",
+        "account_id": "str",
         "tax_type": "str",
         "tax_amount": "float",
         "line_amount": "float",
@@ -52,6 +53,7 @@ class LineItem(BaseModel):
         "unit_amount": "UnitAmount",
         "item_code": "ItemCode",
         "account_code": "AccountCode",
+        "account_id": "AccountID",
         "tax_type": "TaxType",
         "tax_amount": "TaxAmount",
         "line_amount": "LineAmount",
@@ -69,6 +71,7 @@ class LineItem(BaseModel):
         unit_amount=None,
         item_code=None,
         account_code=None,
+        account_id=None,
         tax_type=None,
         tax_amount=None,
         line_amount=None,
@@ -85,6 +88,7 @@ class LineItem(BaseModel):
         self._unit_amount = None
         self._item_code = None
         self._account_code = None
+        self._account_id = None
         self._tax_type = None
         self._tax_amount = None
         self._line_amount = None
@@ -106,6 +110,8 @@ class LineItem(BaseModel):
             self.item_code = item_code
         if account_code is not None:
             self.account_code = account_code
+        if account_id is not None:
+            self.account_id = account_id
         if tax_type is not None:
             self.tax_type = tax_type
         if tax_amount is not None:
@@ -258,6 +264,29 @@ class LineItem(BaseModel):
         """
 
         self._account_code = account_code
+
+    @property
+    def account_id(self):
+        """Gets the account_id of this LineItem.  # noqa: E501
+
+        The associated account ID related to this line item  # noqa: E501
+
+        :return: The account_id of this LineItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._account_id
+
+    @account_id.setter
+    def account_id(self, account_id):
+        """Sets the account_id of this LineItem.
+
+        The associated account ID related to this line item  # noqa: E501
+
+        :param account_id: The account_id of this LineItem.  # noqa: E501
+        :type: str
+        """
+
+        self._account_id = account_id
 
     @property
     def tax_type(self):

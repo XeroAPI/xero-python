@@ -39,6 +39,9 @@ from xero_python.accounting.models.batch_payments import BatchPayments
 from xero_python.accounting.models.bill import Bill
 from xero_python.accounting.models.branding_theme import BrandingTheme
 from xero_python.accounting.models.branding_themes import BrandingThemes
+from xero_python.accounting.models.budget import Budget
+from xero_python.accounting.models.budget_lines import BudgetLines
+from xero_python.accounting.models.budgets import Budgets
 from xero_python.accounting.models.cis_org_setting import CISOrgSetting
 from xero_python.accounting.models.cis_org_settings import CISOrgSettings
 from xero_python.accounting.models.cis_setting import CISSetting

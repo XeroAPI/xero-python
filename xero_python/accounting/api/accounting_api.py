@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.12.0
+    OpenAPI spec version: 2.13.2
 """
 
 import importlib
@@ -26,7 +26,7 @@ except ImportError:
 
 
 class empty:
-    """ empty object to mark optional parameter not set """
+    """empty object to mark optional parameter not set"""
 
 
 class AccountingApi(object):
@@ -7555,6 +7555,165 @@ class AccountingApi(object):
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "get_branding_themes")
 
+    def get_budget(
+        self,
+        xero_tenant_id,
+        budget_id,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
+        """Retrieves a specific budgets, which includes budget lines  # noqa: E501
+        OAuth2 scope: accounting.budgets.read
+        :param str xero_tenant_id: Xero identifier for Tenant (required)
+        :param str budget_id: Unique identifier for Budgets (required)
+        :param bool _return_http_data_only: return received data only
+        :param bool _preload_content: load received data in models
+        :param bool _request_timeout: maximum wait time for response
+        :return: Budgets
+        """
+
+        # verify the required parameter 'xero_tenant_id' is set
+        if xero_tenant_id is None:
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `get_budget`"
+            )
+        # verify the required parameter 'budget_id' is set
+        if budget_id is None:
+            raise ValueError(
+                "Missing the required parameter `budget_id` "
+                "when calling `get_budget`"
+            )
+
+        collection_formats = {}
+        path_params = {
+            "BudgetID": budget_id,
+        }
+
+        query_params = []
+
+        header_params = {
+            "xero-tenant-id": xero_tenant_id,
+        }
+
+        local_var_files = {}
+        form_params = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/Budgets/{BudgetID}")
+
+        try:
+            return self.api_client.call_api(
+                url,
+                "GET",
+                path_params,
+                query_params,
+                header_params,
+                body=body_params,
+                post_params=form_params,
+                files=local_var_files,
+                response_type="Budgets",
+                response_model_finder=self.get_model_finder(),
+                auth_settings=auth_settings,
+                _return_http_data_only=_return_http_data_only,
+                _preload_content=_preload_content,
+                _request_timeout=_request_timeout,
+                collection_formats=collection_formats,
+            )
+        except exceptions.HTTPStatusException as error:
+            raise translate_status_exception(error, self, "get_budget")
+
+    def get_budgets(
+        self,
+        xero_tenant_id,
+        i_ds=empty,
+        date_to=empty,
+        date_from=empty,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
+        """Retrieve a list of budgets  # noqa: E501
+        OAuth2 scope: accounting.budgets.read
+        :param str xero_tenant_id: Xero identifier for Tenant (required)
+        :param list[str] i_ds: Filter by BudgetID. Allows you to retrieve a specific individual budget.
+        :param date date_to: Filter by start date
+        :param date date_from: Filter by end date
+        :param bool _return_http_data_only: return received data only
+        :param bool _preload_content: load received data in models
+        :param bool _request_timeout: maximum wait time for response
+        :return: Budgets
+        """
+
+        # verify the required parameter 'xero_tenant_id' is set
+        if xero_tenant_id is None:
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `get_budgets`"
+            )
+
+        collection_formats = {
+            "IDs": "csv",
+        }
+        path_params = {}
+
+        query_params = []
+
+        if i_ds is not empty:
+            query_params.append(("IDs", i_ds))
+
+        if date_to is not empty:
+            query_params.append(("DateTo", date_to))
+
+        if date_from is not empty:
+            query_params.append(("DateFrom", date_from))
+
+        header_params = {
+            "xero-tenant-id": xero_tenant_id,
+        }
+
+        local_var_files = {}
+        form_params = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/Budgets")
+
+        try:
+            return self.api_client.call_api(
+                url,
+                "GET",
+                path_params,
+                query_params,
+                header_params,
+                body=body_params,
+                post_params=form_params,
+                files=local_var_files,
+                response_type="Budgets",
+                response_model_finder=self.get_model_finder(),
+                auth_settings=auth_settings,
+                _return_http_data_only=_return_http_data_only,
+                _preload_content=_preload_content,
+                _request_timeout=_request_timeout,
+                collection_formats=collection_formats,
+            )
+        except exceptions.HTTPStatusException as error:
+            raise translate_status_exception(error, self, "get_budgets")
+
     def get_contact(
         self,
         xero_tenant_id,
@@ -8138,7 +8297,7 @@ class AccountingApi(object):
         _preload_content=True,
         _request_timeout=None,
     ):
-        """Retrieves the contact Id and name of all the contacts in a contact group  # noqa: E501
+        """Retrieves the contact Id and name of each contact group  # noqa: E501
         OAuth2 scope: accounting.contacts.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str where: Filter by an any element
@@ -10026,8 +10185,8 @@ class AccountingApi(object):
         page=empty,
         include_archived=empty,
         created_by_my_app=empty,
-        summary_only=empty,
         unitdp=empty,
+        summary_only=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -10045,8 +10204,8 @@ class AccountingApi(object):
         :param int page: e.g. page=1 – Up to 100 invoices will be returned in a single API call with line items shown for each invoice
         :param bool include_archived: e.g. includeArchived=true - Invoices with a status of ARCHIVED will be included in the response
         :param bool created_by_my_app: When set to true you'll only retrieve Invoices created by your app
-        :param bool summary_only: Use summaryOnly=true in GET Contacts and Invoices endpoint to retrieve a smaller version of the response object. This returns only lightweight fields, excluding computation-heavy fields from the response, making the API calls quick and efficient.
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+        :param bool summary_only: Use summaryOnly=true in GET Contacts and Invoices endpoint to retrieve a smaller version of the response object. This returns only lightweight fields, excluding computation-heavy fields from the response, making the API calls quick and efficient.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -10097,11 +10256,11 @@ class AccountingApi(object):
         if created_by_my_app is not empty:
             query_params.append(("createdByMyApp", created_by_my_app))
 
-        if summary_only is not empty:
-            query_params.append(("summaryOnly", summary_only))
-
         if unitdp is not empty:
             query_params.append(("unitdp", unitdp))
+
+        if summary_only is not empty:
+            query_params.append(("summaryOnly", summary_only))
 
         header_params = {
             "xero-tenant-id": xero_tenant_id,
@@ -14791,148 +14950,6 @@ class AccountingApi(object):
                 error, self, "get_report_aged_receivables_by_contact"
             )
 
-    def get_report_ba_sor_gst(
-        self,
-        xero_tenant_id,
-        report_id,
-        _return_http_data_only=True,
-        _preload_content=True,
-        _request_timeout=None,
-    ):
-        """Retrieves a specific report for BAS using a unique report Id (only valid for AU orgs)  # noqa: E501
-        OAuth2 scope: accounting.reports.read
-        :param str xero_tenant_id: Xero identifier for Tenant (required)
-        :param str report_id: Unique identifier for a Report (required)
-        :param bool _return_http_data_only: return received data only
-        :param bool _preload_content: load received data in models
-        :param bool _request_timeout: maximum wait time for response
-        :return: ReportWithRows
-        """
-
-        # verify the required parameter 'xero_tenant_id' is set
-        if xero_tenant_id is None:
-            raise ValueError(
-                "Missing the required parameter `xero_tenant_id` "
-                "when calling `get_report_ba_sor_gst`"
-            )
-        # verify the required parameter 'report_id' is set
-        if report_id is None:
-            raise ValueError(
-                "Missing the required parameter `report_id` "
-                "when calling `get_report_ba_sor_gst`"
-            )
-
-        collection_formats = {}
-        path_params = {
-            "ReportID": report_id,
-        }
-
-        query_params = []
-
-        header_params = {
-            "xero-tenant-id": xero_tenant_id,
-        }
-
-        local_var_files = {}
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
-
-        # Authentication setting
-        auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Reports/{ReportID}")
-
-        try:
-            return self.api_client.call_api(
-                url,
-                "GET",
-                path_params,
-                query_params,
-                header_params,
-                body=body_params,
-                post_params=form_params,
-                files=local_var_files,
-                response_type="ReportWithRows",
-                response_model_finder=self.get_model_finder(),
-                auth_settings=auth_settings,
-                _return_http_data_only=_return_http_data_only,
-                _preload_content=_preload_content,
-                _request_timeout=_request_timeout,
-                collection_formats=collection_formats,
-            )
-        except exceptions.HTTPStatusException as error:
-            raise translate_status_exception(error, self, "get_report_ba_sor_gst")
-
-    def get_report_ba_sor_gst_list(
-        self,
-        xero_tenant_id,
-        _return_http_data_only=True,
-        _preload_content=True,
-        _request_timeout=None,
-    ):
-        """Retrieves report for BAS (only valid for AU orgs)  # noqa: E501
-        OAuth2 scope: accounting.reports.read
-        :param str xero_tenant_id: Xero identifier for Tenant (required)
-        :param bool _return_http_data_only: return received data only
-        :param bool _preload_content: load received data in models
-        :param bool _request_timeout: maximum wait time for response
-        :return: ReportWithRows
-        """
-
-        # verify the required parameter 'xero_tenant_id' is set
-        if xero_tenant_id is None:
-            raise ValueError(
-                "Missing the required parameter `xero_tenant_id` "
-                "when calling `get_report_ba_sor_gst_list`"
-            )
-
-        collection_formats = {}
-        path_params = {}
-
-        query_params = []
-
-        header_params = {
-            "xero-tenant-id": xero_tenant_id,
-        }
-
-        local_var_files = {}
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
-
-        # Authentication setting
-        auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Reports")
-
-        try:
-            return self.api_client.call_api(
-                url,
-                "GET",
-                path_params,
-                query_params,
-                header_params,
-                body=body_params,
-                post_params=form_params,
-                files=local_var_files,
-                response_type="ReportWithRows",
-                response_model_finder=self.get_model_finder(),
-                auth_settings=auth_settings,
-                _return_http_data_only=_return_http_data_only,
-                _preload_content=_preload_content,
-                _request_timeout=_request_timeout,
-                collection_formats=collection_formats,
-            )
-        except exceptions.HTTPStatusException as error:
-            raise translate_status_exception(error, self, "get_report_ba_sor_gst_list")
-
     def get_report_balance_sheet(
         self,
         xero_tenant_id,
@@ -15114,7 +15131,7 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         date=empty,
-        period=empty,
+        periods=empty,
         timeframe=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -15124,7 +15141,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.reports.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param date date: The date for the Bank Summary report e.g. 2018-03-31
-        :param int period: The number of periods to compare (integer between 1 and 12)
+        :param int periods: The number of periods to compare (integer between 1 and 12)
         :param int timeframe: The period size to compare to (1=month, 3=quarter, 12=year)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -15147,8 +15164,8 @@ class AccountingApi(object):
         if date is not empty:
             query_params.append(("date", date))
 
-        if period is not empty:
-            query_params.append(("period", period))
+        if periods is not empty:
+            query_params.append(("periods", periods))
 
         if timeframe is not empty:
             query_params.append(("timeframe", timeframe))
@@ -15263,6 +15280,82 @@ class AccountingApi(object):
             raise translate_status_exception(
                 error, self, "get_report_executive_summary"
             )
+
+    def get_report_from_id(
+        self,
+        xero_tenant_id,
+        report_id,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
+        """Retrieves a specific report using a unique ReportID  # noqa: E501
+        OAuth2 scope: accounting.reports.read
+        :param str xero_tenant_id: Xero identifier for Tenant (required)
+        :param str report_id: Unique identifier for a Report (required)
+        :param bool _return_http_data_only: return received data only
+        :param bool _preload_content: load received data in models
+        :param bool _request_timeout: maximum wait time for response
+        :return: ReportWithRows
+        """
+
+        # verify the required parameter 'xero_tenant_id' is set
+        if xero_tenant_id is None:
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `get_report_from_id`"
+            )
+        # verify the required parameter 'report_id' is set
+        if report_id is None:
+            raise ValueError(
+                "Missing the required parameter `report_id` "
+                "when calling `get_report_from_id`"
+            )
+
+        collection_formats = {}
+        path_params = {
+            "ReportID": report_id,
+        }
+
+        query_params = []
+
+        header_params = {
+            "xero-tenant-id": xero_tenant_id,
+        }
+
+        local_var_files = {}
+        form_params = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/Reports/{ReportID}")
+
+        try:
+            return self.api_client.call_api(
+                url,
+                "GET",
+                path_params,
+                query_params,
+                header_params,
+                body=body_params,
+                post_params=form_params,
+                files=local_var_files,
+                response_type="ReportWithRows",
+                response_model_finder=self.get_model_finder(),
+                auth_settings=auth_settings,
+                _return_http_data_only=_return_http_data_only,
+                _preload_content=_preload_content,
+                _request_timeout=_request_timeout,
+                collection_formats=collection_formats,
+            )
+        except exceptions.HTTPStatusException as error:
+            raise translate_status_exception(error, self, "get_report_from_id")
 
     def get_report_profit_and_loss(
         self,
@@ -15526,6 +15619,72 @@ class AccountingApi(object):
             )
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "get_report_trial_balance")
+
+    def get_reports_list(
+        self,
+        xero_tenant_id,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
+        """Retrieves a list of the organistaions unique reports that require a uuid to fetch  # noqa: E501
+        OAuth2 scope: accounting.reports.read
+        :param str xero_tenant_id: Xero identifier for Tenant (required)
+        :param bool _return_http_data_only: return received data only
+        :param bool _preload_content: load received data in models
+        :param bool _request_timeout: maximum wait time for response
+        :return: ReportWithRows
+        """
+
+        # verify the required parameter 'xero_tenant_id' is set
+        if xero_tenant_id is None:
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `get_reports_list`"
+            )
+
+        collection_formats = {}
+        path_params = {}
+
+        query_params = []
+
+        header_params = {
+            "xero-tenant-id": xero_tenant_id,
+        }
+
+        local_var_files = {}
+        form_params = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/Reports")
+
+        try:
+            return self.api_client.call_api(
+                url,
+                "GET",
+                path_params,
+                query_params,
+                header_params,
+                body=body_params,
+                post_params=form_params,
+                files=local_var_files,
+                response_type="ReportWithRows",
+                response_model_finder=self.get_model_finder(),
+                auth_settings=auth_settings,
+                _return_http_data_only=_return_http_data_only,
+                _preload_content=_preload_content,
+                _request_timeout=_request_timeout,
+                collection_formats=collection_formats,
+            )
+        except exceptions.HTTPStatusException as error:
+            raise translate_status_exception(error, self, "get_reports_list")
 
     def get_tax_rates(
         self,

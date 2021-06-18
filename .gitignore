@@ -113,3 +113,4 @@ xeroapi-sdk-codegen/
 # test specific configuration files
 /tests/oauth2_client.py
 /tests/oauth2_token.py
+.build_notes.md
