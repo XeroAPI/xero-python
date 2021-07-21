@@ -10,11 +10,7 @@
 """
 
 """
-<<<<<<< HEAD
     OpenAPI spec version: 2.13.4
-=======
-    OpenAPI spec version: 2.13.2
->>>>>>> master
 """
 
 import importlib
