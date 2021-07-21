@@ -764,7 +764,6 @@ class ApiClient(object):
         :return: oauth2 token
         """
         oauth2_token = self.configuration.oauth2_token
-        # oauth2_token.update_token(**self.get_oauth2_token())
         if oauth2_token.get_client_credentials_access_token(self):
             return self.get_oauth2_token()
 
