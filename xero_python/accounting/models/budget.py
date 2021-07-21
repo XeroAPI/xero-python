@@ -34,8 +34,8 @@ class Budget(BaseModel):
         "type": "str",
         "description": "str",
         "updated_date_utc": "datetime[ms-format]",
-        "budget_lines": "BudgetLines",
-        "tracking": "TrackingCategory",
+        "budget_lines": "list[BudgetLine]",
+        "tracking": "list[TrackingCategory]",
     }
 
     attribute_map = {
@@ -191,7 +191,7 @@ class Budget(BaseModel):
 
 
         :return: The budget_lines of this Budget.  # noqa: E501
-        :rtype: BudgetLines
+        :rtype: list[BudgetLine]
         """
         return self._budget_lines
 
@@ -201,7 +201,7 @@ class Budget(BaseModel):
 
 
         :param budget_lines: The budget_lines of this Budget.  # noqa: E501
-        :type: BudgetLines
+        :type: list[BudgetLine]
         """
 
         self._budget_lines = budget_lines
@@ -212,7 +212,7 @@ class Budget(BaseModel):
 
 
         :return: The tracking of this Budget.  # noqa: E501
-        :rtype: TrackingCategory
+        :rtype: list[TrackingCategory]
         """
         return self._tracking
 
@@ -222,7 +222,7 @@ class Budget(BaseModel):
 
 
         :param tracking: The tracking of this Budget.  # noqa: E501
-        :type: TrackingCategory
+        :type: list[TrackingCategory]
         """
 
         self._tracking = tracking

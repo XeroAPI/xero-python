@@ -10,6 +10,7 @@ class TokenApi:
     Api class handles interactions with xero token API endpoints
     """
 
+    client_credentials_token_url = "https://identity.xero.com/connect/token"
     refresh_token_url = "https://identity.xero.com/connect/token"
     revoke_token_url = "https://identity.xero.com/connect/revocation"
 
@@ -79,6 +80,35 @@ class TokenApi:
                 "refresh token status {} {} {!r}".format(status, response, headers)
             )
         return status
+
+    def get_client_credentials_token(self):
+        """
+        Call Xero Identity API to obtain an access token via OAuth2 Client Credentails grant type
+        :return: dictionary with new auth2 token
+        """
+        post_data = {
+            "client_id": self.client_id,
+            "client_secret": self.client_secret,
+            "grant_type": "client_credentials",
+        }
+        response, status, headers = self.api_client.call_api(
+            self.client_credentials_token_url,
+            "POST",
+            header_params={
+                "Accept": "application/json",
+                "Content-Type": "application/x-www-form-urlencoded",
+            },
+            post_params=post_data,
+            auth_settings=None,  # important to prevent infinite recursive loop
+            _preload_content=False,
+        )
+        if status != 200:
+            # todo improve error handling
+            raise Exception(
+                "refresh token status {} {} {!r}".format(status, response, headers)
+            )
+        # todo validate response is json
+        return self.parse_token_response(response)
 
     def parse_token_response(self, response):
         """
@@ -201,6 +231,18 @@ class OAuth2Token:
         api_client.set_oauth2_token(new_token)
         return True
 
+    def get_client_credentials_access_token(self, api_client):
+        """
+        Perform OAuth2 Client Credentials grant token request.
+        :param api_client:  ApiClient instance used to perform refresh token API call.
+        :return: bool - True if success
+        """
+        token_api = TokenApi(api_client, self.client_id, self.client_secret)
+        new_token = token_api.get_client_credentials_token()
+        self.update_token(**new_token)
+        api_client.set_oauth2_token(new_token)
+        return True
+
     def revoke_access_token(self, api_client):
         """
         Perform auth2 revoke token call.
@@ -228,19 +270,19 @@ class OAuth2Token:
     def update_token(
         self,
         access_token,
-        refresh_token,
         scope,
-        expires_at,
         expires_in,
         token_type,
+        expires_at=None,
+        refresh_token=None,
         id_token=None,
     ):
         """
         Set new auth2 token details
         :param access_token: str
-        :param refresh_token: str
+        :param refresh_token: str (optional)
         :param scope: list of strings
-        :param expires_at: float timestamp
+        :param expires_at: float timestamp (optioanl)
         :param expires_in: number
         :param token_type: str
         :param id_token: str (optional)
