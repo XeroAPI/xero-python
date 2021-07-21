@@ -10,7 +10,11 @@
 """
 
 """
+<<<<<<< HEAD
     OpenAPI spec version: 2.13.4
+=======
+    OpenAPI spec version: 2.13.2
+>>>>>>> master
 """
 
 import importlib
@@ -26,7 +30,7 @@ except ImportError:
 
 
 class empty:
-    """ empty object to mark optional parameter not set """
+    """empty object to mark optional parameter not set"""
 
 
 class AccountingApi(object):

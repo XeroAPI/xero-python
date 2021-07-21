@@ -1801,6 +1801,7 @@ ul.nav-tabs {
       "x-is-msdate-time" : true
     },
     "BudgetLines" : {
+<<<<<<< HEAD
       "type" : "array",
       "items" : {
         "$ref" : "#/components/schemas/BudgetLine"
@@ -1811,6 +1812,12 @@ ul.nav-tabs {
       "items" : {
         "$ref" : "#/components/schemas/TrackingCategory"
       }
+=======
+      "$ref" : "#/components/schemas/BudgetLines"
+    },
+    "Tracking" : {
+      "$ref" : "#/components/schemas/TrackingCategory"
+>>>>>>> master
     }
   },
   "description" : "",
@@ -1818,7 +1825,11 @@ ul.nav-tabs {
     "url" : "http://developer.xero.com/documentation/api/budgets/"
   }
 };
+<<<<<<< HEAD
       defs["BudgetBalance"] = {
+=======
+      defs["BudgetLines"] = {
+>>>>>>> master
   "title" : "",
   "type" : "object",
   "properties" : {
@@ -1841,6 +1852,7 @@ ul.nav-tabs {
       "description" : "Any footnotes associated with this balance"
     }
   },
+<<<<<<< HEAD
   "description" : ""
 };
       defs["BudgetLine"] = {
@@ -1864,6 +1876,8 @@ ul.nav-tabs {
       }
     }
   },
+=======
+>>>>>>> master
   "description" : "",
   "externalDocs" : {
     "url" : "http://developer.xero.com/documentation/api/budgets/"
@@ -5930,7 +5944,11 @@ ul.nav-tabs {
           <nav id="scrollingNav">
             <ul class="sidenav nav nav-list">
               <li class="nav-header" data-group="Accounting"><strong>SDK: </strong><span id='sdk-name'></span></li>
+<<<<<<< HEAD
               <li class="nav-header" data-group="Accounting"><strong>VSN: </strong>1.8.0</li>
+=======
+              <li class="nav-header" data-group="Accounting"><strong>VSN: </strong>1.7.0</li>
+>>>>>>> master
               <li class="nav-header" data-group="Accounting"><a href="#api-Accounting">Methods</a></li>
               <li data-group="Accounting" data-name="createAccount" class="">
                 <a href="#api-Accounting-createAccount">createAccount</a>
@@ -33931,6 +33949,7 @@ filter by the to date of the report e.g. 2021-02-28
               <hr>
               <div id="api-Accounting-getReportBalanceSheet">
                 <article id="api-Accounting-getReportBalanceSheet-0" data-group="User" data-name="getReportBalanceSheet" data-version="0">
+<<<<<<< HEAD
                   <div class="pull-left">
                     <h1>getReportBalanceSheet</h1>
                     <p>Retrieves report for balancesheet</p>
@@ -34322,6 +34341,8 @@ filter by the to date of the report e.g. 2021-02-28
               <hr>
               <div id="api-Accounting-getReportBudgetSummary">
                 <article id="api-Accounting-getReportBudgetSummary-0" data-group="User" data-name="getReportBudgetSummary" data-version="0">
+=======
+>>>>>>> master
                   <div class="pull-left">
                     <h1>getReportBudgetSummary</h1>
                     <p>Retrieves report for budget summary</p>
@@ -34593,6 +34614,265 @@ Xero identifier for Tenant
 The date for the Bank Summary report e.g. 2018-03-31
                     </div>
             </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                  </table>
+                </article>
+              </div>
+              <hr>
+              <div id="api-Accounting-getReportFromId">
+                <article id="api-Accounting-getReportFromId-0" data-group="User" data-name="getReportFromId" data-version="0">
+                  <div class="pull-left">
+                    <h1>getReportFromId</h1>
+                    <p>Retrieves a specific report using a unique ReportID</p>
+                  </div>
+                  <div class="pull-right"></div>
+                  <div class="clearfix"></div>
+                  <p></p>
+                  <p class="marked"></p>
+                  <p></p>
+                  <br />
+                  <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/Reports/{ReportID}</span></code></pre>
+                  <p>
+                  <h3>Usage and SDK Samples</h3>
+                  </p>
+                  <ul class="nav nav-tabs nav-tabs-examples">
+                    <!-- *****REPLACE***** comment out the other languages <li> -->
+                    <li class=""><a href="#examples-Accounting-getReportFromId-0-python">Python</a></li>
+                  </ul>
+                  <div class="tab-content">
+                    <!-- *****REPLACE***** comment out the other languages tab-pane -->
+                    <div class="tab-pane" id="examples-Accounting-getReportFromId-0-python">
+                      <pre class="prettyprint"><code class="language-python"># configure api_client for use with xero-python sdk client
+api_client = ApiClient(
+    Configuration(
+        debug=false,
+        oauth2_token=OAuth2Token(
+            client_id="YOUR_CLIENT_ID", client_secret="YOUR_CLIENT_SECRET"
+        ),
+    ),
+    pool_threads=1,
+)
+
+api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
+
+def accounting_get_report_from_id():
+    api_instance = AccountingApi(api_client)
+    xero_tenant_id = 'YOUR_XERO_TENANT_ID'
+    report_id = '00000000-0000-0000-0000-000000000000'
+    
+    try:
+<<<<<<< HEAD
+        api_response = api_instance.get_report_from_id(xero_tenant_id, report_id)
+=======
+        api_response = api_instance.get_report_budget_summary(xero_tenant_id, date, periods, time_frame)
+>>>>>>> master
+        print(api_response)
+    except AccountingBadRequestException as e:
+        print("Exception when calling AccountingApi->getReportFromId: %s\n" % e)</code></pre>
+                    </div>
+                  </div>
+                  <h2>Scopes</h2>
+                  <table>
+                    
+                    <tr>
+                      <td>accounting.reports.read</td>
+                      <td>Grant read-only access to accounting reports</td>
+                    </tr>
+                    
+                  </table>
+                  <h2>Parameters</h2>
+                  <div class="methodsubtabletitle">Path parameters</div>
+                  <table id="methodsubtable">
+                    <tr>
+                      <th width="150px">Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr><td style="width:150px;">ReportID<span style="color:red;">*</span></td>
+<td>
+
+
+    <div id="d2e199_getReportFromId_reportID">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+Unique identifier for a Report
+                    </div>
+            </div>
+                <div class="inner required">
+                    Required
+                </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                  </table>
+<<<<<<< HEAD
+=======
+                  <div class="methodsubtabletitle">Query parameters</div>
+                  <table id="methodsubtable">
+                    <tr>
+                      <th width="150px">Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr><td style="width:150px;">date</td>
+<td>
+
+
+    <div id="d2e199_getReportBudgetSummary_date">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    date
+                </span>
+                    <span class="format">
+                        (date)
+                    </span>
+
+                    <div class="inner description marked">
+The date for the Bank Summary report e.g. 2018-03-31
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">periods</td>
+<td>
+
+
+    <div id="d2e199_getReportBudgetSummary_periods">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    Integer
+                </span>
+
+                    <div class="inner description marked">
+The number of periods to compare (integer between 1 and 12)
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">timeframe</td>
+<td>
+
+
+    <div id="d2e199_getReportBudgetSummary_timeframe">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    Integer
+                </span>
+
+                    <div class="inner description marked">
+The period size to compare to (1=month, 3=quarter, 12=year)
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                  </table>
+                </article>
+              </div>
+              <hr>
+              <div id="api-Accounting-getReportExecutiveSummary">
+                <article id="api-Accounting-getReportExecutiveSummary-0" data-group="User" data-name="getReportExecutiveSummary" data-version="0">
+                  <div class="pull-left">
+                    <h1>getReportExecutiveSummary</h1>
+                    <p>Retrieves report for executive summary</p>
+                  </div>
+                  <div class="pull-right"></div>
+                  <div class="clearfix"></div>
+                  <p></p>
+                  <p class="marked"></p>
+                  <p></p>
+                  <br />
+                  <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/Reports/ExecutiveSummary</span></code></pre>
+                  <p>
+                  <h3>Usage and SDK Samples</h3>
+                  </p>
+                  <ul class="nav nav-tabs nav-tabs-examples">
+                    <!-- *****REPLACE***** comment out the other languages <li> -->
+                    <li class=""><a href="#examples-Accounting-getReportExecutiveSummary-0-python">Python</a></li>
+                  </ul>
+                  <div class="tab-content">
+                    <!-- *****REPLACE***** comment out the other languages tab-pane -->
+                    <div class="tab-pane" id="examples-Accounting-getReportExecutiveSummary-0-python">
+                      <pre class="prettyprint"><code class="language-python"># configure api_client for use with xero-python sdk client
+api_client = ApiClient(
+    Configuration(
+        debug=false,
+        oauth2_token=OAuth2Token(
+            client_id="YOUR_CLIENT_ID", client_secret="YOUR_CLIENT_SECRET"
+        ),
+    ),
+    pool_threads=1,
+)
+
+api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
+
+def accounting_get_report_executive_summary():
+    api_instance = AccountingApi(api_client)
+    xero_tenant_id = 'YOUR_XERO_TENANT_ID'
+    date = dateutil.parser.parse("2019-03-31")
+    
+    try:
+        api_response = api_instance.get_report_executive_summary(xero_tenant_id, date)
+        print(api_response)
+    except AccountingBadRequestException as e:
+        print("Exception when calling AccountingApi->getReportExecutiveSummary: %s\n" % e)</code></pre>
+                    </div>
+                  </div>
+                  <h2>Scopes</h2>
+                  <table>
+                    
+                    <tr>
+                      <td>accounting.reports.read</td>
+                      <td>Grant read-only access to accounting reports</td>
+                    </tr>
+                    
+                  </table>
+                  <h2>Parameters</h2>
+>>>>>>> master
+                  <div class="methodsubtabletitle">Header parameters</div>
+                  <table id="methodsubtable">
+                    <tr>
+                      <th width="150px">Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr><td style="width:150px;">xero-tenant-id<span style="color:red;">*</span></td>
+<td>
+
+
+    <div id="d2e199_getReportFromId_xeroTenantId">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+Xero identifier for Tenant
+                    </div>
+            </div>
+                <div class="inner required">
+                    Required
+                </div>
         </div>
     </div>
 </td>
