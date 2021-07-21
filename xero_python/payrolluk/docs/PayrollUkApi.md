@@ -2339,9 +2339,9 @@ api_client = ApiClient(
 api_instance = PayrollUkApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
-employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Employee id for single object
+employee_id = '00000000-0000-0000-0000-000000000000' # str | Employee id for single object
 start_date = '2013-10-20' # date | Filter by start date (optional)
-end_date = 'Johnson' # date | Filter by end date (optional)
+end_date = '2013-10-20' # date | Filter by end date (optional)
 try:
     # Retrieves a specific employee's leave periods using a unique employee ID
     api_response = api_instance.get_employee_leave_periods(xero_tenant_id, employee_id, start_date=start_date, end_date=end_date)

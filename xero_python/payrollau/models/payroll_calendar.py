@@ -36,6 +36,7 @@ class PayrollCalendar(BaseModel):
         "payment_date": "date[ms-format]",
         "payroll_calendar_id": "str",
         "updated_date_utc": "datetime[ms-format]",
+        "reference_date": "date[ms-format]",
         "validation_errors": "list[ValidationError]",
     }
 
@@ -46,6 +47,7 @@ class PayrollCalendar(BaseModel):
         "payment_date": "PaymentDate",
         "payroll_calendar_id": "PayrollCalendarID",
         "updated_date_utc": "UpdatedDateUTC",
+        "reference_date": "ReferenceDate",
         "validation_errors": "ValidationErrors",
     }
 
@@ -57,6 +59,7 @@ class PayrollCalendar(BaseModel):
         payment_date=None,
         payroll_calendar_id=None,
         updated_date_utc=None,
+        reference_date=None,
         validation_errors=None,
     ):  # noqa: E501
         """PayrollCalendar - a model defined in OpenAPI"""  # noqa: E501
@@ -67,6 +70,7 @@ class PayrollCalendar(BaseModel):
         self._payment_date = None
         self._payroll_calendar_id = None
         self._updated_date_utc = None
+        self._reference_date = None
         self._validation_errors = None
         self.discriminator = None
 
@@ -82,6 +86,8 @@ class PayrollCalendar(BaseModel):
             self.payroll_calendar_id = payroll_calendar_id
         if updated_date_utc is not None:
             self.updated_date_utc = updated_date_utc
+        if reference_date is not None:
+            self.reference_date = reference_date
         if validation_errors is not None:
             self.validation_errors = validation_errors
 
@@ -220,6 +226,29 @@ class PayrollCalendar(BaseModel):
         """
 
         self._updated_date_utc = updated_date_utc
+
+    @property
+    def reference_date(self):
+        """Gets the reference_date of this PayrollCalendar.  # noqa: E501
+
+        Reference Date (YYYY-MM-DD)  # noqa: E501
+
+        :return: The reference_date of this PayrollCalendar.  # noqa: E501
+        :rtype: date
+        """
+        return self._reference_date
+
+    @reference_date.setter
+    def reference_date(self, reference_date):
+        """Sets the reference_date of this PayrollCalendar.
+
+        Reference Date (YYYY-MM-DD)  # noqa: E501
+
+        :param reference_date: The reference_date of this PayrollCalendar.  # noqa: E501
+        :type: date
+        """
+
+        self._reference_date = reference_date
 
     @property
     def validation_errors(self):

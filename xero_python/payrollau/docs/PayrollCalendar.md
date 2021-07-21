@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **payment_date** | **date** | The date on which employees will be paid for the upcoming pay period (YYYY-MM-DD) | [optional] 
 **payroll_calendar_id** | **str** | Xero identifier | [optional] 
 **updated_date_utc** | **datetime** | Last modified timestamp | [optional] 
+**reference_date** | **date** | Reference Date (YYYY-MM-DD) | [optional] 
 **validation_errors** | [**list[ValidationError]**](ValidationError.md) | Displays array of validation error messages from the API | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -1774,6 +1774,115 @@ ul.nav-tabs {
   "description" : "",
   "x-isObjectArray" : true
 };
+      defs["Budget"] = {
+  "title" : "",
+  "type" : "object",
+  "properties" : {
+    "BudgetID" : {
+      "type" : "string",
+      "description" : "Xero identifier",
+      "format" : "uuid"
+    },
+    "Type" : {
+      "type" : "string",
+      "description" : "Type of Budget. OVERALL or TRACKING",
+      "enum" : [ "OVERALL", "TRACKING" ]
+    },
+    "Description" : {
+      "maxLength" : 255,
+      "type" : "string",
+      "description" : "The Budget description"
+    },
+    "UpdatedDateUTC" : {
+      "type" : "string",
+      "description" : "UTC timestamp of last update to budget",
+      "readOnly" : true,
+      "example" : "/Date(1573755038314)/",
+      "x-is-msdate-time" : true
+    },
+    "BudgetLines" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/components/schemas/BudgetLine"
+      }
+    },
+    "Tracking" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/components/schemas/TrackingCategory"
+      }
+    }
+  },
+  "description" : "",
+  "externalDocs" : {
+    "url" : "http://developer.xero.com/documentation/api/budgets/"
+  }
+};
+      defs["BudgetBalance"] = {
+  "title" : "",
+  "type" : "object",
+  "properties" : {
+    "Period" : {
+      "type" : "string",
+      "description" : "Period the amount applies to (e.g. “2019-08”)",
+      "x-is-msdate" : true
+    },
+    "Amount" : {
+      "type" : "integer",
+      "description" : "LineItem Quantity"
+    },
+    "UnitAmount" : {
+      "type" : "integer",
+      "description" : "Budgeted amount"
+    },
+    "Notes" : {
+      "maxLength" : 255,
+      "type" : "string",
+      "description" : "Any footnotes associated with this balance"
+    }
+  },
+  "description" : ""
+};
+      defs["BudgetLine"] = {
+  "title" : "",
+  "type" : "object",
+  "properties" : {
+    "AccountID" : {
+      "type" : "string",
+      "description" : "See Accounts",
+      "format" : "uuid"
+    },
+    "AccountCode" : {
+      "type" : "string",
+      "description" : "See Accounts",
+      "example" : "90.0"
+    },
+    "BudgetBalances" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/components/schemas/BudgetBalance"
+      }
+    }
+  },
+  "description" : "",
+  "externalDocs" : {
+    "url" : "http://developer.xero.com/documentation/api/budgets/"
+  }
+};
+      defs["Budgets"] = {
+  "title" : "",
+  "type" : "object",
+  "properties" : {
+    "Budgets" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/components/schemas/Budget"
+      }
+    }
+  },
+  "description" : "",
+  "x-isObjectArray" : true
+};
       defs["CISOrgSetting"] = {
   "title" : "",
   "properties" : {
@@ -3369,6 +3478,12 @@ ul.nav-tabs {
     "AccountCode" : {
       "type" : "string",
       "description" : "See Accounts"
+    },
+    "AccountID" : {
+      "type" : "string",
+      "description" : "The associated account ID related to this line item",
+      "format" : "uuid",
+      "example" : "00000000-0000-0000-0000-000000000000"
     },
     "TaxType" : {
       "type" : "string",
@@ -5005,10 +5120,6 @@ ul.nav-tabs {
       defs["Report"] = {
   "title" : "",
   "properties" : {
-    "ReportID" : {
-      "type" : "string",
-      "description" : "See Prepayment Types"
-    },
     "ReportName" : {
       "type" : "string",
       "description" : "See Prepayment Types"
@@ -5141,7 +5252,7 @@ ul.nav-tabs {
   "properties" : {
     "ReportID" : {
       "type" : "string",
-      "description" : "Report id"
+      "description" : "ID of the Report"
     },
     "ReportName" : {
       "type" : "string",
@@ -5755,7 +5866,7 @@ ul.nav-tabs {
     <div class='docs-header'>
       <div class='xero-logo'>
         <a target="_blank"  href="https://developer.xero.com/documentation/">
-        <img alt="" width="115" height="30" class="xrh-app-image" src="https://developer.xero.com/static/images/developer-logo.svg">
+        <img alt="" width="115" height="30" class="xrh-app-image" src="https://i.imgur.com/kzfh8mf.png">
         </a>
       </div>
       <fieldset class='api-set'>
@@ -5819,7 +5930,7 @@ ul.nav-tabs {
           <nav id="scrollingNav">
             <ul class="sidenav nav nav-list">
               <li class="nav-header" data-group="Accounting"><strong>SDK: </strong><span id='sdk-name'></span></li>
-              <li class="nav-header" data-group="Accounting"><strong>VSN: </strong>1.6.0</li>
+              <li class="nav-header" data-group="Accounting"><strong>VSN: </strong>1.8.0b2</li>
               <li class="nav-header" data-group="Accounting"><a href="#api-Accounting">Methods</a></li>
               <li data-group="Accounting" data-name="createAccount" class="">
                 <a href="#api-Accounting-createAccount">createAccount</a>
@@ -6078,6 +6189,12 @@ ul.nav-tabs {
               </li>
               <li data-group="Accounting" data-name="getBrandingThemes" class="">
                 <a href="#api-Accounting-getBrandingThemes">getBrandingThemes</a>
+              </li>
+              <li data-group="Accounting" data-name="getBudget" class="">
+                <a href="#api-Accounting-getBudget">getBudget</a>
+              </li>
+              <li data-group="Accounting" data-name="getBudgets" class="">
+                <a href="#api-Accounting-getBudgets">getBudgets</a>
               </li>
               <li data-group="Accounting" data-name="getContact" class="">
                 <a href="#api-Accounting-getContact">getContact</a>
@@ -6340,12 +6457,6 @@ ul.nav-tabs {
               <li data-group="Accounting" data-name="getReportAgedReceivablesByContact" class="">
                 <a href="#api-Accounting-getReportAgedReceivablesByContact">getReportAgedReceivablesByContact</a>
               </li>
-              <li data-group="Accounting" data-name="getReportBASorGST" class="">
-                <a href="#api-Accounting-getReportBASorGST">getReportBASorGST</a>
-              </li>
-              <li data-group="Accounting" data-name="getReportBASorGSTList" class="">
-                <a href="#api-Accounting-getReportBASorGSTList">getReportBASorGSTList</a>
-              </li>
               <li data-group="Accounting" data-name="getReportBalanceSheet" class="">
                 <a href="#api-Accounting-getReportBalanceSheet">getReportBalanceSheet</a>
               </li>
@@ -6358,6 +6469,9 @@ ul.nav-tabs {
               <li data-group="Accounting" data-name="getReportExecutiveSummary" class="">
                 <a href="#api-Accounting-getReportExecutiveSummary">getReportExecutiveSummary</a>
               </li>
+              <li data-group="Accounting" data-name="getReportFromId" class="">
+                <a href="#api-Accounting-getReportFromId">getReportFromId</a>
+              </li>
               <li data-group="Accounting" data-name="getReportProfitAndLoss" class="">
                 <a href="#api-Accounting-getReportProfitAndLoss">getReportProfitAndLoss</a>
               </li>
@@ -6366,6 +6480,9 @@ ul.nav-tabs {
               </li>
               <li data-group="Accounting" data-name="getReportTrialBalance" class="">
                 <a href="#api-Accounting-getReportTrialBalance">getReportTrialBalance</a>
+              </li>
+              <li data-group="Accounting" data-name="getReportsList" class="">
+                <a href="#api-Accounting-getReportsList">getReportsList</a>
               </li>
               <li data-group="Accounting" data-name="getTaxRates" class="">
                 <a href="#api-Accounting-getTaxRates">getTaxRates</a>
@@ -8392,7 +8509,7 @@ Xero identifier for Tenant
       "schema" : {
         "$ref" : "#/components/schemas/PaymentService"
       },
-      "example" : "{ \"PaymentServiceID\": \"00000000-0000-0000-0000-000000000000\", \"PaymentServiceName\": \"ACME Payments\", \"PaymentServiceUrl\": \"https://www.payupnow.com/\", \"PayNowText\": \"Pay Now\" }"
+      "example" : "{ \"PaymentServiceID\": \"00000000-0000-0000-0000-000000000000\", \"PaymentServiceName\": \"Payments Service\", \"PaymentServiceUrl\": \"https://www.paymentservice.com/\", \"PayNowText\": \"Pay Now\" }"
     }
   },
   "required" : true
@@ -20427,6 +20544,299 @@ Xero identifier for Tenant
                 </article>
               </div>
               <hr>
+              <div id="api-Accounting-getBudget">
+                <article id="api-Accounting-getBudget-0" data-group="User" data-name="getBudget" data-version="0">
+                  <div class="pull-left">
+                    <h1>getBudget</h1>
+                    <p>Retrieves a specific budgets, which includes budget lines</p>
+                  </div>
+                  <div class="pull-right"></div>
+                  <div class="clearfix"></div>
+                  <p></p>
+                  <p class="marked"></p>
+                  <p></p>
+                  <br />
+                  <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/Budgets/{BudgetID}</span></code></pre>
+                  <p>
+                  <h3>Usage and SDK Samples</h3>
+                  </p>
+                  <ul class="nav nav-tabs nav-tabs-examples">
+                    <!-- *****REPLACE***** comment out the other languages <li> -->
+                    <li class=""><a href="#examples-Accounting-getBudget-0-python">Python</a></li>
+                  </ul>
+                  <div class="tab-content">
+                    <!-- *****REPLACE***** comment out the other languages tab-pane -->
+                    <div class="tab-pane" id="examples-Accounting-getBudget-0-python">
+                      <pre class="prettyprint"><code class="language-python"># configure api_client for use with xero-python sdk client
+api_client = ApiClient(
+    Configuration(
+        debug=false,
+        oauth2_token=OAuth2Token(
+            client_id="YOUR_CLIENT_ID", client_secret="YOUR_CLIENT_SECRET"
+        ),
+    ),
+    pool_threads=1,
+)
+
+api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
+
+def accounting_get_budget():
+    api_instance = AccountingApi(api_client)
+    xero_tenant_id = 'YOUR_XERO_TENANT_ID'
+    budget_id = '00000000-0000-0000-0000-000000000000'
+    
+    try:
+        api_response = api_instance.get_budget(xero_tenant_id, budget_id)
+        print(api_response)
+    except AccountingBadRequestException as e:
+        print("Exception when calling AccountingApi->getBudget: %s\n" % e)</code></pre>
+                    </div>
+                  </div>
+                  <h2>Scopes</h2>
+                  <table>
+                    
+                    <tr>
+                      <td>accounting.budgets.read</td>
+                      <td></td>
+                    </tr>
+                    
+                  </table>
+                  <h2>Parameters</h2>
+                  <div class="methodsubtabletitle">Path parameters</div>
+                  <table id="methodsubtable">
+                    <tr>
+                      <th width="150px">Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr><td style="width:150px;">BudgetID<span style="color:red;">*</span></td>
+<td>
+
+
+    <div id="d2e199_getBudget_budgetID">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    UUID
+                </span>
+                    <span class="format">
+                        (uuid)
+                    </span>
+
+                    <div class="inner description marked">
+Unique identifier for Budgets
+                    </div>
+            </div>
+                <div class="inner required">
+                    Required
+                </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                  </table>
+                  <div class="methodsubtabletitle">Header parameters</div>
+                  <table id="methodsubtable">
+                    <tr>
+                      <th width="150px">Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr><td style="width:150px;">xero-tenant-id<span style="color:red;">*</span></td>
+<td>
+
+
+    <div id="d2e199_getBudget_xeroTenantId">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+Xero identifier for Tenant
+                    </div>
+            </div>
+                <div class="inner required">
+                    Required
+                </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                  </table>
+                </article>
+              </div>
+              <hr>
+              <div id="api-Accounting-getBudgets">
+                <article id="api-Accounting-getBudgets-0" data-group="User" data-name="getBudgets" data-version="0">
+                  <div class="pull-left">
+                    <h1>getBudgets</h1>
+                    <p>Retrieve a list of budgets</p>
+                  </div>
+                  <div class="pull-right"></div>
+                  <div class="clearfix"></div>
+                  <p></p>
+                  <p class="marked"></p>
+                  <p></p>
+                  <br />
+                  <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/Budgets</span></code></pre>
+                  <p>
+                  <h3>Usage and SDK Samples</h3>
+                  </p>
+                  <ul class="nav nav-tabs nav-tabs-examples">
+                    <!-- *****REPLACE***** comment out the other languages <li> -->
+                    <li class=""><a href="#examples-Accounting-getBudgets-0-python">Python</a></li>
+                  </ul>
+                  <div class="tab-content">
+                    <!-- *****REPLACE***** comment out the other languages tab-pane -->
+                    <div class="tab-pane" id="examples-Accounting-getBudgets-0-python">
+                      <pre class="prettyprint"><code class="language-python"># configure api_client for use with xero-python sdk client
+api_client = ApiClient(
+    Configuration(
+        debug=false,
+        oauth2_token=OAuth2Token(
+            client_id="YOUR_CLIENT_ID", client_secret="YOUR_CLIENT_SECRET"
+        ),
+    ),
+    pool_threads=1,
+)
+
+api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
+
+def accounting_get_budgets():
+    api_instance = AccountingApi(api_client)
+    xero_tenant_id = 'YOUR_XERO_TENANT_ID'
+    ids = [&quot;00000000-0000-0000-0000-000000000000&quot;]
+    dateTo = dateutil.parser.parse("2013-10-20")
+    dateFrom = dateutil.parser.parse("2013-10-20")
+    
+    try:
+        api_response = api_instance.get_budgets(xero_tenant_id, ids, dateTo, dateFrom)
+        print(api_response)
+    except AccountingBadRequestException as e:
+        print("Exception when calling AccountingApi->getBudgets: %s\n" % e)</code></pre>
+                    </div>
+                  </div>
+                  <h2>Scopes</h2>
+                  <table>
+                    
+                    <tr>
+                      <td>accounting.budgets.read</td>
+                      <td></td>
+                    </tr>
+                    
+                  </table>
+                  <h2>Parameters</h2>
+                  <div class="methodsubtabletitle">Header parameters</div>
+                  <table id="methodsubtable">
+                    <tr>
+                      <th width="150px">Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr><td style="width:150px;">xero-tenant-id<span style="color:red;">*</span></td>
+<td>
+
+
+    <div id="d2e199_getBudgets_xeroTenantId">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+Xero identifier for Tenant
+                    </div>
+            </div>
+                <div class="inner required">
+                    Required
+                </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                  </table>
+                  <div class="methodsubtabletitle">Query parameters</div>
+                  <table id="methodsubtable">
+                    <tr>
+                      <th width="150px">Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr><td style="width:150px;">IDs</td>
+<td>
+
+
+    <div id="d2e199_getBudgets_iDs">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    array[UUID]
+                </span>
+                    <span class="format">
+                        (uuid)
+                    </span>
+
+                    <div class="inner description marked">
+Filter by BudgetID. Allows you to retrieve a specific individual budget.
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">DateTo</td>
+<td>
+
+
+    <div id="d2e199_getBudgets_dateTo">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    date
+                </span>
+                    <span class="format">
+                        (date)
+                    </span>
+
+                    <div class="inner description marked">
+Filter by start date
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">DateFrom</td>
+<td>
+
+
+    <div id="d2e199_getBudgets_dateFrom">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    date
+                </span>
+                    <span class="format">
+                        (date)
+                    </span>
+
+                    <div class="inner description marked">
+Filter by end date
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                  </table>
+                </article>
+              </div>
+              <hr>
               <div id="api-Accounting-getContact">
                 <article id="api-Accounting-getContact-0" data-group="User" data-name="getContact" data-version="0">
                   <div class="pull-left">
@@ -21395,7 +21805,7 @@ Xero identifier for Tenant
                 <article id="api-Accounting-getContactGroups-0" data-group="User" data-name="getContactGroups" data-version="0">
                   <div class="pull-left">
                     <h1>getContactGroups</h1>
-                    <p>Retrieves the contact Id and name of all the contacts in a contact group</p>
+                    <p>Retrieves the contact Id and name of each contact group</p>
                   </div>
                   <div class="pull-right"></div>
                   <div class="clearfix"></div>
@@ -24824,7 +25234,7 @@ def accounting_get_invoices():
     summary_only = 'true'
     
     try:
-        api_response = api_instance.get_invoices(xero_tenant_id, if_modified_since, where, order, ids, invoice_numbers, contact_ids, statuses, page, include_archived, created_by_my_app, summary_only, unitdp)
+        api_response = api_instance.get_invoices(xero_tenant_id, if_modified_since, where, order, ids, invoice_numbers, contact_ids, statuses, page, include_archived, created_by_my_app, unitdp, summary_only)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->getInvoices: %s\n" % e)</code></pre>
@@ -25085,26 +25495,6 @@ When set to true you'll only retrieve Invoices created by your app
 </td>
 </tr>
 
-                    <tr><td style="width:150px;">summaryOnly</td>
-<td>
-
-
-    <div id="d2e199_getInvoices_summaryOnly">
-        <div class="json-schema-view">
-            <div class="primitive">
-                <span class="type">
-                    Boolean
-                </span>
-
-                    <div class="inner description marked">
-Use summaryOnly=true in GET Contacts and Invoices endpoint to retrieve a smaller version of the response object. This returns only lightweight fields, excluding computation-heavy fields from the response, making the API calls quick and efficient.
-                    </div>
-            </div>
-        </div>
-    </div>
-</td>
-</tr>
-
                     <tr><td style="width:150px;">unitdp</td>
 <td>
 
@@ -25118,6 +25508,26 @@ Use summaryOnly=true in GET Contacts and Invoices endpoint to retrieve a smaller
 
                     <div class="inner description marked">
 e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">summaryOnly</td>
+<td>
+
+
+    <div id="d2e199_getInvoices_summaryOnly">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    Boolean
+                </span>
+
+                    <div class="inner description marked">
+Use summaryOnly=true in GET Contacts and Invoices endpoint to retrieve a smaller version of the response object. This returns only lightweight fields, excluding computation-heavy fields from the response, making the API calls quick and efficient.
                     </div>
             </div>
         </div>
@@ -33519,217 +33929,6 @@ filter by the to date of the report e.g. 2021-02-28
                 </article>
               </div>
               <hr>
-              <div id="api-Accounting-getReportBASorGST">
-                <article id="api-Accounting-getReportBASorGST-0" data-group="User" data-name="getReportBASorGST" data-version="0">
-                  <div class="pull-left">
-                    <h1>getReportBASorGST</h1>
-                    <p>Retrieves a specific report for BAS using a unique report Id (only valid for AU orgs)</p>
-                  </div>
-                  <div class="pull-right"></div>
-                  <div class="clearfix"></div>
-                  <p></p>
-                  <p class="marked"></p>
-                  <p></p>
-                  <br />
-                  <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/Reports/{ReportID}</span></code></pre>
-                  <p>
-                  <h3>Usage and SDK Samples</h3>
-                  </p>
-                  <ul class="nav nav-tabs nav-tabs-examples">
-                    <!-- *****REPLACE***** comment out the other languages <li> -->
-                    <li class=""><a href="#examples-Accounting-getReportBASorGST-0-python">Python</a></li>
-                  </ul>
-                  <div class="tab-content">
-                    <!-- *****REPLACE***** comment out the other languages tab-pane -->
-                    <div class="tab-pane" id="examples-Accounting-getReportBASorGST-0-python">
-                      <pre class="prettyprint"><code class="language-python"># configure api_client for use with xero-python sdk client
-api_client = ApiClient(
-    Configuration(
-        debug=false,
-        oauth2_token=OAuth2Token(
-            client_id="YOUR_CLIENT_ID", client_secret="YOUR_CLIENT_SECRET"
-        ),
-    ),
-    pool_threads=1,
-)
-
-api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
-
-def accounting_get_report_ba_sor_gst():
-    api_instance = AccountingApi(api_client)
-    xero_tenant_id = 'YOUR_XERO_TENANT_ID'
-    report_id = '00000000-0000-0000-0000-000000000000'
-    
-    try:
-        api_response = api_instance.get_report_ba_sor_gst(xero_tenant_id, report_id)
-        print(api_response)
-    except AccountingBadRequestException as e:
-        print("Exception when calling AccountingApi->getReportBASorGST: %s\n" % e)</code></pre>
-                    </div>
-                  </div>
-                  <h2>Scopes</h2>
-                  <table>
-                    
-                    <tr>
-                      <td>accounting.reports.read</td>
-                      <td>Grant read-only access to accounting reports</td>
-                    </tr>
-                    
-                  </table>
-                  <h2>Parameters</h2>
-                  <div class="methodsubtabletitle">Path parameters</div>
-                  <table id="methodsubtable">
-                    <tr>
-                      <th width="150px">Name</th>
-                      <th>Description</th>
-                    </tr>
-                    <tr><td style="width:150px;">ReportID<span style="color:red;">*</span></td>
-<td>
-
-
-    <div id="d2e199_getReportBASorGST_reportID">
-        <div class="json-schema-view">
-            <div class="primitive">
-                <span class="type">
-                    String
-                </span>
-
-                    <div class="inner description marked">
-Unique identifier for a Report
-                    </div>
-            </div>
-                <div class="inner required">
-                    Required
-                </div>
-        </div>
-    </div>
-</td>
-</tr>
-
-                  </table>
-                  <div class="methodsubtabletitle">Header parameters</div>
-                  <table id="methodsubtable">
-                    <tr>
-                      <th width="150px">Name</th>
-                      <th>Description</th>
-                    </tr>
-                    <tr><td style="width:150px;">xero-tenant-id<span style="color:red;">*</span></td>
-<td>
-
-
-    <div id="d2e199_getReportBASorGST_xeroTenantId">
-        <div class="json-schema-view">
-            <div class="primitive">
-                <span class="type">
-                    String
-                </span>
-
-                    <div class="inner description marked">
-Xero identifier for Tenant
-                    </div>
-            </div>
-                <div class="inner required">
-                    Required
-                </div>
-        </div>
-    </div>
-</td>
-</tr>
-
-                  </table>
-                </article>
-              </div>
-              <hr>
-              <div id="api-Accounting-getReportBASorGSTList">
-                <article id="api-Accounting-getReportBASorGSTList-0" data-group="User" data-name="getReportBASorGSTList" data-version="0">
-                  <div class="pull-left">
-                    <h1>getReportBASorGSTList</h1>
-                    <p>Retrieves report for BAS (only valid for AU orgs)</p>
-                  </div>
-                  <div class="pull-right"></div>
-                  <div class="clearfix"></div>
-                  <p></p>
-                  <p class="marked"></p>
-                  <p></p>
-                  <br />
-                  <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/Reports</span></code></pre>
-                  <p>
-                  <h3>Usage and SDK Samples</h3>
-                  </p>
-                  <ul class="nav nav-tabs nav-tabs-examples">
-                    <!-- *****REPLACE***** comment out the other languages <li> -->
-                    <li class=""><a href="#examples-Accounting-getReportBASorGSTList-0-python">Python</a></li>
-                  </ul>
-                  <div class="tab-content">
-                    <!-- *****REPLACE***** comment out the other languages tab-pane -->
-                    <div class="tab-pane" id="examples-Accounting-getReportBASorGSTList-0-python">
-                      <pre class="prettyprint"><code class="language-python"># configure api_client for use with xero-python sdk client
-api_client = ApiClient(
-    Configuration(
-        debug=false,
-        oauth2_token=OAuth2Token(
-            client_id="YOUR_CLIENT_ID", client_secret="YOUR_CLIENT_SECRET"
-        ),
-    ),
-    pool_threads=1,
-)
-
-api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
-
-def accounting_get_report_ba_sor_gst_list():
-    api_instance = AccountingApi(api_client)
-    xero_tenant_id = 'YOUR_XERO_TENANT_ID'
-    
-    try:
-        api_response = api_instance.get_report_ba_sor_gst_list(xero_tenant_id)
-        print(api_response)
-    except AccountingBadRequestException as e:
-        print("Exception when calling AccountingApi->getReportBASorGSTList: %s\n" % e)</code></pre>
-                    </div>
-                  </div>
-                  <h2>Scopes</h2>
-                  <table>
-                    
-                    <tr>
-                      <td>accounting.reports.read</td>
-                      <td>Grant read-only access to accounting reports</td>
-                    </tr>
-                    
-                  </table>
-                  <h2>Parameters</h2>
-                  <div class="methodsubtabletitle">Header parameters</div>
-                  <table id="methodsubtable">
-                    <tr>
-                      <th width="150px">Name</th>
-                      <th>Description</th>
-                    </tr>
-                    <tr><td style="width:150px;">xero-tenant-id<span style="color:red;">*</span></td>
-<td>
-
-
-    <div id="d2e199_getReportBASorGSTList_xeroTenantId">
-        <div class="json-schema-view">
-            <div class="primitive">
-                <span class="type">
-                    String
-                </span>
-
-                    <div class="inner description marked">
-Xero identifier for Tenant
-                    </div>
-            </div>
-                <div class="inner required">
-                    Required
-                </div>
-        </div>
-    </div>
-</td>
-</tr>
-
-                  </table>
-                </article>
-              </div>
-              <hr>
               <div id="api-Accounting-getReportBalanceSheet">
                 <article id="api-Accounting-getReportBalanceSheet-0" data-group="User" data-name="getReportBalanceSheet" data-version="0">
                   <div class="pull-left">
@@ -34163,7 +34362,7 @@ def accounting_get_report_budget_summary():
     date = dateutil.parser.parse("2019-03-31")
     
     try:
-        api_response = api_instance.get_report_budget_summary(xero_tenant_id, date, period, time_frame)
+        api_response = api_instance.get_report_budget_summary(xero_tenant_id, date, periods, time_frame)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->getReportBudgetSummary: %s\n" % e)</code></pre>
@@ -34238,11 +34437,11 @@ The date for the Bank Summary report e.g. 2018-03-31
 </td>
 </tr>
 
-                    <tr><td style="width:150px;">period</td>
+                    <tr><td style="width:150px;">periods</td>
 <td>
 
 
-    <div id="d2e199_getReportBudgetSummary_period">
+    <div id="d2e199_getReportBudgetSummary_periods">
         <div class="json-schema-view">
             <div class="primitive">
                 <span class="type">
@@ -34394,6 +34593,127 @@ Xero identifier for Tenant
 The date for the Bank Summary report e.g. 2018-03-31
                     </div>
             </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                  </table>
+                </article>
+              </div>
+              <hr>
+              <div id="api-Accounting-getReportFromId">
+                <article id="api-Accounting-getReportFromId-0" data-group="User" data-name="getReportFromId" data-version="0">
+                  <div class="pull-left">
+                    <h1>getReportFromId</h1>
+                    <p>Retrieves a specific report using a unique ReportID</p>
+                  </div>
+                  <div class="pull-right"></div>
+                  <div class="clearfix"></div>
+                  <p></p>
+                  <p class="marked"></p>
+                  <p></p>
+                  <br />
+                  <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/Reports/{ReportID}</span></code></pre>
+                  <p>
+                  <h3>Usage and SDK Samples</h3>
+                  </p>
+                  <ul class="nav nav-tabs nav-tabs-examples">
+                    <!-- *****REPLACE***** comment out the other languages <li> -->
+                    <li class=""><a href="#examples-Accounting-getReportFromId-0-python">Python</a></li>
+                  </ul>
+                  <div class="tab-content">
+                    <!-- *****REPLACE***** comment out the other languages tab-pane -->
+                    <div class="tab-pane" id="examples-Accounting-getReportFromId-0-python">
+                      <pre class="prettyprint"><code class="language-python"># configure api_client for use with xero-python sdk client
+api_client = ApiClient(
+    Configuration(
+        debug=false,
+        oauth2_token=OAuth2Token(
+            client_id="YOUR_CLIENT_ID", client_secret="YOUR_CLIENT_SECRET"
+        ),
+    ),
+    pool_threads=1,
+)
+
+api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
+
+def accounting_get_report_from_id():
+    api_instance = AccountingApi(api_client)
+    xero_tenant_id = 'YOUR_XERO_TENANT_ID'
+    report_id = '00000000-0000-0000-0000-000000000000'
+    
+    try:
+        api_response = api_instance.get_report_from_id(xero_tenant_id, report_id)
+        print(api_response)
+    except AccountingBadRequestException as e:
+        print("Exception when calling AccountingApi->getReportFromId: %s\n" % e)</code></pre>
+                    </div>
+                  </div>
+                  <h2>Scopes</h2>
+                  <table>
+                    
+                    <tr>
+                      <td>accounting.reports.read</td>
+                      <td>Grant read-only access to accounting reports</td>
+                    </tr>
+                    
+                  </table>
+                  <h2>Parameters</h2>
+                  <div class="methodsubtabletitle">Path parameters</div>
+                  <table id="methodsubtable">
+                    <tr>
+                      <th width="150px">Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr><td style="width:150px;">ReportID<span style="color:red;">*</span></td>
+<td>
+
+
+    <div id="d2e199_getReportFromId_reportID">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+Unique identifier for a Report
+                    </div>
+            </div>
+                <div class="inner required">
+                    Required
+                </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                  </table>
+                  <div class="methodsubtabletitle">Header parameters</div>
+                  <table id="methodsubtable">
+                    <tr>
+                      <th width="150px">Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr><td style="width:150px;">xero-tenant-id<span style="color:red;">*</span></td>
+<td>
+
+
+    <div id="d2e199_getReportFromId_xeroTenantId">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+Xero identifier for Tenant
+                    </div>
+            </div>
+                <div class="inner required">
+                    Required
+                </div>
         </div>
     </div>
 </td>
@@ -34966,6 +35286,96 @@ The date for the Trial Balance report e.g. 2018-03-31
 Return cash only basis for the Trial Balance report
                     </div>
             </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                  </table>
+                </article>
+              </div>
+              <hr>
+              <div id="api-Accounting-getReportsList">
+                <article id="api-Accounting-getReportsList-0" data-group="User" data-name="getReportsList" data-version="0">
+                  <div class="pull-left">
+                    <h1>getReportsList</h1>
+                    <p>Retrieves a list of the organistaions unique reports that require a uuid to fetch</p>
+                  </div>
+                  <div class="pull-right"></div>
+                  <div class="clearfix"></div>
+                  <p></p>
+                  <p class="marked"></p>
+                  <p></p>
+                  <br />
+                  <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/Reports</span></code></pre>
+                  <p>
+                  <h3>Usage and SDK Samples</h3>
+                  </p>
+                  <ul class="nav nav-tabs nav-tabs-examples">
+                    <!-- *****REPLACE***** comment out the other languages <li> -->
+                    <li class=""><a href="#examples-Accounting-getReportsList-0-python">Python</a></li>
+                  </ul>
+                  <div class="tab-content">
+                    <!-- *****REPLACE***** comment out the other languages tab-pane -->
+                    <div class="tab-pane" id="examples-Accounting-getReportsList-0-python">
+                      <pre class="prettyprint"><code class="language-python"># configure api_client for use with xero-python sdk client
+api_client = ApiClient(
+    Configuration(
+        debug=false,
+        oauth2_token=OAuth2Token(
+            client_id="YOUR_CLIENT_ID", client_secret="YOUR_CLIENT_SECRET"
+        ),
+    ),
+    pool_threads=1,
+)
+
+api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
+
+def accounting_get_reports_list():
+    api_instance = AccountingApi(api_client)
+    xero_tenant_id = 'YOUR_XERO_TENANT_ID'
+    
+    try:
+        api_response = api_instance.get_reports_list(xero_tenant_id)
+        print(api_response)
+    except AccountingBadRequestException as e:
+        print("Exception when calling AccountingApi->getReportsList: %s\n" % e)</code></pre>
+                    </div>
+                  </div>
+                  <h2>Scopes</h2>
+                  <table>
+                    
+                    <tr>
+                      <td>accounting.reports.read</td>
+                      <td>Grant read-only access to accounting reports</td>
+                    </tr>
+                    
+                  </table>
+                  <h2>Parameters</h2>
+                  <div class="methodsubtabletitle">Header parameters</div>
+                  <table id="methodsubtable">
+                    <tr>
+                      <th width="150px">Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr><td style="width:150px;">xero-tenant-id<span style="color:red;">*</span></td>
+<td>
+
+
+    <div id="d2e199_getReportsList_xeroTenantId">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+Xero identifier for Tenant
+                    </div>
+            </div>
+                <div class="inner required">
+                    Required
+                </div>
         </div>
     </div>
 </td>

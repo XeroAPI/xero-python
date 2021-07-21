@@ -230,7 +230,7 @@ class OAuth2Token:
         self.update_token(**new_token)
         api_client.set_oauth2_token(new_token)
         return True
-    
+
     def get_client_credentials_access_token(self, api_client):
         """
         Perform OAuth2 Client Credentials grant token request.
