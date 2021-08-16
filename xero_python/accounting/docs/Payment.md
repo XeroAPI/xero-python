@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **date** | **date** | Date the payment is being made (YYYY-MM-DD) e.g. 2009-09-06 | [optional] 
 **currency_rate** | **float** | Exchange rate when payment is received. Only used for non base currency invoices and credit notes e.g. 0.7500 | [optional] 
 **amount** | **float** | The amount of the payment. Must be less than or equal to the outstanding amount owing on the invoice e.g. 200.00 | [optional] 
+**bank_amount** | **float** | The amount of the payment in the currency of the bank account. | [optional] 
 **reference** | **str** | An optional description for the payment e.g. Direct Debit | [optional] 
 **is_reconciled** | **bool** | An optional parameter for the payment. A boolean indicating whether you would like the payment to be created as reconciled when using PUT, or whether a payment has been reconciled when using GET | [optional] 
 **status** | **str** | The status of the payment. | [optional] 

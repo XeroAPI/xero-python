@@ -25,11 +25,7 @@ from xero_python.assets.models.assets import Assets
 from xero_python.assets.models.book_depreciation_detail import BookDepreciationDetail
 from xero_python.assets.models.book_depreciation_setting import BookDepreciationSetting
 from xero_python.assets.models.error import Error
-from xero_python.assets.models.field_validation_errors_element import (
-    FieldValidationErrorsElement,
-)
+from xero_python.assets.models.field_validation_errors_element import FieldValidationErrorsElement
 from xero_python.assets.models.pagination import Pagination
-from xero_python.assets.models.resource_validation_errors_element import (
-    ResourceValidationErrorsElement,
-)
+from xero_python.assets.models.resource_validation_errors_element import ResourceValidationErrorsElement
 from xero_python.assets.models.setting import Setting

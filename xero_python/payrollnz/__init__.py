@@ -37,54 +37,30 @@ from xero_python.payrollnz.models.earnings_rates import EarningsRates
 from xero_python.payrollnz.models.earnings_template import EarningsTemplate
 from xero_python.payrollnz.models.earnings_template_object import EarningsTemplateObject
 from xero_python.payrollnz.models.employee import Employee
-from xero_python.payrollnz.models.employee_earnings_templates import (
-    EmployeeEarningsTemplates,
-)
+from xero_python.payrollnz.models.employee_earnings_templates import EmployeeEarningsTemplates
 from xero_python.payrollnz.models.employee_leave import EmployeeLeave
 from xero_python.payrollnz.models.employee_leave_balance import EmployeeLeaveBalance
 from xero_python.payrollnz.models.employee_leave_balances import EmployeeLeaveBalances
 from xero_python.payrollnz.models.employee_leave_object import EmployeeLeaveObject
 from xero_python.payrollnz.models.employee_leave_setup import EmployeeLeaveSetup
-from xero_python.payrollnz.models.employee_leave_setup_object import (
-    EmployeeLeaveSetupObject,
-)
+from xero_python.payrollnz.models.employee_leave_setup_object import EmployeeLeaveSetupObject
 from xero_python.payrollnz.models.employee_leave_type import EmployeeLeaveType
-from xero_python.payrollnz.models.employee_leave_type_object import (
-    EmployeeLeaveTypeObject,
-)
+from xero_python.payrollnz.models.employee_leave_type_object import EmployeeLeaveTypeObject
 from xero_python.payrollnz.models.employee_leave_types import EmployeeLeaveTypes
 from xero_python.payrollnz.models.employee_leaves import EmployeeLeaves
 from xero_python.payrollnz.models.employee_object import EmployeeObject
 from xero_python.payrollnz.models.employee_opening_balance import EmployeeOpeningBalance
-from xero_python.payrollnz.models.employee_opening_balances_object import (
-    EmployeeOpeningBalancesObject,
-)
+from xero_python.payrollnz.models.employee_opening_balances_object import EmployeeOpeningBalancesObject
 from xero_python.payrollnz.models.employee_pay_template import EmployeePayTemplate
-from xero_python.payrollnz.models.employee_pay_template_object import (
-    EmployeePayTemplateObject,
-)
+from xero_python.payrollnz.models.employee_pay_template_object import EmployeePayTemplateObject
 from xero_python.payrollnz.models.employee_pay_templates import EmployeePayTemplates
-from xero_python.payrollnz.models.employee_statutory_leave_balance import (
-    EmployeeStatutoryLeaveBalance,
-)
-from xero_python.payrollnz.models.employee_statutory_leave_balance_object import (
-    EmployeeStatutoryLeaveBalanceObject,
-)
-from xero_python.payrollnz.models.employee_statutory_leave_summary import (
-    EmployeeStatutoryLeaveSummary,
-)
-from xero_python.payrollnz.models.employee_statutory_leaves_summaries import (
-    EmployeeStatutoryLeavesSummaries,
-)
-from xero_python.payrollnz.models.employee_statutory_sick_leave import (
-    EmployeeStatutorySickLeave,
-)
-from xero_python.payrollnz.models.employee_statutory_sick_leave_object import (
-    EmployeeStatutorySickLeaveObject,
-)
-from xero_python.payrollnz.models.employee_statutory_sick_leaves import (
-    EmployeeStatutorySickLeaves,
-)
+from xero_python.payrollnz.models.employee_statutory_leave_balance import EmployeeStatutoryLeaveBalance
+from xero_python.payrollnz.models.employee_statutory_leave_balance_object import EmployeeStatutoryLeaveBalanceObject
+from xero_python.payrollnz.models.employee_statutory_leave_summary import EmployeeStatutoryLeaveSummary
+from xero_python.payrollnz.models.employee_statutory_leaves_summaries import EmployeeStatutoryLeavesSummaries
+from xero_python.payrollnz.models.employee_statutory_sick_leave import EmployeeStatutorySickLeave
+from xero_python.payrollnz.models.employee_statutory_sick_leave_object import EmployeeStatutorySickLeaveObject
+from xero_python.payrollnz.models.employee_statutory_sick_leaves import EmployeeStatutorySickLeaves
 from xero_python.payrollnz.models.employee_tax import EmployeeTax
 from xero_python.payrollnz.models.employee_tax_object import EmployeeTaxObject
 from xero_python.payrollnz.models.employees import Employees
@@ -122,13 +98,9 @@ from xero_python.payrollnz.models.salary_and_wage_object import SalaryAndWageObj
 from xero_python.payrollnz.models.salary_and_wages import SalaryAndWages
 from xero_python.payrollnz.models.settings import Settings
 from xero_python.payrollnz.models.statutory_deduction import StatutoryDeduction
-from xero_python.payrollnz.models.statutory_deduction_category import (
-    StatutoryDeductionCategory,
-)
+from xero_python.payrollnz.models.statutory_deduction_category import StatutoryDeductionCategory
 from xero_python.payrollnz.models.statutory_deduction_line import StatutoryDeductionLine
-from xero_python.payrollnz.models.statutory_deduction_object import (
-    StatutoryDeductionObject,
-)
+from xero_python.payrollnz.models.statutory_deduction_object import StatutoryDeductionObject
 from xero_python.payrollnz.models.statutory_deductions import StatutoryDeductions
 from xero_python.payrollnz.models.superannuation_line import SuperannuationLine
 from xero_python.payrollnz.models.superannuation_object import SuperannuationObject

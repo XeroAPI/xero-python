@@ -34,6 +34,4 @@ from xero_python.project.models.task_create_or_update import TaskCreateOrUpdate
 from xero_python.project.models.tasks import Tasks
 from xero_python.project.models.time_entries import TimeEntries
 from xero_python.project.models.time_entry import TimeEntry
-from xero_python.project.models.time_entry_create_or_update import (
-    TimeEntryCreateOrUpdate,
-)
+from xero_python.project.models.time_entry_create_or_update import TimeEntryCreateOrUpdate

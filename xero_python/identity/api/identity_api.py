@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.13.4
+    OpenAPI spec version: 2.15.0
 """
 
 import importlib
@@ -18,7 +18,6 @@ import re  # noqa: F401
 
 from xero_python import exceptions
 from xero_python.api_client import ApiClient, ModelFinder
-
 try:
     from .exception_handler import translate_status_exception
 except ImportError:
@@ -26,7 +25,7 @@ except ImportError:
 
 
 class empty:
-    """empty object to mark optional parameter not set"""
+    """ empty object to mark optional parameter not set """
 
 
 class IdentityApi(object):
@@ -56,13 +55,8 @@ class IdentityApi(object):
     def get_model_finder(self):
         return ModelFinder(self.models_module)
 
-    def delete_connection(
-        self,
-        id,
-        _return_http_data_only=True,
-        _preload_content=True,
-        _request_timeout=None,
-    ):
+
+    def delete_connection(self, id,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
         """Deletes a connection for this user (i.e. disconnect a tenant)  # noqa: E501
         OAuth2 scope: N/A
         Override the base server url that include version  # noqa: E501
@@ -75,32 +69,36 @@ class IdentityApi(object):
 
         # verify the required parameter 'id' is set
         if id is None:
-            raise ValueError(
-                "Missing the required parameter `id` "
-                "when calling `delete_connection`"
-            )
+            raise ValueError("Missing the required parameter `id` "
+                             "when calling `delete_connection`")
 
-        collection_formats = {}
-        path_params = {
-            "id": id,
+        collection_formats = {
+        
+        
+        
+        
         }
+        path_params = { 'id': id, }
+
 
         query_params = []
 
-        header_params = {}
+
+        header_params = {  }
+
 
         local_var_files = {}
         form_params = []
 
         body_params = None
         # Authentication setting
-        auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Connections/{id}")
+        auth_settings = ['OAuth2']
+        url = self.get_resource_url('/Connections/{id}')
 
         try:
             return self.api_client.call_api(
                 url,
-                "DELETE",
+                'DELETE',
                 path_params,
                 query_params,
                 header_params,
@@ -113,18 +111,11 @@ class IdentityApi(object):
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats,
-            )
+                collection_formats=collection_formats)
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "delete_connection")
 
-    def get_connections(
-        self,
-        auth_event_id=empty,
-        _return_http_data_only=True,
-        _preload_content=True,
-        _request_timeout=None,
-    ):
+    def get_connections(self, auth_event_id=empty,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
         """Retrieves the connections for this user  # noqa: E501
         OAuth2 scope: N/A
         Override the base server url that include version  # noqa: E501
@@ -135,46 +126,53 @@ class IdentityApi(object):
         :return: list[Connection]
         """
 
-        collection_formats = {}
-        path_params = {}
+
+        collection_formats = {
+        
+        
+        
+        
+        }
+        path_params = {  }
+
 
         query_params = []
 
         if auth_event_id is not empty:
-            query_params.append(("authEventId", auth_event_id))
+            query_params.append(('authEventId', auth_event_id))
 
-        header_params = {}
+
+        header_params = {  }
+
 
         local_var_files = {}
         form_params = []
 
         body_params = None
         # HTTP header `Accept`
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Connections")
+        auth_settings = ['OAuth2']
+        url = self.get_resource_url('/Connections')
 
         try:
             return self.api_client.call_api(
                 url,
-                "GET",
+                'GET',
                 path_params,
                 query_params,
                 header_params,
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type="list[Connection]",
+                response_type='list[Connection]',
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats,
-            )
+                collection_formats=collection_formats)
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "get_connections")

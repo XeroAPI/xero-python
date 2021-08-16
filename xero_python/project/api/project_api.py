@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.13.4
+    OpenAPI spec version: 2.15.0
 """
 
 import importlib
@@ -18,7 +18,6 @@ import re  # noqa: F401
 
 from xero_python import exceptions
 from xero_python.api_client import ApiClient, ModelFinder
-
 try:
     from .exception_handler import translate_status_exception
 except ImportError:
@@ -26,7 +25,7 @@ except ImportError:
 
 
 class empty:
-    """empty object to mark optional parameter not set"""
+    """ empty object to mark optional parameter not set """
 
 
 class ProjectApi(object):
@@ -56,16 +55,10 @@ class ProjectApi(object):
     def get_model_finder(self):
         return ModelFinder(self.models_module)
 
-    def create_project(
-        self,
-        xero_tenant_id,
-        project_create_or_update,
-        _return_http_data_only=True,
-        _preload_content=True,
-        _request_timeout=None,
-    ):
+
+    def create_project(self, xero_tenant_id, project_create_or_update,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
         """Create one or more new projects  # noqa: E501
-        OAuth2 scope: projects.create
+        OAuth2 scope: projects
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param ProjectCreateOrUpdate project_create_or_update: Create a new project with ProjectCreateOrUpdate object (required)
         :param bool _return_http_data_only: return received data only
@@ -76,76 +69,67 @@ class ProjectApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError(
-                "Missing the required parameter `xero_tenant_id` "
-                "when calling `create_project`"
-            )
+            raise ValueError("Missing the required parameter `xero_tenant_id` "
+                             "when calling `create_project`")
         # verify the required parameter 'project_create_or_update' is set
         if project_create_or_update is None:
-            raise ValueError(
-                "Missing the required parameter `project_create_or_update` "
-                "when calling `create_project`"
-            )
+            raise ValueError("Missing the required parameter `project_create_or_update` "
+                             "when calling `create_project`")
 
-        collection_formats = {}
-        path_params = {}
+        collection_formats = {
+        
+        
+        
+        
+        }
+        path_params = {  }
+
 
         query_params = []
 
-        header_params = {
-            "Xero-Tenant-Id": xero_tenant_id,
-        }
+
+        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
+
 
         local_var_files = {}
         form_params = []
 
         body_params = project_create_or_update
         # HTTP header `Accept`
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params["Content-Type"] = self.api_client.select_header_content_type(
-            ["application/json"]
-        )
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Projects")
+        auth_settings = ['OAuth2']
+        url = self.get_resource_url('/Projects')
 
         try:
             return self.api_client.call_api(
                 url,
-                "POST",
+                'POST',
                 path_params,
                 query_params,
                 header_params,
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type="Project",
+                response_type='Project',
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats,
-            )
+                collection_formats=collection_formats)
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "create_project")
 
-    def create_time_entry(
-        self,
-        xero_tenant_id,
-        project_id,
-        time_entry_create_or_update,
-        _return_http_data_only=True,
-        _preload_content=True,
-        _request_timeout=None,
-    ):
+    def create_time_entry(self, xero_tenant_id, project_id, time_entry_create_or_update,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
         """Creates a time entry for a specific project  # noqa: E501
-        OAuth2 scope: projects, projects.read
+        OAuth2 scope: projects
         Allows you to create a specific task  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str project_id: You can specify an individual project by appending the projectId to the endpoint (required)
@@ -158,84 +142,71 @@ class ProjectApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError(
-                "Missing the required parameter `xero_tenant_id` "
-                "when calling `create_time_entry`"
-            )
+            raise ValueError("Missing the required parameter `xero_tenant_id` "
+                             "when calling `create_time_entry`")
         # verify the required parameter 'project_id' is set
         if project_id is None:
-            raise ValueError(
-                "Missing the required parameter `project_id` "
-                "when calling `create_time_entry`"
-            )
+            raise ValueError("Missing the required parameter `project_id` "
+                             "when calling `create_time_entry`")
         # verify the required parameter 'time_entry_create_or_update' is set
         if time_entry_create_or_update is None:
-            raise ValueError(
-                "Missing the required parameter `time_entry_create_or_update` "
-                "when calling `create_time_entry`"
-            )
+            raise ValueError("Missing the required parameter `time_entry_create_or_update` "
+                             "when calling `create_time_entry`")
 
-        collection_formats = {}
-        path_params = {
-            "projectId": project_id,
+        collection_formats = {
+        
+        
+        
+        
         }
+        path_params = { 'projectId': project_id, }
+
 
         query_params = []
 
-        header_params = {
-            "Xero-Tenant-Id": xero_tenant_id,
-        }
+
+        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
+
 
         local_var_files = {}
         form_params = []
 
         body_params = time_entry_create_or_update
         # HTTP header `Accept`
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params["Content-Type"] = self.api_client.select_header_content_type(
-            ["application/json"]
-        )
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Projects/{projectId}/Time")
+        auth_settings = ['OAuth2']
+        url = self.get_resource_url('/Projects/{projectId}/Time')
 
         try:
             return self.api_client.call_api(
                 url,
-                "POST",
+                'POST',
                 path_params,
                 query_params,
                 header_params,
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type="TimeEntry",
+                response_type='TimeEntry',
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats,
-            )
+                collection_formats=collection_formats)
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "create_time_entry")
 
-    def delete_time_entry(
-        self,
-        xero_tenant_id,
-        project_id,
-        time_entry_id,
-        _return_http_data_only=True,
-        _preload_content=True,
-        _request_timeout=None,
-    ):
+    def delete_time_entry(self, xero_tenant_id, project_id, time_entry_id,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
         """Deletes a time entry for a specific project  # noqa: E501
-        OAuth2 scope: projects, projects.read
+        OAuth2 scope: projects
         Allows you to delete a specific time entry  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str project_id: You can specify an individual project by appending the projectId to the endpoint (required)
@@ -248,47 +219,44 @@ class ProjectApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError(
-                "Missing the required parameter `xero_tenant_id` "
-                "when calling `delete_time_entry`"
-            )
+            raise ValueError("Missing the required parameter `xero_tenant_id` "
+                             "when calling `delete_time_entry`")
         # verify the required parameter 'project_id' is set
         if project_id is None:
-            raise ValueError(
-                "Missing the required parameter `project_id` "
-                "when calling `delete_time_entry`"
-            )
+            raise ValueError("Missing the required parameter `project_id` "
+                             "when calling `delete_time_entry`")
         # verify the required parameter 'time_entry_id' is set
         if time_entry_id is None:
-            raise ValueError(
-                "Missing the required parameter `time_entry_id` "
-                "when calling `delete_time_entry`"
-            )
+            raise ValueError("Missing the required parameter `time_entry_id` "
+                             "when calling `delete_time_entry`")
 
-        collection_formats = {}
-        path_params = {
-            "projectId": project_id,
-            "timeEntryId": time_entry_id,
+        collection_formats = {
+        
+        
+        
+        
         }
+        path_params = { 'projectId': project_id,'timeEntryId': time_entry_id, }
+
 
         query_params = []
 
-        header_params = {
-            "Xero-Tenant-Id": xero_tenant_id,
-        }
+
+        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
+
 
         local_var_files = {}
         form_params = []
 
         body_params = None
         # Authentication setting
-        auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Projects/{projectId}/Time/{timeEntryId}")
+        auth_settings = ['OAuth2']
+        url = self.get_resource_url('/Projects/{projectId}/Time/{timeEntryId}')
 
         try:
             return self.api_client.call_api(
                 url,
-                "DELETE",
+                'DELETE',
                 path_params,
                 query_params,
                 header_params,
@@ -301,19 +269,11 @@ class ProjectApi(object):
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats,
-            )
+                collection_formats=collection_formats)
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "delete_time_entry")
 
-    def get_project(
-        self,
-        xero_tenant_id,
-        project_id,
-        _return_http_data_only=True,
-        _preload_content=True,
-        _request_timeout=None,
-    ):
+    def get_project(self, xero_tenant_id, project_id,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
         """Retrieves a single project  # noqa: E501
         OAuth2 scope: projects, projects.read
         Allows you to retrieve a specific project using the projectId  # noqa: E501
@@ -327,73 +287,63 @@ class ProjectApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError(
-                "Missing the required parameter `xero_tenant_id` "
-                "when calling `get_project`"
-            )
+            raise ValueError("Missing the required parameter `xero_tenant_id` "
+                             "when calling `get_project`")
         # verify the required parameter 'project_id' is set
         if project_id is None:
-            raise ValueError(
-                "Missing the required parameter `project_id` "
-                "when calling `get_project`"
-            )
+            raise ValueError("Missing the required parameter `project_id` "
+                             "when calling `get_project`")
 
-        collection_formats = {}
-        path_params = {
-            "projectId": project_id,
+        collection_formats = {
+        
+        
+        
+        
         }
+        path_params = { 'projectId': project_id, }
+
 
         query_params = []
 
-        header_params = {
-            "Xero-Tenant-Id": xero_tenant_id,
-        }
+
+        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
+
 
         local_var_files = {}
         form_params = []
 
         body_params = None
         # HTTP header `Accept`
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Projects/{projectId}")
+        auth_settings = ['OAuth2']
+        url = self.get_resource_url('/Projects/{projectId}')
 
         try:
             return self.api_client.call_api(
                 url,
-                "GET",
+                'GET',
                 path_params,
                 query_params,
                 header_params,
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type="Project",
+                response_type='Project',
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats,
-            )
+                collection_formats=collection_formats)
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "get_project")
 
-    def get_project_users(
-        self,
-        xero_tenant_id,
-        page=empty,
-        page_size=empty,
-        _return_http_data_only=True,
-        _preload_content=True,
-        _request_timeout=None,
-    ):
+    def get_project_users(self, xero_tenant_id, page=empty, page_size=empty,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
         """Retrieves a list of all project users  # noqa: E501
-        OAuth2 scope: projects.read
+        OAuth2 scope: projects, projects.read
         Allows you to retrieve the users on a projects.  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param int page: set to 1 by default. The requested number of the page in paged response - Must be a number greater than 0.
@@ -406,86 +356,73 @@ class ProjectApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError(
-                "Missing the required parameter `xero_tenant_id` "
-                "when calling `get_project_users`"
-            )
+            raise ValueError("Missing the required parameter `xero_tenant_id` "
+                             "when calling `get_project_users`")
 
         if page_size is not empty and page_size > 500:
-            raise ValueError(
-                "Invalid value for parameter `page_size` "
-                "when calling `get_project_users`, must be a value "
-                "less than or equal to "
-                "`500`"
-            )
+            raise ValueError("Invalid value for parameter `page_size` "
+                             "when calling `get_project_users`, must be a value "
+                             "less than or equal to "
+                             "`500`")
         if page_size is not empty and page_size < 1:
-            raise ValueError(
-                "Invalid value for parameter `page_size` "
-                "when calling `get_project_users`, must be a value "
-                "greater than or equal to "
-                "`1`"
-            )
-        collection_formats = {}
-        path_params = {}
+            raise ValueError("Invalid value for parameter `page_size` "
+                              "when calling `get_project_users`, must be a value "
+                              "greater than or equal to "
+                              "`1`")
+        collection_formats = {
+        
+        
+        
+        
+        }
+        path_params = {  }
+
 
         query_params = []
 
         if page is not empty:
-            query_params.append(("page", page))
+            query_params.append(('page', page))
 
         if page_size is not empty:
-            query_params.append(("pageSize", page_size))
+            query_params.append(('pageSize', page_size))
 
-        header_params = {
-            "Xero-Tenant-Id": xero_tenant_id,
-        }
+
+        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
+
 
         local_var_files = {}
         form_params = []
 
         body_params = None
         # HTTP header `Accept`
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/ProjectsUsers")
+        auth_settings = ['OAuth2']
+        url = self.get_resource_url('/ProjectsUsers')
 
         try:
             return self.api_client.call_api(
                 url,
-                "GET",
+                'GET',
                 path_params,
                 query_params,
                 header_params,
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type="ProjectUsers",
+                response_type='ProjectUsers',
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats,
-            )
+                collection_formats=collection_formats)
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "get_project_users")
 
-    def get_projects(
-        self,
-        xero_tenant_id,
-        project_ids=empty,
-        contact_id=empty,
-        states=empty,
-        page=empty,
-        page_size=empty,
-        _return_http_data_only=True,
-        _preload_content=True,
-        _request_timeout=None,
-    ):
+    def get_projects(self, xero_tenant_id, project_ids=empty, contact_id=empty, states=empty, page=empty, page_size=empty,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
         """Retrieves all projects  # noqa: E501
         OAuth2 scope: projects, projects.read
         Allows you to retrieve, create and update projects.  # noqa: E501
@@ -503,94 +440,82 @@ class ProjectApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError(
-                "Missing the required parameter `xero_tenant_id` "
-                "when calling `get_projects`"
-            )
+            raise ValueError("Missing the required parameter `xero_tenant_id` "
+                             "when calling `get_projects`")
 
         if page_size is not empty and page_size > 500:
-            raise ValueError(
-                "Invalid value for parameter `page_size` "
-                "when calling `get_projects`, must be a value "
-                "less than or equal to "
-                "`500`"
-            )
+            raise ValueError("Invalid value for parameter `page_size` "
+                             "when calling `get_projects`, must be a value "
+                             "less than or equal to "
+                             "`500`")
         if page_size is not empty and page_size < 1:
-            raise ValueError(
-                "Invalid value for parameter `page_size` "
-                "when calling `get_projects`, must be a value "
-                "greater than or equal to "
-                "`1`"
-            )
+            raise ValueError("Invalid value for parameter `page_size` "
+                              "when calling `get_projects`, must be a value "
+                              "greater than or equal to "
+                              "`1`")
         collection_formats = {
-            "projectIds": "multi",
+        
+        'projectIds': 'multi',
+        
+        
         }
-        path_params = {}
+        path_params = {  }
+
 
         query_params = []
 
         if project_ids is not empty:
-            query_params.append(("projectIds", project_ids))
+            query_params.append(('projectIds', project_ids))
 
         if contact_id is not empty:
-            query_params.append(("contactID", contact_id))
+            query_params.append(('contactID', contact_id))
 
         if states is not empty:
-            query_params.append(("states", states))
+            query_params.append(('states', states))
 
         if page is not empty:
-            query_params.append(("page", page))
+            query_params.append(('page', page))
 
         if page_size is not empty:
-            query_params.append(("pageSize", page_size))
+            query_params.append(('pageSize', page_size))
 
-        header_params = {
-            "Xero-Tenant-Id": xero_tenant_id,
-        }
+
+        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
+
 
         local_var_files = {}
         form_params = []
 
         body_params = None
         # HTTP header `Accept`
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Projects")
+        auth_settings = ['OAuth2']
+        url = self.get_resource_url('/Projects')
 
         try:
             return self.api_client.call_api(
                 url,
-                "GET",
+                'GET',
                 path_params,
                 query_params,
                 header_params,
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type="Projects",
+                response_type='Projects',
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats,
-            )
+                collection_formats=collection_formats)
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "get_projects")
 
-    def get_task(
-        self,
-        xero_tenant_id,
-        project_id,
-        task_id,
-        _return_http_data_only=True,
-        _preload_content=True,
-        _request_timeout=None,
-    ):
+    def get_task(self, xero_tenant_id, project_id, task_id,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
         """Retrieves a single project task  # noqa: E501
         OAuth2 scope: projects, projects.read
         Allows you to retrieve a specific project  # noqa: E501
@@ -605,79 +530,65 @@ class ProjectApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError(
-                "Missing the required parameter `xero_tenant_id` "
-                "when calling `get_task`"
-            )
+            raise ValueError("Missing the required parameter `xero_tenant_id` "
+                             "when calling `get_task`")
         # verify the required parameter 'project_id' is set
         if project_id is None:
-            raise ValueError(
-                "Missing the required parameter `project_id` " "when calling `get_task`"
-            )
+            raise ValueError("Missing the required parameter `project_id` "
+                             "when calling `get_task`")
         # verify the required parameter 'task_id' is set
         if task_id is None:
-            raise ValueError(
-                "Missing the required parameter `task_id` " "when calling `get_task`"
-            )
+            raise ValueError("Missing the required parameter `task_id` "
+                             "when calling `get_task`")
 
-        collection_formats = {}
-        path_params = {
-            "projectId": project_id,
-            "taskId": task_id,
+        collection_formats = {
+        
+        
+        
+        
         }
+        path_params = { 'projectId': project_id,'taskId': task_id, }
+
 
         query_params = []
 
-        header_params = {
-            "Xero-Tenant-Id": xero_tenant_id,
-        }
+
+        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
+
 
         local_var_files = {}
         form_params = []
 
         body_params = None
         # HTTP header `Accept`
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Projects/{projectId}/Tasks/{taskId}")
+        auth_settings = ['OAuth2']
+        url = self.get_resource_url('/Projects/{projectId}/Tasks/{taskId}')
 
         try:
             return self.api_client.call_api(
                 url,
-                "GET",
+                'GET',
                 path_params,
                 query_params,
                 header_params,
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type="Task",
+                response_type='Task',
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats,
-            )
+                collection_formats=collection_formats)
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "get_task")
 
-    def get_tasks(
-        self,
-        xero_tenant_id,
-        project_id,
-        page=empty,
-        page_size=empty,
-        task_ids=empty,
-        charge_type=empty,
-        _return_http_data_only=True,
-        _preload_content=True,
-        _request_timeout=None,
-    ):
+    def get_tasks(self, xero_tenant_id, project_id, page=empty, page_size=empty, task_ids=empty, charge_type=empty,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
         """Retrieves all project tasks  # noqa: E501
         OAuth2 scope: projects, projects.read
         Allows you to retrieve a specific project  # noqa: E501
@@ -695,92 +606,73 @@ class ProjectApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError(
-                "Missing the required parameter `xero_tenant_id` "
-                "when calling `get_tasks`"
-            )
+            raise ValueError("Missing the required parameter `xero_tenant_id` "
+                             "when calling `get_tasks`")
         # verify the required parameter 'project_id' is set
         if project_id is None:
-            raise ValueError(
-                "Missing the required parameter `project_id` "
-                "when calling `get_tasks`"
-            )
+            raise ValueError("Missing the required parameter `project_id` "
+                             "when calling `get_tasks`")
 
-        collection_formats = {}
-        path_params = {
-            "projectId": project_id,
+        collection_formats = {
+        
+        
+        
+        
         }
+        path_params = { 'projectId': project_id, }
+
 
         query_params = []
 
         if page is not empty:
-            query_params.append(("page", page))
+            query_params.append(('page', page))
 
         if page_size is not empty:
-            query_params.append(("pageSize", page_size))
+            query_params.append(('pageSize', page_size))
 
         if task_ids is not empty:
-            query_params.append(("taskIds", task_ids))
+            query_params.append(('taskIds', task_ids))
 
         if charge_type is not empty:
-            query_params.append(("chargeType", charge_type))
+            query_params.append(('chargeType', charge_type))
 
-        header_params = {
-            "Xero-Tenant-Id": xero_tenant_id,
-        }
+
+        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
+
 
         local_var_files = {}
         form_params = []
 
         body_params = None
         # HTTP header `Accept`
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Projects/{projectId}/Tasks")
+        auth_settings = ['OAuth2']
+        url = self.get_resource_url('/Projects/{projectId}/Tasks')
 
         try:
             return self.api_client.call_api(
                 url,
-                "GET",
+                'GET',
                 path_params,
                 query_params,
                 header_params,
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type="Tasks",
+                response_type='Tasks',
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats,
-            )
+                collection_formats=collection_formats)
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "get_tasks")
 
-    def get_time_entries(
-        self,
-        xero_tenant_id,
-        project_id,
-        user_id=empty,
-        task_id=empty,
-        invoice_id=empty,
-        contact_id=empty,
-        page=empty,
-        page_size=empty,
-        states=empty,
-        is_chargeable=empty,
-        date_after_utc=empty,
-        date_before_utc=empty,
-        _return_http_data_only=True,
-        _preload_content=True,
-        _request_timeout=None,
-    ):
+    def get_time_entries(self, xero_tenant_id, project_id, user_id=empty, task_id=empty, invoice_id=empty, contact_id=empty, page=empty, page_size=empty, states=empty, is_chargeable=empty, date_after_utc=empty, date_before_utc=empty,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
         """Retrieves all time entries associated with a specific project  # noqa: E501
         OAuth2 scope: projects, projects.read
         Allows you to retrieve the time entries associated with a specific project  # noqa: E501
@@ -804,103 +696,91 @@ class ProjectApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError(
-                "Missing the required parameter `xero_tenant_id` "
-                "when calling `get_time_entries`"
-            )
+            raise ValueError("Missing the required parameter `xero_tenant_id` "
+                             "when calling `get_time_entries`")
         # verify the required parameter 'project_id' is set
         if project_id is None:
-            raise ValueError(
-                "Missing the required parameter `project_id` "
-                "when calling `get_time_entries`"
-            )
+            raise ValueError("Missing the required parameter `project_id` "
+                             "when calling `get_time_entries`")
 
         collection_formats = {
-            "states": "multi",
+        
+        'states': 'multi',
+        
+        
         }
-        path_params = {
-            "projectId": project_id,
-        }
+        path_params = { 'projectId': project_id, }
+
 
         query_params = []
 
         if user_id is not empty:
-            query_params.append(("userId", user_id))
+            query_params.append(('userId', user_id))
 
         if task_id is not empty:
-            query_params.append(("taskId", task_id))
+            query_params.append(('taskId', task_id))
 
         if invoice_id is not empty:
-            query_params.append(("invoiceId", invoice_id))
+            query_params.append(('invoiceId', invoice_id))
 
         if contact_id is not empty:
-            query_params.append(("contactId", contact_id))
+            query_params.append(('contactId', contact_id))
 
         if page is not empty:
-            query_params.append(("page", page))
+            query_params.append(('page', page))
 
         if page_size is not empty:
-            query_params.append(("pageSize", page_size))
+            query_params.append(('pageSize', page_size))
 
         if states is not empty:
-            query_params.append(("states", states))
+            query_params.append(('states', states))
 
         if is_chargeable is not empty:
-            query_params.append(("isChargeable", is_chargeable))
+            query_params.append(('isChargeable', is_chargeable))
 
         if date_after_utc is not empty:
-            query_params.append(("dateAfterUtc", date_after_utc))
+            query_params.append(('dateAfterUtc', date_after_utc))
 
         if date_before_utc is not empty:
-            query_params.append(("dateBeforeUtc", date_before_utc))
+            query_params.append(('dateBeforeUtc', date_before_utc))
 
-        header_params = {
-            "Xero-Tenant-Id": xero_tenant_id,
-        }
+
+        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
+
 
         local_var_files = {}
         form_params = []
 
         body_params = None
         # HTTP header `Accept`
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Projects/{projectId}/Time")
+        auth_settings = ['OAuth2']
+        url = self.get_resource_url('/Projects/{projectId}/Time')
 
         try:
             return self.api_client.call_api(
                 url,
-                "GET",
+                'GET',
                 path_params,
                 query_params,
                 header_params,
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type="TimeEntries",
+                response_type='TimeEntries',
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats,
-            )
+                collection_formats=collection_formats)
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "get_time_entries")
 
-    def get_time_entry(
-        self,
-        xero_tenant_id,
-        project_id,
-        time_entry_id,
-        _return_http_data_only=True,
-        _preload_content=True,
-        _request_timeout=None,
-    ):
+    def get_time_entry(self, xero_tenant_id, project_id, time_entry_id,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
         """Retrieves a single time entry for a specific project  # noqa: E501
         OAuth2 scope: projects, projects.read
         Allows you to get a single time entry in a project  # noqa: E501
@@ -915,80 +795,67 @@ class ProjectApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError(
-                "Missing the required parameter `xero_tenant_id` "
-                "when calling `get_time_entry`"
-            )
+            raise ValueError("Missing the required parameter `xero_tenant_id` "
+                             "when calling `get_time_entry`")
         # verify the required parameter 'project_id' is set
         if project_id is None:
-            raise ValueError(
-                "Missing the required parameter `project_id` "
-                "when calling `get_time_entry`"
-            )
+            raise ValueError("Missing the required parameter `project_id` "
+                             "when calling `get_time_entry`")
         # verify the required parameter 'time_entry_id' is set
         if time_entry_id is None:
-            raise ValueError(
-                "Missing the required parameter `time_entry_id` "
-                "when calling `get_time_entry`"
-            )
+            raise ValueError("Missing the required parameter `time_entry_id` "
+                             "when calling `get_time_entry`")
 
-        collection_formats = {}
-        path_params = {
-            "projectId": project_id,
-            "timeEntryId": time_entry_id,
+        collection_formats = {
+        
+        
+        
+        
         }
+        path_params = { 'projectId': project_id,'timeEntryId': time_entry_id, }
+
 
         query_params = []
 
-        header_params = {
-            "Xero-Tenant-Id": xero_tenant_id,
-        }
+
+        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
+
 
         local_var_files = {}
         form_params = []
 
         body_params = None
         # HTTP header `Accept`
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Projects/{projectId}/Time/{timeEntryId}")
+        auth_settings = ['OAuth2']
+        url = self.get_resource_url('/Projects/{projectId}/Time/{timeEntryId}')
 
         try:
             return self.api_client.call_api(
                 url,
-                "GET",
+                'GET',
                 path_params,
                 query_params,
                 header_params,
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type="TimeEntry",
+                response_type='TimeEntry',
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats,
-            )
+                collection_formats=collection_formats)
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "get_time_entry")
 
-    def patch_project(
-        self,
-        xero_tenant_id,
-        project_id,
-        project_patch,
-        _return_http_data_only=True,
-        _preload_content=True,
-        _request_timeout=None,
-    ):
+    def patch_project(self, xero_tenant_id, project_id, project_patch,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
         """creates a project for the specified contact  # noqa: E501
-        OAuth2 scope: projects.create
+        OAuth2 scope: projects
         Allows you to update a specific projects.  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str project_id: You can specify an individual project by appending the projectId to the endpoint (required)
@@ -1001,56 +868,52 @@ class ProjectApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError(
-                "Missing the required parameter `xero_tenant_id` "
-                "when calling `patch_project`"
-            )
+            raise ValueError("Missing the required parameter `xero_tenant_id` "
+                             "when calling `patch_project`")
         # verify the required parameter 'project_id' is set
         if project_id is None:
-            raise ValueError(
-                "Missing the required parameter `project_id` "
-                "when calling `patch_project`"
-            )
+            raise ValueError("Missing the required parameter `project_id` "
+                             "when calling `patch_project`")
         # verify the required parameter 'project_patch' is set
         if project_patch is None:
-            raise ValueError(
-                "Missing the required parameter `project_patch` "
-                "when calling `patch_project`"
-            )
+            raise ValueError("Missing the required parameter `project_patch` "
+                             "when calling `patch_project`")
 
-        collection_formats = {}
-        path_params = {
-            "projectId": project_id,
+        collection_formats = {
+        
+        
+        
+        
         }
+        path_params = { 'projectId': project_id, }
+
 
         query_params = []
 
-        header_params = {
-            "Xero-Tenant-Id": xero_tenant_id,
-        }
+
+        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
+
 
         local_var_files = {}
         form_params = []
 
         body_params = project_patch
         # HTTP header `Accept`
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params["Content-Type"] = self.api_client.select_header_content_type(
-            ["application/json"]
-        )
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Projects/{projectId}")
+        auth_settings = ['OAuth2']
+        url = self.get_resource_url('/Projects/{projectId}')
 
         try:
             return self.api_client.call_api(
                 url,
-                "PATCH",
+                'PATCH',
                 path_params,
                 query_params,
                 header_params,
@@ -1063,22 +926,13 @@ class ProjectApi(object):
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats,
-            )
+                collection_formats=collection_formats)
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "patch_project")
 
-    def update_project(
-        self,
-        xero_tenant_id,
-        project_id,
-        project_create_or_update,
-        _return_http_data_only=True,
-        _preload_content=True,
-        _request_timeout=None,
-    ):
+    def update_project(self, xero_tenant_id, project_id, project_create_or_update,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
         """Updates a specific project  # noqa: E501
-        OAuth2 scope: projects.create
+        OAuth2 scope: projects
         Allows you to update a specific projects.  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str project_id: You can specify an individual project by appending the projectId to the endpoint (required)
@@ -1091,56 +945,52 @@ class ProjectApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError(
-                "Missing the required parameter `xero_tenant_id` "
-                "when calling `update_project`"
-            )
+            raise ValueError("Missing the required parameter `xero_tenant_id` "
+                             "when calling `update_project`")
         # verify the required parameter 'project_id' is set
         if project_id is None:
-            raise ValueError(
-                "Missing the required parameter `project_id` "
-                "when calling `update_project`"
-            )
+            raise ValueError("Missing the required parameter `project_id` "
+                             "when calling `update_project`")
         # verify the required parameter 'project_create_or_update' is set
         if project_create_or_update is None:
-            raise ValueError(
-                "Missing the required parameter `project_create_or_update` "
-                "when calling `update_project`"
-            )
+            raise ValueError("Missing the required parameter `project_create_or_update` "
+                             "when calling `update_project`")
 
-        collection_formats = {}
-        path_params = {
-            "projectId": project_id,
+        collection_formats = {
+        
+        
+        
+        
         }
+        path_params = { 'projectId': project_id, }
+
 
         query_params = []
 
-        header_params = {
-            "Xero-Tenant-Id": xero_tenant_id,
-        }
+
+        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
+
 
         local_var_files = {}
         form_params = []
 
         body_params = project_create_or_update
         # HTTP header `Accept`
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params["Content-Type"] = self.api_client.select_header_content_type(
-            ["application/json"]
-        )
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Projects/{projectId}")
+        auth_settings = ['OAuth2']
+        url = self.get_resource_url('/Projects/{projectId}')
 
         try:
             return self.api_client.call_api(
                 url,
-                "PUT",
+                'PUT',
                 path_params,
                 query_params,
                 header_params,
@@ -1153,23 +1003,13 @@ class ProjectApi(object):
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats,
-            )
+                collection_formats=collection_formats)
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "update_project")
 
-    def update_time_entry(
-        self,
-        xero_tenant_id,
-        project_id,
-        time_entry_id,
-        time_entry_create_or_update,
-        _return_http_data_only=True,
-        _preload_content=True,
-        _request_timeout=None,
-    ):
+    def update_time_entry(self, xero_tenant_id, project_id, time_entry_id, time_entry_create_or_update,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
         """Updates a time entry for a specific project  # noqa: E501
-        OAuth2 scope: projects, projects.read
+        OAuth2 scope: projects
         Allows you to update time entry in a project  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str project_id: You can specify an individual project by appending the projectId to the endpoint (required)
@@ -1183,58 +1023,52 @@ class ProjectApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError(
-                "Missing the required parameter `xero_tenant_id` "
-                "when calling `update_time_entry`"
-            )
+            raise ValueError("Missing the required parameter `xero_tenant_id` "
+                             "when calling `update_time_entry`")
         # verify the required parameter 'project_id' is set
         if project_id is None:
-            raise ValueError(
-                "Missing the required parameter `project_id` "
-                "when calling `update_time_entry`"
-            )
+            raise ValueError("Missing the required parameter `project_id` "
+                             "when calling `update_time_entry`")
         # verify the required parameter 'time_entry_id' is set
         if time_entry_id is None:
-            raise ValueError(
-                "Missing the required parameter `time_entry_id` "
-                "when calling `update_time_entry`"
-            )
+            raise ValueError("Missing the required parameter `time_entry_id` "
+                             "when calling `update_time_entry`")
         # verify the required parameter 'time_entry_create_or_update' is set
         if time_entry_create_or_update is None:
-            raise ValueError(
-                "Missing the required parameter `time_entry_create_or_update` "
-                "when calling `update_time_entry`"
-            )
+            raise ValueError("Missing the required parameter `time_entry_create_or_update` "
+                             "when calling `update_time_entry`")
 
-        collection_formats = {}
-        path_params = {
-            "projectId": project_id,
-            "timeEntryId": time_entry_id,
+        collection_formats = {
+        
+        
+        
+        
         }
+        path_params = { 'projectId': project_id,'timeEntryId': time_entry_id, }
+
 
         query_params = []
 
-        header_params = {
-            "Xero-Tenant-Id": xero_tenant_id,
-        }
+
+        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
+
 
         local_var_files = {}
         form_params = []
 
         body_params = time_entry_create_or_update
         # HTTP header `Content-Type`
-        header_params["Content-Type"] = self.api_client.select_header_content_type(
-            ["application/json"]
-        )
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Projects/{projectId}/Time/{timeEntryId}")
+        auth_settings = ['OAuth2']
+        url = self.get_resource_url('/Projects/{projectId}/Time/{timeEntryId}')
 
         try:
             return self.api_client.call_api(
                 url,
-                "PUT",
+                'PUT',
                 path_params,
                 query_params,
                 header_params,
@@ -1247,7 +1081,6 @@ class ProjectApi(object):
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats,
-            )
+                collection_formats=collection_formats)
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "update_time_entry")
