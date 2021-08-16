@@ -18,6 +18,7 @@ import re  # noqa: F401
 
 from xero_python import exceptions
 from xero_python.api_client import ApiClient, ModelFinder
+
 try:
     from .exception_handler import translate_status_exception
 except ImportError:
@@ -25,7 +26,7 @@ except ImportError:
 
 
 class empty:
-    """ empty object to mark optional parameter not set """
+    """empty object to mark optional parameter not set"""
 
 
 class PayrollAuApi(object):
@@ -55,8 +56,14 @@ class PayrollAuApi(object):
     def get_model_finder(self):
         return ModelFinder(self.models_module)
 
-
-    def create_employee(self, xero_tenant_id, employee,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
+    def create_employee(
+        self,
+        xero_tenant_id,
+        employee,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
         """Creates a payroll employee  # noqa: E501
         OAuth2 scope: payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
@@ -69,65 +76,73 @@ class PayrollAuApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError("Missing the required parameter `xero_tenant_id` "
-                             "when calling `create_employee`")
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `create_employee`"
+            )
         # verify the required parameter 'employee' is set
         if employee is None:
-            raise ValueError("Missing the required parameter `employee` "
-                             "when calling `create_employee`")
+            raise ValueError(
+                "Missing the required parameter `employee` "
+                "when calling `create_employee`"
+            )
 
-        collection_formats = {
-        
-        
-        
-        
-        }
-        path_params = {  }
-
+        collection_formats = {}
+        path_params = {}
 
         query_params = []
 
-
-        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
-
+        header_params = {
+            "Xero-Tenant-Id": xero_tenant_id,
+        }
 
         local_var_files = {}
         form_params = []
 
         body_params = employee
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(
-            ['application/json'])
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
 
         # Authentication setting
-        auth_settings = ['OAuth2']
-        url = self.get_resource_url('/Employees')
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/Employees")
 
         try:
             return self.api_client.call_api(
                 url,
-                'POST',
+                "POST",
                 path_params,
                 query_params,
                 header_params,
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type='Employees',
+                response_type="Employees",
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats)
+                collection_formats=collection_formats,
+            )
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "create_employee")
 
-    def create_leave_application(self, xero_tenant_id, leave_application,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
+    def create_leave_application(
+        self,
+        xero_tenant_id,
+        leave_application,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
         """Creates a leave application  # noqa: E501
         OAuth2 scope: payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
@@ -140,65 +155,73 @@ class PayrollAuApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError("Missing the required parameter `xero_tenant_id` "
-                             "when calling `create_leave_application`")
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `create_leave_application`"
+            )
         # verify the required parameter 'leave_application' is set
         if leave_application is None:
-            raise ValueError("Missing the required parameter `leave_application` "
-                             "when calling `create_leave_application`")
+            raise ValueError(
+                "Missing the required parameter `leave_application` "
+                "when calling `create_leave_application`"
+            )
 
-        collection_formats = {
-        
-        
-        
-        
-        }
-        path_params = {  }
-
+        collection_formats = {}
+        path_params = {}
 
         query_params = []
 
-
-        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
-
+        header_params = {
+            "Xero-Tenant-Id": xero_tenant_id,
+        }
 
         local_var_files = {}
         form_params = []
 
         body_params = leave_application
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(
-            ['application/json'])
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
 
         # Authentication setting
-        auth_settings = ['OAuth2']
-        url = self.get_resource_url('/LeaveApplications')
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/LeaveApplications")
 
         try:
             return self.api_client.call_api(
                 url,
-                'POST',
+                "POST",
                 path_params,
                 query_params,
                 header_params,
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type='LeaveApplications',
+                response_type="LeaveApplications",
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats)
+                collection_formats=collection_formats,
+            )
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "create_leave_application")
 
-    def create_pay_item(self, xero_tenant_id, pay_item,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
+    def create_pay_item(
+        self,
+        xero_tenant_id,
+        pay_item,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
         """Creates a pay item  # noqa: E501
         OAuth2 scope: payroll.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
@@ -211,65 +234,73 @@ class PayrollAuApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError("Missing the required parameter `xero_tenant_id` "
-                             "when calling `create_pay_item`")
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `create_pay_item`"
+            )
         # verify the required parameter 'pay_item' is set
         if pay_item is None:
-            raise ValueError("Missing the required parameter `pay_item` "
-                             "when calling `create_pay_item`")
+            raise ValueError(
+                "Missing the required parameter `pay_item` "
+                "when calling `create_pay_item`"
+            )
 
-        collection_formats = {
-        
-        
-        
-        
-        }
-        path_params = {  }
-
+        collection_formats = {}
+        path_params = {}
 
         query_params = []
 
-
-        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
-
+        header_params = {
+            "Xero-Tenant-Id": xero_tenant_id,
+        }
 
         local_var_files = {}
         form_params = []
 
         body_params = pay_item
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(
-            ['application/json'])
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
 
         # Authentication setting
-        auth_settings = ['OAuth2']
-        url = self.get_resource_url('/PayItems')
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/PayItems")
 
         try:
             return self.api_client.call_api(
                 url,
-                'POST',
+                "POST",
                 path_params,
                 query_params,
                 header_params,
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type='PayItems',
+                response_type="PayItems",
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats)
+                collection_formats=collection_formats,
+            )
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "create_pay_item")
 
-    def create_pay_run(self, xero_tenant_id, pay_run,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
+    def create_pay_run(
+        self,
+        xero_tenant_id,
+        pay_run,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
         """Creates a pay run  # noqa: E501
         OAuth2 scope: payroll.payruns
         :param str xero_tenant_id: Xero identifier for Tenant (required)
@@ -282,65 +313,73 @@ class PayrollAuApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError("Missing the required parameter `xero_tenant_id` "
-                             "when calling `create_pay_run`")
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `create_pay_run`"
+            )
         # verify the required parameter 'pay_run' is set
         if pay_run is None:
-            raise ValueError("Missing the required parameter `pay_run` "
-                             "when calling `create_pay_run`")
+            raise ValueError(
+                "Missing the required parameter `pay_run` "
+                "when calling `create_pay_run`"
+            )
 
-        collection_formats = {
-        
-        
-        
-        
-        }
-        path_params = {  }
-
+        collection_formats = {}
+        path_params = {}
 
         query_params = []
 
-
-        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
-
+        header_params = {
+            "Xero-Tenant-Id": xero_tenant_id,
+        }
 
         local_var_files = {}
         form_params = []
 
         body_params = pay_run
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(
-            ['application/json'])
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
 
         # Authentication setting
-        auth_settings = ['OAuth2']
-        url = self.get_resource_url('/PayRuns')
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/PayRuns")
 
         try:
             return self.api_client.call_api(
                 url,
-                'POST',
+                "POST",
                 path_params,
                 query_params,
                 header_params,
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type='PayRuns',
+                response_type="PayRuns",
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats)
+                collection_formats=collection_formats,
+            )
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "create_pay_run")
 
-    def create_payroll_calendar(self, xero_tenant_id, payroll_calendar,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
+    def create_payroll_calendar(
+        self,
+        xero_tenant_id,
+        payroll_calendar,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
         """Creates a Payroll Calendar  # noqa: E501
         OAuth2 scope: payroll.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
@@ -353,65 +392,73 @@ class PayrollAuApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError("Missing the required parameter `xero_tenant_id` "
-                             "when calling `create_payroll_calendar`")
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `create_payroll_calendar`"
+            )
         # verify the required parameter 'payroll_calendar' is set
         if payroll_calendar is None:
-            raise ValueError("Missing the required parameter `payroll_calendar` "
-                             "when calling `create_payroll_calendar`")
+            raise ValueError(
+                "Missing the required parameter `payroll_calendar` "
+                "when calling `create_payroll_calendar`"
+            )
 
-        collection_formats = {
-        
-        
-        
-        
-        }
-        path_params = {  }
-
+        collection_formats = {}
+        path_params = {}
 
         query_params = []
 
-
-        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
-
+        header_params = {
+            "Xero-Tenant-Id": xero_tenant_id,
+        }
 
         local_var_files = {}
         form_params = []
 
         body_params = payroll_calendar
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(
-            ['application/json'])
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
 
         # Authentication setting
-        auth_settings = ['OAuth2']
-        url = self.get_resource_url('/PayrollCalendars')
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/PayrollCalendars")
 
         try:
             return self.api_client.call_api(
                 url,
-                'POST',
+                "POST",
                 path_params,
                 query_params,
                 header_params,
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type='PayrollCalendars',
+                response_type="PayrollCalendars",
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats)
+                collection_formats=collection_formats,
+            )
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "create_payroll_calendar")
 
-    def create_superfund(self, xero_tenant_id, super_fund,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
+    def create_superfund(
+        self,
+        xero_tenant_id,
+        super_fund,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
         """Creates a superfund  # noqa: E501
         OAuth2 scope: payroll.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
@@ -424,65 +471,73 @@ class PayrollAuApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError("Missing the required parameter `xero_tenant_id` "
-                             "when calling `create_superfund`")
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `create_superfund`"
+            )
         # verify the required parameter 'super_fund' is set
         if super_fund is None:
-            raise ValueError("Missing the required parameter `super_fund` "
-                             "when calling `create_superfund`")
+            raise ValueError(
+                "Missing the required parameter `super_fund` "
+                "when calling `create_superfund`"
+            )
 
-        collection_formats = {
-        
-        
-        
-        
-        }
-        path_params = {  }
-
+        collection_formats = {}
+        path_params = {}
 
         query_params = []
 
-
-        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
-
+        header_params = {
+            "Xero-Tenant-Id": xero_tenant_id,
+        }
 
         local_var_files = {}
         form_params = []
 
         body_params = super_fund
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(
-            ['application/json'])
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
 
         # Authentication setting
-        auth_settings = ['OAuth2']
-        url = self.get_resource_url('/Superfunds')
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/Superfunds")
 
         try:
             return self.api_client.call_api(
                 url,
-                'POST',
+                "POST",
                 path_params,
                 query_params,
                 header_params,
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type='SuperFunds',
+                response_type="SuperFunds",
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats)
+                collection_formats=collection_formats,
+            )
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "create_superfund")
 
-    def create_timesheet(self, xero_tenant_id, timesheet,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
+    def create_timesheet(
+        self,
+        xero_tenant_id,
+        timesheet,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
         """Creates a timesheet  # noqa: E501
         OAuth2 scope: payroll.timesheets
         :param str xero_tenant_id: Xero identifier for Tenant (required)
@@ -495,65 +550,73 @@ class PayrollAuApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError("Missing the required parameter `xero_tenant_id` "
-                             "when calling `create_timesheet`")
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `create_timesheet`"
+            )
         # verify the required parameter 'timesheet' is set
         if timesheet is None:
-            raise ValueError("Missing the required parameter `timesheet` "
-                             "when calling `create_timesheet`")
+            raise ValueError(
+                "Missing the required parameter `timesheet` "
+                "when calling `create_timesheet`"
+            )
 
-        collection_formats = {
-        
-        
-        
-        
-        }
-        path_params = {  }
-
+        collection_formats = {}
+        path_params = {}
 
         query_params = []
 
-
-        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
-
+        header_params = {
+            "Xero-Tenant-Id": xero_tenant_id,
+        }
 
         local_var_files = {}
         form_params = []
 
         body_params = timesheet
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(
-            ['application/json'])
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
 
         # Authentication setting
-        auth_settings = ['OAuth2']
-        url = self.get_resource_url('/Timesheets')
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/Timesheets")
 
         try:
             return self.api_client.call_api(
                 url,
-                'POST',
+                "POST",
                 path_params,
                 query_params,
                 header_params,
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type='Timesheets',
+                response_type="Timesheets",
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats)
+                collection_formats=collection_formats,
+            )
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "create_timesheet")
 
-    def get_employee(self, xero_tenant_id, employee_id,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
+    def get_employee(
+        self,
+        xero_tenant_id,
+        employee_id,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
         """Retrieves an employee's detail by unique employee id  # noqa: E501
         OAuth2 scope: payroll.employees, payroll.employees.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
@@ -566,61 +629,73 @@ class PayrollAuApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError("Missing the required parameter `xero_tenant_id` "
-                             "when calling `get_employee`")
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `get_employee`"
+            )
         # verify the required parameter 'employee_id' is set
         if employee_id is None:
-            raise ValueError("Missing the required parameter `employee_id` "
-                             "when calling `get_employee`")
+            raise ValueError(
+                "Missing the required parameter `employee_id` "
+                "when calling `get_employee`"
+            )
 
-        collection_formats = {
-        
-        
-        
-        
+        collection_formats = {}
+        path_params = {
+            "EmployeeID": employee_id,
         }
-        path_params = { 'EmployeeID': employee_id, }
-
 
         query_params = []
 
-
-        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
-
+        header_params = {
+            "Xero-Tenant-Id": xero_tenant_id,
+        }
 
         local_var_files = {}
         form_params = []
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
 
         # Authentication setting
-        auth_settings = ['OAuth2']
-        url = self.get_resource_url('/Employees/{EmployeeID}')
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/Employees/{EmployeeID}")
 
         try:
             return self.api_client.call_api(
                 url,
-                'GET',
+                "GET",
                 path_params,
                 query_params,
                 header_params,
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type='Employees',
+                response_type="Employees",
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats)
+                collection_formats=collection_formats,
+            )
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "get_employee")
 
-    def get_employees(self, xero_tenant_id, if_modified_since=empty, where=empty, order=empty, page=empty,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
+    def get_employees(
+        self,
+        xero_tenant_id,
+        if_modified_since=empty,
+        where=empty,
+        order=empty,
+        page=empty,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
         """Searches payroll employees  # noqa: E501
         OAuth2 scope: payroll.employees, payroll.employees.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
@@ -636,69 +711,74 @@ class PayrollAuApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError("Missing the required parameter `xero_tenant_id` "
-                             "when calling `get_employees`")
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `get_employees`"
+            )
 
-        collection_formats = {
-        
-        
-        
-        
-        }
-        path_params = {  }
-
+        collection_formats = {}
+        path_params = {}
 
         query_params = []
 
         if where is not empty:
-            query_params.append(('where', where))
+            query_params.append(("where", where))
 
         if order is not empty:
-            query_params.append(('order', order))
+            query_params.append(("order", order))
 
         if page is not empty:
-            query_params.append(('page', page))
+            query_params.append(("page", page))
 
-
-        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
+        header_params = {
+            "Xero-Tenant-Id": xero_tenant_id,
+        }
 
         if if_modified_since is not empty:
-            header_params['If-Modified-Since'] = if_modified_since
-
+            header_params["If-Modified-Since"] = if_modified_since
 
         local_var_files = {}
         form_params = []
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
 
         # Authentication setting
-        auth_settings = ['OAuth2']
-        url = self.get_resource_url('/Employees')
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/Employees")
 
         try:
             return self.api_client.call_api(
                 url,
-                'GET',
+                "GET",
                 path_params,
                 query_params,
                 header_params,
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type='Employees',
+                response_type="Employees",
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats)
+                collection_formats=collection_formats,
+            )
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "get_employees")
 
-    def get_leave_application(self, xero_tenant_id, leave_application_id,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
+    def get_leave_application(
+        self,
+        xero_tenant_id,
+        leave_application_id,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
         """Retrieves a leave application by a unique leave application id  # noqa: E501
         OAuth2 scope: payroll.employees, payroll.employees.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
@@ -711,61 +791,73 @@ class PayrollAuApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError("Missing the required parameter `xero_tenant_id` "
-                             "when calling `get_leave_application`")
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `get_leave_application`"
+            )
         # verify the required parameter 'leave_application_id' is set
         if leave_application_id is None:
-            raise ValueError("Missing the required parameter `leave_application_id` "
-                             "when calling `get_leave_application`")
+            raise ValueError(
+                "Missing the required parameter `leave_application_id` "
+                "when calling `get_leave_application`"
+            )
 
-        collection_formats = {
-        
-        
-        
-        
+        collection_formats = {}
+        path_params = {
+            "LeaveApplicationID": leave_application_id,
         }
-        path_params = { 'LeaveApplicationID': leave_application_id, }
-
 
         query_params = []
 
-
-        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
-
+        header_params = {
+            "Xero-Tenant-Id": xero_tenant_id,
+        }
 
         local_var_files = {}
         form_params = []
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
 
         # Authentication setting
-        auth_settings = ['OAuth2']
-        url = self.get_resource_url('/LeaveApplications/{LeaveApplicationID}')
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/LeaveApplications/{LeaveApplicationID}")
 
         try:
             return self.api_client.call_api(
                 url,
-                'GET',
+                "GET",
                 path_params,
                 query_params,
                 header_params,
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type='LeaveApplications',
+                response_type="LeaveApplications",
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats)
+                collection_formats=collection_formats,
+            )
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "get_leave_application")
 
-    def get_leave_applications(self, xero_tenant_id, if_modified_since=empty, where=empty, order=empty, page=empty,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
+    def get_leave_applications(
+        self,
+        xero_tenant_id,
+        if_modified_since=empty,
+        where=empty,
+        order=empty,
+        page=empty,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
         """Retrieves leave applications  # noqa: E501
         OAuth2 scope: payroll.employees, payroll.employees.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
@@ -781,69 +873,77 @@ class PayrollAuApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError("Missing the required parameter `xero_tenant_id` "
-                             "when calling `get_leave_applications`")
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `get_leave_applications`"
+            )
 
-        collection_formats = {
-        
-        
-        
-        
-        }
-        path_params = {  }
-
+        collection_formats = {}
+        path_params = {}
 
         query_params = []
 
         if where is not empty:
-            query_params.append(('where', where))
+            query_params.append(("where", where))
 
         if order is not empty:
-            query_params.append(('order', order))
+            query_params.append(("order", order))
 
         if page is not empty:
-            query_params.append(('page', page))
+            query_params.append(("page", page))
 
-
-        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
+        header_params = {
+            "Xero-Tenant-Id": xero_tenant_id,
+        }
 
         if if_modified_since is not empty:
-            header_params['If-Modified-Since'] = if_modified_since
-
+            header_params["If-Modified-Since"] = if_modified_since
 
         local_var_files = {}
         form_params = []
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
 
         # Authentication setting
-        auth_settings = ['OAuth2']
-        url = self.get_resource_url('/LeaveApplications')
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/LeaveApplications")
 
         try:
             return self.api_client.call_api(
                 url,
-                'GET',
+                "GET",
                 path_params,
                 query_params,
                 header_params,
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type='LeaveApplications',
+                response_type="LeaveApplications",
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats)
+                collection_formats=collection_formats,
+            )
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "get_leave_applications")
 
-    def get_pay_items(self, xero_tenant_id, if_modified_since=empty, where=empty, order=empty, page=empty,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
+    def get_pay_items(
+        self,
+        xero_tenant_id,
+        if_modified_since=empty,
+        where=empty,
+        order=empty,
+        page=empty,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
         """Retrieves pay items  # noqa: E501
         OAuth2 scope: payroll.settings, payroll.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
@@ -859,69 +959,74 @@ class PayrollAuApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError("Missing the required parameter `xero_tenant_id` "
-                             "when calling `get_pay_items`")
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `get_pay_items`"
+            )
 
-        collection_formats = {
-        
-        
-        
-        
-        }
-        path_params = {  }
-
+        collection_formats = {}
+        path_params = {}
 
         query_params = []
 
         if where is not empty:
-            query_params.append(('where', where))
+            query_params.append(("where", where))
 
         if order is not empty:
-            query_params.append(('order', order))
+            query_params.append(("order", order))
 
         if page is not empty:
-            query_params.append(('page', page))
+            query_params.append(("page", page))
 
-
-        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
+        header_params = {
+            "Xero-Tenant-Id": xero_tenant_id,
+        }
 
         if if_modified_since is not empty:
-            header_params['If-Modified-Since'] = if_modified_since
-
+            header_params["If-Modified-Since"] = if_modified_since
 
         local_var_files = {}
         form_params = []
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
 
         # Authentication setting
-        auth_settings = ['OAuth2']
-        url = self.get_resource_url('/PayItems')
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/PayItems")
 
         try:
             return self.api_client.call_api(
                 url,
-                'GET',
+                "GET",
                 path_params,
                 query_params,
                 header_params,
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type='PayItems',
+                response_type="PayItems",
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats)
+                collection_formats=collection_formats,
+            )
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "get_pay_items")
 
-    def get_pay_run(self, xero_tenant_id, pay_run_id,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
+    def get_pay_run(
+        self,
+        xero_tenant_id,
+        pay_run_id,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
         """Retrieves a pay run by using a unique pay run id  # noqa: E501
         OAuth2 scope: payroll.payruns, payroll.payruns.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
@@ -934,61 +1039,73 @@ class PayrollAuApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError("Missing the required parameter `xero_tenant_id` "
-                             "when calling `get_pay_run`")
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `get_pay_run`"
+            )
         # verify the required parameter 'pay_run_id' is set
         if pay_run_id is None:
-            raise ValueError("Missing the required parameter `pay_run_id` "
-                             "when calling `get_pay_run`")
+            raise ValueError(
+                "Missing the required parameter `pay_run_id` "
+                "when calling `get_pay_run`"
+            )
 
-        collection_formats = {
-        
-        
-        
-        
+        collection_formats = {}
+        path_params = {
+            "PayRunID": pay_run_id,
         }
-        path_params = { 'PayRunID': pay_run_id, }
-
 
         query_params = []
 
-
-        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
-
+        header_params = {
+            "Xero-Tenant-Id": xero_tenant_id,
+        }
 
         local_var_files = {}
         form_params = []
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
 
         # Authentication setting
-        auth_settings = ['OAuth2']
-        url = self.get_resource_url('/PayRuns/{PayRunID}')
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/PayRuns/{PayRunID}")
 
         try:
             return self.api_client.call_api(
                 url,
-                'GET',
+                "GET",
                 path_params,
                 query_params,
                 header_params,
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type='PayRuns',
+                response_type="PayRuns",
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats)
+                collection_formats=collection_formats,
+            )
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "get_pay_run")
 
-    def get_pay_runs(self, xero_tenant_id, if_modified_since=empty, where=empty, order=empty, page=empty,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
+    def get_pay_runs(
+        self,
+        xero_tenant_id,
+        if_modified_since=empty,
+        where=empty,
+        order=empty,
+        page=empty,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
         """Retrieves pay runs  # noqa: E501
         OAuth2 scope: payroll.payruns, payroll.payruns.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
@@ -1004,69 +1121,74 @@ class PayrollAuApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError("Missing the required parameter `xero_tenant_id` "
-                             "when calling `get_pay_runs`")
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `get_pay_runs`"
+            )
 
-        collection_formats = {
-        
-        
-        
-        
-        }
-        path_params = {  }
-
+        collection_formats = {}
+        path_params = {}
 
         query_params = []
 
         if where is not empty:
-            query_params.append(('where', where))
+            query_params.append(("where", where))
 
         if order is not empty:
-            query_params.append(('order', order))
+            query_params.append(("order", order))
 
         if page is not empty:
-            query_params.append(('page', page))
+            query_params.append(("page", page))
 
-
-        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
+        header_params = {
+            "Xero-Tenant-Id": xero_tenant_id,
+        }
 
         if if_modified_since is not empty:
-            header_params['If-Modified-Since'] = if_modified_since
-
+            header_params["If-Modified-Since"] = if_modified_since
 
         local_var_files = {}
         form_params = []
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
 
         # Authentication setting
-        auth_settings = ['OAuth2']
-        url = self.get_resource_url('/PayRuns')
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/PayRuns")
 
         try:
             return self.api_client.call_api(
                 url,
-                'GET',
+                "GET",
                 path_params,
                 query_params,
                 header_params,
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type='PayRuns',
+                response_type="PayRuns",
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats)
+                collection_formats=collection_formats,
+            )
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "get_pay_runs")
 
-    def get_payroll_calendar(self, xero_tenant_id, payroll_calendar_id,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
+    def get_payroll_calendar(
+        self,
+        xero_tenant_id,
+        payroll_calendar_id,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
         """Retrieves payroll calendar by using a unique payroll calendar ID  # noqa: E501
         OAuth2 scope: payroll.settings, payroll.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
@@ -1079,61 +1201,73 @@ class PayrollAuApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError("Missing the required parameter `xero_tenant_id` "
-                             "when calling `get_payroll_calendar`")
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `get_payroll_calendar`"
+            )
         # verify the required parameter 'payroll_calendar_id' is set
         if payroll_calendar_id is None:
-            raise ValueError("Missing the required parameter `payroll_calendar_id` "
-                             "when calling `get_payroll_calendar`")
+            raise ValueError(
+                "Missing the required parameter `payroll_calendar_id` "
+                "when calling `get_payroll_calendar`"
+            )
 
-        collection_formats = {
-        
-        
-        
-        
+        collection_formats = {}
+        path_params = {
+            "PayrollCalendarID": payroll_calendar_id,
         }
-        path_params = { 'PayrollCalendarID': payroll_calendar_id, }
-
 
         query_params = []
 
-
-        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
-
+        header_params = {
+            "Xero-Tenant-Id": xero_tenant_id,
+        }
 
         local_var_files = {}
         form_params = []
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
 
         # Authentication setting
-        auth_settings = ['OAuth2']
-        url = self.get_resource_url('/PayrollCalendars/{PayrollCalendarID}')
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/PayrollCalendars/{PayrollCalendarID}")
 
         try:
             return self.api_client.call_api(
                 url,
-                'GET',
+                "GET",
                 path_params,
                 query_params,
                 header_params,
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type='PayrollCalendars',
+                response_type="PayrollCalendars",
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats)
+                collection_formats=collection_formats,
+            )
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "get_payroll_calendar")
 
-    def get_payroll_calendars(self, xero_tenant_id, if_modified_since=empty, where=empty, order=empty, page=empty,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
+    def get_payroll_calendars(
+        self,
+        xero_tenant_id,
+        if_modified_since=empty,
+        where=empty,
+        order=empty,
+        page=empty,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
         """Retrieves payroll calendars  # noqa: E501
         OAuth2 scope: payroll.settings, payroll.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
@@ -1149,69 +1283,74 @@ class PayrollAuApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError("Missing the required parameter `xero_tenant_id` "
-                             "when calling `get_payroll_calendars`")
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `get_payroll_calendars`"
+            )
 
-        collection_formats = {
-        
-        
-        
-        
-        }
-        path_params = {  }
-
+        collection_formats = {}
+        path_params = {}
 
         query_params = []
 
         if where is not empty:
-            query_params.append(('where', where))
+            query_params.append(("where", where))
 
         if order is not empty:
-            query_params.append(('order', order))
+            query_params.append(("order", order))
 
         if page is not empty:
-            query_params.append(('page', page))
+            query_params.append(("page", page))
 
-
-        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
+        header_params = {
+            "Xero-Tenant-Id": xero_tenant_id,
+        }
 
         if if_modified_since is not empty:
-            header_params['If-Modified-Since'] = if_modified_since
-
+            header_params["If-Modified-Since"] = if_modified_since
 
         local_var_files = {}
         form_params = []
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
 
         # Authentication setting
-        auth_settings = ['OAuth2']
-        url = self.get_resource_url('/PayrollCalendars')
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/PayrollCalendars")
 
         try:
             return self.api_client.call_api(
                 url,
-                'GET',
+                "GET",
                 path_params,
                 query_params,
                 header_params,
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type='PayrollCalendars',
+                response_type="PayrollCalendars",
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats)
+                collection_formats=collection_formats,
+            )
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "get_payroll_calendars")
 
-    def get_payslip(self, xero_tenant_id, payslip_id,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
+    def get_payslip(
+        self,
+        xero_tenant_id,
+        payslip_id,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
         """Retrieves for a payslip by a unique payslip id  # noqa: E501
         OAuth2 scope: payroll.payslip, payroll.payslip.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
@@ -1224,61 +1363,69 @@ class PayrollAuApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError("Missing the required parameter `xero_tenant_id` "
-                             "when calling `get_payslip`")
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `get_payslip`"
+            )
         # verify the required parameter 'payslip_id' is set
         if payslip_id is None:
-            raise ValueError("Missing the required parameter `payslip_id` "
-                             "when calling `get_payslip`")
+            raise ValueError(
+                "Missing the required parameter `payslip_id` "
+                "when calling `get_payslip`"
+            )
 
-        collection_formats = {
-        
-        
-        
-        
+        collection_formats = {}
+        path_params = {
+            "PayslipID": payslip_id,
         }
-        path_params = { 'PayslipID': payslip_id, }
-
 
         query_params = []
 
-
-        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
-
+        header_params = {
+            "Xero-Tenant-Id": xero_tenant_id,
+        }
 
         local_var_files = {}
         form_params = []
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
 
         # Authentication setting
-        auth_settings = ['OAuth2']
-        url = self.get_resource_url('/Payslip/{PayslipID}')
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/Payslip/{PayslipID}")
 
         try:
             return self.api_client.call_api(
                 url,
-                'GET',
+                "GET",
                 path_params,
                 query_params,
                 header_params,
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type='PayslipObject',
+                response_type="PayslipObject",
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats)
+                collection_formats=collection_formats,
+            )
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "get_payslip")
 
-    def get_settings(self, xero_tenant_id,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
+    def get_settings(
+        self,
+        xero_tenant_id,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
         """Retrieves payroll settings  # noqa: E501
         OAuth2 scope: payroll.settings, payroll.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
@@ -1290,57 +1437,62 @@ class PayrollAuApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError("Missing the required parameter `xero_tenant_id` "
-                             "when calling `get_settings`")
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `get_settings`"
+            )
 
-        collection_formats = {
-        
-        
-        
-        
-        }
-        path_params = {  }
-
+        collection_formats = {}
+        path_params = {}
 
         query_params = []
 
-
-        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
-
+        header_params = {
+            "Xero-Tenant-Id": xero_tenant_id,
+        }
 
         local_var_files = {}
         form_params = []
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
 
         # Authentication setting
-        auth_settings = ['OAuth2']
-        url = self.get_resource_url('/Settings')
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/Settings")
 
         try:
             return self.api_client.call_api(
                 url,
-                'GET',
+                "GET",
                 path_params,
                 query_params,
                 header_params,
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type='SettingsObject',
+                response_type="SettingsObject",
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats)
+                collection_formats=collection_formats,
+            )
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "get_settings")
 
-    def get_superfund(self, xero_tenant_id, super_fund_id,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
+    def get_superfund(
+        self,
+        xero_tenant_id,
+        super_fund_id,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
         """Retrieves a superfund by using a unique superfund ID  # noqa: E501
         OAuth2 scope: payroll.settings, payroll.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
@@ -1353,61 +1505,71 @@ class PayrollAuApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError("Missing the required parameter `xero_tenant_id` "
-                             "when calling `get_superfund`")
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `get_superfund`"
+            )
         # verify the required parameter 'super_fund_id' is set
         if super_fund_id is None:
-            raise ValueError("Missing the required parameter `super_fund_id` "
-                             "when calling `get_superfund`")
+            raise ValueError(
+                "Missing the required parameter `super_fund_id` "
+                "when calling `get_superfund`"
+            )
 
-        collection_formats = {
-        
-        
-        
-        
+        collection_formats = {}
+        path_params = {
+            "SuperFundID": super_fund_id,
         }
-        path_params = { 'SuperFundID': super_fund_id, }
-
 
         query_params = []
 
-
-        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
-
+        header_params = {
+            "Xero-Tenant-Id": xero_tenant_id,
+        }
 
         local_var_files = {}
         form_params = []
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
 
         # Authentication setting
-        auth_settings = ['OAuth2']
-        url = self.get_resource_url('/Superfunds/{SuperFundID}')
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/Superfunds/{SuperFundID}")
 
         try:
             return self.api_client.call_api(
                 url,
-                'GET',
+                "GET",
                 path_params,
                 query_params,
                 header_params,
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type='SuperFunds',
+                response_type="SuperFunds",
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats)
+                collection_formats=collection_formats,
+            )
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "get_superfund")
 
-    def get_superfund_products(self, xero_tenant_id, abn=empty, usi=empty,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
+    def get_superfund_products(
+        self,
+        xero_tenant_id,
+        abn=empty,
+        usi=empty,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
         """Retrieves superfund products  # noqa: E501
         OAuth2 scope: payroll.settings, payroll.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
@@ -1421,63 +1583,71 @@ class PayrollAuApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError("Missing the required parameter `xero_tenant_id` "
-                             "when calling `get_superfund_products`")
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `get_superfund_products`"
+            )
 
-        collection_formats = {
-        
-        
-        
-        
-        }
-        path_params = {  }
-
+        collection_formats = {}
+        path_params = {}
 
         query_params = []
 
         if abn is not empty:
-            query_params.append(('ABN', abn))
+            query_params.append(("ABN", abn))
 
         if usi is not empty:
-            query_params.append(('USI', usi))
+            query_params.append(("USI", usi))
 
-
-        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
-
+        header_params = {
+            "Xero-Tenant-Id": xero_tenant_id,
+        }
 
         local_var_files = {}
         form_params = []
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
 
         # Authentication setting
-        auth_settings = ['OAuth2']
-        url = self.get_resource_url('/SuperfundProducts')
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/SuperfundProducts")
 
         try:
             return self.api_client.call_api(
                 url,
-                'GET',
+                "GET",
                 path_params,
                 query_params,
                 header_params,
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type='SuperFundProducts',
+                response_type="SuperFundProducts",
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats)
+                collection_formats=collection_formats,
+            )
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "get_superfund_products")
 
-    def get_superfunds(self, xero_tenant_id, if_modified_since=empty, where=empty, order=empty, page=empty,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
+    def get_superfunds(
+        self,
+        xero_tenant_id,
+        if_modified_since=empty,
+        where=empty,
+        order=empty,
+        page=empty,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
         """Retrieves superfunds  # noqa: E501
         OAuth2 scope: payroll.settings, payroll.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
@@ -1493,69 +1663,74 @@ class PayrollAuApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError("Missing the required parameter `xero_tenant_id` "
-                             "when calling `get_superfunds`")
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `get_superfunds`"
+            )
 
-        collection_formats = {
-        
-        
-        
-        
-        }
-        path_params = {  }
-
+        collection_formats = {}
+        path_params = {}
 
         query_params = []
 
         if where is not empty:
-            query_params.append(('where', where))
+            query_params.append(("where", where))
 
         if order is not empty:
-            query_params.append(('order', order))
+            query_params.append(("order", order))
 
         if page is not empty:
-            query_params.append(('page', page))
+            query_params.append(("page", page))
 
-
-        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
+        header_params = {
+            "Xero-Tenant-Id": xero_tenant_id,
+        }
 
         if if_modified_since is not empty:
-            header_params['If-Modified-Since'] = if_modified_since
-
+            header_params["If-Modified-Since"] = if_modified_since
 
         local_var_files = {}
         form_params = []
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
 
         # Authentication setting
-        auth_settings = ['OAuth2']
-        url = self.get_resource_url('/Superfunds')
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/Superfunds")
 
         try:
             return self.api_client.call_api(
                 url,
-                'GET',
+                "GET",
                 path_params,
                 query_params,
                 header_params,
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type='SuperFunds',
+                response_type="SuperFunds",
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats)
+                collection_formats=collection_formats,
+            )
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "get_superfunds")
 
-    def get_timesheet(self, xero_tenant_id, timesheet_id,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
+    def get_timesheet(
+        self,
+        xero_tenant_id,
+        timesheet_id,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
         """Retrieves a timesheet by using a unique timesheet id  # noqa: E501
         OAuth2 scope: payroll.timesheets, payroll.timesheets.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
@@ -1568,61 +1743,73 @@ class PayrollAuApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError("Missing the required parameter `xero_tenant_id` "
-                             "when calling `get_timesheet`")
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `get_timesheet`"
+            )
         # verify the required parameter 'timesheet_id' is set
         if timesheet_id is None:
-            raise ValueError("Missing the required parameter `timesheet_id` "
-                             "when calling `get_timesheet`")
+            raise ValueError(
+                "Missing the required parameter `timesheet_id` "
+                "when calling `get_timesheet`"
+            )
 
-        collection_formats = {
-        
-        
-        
-        
+        collection_formats = {}
+        path_params = {
+            "TimesheetID": timesheet_id,
         }
-        path_params = { 'TimesheetID': timesheet_id, }
-
 
         query_params = []
 
-
-        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
-
+        header_params = {
+            "Xero-Tenant-Id": xero_tenant_id,
+        }
 
         local_var_files = {}
         form_params = []
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
 
         # Authentication setting
-        auth_settings = ['OAuth2']
-        url = self.get_resource_url('/Timesheets/{TimesheetID}')
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/Timesheets/{TimesheetID}")
 
         try:
             return self.api_client.call_api(
                 url,
-                'GET',
+                "GET",
                 path_params,
                 query_params,
                 header_params,
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type='TimesheetObject',
+                response_type="TimesheetObject",
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats)
+                collection_formats=collection_formats,
+            )
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "get_timesheet")
 
-    def get_timesheets(self, xero_tenant_id, if_modified_since=empty, where=empty, order=empty, page=empty,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
+    def get_timesheets(
+        self,
+        xero_tenant_id,
+        if_modified_since=empty,
+        where=empty,
+        order=empty,
+        page=empty,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
         """Retrieves timesheets  # noqa: E501
         OAuth2 scope: payroll.timesheets, payroll.timesheets.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
@@ -1638,69 +1825,75 @@ class PayrollAuApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError("Missing the required parameter `xero_tenant_id` "
-                             "when calling `get_timesheets`")
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `get_timesheets`"
+            )
 
-        collection_formats = {
-        
-        
-        
-        
-        }
-        path_params = {  }
-
+        collection_formats = {}
+        path_params = {}
 
         query_params = []
 
         if where is not empty:
-            query_params.append(('where', where))
+            query_params.append(("where", where))
 
         if order is not empty:
-            query_params.append(('order', order))
+            query_params.append(("order", order))
 
         if page is not empty:
-            query_params.append(('page', page))
+            query_params.append(("page", page))
 
-
-        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
+        header_params = {
+            "Xero-Tenant-Id": xero_tenant_id,
+        }
 
         if if_modified_since is not empty:
-            header_params['If-Modified-Since'] = if_modified_since
-
+            header_params["If-Modified-Since"] = if_modified_since
 
         local_var_files = {}
         form_params = []
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
 
         # Authentication setting
-        auth_settings = ['OAuth2']
-        url = self.get_resource_url('/Timesheets')
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/Timesheets")
 
         try:
             return self.api_client.call_api(
                 url,
-                'GET',
+                "GET",
                 path_params,
                 query_params,
                 header_params,
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type='Timesheets',
+                response_type="Timesheets",
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats)
+                collection_formats=collection_formats,
+            )
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "get_timesheets")
 
-    def update_employee(self, xero_tenant_id, employee_id, employee=empty,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
+    def update_employee(
+        self,
+        xero_tenant_id,
+        employee_id,
+        employee=empty,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
         """Updates an employee's detail  # noqa: E501
         OAuth2 scope: payroll.employees
         Update properties on a single employee  # noqa: E501
@@ -1715,65 +1908,76 @@ class PayrollAuApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError("Missing the required parameter `xero_tenant_id` "
-                             "when calling `update_employee`")
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `update_employee`"
+            )
         # verify the required parameter 'employee_id' is set
         if employee_id is None:
-            raise ValueError("Missing the required parameter `employee_id` "
-                             "when calling `update_employee`")
+            raise ValueError(
+                "Missing the required parameter `employee_id` "
+                "when calling `update_employee`"
+            )
 
-        collection_formats = {
-        
-        
-        
-        
+        collection_formats = {}
+        path_params = {
+            "EmployeeID": employee_id,
         }
-        path_params = { 'EmployeeID': employee_id, }
-
 
         query_params = []
 
-
-        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
-
+        header_params = {
+            "Xero-Tenant-Id": xero_tenant_id,
+        }
 
         local_var_files = {}
         form_params = []
 
         body_params = employee
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(
-            ['application/json'])
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
 
         # Authentication setting
-        auth_settings = ['OAuth2']
-        url = self.get_resource_url('/Employees/{EmployeeID}')
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/Employees/{EmployeeID}")
 
         try:
             return self.api_client.call_api(
                 url,
-                'POST',
+                "POST",
                 path_params,
                 query_params,
                 header_params,
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type='Employees',
+                response_type="Employees",
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats)
+                collection_formats=collection_formats,
+            )
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "update_employee")
 
-    def update_leave_application(self, xero_tenant_id, leave_application_id, leave_application,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
+    def update_leave_application(
+        self,
+        xero_tenant_id,
+        leave_application_id,
+        leave_application,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
         """Updates a specific leave application  # noqa: E501
         OAuth2 scope: payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
@@ -1787,69 +1991,82 @@ class PayrollAuApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError("Missing the required parameter `xero_tenant_id` "
-                             "when calling `update_leave_application`")
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `update_leave_application`"
+            )
         # verify the required parameter 'leave_application_id' is set
         if leave_application_id is None:
-            raise ValueError("Missing the required parameter `leave_application_id` "
-                             "when calling `update_leave_application`")
+            raise ValueError(
+                "Missing the required parameter `leave_application_id` "
+                "when calling `update_leave_application`"
+            )
         # verify the required parameter 'leave_application' is set
         if leave_application is None:
-            raise ValueError("Missing the required parameter `leave_application` "
-                             "when calling `update_leave_application`")
+            raise ValueError(
+                "Missing the required parameter `leave_application` "
+                "when calling `update_leave_application`"
+            )
 
-        collection_formats = {
-        
-        
-        
-        
+        collection_formats = {}
+        path_params = {
+            "LeaveApplicationID": leave_application_id,
         }
-        path_params = { 'LeaveApplicationID': leave_application_id, }
-
 
         query_params = []
 
-
-        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
-
+        header_params = {
+            "Xero-Tenant-Id": xero_tenant_id,
+        }
 
         local_var_files = {}
         form_params = []
 
         body_params = leave_application
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(
-            ['application/json'])
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
 
         # Authentication setting
-        auth_settings = ['OAuth2']
-        url = self.get_resource_url('/LeaveApplications/{LeaveApplicationID}')
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/LeaveApplications/{LeaveApplicationID}")
 
         try:
             return self.api_client.call_api(
                 url,
-                'POST',
+                "POST",
                 path_params,
                 query_params,
                 header_params,
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type='LeaveApplications',
+                response_type="LeaveApplications",
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats)
+                collection_formats=collection_formats,
+            )
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "update_leave_application")
 
-    def update_pay_run(self, xero_tenant_id, pay_run_id, pay_run=empty,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
+    def update_pay_run(
+        self,
+        xero_tenant_id,
+        pay_run_id,
+        pay_run=empty,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
         """Updates a pay run  # noqa: E501
         OAuth2 scope: payroll.payruns
         Update properties on a single PayRun  # noqa: E501
@@ -1864,65 +2081,76 @@ class PayrollAuApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError("Missing the required parameter `xero_tenant_id` "
-                             "when calling `update_pay_run`")
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `update_pay_run`"
+            )
         # verify the required parameter 'pay_run_id' is set
         if pay_run_id is None:
-            raise ValueError("Missing the required parameter `pay_run_id` "
-                             "when calling `update_pay_run`")
+            raise ValueError(
+                "Missing the required parameter `pay_run_id` "
+                "when calling `update_pay_run`"
+            )
 
-        collection_formats = {
-        
-        
-        
-        
+        collection_formats = {}
+        path_params = {
+            "PayRunID": pay_run_id,
         }
-        path_params = { 'PayRunID': pay_run_id, }
-
 
         query_params = []
 
-
-        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
-
+        header_params = {
+            "Xero-Tenant-Id": xero_tenant_id,
+        }
 
         local_var_files = {}
         form_params = []
 
         body_params = pay_run
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(
-            ['application/json'])
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
 
         # Authentication setting
-        auth_settings = ['OAuth2']
-        url = self.get_resource_url('/PayRuns/{PayRunID}')
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/PayRuns/{PayRunID}")
 
         try:
             return self.api_client.call_api(
                 url,
-                'POST',
+                "POST",
                 path_params,
                 query_params,
                 header_params,
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type='PayRuns',
+                response_type="PayRuns",
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats)
+                collection_formats=collection_formats,
+            )
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "update_pay_run")
 
-    def update_payslip(self, xero_tenant_id, payslip_id, payslip_lines=empty,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
+    def update_payslip(
+        self,
+        xero_tenant_id,
+        payslip_id,
+        payslip_lines=empty,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
         """Updates a payslip  # noqa: E501
         OAuth2 scope: payroll.payslip
         Update lines on a single payslips  # noqa: E501
@@ -1937,65 +2165,76 @@ class PayrollAuApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError("Missing the required parameter `xero_tenant_id` "
-                             "when calling `update_payslip`")
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `update_payslip`"
+            )
         # verify the required parameter 'payslip_id' is set
         if payslip_id is None:
-            raise ValueError("Missing the required parameter `payslip_id` "
-                             "when calling `update_payslip`")
+            raise ValueError(
+                "Missing the required parameter `payslip_id` "
+                "when calling `update_payslip`"
+            )
 
-        collection_formats = {
-        
-        
-        
-        
+        collection_formats = {}
+        path_params = {
+            "PayslipID": payslip_id,
         }
-        path_params = { 'PayslipID': payslip_id, }
-
 
         query_params = []
 
-
-        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
-
+        header_params = {
+            "Xero-Tenant-Id": xero_tenant_id,
+        }
 
         local_var_files = {}
         form_params = []
 
         body_params = payslip_lines
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(
-            ['application/json'])
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
 
         # Authentication setting
-        auth_settings = ['OAuth2']
-        url = self.get_resource_url('/Payslip/{PayslipID}')
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/Payslip/{PayslipID}")
 
         try:
             return self.api_client.call_api(
                 url,
-                'POST',
+                "POST",
                 path_params,
                 query_params,
                 header_params,
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type='Payslips',
+                response_type="Payslips",
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats)
+                collection_formats=collection_formats,
+            )
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "update_payslip")
 
-    def update_superfund(self, xero_tenant_id, super_fund_id, super_fund=empty,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
+    def update_superfund(
+        self,
+        xero_tenant_id,
+        super_fund_id,
+        super_fund=empty,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
         """Updates a superfund  # noqa: E501
         OAuth2 scope: payroll.settings
         Update properties on a single Superfund  # noqa: E501
@@ -2010,65 +2249,76 @@ class PayrollAuApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError("Missing the required parameter `xero_tenant_id` "
-                             "when calling `update_superfund`")
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `update_superfund`"
+            )
         # verify the required parameter 'super_fund_id' is set
         if super_fund_id is None:
-            raise ValueError("Missing the required parameter `super_fund_id` "
-                             "when calling `update_superfund`")
+            raise ValueError(
+                "Missing the required parameter `super_fund_id` "
+                "when calling `update_superfund`"
+            )
 
-        collection_formats = {
-        
-        
-        
-        
+        collection_formats = {}
+        path_params = {
+            "SuperFundID": super_fund_id,
         }
-        path_params = { 'SuperFundID': super_fund_id, }
-
 
         query_params = []
 
-
-        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
-
+        header_params = {
+            "Xero-Tenant-Id": xero_tenant_id,
+        }
 
         local_var_files = {}
         form_params = []
 
         body_params = super_fund
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(
-            ['application/json'])
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
 
         # Authentication setting
-        auth_settings = ['OAuth2']
-        url = self.get_resource_url('/Superfunds/{SuperFundID}')
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/Superfunds/{SuperFundID}")
 
         try:
             return self.api_client.call_api(
                 url,
-                'POST',
+                "POST",
                 path_params,
                 query_params,
                 header_params,
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type='SuperFunds',
+                response_type="SuperFunds",
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats)
+                collection_formats=collection_formats,
+            )
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "update_superfund")
 
-    def update_timesheet(self, xero_tenant_id, timesheet_id, timesheet=empty,  _return_http_data_only=True, _preload_content=True, _request_timeout=None):
+    def update_timesheet(
+        self,
+        xero_tenant_id,
+        timesheet_id,
+        timesheet=empty,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
         """Updates a timesheet  # noqa: E501
         OAuth2 scope: payroll.timesheets
         Update properties on a single timesheet  # noqa: E501
@@ -2083,60 +2333,63 @@ class PayrollAuApi(object):
 
         # verify the required parameter 'xero_tenant_id' is set
         if xero_tenant_id is None:
-            raise ValueError("Missing the required parameter `xero_tenant_id` "
-                             "when calling `update_timesheet`")
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `update_timesheet`"
+            )
         # verify the required parameter 'timesheet_id' is set
         if timesheet_id is None:
-            raise ValueError("Missing the required parameter `timesheet_id` "
-                             "when calling `update_timesheet`")
+            raise ValueError(
+                "Missing the required parameter `timesheet_id` "
+                "when calling `update_timesheet`"
+            )
 
-        collection_formats = {
-        
-        
-        
-        
+        collection_formats = {}
+        path_params = {
+            "TimesheetID": timesheet_id,
         }
-        path_params = { 'TimesheetID': timesheet_id, }
-
 
         query_params = []
 
-
-        header_params = { 'Xero-Tenant-Id': xero_tenant_id, }
-
+        header_params = {
+            "Xero-Tenant-Id": xero_tenant_id,
+        }
 
         local_var_files = {}
         form_params = []
 
         body_params = timesheet
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(
-            ['application/json'])
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
 
         # Authentication setting
-        auth_settings = ['OAuth2']
-        url = self.get_resource_url('/Timesheets/{TimesheetID}')
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/Timesheets/{TimesheetID}")
 
         try:
             return self.api_client.call_api(
                 url,
-                'POST',
+                "POST",
                 path_params,
                 query_params,
                 header_params,
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type='Timesheets',
+                response_type="Timesheets",
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
                 _preload_content=_preload_content,
                 _request_timeout=_request_timeout,
-                collection_formats=collection_formats)
+                collection_formats=collection_formats,
+            )
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "update_timesheet")

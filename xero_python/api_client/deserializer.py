@@ -24,6 +24,7 @@ DATETIME_RE = re.compile(
 MS_DATETIME_RE = re.compile(r"/Date\((?P<timestamp>-?\d+)(?P<tzinfo>[+-]\d{2,4})?\)/$")
 DATE_WITH_NO_DAY_RE = re.compile("(\d\d\d\d)-(\d\d)")
 
+
 def deserialize_routing(data_type, data, model_finder):
     """Custom logic to find matching deserialize implementation and
        returns it's unique registration string key
@@ -251,7 +252,7 @@ def deserialize_datetime_ms(data_type, data, model_finder):
         timestamp_s = timestamp_ms / 1000
         return datetime.datetime.fromtimestamp(timestamp_s, tz=tz_info)
     elif DATE_WITH_NO_DAY_RE.match(str(data)):
-        return datetime.datetime.strptime(data + '-01', '%Y-%m-%d')
+        return datetime.datetime.strptime(data + "-01", "%Y-%m-%d")
     else:
         raise ValueError("Invalid datetime value {!r}".format(data))
 

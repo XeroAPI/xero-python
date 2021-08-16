@@ -20,7 +20,9 @@ from xero_python.accounting.models.accounts_receivable import AccountsReceivable
 from xero_python.accounting.models.action import Action
 from xero_python.accounting.models.actions import Actions
 from xero_python.accounting.models.address import Address
-from xero_python.accounting.models.address_for_organisation import AddressForOrganisation
+from xero_python.accounting.models.address_for_organisation import (
+    AddressForOrganisation,
+)
 from xero_python.accounting.models.allocation import Allocation
 from xero_python.accounting.models.allocations import Allocations
 from xero_python.accounting.models.attachment import Attachment
@@ -70,7 +72,9 @@ from xero_python.accounting.models.history_records import HistoryRecords
 from xero_python.accounting.models.import_summary import ImportSummary
 from xero_python.accounting.models.import_summary_accounts import ImportSummaryAccounts
 from xero_python.accounting.models.import_summary_object import ImportSummaryObject
-from xero_python.accounting.models.import_summary_organisation import ImportSummaryOrganisation
+from xero_python.accounting.models.import_summary_organisation import (
+    ImportSummaryOrganisation,
+)
 from xero_python.accounting.models.invoice import Invoice
 from xero_python.accounting.models.invoice_reminder import InvoiceReminder
 from xero_python.accounting.models.invoice_reminders import InvoiceReminders
