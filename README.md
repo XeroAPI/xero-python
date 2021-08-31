@@ -13,6 +13,7 @@ The xero-python SDK makes it easy for developers to access Xero's APIs in their 
 - [Configuration](#configuration)
 - [Authentication](#authentication)
 - [Custom Connections](#custom-connections)
+- [App Store Subscriptions](#app-store-subscriptions)
 - [API Clients](#api-clients)
 - [Helper Methods](#helper-methods)
 - [Usage Examples](#usage-examples)
@@ -331,6 +332,84 @@ def accounting_invoice_read_all():
 Because Custom Connections are only valid for a single organisation you don't need to pass the xero-tenant-id as the first parameter to every method, or more specifically for this SDK xeroTenantId can be an empty string.
 
 > Because the SDK is generated from the OpenAPI spec the parameter remains. For now you are required to pass an empty string to use this SDK with a Custom Connection.
+
+---
+
+## App Store Subscriptions 
+
+If you are implementing subscriptions to participate in Xero's App Store you will need to setup [App Store subscriptions](https://developer.xero.com/documentation/guides/how-to-guides/xero-app-store-referrals/) endpoints.
+
+When a plan is successfully purchased, the user is redirected back to the URL specified in the setup process. The Xero App Store appends the subscription Id to this URL so you can immediately determine what plan the user has subscribed to through the subscriptions API.
+
+With your app credentials you can create a client via `client_credentials` grant_type with the `marketplace.billing` scope. This unique access_token will allow you to query any functions in `AppStoreApi`. Client Credentials tokens to query app store endpoints will only work for apps that have completed the App Store on-boarding process.
+```python
+# configure xero-python sdk client
+api_client = ApiClient(
+    Configuration(
+        debug=app.config["DEBUG"],
+        oauth2_token=OAuth2Token(
+            client_id=app.config["CLIENT_ID"], client_secret=app.config["CLIENT_SECRET"]
+        ),
+    ),
+    pool_threads=1,
+)
+
+try:
+    # pass True for app_store_billing - defaults to False if no value provided
+    xero_token = api_client.get_client_credentials_token(True)
+except Exception as e:
+    print(e)
+    raise
+
+app_store_api = AppStoreApi(api_client)
+
+subscription = app_store_api.get_subscription(subscription_id)
+print(subscription)
+
+{
+  'current_period_end': datetime.datetime(2021, 9, 2, 14, 8, 58, 772536, tzinfo=tzutc()),
+  'end_date': None,
+  'id': '03bc74f2-1237-4477-b782-2dfb1a6d8b21',
+  'organisation_id': '79e8b2e5-c63d-4dce-888f-e0f3e9eac647',
+  'plans':[
+    {
+      'id': '6abc26f3-9390-4194-8b25-ce8b9942fda9',
+      'name': 'Small',
+      'status': 'ACTIVE',
+      'subscription_items': [
+        {
+          'end_date': None,
+          'id': '834cff4c-b753-4de2-9e7a-3451e14fa17a',
+          'price': {
+            'amount': Decimal('0.1000'),
+            'currency': 'NZD',
+            'id': '2310de92-c7c0-4bcb-b972-fb7612177bc7'
+          },
+          'product': {
+            'id': '9586421f-7325-4493-bac9-d93be06a6a38',
+            'name': '',
+            'type': 'FIXED',
+            'seat_unit': None
+          },
+          'start_date': datetime.datetime(2021, 8, 2, 14, 8, 58, 772536, tzinfo=tzutc()),
+          'test_mode': True
+        }
+      ]
+    }
+  ],
+  'start_date': datetime.datetime(2021, 8, 2, 14, 8, 58, 772536, tzinfo=tzutc()),
+  'status': 'ACTIVE',
+  'test_mode': True
+}
+
+```
+You should use the subscription data to provision user access/permissions to your application.
+### App Store Subscription Webhooks
+
+In additon to a subscription Id being passed through the URL, when a purchase or an upgrade takes place you will be notified via a webhook. You can then use the subscription Id in the webhook payload to query the AppStore endpoints and determine what plan the user purchased, upgraded, downgraded or cancelled.
+
+Refer to Xero's documenation to learn more about setting up and receiving webhooks.
+> https://developer.xero.com/documentation/guides/webhooks/overview/
 
 ---
 ## API Clients
