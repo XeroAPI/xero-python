@@ -758,13 +758,13 @@ class ApiClient(object):
         if oauth2_token.revoke_access_token(self):
             return self.get_oauth2_token()
 
-    def get_client_credentials_token(self):
+    def get_client_credentials_token(self, app_store_billing=False):
         """
         Obtain oauth2 token using client credentials grant type
         :return: oauth2 token
         """
         oauth2_token = self.configuration.oauth2_token
-        if oauth2_token.get_client_credentials_access_token(self):
+        if oauth2_token.get_client_credentials_access_token(self, app_store_billing):
             return self.get_oauth2_token()
 
     def oauth2_token_getter(self, token_getter):
