@@ -51,6 +51,7 @@ class Employee(BaseModel):
         "employee_group_name": "str",
         "employee_id": "str",
         "termination_date": "date[ms-format]",
+        "termination_reason": "str",
         "bank_accounts": "list[BankAccount]",
         "pay_template": "PayTemplate",
         "opening_balances": "OpeningBalances",
@@ -85,6 +86,7 @@ class Employee(BaseModel):
         "employee_group_name": "EmployeeGroupName",
         "employee_id": "EmployeeID",
         "termination_date": "TerminationDate",
+        "termination_reason": "TerminationReason",
         "bank_accounts": "BankAccounts",
         "pay_template": "PayTemplate",
         "opening_balances": "OpeningBalances",
@@ -120,6 +122,7 @@ class Employee(BaseModel):
         employee_group_name=None,
         employee_id=None,
         termination_date=None,
+        termination_reason=None,
         bank_accounts=None,
         pay_template=None,
         opening_balances=None,
@@ -154,6 +157,7 @@ class Employee(BaseModel):
         self._employee_group_name = None
         self._employee_id = None
         self._termination_date = None
+        self._termination_reason = None
         self._bank_accounts = None
         self._pay_template = None
         self._opening_balances = None
@@ -207,6 +211,8 @@ class Employee(BaseModel):
             self.employee_id = employee_id
         if termination_date is not None:
             self.termination_date = termination_date
+        if termination_reason is not None:
+            self.termination_reason = termination_reason
         if bank_accounts is not None:
             self.bank_accounts = bank_accounts
         if pay_template is not None:
@@ -729,6 +735,38 @@ class Employee(BaseModel):
         """
 
         self._termination_date = termination_date
+
+    @property
+    def termination_reason(self):
+        """Gets the termination_reason of this Employee.  # noqa: E501
+
+        * `V` Voluntary cessation - An employee resignation, retirement, domestic or pressing necessity or abandonment of employment * `I` Ill health - An employee resignation due to medical condition that prevents the continuation of employment, such as for illness, ill-health, medical unfitness or total permanent disability * `D` Deceased - The death of an employee * `R` Redundancy - An employer-initiated termination of employment due to a genuine redundancy or approved early retirement scheme * `F` Dismissal - An employer-initiated termination of employment due to dismissal, inability to perform the required work, misconduct or inefficiency * `C` Contract cessation - The natural conclusion of a limited employment relationship due to contract/engagement duration or task completion, seasonal work completion, or to cease casuals that are no longer required * `T` Transfer - The administrative arrangements performed to transfer employees across payroll systems, move them temporarily to another employer (machinery of government for public servants), transfer of business, move them to outsourcing arrangements or other such technical activities.   # noqa: E501
+
+        :return: The termination_reason of this Employee.  # noqa: E501
+        :rtype: str
+        """
+        return self._termination_reason
+
+    @termination_reason.setter
+    def termination_reason(self, termination_reason):
+        """Sets the termination_reason of this Employee.
+
+        * `V` Voluntary cessation - An employee resignation, retirement, domestic or pressing necessity or abandonment of employment * `I` Ill health - An employee resignation due to medical condition that prevents the continuation of employment, such as for illness, ill-health, medical unfitness or total permanent disability * `D` Deceased - The death of an employee * `R` Redundancy - An employer-initiated termination of employment due to a genuine redundancy or approved early retirement scheme * `F` Dismissal - An employer-initiated termination of employment due to dismissal, inability to perform the required work, misconduct or inefficiency * `C` Contract cessation - The natural conclusion of a limited employment relationship due to contract/engagement duration or task completion, seasonal work completion, or to cease casuals that are no longer required * `T` Transfer - The administrative arrangements performed to transfer employees across payroll systems, move them temporarily to another employer (machinery of government for public servants), transfer of business, move them to outsourcing arrangements or other such technical activities.   # noqa: E501
+
+        :param termination_reason: The termination_reason of this Employee.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["V", "I", "D", "R", "F", "C", "T", "None"]  # noqa: E501
+
+        if termination_reason:
+            if termination_reason not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `termination_reason` ({0}), must be one of {1}".format(  # noqa: E501
+                        termination_reason, allowed_values
+                    )
+                )
+
+        self._termination_reason = termination_reason
 
     @property
     def bank_accounts(self):

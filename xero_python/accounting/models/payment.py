@@ -41,6 +41,7 @@ class Payment(BaseModel):
         "date": "date[ms-format]",
         "currency_rate": "float",
         "amount": "float",
+        "bank_amount": "float",
         "reference": "str",
         "is_reconciled": "bool",
         "status": "str",
@@ -69,6 +70,7 @@ class Payment(BaseModel):
         "date": "Date",
         "currency_rate": "CurrencyRate",
         "amount": "Amount",
+        "bank_amount": "BankAmount",
         "reference": "Reference",
         "is_reconciled": "IsReconciled",
         "status": "Status",
@@ -98,6 +100,7 @@ class Payment(BaseModel):
         date=None,
         currency_rate=None,
         amount=None,
+        bank_amount=None,
         reference=None,
         is_reconciled=None,
         status=None,
@@ -126,6 +129,7 @@ class Payment(BaseModel):
         self._date = None
         self._currency_rate = None
         self._amount = None
+        self._bank_amount = None
         self._reference = None
         self._is_reconciled = None
         self._status = None
@@ -164,6 +168,8 @@ class Payment(BaseModel):
             self.currency_rate = currency_rate
         if amount is not None:
             self.amount = amount
+        if bank_amount is not None:
+            self.bank_amount = bank_amount
         if reference is not None:
             self.reference = reference
         if is_reconciled is not None:
@@ -435,6 +441,29 @@ class Payment(BaseModel):
         """
 
         self._amount = amount
+
+    @property
+    def bank_amount(self):
+        """Gets the bank_amount of this Payment.  # noqa: E501
+
+        The amount of the payment in the currency of the bank account.  # noqa: E501
+
+        :return: The bank_amount of this Payment.  # noqa: E501
+        :rtype: float
+        """
+        return self._bank_amount
+
+    @bank_amount.setter
+    def bank_amount(self, bank_amount):
+        """Sets the bank_amount of this Payment.
+
+        The amount of the payment in the currency of the bank account.  # noqa: E501
+
+        :param bank_amount: The bank_amount of this Payment.  # noqa: E501
+        :type: float
+        """
+
+        self._bank_amount = bank_amount
 
     @property
     def reference(self):

@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.13.4
+    OpenAPI spec version: 2.16.1
 """
 
 import importlib
@@ -447,7 +447,7 @@ class FilesApi(object):
         _request_timeout=None,
     ):
         """Retrieves an association object using a unique object ID  # noqa: E501
-        OAuth2 scope: files.read
+        OAuth2 scope: files, files.read
         By passing in the appropriate options,  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str object_id: Object id for single object (required)
@@ -524,7 +524,7 @@ class FilesApi(object):
         _request_timeout=None,
     ):
         """Retrieves a file by a unique file ID  # noqa: E501
-        OAuth2 scope: files.read
+        OAuth2 scope: files, files.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str file_id: File id for single object (required)
         :param bool _return_http_data_only: return received data only
@@ -599,7 +599,7 @@ class FilesApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific file associations  # noqa: E501
-        OAuth2 scope: files.read
+        OAuth2 scope: files, files.read
         By passing in the appropriate options,    # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str file_id: File id for single object (required)
@@ -676,7 +676,7 @@ class FilesApi(object):
         _request_timeout=None,
     ):
         """Retrieves the content of a specific file  # noqa: E501
-        OAuth2 scope: files.read
+        OAuth2 scope: files, files.read
         By passing in the appropriate options, retrieve data for specific file  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str file_id: File id for single object (required)
@@ -755,7 +755,7 @@ class FilesApi(object):
         _request_timeout=None,
     ):
         """Retrieves files  # noqa: E501
-        OAuth2 scope: files.read
+        OAuth2 scope: files, files.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param int pagesize: pass an optional page size value
         :param int page: number of records to skip for pagination
@@ -848,7 +848,7 @@ class FilesApi(object):
         _request_timeout=None,
     ):
         """Retrieves specific folder by using a unique folder ID  # noqa: E501
-        OAuth2 scope: files.read
+        OAuth2 scope: files, files.read
         By passing in the appropriate ID, you can search for specific folder  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str folder_id: Folder id for single object (required)
@@ -925,7 +925,7 @@ class FilesApi(object):
         _request_timeout=None,
     ):
         """Retrieves folders  # noqa: E501
-        OAuth2 scope: files.read
+        OAuth2 scope: files, files.read
         By passing in the appropriate options, you can search for available folders  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str sort: values to sort by
@@ -996,7 +996,7 @@ class FilesApi(object):
         _request_timeout=None,
     ):
         """Retrieves inbox folder  # noqa: E501
-        OAuth2 scope: files.read
+        OAuth2 scope: files, files.read
         Search for the user inbox  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param bool _return_http_data_only: return received data only

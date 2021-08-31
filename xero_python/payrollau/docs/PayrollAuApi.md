@@ -571,7 +571,7 @@ api_client = ApiClient(
 api_instance = PayrollAuApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
-if_modified_since = 'if_modified_since_example' # str | Only records created or modified since this timestamp will be returned (optional)
+if_modified_since = '2013-10-20T19:20:30+01:00' # datetime | Only records created or modified since this timestamp will be returned (optional)
 where = 'Status==\"ACTIVE\"' # str | Filter by an any element (optional)
 order = 'EmailAddress%20DESC' # str | Order by an any element (optional)
 page = 56 # int | e.g. page=1 – Up to 100 employees will be returned in a single API call (optional)
@@ -588,7 +588,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
- **if_modified_since** | **str**| Only records created or modified since this timestamp will be returned | [optional] 
+ **if_modified_since** | **datetime**| Only records created or modified since this timestamp will be returned | [optional] 
  **where** | **str**| Filter by an any element | [optional] 
  **order** | **str**| Order by an any element | [optional] 
  **page** | **int**| e.g. page&#x3D;1 – Up to 100 employees will be returned in a single API call | [optional] 

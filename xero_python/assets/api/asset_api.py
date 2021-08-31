@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.13.4
+    OpenAPI spec version: 2.16.1
 """
 
 import importlib
@@ -218,7 +218,7 @@ class AssetApi(object):
         _request_timeout=None,
     ):
         """Retrieves fixed asset by id  # noqa: E501
-        OAuth2 scope: assets.read
+        OAuth2 scope: assets, assets.read
         By passing in the appropriate asset id, you can search for a specific fixed asset in the system   # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str id: fixed asset id for single object (required)
@@ -293,7 +293,7 @@ class AssetApi(object):
         _request_timeout=None,
     ):
         """searches fixed asset settings  # noqa: E501
-        OAuth2 scope: assets.read
+        OAuth2 scope: assets, assets.read
         By passing in the appropriate options, you can search for available fixed asset types in the system  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param bool _return_http_data_only: return received data only
@@ -360,7 +360,7 @@ class AssetApi(object):
         _request_timeout=None,
     ):
         """searches fixed asset types  # noqa: E501
-        OAuth2 scope: assets.read
+        OAuth2 scope: assets, assets.read
         By passing in the appropriate options, you can search for available fixed asset types in the system  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param bool _return_http_data_only: return received data only
@@ -433,7 +433,7 @@ class AssetApi(object):
         _request_timeout=None,
     ):
         """searches fixed asset  # noqa: E501
-        OAuth2 scope: assets.read
+        OAuth2 scope: assets, assets.read
         By passing in the appropriate options, you can search for available fixed asset in the system  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param AssetStatusQueryParam status: Required when retrieving a collection of assets. See Asset Status Codes (required)

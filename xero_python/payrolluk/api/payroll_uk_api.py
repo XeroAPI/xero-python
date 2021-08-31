@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.13.4
+    OpenAPI spec version: 2.16.1
 """
 
 import importlib
@@ -999,7 +999,7 @@ class PayrollUkApi(object):
         _request_timeout=None,
     ):
         """Creates statutory sick leave records  # noqa: E501
-        OAuth2 scope: payroll.employees
+        OAuth2 scope: payroll.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param EmployeeStatutorySickLeave employee_statutory_sick_leave: (required)
         :param bool _return_http_data_only: return received data only
@@ -2079,7 +2079,7 @@ class PayrollUkApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific benefit by using a unique benefit ID  # noqa: E501
-        OAuth2 scope: payroll.settings.read, payroll.settings
+        OAuth2 scope: payroll.settings, payroll.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str id: Identifier for the benefit (required)
         :param bool _return_http_data_only: return received data only
@@ -2154,7 +2154,7 @@ class PayrollUkApi(object):
         _request_timeout=None,
     ):
         """Retrieves employee benefits  # noqa: E501
-        OAuth2 scope: payroll.settings.read, payroll.settings
+        OAuth2 scope: payroll.settings, payroll.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param int page: Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
         :param bool _return_http_data_only: return received data only
@@ -2225,7 +2225,7 @@ class PayrollUkApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific deduction by using a unique deduction ID  # noqa: E501
-        OAuth2 scope: payroll.settings.read, payroll.settings
+        OAuth2 scope: payroll.settings, payroll.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str deduction_id: Identifier for the deduction (required)
         :param bool _return_http_data_only: return received data only
@@ -2301,7 +2301,7 @@ class PayrollUkApi(object):
         _request_timeout=None,
     ):
         """Retrieves deductions  # noqa: E501
-        OAuth2 scope: payroll.settings.read, payroll.settings
+        OAuth2 scope: payroll.settings, payroll.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param int page: Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
         :param bool _return_http_data_only: return received data only
@@ -2372,7 +2372,7 @@ class PayrollUkApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific earnings orders by using a unique earnings orders id  # noqa: E501
-        OAuth2 scope: payroll.settings.read, payroll.settings
+        OAuth2 scope: payroll.settings, payroll.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str id: Identifier for the deduction (required)
         :param bool _return_http_data_only: return received data only
@@ -2448,7 +2448,7 @@ class PayrollUkApi(object):
         _request_timeout=None,
     ):
         """Retrieves earnings orders  # noqa: E501
-        OAuth2 scope: payroll.settings.read, payroll.settings
+        OAuth2 scope: payroll.settings, payroll.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param int page: Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
         :param bool _return_http_data_only: return received data only
@@ -2519,7 +2519,7 @@ class PayrollUkApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific earnings rates by using a unique earnings rate id  # noqa: E501
-        OAuth2 scope: payroll.settings.read, payroll.settings
+        OAuth2 scope: payroll.settings, payroll.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str earnings_rate_id: Identifier for the earnings rate (required)
         :param bool _return_http_data_only: return received data only
@@ -2595,7 +2595,7 @@ class PayrollUkApi(object):
         _request_timeout=None,
     ):
         """Retrieves earnings rates  # noqa: E501
-        OAuth2 scope: payroll.settings.read, payroll.settings
+        OAuth2 scope: payroll.settings, payroll.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param int page: Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
         :param bool _return_http_data_only: return received data only
@@ -2666,7 +2666,7 @@ class PayrollUkApi(object):
         _request_timeout=None,
     ):
         """Retrieves specific employees by using a unique employee ID  # noqa: E501
-        OAuth2 scope: payroll.employees.read, payroll.employees
+        OAuth2 scope: payroll.employees, payroll.employees.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
         :param bool _return_http_data_only: return received data only
@@ -2743,7 +2743,7 @@ class PayrollUkApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific employee's leave record using a unique employee ID  # noqa: E501
-        OAuth2 scope: payroll.employees.read, payroll.employees
+        OAuth2 scope: payroll.employees, payroll.employees.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
         :param str leave_id: Leave id for single object (required)
@@ -2827,7 +2827,7 @@ class PayrollUkApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific employee's leave balances using a unique employee ID  # noqa: E501
-        OAuth2 scope: payroll.employees.read, payroll.employees
+        OAuth2 scope: payroll.employees, payroll.employees.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
         :param bool _return_http_data_only: return received data only
@@ -2905,7 +2905,7 @@ class PayrollUkApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific employee's leave periods using a unique employee ID  # noqa: E501
-        OAuth2 scope: payroll.employees.read, payroll.employees
+        OAuth2 scope: payroll.employees, payroll.employees.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
         :param date start_date: Filter by start date
@@ -2989,7 +2989,7 @@ class PayrollUkApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific employee's leave types using a unique employee ID  # noqa: E501
-        OAuth2 scope: payroll.employees.read, payroll.employees
+        OAuth2 scope: payroll.employees, payroll.employees.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
         :param bool _return_http_data_only: return received data only
@@ -3065,7 +3065,7 @@ class PayrollUkApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific employee's leave records using a unique employee ID  # noqa: E501
-        OAuth2 scope: payroll.employees.read, payroll.employees
+        OAuth2 scope: payroll.employees, payroll.employees.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
         :param bool _return_http_data_only: return received data only
@@ -3141,7 +3141,7 @@ class PayrollUkApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific employee's openingbalances using a unique employee ID  # noqa: E501
-        OAuth2 scope: payroll.employees.read, payroll.employees
+        OAuth2 scope: payroll.employees, payroll.employees.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
         :param bool _return_http_data_only: return received data only
@@ -3219,7 +3219,7 @@ class PayrollUkApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific employee pay templates using a unique employee ID  # noqa: E501
-        OAuth2 scope: payroll.employees.read, payroll.employees
+        OAuth2 scope: payroll.employees, payroll.employees.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
         :param bool _return_http_data_only: return received data only
@@ -3295,7 +3295,7 @@ class PayrollUkApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific employee's payment method using a unique employee ID  # noqa: E501
-        OAuth2 scope: payroll.employees.read, payroll.employees
+        OAuth2 scope: payroll.employees, payroll.employees.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
         :param bool _return_http_data_only: return received data only
@@ -3461,7 +3461,7 @@ class PayrollUkApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific employee's salary and wages by using a unique employee ID  # noqa: E501
-        OAuth2 scope: payroll.employees.read, payroll.employees
+        OAuth2 scope: payroll.employees, payroll.employees.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
         :param int page: Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
@@ -3545,7 +3545,7 @@ class PayrollUkApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific employee's leave balances using a unique employee ID  # noqa: E501
-        OAuth2 scope: payroll.employees.read, payroll.employees
+        OAuth2 scope: payroll.employees, payroll.employees.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
         :param str leave_type: Filter by the type of statutory leave
@@ -3631,7 +3631,7 @@ class PayrollUkApi(object):
         _request_timeout=None,
     ):
         """Retrieves a statutory sick leave for an employee  # noqa: E501
-        OAuth2 scope: payroll.employees.read, payroll.employees
+        OAuth2 scope: payroll.settings, payroll.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str statutory_sick_leave_id: Statutory sick leave id for single object (required)
         :param bool _return_http_data_only: return received data only
@@ -3709,7 +3709,7 @@ class PayrollUkApi(object):
         _request_timeout=None,
     ):
         """Retrieves tax records for a specific employee using a unique employee ID  # noqa: E501
-        OAuth2 scope: payroll.employees.read, payroll.employees
+        OAuth2 scope: payroll.employees, payroll.employees.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
         :param bool _return_http_data_only: return received data only
@@ -3786,7 +3786,7 @@ class PayrollUkApi(object):
         _request_timeout=None,
     ):
         """Retrieves employees  # noqa: E501
-        OAuth2 scope: payroll.employees.read
+        OAuth2 scope: payroll.employees, payroll.employees.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str filter: Filter by first name and/or lastname
         :param int page: Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
@@ -3861,7 +3861,7 @@ class PayrollUkApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific leave type by using a unique leave type ID  # noqa: E501
-        OAuth2 scope: payroll.settings.read, payroll.settings
+        OAuth2 scope: payroll.settings, payroll.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str leave_type_id: Identifier for the leave type (required)
         :param bool _return_http_data_only: return received data only
@@ -3938,7 +3938,7 @@ class PayrollUkApi(object):
         _request_timeout=None,
     ):
         """Retrieves leave types  # noqa: E501
-        OAuth2 scope: payroll.settings.read, payroll.settings
+        OAuth2 scope: payroll.settings, payroll.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param int page: Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
         :param bool active_only: Filters leave types by active status. By default the API returns all leave types.
@@ -4013,7 +4013,7 @@ class PayrollUkApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific pay run by using a unique pay run ID  # noqa: E501
-        OAuth2 scope: payroll.payruns.read, payroll.payruns
+        OAuth2 scope: payroll.payruns, payroll.payruns.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str pay_run_id: Identifier for the pay run (required)
         :param bool _return_http_data_only: return received data only
@@ -4089,7 +4089,7 @@ class PayrollUkApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific payrun calendar by using a unique payrun calendar ID  # noqa: E501
-        OAuth2 scope: payroll.settings.read, payroll.settings
+        OAuth2 scope: payroll.settings, payroll.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str pay_run_calendar_id: Identifier for the payrun calendars (required)
         :param bool _return_http_data_only: return received data only
@@ -4165,7 +4165,7 @@ class PayrollUkApi(object):
         _request_timeout=None,
     ):
         """Retrieves payrun calendars  # noqa: E501
-        OAuth2 scope: payroll.settings.read, payroll.settings
+        OAuth2 scope: payroll.settings, payroll.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param int page: Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
         :param bool _return_http_data_only: return received data only
@@ -4237,7 +4237,7 @@ class PayrollUkApi(object):
         _request_timeout=None,
     ):
         """Retrieves pay runs  # noqa: E501
-        OAuth2 scope: payroll.payruns.read, payroll.payruns
+        OAuth2 scope: payroll.payruns, payroll.payruns.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param int page: Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
         :param str status: By default get payruns will return all the payruns for an organization. You can add GET https://api.xero.com/payroll.xro/2.0/payRuns?statu={PayRunStatus} to filter the payruns by status.
@@ -4312,7 +4312,7 @@ class PayrollUkApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific payslip by using a unique payslip ID  # noqa: E501
-        OAuth2 scope: payroll.payslip.read, payroll.payslip
+        OAuth2 scope: payroll.payslip, payroll.payslip.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str payslip_id: Identifier for the payslip (required)
         :param bool _return_http_data_only: return received data only
@@ -4389,7 +4389,7 @@ class PayrollUkApi(object):
         _request_timeout=None,
     ):
         """Retrieves payslips  # noqa: E501
-        OAuth2 scope: payroll.payslip.read, payroll.payslip
+        OAuth2 scope: payroll.payslip, payroll.payslip.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str pay_run_id: PayrunID which specifies the containing payrun of payslips to retrieve. By default, the API does not group payslips by payrun. (required)
         :param int page: Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
@@ -4469,7 +4469,7 @@ class PayrollUkApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific reimbursement by using a unique reimbursement id  # noqa: E501
-        OAuth2 scope: payroll.settings.read, payroll.settings
+        OAuth2 scope: payroll.settings, payroll.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str reimbursement_id: Identifier for the reimbursement (required)
         :param bool _return_http_data_only: return received data only
@@ -4545,7 +4545,7 @@ class PayrollUkApi(object):
         _request_timeout=None,
     ):
         """Retrieves reimbursements  # noqa: E501
-        OAuth2 scope: payroll.settings.read, payroll.settings
+        OAuth2 scope: payroll.settings, payroll.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param int page: Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
         :param bool _return_http_data_only: return received data only
@@ -4615,7 +4615,7 @@ class PayrollUkApi(object):
         _request_timeout=None,
     ):
         """Retrieves payroll settings  # noqa: E501
-        OAuth2 scope: payroll.settings.read, settings.payslip
+        OAuth2 scope: payroll.settings, payroll.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -4683,7 +4683,7 @@ class PayrollUkApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific employee's summary of statutory leaves using a unique employee ID  # noqa: E501
-        OAuth2 scope: payroll.employees.read, payroll.employees
+        OAuth2 scope: payroll.settings, payroll.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
         :param bool active_only: Filter response with leaves that are currently active or yet to be taken. If not specified, all leaves (past, current, and future scheduled) are returned
@@ -4763,7 +4763,7 @@ class PayrollUkApi(object):
         _request_timeout=None,
     ):
         """Retrieve a specific timesheet by using a unique timesheet ID  # noqa: E501
-        OAuth2 scope: payroll.timesheets.read, timesheets.settings
+        OAuth2 scope: payroll.timesheets, payroll.timesheets.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str timesheet_id: Identifier for the timesheet (required)
         :param bool _return_http_data_only: return received data only
@@ -4840,7 +4840,7 @@ class PayrollUkApi(object):
         _request_timeout=None,
     ):
         """Retrieves timesheets  # noqa: E501
-        OAuth2 scope: payroll.timesheets.read, payroll.timesheets
+        OAuth2 scope: payroll.timesheets, payroll.timesheets.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param int page: Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
         :param str filter: Filter by first name and/or lastname
@@ -4914,7 +4914,7 @@ class PayrollUkApi(object):
         _request_timeout=None,
     ):
         """Retrieves tracking categories  # noqa: E501
-        OAuth2 scope: payroll.settings.read, settings.payslip
+        OAuth2 scope: payroll.settings, payroll.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models

@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.13.4
+    OpenAPI spec version: 2.16.1
 """
 
 import importlib
@@ -65,7 +65,7 @@ class ProjectApi(object):
         _request_timeout=None,
     ):
         """Create one or more new projects  # noqa: E501
-        OAuth2 scope: projects.create
+        OAuth2 scope: projects
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param ProjectCreateOrUpdate project_create_or_update: Create a new project with ProjectCreateOrUpdate object (required)
         :param bool _return_http_data_only: return received data only
@@ -145,7 +145,7 @@ class ProjectApi(object):
         _request_timeout=None,
     ):
         """Creates a time entry for a specific project  # noqa: E501
-        OAuth2 scope: projects, projects.read
+        OAuth2 scope: projects
         Allows you to create a specific task  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str project_id: You can specify an individual project by appending the projectId to the endpoint (required)
@@ -235,7 +235,7 @@ class ProjectApi(object):
         _request_timeout=None,
     ):
         """Deletes a time entry for a specific project  # noqa: E501
-        OAuth2 scope: projects, projects.read
+        OAuth2 scope: projects
         Allows you to delete a specific time entry  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str project_id: You can specify an individual project by appending the projectId to the endpoint (required)
@@ -393,7 +393,7 @@ class ProjectApi(object):
         _request_timeout=None,
     ):
         """Retrieves a list of all project users  # noqa: E501
-        OAuth2 scope: projects.read
+        OAuth2 scope: projects, projects.read
         Allows you to retrieve the users on a projects.  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param int page: set to 1 by default. The requested number of the page in paged response - Must be a number greater than 0.
@@ -988,7 +988,7 @@ class ProjectApi(object):
         _request_timeout=None,
     ):
         """creates a project for the specified contact  # noqa: E501
-        OAuth2 scope: projects.create
+        OAuth2 scope: projects
         Allows you to update a specific projects.  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str project_id: You can specify an individual project by appending the projectId to the endpoint (required)
@@ -1078,7 +1078,7 @@ class ProjectApi(object):
         _request_timeout=None,
     ):
         """Updates a specific project  # noqa: E501
-        OAuth2 scope: projects.create
+        OAuth2 scope: projects
         Allows you to update a specific projects.  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str project_id: You can specify an individual project by appending the projectId to the endpoint (required)
@@ -1169,7 +1169,7 @@ class ProjectApi(object):
         _request_timeout=None,
     ):
         """Updates a time entry for a specific project  # noqa: E501
-        OAuth2 scope: projects, projects.read
+        OAuth2 scope: projects
         Allows you to update time entry in a project  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str project_id: You can specify an individual project by appending the projectId to the endpoint (required)

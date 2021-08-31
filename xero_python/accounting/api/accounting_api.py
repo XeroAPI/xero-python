@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.13.4
+    OpenAPI spec version: 2.16.1
 """
 
 import importlib
@@ -5731,7 +5731,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a single chart of accounts by using a unique account Id  # noqa: E501
-        OAuth2 scope: accounting.settings
+        OAuth2 scope: accounting.settings, accounting.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str account_id: Unique identifier for Account object (required)
         :param bool _return_http_data_only: return received data only
@@ -5809,7 +5809,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves an attachment for a specific account by filename  # noqa: E501
-        OAuth2 scope: accounting.attachments.read
+        OAuth2 scope: accounting.attachments, accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str account_id: Unique identifier for Account object (required)
         :param str file_name: Name of the attachment (required)
@@ -5905,7 +5905,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific attachment from a specific account using a unique attachment Id  # noqa: E501
-        OAuth2 scope: accounting.attachments.read
+        OAuth2 scope: accounting.attachments, accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str account_id: Unique identifier for Account object (required)
         :param str attachment_id: Unique identifier for Attachment object (required)
@@ -5999,7 +5999,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves attachments for a specific accounts by using a unique account Id  # noqa: E501
-        OAuth2 scope: accounting.attachments.read
+        OAuth2 scope: accounting.attachments, accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str account_id: Unique identifier for Account object (required)
         :param bool _return_http_data_only: return received data only
@@ -6077,7 +6077,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves the full chart of accounts  # noqa: E501
-        OAuth2 scope: accounting.settings
+        OAuth2 scope: accounting.settings, accounting.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param datetime if_modified_since: Only records created or modified since this timestamp will be returned
         :param str where: Filter by an any element
@@ -6157,7 +6157,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a single spent or received money transaction by using a unique bank transaction Id  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str bank_transaction_id: Xero generated unique identifier for a bank transaction (required)
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
@@ -6239,7 +6239,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific attachment from a specific bank transaction by filename  # noqa: E501
-        OAuth2 scope: accounting.attachments.read
+        OAuth2 scope: accounting.attachments, accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str bank_transaction_id: Xero generated unique identifier for a bank transaction (required)
         :param str file_name: Name of the attachment (required)
@@ -6337,7 +6337,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves specific attachments from a specific BankTransaction using a unique attachment Id  # noqa: E501
-        OAuth2 scope: accounting.attachments.read
+        OAuth2 scope: accounting.attachments, accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str bank_transaction_id: Xero generated unique identifier for a bank transaction (required)
         :param str attachment_id: Unique identifier for Attachment object (required)
@@ -6433,7 +6433,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves any attachments from a specific bank transactions  # noqa: E501
-        OAuth2 scope: accounting.attachments.read
+        OAuth2 scope: accounting.attachments, accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str bank_transaction_id: Xero generated unique identifier for a bank transaction (required)
         :param bool _return_http_data_only: return received data only
@@ -6515,7 +6515,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves any spent or received money transactions  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param datetime if_modified_since: Only records created or modified since this timestamp will be returned
         :param str where: Filter by an any element
@@ -6602,7 +6602,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves history from a specific bank transaction using a unique bank transaction Id  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str bank_transaction_id: Xero generated unique identifier for a bank transaction (required)
         :param bool _return_http_data_only: return received data only
@@ -6680,7 +6680,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves specific bank transfers by using a unique bank transfer Id  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str bank_transfer_id: Xero generated unique identifier for a bank transfer (required)
         :param bool _return_http_data_only: return received data only
@@ -6758,7 +6758,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific attachment on a specific bank transfer by file name  # noqa: E501
-        OAuth2 scope: accounting.attachments.read
+        OAuth2 scope: accounting.attachments, accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str bank_transfer_id: Xero generated unique identifier for a bank transfer (required)
         :param str file_name: Name of the attachment (required)
@@ -6856,7 +6856,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific attachment from a specific bank transfer using a unique attachment ID  # noqa: E501
-        OAuth2 scope: accounting.attachments.read
+        OAuth2 scope: accounting.attachments, accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str bank_transfer_id: Xero generated unique identifier for a bank transfer (required)
         :param str attachment_id: Unique identifier for Attachment object (required)
@@ -6952,7 +6952,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves attachments from a specific bank transfer  # noqa: E501
-        OAuth2 scope: accounting.attachments.read
+        OAuth2 scope: accounting.attachments, accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str bank_transfer_id: Xero generated unique identifier for a bank transfer (required)
         :param bool _return_http_data_only: return received data only
@@ -7030,7 +7030,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves history from a specific bank transfer using a unique bank transfer Id  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str bank_transfer_id: Xero generated unique identifier for a bank transfer (required)
         :param bool _return_http_data_only: return received data only
@@ -7108,7 +7108,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves all bank transfers  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param datetime if_modified_since: Only records created or modified since this timestamp will be returned
         :param str where: Filter by an any element
@@ -7187,7 +7187,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves history from a specific batch payment  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str batch_payment_id: Unique identifier for BatchPayment (required)
         :param bool _return_http_data_only: return received data only
@@ -7265,7 +7265,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves either one or many batch payments for invoices  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param datetime if_modified_since: Only records created or modified since this timestamp will be returned
         :param str where: Filter by an any element
@@ -7344,7 +7344,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific branding theme using a unique branding theme Id  # noqa: E501
-        OAuth2 scope: accounting.settings.read
+        OAuth2 scope: accounting.settings, accounting.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str branding_theme_id: Unique identifier for a Branding Theme (required)
         :param bool _return_http_data_only: return received data only
@@ -7497,7 +7497,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves all the branding themes  # noqa: E501
-        OAuth2 scope: accounting.settings.read
+        OAuth2 scope: accounting.settings, accounting.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -7723,7 +7723,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific contacts in a Xero organisation using a unique contact Id  # noqa: E501
-        OAuth2 scope: accounting.contacts.read
+        OAuth2 scope: accounting.contacts, accounting.contacts.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str contact_id: Unique identifier for a Contact (required)
         :param bool _return_http_data_only: return received data only
@@ -7801,7 +7801,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific attachment from a specific contact by file name  # noqa: E501
-        OAuth2 scope: accounting.attachments.read
+        OAuth2 scope: accounting.attachments, accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str contact_id: Unique identifier for a Contact (required)
         :param str file_name: Name of the attachment (required)
@@ -7897,7 +7897,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific attachment from a specific contact using a unique attachment Id  # noqa: E501
-        OAuth2 scope: accounting.attachments.read
+        OAuth2 scope: accounting.attachments, accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str contact_id: Unique identifier for a Contact (required)
         :param str attachment_id: Unique identifier for Attachment object (required)
@@ -7991,7 +7991,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves attachments for a specific contact in a Xero organisation  # noqa: E501
-        OAuth2 scope: accounting.attachments.read
+        OAuth2 scope: accounting.attachments, accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str contact_id: Unique identifier for a Contact (required)
         :param bool _return_http_data_only: return received data only
@@ -8067,7 +8067,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific contact by contact number in a Xero organisation  # noqa: E501
-        OAuth2 scope: accounting.contacts.read
+        OAuth2 scope: accounting.contacts, accounting.contacts.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str contact_number: This field is read only on the Xero contact screen, used to identify contacts in external systems (max length = 50). (required)
         :param bool _return_http_data_only: return received data only
@@ -8145,7 +8145,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves CIS settings for a specific contact in a Xero organisation  # noqa: E501
-        OAuth2 scope: accounting.contacts.read
+        OAuth2 scope: accounting.settings, accounting.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str contact_id: Unique identifier for a Contact (required)
         :param bool _return_http_data_only: return received data only
@@ -8221,7 +8221,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific contact group by using a unique contact group Id  # noqa: E501
-        OAuth2 scope: accounting.contacts.read
+        OAuth2 scope: accounting.contacts, accounting.contacts.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str contact_group_id: Unique identifier for a Contact Group (required)
         :param bool _return_http_data_only: return received data only
@@ -8298,7 +8298,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves the contact Id and name of each contact group  # noqa: E501
-        OAuth2 scope: accounting.contacts.read
+        OAuth2 scope: accounting.contacts, accounting.contacts.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str where: Filter by an any element
         :param str order: Order by an any element
@@ -8373,7 +8373,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves history records for a specific contact  # noqa: E501
-        OAuth2 scope: accounting.contacts.read
+        OAuth2 scope: accounting.contacts, accounting.contacts.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str contact_id: Unique identifier for a Contact (required)
         :param bool _return_http_data_only: return received data only
@@ -8455,7 +8455,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves all contacts in a Xero organisation  # noqa: E501
-        OAuth2 scope: accounting.contacts.read
+        OAuth2 scope: accounting.contacts, accounting.contacts.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param datetime if_modified_since: Only records created or modified since this timestamp will be returned
         :param str where: Filter by an any element
@@ -8553,7 +8553,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific credit note using a unique credit note Id  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str credit_note_id: Unique identifier for a Credit Note (required)
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
@@ -8633,7 +8633,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves credit notes as PDF files  # noqa: E501
-        OAuth2 scope: accounting.transactions
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str credit_note_id: Unique identifier for a Credit Note (required)
         :param bool _return_http_data_only: return received data only
@@ -8711,7 +8711,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific attachment on a specific credit note by file name  # noqa: E501
-        OAuth2 scope: accounting.attachments.read
+        OAuth2 scope: accounting.attachments, accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str credit_note_id: Unique identifier for a Credit Note (required)
         :param str file_name: Name of the attachment (required)
@@ -8809,7 +8809,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific attachment from a specific credit note using a unique attachment Id  # noqa: E501
-        OAuth2 scope: accounting.attachments.read
+        OAuth2 scope: accounting.attachments, accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str credit_note_id: Unique identifier for a Credit Note (required)
         :param str attachment_id: Unique identifier for Attachment object (required)
@@ -8905,7 +8905,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves attachments for a specific credit notes  # noqa: E501
-        OAuth2 scope: accounting.attachments.read
+        OAuth2 scope: accounting.attachments, accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str credit_note_id: Unique identifier for a Credit Note (required)
         :param bool _return_http_data_only: return received data only
@@ -8981,7 +8981,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves history records of a specific credit note  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str credit_note_id: Unique identifier for a Credit Note (required)
         :param bool _return_http_data_only: return received data only
@@ -9061,7 +9061,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves any credit notes  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param datetime if_modified_since: Only records created or modified since this timestamp will be returned
         :param str where: Filter by an any element
@@ -9149,7 +9149,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves currencies for your Xero organisation  # noqa: E501
-        OAuth2 scope: accounting.settings.read
+        OAuth2 scope: accounting.settings, accounting.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str where: Filter by an any element
         :param str order: Order by an any element
@@ -9224,7 +9224,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific employee used in Xero payrun using a unique employee Id  # noqa: E501
-        OAuth2 scope: accounting.settings.read
+        OAuth2 scope: accounting.settings, accounting.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Unique identifier for a Employee (required)
         :param bool _return_http_data_only: return received data only
@@ -9302,7 +9302,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves employees used in Xero payrun  # noqa: E501
-        OAuth2 scope: accounting.settings.read
+        OAuth2 scope: accounting.settings, accounting.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param datetime if_modified_since: Only records created or modified since this timestamp will be returned
         :param str where: Filter by an any element
@@ -9381,7 +9381,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific expense claim using a unique expense claim Id  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str expense_claim_id: Unique identifier for a ExpenseClaim (required)
         :param bool _return_http_data_only: return received data only
@@ -9457,7 +9457,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves history records of a specific expense claim  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str expense_claim_id: Unique identifier for a ExpenseClaim (required)
         :param bool _return_http_data_only: return received data only
@@ -9535,7 +9535,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves expense claims  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param datetime if_modified_since: Only records created or modified since this timestamp will be returned
         :param str where: Filter by an any element
@@ -9615,7 +9615,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific sales invoice or purchase bill using a unique invoice Id  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str invoice_id: Unique identifier for an Invoice (required)
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
@@ -9695,7 +9695,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves invoices or purchase bills as PDF files  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str invoice_id: Unique identifier for an Invoice (required)
         :param bool _return_http_data_only: return received data only
@@ -9773,7 +9773,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves an attachment from a specific invoice or purchase bill by filename  # noqa: E501
-        OAuth2 scope: accounting.attachments.read
+        OAuth2 scope: accounting.attachments, accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str invoice_id: Unique identifier for an Invoice (required)
         :param str file_name: Name of the attachment (required)
@@ -9869,7 +9869,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific attachment from a specific invoices or purchase bills by using a unique attachment Id  # noqa: E501
-        OAuth2 scope: accounting.attachments.read
+        OAuth2 scope: accounting.attachments, accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str invoice_id: Unique identifier for an Invoice (required)
         :param str attachment_id: Unique identifier for Attachment object (required)
@@ -9963,7 +9963,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves attachments for a specific invoice or purchase bill  # noqa: E501
-        OAuth2 scope: accounting.attachments.read
+        OAuth2 scope: accounting.attachments, accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str invoice_id: Unique identifier for an Invoice (required)
         :param bool _return_http_data_only: return received data only
@@ -10039,7 +10039,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves history records for a specific invoice  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str invoice_id: Unique identifier for an Invoice (required)
         :param bool _return_http_data_only: return received data only
@@ -10114,7 +10114,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves invoice reminder settings  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.settings, accounting.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -10192,7 +10192,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves sales invoices or purchase bills  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param datetime if_modified_since: Only records created or modified since this timestamp will be returned
         :param str where: Filter by an any element
@@ -10313,7 +10313,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific item using a unique item Id  # noqa: E501
-        OAuth2 scope: accounting.settings.read
+        OAuth2 scope: accounting.settings, accounting.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str item_id: Unique identifier for an Item (required)
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
@@ -10392,7 +10392,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves history for a specific item  # noqa: E501
-        OAuth2 scope: accounting.settings.read
+        OAuth2 scope: accounting.settings, accounting.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str item_id: Unique identifier for an Item (required)
         :param bool _return_http_data_only: return received data only
@@ -10471,7 +10471,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves items  # noqa: E501
-        OAuth2 scope: accounting.settings.read
+        OAuth2 scope: accounting.settings, accounting.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param datetime if_modified_since: Only records created or modified since this timestamp will be returned
         :param str where: Filter by an any element
@@ -10711,7 +10711,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific linked transaction (billable expenses) using a unique linked transaction Id  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str linked_transaction_id: Unique identifier for a LinkedTransaction (required)
         :param bool _return_http_data_only: return received data only
@@ -10792,7 +10792,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves linked transactions (billable expenses)  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param int page: Up to 100 linked transactions will be returned in a single API call. Use the page parameter to specify the page to be returned e.g. page=1.
         :param str linked_transaction_id: The Xero identifier for an Linked Transaction
@@ -10883,7 +10883,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific manual journal  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str manual_journal_id: Unique identifier for a ManualJournal (required)
         :param bool _return_http_data_only: return received data only
@@ -10961,7 +10961,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific attachment from a specific manual journal by file name  # noqa: E501
-        OAuth2 scope: accounting.attachments.read
+        OAuth2 scope: accounting.attachments, accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str manual_journal_id: Unique identifier for a ManualJournal (required)
         :param str file_name: Name of the attachment (required)
@@ -11059,7 +11059,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Allows you to retrieve a specific attachment from a specific manual journal using a unique attachment Id  # noqa: E501
-        OAuth2 scope: accounting.attachments.read
+        OAuth2 scope: accounting.attachments, accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str manual_journal_id: Unique identifier for a ManualJournal (required)
         :param str attachment_id: Unique identifier for Attachment object (required)
@@ -11155,7 +11155,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves attachment for a specific manual journal  # noqa: E501
-        OAuth2 scope: accounting.attachments.read
+        OAuth2 scope: accounting.attachments, accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str manual_journal_id: Unique identifier for a ManualJournal (required)
         :param bool _return_http_data_only: return received data only
@@ -11236,7 +11236,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves manual journals  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param datetime if_modified_since: Only records created or modified since this timestamp will be returned
         :param str where: Filter by an any element
@@ -11319,7 +11319,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves history for a specific manual journal  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str manual_journal_id: Unique identifier for a ManualJournal (required)
         :param bool _return_http_data_only: return received data only
@@ -11395,7 +11395,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a URL to an online invoice  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str invoice_id: Unique identifier for an Invoice (required)
         :param bool _return_http_data_only: return received data only
@@ -11470,7 +11470,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a list of the key actions your app has permission to perform in the connected Xero organisation.  # noqa: E501
-        OAuth2 scope: accounting.settings.read
+        OAuth2 scope: accounting.settings, accounting.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -11537,7 +11537,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves the CIS settings for the Xero organistaion.  # noqa: E501
-        OAuth2 scope: accounting.settings.read
+        OAuth2 scope: accounting.settings, accounting.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str organisation_id: The unique Xero identifier for an organisation (required)
         :param bool _return_http_data_only: return received data only
@@ -11614,7 +11614,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves Xero organisation details  # noqa: E501
-        OAuth2 scope: accounting.settings.read
+        OAuth2 scope: accounting.settings, accounting.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -11681,7 +11681,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific overpayment using a unique overpayment Id  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str overpayment_id: Unique identifier for a Overpayment (required)
         :param bool _return_http_data_only: return received data only
@@ -11757,7 +11757,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves history records of a specific overpayment  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str overpayment_id: Unique identifier for a Overpayment (required)
         :param bool _return_http_data_only: return received data only
@@ -11837,7 +11837,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves overpayments  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param datetime if_modified_since: Only records created or modified since this timestamp will be returned
         :param str where: Filter by an any element
@@ -11924,7 +11924,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific payment for invoices and credit notes using a unique payment Id  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str payment_id: Unique identifier for a Payment (required)
         :param bool _return_http_data_only: return received data only
@@ -12000,7 +12000,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves history records of a specific payment  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str payment_id: Unique identifier for a Payment (required)
         :param bool _return_http_data_only: return received data only
@@ -12145,7 +12145,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves payments for invoices and credit notes  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param datetime if_modified_since: Only records created or modified since this timestamp will be returned
         :param str where: Filter by an any element
@@ -12228,7 +12228,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Allows you to retrieve a specified prepayments  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str prepayment_id: Unique identifier for a PrePayment (required)
         :param bool _return_http_data_only: return received data only
@@ -12304,7 +12304,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves history record for a specific prepayment  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str prepayment_id: Unique identifier for a PrePayment (required)
         :param bool _return_http_data_only: return received data only
@@ -12384,7 +12384,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves prepayments  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param datetime if_modified_since: Only records created or modified since this timestamp will be returned
         :param str where: Filter by an any element
@@ -12471,7 +12471,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific purchase order using a unique purchase order Id  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str purchase_order_id: Unique identifier for an Purchase Order (required)
         :param bool _return_http_data_only: return received data only
@@ -12547,7 +12547,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves specific purchase order as PDF files using a unique purchase order Id  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str purchase_order_id: Unique identifier for an Purchase Order (required)
         :param bool _return_http_data_only: return received data only
@@ -12625,7 +12625,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific attachment for a specific purchase order by filename  # noqa: E501
-        OAuth2 scope: accounting.attachments.read
+        OAuth2 scope: accounting.attachments, accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str purchase_order_id: Unique identifier for an Purchase Order (required)
         :param str file_name: Name of the attachment (required)
@@ -12723,7 +12723,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves specific attachment for a specific purchase order using a unique attachment Id  # noqa: E501
-        OAuth2 scope: accounting.attachments.read
+        OAuth2 scope: accounting.attachments, accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str purchase_order_id: Unique identifier for an Purchase Order (required)
         :param str attachment_id: Unique identifier for Attachment object (required)
@@ -12819,7 +12819,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves attachments for a specific purchase order  # noqa: E501
-        OAuth2 scope: accounting.attachments.read
+        OAuth2 scope: accounting.attachments, accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str purchase_order_id: Unique identifier for an Purchase Order (required)
         :param bool _return_http_data_only: return received data only
@@ -12897,7 +12897,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific purchase order using purchase order number  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str purchase_order_number: Unique identifier for a PurchaseOrder (required)
         :param bool _return_http_data_only: return received data only
@@ -12975,7 +12975,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves history for a specific purchase order  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str purchase_order_id: Unique identifier for an Purchase Order (required)
         :param bool _return_http_data_only: return received data only
@@ -13056,7 +13056,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves purchase orders  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param datetime if_modified_since: Only records created or modified since this timestamp will be returned
         :param str status: Filter by purchase order status
@@ -13147,7 +13147,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific quote using a unique quote Id  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str quote_id: Unique identifier for an Quote (required)
         :param bool _return_http_data_only: return received data only
@@ -13222,7 +13222,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific quote as a PDF file using a unique quote Id  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str quote_id: Unique identifier for an Quote (required)
         :param bool _return_http_data_only: return received data only
@@ -13300,7 +13300,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific attachment from a specific quote by filename  # noqa: E501
-        OAuth2 scope: accounting.attachments.read
+        OAuth2 scope: accounting.attachments, accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str quote_id: Unique identifier for an Quote (required)
         :param str file_name: Name of the attachment (required)
@@ -13396,7 +13396,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific attachment from a specific quote using a unique attachment Id  # noqa: E501
-        OAuth2 scope: accounting.attachments.read
+        OAuth2 scope: accounting.attachments, accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str quote_id: Unique identifier for an Quote (required)
         :param str attachment_id: Unique identifier for Attachment object (required)
@@ -13488,7 +13488,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves attachments for a specific quote  # noqa: E501
-        OAuth2 scope: accounting.attachments.read
+        OAuth2 scope: accounting.attachments, accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str quote_id: Unique identifier for an Quote (required)
         :param bool _return_http_data_only: return received data only
@@ -13564,7 +13564,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves history records of a specific quote  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str quote_id: Unique identifier for an Quote (required)
         :param bool _return_http_data_only: return received data only
@@ -13649,7 +13649,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves sales quotes  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param datetime if_modified_since: Only records created or modified since this timestamp will be returned
         :param date date_from: Filter for quotes after a particular date
@@ -13757,7 +13757,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific draft expense claim receipt by using a unique receipt Id  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str receipt_id: Unique identifier for a Receipt (required)
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
@@ -13839,7 +13839,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific attachment from a specific expense claim receipts by file name  # noqa: E501
-        OAuth2 scope: accounting.attachments.read
+        OAuth2 scope: accounting.attachments, accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str receipt_id: Unique identifier for a Receipt (required)
         :param str file_name: Name of the attachment (required)
@@ -13935,7 +13935,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific attachments from a specific expense claim receipts by using a unique attachment Id  # noqa: E501
-        OAuth2 scope: accounting.attachments.read
+        OAuth2 scope: accounting.attachments, accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str receipt_id: Unique identifier for a Receipt (required)
         :param str attachment_id: Unique identifier for Attachment object (required)
@@ -14029,7 +14029,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves attachments for a specific expense claim receipt  # noqa: E501
-        OAuth2 scope: accounting.attachments.read
+        OAuth2 scope: accounting.attachments, accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str receipt_id: Unique identifier for a Receipt (required)
         :param bool _return_http_data_only: return received data only
@@ -14105,7 +14105,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a history record for a specific receipt  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str receipt_id: Unique identifier for a Receipt (required)
         :param bool _return_http_data_only: return received data only
@@ -14184,7 +14184,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves draft expense claim receipts for any user  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param datetime if_modified_since: Only records created or modified since this timestamp will be returned
         :param str where: Filter by an any element
@@ -14267,7 +14267,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific repeating invoice by using a unique repeating invoice Id  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str repeating_invoice_id: Unique identifier for a Repeating Invoice (required)
         :param bool _return_http_data_only: return received data only
@@ -14345,7 +14345,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific attachment from a specific repeating invoices by file name  # noqa: E501
-        OAuth2 scope: accounting.attachments.read
+        OAuth2 scope: accounting.attachments, accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str repeating_invoice_id: Unique identifier for a Repeating Invoice (required)
         :param str file_name: Name of the attachment (required)
@@ -14443,7 +14443,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific attachment from a specific repeating invoice  # noqa: E501
-        OAuth2 scope: accounting.attachments.read
+        OAuth2 scope: accounting.attachments, accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str repeating_invoice_id: Unique identifier for a Repeating Invoice (required)
         :param str attachment_id: Unique identifier for Attachment object (required)
@@ -14539,7 +14539,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves attachments from a specific repeating invoice  # noqa: E501
-        OAuth2 scope: accounting.attachments.read
+        OAuth2 scope: accounting.attachments, accounting.attachments.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str repeating_invoice_id: Unique identifier for a Repeating Invoice (required)
         :param bool _return_http_data_only: return received data only
@@ -14619,7 +14619,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves history record for a specific repeating invoice  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str repeating_invoice_id: Unique identifier for a Repeating Invoice (required)
         :param bool _return_http_data_only: return received data only
@@ -14698,7 +14698,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves repeating invoices  # noqa: E501
-        OAuth2 scope: accounting.transactions.read
+        OAuth2 scope: accounting.transactions, accounting.transactions.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str where: Filter by an any element
         :param str order: Order by an any element
@@ -15482,7 +15482,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieve reports for 1099  # noqa: E501
-        OAuth2 scope: accounting.reports.tenninetynine.read
+        OAuth2 scope: accounting.reports.read, accounting.reports.tenninetynine.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str report_year: The year of the 1099 report
         :param bool _return_http_data_only: return received data only
@@ -15697,7 +15697,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves tax rates  # noqa: E501
-        OAuth2 scope: accounting.settings.read
+        OAuth2 scope: accounting.settings, accounting.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str where: Filter by an any element
         :param str order: Order by an any element
@@ -15778,7 +15778,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves tracking categories and options  # noqa: E501
-        OAuth2 scope: accounting.settings.read
+        OAuth2 scope: accounting.settings, accounting.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str where: Filter by an any element
         :param str order: Order by an any element
@@ -15857,7 +15857,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves specific tracking categories and options using a unique tracking category Id  # noqa: E501
-        OAuth2 scope: accounting.settings.read
+        OAuth2 scope: accounting.settings, accounting.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str tracking_category_id: Unique identifier for a TrackingCategory (required)
         :param bool _return_http_data_only: return received data only
@@ -15933,7 +15933,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves a specific user  # noqa: E501
-        OAuth2 scope: accounting.settings.read
+        OAuth2 scope: accounting.settings, accounting.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str user_id: Unique identifier for a User (required)
         :param bool _return_http_data_only: return received data only
@@ -16010,7 +16010,7 @@ class AccountingApi(object):
         _request_timeout=None,
     ):
         """Retrieves users  # noqa: E501
-        OAuth2 scope: accounting.settings.read
+        OAuth2 scope: accounting.settings, accounting.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param datetime if_modified_since: Only records created or modified since this timestamp will be returned
         :param str where: Filter by an any element

@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.13.4
+    OpenAPI spec version: 2.16.1
 """
 
 import importlib
@@ -144,7 +144,7 @@ class PayrollAuApi(object):
         _request_timeout=None,
     ):
         """Creates a leave application  # noqa: E501
-        OAuth2 scope: payroll.leaveapplications
+        OAuth2 scope: payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param list[LeaveApplication] leave_application: (required)
         :param bool _return_http_data_only: return received data only
@@ -223,7 +223,7 @@ class PayrollAuApi(object):
         _request_timeout=None,
     ):
         """Creates a pay item  # noqa: E501
-        OAuth2 scope: payroll.payitems
+        OAuth2 scope: payroll.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param PayItem pay_item: (required)
         :param bool _return_http_data_only: return received data only
@@ -381,7 +381,7 @@ class PayrollAuApi(object):
         _request_timeout=None,
     ):
         """Creates a Payroll Calendar  # noqa: E501
-        OAuth2 scope: payroll.payrollcalendars
+        OAuth2 scope: payroll.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param list[PayrollCalendar] payroll_calendar: (required)
         :param bool _return_http_data_only: return received data only
@@ -460,7 +460,7 @@ class PayrollAuApi(object):
         _request_timeout=None,
     ):
         """Creates a superfund  # noqa: E501
-        OAuth2 scope: payroll.superfunds
+        OAuth2 scope: payroll.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param list[SuperFund] super_fund: (required)
         :param bool _return_http_data_only: return received data only
@@ -618,7 +618,7 @@ class PayrollAuApi(object):
         _request_timeout=None,
     ):
         """Retrieves an employee's detail by unique employee id  # noqa: E501
-        OAuth2 scope: payroll.employees.read
+        OAuth2 scope: payroll.employees, payroll.employees.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
         :param bool _return_http_data_only: return received data only
@@ -697,9 +697,9 @@ class PayrollAuApi(object):
         _request_timeout=None,
     ):
         """Searches payroll employees  # noqa: E501
-        OAuth2 scope: payroll.employees.read
+        OAuth2 scope: payroll.employees, payroll.employees.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
-        :param str if_modified_since: Only records created or modified since this timestamp will be returned
+        :param datetime if_modified_since: Only records created or modified since this timestamp will be returned
         :param str where: Filter by an any element
         :param str order: Order by an any element
         :param int page: e.g. page=1 – Up to 100 employees will be returned in a single API call
@@ -780,7 +780,7 @@ class PayrollAuApi(object):
         _request_timeout=None,
     ):
         """Retrieves a leave application by a unique leave application id  # noqa: E501
-        OAuth2 scope: payroll.leaveapplications.read
+        OAuth2 scope: payroll.employees, payroll.employees.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str leave_application_id: Leave Application id for single object (required)
         :param bool _return_http_data_only: return received data only
@@ -859,7 +859,7 @@ class PayrollAuApi(object):
         _request_timeout=None,
     ):
         """Retrieves leave applications  # noqa: E501
-        OAuth2 scope: payroll.leaveapplications.read
+        OAuth2 scope: payroll.employees, payroll.employees.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str if_modified_since: Only records created or modified since this timestamp will be returned
         :param str where: Filter by an any element
@@ -945,7 +945,7 @@ class PayrollAuApi(object):
         _request_timeout=None,
     ):
         """Retrieves pay items  # noqa: E501
-        OAuth2 scope: payroll.payitems.read
+        OAuth2 scope: payroll.settings, payroll.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str if_modified_since: Only records created or modified since this timestamp will be returned
         :param str where: Filter by an any element
@@ -1028,7 +1028,7 @@ class PayrollAuApi(object):
         _request_timeout=None,
     ):
         """Retrieves a pay run by using a unique pay run id  # noqa: E501
-        OAuth2 scope: payroll.payruns.read
+        OAuth2 scope: payroll.payruns, payroll.payruns.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str pay_run_id: PayRun id for single object (required)
         :param bool _return_http_data_only: return received data only
@@ -1107,7 +1107,7 @@ class PayrollAuApi(object):
         _request_timeout=None,
     ):
         """Retrieves pay runs  # noqa: E501
-        OAuth2 scope: payroll.payruns.read
+        OAuth2 scope: payroll.payruns, payroll.payruns.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str if_modified_since: Only records created or modified since this timestamp will be returned
         :param str where: Filter by an any element
@@ -1190,7 +1190,7 @@ class PayrollAuApi(object):
         _request_timeout=None,
     ):
         """Retrieves payroll calendar by using a unique payroll calendar ID  # noqa: E501
-        OAuth2 scope: payroll.payrollcalendars.read
+        OAuth2 scope: payroll.settings, payroll.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str payroll_calendar_id: Payroll Calendar id for single object (required)
         :param bool _return_http_data_only: return received data only
@@ -1269,7 +1269,7 @@ class PayrollAuApi(object):
         _request_timeout=None,
     ):
         """Retrieves payroll calendars  # noqa: E501
-        OAuth2 scope: payroll.payrollcalendars.read
+        OAuth2 scope: payroll.settings, payroll.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str if_modified_since: Only records created or modified since this timestamp will be returned
         :param str where: Filter by an any element
@@ -1352,7 +1352,7 @@ class PayrollAuApi(object):
         _request_timeout=None,
     ):
         """Retrieves for a payslip by a unique payslip id  # noqa: E501
-        OAuth2 scope: payroll.payslip.read
+        OAuth2 scope: payroll.payslip, payroll.payslip.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str payslip_id: Payslip id for single object (required)
         :param bool _return_http_data_only: return received data only
@@ -1427,7 +1427,7 @@ class PayrollAuApi(object):
         _request_timeout=None,
     ):
         """Retrieves payroll settings  # noqa: E501
-        OAuth2 scope: payroll.settings.read
+        OAuth2 scope: payroll.settings, payroll.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -1494,7 +1494,7 @@ class PayrollAuApi(object):
         _request_timeout=None,
     ):
         """Retrieves a superfund by using a unique superfund ID  # noqa: E501
-        OAuth2 scope: payroll.superfunds.read
+        OAuth2 scope: payroll.settings, payroll.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str super_fund_id: Superfund id for single object (required)
         :param bool _return_http_data_only: return received data only
@@ -1571,7 +1571,7 @@ class PayrollAuApi(object):
         _request_timeout=None,
     ):
         """Retrieves superfund products  # noqa: E501
-        OAuth2 scope: payroll.superfundproducts.read
+        OAuth2 scope: payroll.settings, payroll.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str abn: The ABN of the Regulated SuperFund
         :param str usi: The USI of the Regulated SuperFund
@@ -1649,7 +1649,7 @@ class PayrollAuApi(object):
         _request_timeout=None,
     ):
         """Retrieves superfunds  # noqa: E501
-        OAuth2 scope: payroll.superfunds.read
+        OAuth2 scope: payroll.settings, payroll.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str if_modified_since: Only records created or modified since this timestamp will be returned
         :param str where: Filter by an any element
@@ -1732,7 +1732,7 @@ class PayrollAuApi(object):
         _request_timeout=None,
     ):
         """Retrieves a timesheet by using a unique timesheet id  # noqa: E501
-        OAuth2 scope: payroll.timesheets.read
+        OAuth2 scope: payroll.timesheets, payroll.timesheets.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str timesheet_id: Timesheet id for single object (required)
         :param bool _return_http_data_only: return received data only
@@ -1811,7 +1811,7 @@ class PayrollAuApi(object):
         _request_timeout=None,
     ):
         """Retrieves timesheets  # noqa: E501
-        OAuth2 scope: payroll.timesheets.read
+        OAuth2 scope: payroll.timesheets, payroll.timesheets.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str if_modified_since: Only records created or modified since this timestamp will be returned
         :param str where: Filter by an any element
@@ -1979,7 +1979,7 @@ class PayrollAuApi(object):
         _request_timeout=None,
     ):
         """Updates a specific leave application  # noqa: E501
-        OAuth2 scope: payroll.leaveapplications
+        OAuth2 scope: payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str leave_application_id: Leave Application id for single object (required)
         :param list[LeaveApplication] leave_application: (required)
@@ -2236,7 +2236,7 @@ class PayrollAuApi(object):
         _request_timeout=None,
     ):
         """Updates a superfund  # noqa: E501
-        OAuth2 scope: payroll.superfunds
+        OAuth2 scope: payroll.settings
         Update properties on a single Superfund  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str super_fund_id: Superfund id for single object (required)

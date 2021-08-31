@@ -81,7 +81,7 @@ class TokenApi:
             )
         return status
 
-    def get_client_credentials_token(self):
+    def get_client_credentials_token(self, app_store_billing):
         """
         Call Xero Identity API to obtain an access token via OAuth2 Client Credentails grant type
         :return: dictionary with new auth2 token
@@ -91,6 +91,8 @@ class TokenApi:
             "client_secret": self.client_secret,
             "grant_type": "client_credentials",
         }
+        if app_store_billing:
+            post_data["scope"] = "marketplace.billing"
         response, status, headers = self.api_client.call_api(
             self.client_credentials_token_url,
             "POST",
@@ -231,14 +233,14 @@ class OAuth2Token:
         api_client.set_oauth2_token(new_token)
         return True
 
-    def get_client_credentials_access_token(self, api_client):
+    def get_client_credentials_access_token(self, api_client, app_store_billing):
         """
         Perform OAuth2 Client Credentials grant token request.
         :param api_client:  ApiClient instance used to perform refresh token API call.
         :return: bool - True if success
         """
         token_api = TokenApi(api_client, self.client_id, self.client_secret)
-        new_token = token_api.get_client_credentials_token()
+        new_token = token_api.get_client_credentials_token(app_store_billing)
         self.update_token(**new_token)
         api_client.set_oauth2_token(new_token)
         return True
