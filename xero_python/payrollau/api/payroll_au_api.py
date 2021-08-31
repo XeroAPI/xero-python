@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.15.0
+    OpenAPI spec version: 2.16.1
 """
 
 import importlib
@@ -699,7 +699,7 @@ class PayrollAuApi(object):
         """Searches payroll employees  # noqa: E501
         OAuth2 scope: payroll.employees, payroll.employees.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
-        :param str if_modified_since: Only records created or modified since this timestamp will be returned
+        :param datetime if_modified_since: Only records created or modified since this timestamp will be returned
         :param str where: Filter by an any element
         :param str order: Order by an any element
         :param int page: e.g. page=1 – Up to 100 employees will be returned in a single API call

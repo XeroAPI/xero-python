@@ -211,16 +211,17 @@ def deserialize_datetime(data_type, data, model_finder):
     :return: deserialized datetime.datetime
 
     """
-    try:
-        dt = isoparse(data)
-    except (ValueError, TypeError):
-        raise ValueError("Invalid datetime value {!r}".format(data))
+    if data is not None:
+        try:
+            dt = isoparse(data)
+        except (ValueError, TypeError):
+            raise ValueError("Invalid datetime value {!r}".format(data))
 
-    if not dt.tzinfo:
-        # timezone naive datetime from Xero API response always in UTC
-        dt = dt.replace(tzinfo=tz.UTC)
+        if not dt.tzinfo:
+            # timezone naive datetime from Xero API response always in UTC
+            dt = dt.replace(tzinfo=tz.UTC)
 
-    return dt
+        return dt
 
 
 @deserialize.register("datetime[ms-format]")

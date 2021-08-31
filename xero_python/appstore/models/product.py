@@ -29,16 +29,22 @@ class Product(BaseModel):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {"id": "str", "name": "str", "type": "str"}
+    openapi_types = {"id": "str", "name": "str", "type": "str", "seat_unit": "str"}
 
-    attribute_map = {"id": "id", "name": "name", "type": "type"}
+    attribute_map = {
+        "id": "id",
+        "name": "name",
+        "type": "type",
+        "seat_unit": "seatUnit",
+    }
 
-    def __init__(self, id=None, name=None, type=None):  # noqa: E501
+    def __init__(self, id=None, name=None, type=None, seat_unit=None):  # noqa: E501
         """Product - a model defined in OpenAPI"""  # noqa: E501
 
         self._id = None
         self._name = None
         self._type = None
+        self._seat_unit = None
         self.discriminator = None
 
         if id is not None:
@@ -47,6 +53,8 @@ class Product(BaseModel):
             self.name = name
         if type is not None:
             self.type = type
+        if seat_unit is not None:
+            self.seat_unit = seat_unit
 
     @property
     def id(self):
@@ -125,3 +133,26 @@ class Product(BaseModel):
                 )
 
         self._type = type
+
+    @property
+    def seat_unit(self):
+        """Gets the seat_unit of this Product.  # noqa: E501
+
+        The unit of the per seat product. e.g. \"user\", \"organisation\", \"SMS\", etc  # noqa: E501
+
+        :return: The seat_unit of this Product.  # noqa: E501
+        :rtype: str
+        """
+        return self._seat_unit
+
+    @seat_unit.setter
+    def seat_unit(self, seat_unit):
+        """Sets the seat_unit of this Product.
+
+        The unit of the per seat product. e.g. \"user\", \"organisation\", \"SMS\", etc  # noqa: E501
+
+        :param seat_unit: The seat_unit of this Product.  # noqa: E501
+        :type: str
+        """
+
+        self._seat_unit = seat_unit
