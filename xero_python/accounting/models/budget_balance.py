@@ -31,8 +31,8 @@ class BudgetBalance(BaseModel):
     """
     openapi_types = {
         "period": "date[ms-format]",
-        "amount": "int",
-        "unit_amount": "int",
+        "amount": "float",
+        "unit_amount": "float",
         "notes": "str",
     }
 
@@ -93,7 +93,7 @@ class BudgetBalance(BaseModel):
         LineItem Quantity  # noqa: E501
 
         :return: The amount of this BudgetBalance.  # noqa: E501
-        :rtype: int
+        :rtype: float
         """
         return self._amount
 
@@ -104,7 +104,7 @@ class BudgetBalance(BaseModel):
         LineItem Quantity  # noqa: E501
 
         :param amount: The amount of this BudgetBalance.  # noqa: E501
-        :type: int
+        :type: float
         """
 
         self._amount = amount
@@ -116,7 +116,7 @@ class BudgetBalance(BaseModel):
         Budgeted amount  # noqa: E501
 
         :return: The unit_amount of this BudgetBalance.  # noqa: E501
-        :rtype: int
+        :rtype: float
         """
         return self._unit_amount
 
@@ -127,7 +127,7 @@ class BudgetBalance(BaseModel):
         Budgeted amount  # noqa: E501
 
         :param unit_amount: The unit_amount of this BudgetBalance.  # noqa: E501
-        :type: int
+        :type: float
         """
 
         self._unit_amount = unit_amount

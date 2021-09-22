@@ -1828,12 +1828,16 @@ ul.nav-tabs {
       "x-is-msdate" : true
     },
     "Amount" : {
-      "type" : "integer",
-      "description" : "LineItem Quantity"
+      "type" : "number",
+      "description" : "LineItem Quantity",
+      "format" : "double",
+      "x-is-money" : true
     },
     "UnitAmount" : {
-      "type" : "integer",
-      "description" : "Budgeted amount"
+      "type" : "number",
+      "description" : "Budgeted amount",
+      "format" : "double",
+      "x-is-money" : true
     },
     "Notes" : {
       "maxLength" : 255,
@@ -5936,7 +5940,7 @@ ul.nav-tabs {
           <nav id="scrollingNav">
             <ul class="sidenav nav nav-list">
               <li class="nav-header" data-group="Accounting"><strong>SDK: </strong><span id='sdk-name'></span></li>
-              <li class="nav-header" data-group="Accounting"><strong>VSN: </strong>1.9.0</li>
+              <li class="nav-header" data-group="Accounting"><strong>VSN: </strong>1.10.0b1</li>
               <li class="nav-header" data-group="Accounting"><a href="#api-Accounting">Methods</a></li>
               <li data-group="Accounting" data-name="createAccount" class="">
                 <a href="#api-Accounting-createAccount">createAccount</a>
