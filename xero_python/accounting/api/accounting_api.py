@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.16.6
+    OpenAPI spec version: 2.16.7
 """
 
 import importlib
@@ -7559,14 +7559,18 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         budget_id,
+        date_to=empty,
+        date_from=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
     ):
-        """Retrieves a specific budgets, which includes budget lines  # noqa: E501
+        """Retrieves a specific budget, which includes budget lines  # noqa: E501
         OAuth2 scope: accounting.budgets.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str budget_id: Unique identifier for Budgets (required)
+        :param date date_to: Filter by start date
+        :param date date_from: Filter by end date
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -7592,6 +7596,12 @@ class AccountingApi(object):
         }
 
         query_params = []
+
+        if date_to is not empty:
+            query_params.append(("DateTo", date_to))
+
+        if date_from is not empty:
+            query_params.append(("DateFrom", date_from))
 
         header_params = {
             "xero-tenant-id": xero_tenant_id,

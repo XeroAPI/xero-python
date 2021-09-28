@@ -193,8 +193,8 @@ class EarningsRate(BaseModel):
             "StatutorySharedParentalPayNonPensionable",
             "StatutorySickPay",
             "StatutorySickPayNonPensionable",
-            "Tips(Direct)",
-            "Tips(Non-Direct)",
+            "TipsNonDirect",
+            "TipsDirect",
             "TerminationPay",
             "None",
         ]  # noqa: E501
