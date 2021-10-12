@@ -3045,7 +3045,7 @@ api_instance = PayrollUkApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 filter = 'firstName==John,lastName==Smith' # str | Filter by first name and/or lastname (optional)
-page = 56 # int | Page number which specifies the set of records to retrieve. By default the number of the records per set is 100. (optional)
+page = 5 # int | Page number which specifies the set of records to retrieve. By default the number of the records per set is 100. (optional)
 try:
     # Retrieves employees
     api_response = api_instance.get_employees(xero_tenant_id, filter=filter, page=page)
@@ -3903,7 +3903,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_timesheets**
-> Timesheets get_timesheets(xero_tenant_id, page=page, filter=filter)
+> Timesheets get_timesheets(xero_tenant_id, page=page, filter=filter, status=status, start_date=start_date, end_date=end_date, sort=sort)
 
 Retrieves timesheets
 
@@ -3934,11 +3934,15 @@ api_client = ApiClient(
 api_instance = PayrollUkApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
-page = 56 # int | Page number which specifies the set of records to retrieve. By default the number of the records per set is 100. (optional)
-filter = 'employeeId==00000000-0000-0000-0000-000000000000,payrollCalendarId==00000000-0000-0000-0000-000000000000' # str | Filter by first name and/or lastname (optional)
+page = 5 # int | Page number which specifies the set of records to retrieve. By default the number of the records per set is 100. (optional)
+filter = 'employeeId==00000000-0000-0000-0000-000000000000,payrollCalendarId==00000000-0000-0000-0000-000000000000' # str | Filter by employeeId and/or payrollCalendarId (optional)
+status = 'Draft' # str | filter results by any timesheets with a matching timesheet status (optional)
+start_date = '2019-01-02' # str | filter results by any timesheets with a startDate on or after the provided date (optional)
+end_date = '2020-01-02' # str | filter results by any timesheets with a endDate on or before the provided date (optional)
+sort = 'startDate' # str | sort the order of timesheets returned. The default is based on the timesheets createdDate, sorted oldest to newest. Currently, the only other option is to reverse the order based on the timesheets startDate, sorted newest to oldest. (optional)
 try:
     # Retrieves timesheets
-    api_response = api_instance.get_timesheets(xero_tenant_id, page=page, filter=filter)
+    api_response = api_instance.get_timesheets(xero_tenant_id, page=page, filter=filter, status=status, start_date=start_date, end_date=end_date, sort=sort)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PayrollUkApi->get_timesheets: %s\n" % e)
@@ -3950,7 +3954,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **page** | **int**| Page number which specifies the set of records to retrieve. By default the number of the records per set is 100. | [optional] 
- **filter** | **str**| Filter by first name and/or lastname | [optional] 
+ **filter** | **str**| Filter by employeeId and/or payrollCalendarId | [optional] 
+ **status** | **str**| filter results by any timesheets with a matching timesheet status | [optional] 
+ **start_date** | **str**| filter results by any timesheets with a startDate on or after the provided date | [optional] 
+ **end_date** | **str**| filter results by any timesheets with a endDate on or before the provided date | [optional] 
+ **sort** | **str**| sort the order of timesheets returned. The default is based on the timesheets createdDate, sorted oldest to newest. Currently, the only other option is to reverse the order based on the timesheets startDate, sorted newest to oldest. | [optional] 
 
 ### Return type
 

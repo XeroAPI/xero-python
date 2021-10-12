@@ -38,6 +38,9 @@ class BankTransfer(BaseModel):
         "currency_rate": "float",
         "from_bank_transaction_id": "str",
         "to_bank_transaction_id": "str",
+        "from_is_reconciled": "bool",
+        "to_is_reconciled": "bool",
+        "reference": "str",
         "has_attachments": "bool",
         "created_date_utc": "datetime[ms-format]",
         "validation_errors": "list[ValidationError]",
@@ -52,6 +55,9 @@ class BankTransfer(BaseModel):
         "currency_rate": "CurrencyRate",
         "from_bank_transaction_id": "FromBankTransactionID",
         "to_bank_transaction_id": "ToBankTransactionID",
+        "from_is_reconciled": "FromIsReconciled",
+        "to_is_reconciled": "ToIsReconciled",
+        "reference": "Reference",
         "has_attachments": "HasAttachments",
         "created_date_utc": "CreatedDateUTC",
         "validation_errors": "ValidationErrors",
@@ -67,6 +73,9 @@ class BankTransfer(BaseModel):
         currency_rate=None,
         from_bank_transaction_id=None,
         to_bank_transaction_id=None,
+        from_is_reconciled=False,
+        to_is_reconciled=False,
+        reference=None,
         has_attachments=False,
         created_date_utc=None,
         validation_errors=None,
@@ -81,6 +90,9 @@ class BankTransfer(BaseModel):
         self._currency_rate = None
         self._from_bank_transaction_id = None
         self._to_bank_transaction_id = None
+        self._from_is_reconciled = None
+        self._to_is_reconciled = None
+        self._reference = None
         self._has_attachments = None
         self._created_date_utc = None
         self._validation_errors = None
@@ -99,6 +111,12 @@ class BankTransfer(BaseModel):
             self.from_bank_transaction_id = from_bank_transaction_id
         if to_bank_transaction_id is not None:
             self.to_bank_transaction_id = to_bank_transaction_id
+        if from_is_reconciled is not None:
+            self.from_is_reconciled = from_is_reconciled
+        if to_is_reconciled is not None:
+            self.to_is_reconciled = to_is_reconciled
+        if reference is not None:
+            self.reference = reference
         if has_attachments is not None:
             self.has_attachments = has_attachments
         if created_date_utc is not None:
@@ -297,6 +315,75 @@ class BankTransfer(BaseModel):
         """
 
         self._to_bank_transaction_id = to_bank_transaction_id
+
+    @property
+    def from_is_reconciled(self):
+        """Gets the from_is_reconciled of this BankTransfer.  # noqa: E501
+
+        The Bank Transaction boolean to show if it is reconciled for the source account  # noqa: E501
+
+        :return: The from_is_reconciled of this BankTransfer.  # noqa: E501
+        :rtype: bool
+        """
+        return self._from_is_reconciled
+
+    @from_is_reconciled.setter
+    def from_is_reconciled(self, from_is_reconciled):
+        """Sets the from_is_reconciled of this BankTransfer.
+
+        The Bank Transaction boolean to show if it is reconciled for the source account  # noqa: E501
+
+        :param from_is_reconciled: The from_is_reconciled of this BankTransfer.  # noqa: E501
+        :type: bool
+        """
+
+        self._from_is_reconciled = from_is_reconciled
+
+    @property
+    def to_is_reconciled(self):
+        """Gets the to_is_reconciled of this BankTransfer.  # noqa: E501
+
+        The Bank Transaction boolean to show if it is reconciled for the destination account  # noqa: E501
+
+        :return: The to_is_reconciled of this BankTransfer.  # noqa: E501
+        :rtype: bool
+        """
+        return self._to_is_reconciled
+
+    @to_is_reconciled.setter
+    def to_is_reconciled(self, to_is_reconciled):
+        """Sets the to_is_reconciled of this BankTransfer.
+
+        The Bank Transaction boolean to show if it is reconciled for the destination account  # noqa: E501
+
+        :param to_is_reconciled: The to_is_reconciled of this BankTransfer.  # noqa: E501
+        :type: bool
+        """
+
+        self._to_is_reconciled = to_is_reconciled
+
+    @property
+    def reference(self):
+        """Gets the reference of this BankTransfer.  # noqa: E501
+
+        Reference for the transactions.  # noqa: E501
+
+        :return: The reference of this BankTransfer.  # noqa: E501
+        :rtype: str
+        """
+        return self._reference
+
+    @reference.setter
+    def reference(self, reference):
+        """Sets the reference of this BankTransfer.
+
+        Reference for the transactions.  # noqa: E501
+
+        :param reference: The reference of this BankTransfer.  # noqa: E501
+        :type: str
+        """
+
+        self._reference = reference
 
     @property
     def has_attachments(self):

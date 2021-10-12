@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.16.1
+    OpenAPI spec version: 2.17.1
 """
 
 import importlib
@@ -861,7 +861,7 @@ class PayrollAuApi(object):
         """Retrieves leave applications  # noqa: E501
         OAuth2 scope: payroll.employees, payroll.employees.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
-        :param str if_modified_since: Only records created or modified since this timestamp will be returned
+        :param datetime if_modified_since: Only records created or modified since this timestamp will be returned
         :param str where: Filter by an any element
         :param str order: Order by an any element
         :param int page: e.g. page=1 – Up to 100 objects will be returned in a single API call
@@ -947,7 +947,7 @@ class PayrollAuApi(object):
         """Retrieves pay items  # noqa: E501
         OAuth2 scope: payroll.settings, payroll.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
-        :param str if_modified_since: Only records created or modified since this timestamp will be returned
+        :param datetime if_modified_since: Only records created or modified since this timestamp will be returned
         :param str where: Filter by an any element
         :param str order: Order by an any element
         :param int page: e.g. page=1 – Up to 100 objects will be returned in a single API call
@@ -1109,7 +1109,7 @@ class PayrollAuApi(object):
         """Retrieves pay runs  # noqa: E501
         OAuth2 scope: payroll.payruns, payroll.payruns.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
-        :param str if_modified_since: Only records created or modified since this timestamp will be returned
+        :param datetime if_modified_since: Only records created or modified since this timestamp will be returned
         :param str where: Filter by an any element
         :param str order: Order by an any element
         :param int page: e.g. page=1 – Up to 100 PayRuns will be returned in a single API call
@@ -1271,7 +1271,7 @@ class PayrollAuApi(object):
         """Retrieves payroll calendars  # noqa: E501
         OAuth2 scope: payroll.settings, payroll.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
-        :param str if_modified_since: Only records created or modified since this timestamp will be returned
+        :param datetime if_modified_since: Only records created or modified since this timestamp will be returned
         :param str where: Filter by an any element
         :param str order: Order by an any element
         :param int page: e.g. page=1 – Up to 100 objects will be returned in a single API call
@@ -1651,7 +1651,7 @@ class PayrollAuApi(object):
         """Retrieves superfunds  # noqa: E501
         OAuth2 scope: payroll.settings, payroll.settings.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
-        :param str if_modified_since: Only records created or modified since this timestamp will be returned
+        :param datetime if_modified_since: Only records created or modified since this timestamp will be returned
         :param str where: Filter by an any element
         :param str order: Order by an any element
         :param int page: e.g. page=1 – Up to 100 SuperFunds will be returned in a single API call
@@ -1813,7 +1813,7 @@ class PayrollAuApi(object):
         """Retrieves timesheets  # noqa: E501
         OAuth2 scope: payroll.timesheets, payroll.timesheets.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
-        :param str if_modified_since: Only records created or modified since this timestamp will be returned
+        :param datetime if_modified_since: Only records created or modified since this timestamp will be returned
         :param str where: Filter by an any element
         :param str order: Order by an any element
         :param int page: e.g. page=1 – Up to 100 timesheets will be returned in a single API call

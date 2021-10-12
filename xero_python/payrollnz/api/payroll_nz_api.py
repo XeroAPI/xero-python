@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.16.1
+    OpenAPI spec version: 2.17.1
 """
 
 import importlib
@@ -3332,8 +3332,7 @@ class PayrollNzApi(object):
     def get_employees(
         self,
         xero_tenant_id,
-        first_name=empty,
-        last_name=empty,
+        filter=empty,
         page=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -3342,8 +3341,7 @@ class PayrollNzApi(object):
         """Retrieves employees  # noqa: E501
         OAuth2 scope: payroll.employees, payroll.employees.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
-        :param str first_name: Filter by first name
-        :param str last_name: Filter by last name
+        :param str filter: Filter by first name and/or lastname
         :param int page: Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -3363,11 +3361,8 @@ class PayrollNzApi(object):
 
         query_params = []
 
-        if first_name is not empty:
-            query_params.append(("firstName", first_name))
-
-        if last_name is not empty:
-            query_params.append(("lastName", last_name))
+        if filter is not empty:
+            query_params.append(("filter", filter))
 
         if page is not empty:
             query_params.append(("page", page))
@@ -4605,8 +4600,11 @@ class PayrollNzApi(object):
         self,
         xero_tenant_id,
         page=empty,
-        employee_id=empty,
-        payroll_calendar_id=empty,
+        filter=empty,
+        status=empty,
+        start_date=empty,
+        end_date=empty,
+        sort=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -4615,8 +4613,11 @@ class PayrollNzApi(object):
         OAuth2 scope: payroll.timesheets, payroll.timesheets.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param int page: Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
-        :param str employee_id: By default get Timesheets will return the timesheets for all employees in an organization. You can add GET https://…/timesheets?filter=employeeId=={EmployeeID} to get only the timesheets of a particular employee.
-        :param str payroll_calendar_id: By default get Timesheets will return all the timesheets for an organization. You can add GET https://…/timesheets?filter=payrollCalendarId=={PayrollCalendarID} to filter the timesheets by payroll calendar id
+        :param str filter: Filter by employeeId and/or payrollCalendarId
+        :param str status: filter results by any timesheets with a matching timesheet status
+        :param str start_date: filter results by any timesheets with a startDate on or after the provided date
+        :param str end_date: filter results by any timesheets with a endDate on or before the provided date
+        :param str sort: sort the order of timesheets returned. The default is based on the timesheets createdDate, sorted oldest to newest. Currently, the only other option is to reverse the order based on the timesheets startDate, sorted newest to oldest.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -4638,11 +4639,20 @@ class PayrollNzApi(object):
         if page is not empty:
             query_params.append(("page", page))
 
-        if employee_id is not empty:
-            query_params.append(("employeeId", employee_id))
+        if filter is not empty:
+            query_params.append(("filter", filter))
 
-        if payroll_calendar_id is not empty:
-            query_params.append(("payrollCalendarId", payroll_calendar_id))
+        if status is not empty:
+            query_params.append(("status", status))
+
+        if start_date is not empty:
+            query_params.append(("startDate", start_date))
+
+        if end_date is not empty:
+            query_params.append(("endDate", end_date))
+
+        if sort is not empty:
+            query_params.append(("sort", sort))
 
         header_params = {
             "Xero-Tenant-Id": xero_tenant_id,
