@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.16.1
+    OpenAPI spec version: 2.17.1
 """
 
 import importlib
@@ -4835,6 +4835,10 @@ class PayrollUkApi(object):
         xero_tenant_id,
         page=empty,
         filter=empty,
+        status=empty,
+        start_date=empty,
+        end_date=empty,
+        sort=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -4843,7 +4847,11 @@ class PayrollUkApi(object):
         OAuth2 scope: payroll.timesheets, payroll.timesheets.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param int page: Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
-        :param str filter: Filter by first name and/or lastname
+        :param str filter: Filter by employeeId and/or payrollCalendarId
+        :param str status: filter results by any timesheets with a matching timesheet status
+        :param str start_date: filter results by any timesheets with a startDate on or after the provided date
+        :param str end_date: filter results by any timesheets with a endDate on or before the provided date
+        :param str sort: sort the order of timesheets returned. The default is based on the timesheets createdDate, sorted oldest to newest. Currently, the only other option is to reverse the order based on the timesheets startDate, sorted newest to oldest.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -4867,6 +4875,18 @@ class PayrollUkApi(object):
 
         if filter is not empty:
             query_params.append(("filter", filter))
+
+        if status is not empty:
+            query_params.append(("status", status))
+
+        if start_date is not empty:
+            query_params.append(("startDate", start_date))
+
+        if end_date is not empty:
+            query_params.append(("endDate", end_date))
+
+        if sort is not empty:
+            query_params.append(("sort", sort))
 
         header_params = {
             "Xero-Tenant-Id": xero_tenant_id,

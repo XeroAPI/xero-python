@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.16.1
+    OpenAPI spec version: 2.17.1
 """
 
 import importlib
@@ -7559,14 +7559,18 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         budget_id,
+        date_to=empty,
+        date_from=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
     ):
-        """Retrieves a specific budgets, which includes budget lines  # noqa: E501
+        """Retrieves a specific budget, which includes budget lines  # noqa: E501
         OAuth2 scope: accounting.budgets.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str budget_id: Unique identifier for Budgets (required)
+        :param date date_to: Filter by start date
+        :param date date_from: Filter by end date
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -7592,6 +7596,12 @@ class AccountingApi(object):
         }
 
         query_params = []
+
+        if date_to is not empty:
+            query_params.append(("DateTo", date_to))
+
+        if date_from is not empty:
+            query_params.append(("DateFrom", date_from))
 
         header_params = {
             "xero-tenant-id": xero_tenant_id,
@@ -8450,6 +8460,7 @@ class AccountingApi(object):
         page=empty,
         include_archived=empty,
         summary_only=empty,
+        search_term=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -8464,6 +8475,7 @@ class AccountingApi(object):
         :param int page: e.g. page=1 - Up to 100 contacts will be returned in a single API call.
         :param bool include_archived: e.g. includeArchived=true - Contacts with a status of ARCHIVED will be included in the response
         :param bool summary_only: Use summaryOnly=true in GET Contacts and Invoices endpoint to retrieve a smaller version of the response object. This returns only lightweight fields, excluding computation-heavy fields from the response, making the API calls quick and efficient.
+        :param str search_term: Search parameter that performs a case-insensitive text search across the Name, FirstName, LastName, ContactNumber and EmailAddress fields.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -8501,6 +8513,9 @@ class AccountingApi(object):
 
         if summary_only is not empty:
             query_params.append(("summaryOnly", summary_only))
+
+        if search_term is not empty:
+            query_params.append(("searchTerm", search_term))
 
         header_params = {
             "xero-tenant-id": xero_tenant_id,

@@ -1512,6 +1512,22 @@ ul.nav-tabs {
       "format" : "uuid",
       "readOnly" : true
     },
+    "FromIsReconciled" : {
+      "type" : "boolean",
+      "description" : "The Bank Transaction boolean to show if it is reconciled for the source account",
+      "example" : false,
+      "default" : false
+    },
+    "ToIsReconciled" : {
+      "type" : "boolean",
+      "description" : "The Bank Transaction boolean to show if it is reconciled for the destination account",
+      "example" : false,
+      "default" : false
+    },
+    "Reference" : {
+      "type" : "string",
+      "description" : "Reference for the transactions."
+    },
     "HasAttachments" : {
       "type" : "boolean",
       "description" : "Boolean to indicate if a Bank Transfer has an attachment",
@@ -1828,12 +1844,16 @@ ul.nav-tabs {
       "x-is-msdate" : true
     },
     "Amount" : {
-      "type" : "integer",
-      "description" : "LineItem Quantity"
+      "type" : "number",
+      "description" : "LineItem Quantity",
+      "format" : "double",
+      "x-is-money" : true
     },
     "UnitAmount" : {
-      "type" : "integer",
-      "description" : "Budgeted amount"
+      "type" : "number",
+      "description" : "Budgeted amount",
+      "format" : "double",
+      "x-is-money" : true
     },
     "Notes" : {
       "maxLength" : 255,
@@ -5936,7 +5956,7 @@ ul.nav-tabs {
           <nav id="scrollingNav">
             <ul class="sidenav nav nav-list">
               <li class="nav-header" data-group="Accounting"><strong>SDK: </strong><span id='sdk-name'></span></li>
-              <li class="nav-header" data-group="Accounting"><strong>VSN: </strong>1.9.0</li>
+              <li class="nav-header" data-group="Accounting"><strong>VSN: </strong>1.10.0b2</li>
               <li class="nav-header" data-group="Accounting"><a href="#api-Accounting">Methods</a></li>
               <li data-group="Accounting" data-name="createAccount" class="">
                 <a href="#api-Accounting-createAccount">createAccount</a>
@@ -7642,7 +7662,7 @@ Xero identifier for Tenant
       "schema" : {
         "$ref" : "#/components/schemas/BankTransfers"
       },
-      "example" : "{ \"BankTransfers\": [ { \"FromBankAccount\": { \"Code\": \"090\", \"Name\": \"My Savings\", \"AccountID\": \"00000000-0000-0000-0000-000000000000\", \"Type\": \"BANK\", \"BankAccountNumber\": \"123455\", \"Status\": \"ACTIVE\", \"BankAccountType\": \"BANK\", \"CurrencyCode\": \"USD\", \"TaxType\": \"NONE\", \"EnablePaymentsToAccount\": false, \"ShowInExpenseClaims\": false, \"Class\": \"ASSET\", \"ReportingCode\": \"ASS\", \"ReportingCodeName\": \"Assets\", \"HasAttachments\": false, \"UpdatedDateUTC\": \"2016-10-17T13:45:33.993-07:00\" }, \"ToBankAccount\": { \"Code\": \"088\", \"Name\": \"Business Wells Fargo\", \"AccountID\": \"00000000-0000-0000-0000-000000000000\", \"Type\": \"BANK\", \"BankAccountNumber\": \"123455\", \"Status\": \"ACTIVE\", \"BankAccountType\": \"BANK\", \"CurrencyCode\": \"USD\", \"TaxType\": \"NONE\", \"EnablePaymentsToAccount\": false, \"ShowInExpenseClaims\": false, \"Class\": \"ASSET\", \"ReportingCode\": \"ASS\", \"ReportingCodeName\": \"Assets\", \"HasAttachments\": false, \"UpdatedDateUTC\": \"2016-06-03T08:31:14.517-07:00\" }, \"Amount\": \"50.00\" } ] }"
+      "example" : "{ \"BankTransfers\": [ { \"FromBankAccount\": { \"Code\": \"090\", \"Name\": \"My Savings\", \"AccountID\": \"00000000-0000-0000-0000-000000000000\", \"Type\": \"BANK\", \"BankAccountNumber\": \"123455\", \"Status\": \"ACTIVE\", \"BankAccountType\": \"BANK\", \"CurrencyCode\": \"USD\", \"TaxType\": \"NONE\", \"EnablePaymentsToAccount\": false, \"ShowInExpenseClaims\": false, \"Class\": \"ASSET\", \"ReportingCode\": \"ASS\", \"ReportingCodeName\": \"Assets\", \"HasAttachments\": false, \"UpdatedDateUTC\": \"2016-10-17T13:45:33.993-07:00\" }, \"ToBankAccount\": { \"Code\": \"088\", \"Name\": \"Business Wells Fargo\", \"AccountID\": \"00000000-0000-0000-0000-000000000000\", \"Type\": \"BANK\", \"BankAccountNumber\": \"123455\", \"Status\": \"ACTIVE\", \"BankAccountType\": \"BANK\", \"CurrencyCode\": \"USD\", \"TaxType\": \"NONE\", \"EnablePaymentsToAccount\": false, \"ShowInExpenseClaims\": false, \"Class\": \"ASSET\", \"ReportingCode\": \"ASS\", \"ReportingCodeName\": \"Assets\", \"HasAttachments\": false, \"UpdatedDateUTC\": \"2016-06-03T08:31:14.517-07:00\" }, \"Amount\": \"50.00\", \"FromIsReconciled\": true, \"ToIsReconciled\": true, \"Reference\": \"Sub 098801\" } ] }"
     }
   },
   "required" : true
@@ -20659,7 +20679,7 @@ Xero identifier for Tenant
                 <article id="api-Accounting-getBudget-0" data-group="User" data-name="getBudget" data-version="0">
                   <div class="pull-left">
                     <h1>getBudget</h1>
-                    <p>Retrieves a specific budgets, which includes budget lines</p>
+                    <p>Retrieves a specific budget, which includes budget lines</p>
                   </div>
                   <div class="pull-right"></div>
                   <div class="clearfix"></div>
@@ -20695,9 +20715,11 @@ def accounting_get_budget():
     api_instance = AccountingApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
     budget_id = '00000000-0000-0000-0000-000000000000'
+    date_to = dateutil.parser.parse("2019-10-31")
+    date_from = dateutil.parser.parse("2019-10-31")
     
     try:
-        api_response = api_instance.get_budget(xero_tenant_id, budget_id)
+        api_response = api_instance.get_budget(xero_tenant_id, budget_id, date_to, date_from)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->getBudget: %s\n" % e)</code></pre>
@@ -20776,6 +20798,59 @@ Xero identifier for Tenant
 </tr>
 
                   </table>
+                  <div class="methodsubtabletitle">Query parameters</div>
+                  <table id="methodsubtable">
+                    <tr>
+                      <th width="150px">Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr><td style="width:150px;">DateTo</td>
+<td>
+
+
+    <div id="d2e199_getBudget_dateTo">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    date
+                </span>
+                    <span class="format">
+                        (date)
+                    </span>
+
+                    <div class="inner description marked">
+Filter by start date
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">DateFrom</td>
+<td>
+
+
+    <div id="d2e199_getBudget_dateFrom">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    date
+                </span>
+                    <span class="format">
+                        (date)
+                    </span>
+
+                    <div class="inner description marked">
+Filter by end date
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                  </table>
                 </article>
               </div>
               <hr>
@@ -20819,11 +20894,11 @@ def accounting_get_budgets():
     api_instance = AccountingApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
     ids = [&quot;00000000-0000-0000-0000-000000000000&quot;]
-    dateTo = dateutil.parser.parse("2013-10-20")
-    dateFrom = dateutil.parser.parse("2013-10-20")
+    date_to = dateutil.parser.parse("2019-10-31")
+    date_from = dateutil.parser.parse("2019-10-31")
     
     try:
-        api_response = api_instance.get_budgets(xero_tenant_id, ids, dateTo, dateFrom)
+        api_response = api_instance.get_budgets(xero_tenant_id, ids, date_to, date_from)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->getBudgets: %s\n" % e)</code></pre>
@@ -22265,9 +22340,10 @@ def accounting_get_contacts():
     ids = [&quot;00000000-0000-0000-0000-000000000000&quot;]
     include_archived = 'true'
     summary_only = 'true'
+    search_term = 'searchTerm=Joe Bloggs'
     
     try:
-        api_response = api_instance.get_contacts(xero_tenant_id, if_modified_since, where, order, ids, page, include_archived, summary_only)
+        api_response = api_instance.get_contacts(xero_tenant_id, if_modified_since, where, order, ids, page, include_archived, summary_only, search_term)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->getContacts: %s\n" % e)</code></pre>
@@ -22463,6 +22539,26 @@ e.g. includeArchived=true - Contacts with a status of ARCHIVED will be included 
 
                     <div class="inner description marked">
 Use summaryOnly=true in GET Contacts and Invoices endpoint to retrieve a smaller version of the response object. This returns only lightweight fields, excluding computation-heavy fields from the response, making the API calls quick and efficient.
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">searchTerm</td>
+<td>
+
+
+    <div id="d2e199_getContacts_searchTerm">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+Search parameter that performs a case-insensitive text search across the Name, FirstName, LastName, ContactNumber and EmailAddress fields.
                     </div>
             </div>
         </div>
@@ -26442,10 +26538,10 @@ def accounting_get_journals():
     api_instance = AccountingApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
     if_modified_since = dateutil.parser.parse("2020-02-06T12:17:43.202-08:00")
-    paymentsOnly = 'true'
+    payments_only = 'true'
     
     try:
-        api_response = api_instance.get_journals(xero_tenant_id, if_modified_since, offset, paymentsOnly)
+        api_response = api_instance.get_journals(xero_tenant_id, if_modified_since, offset, payments_only)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->getJournals: %s\n" % e)</code></pre>
@@ -30643,12 +30739,12 @@ def accounting_get_purchase_orders():
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
     if_modified_since = dateutil.parser.parse("2020-02-06T12:17:43.202-08:00")
     status = 'SUBMITTED'
-    dateFrom = '2019-12-01'
-    dateTo = '2019-12-31'
+    date_from = '2019-12-01'
+    date_to = '2019-12-31'
     order = 'PurchaseOrderNumber ASC'
     
     try:
-        api_response = api_instance.get_purchase_orders(xero_tenant_id, if_modified_since, status, dateFrom, dateTo, order, page)
+        api_response = api_instance.get_purchase_orders(xero_tenant_id, if_modified_since, status, date_from, date_to, order, page)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->getPurchaseOrders: %s\n" % e)</code></pre>
@@ -31922,10 +32018,10 @@ def accounting_get_quotes():
     api_instance = AccountingApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
     if_modified_since = dateutil.parser.parse("2020-02-06T12:17:43.202-08:00")
-    date_from = dateutil.parser.parse("2013-10-20")
-    date_to = dateutil.parser.parse("2013-10-20")
-    expiry_date_from = dateutil.parser.parse("2013-10-20")
-    expiry_date_to = dateutil.parser.parse("2013-10-20")
+    date_from = dateutil.parser.parse("2019-10-31")
+    date_to = dateutil.parser.parse("2019-10-31")
+    expiry_date_from = dateutil.parser.parse("2019-10-31")
+    expiry_date_to = dateutil.parser.parse("2019-10-31")
     contact_id = '00000000-0000-0000-0000-000000000000'
     status = 'DRAFT'
     order = 'Status ASC'
@@ -34098,9 +34194,9 @@ def accounting_get_report_aged_payables_by_contact():
     api_instance = AccountingApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
     contact_id = '00000000-0000-0000-0000-000000000000'
-    date = dateutil.parser.parse("2013-10-20")
-    from_date = dateutil.parser.parse("2013-10-20")
-    to_date = dateutil.parser.parse("2013-10-20")
+    date = dateutil.parser.parse("2019-10-31")
+    from_date = dateutil.parser.parse("2019-10-31")
+    to_date = dateutil.parser.parse("2019-10-31")
     
     try:
         api_response = api_instance.get_report_aged_payables_by_contact(xero_tenant_id, contact_id, date, from_date, to_date)
@@ -34294,9 +34390,9 @@ def accounting_get_report_aged_receivables_by_contact():
     api_instance = AccountingApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
     contact_id = '00000000-0000-0000-0000-000000000000'
-    date = dateutil.parser.parse("2013-10-20")
-    from_date = dateutil.parser.parse("2013-10-20")
-    to_date = dateutil.parser.parse("2013-10-20")
+    date = dateutil.parser.parse("2019-10-31")
+    from_date = dateutil.parser.parse("2019-10-31")
+    to_date = dateutil.parser.parse("2019-10-31")
     
     try:
         api_response = api_instance.get_report_aged_receivables_by_contact(xero_tenant_id, contact_id, date, from_date, to_date)
@@ -34490,14 +34586,14 @@ def accounting_get_report_balance_sheet():
     api_instance = AccountingApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
     date = dateutil.parser.parse("2019-11-01")
-    time_frame = 'MONTH'
+    timeframe = 'MONTH'
     tracking_option_id_1 = '00000000-0000-0000-0000-000000000000'
     tracking_option_id_2 = '00000000-0000-0000-0000-000000000000'
     standard_layout = 'true'
     payments_only = 'false'
     
     try:
-        api_response = api_instance.get_report_balance_sheet(xero_tenant_id, date, periods, time_frame, tracking_option_id_1, tracking_option_id_2, standard_layout, payments_only)
+        api_response = api_instance.get_report_balance_sheet(xero_tenant_id, date, periods, timeframe, tracking_option_id_1, tracking_option_id_2, standard_layout, payments_only)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->getReportBalanceSheet: %s\n" % e)</code></pre>
@@ -34735,8 +34831,8 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_get_report_bank_summary():
     api_instance = AccountingApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
-    from_date = dateutil.parser.parse("2013-10-20")
-    to_date = dateutil.parser.parse("2013-10-20")
+    from_date = dateutil.parser.parse("2019-10-31")
+    to_date = dateutil.parser.parse("2019-10-31")
     
     try:
         api_response = api_instance.get_report_bank_summary(xero_tenant_id, from_date, to_date)
@@ -34883,7 +34979,7 @@ def accounting_get_report_budget_summary():
     date = dateutil.parser.parse("2019-03-31")
     
     try:
-        api_response = api_instance.get_report_budget_summary(xero_tenant_id, date, periods, time_frame)
+        api_response = api_instance.get_report_budget_summary(xero_tenant_id, date, periods, timeframe)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->getReportBudgetSummary: %s\n" % e)</code></pre>
@@ -35283,9 +35379,9 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_get_report_profit_and_loss():
     api_instance = AccountingApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
-    from_date = dateutil.parser.parse("2013-10-20")
-    to_date = dateutil.parser.parse("2013-10-20")
-    time_frame = 'MONTH'
+    from_date = dateutil.parser.parse("2019-10-31")
+    to_date = dateutil.parser.parse("2019-10-31")
+    timeframe = 'MONTH'
     tracking_category_id = '00000000-0000-0000-0000-000000000000'
     tracking_category_id_2 = '00000000-0000-0000-0000-000000000000'
     tracking_option_id = '00000000-0000-0000-0000-000000000000'
@@ -35294,7 +35390,7 @@ def accounting_get_report_profit_and_loss():
     payments_only = 'false'
     
     try:
-        api_response = api_instance.get_report_profit_and_loss(xero_tenant_id, from_date, to_date, periods, time_frame, tracking_category_id, tracking_category_id_2, tracking_option_id, tracking_option_id_2, standard_layout, payments_only)
+        api_response = api_instance.get_report_profit_and_loss(xero_tenant_id, from_date, to_date, periods, timeframe, tracking_category_id, tracking_category_id_2, tracking_option_id, tracking_option_id_2, standard_layout, payments_only)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->getReportProfitAndLoss: %s\n" % e)</code></pre>
