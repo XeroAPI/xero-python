@@ -51,9 +51,12 @@ class LockHistoryModel(BaseModel):
         self._updated_date_utc = None
         self.discriminator = None
 
-        self.hard_lock_date = hard_lock_date
-        self.soft_lock_date = soft_lock_date
-        self.updated_date_utc = updated_date_utc
+        if hard_lock_date is not None:
+            self.hard_lock_date = hard_lock_date
+        if soft_lock_date is not None:
+            self.soft_lock_date = soft_lock_date
+        if updated_date_utc is not None:
+            self.updated_date_utc = updated_date_utc
 
     @property
     def hard_lock_date(self):

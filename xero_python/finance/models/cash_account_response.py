@@ -70,7 +70,8 @@ class CashAccountResponse(BaseModel):
             self.starting_balance = starting_balance
         if account_balance is not None:
             self.account_balance = account_balance
-        self.balance_currency = balance_currency
+        if balance_currency is not None:
+            self.balance_currency = balance_currency
 
     @property
     def unreconciled_amount_pos(self):

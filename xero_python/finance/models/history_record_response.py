@@ -57,12 +57,16 @@ class HistoryRecordResponse(BaseModel):
         self._details = None
         self.discriminator = None
 
-        self.changes = changes
-        self.date_utc_string = date_utc_string
+        if changes is not None:
+            self.changes = changes
+        if date_utc_string is not None:
+            self.date_utc_string = date_utc_string
         if date_utc is not None:
             self.date_utc = date_utc
-        self.user = user
-        self.details = details
+        if user is not None:
+            self.user = user
+        if details is not None:
+            self.details = details
 
     @property
     def changes(self):

@@ -42,7 +42,8 @@ class TrialBalanceEntry(BaseModel):
 
         if value is not None:
             self.value = value
-        self.entry_type = entry_type
+        if entry_type is not None:
+            self.entry_type = entry_type
 
     @property
     def value(self):

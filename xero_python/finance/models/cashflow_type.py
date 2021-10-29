@@ -45,10 +45,12 @@ class CashflowType(BaseModel):
         self._accounts = None
         self.discriminator = None
 
-        self.name = name
+        if name is not None:
+            self.name = name
         if total is not None:
             self.total = total
-        self.accounts = accounts
+        if accounts is not None:
+            self.accounts = accounts
 
     @property
     def name(self):

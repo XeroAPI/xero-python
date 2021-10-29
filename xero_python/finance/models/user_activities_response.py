@@ -51,8 +51,10 @@ class UserActivitiesResponse(BaseModel):
 
         if organisation_id is not None:
             self.organisation_id = organisation_id
-        self.data_month = data_month
-        self.users = users
+        if data_month is not None:
+            self.data_month = data_month
+        if users is not None:
+            self.users = users
 
     @property
     def organisation_id(self):

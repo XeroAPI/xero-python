@@ -64,8 +64,10 @@ class PracticeResponse(BaseModel):
 
         if xero_partner_since is not None:
             self.xero_partner_since = xero_partner_since
-        self.tier = tier
-        self.location = location
+        if tier is not None:
+            self.tier = tier
+        if location is not None:
+            self.location = location
         if organisation_count is not None:
             self.organisation_count = organisation_count
         if staff_certified is not None:

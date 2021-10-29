@@ -51,8 +51,10 @@ class ReportHistoryModel(BaseModel):
         self._published_date_utc = None
         self.discriminator = None
 
-        self.report_name = report_name
-        self.report_date_text = report_date_text
+        if report_name is not None:
+            self.report_name = report_name
+        if report_date_text is not None:
+            self.report_date_text = report_date_text
         if published_date_utc is not None:
             self.published_date_utc = published_date_utc
 

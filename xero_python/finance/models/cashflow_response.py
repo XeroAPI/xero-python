@@ -64,7 +64,8 @@ class CashflowResponse(BaseModel):
             self.end_date = end_date
         if cash_balance is not None:
             self.cash_balance = cash_balance
-        self.cashflow_activities = cashflow_activities
+        if cashflow_activities is not None:
+            self.cashflow_activities = cashflow_activities
 
     @property
     def start_date(self):

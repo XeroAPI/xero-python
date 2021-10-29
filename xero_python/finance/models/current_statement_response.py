@@ -66,14 +66,18 @@ class CurrentStatementResponse(BaseModel):
         self._import_source_type = None
         self.discriminator = None
 
-        self.start_date = start_date
-        self.end_date = end_date
+        if start_date is not None:
+            self.start_date = start_date
+        if end_date is not None:
+            self.end_date = end_date
         if start_balance is not None:
             self.start_balance = start_balance
         if end_balance is not None:
             self.end_balance = end_balance
-        self.imported_date_time_utc = imported_date_time_utc
-        self.import_source_type = import_source_type
+        if imported_date_time_utc is not None:
+            self.imported_date_time_utc = imported_date_time_utc
+        if import_source_type is not None:
+            self.import_source_type = import_source_type
 
     @property
     def start_date(self):

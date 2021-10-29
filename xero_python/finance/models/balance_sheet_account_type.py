@@ -49,8 +49,10 @@ class BalanceSheetAccountType(BaseModel):
         self._total = None
         self.discriminator = None
 
-        self.account_type = account_type
-        self.accounts = accounts
+        if account_type is not None:
+            self.account_type = account_type
+        if accounts is not None:
+            self.accounts = accounts
         if total is not None:
             self.total = total
 

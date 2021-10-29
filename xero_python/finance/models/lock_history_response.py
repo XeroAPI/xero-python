@@ -53,8 +53,10 @@ class LockHistoryResponse(BaseModel):
 
         if organisation_id is not None:
             self.organisation_id = organisation_id
-        self.end_date = end_date
-        self.lock_dates = lock_dates
+        if end_date is not None:
+            self.end_date = end_date
+        if lock_dates is not None:
+            self.lock_dates = lock_dates
 
     @property
     def organisation_id(self):

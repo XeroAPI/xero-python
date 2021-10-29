@@ -51,8 +51,10 @@ class ReportHistoryResponse(BaseModel):
 
         if organisation_id is not None:
             self.organisation_id = organisation_id
-        self.end_date = end_date
-        self.reports = reports
+        if end_date is not None:
+            self.end_date = end_date
+        if reports is not None:
+            self.reports = reports
 
     @property
     def organisation_id(self):

@@ -31,12 +31,14 @@ class Contact(BaseModel):
     """
     openapi_types = {
         "contact_id": "str",
+        "merged_to_contact_id": "str",
         "contact_number": "str",
         "account_number": "str",
         "contact_status": "str",
         "name": "str",
         "first_name": "str",
         "last_name": "str",
+        "company_number": "str",
         "email_address": "str",
         "skype_user_name": "str",
         "contact_persons": "list[ContactPerson]",
@@ -48,6 +50,8 @@ class Contact(BaseModel):
         "phones": "list[Phone]",
         "is_supplier": "bool",
         "is_customer": "bool",
+        "sales_default_line_amount_type": "str",
+        "purchases_default_line_amount_type": "str",
         "default_currency": "CurrencyCode",
         "xero_network_key": "str",
         "sales_default_account_code": "str",
@@ -73,12 +77,14 @@ class Contact(BaseModel):
 
     attribute_map = {
         "contact_id": "ContactID",
+        "merged_to_contact_id": "MergedToContactID",
         "contact_number": "ContactNumber",
         "account_number": "AccountNumber",
         "contact_status": "ContactStatus",
         "name": "Name",
         "first_name": "FirstName",
         "last_name": "LastName",
+        "company_number": "CompanyNumber",
         "email_address": "EmailAddress",
         "skype_user_name": "SkypeUserName",
         "contact_persons": "ContactPersons",
@@ -90,6 +96,8 @@ class Contact(BaseModel):
         "phones": "Phones",
         "is_supplier": "IsSupplier",
         "is_customer": "IsCustomer",
+        "sales_default_line_amount_type": "SalesDefaultLineAmountType",
+        "purchases_default_line_amount_type": "PurchasesDefaultLineAmountType",
         "default_currency": "DefaultCurrency",
         "xero_network_key": "XeroNetworkKey",
         "sales_default_account_code": "SalesDefaultAccountCode",
@@ -116,12 +124,14 @@ class Contact(BaseModel):
     def __init__(
         self,
         contact_id=None,
+        merged_to_contact_id=None,
         contact_number=None,
         account_number=None,
         contact_status=None,
         name=None,
         first_name=None,
         last_name=None,
+        company_number=None,
         email_address=None,
         skype_user_name=None,
         contact_persons=None,
@@ -133,6 +143,8 @@ class Contact(BaseModel):
         phones=None,
         is_supplier=None,
         is_customer=None,
+        sales_default_line_amount_type=None,
+        purchases_default_line_amount_type=None,
         default_currency=None,
         xero_network_key=None,
         sales_default_account_code=None,
@@ -158,12 +170,14 @@ class Contact(BaseModel):
         """Contact - a model defined in OpenAPI"""  # noqa: E501
 
         self._contact_id = None
+        self._merged_to_contact_id = None
         self._contact_number = None
         self._account_number = None
         self._contact_status = None
         self._name = None
         self._first_name = None
         self._last_name = None
+        self._company_number = None
         self._email_address = None
         self._skype_user_name = None
         self._contact_persons = None
@@ -175,6 +189,8 @@ class Contact(BaseModel):
         self._phones = None
         self._is_supplier = None
         self._is_customer = None
+        self._sales_default_line_amount_type = None
+        self._purchases_default_line_amount_type = None
         self._default_currency = None
         self._xero_network_key = None
         self._sales_default_account_code = None
@@ -200,6 +216,8 @@ class Contact(BaseModel):
 
         if contact_id is not None:
             self.contact_id = contact_id
+        if merged_to_contact_id is not None:
+            self.merged_to_contact_id = merged_to_contact_id
         if contact_number is not None:
             self.contact_number = contact_number
         if account_number is not None:
@@ -212,6 +230,8 @@ class Contact(BaseModel):
             self.first_name = first_name
         if last_name is not None:
             self.last_name = last_name
+        if company_number is not None:
+            self.company_number = company_number
         if email_address is not None:
             self.email_address = email_address
         if skype_user_name is not None:
@@ -234,6 +254,10 @@ class Contact(BaseModel):
             self.is_supplier = is_supplier
         if is_customer is not None:
             self.is_customer = is_customer
+        if sales_default_line_amount_type is not None:
+            self.sales_default_line_amount_type = sales_default_line_amount_type
+        if purchases_default_line_amount_type is not None:
+            self.purchases_default_line_amount_type = purchases_default_line_amount_type
         if default_currency is not None:
             self.default_currency = default_currency
         if xero_network_key is not None:
@@ -299,6 +323,29 @@ class Contact(BaseModel):
         """
 
         self._contact_id = contact_id
+
+    @property
+    def merged_to_contact_id(self):
+        """Gets the merged_to_contact_id of this Contact.  # noqa: E501
+
+        ID for the destination of a merged contact. Only returned when using paging or when fetching a contact by ContactId or ContactNumber.  # noqa: E501
+
+        :return: The merged_to_contact_id of this Contact.  # noqa: E501
+        :rtype: str
+        """
+        return self._merged_to_contact_id
+
+    @merged_to_contact_id.setter
+    def merged_to_contact_id(self, merged_to_contact_id):
+        """Sets the merged_to_contact_id of this Contact.
+
+        ID for the destination of a merged contact. Only returned when using paging or when fetching a contact by ContactId or ContactNumber.  # noqa: E501
+
+        :param merged_to_contact_id: The merged_to_contact_id of this Contact.  # noqa: E501
+        :type: str
+        """
+
+        self._merged_to_contact_id = merged_to_contact_id
 
     @property
     def contact_number(self):
@@ -471,6 +518,34 @@ class Contact(BaseModel):
             )  # noqa: E501
 
         self._last_name = last_name
+
+    @property
+    def company_number(self):
+        """Gets the company_number of this Contact.  # noqa: E501
+
+        Company registration number (max length = 50)  # noqa: E501
+
+        :return: The company_number of this Contact.  # noqa: E501
+        :rtype: str
+        """
+        return self._company_number
+
+    @company_number.setter
+    def company_number(self, company_number):
+        """Sets the company_number of this Contact.
+
+        Company registration number (max length = 50)  # noqa: E501
+
+        :param company_number: The company_number of this Contact.  # noqa: E501
+        :type: str
+        """
+        if company_number is not None and len(company_number) > 50:
+            raise ValueError(
+                "Invalid value for `company_number`, "
+                "length must be less than or equal to `50`"
+            )  # noqa: E501
+
+        self._company_number = company_number
 
     @property
     def email_address(self):
@@ -734,6 +809,70 @@ class Contact(BaseModel):
         """
 
         self._is_customer = is_customer
+
+    @property
+    def sales_default_line_amount_type(self):
+        """Gets the sales_default_line_amount_type of this Contact.  # noqa: E501
+
+        The default sales line amount type for a contact. Only available when summaryOnly parameter or paging is used, or when fetch by ContactId or ContactNumber.  # noqa: E501
+
+        :return: The sales_default_line_amount_type of this Contact.  # noqa: E501
+        :rtype: str
+        """
+        return self._sales_default_line_amount_type
+
+    @sales_default_line_amount_type.setter
+    def sales_default_line_amount_type(self, sales_default_line_amount_type):
+        """Sets the sales_default_line_amount_type of this Contact.
+
+        The default sales line amount type for a contact. Only available when summaryOnly parameter or paging is used, or when fetch by ContactId or ContactNumber.  # noqa: E501
+
+        :param sales_default_line_amount_type: The sales_default_line_amount_type of this Contact.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["INCLUSIVE", "EXCLUSIVE", "NONE", "None"]  # noqa: E501
+
+        if sales_default_line_amount_type:
+            if sales_default_line_amount_type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `sales_default_line_amount_type` ({0}), must be one of {1}".format(  # noqa: E501
+                        sales_default_line_amount_type, allowed_values
+                    )
+                )
+
+        self._sales_default_line_amount_type = sales_default_line_amount_type
+
+    @property
+    def purchases_default_line_amount_type(self):
+        """Gets the purchases_default_line_amount_type of this Contact.  # noqa: E501
+
+        The default purchases line amount type for a contact Only available when summaryOnly parameter or paging is used, or when fetch by ContactId or ContactNumber.  # noqa: E501
+
+        :return: The purchases_default_line_amount_type of this Contact.  # noqa: E501
+        :rtype: str
+        """
+        return self._purchases_default_line_amount_type
+
+    @purchases_default_line_amount_type.setter
+    def purchases_default_line_amount_type(self, purchases_default_line_amount_type):
+        """Sets the purchases_default_line_amount_type of this Contact.
+
+        The default purchases line amount type for a contact Only available when summaryOnly parameter or paging is used, or when fetch by ContactId or ContactNumber.  # noqa: E501
+
+        :param purchases_default_line_amount_type: The purchases_default_line_amount_type of this Contact.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["INCLUSIVE", "EXCLUSIVE", "NONE", "None"]  # noqa: E501
+
+        if purchases_default_line_amount_type:
+            if purchases_default_line_amount_type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `purchases_default_line_amount_type` ({0}), must be one of {1}".format(  # noqa: E501
+                        purchases_default_line_amount_type, allowed_values
+                    )
+                )
+
+        self._purchases_default_line_amount_type = purchases_default_line_amount_type
 
     @property
     def default_currency(self):

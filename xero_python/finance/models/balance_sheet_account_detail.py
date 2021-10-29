@@ -57,11 +57,14 @@ class BalanceSheetAccountDetail(BaseModel):
         self._total = None
         self.discriminator = None
 
-        self.code = code
+        if code is not None:
+            self.code = code
         if account_id is not None:
             self.account_id = account_id
-        self.name = name
-        self.reporting_code = reporting_code
+        if name is not None:
+            self.name = name
+        if reporting_code is not None:
+            self.reporting_code = reporting_code
         if total is not None:
             self.total = total
 

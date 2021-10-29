@@ -37,13 +37,20 @@ from xero_python.finance.models.cashflow_account import CashflowAccount
 from xero_python.finance.models.cashflow_activity import CashflowActivity
 from xero_python.finance.models.cashflow_response import CashflowResponse
 from xero_python.finance.models.cashflow_type import CashflowType
+from xero_python.finance.models.contact_detail import ContactDetail
+from xero_python.finance.models.contact_total_detail import ContactTotalDetail
+from xero_python.finance.models.contact_total_other import ContactTotalOther
 from xero_python.finance.models.current_statement_response import (
     CurrentStatementResponse,
 )
 from xero_python.finance.models.data_source_response import DataSourceResponse
 from xero_python.finance.models.history_record_response import HistoryRecordResponse
+from xero_python.finance.models.income_by_contact_response import (
+    IncomeByContactResponse,
+)
 from xero_python.finance.models.lock_history_model import LockHistoryModel
 from xero_python.finance.models.lock_history_response import LockHistoryResponse
+from xero_python.finance.models.manual_journal_total import ManualJournalTotal
 from xero_python.finance.models.pnl_account import PnlAccount
 from xero_python.finance.models.pnl_account_class import PnlAccountClass
 from xero_python.finance.models.pnl_account_type import PnlAccountType
@@ -57,6 +64,8 @@ from xero_python.finance.models.statement_balance_response import (
     StatementBalanceResponse,
 )
 from xero_python.finance.models.statement_lines_response import StatementLinesResponse
+from xero_python.finance.models.total_detail import TotalDetail
+from xero_python.finance.models.total_other import TotalOther
 from xero_python.finance.models.trial_balance_account import TrialBalanceAccount
 from xero_python.finance.models.trial_balance_entry import TrialBalanceEntry
 from xero_python.finance.models.trial_balance_movement import TrialBalanceMovement

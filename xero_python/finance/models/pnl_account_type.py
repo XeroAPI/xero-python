@@ -43,8 +43,10 @@ class PnlAccountType(BaseModel):
 
         if total is not None:
             self.total = total
-        self.title = title
-        self.accounts = accounts
+        if title is not None:
+            self.title = title
+        if accounts is not None:
+            self.accounts = accounts
 
     @property
     def total(self):

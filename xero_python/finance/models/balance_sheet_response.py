@@ -54,7 +54,8 @@ class BalanceSheetResponse(BaseModel):
         self._equity = None
         self.discriminator = None
 
-        self.balance_date = balance_date
+        if balance_date is not None:
+            self.balance_date = balance_date
         if asset is not None:
             self.asset = asset
         if liability is not None:

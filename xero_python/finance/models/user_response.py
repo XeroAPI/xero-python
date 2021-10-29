@@ -92,21 +92,28 @@ class UserResponse(BaseModel):
 
         if user_id is not None:
             self.user_id = user_id
-        self.user_created_date_utc = user_created_date_utc
-        self.last_login_date_utc = last_login_date_utc
+        if user_created_date_utc is not None:
+            self.user_created_date_utc = user_created_date_utc
+        if last_login_date_utc is not None:
+            self.last_login_date_utc = last_login_date_utc
         if is_external_partner is not None:
             self.is_external_partner = is_external_partner
         if has_accountant_role is not None:
             self.has_accountant_role = has_accountant_role
-        self.month_period = month_period
+        if month_period is not None:
+            self.month_period = month_period
         if number_of_logins is not None:
             self.number_of_logins = number_of_logins
         if number_of_documents_created is not None:
             self.number_of_documents_created = number_of_documents_created
-        self.net_value_documents_created = net_value_documents_created
-        self.absolute_value_documents_created = absolute_value_documents_created
-        self.attached_practices = attached_practices
-        self.history_records = history_records
+        if net_value_documents_created is not None:
+            self.net_value_documents_created = net_value_documents_created
+        if absolute_value_documents_created is not None:
+            self.absolute_value_documents_created = absolute_value_documents_created
+        if attached_practices is not None:
+            self.attached_practices = attached_practices
+        if history_records is not None:
+            self.history_records = history_records
 
     @property
     def user_id(self):

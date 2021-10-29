@@ -72,11 +72,16 @@ class CashflowAccount(BaseModel):
 
         if account_id is not None:
             self.account_id = account_id
-        self.account_type = account_type
-        self.account_class = account_class
-        self.code = code
-        self.name = name
-        self.reporting_code = reporting_code
+        if account_type is not None:
+            self.account_type = account_type
+        if account_class is not None:
+            self.account_class = account_class
+        if code is not None:
+            self.code = code
+        if name is not None:
+            self.name = name
+        if reporting_code is not None:
+            self.reporting_code = reporting_code
         if total is not None:
             self.total = total
 

@@ -4,12 +4,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **contact_id** | **str** | Xero identifier | [optional] 
+**merged_to_contact_id** | **str** | ID for the destination of a merged contact. Only returned when using paging or when fetching a contact by ContactId or ContactNumber. | [optional] 
 **contact_number** | **str** | This can be updated via the API only i.e. This field is read only on the Xero contact screen, used to identify contacts in external systems (max length &#x3D; 50). If the Contact Number is used, this is displayed as Contact Code in the Contacts UI in Xero. | [optional] 
 **account_number** | **str** | A user defined account number. This can be updated via the API and the Xero UI (max length &#x3D; 50) | [optional] 
 **contact_status** | **str** | Current status of a contact – see contact status types | [optional] 
 **name** | **str** | Full name of contact/organisation (max length &#x3D; 255) | [optional] 
 **first_name** | **str** | First name of contact person (max length &#x3D; 255) | [optional] 
 **last_name** | **str** | Last name of contact person (max length &#x3D; 255) | [optional] 
+**company_number** | **str** | Company registration number (max length &#x3D; 50) | [optional] 
 **email_address** | **str** | Email address of contact person (umlauts not supported) (max length  &#x3D; 255) | [optional] 
 **skype_user_name** | **str** | Skype user name of contact | [optional] 
 **contact_persons** | [**list[ContactPerson]**](ContactPerson.md) | See contact persons | [optional] 
@@ -21,6 +23,8 @@ Name | Type | Description | Notes
 **phones** | [**list[Phone]**](Phone.md) | Store certain phone types for a contact – see phone types | [optional] 
 **is_supplier** | **bool** | true or false – Boolean that describes if a contact that has any AP  invoices entered against them. Cannot be set via PUT or POST – it is automatically set when an accounts payable invoice is generated against this contact. | [optional] 
 **is_customer** | **bool** | true or false – Boolean that describes if a contact has any AR invoices entered against them. Cannot be set via PUT or POST – it is automatically set when an accounts receivable invoice is generated against this contact. | [optional] 
+**sales_default_line_amount_type** | **str** | The default sales line amount type for a contact. Only available when summaryOnly parameter or paging is used, or when fetch by ContactId or ContactNumber. | [optional] 
+**purchases_default_line_amount_type** | **str** | The default purchases line amount type for a contact Only available when summaryOnly parameter or paging is used, or when fetch by ContactId or ContactNumber. | [optional] 
 **default_currency** | [**CurrencyCode**](CurrencyCode.md) |  | [optional] 
 **xero_network_key** | **str** | Store XeroNetworkKey for contacts. | [optional] 
 **sales_default_account_code** | **str** | The default sales account code for contacts | [optional] 

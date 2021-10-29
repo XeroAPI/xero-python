@@ -66,7 +66,8 @@ class CashValidationResponse(BaseModel):
             self.account_id = account_id
         if statement_balance is not None:
             self.statement_balance = statement_balance
-        self.statement_balance_date = statement_balance_date
+        if statement_balance_date is not None:
+            self.statement_balance_date = statement_balance_date
         if bank_statement is not None:
             self.bank_statement = bank_statement
         if cash_account is not None:

@@ -94,20 +94,32 @@ class AccountUsage(BaseModel):
         self._report_code_updated_date_utc = None
         self.discriminator = None
 
-        self.month = month
+        if month is not None:
+            self.month = month
         if account_id is not None:
             self.account_id = account_id
-        self.currency_code = currency_code
-        self.total_received = total_received
-        self.count_received = count_received
-        self.total_paid = total_paid
-        self.count_paid = count_paid
-        self.total_manual_journal = total_manual_journal
-        self.count_manual_journal = count_manual_journal
-        self.account_name = account_name
-        self.reporting_code = reporting_code
-        self.reporting_code_name = reporting_code_name
-        self.report_code_updated_date_utc = report_code_updated_date_utc
+        if currency_code is not None:
+            self.currency_code = currency_code
+        if total_received is not None:
+            self.total_received = total_received
+        if count_received is not None:
+            self.count_received = count_received
+        if total_paid is not None:
+            self.total_paid = total_paid
+        if count_paid is not None:
+            self.count_paid = count_paid
+        if total_manual_journal is not None:
+            self.total_manual_journal = total_manual_journal
+        if count_manual_journal is not None:
+            self.count_manual_journal = count_manual_journal
+        if account_name is not None:
+            self.account_name = account_name
+        if reporting_code is not None:
+            self.reporting_code = reporting_code
+        if reporting_code_name is not None:
+            self.reporting_code_name = reporting_code_name
+        if report_code_updated_date_utc is not None:
+            self.report_code_updated_date_utc = report_code_updated_date_utc
 
     @property
     def month(self):

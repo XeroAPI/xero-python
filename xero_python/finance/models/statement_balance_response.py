@@ -42,7 +42,8 @@ class StatementBalanceResponse(BaseModel):
 
         if value is not None:
             self.value = value
-        self.type = type
+        if type is not None:
+            self.type = type
 
     @property
     def value(self):

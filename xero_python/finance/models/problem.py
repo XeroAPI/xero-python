@@ -54,10 +54,12 @@ class Problem(BaseModel):
 
         if type is not None:
             self.type = type
-        self.title = title
+        if title is not None:
+            self.title = title
         if status is not None:
             self.status = status
-        self.detail = detail
+        if detail is not None:
+            self.detail = detail
 
     @property
     def type(self):

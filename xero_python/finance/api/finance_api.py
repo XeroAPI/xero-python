@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.16.7
+    OpenAPI spec version: 2.17.2
 """
 
 import importlib
@@ -590,6 +590,188 @@ class FinanceApi(object):
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(
                 error, self, "get_financial_statement_cashflow"
+            )
+
+    def get_financial_statement_contacts_expense(
+        self,
+        xero_tenant_id,
+        contact_ids=empty,
+        include_manual_journals=empty,
+        start_date=empty,
+        end_date=empty,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
+        """Get expense by contacts report  # noqa: E501
+        OAuth2 scope: finance.statements.read
+        The expense by contact report provides a year to date profit and loss for customers and suppliers for a given organisation, including detailed contact information.  # noqa: E501
+        :param str xero_tenant_id: Xero identifier for Tenant (required)
+        :param list[str] contact_ids: Specifies the customer contacts to be included in the report.    If no parameter is provided, all customer contacts will be included
+        :param bool include_manual_journals: Specifies whether to include the manual journals in the report.                If no parameter is provided, manual journals will not be included.
+        :param str start_date: Date yyyy-MM-dd    Specifies the start date for the report.                If no parameter is provided, the date of 12 months before the end date will be used.                It is recommended to always specify both a start date and end date; While the initial range may be set to 12 months, this may need to be reduced for high volume organisations in order to improve latency.
+        :param str end_date: Date yyyy-MM-dd    Specifies the end date for the report.    If no parameter is provided, the current date will be used.                It is recommended to always specify both a start date and end date; While the initial range may be set to 12 months, this may need to be reduced for high volume organisations in order to improve latency.
+        :param bool _return_http_data_only: return received data only
+        :param bool _preload_content: load received data in models
+        :param bool _request_timeout: maximum wait time for response
+        :return: IncomeByContactResponse
+        """
+
+        # verify the required parameter 'xero_tenant_id' is set
+        if xero_tenant_id is None:
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `get_financial_statement_contacts_expense`"
+            )
+
+        collection_formats = {
+            "contactIds": "multi",
+        }
+        path_params = {}
+
+        query_params = []
+
+        if contact_ids is not empty:
+            query_params.append(("contactIds", contact_ids))
+
+        if include_manual_journals is not empty:
+            query_params.append(("includeManualJournals", include_manual_journals))
+
+        if start_date is not empty:
+            query_params.append(("startDate", start_date))
+
+        if end_date is not empty:
+            query_params.append(("endDate", end_date))
+
+        header_params = {
+            "xero-tenant-id": xero_tenant_id,
+        }
+
+        local_var_files = {}
+        form_params = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/FinancialStatements/contacts/expense")
+
+        try:
+            return self.api_client.call_api(
+                url,
+                "GET",
+                path_params,
+                query_params,
+                header_params,
+                body=body_params,
+                post_params=form_params,
+                files=local_var_files,
+                response_type="IncomeByContactResponse",
+                response_model_finder=self.get_model_finder(),
+                auth_settings=auth_settings,
+                _return_http_data_only=_return_http_data_only,
+                _preload_content=_preload_content,
+                _request_timeout=_request_timeout,
+                collection_formats=collection_formats,
+            )
+        except exceptions.HTTPStatusException as error:
+            raise translate_status_exception(
+                error, self, "get_financial_statement_contacts_expense"
+            )
+
+    def get_financial_statement_contacts_revenue(
+        self,
+        xero_tenant_id,
+        contact_ids=empty,
+        include_manual_journals=empty,
+        start_date=empty,
+        end_date=empty,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
+        """Get revenue by contacts report  # noqa: E501
+        OAuth2 scope: finance.statements.read
+        The revenue by contact report provides a year to date profit and loss for customers and suppliers for a given organisation, including detailed contact information.  # noqa: E501
+        :param str xero_tenant_id: Xero identifier for Tenant (required)
+        :param list[str] contact_ids: Specifies the customer contacts to be included in the report.    If no parameter is provided, all customer contacts will be included
+        :param bool include_manual_journals: Specifies whether to include the manual journals in the report.                If no parameter is provided, manual journals will not be included.
+        :param str start_date: Date yyyy-MM-dd    Specifies the start date for the report.                If no parameter is provided, the date of 12 months before the end date will be used.                It is recommended to always specify both a start date and end date; While the initial range may be set to 12 months, this may need to be reduced for high volume organisations in order to improve latency.
+        :param str end_date: Date yyyy-MM-dd    Specifies the end date for the report.    If no parameter is provided, the current date will be used.                It is recommended to always specify both a start date and end date; While the initial range may be set to 12 months, this may need to be reduced for high volume organisations in order to improve latency.
+        :param bool _return_http_data_only: return received data only
+        :param bool _preload_content: load received data in models
+        :param bool _request_timeout: maximum wait time for response
+        :return: IncomeByContactResponse
+        """
+
+        # verify the required parameter 'xero_tenant_id' is set
+        if xero_tenant_id is None:
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `get_financial_statement_contacts_revenue`"
+            )
+
+        collection_formats = {
+            "contactIds": "multi",
+        }
+        path_params = {}
+
+        query_params = []
+
+        if contact_ids is not empty:
+            query_params.append(("contactIds", contact_ids))
+
+        if include_manual_journals is not empty:
+            query_params.append(("includeManualJournals", include_manual_journals))
+
+        if start_date is not empty:
+            query_params.append(("startDate", start_date))
+
+        if end_date is not empty:
+            query_params.append(("endDate", end_date))
+
+        header_params = {
+            "xero-tenant-id": xero_tenant_id,
+        }
+
+        local_var_files = {}
+        form_params = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/FinancialStatements/contacts/revenue")
+
+        try:
+            return self.api_client.call_api(
+                url,
+                "GET",
+                path_params,
+                query_params,
+                header_params,
+                body=body_params,
+                post_params=form_params,
+                files=local_var_files,
+                response_type="IncomeByContactResponse",
+                response_model_finder=self.get_model_finder(),
+                auth_settings=auth_settings,
+                _return_http_data_only=_return_http_data_only,
+                _preload_content=_preload_content,
+                _request_timeout=_request_timeout,
+                collection_formats=collection_formats,
+            )
+        except exceptions.HTTPStatusException as error:
+            raise translate_status_exception(
+                error, self, "get_financial_statement_contacts_revenue"
             )
 
     def get_financial_statement_profit_and_loss(

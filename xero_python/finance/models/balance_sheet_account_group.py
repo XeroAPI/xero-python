@@ -40,7 +40,8 @@ class BalanceSheetAccountGroup(BaseModel):
         self._total = None
         self.discriminator = None
 
-        self.account_types = account_types
+        if account_types is not None:
+            self.account_types = account_types
         if total is not None:
             self.total = total
 

@@ -84,12 +84,18 @@ class TrialBalanceAccount(BaseModel):
 
         if account_id is not None:
             self.account_id = account_id
-        self.account_type = account_type
-        self.account_code = account_code
-        self.account_class = account_class
-        self.status = status
-        self.reporting_code = reporting_code
-        self.account_name = account_name
+        if account_type is not None:
+            self.account_type = account_type
+        if account_code is not None:
+            self.account_code = account_code
+        if account_class is not None:
+            self.account_class = account_class
+        if status is not None:
+            self.status = status
+        if reporting_code is not None:
+            self.reporting_code = reporting_code
+        if account_name is not None:
+            self.account_name = account_name
         if balance is not None:
             self.balance = balance
         if signed_balance is not None:

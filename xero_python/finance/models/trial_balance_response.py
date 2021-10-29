@@ -49,9 +49,12 @@ class TrialBalanceResponse(BaseModel):
         self._accounts = None
         self.discriminator = None
 
-        self.start_date = start_date
-        self.end_date = end_date
-        self.accounts = accounts
+        if start_date is not None:
+            self.start_date = start_date
+        if end_date is not None:
+            self.end_date = end_date
+        if accounts is not None:
+            self.accounts = accounts
 
     @property
     def start_date(self):

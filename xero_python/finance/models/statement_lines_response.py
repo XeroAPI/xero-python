@@ -120,16 +120,20 @@ class StatementLinesResponse(BaseModel):
             self.avg_days_unreconciled_pos = avg_days_unreconciled_pos
         if avg_days_unreconciled_neg is not None:
             self.avg_days_unreconciled_neg = avg_days_unreconciled_neg
-        self.earliest_unreconciled_transaction = earliest_unreconciled_transaction
-        self.latest_unreconciled_transaction = latest_unreconciled_transaction
+        if earliest_unreconciled_transaction is not None:
+            self.earliest_unreconciled_transaction = earliest_unreconciled_transaction
+        if latest_unreconciled_transaction is not None:
+            self.latest_unreconciled_transaction = latest_unreconciled_transaction
         if deleted_amount is not None:
             self.deleted_amount = deleted_amount
         if total_amount is not None:
             self.total_amount = total_amount
         if data_source is not None:
             self.data_source = data_source
-        self.earliest_reconciled_transaction = earliest_reconciled_transaction
-        self.latest_reconciled_transaction = latest_reconciled_transaction
+        if earliest_reconciled_transaction is not None:
+            self.earliest_reconciled_transaction = earliest_reconciled_transaction
+        if latest_reconciled_transaction is not None:
+            self.latest_reconciled_transaction = latest_reconciled_transaction
         if reconciled_amount_pos is not None:
             self.reconciled_amount_pos = reconciled_amount_pos
         if reconciled_amount_neg is not None:

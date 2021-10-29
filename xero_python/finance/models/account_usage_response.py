@@ -56,9 +56,12 @@ class AccountUsageResponse(BaseModel):
 
         if organisation_id is not None:
             self.organisation_id = organisation_id
-        self.start_month = start_month
-        self.end_month = end_month
-        self.account_usage = account_usage
+        if start_month is not None:
+            self.start_month = start_month
+        if end_month is not None:
+            self.end_month = end_month
+        if account_usage is not None:
+            self.account_usage = account_usage
 
     @property
     def organisation_id(self):
