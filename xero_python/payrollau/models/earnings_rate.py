@@ -47,6 +47,7 @@ class EarningsRate(BaseModel):
         "updated_date_utc": "datetime[ms-format]",
         "current_record": "bool",
         "allowance_type": "AllowanceType",
+        "allowance_category": "AllowanceCategory",
     }
 
     attribute_map = {
@@ -67,6 +68,7 @@ class EarningsRate(BaseModel):
         "updated_date_utc": "UpdatedDateUTC",
         "current_record": "CurrentRecord",
         "allowance_type": "AllowanceType",
+        "allowance_category": "AllowanceCategory",
     }
 
     def __init__(
@@ -88,6 +90,7 @@ class EarningsRate(BaseModel):
         updated_date_utc=None,
         current_record=None,
         allowance_type=None,
+        allowance_category=None,
     ):  # noqa: E501
         """EarningsRate - a model defined in OpenAPI"""  # noqa: E501
 
@@ -108,6 +111,7 @@ class EarningsRate(BaseModel):
         self._updated_date_utc = None
         self._current_record = None
         self._allowance_type = None
+        self._allowance_category = None
         self.discriminator = None
 
         if name is not None:
@@ -146,6 +150,8 @@ class EarningsRate(BaseModel):
             self.current_record = current_record
         if allowance_type is not None:
             self.allowance_type = allowance_type
+        if allowance_category is not None:
+            self.allowance_category = allowance_category
 
     @property
     def name(self):
@@ -539,3 +545,24 @@ class EarningsRate(BaseModel):
         """
 
         self._allowance_type = allowance_type
+
+    @property
+    def allowance_category(self):
+        """Gets the allowance_category of this EarningsRate.  # noqa: E501
+
+
+        :return: The allowance_category of this EarningsRate.  # noqa: E501
+        :rtype: AllowanceCategory
+        """
+        return self._allowance_category
+
+    @allowance_category.setter
+    def allowance_category(self, allowance_category):
+        """Sets the allowance_category of this EarningsRate.
+
+
+        :param allowance_category: The allowance_category of this EarningsRate.  # noqa: E501
+        :type: AllowanceCategory
+        """
+
+        self._allowance_category = allowance_category

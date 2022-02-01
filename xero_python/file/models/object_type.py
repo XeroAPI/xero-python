@@ -79,3 +79,4 @@ class ObjectType(Enum):
     CURRLIAB = "Currliab"
     TERMLIAB = "Termliab"
     NONCURRENT = "NonCurrent"
+    SALESQUOTE = "SalesQuote"

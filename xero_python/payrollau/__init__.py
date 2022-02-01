@@ -20,6 +20,7 @@ from xero_python.payrollau.api.payroll_au_api import PayrollAuApi
 from xero_python.payrollau.models.api_exception import APIException
 from xero_python.payrollau.models.account import Account
 from xero_python.payrollau.models.account_type import AccountType
+from xero_python.payrollau.models.allowance_category import AllowanceCategory
 from xero_python.payrollau.models.allowance_type import AllowanceType
 from xero_python.payrollau.models.bank_account import BankAccount
 from xero_python.payrollau.models.calendar_type import CalendarType

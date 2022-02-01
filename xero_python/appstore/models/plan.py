@@ -115,7 +115,7 @@ class Plan(BaseModel):
     def status(self):
         """Gets the status of this Plan.  # noqa: E501
 
-        Status of the plan. Available statuses are ACTIVE, PENDING_ACTIVATION.   # noqa: E501
+        Status of the plan. Available statuses are ACTIVE, CANCELED, and PENDING_ACTIVATION.   # noqa: E501
 
         :return: The status of this Plan.  # noqa: E501
         :rtype: str
@@ -126,7 +126,7 @@ class Plan(BaseModel):
     def status(self, status):
         """Sets the status of this Plan.
 
-        Status of the plan. Available statuses are ACTIVE, PENDING_ACTIVATION.   # noqa: E501
+        Status of the plan. Available statuses are ACTIVE, CANCELED, and PENDING_ACTIVATION.   # noqa: E501
 
         :param status: The status of this Plan.  # noqa: E501
         :type: str
@@ -135,7 +135,12 @@ class Plan(BaseModel):
             raise ValueError(
                 "Invalid value for `status`, must not be `None`"
             )  # noqa: E501
-        allowed_values = ["ACTIVE", "PENDING_ACTIVATION", "None"]  # noqa: E501
+        allowed_values = [
+            "ACTIVE",
+            "CANCELED",
+            "PENDING_ACTIVATION",
+            "None",
+        ]  # noqa: E501
 
         if status:
             if status not in allowed_values:
