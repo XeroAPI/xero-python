@@ -35,6 +35,7 @@ class SubscriptionItem(BaseModel):
         "price": "Price",
         "product": "Product",
         "start_date": "datetime",
+        "status": "str",
         "test_mode": "bool",
     }
 
@@ -44,6 +45,7 @@ class SubscriptionItem(BaseModel):
         "price": "price",
         "product": "product",
         "start_date": "startDate",
+        "status": "status",
         "test_mode": "testMode",
     }
 
@@ -54,6 +56,7 @@ class SubscriptionItem(BaseModel):
         price=None,
         product=None,
         start_date=None,
+        status=None,
         test_mode=None,
     ):  # noqa: E501
         """SubscriptionItem - a model defined in OpenAPI"""  # noqa: E501
@@ -63,6 +66,7 @@ class SubscriptionItem(BaseModel):
         self._price = None
         self._product = None
         self._start_date = None
+        self._status = None
         self._test_mode = None
         self.discriminator = None
 
@@ -72,6 +76,7 @@ class SubscriptionItem(BaseModel):
         self.price = price
         self.product = product
         self.start_date = start_date
+        self.status = status
         if test_mode is not None:
             self.test_mode = test_mode
 
@@ -199,6 +204,47 @@ class SubscriptionItem(BaseModel):
             )  # noqa: E501
 
         self._start_date = start_date
+
+    @property
+    def status(self):
+        """Gets the status of this SubscriptionItem.  # noqa: E501
+
+        Status of the subscription item. Available statuses are ACTIVE, CANCELED, and PENDING_ACTIVATION.   # noqa: E501
+
+        :return: The status of this SubscriptionItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this SubscriptionItem.
+
+        Status of the subscription item. Available statuses are ACTIVE, CANCELED, and PENDING_ACTIVATION.   # noqa: E501
+
+        :param status: The status of this SubscriptionItem.  # noqa: E501
+        :type: str
+        """
+        if status is None:
+            raise ValueError(
+                "Invalid value for `status`, must not be `None`"
+            )  # noqa: E501
+        allowed_values = [
+            "ACTIVE",
+            "CANCELED",
+            "PENDING_ACTIVATION",
+            "None",
+        ]  # noqa: E501
+
+        if status:
+            if status not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `status` ({0}), must be one of {1}".format(  # noqa: E501
+                        status, allowed_values
+                    )
+                )
+
+        self._status = status
 
     @property
     def test_mode(self):

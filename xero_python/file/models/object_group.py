@@ -34,4 +34,5 @@ class ObjectGroup(Enum):
     OVERPAYMENT = "Overpayment"
     PAYMENT = "Payment"
     PREPAYMENT = "Prepayment"
+    QUOTE = "Quote"
     RECEIPT = "Receipt"
