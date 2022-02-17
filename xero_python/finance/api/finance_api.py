@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.17.4
+    OpenAPI spec version: 2.18.0
 """
 
 import importlib
@@ -355,6 +355,108 @@ class FinanceApi(object):
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(
                 error, self, "get_accounting_activity_user_activities"
+            )
+
+    def get_bank_statement_accounting(
+        self,
+        xero_tenant_id,
+        bank_account_id,
+        from_date,
+        to_date,
+        summary_only=empty,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
+        """Get Bank Statement Accounting  # noqa: E501
+        OAuth2 scope: finance.bankstatementsplus.read
+        For lenders that prefer using bank statement data as the source of truth.  We provide a data point that will allow access to customer bank statements, plus for reconciled bank transactions the matching accounting, invoice and billing data as well.  As customers reconcile bank statements to invoices and bills, this transaction detail will provide valuable insight for lender's assessment measures.   # noqa: E501
+        :param str xero_tenant_id: Xero identifier for Tenant (required)
+        :param str bank_account_id: string, GUID    Bank account Id (required)
+        :param str from_date: date, yyyy-MM-dd     Specifies the start date of the query period.   The maximum range of the query period is 12 months. If the specified query period is more than 12 months the request will be rejected. (required)
+        :param str to_date: date, yyyy-MM-dd     Specifies the end date of the query period.   If the end date is a future date, the request will be rejected. (required)
+        :param bool summary_only: boolean, true/false    The default value is true if no parameter is provided.    In summary mode, the response will exclude the computation-heavy LineItems fields from bank transaction, invoice, credit note, prepayment and overpayment data, making the API calls quicker and more efficient.
+        :param bool _return_http_data_only: return received data only
+        :param bool _preload_content: load received data in models
+        :param bool _request_timeout: maximum wait time for response
+        :return: BankStatementAccountingResponse
+        """
+
+        # verify the required parameter 'xero_tenant_id' is set
+        if xero_tenant_id is None:
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `get_bank_statement_accounting`"
+            )
+        # verify the required parameter 'bank_account_id' is set
+        if bank_account_id is None:
+            raise ValueError(
+                "Missing the required parameter `bank_account_id` "
+                "when calling `get_bank_statement_accounting`"
+            )
+        # verify the required parameter 'from_date' is set
+        if from_date is None:
+            raise ValueError(
+                "Missing the required parameter `from_date` "
+                "when calling `get_bank_statement_accounting`"
+            )
+        # verify the required parameter 'to_date' is set
+        if to_date is None:
+            raise ValueError(
+                "Missing the required parameter `to_date` "
+                "when calling `get_bank_statement_accounting`"
+            )
+
+        collection_formats = {}
+        path_params = {}
+
+        query_params = [
+            ("BankAccountID", bank_account_id),
+            ("FromDate", from_date),
+            ("ToDate", to_date),
+        ]
+
+        if summary_only is not empty:
+            query_params.append(("SummaryOnly", summary_only))
+
+        header_params = {
+            "xero-tenant-id": xero_tenant_id,
+        }
+
+        local_var_files = {}
+        form_params = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/BankStatementsPlus/statements")
+
+        try:
+            return self.api_client.call_api(
+                url,
+                "GET",
+                path_params,
+                query_params,
+                header_params,
+                body=body_params,
+                post_params=form_params,
+                files=local_var_files,
+                response_type="BankStatementAccountingResponse",
+                response_model_finder=self.get_model_finder(),
+                auth_settings=auth_settings,
+                _return_http_data_only=_return_http_data_only,
+                _preload_content=_preload_content,
+                _request_timeout=_request_timeout,
+                collection_formats=collection_formats,
+            )
+        except exceptions.HTTPStatusException as error:
+            raise translate_status_exception(
+                error, self, "get_bank_statement_accounting"
             )
 
     def get_cash_validation(
