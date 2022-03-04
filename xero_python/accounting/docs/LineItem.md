@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **account_id** | **str** | The associated account ID related to this line item | [optional] 
 **tax_type** | **str** | The tax type from TaxRates | [optional] 
 **tax_amount** | **float** | The tax amount is auto calculated as a percentage of the line amount (see below) based on the tax rate. This value can be overriden if the calculated &lt;TaxAmount&gt; is not correct. | [optional] 
+**item** | [**LineItemItem**](LineItemItem.md) |  | [optional] 
 **line_amount** | **float** | If you wish to omit either of the &lt;Quantity&gt; or &lt;UnitAmount&gt; you can provide a LineAmount and Xero will calculate the missing amount for you. The line amount reflects the discounted price if a DiscountRate has been used . i.e LineAmount &#x3D; Quantity * Unit Amount * ((100 – DiscountRate)/100) | [optional] 
 **tracking** | [**list[LineItemTracking]**](LineItemTracking.md) | Optional Tracking Category – see Tracking.  Any LineItem can have a  maximum of 2 &lt;TrackingCategory&gt; elements. | [optional] 
 **discount_rate** | **float** | Percentage discount being applied to a line item (only supported on  ACCREC invoices – ACC PAY invoices and credit notes in Xero do not support discounts | [optional] 

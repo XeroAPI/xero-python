@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **updated_date_utc** | **datetime** | UTC timestamp of last update to the employee | [optional] 
 **created_date_utc** | **datetime** | UTC timestamp when the employee was created in Xero | [optional] 
 **national_insurance_number** | **str** | National insurance number of the employee | [optional] 
+**is_off_payroll_worker** | **bool** | Whether the employee is an off payroll worker | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

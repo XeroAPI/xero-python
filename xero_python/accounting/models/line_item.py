@@ -39,6 +39,7 @@ class LineItem(BaseModel):
         "account_id": "str",
         "tax_type": "str",
         "tax_amount": "float",
+        "item": "LineItemItem",
         "line_amount": "float",
         "tracking": "list[LineItemTracking]",
         "discount_rate": "float",
@@ -56,6 +57,7 @@ class LineItem(BaseModel):
         "account_id": "AccountID",
         "tax_type": "TaxType",
         "tax_amount": "TaxAmount",
+        "item": "Item",
         "line_amount": "LineAmount",
         "tracking": "Tracking",
         "discount_rate": "DiscountRate",
@@ -74,6 +76,7 @@ class LineItem(BaseModel):
         account_id=None,
         tax_type=None,
         tax_amount=None,
+        item=None,
         line_amount=None,
         tracking=None,
         discount_rate=None,
@@ -91,6 +94,7 @@ class LineItem(BaseModel):
         self._account_id = None
         self._tax_type = None
         self._tax_amount = None
+        self._item = None
         self._line_amount = None
         self._tracking = None
         self._discount_rate = None
@@ -116,6 +120,8 @@ class LineItem(BaseModel):
             self.tax_type = tax_type
         if tax_amount is not None:
             self.tax_amount = tax_amount
+        if item is not None:
+            self.item = item
         if line_amount is not None:
             self.line_amount = line_amount
         if tracking is not None:
@@ -333,6 +339,27 @@ class LineItem(BaseModel):
         """
 
         self._tax_amount = tax_amount
+
+    @property
+    def item(self):
+        """Gets the item of this LineItem.  # noqa: E501
+
+
+        :return: The item of this LineItem.  # noqa: E501
+        :rtype: LineItemItem
+        """
+        return self._item
+
+    @item.setter
+    def item(self, item):
+        """Sets the item of this LineItem.
+
+
+        :param item: The item of this LineItem.  # noqa: E501
+        :type: LineItemItem
+        """
+
+        self._item = item
 
     @property
     def line_amount(self):

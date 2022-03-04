@@ -360,7 +360,7 @@ api_client = ApiClient(
 api_instance = PayrollUkApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
-employee = { "title":"Mr", "firstName":"Mike", "lastName":"Fancy", "dateOfBirth":"1999-01-01", "address":{ "addressLine1":"101 Green St", "city":"San Francisco", "postCode":"6TGR4F", "country":"UK" }, "email":"mike@starkindustries.com", "gender":"M" } # Employee | 
+employee = { "title":"Mr", "firstName":"Mike", "lastName":"Fancy", "dateOfBirth":"1999-01-01T00:00:00", "gender":"M", "email":"mike@starkindustries.com", "isOffPayrollWorker": false, "address": { "addressLine1": "171 Midsummer", "city": "Milton Keyness", "postCode": "MK9 1EB" } } # Employee | 
 try:
     # Creates employees
     api_response = api_instance.create_employee(xero_tenant_id, employee)
@@ -3044,7 +3044,7 @@ api_client = ApiClient(
 api_instance = PayrollUkApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
-filter = 'firstName==John,lastName==Smith' # str | Filter by first name and/or lastname (optional)
+filter = 'firstName==John,lastName==Smith,isOffPayrollWorker==false' # str | Filter by first name, lastname, and/or whether they are an off-payroll worker (optional)
 page = 5 # int | Page number which specifies the set of records to retrieve. By default the number of the records per set is 100. (optional)
 try:
     # Retrieves employees
@@ -3059,7 +3059,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
- **filter** | **str**| Filter by first name and/or lastname | [optional] 
+ **filter** | **str**| Filter by first name, lastname, and/or whether they are an off-payroll worker | [optional] 
  **page** | **int**| Page number which specifies the set of records to retrieve. By default the number of the records per set is 100. | [optional] 
 
 ### Return type
@@ -4132,7 +4132,7 @@ api_instance = PayrollUkApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Employee id for single object
-employee = { "title":"Mr", "firstName":"Mike", "lastName":"Johnllsbkrhwopson", "dateOfBirth":"1999-01-01", "address":{ "addressLine1":"101 Green St", "city":"San Francisco", "postCode":"6TGR4F", "country":"UK" }, "email":"84044@starkindustries.com", "gender":"M" } # Employee | 
+employee = { "title": "Mr.", "firstName": "TestDataUK", "lastName": "Tester", "dateOfBirth": "1992-11-22T00:00:00", "gender": "M", "email": "tester@gmail.com", "phoneNumber": "0400123456", "isOffPayrollWorker": false, "address": { "addressLine1": "171 Midsummer", "city": "Milton Keyness", "postCode": "MK9 1EB" } } # Employee | 
 try:
     # Updates a specific employee's detail
     api_response = api_instance.update_employee(xero_tenant_id, employee_id, employee)

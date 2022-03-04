@@ -45,6 +45,7 @@ class Employee(BaseModel):
         "updated_date_utc": "datetime",
         "created_date_utc": "datetime",
         "national_insurance_number": "str",
+        "is_off_payroll_worker": "bool",
     }
 
     attribute_map = {
@@ -63,6 +64,7 @@ class Employee(BaseModel):
         "updated_date_utc": "updatedDateUTC",
         "created_date_utc": "createdDateUTC",
         "national_insurance_number": "nationalInsuranceNumber",
+        "is_off_payroll_worker": "isOffPayrollWorker",
     }
 
     def __init__(
@@ -82,6 +84,7 @@ class Employee(BaseModel):
         updated_date_utc=None,
         created_date_utc=None,
         national_insurance_number=None,
+        is_off_payroll_worker=None,
     ):  # noqa: E501
         """Employee - a model defined in OpenAPI"""  # noqa: E501
 
@@ -100,6 +103,7 @@ class Employee(BaseModel):
         self._updated_date_utc = None
         self._created_date_utc = None
         self._national_insurance_number = None
+        self._is_off_payroll_worker = None
         self.discriminator = None
 
         if employee_id is not None:
@@ -132,6 +136,8 @@ class Employee(BaseModel):
             self.created_date_utc = created_date_utc
         if national_insurance_number is not None:
             self.national_insurance_number = national_insurance_number
+        if is_off_payroll_worker is not None:
+            self.is_off_payroll_worker = is_off_payroll_worker
 
     @property
     def employee_id(self):
@@ -484,3 +490,26 @@ class Employee(BaseModel):
         """
 
         self._national_insurance_number = national_insurance_number
+
+    @property
+    def is_off_payroll_worker(self):
+        """Gets the is_off_payroll_worker of this Employee.  # noqa: E501
+
+        Whether the employee is an off payroll worker  # noqa: E501
+
+        :return: The is_off_payroll_worker of this Employee.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_off_payroll_worker
+
+    @is_off_payroll_worker.setter
+    def is_off_payroll_worker(self, is_off_payroll_worker):
+        """Sets the is_off_payroll_worker of this Employee.
+
+        Whether the employee is an off payroll worker  # noqa: E501
+
+        :param is_off_payroll_worker: The is_off_payroll_worker of this Employee.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_off_payroll_worker = is_off_payroll_worker

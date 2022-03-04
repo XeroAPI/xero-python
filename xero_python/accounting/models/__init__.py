@@ -86,6 +86,7 @@ from xero_python.accounting.models.journal_line import JournalLine
 from xero_python.accounting.models.journals import Journals
 from xero_python.accounting.models.line_amount_types import LineAmountTypes
 from xero_python.accounting.models.line_item import LineItem
+from xero_python.accounting.models.line_item_item import LineItemItem
 from xero_python.accounting.models.line_item_tracking import LineItemTracking
 from xero_python.accounting.models.linked_transaction import LinkedTransaction
 from xero_python.accounting.models.linked_transactions import LinkedTransactions

@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.17.4
+    OpenAPI spec version: 2.19.1
 """
 
 import importlib
@@ -3788,7 +3788,7 @@ class PayrollUkApi(object):
         """Retrieves employees  # noqa: E501
         OAuth2 scope: payroll.employees, payroll.employees.read
         :param str xero_tenant_id: Xero identifier for Tenant (required)
-        :param str filter: Filter by first name and/or lastname
+        :param str filter: Filter by first name, lastname, and/or whether they are an off-payroll worker
         :param int page: Page number which specifies the set of records to retrieve. By default the number of the records per set is 100.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
