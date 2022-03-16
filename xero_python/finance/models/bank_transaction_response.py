@@ -33,7 +33,7 @@ class BankTransactionResponse(BaseModel):
         "bank_transaction_id": "str",
         "batch_payment_id": "str",
         "contact": "ContactResponse",
-        "date": "datetime",
+        "date": "date",
         "amount": "float",
         "line_items": "list[LineItemResponse]",
     }
@@ -153,7 +153,7 @@ class BankTransactionResponse(BaseModel):
         Date of transaction - YYYY-MM-DD  # noqa: E501
 
         :return: The date of this BankTransactionResponse.  # noqa: E501
-        :rtype: datetime
+        :rtype: date
         """
         return self._date
 
@@ -164,7 +164,7 @@ class BankTransactionResponse(BaseModel):
         Date of transaction - YYYY-MM-DD  # noqa: E501
 
         :param date: The date of this BankTransactionResponse.  # noqa: E501
-        :type: datetime
+        :type: date
         """
 
         self._date = date

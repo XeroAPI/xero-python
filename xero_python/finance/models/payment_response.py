@@ -32,7 +32,7 @@ class PaymentResponse(BaseModel):
     openapi_types = {
         "payment_id": "str",
         "batch_payment_id": "str",
-        "date": "datetime",
+        "date": "date",
         "amount": "float",
         "bank_amount": "float",
         "currency_rate": "float",
@@ -156,7 +156,7 @@ class PaymentResponse(BaseModel):
         Date the payment is being made (YYYY-MM-DD) e.g. 2009-09-06  # noqa: E501
 
         :return: The date of this PaymentResponse.  # noqa: E501
-        :rtype: datetime
+        :rtype: date
         """
         return self._date
 
@@ -167,7 +167,7 @@ class PaymentResponse(BaseModel):
         Date the payment is being made (YYYY-MM-DD) e.g. 2009-09-06  # noqa: E501
 
         :param date: The date of this PaymentResponse.  # noqa: E501
-        :type: datetime
+        :type: date
         """
 
         self._date = date

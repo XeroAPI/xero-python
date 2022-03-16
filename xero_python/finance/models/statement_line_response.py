@@ -31,12 +31,12 @@ class StatementLineResponse(BaseModel):
     """
     openapi_types = {
         "statement_line_id": "str",
-        "posted_date": "datetime",
+        "posted_date": "date",
         "reference": "str",
         "notes": "str",
         "cheque_no": "str",
         "amount": "float",
-        "transaction_date": "datetime",
+        "transaction_date": "date",
         "type": "str",
         "is_reconciled": "bool",
         "is_duplicate": "bool",
@@ -151,7 +151,7 @@ class StatementLineResponse(BaseModel):
         Date of when statement line was posted  # noqa: E501
 
         :return: The posted_date of this StatementLineResponse.  # noqa: E501
-        :rtype: datetime
+        :rtype: date
         """
         return self._posted_date
 
@@ -162,7 +162,7 @@ class StatementLineResponse(BaseModel):
         Date of when statement line was posted  # noqa: E501
 
         :param posted_date: The posted_date of this StatementLineResponse.  # noqa: E501
-        :type: datetime
+        :type: date
         """
 
         self._posted_date = posted_date
@@ -266,7 +266,7 @@ class StatementLineResponse(BaseModel):
         Transaction date of statement line  # noqa: E501
 
         :return: The transaction_date of this StatementLineResponse.  # noqa: E501
-        :rtype: datetime
+        :rtype: date
         """
         return self._transaction_date
 
@@ -277,7 +277,7 @@ class StatementLineResponse(BaseModel):
         Transaction date of statement line  # noqa: E501
 
         :param transaction_date: The transaction_date of this StatementLineResponse.  # noqa: E501
-        :type: datetime
+        :type: date
         """
 
         self._transaction_date = transaction_date
