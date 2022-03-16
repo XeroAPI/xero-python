@@ -31,8 +31,8 @@ class StatementResponse(BaseModel):
     """
     openapi_types = {
         "statement_id": "str",
-        "start_date": "datetime",
-        "end_date": "datetime",
+        "start_date": "date",
+        "end_date": "date",
         "imported_date_time_utc": "datetime",
         "import_source": "str",
         "statement_lines": "list[StatementLineResponse]",
@@ -109,7 +109,7 @@ class StatementResponse(BaseModel):
         Start date of statement  # noqa: E501
 
         :return: The start_date of this StatementResponse.  # noqa: E501
-        :rtype: datetime
+        :rtype: date
         """
         return self._start_date
 
@@ -120,7 +120,7 @@ class StatementResponse(BaseModel):
         Start date of statement  # noqa: E501
 
         :param start_date: The start_date of this StatementResponse.  # noqa: E501
-        :type: datetime
+        :type: date
         """
 
         self._start_date = start_date
@@ -132,7 +132,7 @@ class StatementResponse(BaseModel):
         End date of statement  # noqa: E501
 
         :return: The end_date of this StatementResponse.  # noqa: E501
-        :rtype: datetime
+        :rtype: date
         """
         return self._end_date
 
@@ -143,7 +143,7 @@ class StatementResponse(BaseModel):
         End date of statement  # noqa: E501
 
         :param end_date: The end_date of this StatementResponse.  # noqa: E501
-        :type: datetime
+        :type: date
         """
 
         self._end_date = end_date

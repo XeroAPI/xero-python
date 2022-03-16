@@ -4,12 +4,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **statement_line_id** | **str** | Xero Identifier of statement line | [optional] 
-**posted_date** | **datetime** | Date of when statement line was posted | [optional] 
+**posted_date** | **date** | Date of when statement line was posted | [optional] 
 **reference** | **str** | Reference description of statement line | [optional] 
 **notes** | **str** | Notes description of statement line | [optional] 
 **cheque_no** | **str** | Cheque number of statement line | [optional] 
 **amount** | **float** | Amount of statement line | [optional] 
-**transaction_date** | **datetime** | Transaction date of statement line | [optional] 
+**transaction_date** | **date** | Transaction date of statement line | [optional] 
 **type** | **str** | Type of statement line | [optional] 
 **is_reconciled** | **bool** | Boolean to show if statement line is reconciled | [optional] 
 **is_duplicate** | **bool** | Boolean to show if statement line is duplicate | [optional] 
