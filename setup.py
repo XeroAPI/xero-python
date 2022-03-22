@@ -20,7 +20,7 @@ def load_requirements(file_name):
 
 
 def read_file(filename):
-    with open(filename) as fp:
+    with open(filename, encoding='utf-8') as fp:
         return fp.read()
 
 
