@@ -1459,7 +1459,7 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_create_asset():
     api_instance = AssetApi(api_client)
-    xeroTenantId = 'YOUR_XERO_TENANT_ID'
+    xero_tenant_id = 'YOUR_XERO_TENANT_ID'
 
     asset = Asset(
         asset_name = "Other Computer",
@@ -1467,7 +1467,7 @@ def accounting_create_asset():
         status = "Draft")
     
     try:
-        api_response = api_instance.create_asset(xeroTenantId, asset)
+        api_response = api_instance.create_asset(xero_tenant_id, asset)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AssetApi->createAsset: %s\n" % e)</code></pre>
@@ -1591,7 +1591,7 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_create_asset_type():
     api_instance = AssetApi(api_client)
-    xeroTenantId = 'YOUR_XERO_TENANT_ID'
+    xero_tenant_id = 'YOUR_XERO_TENANT_ID'
 
     bookDepreciationSetting = BookDepreciationSetting(
         depreciation_method = "DiminishingValue100",
@@ -1607,7 +1607,7 @@ def accounting_create_asset_type():
         bookDepreciationSetting = book_depreciation_setting)
     
     try:
-        api_response = api_instance.create_asset_type(xeroTenantId, assetType)
+        api_response = api_instance.create_asset_type(xero_tenant_id, assetType)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AssetApi->createAssetType: %s\n" % e)</code></pre>
@@ -1728,11 +1728,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_asset_by_id():
     api_instance = AssetApi(api_client)
-    xeroTenantId = 'YOUR_XERO_TENANT_ID'
+    xero_tenant_id = 'YOUR_XERO_TENANT_ID'
     id = '00000000-0000-0000-0000-000000000000'
     
     try:
-        api_response = api_instance.get_asset_by_id(xeroTenantId, id)
+        api_response = api_instance.get_asset_by_id(xero_tenant_id, id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AssetApi->getAssetById: %s\n" % e)</code></pre>
@@ -1857,10 +1857,10 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_asset_settings():
     api_instance = AssetApi(api_client)
-    xeroTenantId = 'YOUR_XERO_TENANT_ID'
+    xero_tenant_id = 'YOUR_XERO_TENANT_ID'
     
     try:
-        api_response = api_instance.get_asset_settings(xeroTenantId)
+        api_response = api_instance.get_asset_settings(xero_tenant_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AssetApi->getAssetSettings: %s\n" % e)</code></pre>
@@ -1952,10 +1952,10 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_asset_types():
     api_instance = AssetApi(api_client)
-    xeroTenantId = 'YOUR_XERO_TENANT_ID'
+    xero_tenant_id = 'YOUR_XERO_TENANT_ID'
     
     try:
-        api_response = api_instance.get_asset_types(xeroTenantId)
+        api_response = api_instance.get_asset_types(xero_tenant_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AssetApi->getAssetTypes: %s\n" % e)</code></pre>
@@ -2047,13 +2047,13 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_assets():
     api_instance = AssetApi(api_client)
-    xeroTenantId = 'YOUR_XERO_TENANT_ID'
-    orderBy = 'AssetName'
-    sortDirection = 'ASC'
-    filterBy = 'Company Car'
+    xero_tenant_id = 'YOUR_XERO_TENANT_ID'
+    order_by = 'AssetName'
+    sort_direction = 'ASC'
+    filter_by = 'Company Car'
     
     try:
-        api_response = api_instance.get_assets(xeroTenantId, status, page, pageSize, orderBy, sortDirection, filterBy)
+        api_response = api_instance.get_assets(xero_tenant_id, status, page, page_size, order_by, sort_direction, filter_by)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AssetApi->getAssets: %s\n" % e)</code></pre>

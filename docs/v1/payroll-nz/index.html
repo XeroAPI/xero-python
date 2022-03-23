@@ -4092,11 +4092,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_approve_timesheet():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    timesheetID = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    xero_tenant_id = 'xeroTenantId_example'
+    timesheet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
     
     try:
-        api_response = api_instance.approve_timesheet(xeroTenantId, timesheetID)
+        api_response = api_instance.approve_timesheet(xero_tenant_id, timesheet_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->approveTimesheet: %s\n" % e)</code></pre>
@@ -4216,7 +4216,7 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_create_deduction():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
+    xero_tenant_id = 'xeroTenantId_example'
 
     deduction = Deduction(
         deduction_name = "Deduction test",
@@ -4224,7 +4224,7 @@ def accounting_create_deduction():
         liability_account_id = "00000000-0000-0000-0000-000000000000")
     
     try:
-        api_response = api_instance.create_deduction(xeroTenantId, deduction)
+        api_response = api_instance.create_deduction(xero_tenant_id, deduction)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->createDeduction: %s\n" % e)</code></pre>
@@ -4347,7 +4347,7 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_create_earnings_rate():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
+    xero_tenant_id = 'xeroTenantId_example'
 
     earnings_rate = EarningsRate(
         earnings_type = "RegularEarnings",
@@ -4355,7 +4355,7 @@ def accounting_create_earnings_rate():
         expense_account_ID = "00000000-0000-0000-0000-000000000000")
     
     try:
-        api_response = api_instance.create_earnings_rate(xeroTenantId, earningsRate)
+        api_response = api_instance.create_earnings_rate(xero_tenant_id, earningsRate)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->createEarningsRate: %s\n" % e)</code></pre>
@@ -4478,7 +4478,7 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_create_employee():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
+    xero_tenant_id = 'xeroTenantId_example'
     date_of_birth = dateutil.parser.parse('2000-10-28T00:00:00Z')
 
     address = Address(
@@ -4494,7 +4494,7 @@ def accounting_create_employee():
         address = address)
     
     try:
-        api_response = api_instance.create_employee(xeroTenantId, employee)
+        api_response = api_instance.create_employee(xero_tenant_id, employee)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->createEmployee: %s\n" % e)</code></pre>
@@ -4617,8 +4617,8 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_create_employee_earnings_template():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    employeeID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'xeroTenantId_example'
+    employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
 
     earnings_template = EarningsTemplate(
         pay_template_earning_id = "00000000-0000-0000-0000-000000000000",
@@ -4632,7 +4632,7 @@ def accounting_create_employee_earnings_template():
     earnings_templates.append(earnings_template)
     
     try:
-        api_response = api_instance.create_employee_earnings_template(xeroTenantId, employeeID, earningsTemplate)
+        api_response = api_instance.create_employee_earnings_template(xero_tenant_id, employee_id, earningsTemplate)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->createEmployeeEarningsTemplate: %s\n" % e)</code></pre>
@@ -4788,8 +4788,8 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_create_employee_leave():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    employeeID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'xeroTenantId_example'
+    employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
     start_date = dateutil.parser.parse('2020-10-28T00:00:00Z')
     end_date = dateutil.parser.parse('2020-10-30T00:00:00Z')
 
@@ -4799,7 +4799,7 @@ def accounting_create_employee_leave():
         end_date = end_date)
     
     try:
-        api_response = api_instance.create_employee_leave(xeroTenantId, employeeID, employeeLeave)
+        api_response = api_instance.create_employee_leave(xero_tenant_id, employee_id, employeeLeave)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->createEmployeeLeave: %s\n" % e)</code></pre>
@@ -4955,8 +4955,8 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_create_employee_leave_setup():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    employeeID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'xeroTenantId_example'
+    employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
 
     employee_leave_setup = EmployeeLeaveSetup(
         include_holiday_pay = false,
@@ -4967,7 +4967,7 @@ def accounting_create_employee_leave_setup():
         sick_leave_opening_balance = 10.5)
     
     try:
-        api_response = api_instance.create_employee_leave_setup(xeroTenantId, employeeID, employeeLeaveSetup)
+        api_response = api_instance.create_employee_leave_setup(xero_tenant_id, employee_id, employeeLeaveSetup)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->createEmployeeLeaveSetup: %s\n" % e)</code></pre>
@@ -5123,8 +5123,8 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_create_employee_leave_type():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    employeeID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'xeroTenantId_example'
+    employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
 
     employee_leave_type = EmployeeLeaveType(
         leave_type_id = "00000000-0000-0000-0000-000000000000",
@@ -5132,7 +5132,7 @@ def accounting_create_employee_leave_type():
         opening_balance = 5.25)
     
     try:
-        api_response = api_instance.create_employee_leave_type(xeroTenantId, employeeID, employeeLeaveType)
+        api_response = api_instance.create_employee_leave_type(xero_tenant_id, employee_id, employeeLeaveType)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->createEmployeeLeaveType: %s\n" % e)</code></pre>
@@ -5288,8 +5288,8 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_create_employee_opening_balances():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    employeeID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'xeroTenantId_example'
+    employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
     period_end_date = dateutil.parser.parse('2020-10-30T00:00:00Z')
 
     employee_opening_balance = EmployeeOpeningBalance(
@@ -5302,7 +5302,7 @@ def accounting_create_employee_opening_balances():
     employee_opening_balances.append(employee_opening_balance)
     
     try:
-        api_response = api_instance.create_employee_opening_balances(xeroTenantId, employeeID, employeeOpeningBalance)
+        api_response = api_instance.create_employee_opening_balances(xero_tenant_id, employee_id, employeeOpeningBalance)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->createEmployeeOpeningBalances: %s\n" % e)</code></pre>
@@ -5458,8 +5458,8 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_create_employee_payment_method():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    employeeID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'xeroTenantId_example'
+    employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
 
     bank_account = BankAccount(
         account_name = "Charlotte Danes",
@@ -5473,7 +5473,7 @@ def accounting_create_employee_payment_method():
         bankAccounts = bankAccounts)
     
     try:
-        api_response = api_instance.create_employee_payment_method(xeroTenantId, employeeID, paymentMethod)
+        api_response = api_instance.create_employee_payment_method(xero_tenant_id, employee_id, paymentMethod)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->createEmployeePaymentMethod: %s\n" % e)</code></pre>
@@ -5628,8 +5628,8 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_create_employee_salary_and_wage():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    employeeID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'xeroTenantId_example'
+    employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
 
     salary_and_wage = SalaryAndWage(
         earnings_rate_id = "00000000-0000-0000-0000-000000000000",
@@ -5638,7 +5638,7 @@ def accounting_create_employee_salary_and_wage():
         payment_type = payment_type_enum.Hourly)
     
     try:
-        api_response = api_instance.create_employee_salary_and_wage(xeroTenantId, employeeID, salaryAndWage)
+        api_response = api_instance.create_employee_salary_and_wage(xero_tenant_id, employee_id, salaryAndWage)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->createEmployeeSalaryAndWage: %s\n" % e)</code></pre>
@@ -5794,8 +5794,8 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_create_employment():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    employeeID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'xeroTenantId_example'
+    employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
     start_date = dateutil.parser.parse('2020-10-28T00:00:00Z')
 
     employment = Employment(
@@ -5803,7 +5803,7 @@ def accounting_create_employment():
         start_date = start_date)
     
     try:
-        api_response = api_instance.create_employment(xeroTenantId, employeeID, employment)
+        api_response = api_instance.create_employment(xero_tenant_id, employee_id, employment)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->createEmployment: %s\n" % e)</code></pre>
@@ -5959,7 +5959,7 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_create_leave_type():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
+    xero_tenant_id = 'xeroTenantId_example'
 
     leave_type = LeaveType(
         name = "LeaveType",
@@ -5967,7 +5967,7 @@ def accounting_create_leave_type():
         show_on_payslip = true)
     
     try:
-        api_response = api_instance.create_leave_type(xeroTenantId, leaveType)
+        api_response = api_instance.create_leave_type(xero_tenant_id, leaveType)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->createLeaveType: %s\n" % e)</code></pre>
@@ -6090,8 +6090,8 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_create_multiple_employee_earnings_template():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    employeeID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'xeroTenantId_example'
+    employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
 
     earnings_template = EarningsTemplate(
         pay_template_earning_id = "00000000-0000-0000-0000-000000000000",
@@ -6105,7 +6105,7 @@ def accounting_create_multiple_employee_earnings_template():
     earnings_templates.append(earnings_template)
     
     try:
-        api_response = api_instance.create_multiple_employee_earnings_template(xeroTenantId, employeeID, earningsTemplate)
+        api_response = api_instance.create_multiple_employee_earnings_template(xero_tenant_id, employee_id, earningsTemplate)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->createMultipleEmployeeEarningsTemplate: %s\n" % e)</code></pre>
@@ -6261,14 +6261,14 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_create_pay_run():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
+    xero_tenant_id = 'xeroTenantId_example'
 
     pay_run = PayRun(
         pay_run_type = pay_run_type_enum.Scheduled,
         payroll_calendar_id = "00000000-0000-0000-0000-000000000000")
     
     try:
-        api_response = api_instance.create_pay_run(xeroTenantId, payRun)
+        api_response = api_instance.create_pay_run(xero_tenant_id, payRun)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->createPayRun: %s\n" % e)</code></pre>
@@ -6391,7 +6391,7 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_create_pay_run_calendar():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
+    xero_tenant_id = 'xeroTenantId_example'
     start_date = dateutil.parser.parse('2020-10-28T00:00:00Z')
     payment_date = dateutil.parser.parse('2020-10-30T00:00:00Z')
 
@@ -6401,7 +6401,7 @@ def accounting_create_pay_run_calendar():
         payment_date = payment_date)
     
     try:
-        api_response = api_instance.create_pay_run_calendar(xeroTenantId, payRunCalendar)
+        api_response = api_instance.create_pay_run_calendar(xero_tenant_id, payRunCalendar)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->createPayRunCalendar: %s\n" % e)</code></pre>
@@ -6524,7 +6524,7 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_create_reimbursement():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
+    xero_tenant_id = 'xeroTenantId_example'
 
     reimbursement = Reimbursement(
         name = "Test Reimbursement",
@@ -6533,7 +6533,7 @@ def accounting_create_reimbursement():
         reimbursement_category = reimbursement_category_enum.GST)
     
     try:
-        api_response = api_instance.create_reimbursement(xeroTenantId, reimbursement)
+        api_response = api_instance.create_reimbursement(xero_tenant_id, reimbursement)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->createReimbursement: %s\n" % e)</code></pre>
@@ -6656,7 +6656,7 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_create_superannuation():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
+    xero_tenant_id = 'xeroTenantId_example'
 
     benefit = Benefit(
         category = "ComplyingFund",
@@ -6667,7 +6667,7 @@ def accounting_create_superannuation():
         standard_amount = 100)
     
     try:
-        api_response = api_instance.create_superannuation(xeroTenantId, benefit)
+        api_response = api_instance.create_superannuation(xero_tenant_id, benefit)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->createSuperannuation: %s\n" % e)</code></pre>
@@ -6790,7 +6790,7 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_create_timesheet():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
+    xero_tenant_id = 'xeroTenantId_example'
     start_date = dateutil.parser.parse('2020-10-28T00:00:00Z')
     end_date = dateutil.parser.parse('2020-10-30T00:00:00Z')
 
@@ -6801,7 +6801,7 @@ def accounting_create_timesheet():
         end_date = end_date)
     
     try:
-        api_response = api_instance.create_timesheet(xeroTenantId, timesheet)
+        api_response = api_instance.create_timesheet(xero_tenant_id, timesheet)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->createTimesheet: %s\n" % e)</code></pre>
@@ -6924,8 +6924,8 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_create_timesheet_line():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    timesheetID = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    xero_tenant_id = 'xeroTenantId_example'
+    timesheet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
     date = dateutil.parser.parse('2020-10-28T00:00:00Z')
 
     timesheet_line = TimesheetLine(
@@ -6936,7 +6936,7 @@ def accounting_create_timesheet_line():
         number_of_units = 6)
     
     try:
-        api_response = api_instance.create_timesheet_line(xeroTenantId, timesheetID, timesheetLine)
+        api_response = api_instance.create_timesheet_line(xero_tenant_id, timesheet_id, timesheetLine)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->createTimesheetLine: %s\n" % e)</code></pre>
@@ -7092,12 +7092,12 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_delete_employee_earnings_template():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    employeeID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
-    payTemplateEarningID = '3fa85f64-5717-4562-b3fc-2c963f66afa6'
+    xero_tenant_id = 'xeroTenantId_example'
+    employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    pay_template_earning_id = '3fa85f64-5717-4562-b3fc-2c963f66afa6'
     
     try:
-        api_response = api_instance.delete_employee_earnings_template(xeroTenantId, employeeID, payTemplateEarningID)
+        api_response = api_instance.delete_employee_earnings_template(xero_tenant_id, employee_id, pay_template_earning_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->deleteEmployeeEarningsTemplate: %s\n" % e)</code></pre>
@@ -7243,12 +7243,12 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_delete_employee_leave():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    employeeID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
-    leaveID = 'c4be24e5-e840-4c92-9eaa-2d86cd596314'
+    xero_tenant_id = 'xeroTenantId_example'
+    employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    leave_id = 'c4be24e5-e840-4c92-9eaa-2d86cd596314'
     
     try:
-        api_response = api_instance.delete_employee_leave(xeroTenantId, employeeID, leaveID)
+        api_response = api_instance.delete_employee_leave(xero_tenant_id, employee_id, leave_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->deleteEmployeeLeave: %s\n" % e)</code></pre>
@@ -7394,12 +7394,12 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_delete_employee_salary_and_wage():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    employeeID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
-    salaryAndWagesID = '3fa85f64-5717-4562-b3fc-2c963f66afa6'
+    xero_tenant_id = 'xeroTenantId_example'
+    employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    salary_and_wages_id = '3fa85f64-5717-4562-b3fc-2c963f66afa6'
     
     try:
-        api_response = api_instance.delete_employee_salary_and_wage(xeroTenantId, employeeID, salaryAndWagesID)
+        api_response = api_instance.delete_employee_salary_and_wage(xero_tenant_id, employee_id, salary_and_wages_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->deleteEmployeeSalaryAndWage: %s\n" % e)</code></pre>
@@ -7545,11 +7545,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_delete_timesheet():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    timesheetID = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    xero_tenant_id = 'xeroTenantId_example'
+    timesheet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
     
     try:
-        api_response = api_instance.delete_timesheet(xeroTenantId, timesheetID)
+        api_response = api_instance.delete_timesheet(xero_tenant_id, timesheet_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->deleteTimesheet: %s\n" % e)</code></pre>
@@ -7669,12 +7669,12 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_delete_timesheet_line():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    timesheetID = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
-    timesheetLineID = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    xero_tenant_id = 'xeroTenantId_example'
+    timesheet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    timesheet_line_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
     
     try:
-        api_response = api_instance.delete_timesheet_line(xeroTenantId, timesheetID, timesheetLineID)
+        api_response = api_instance.delete_timesheet_line(xero_tenant_id, timesheet_id, timesheet_line_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->deleteTimesheetLine: %s\n" % e)</code></pre>
@@ -7820,11 +7820,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_deduction():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    deductionId = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    xero_tenant_id = 'xeroTenantId_example'
+    deduction_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
     
     try:
-        api_response = api_instance.get_deduction(xeroTenantId, deductionId)
+        api_response = api_instance.get_deduction(xero_tenant_id, deduction_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->getDeduction: %s\n" % e)</code></pre>
@@ -7949,10 +7949,10 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_deductions():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
+    xero_tenant_id = 'xeroTenantId_example'
     
     try:
-        api_response = api_instance.get_deductions(xeroTenantId, page)
+        api_response = api_instance.get_deductions(xero_tenant_id, page)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->getDeductions: %s\n" % e)</code></pre>
@@ -8071,11 +8071,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_earnings_rate():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    earningsRateID = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    xero_tenant_id = 'xeroTenantId_example'
+    earnings_rate_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
     
     try:
-        api_response = api_instance.get_earnings_rate(xeroTenantId, earningsRateID)
+        api_response = api_instance.get_earnings_rate(xero_tenant_id, earnings_rate_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->getEarningsRate: %s\n" % e)</code></pre>
@@ -8200,10 +8200,10 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_earnings_rates():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
+    xero_tenant_id = 'xeroTenantId_example'
     
     try:
-        api_response = api_instance.get_earnings_rates(xeroTenantId, page)
+        api_response = api_instance.get_earnings_rates(xero_tenant_id, page)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->getEarningsRates: %s\n" % e)</code></pre>
@@ -8322,11 +8322,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_employee():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    employeeID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'xeroTenantId_example'
+    employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
     
     try:
-        api_response = api_instance.get_employee(xeroTenantId, employeeID)
+        api_response = api_instance.get_employee(xero_tenant_id, employee_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->getEmployee: %s\n" % e)</code></pre>
@@ -8451,11 +8451,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_employee_leave_balances():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    employeeID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'xeroTenantId_example'
+    employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
     
     try:
-        api_response = api_instance.get_employee_leave_balances(xeroTenantId, employeeID)
+        api_response = api_instance.get_employee_leave_balances(xero_tenant_id, employee_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->getEmployeeLeaveBalances: %s\n" % e)</code></pre>
@@ -8580,13 +8580,13 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_employee_leave_periods():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    employeeID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
-    startDate = dateutil.parser.parse("2013-10-20")
-    endDate = dateutil.parser.parse("Johnson")
+    xero_tenant_id = 'xeroTenantId_example'
+    employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    start_date = dateutil.parser.parse("2013-10-20")
+    end_date = dateutil.parser.parse("Johnson")
     
     try:
-        api_response = api_instance.get_employee_leave_periods(xeroTenantId, employeeID, startDate, endDate)
+        api_response = api_instance.get_employee_leave_periods(xero_tenant_id, employee_id, start_date, end_date)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->getEmployeeLeavePeriods: %s\n" % e)</code></pre>
@@ -8764,11 +8764,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_employee_leave_types():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    employeeID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'xeroTenantId_example'
+    employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
     
     try:
-        api_response = api_instance.get_employee_leave_types(xeroTenantId, employeeID)
+        api_response = api_instance.get_employee_leave_types(xero_tenant_id, employee_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->getEmployeeLeaveTypes: %s\n" % e)</code></pre>
@@ -8893,11 +8893,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_employee_leaves():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    employeeID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'xeroTenantId_example'
+    employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
     
     try:
-        api_response = api_instance.get_employee_leaves(xeroTenantId, employeeID)
+        api_response = api_instance.get_employee_leaves(xero_tenant_id, employee_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->getEmployeeLeaves: %s\n" % e)</code></pre>
@@ -9022,11 +9022,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_employee_opening_balances():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    employeeID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'xeroTenantId_example'
+    employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
     
     try:
-        api_response = api_instance.get_employee_opening_balances(xeroTenantId, employeeID)
+        api_response = api_instance.get_employee_opening_balances(xero_tenant_id, employee_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->getEmployeeOpeningBalances: %s\n" % e)</code></pre>
@@ -9151,11 +9151,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_employee_pay_templates():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    employeeID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'xeroTenantId_example'
+    employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
     
     try:
-        api_response = api_instance.get_employee_pay_templates(xeroTenantId, employeeID)
+        api_response = api_instance.get_employee_pay_templates(xero_tenant_id, employee_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->getEmployeePayTemplates: %s\n" % e)</code></pre>
@@ -9280,11 +9280,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_employee_payment_method():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    employeeID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'xeroTenantId_example'
+    employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
     
     try:
-        api_response = api_instance.get_employee_payment_method(xeroTenantId, employeeID)
+        api_response = api_instance.get_employee_payment_method(xero_tenant_id, employee_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->getEmployeePaymentMethod: %s\n" % e)</code></pre>
@@ -9409,12 +9409,12 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_employee_salary_and_wage():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    employeeID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
-    salaryAndWagesID = '3fa85f64-5717-4562-b3fc-2c963f66afa6'
+    xero_tenant_id = 'xeroTenantId_example'
+    employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    salary_and_wages_id = '3fa85f64-5717-4562-b3fc-2c963f66afa6'
     
     try:
-        api_response = api_instance.get_employee_salary_and_wage(xeroTenantId, employeeID, salaryAndWagesID)
+        api_response = api_instance.get_employee_salary_and_wage(xero_tenant_id, employee_id, salary_and_wages_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->getEmployeeSalaryAndWage: %s\n" % e)</code></pre>
@@ -9565,11 +9565,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_employee_salary_and_wages():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    employeeID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'xeroTenantId_example'
+    employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
     
     try:
-        api_response = api_instance.get_employee_salary_and_wages(xeroTenantId, employeeID, page)
+        api_response = api_instance.get_employee_salary_and_wages(xero_tenant_id, employee_id, page)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->getEmployeeSalaryAndWages: %s\n" % e)</code></pre>
@@ -9721,11 +9721,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_employee_tax():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    employeeID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'xeroTenantId_example'
+    employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
     
     try:
-        api_response = api_instance.get_employee_tax(xeroTenantId, employeeID)
+        api_response = api_instance.get_employee_tax(xero_tenant_id, employee_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->getEmployeeTax: %s\n" % e)</code></pre>
@@ -9850,11 +9850,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_employees():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
+    xero_tenant_id = 'xeroTenantId_example'
     filter = 'firstName==John,lastName==Smith'
     
     try:
-        api_response = api_instance.get_employees(xeroTenantId, filter, page)
+        api_response = api_instance.get_employees(xero_tenant_id, filter, page)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->getEmployees: %s\n" % e)</code></pre>
@@ -9993,11 +9993,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_leave_type():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    leaveTypeID = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    xero_tenant_id = 'xeroTenantId_example'
+    leave_type_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
     
     try:
-        api_response = api_instance.get_leave_type(xeroTenantId, leaveTypeID)
+        api_response = api_instance.get_leave_type(xero_tenant_id, leave_type_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->getLeaveType: %s\n" % e)</code></pre>
@@ -10122,11 +10122,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_leave_types():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    activeOnly = 'true'
+    xero_tenant_id = 'xeroTenantId_example'
+    active_only = 'True'
     
     try:
-        api_response = api_instance.get_leave_types(xeroTenantId, page, activeOnly)
+        api_response = api_instance.get_leave_types(xero_tenant_id, page, active_only)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->getLeaveTypes: %s\n" % e)</code></pre>
@@ -10265,11 +10265,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_pay_run():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    payRunID = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    xero_tenant_id = 'xeroTenantId_example'
+    pay_run_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
     
     try:
-        api_response = api_instance.get_pay_run(xeroTenantId, payRunID)
+        api_response = api_instance.get_pay_run(xero_tenant_id, pay_run_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->getPayRun: %s\n" % e)</code></pre>
@@ -10394,11 +10394,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_pay_run_calendar():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    payrollCalendarID = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    xero_tenant_id = 'xeroTenantId_example'
+    payroll_calendar_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
     
     try:
-        api_response = api_instance.get_pay_run_calendar(xeroTenantId, payrollCalendarID)
+        api_response = api_instance.get_pay_run_calendar(xero_tenant_id, payroll_calendar_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->getPayRunCalendar: %s\n" % e)</code></pre>
@@ -10523,10 +10523,10 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_pay_run_calendars():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
+    xero_tenant_id = 'xeroTenantId_example'
     
     try:
-        api_response = api_instance.get_pay_run_calendars(xeroTenantId, page)
+        api_response = api_instance.get_pay_run_calendars(xero_tenant_id, page)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->getPayRunCalendars: %s\n" % e)</code></pre>
@@ -10645,11 +10645,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_pay_runs():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
+    xero_tenant_id = 'xeroTenantId_example'
     status = 'status_example'
     
     try:
-        api_response = api_instance.get_pay_runs(xeroTenantId, page, status)
+        api_response = api_instance.get_pay_runs(xero_tenant_id, page, status)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->getPayRuns: %s\n" % e)</code></pre>
@@ -10788,11 +10788,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_pay_slip():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    paySlipID = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    xero_tenant_id = 'xeroTenantId_example'
+    pay_slip_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
     
     try:
-        api_response = api_instance.get_pay_slip(xeroTenantId, paySlipID)
+        api_response = api_instance.get_pay_slip(xero_tenant_id, pay_slip_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->getPaySlip: %s\n" % e)</code></pre>
@@ -10917,11 +10917,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_pay_slips():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    payRunID = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    xero_tenant_id = 'xeroTenantId_example'
+    pay_run_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
     
     try:
-        api_response = api_instance.get_pay_slips(xeroTenantId, payRunID, page)
+        api_response = api_instance.get_pay_slips(xero_tenant_id, pay_run_id, page)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->getPaySlips: %s\n" % e)</code></pre>
@@ -11066,11 +11066,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_reimbursement():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    reimbursementID = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    xero_tenant_id = 'xeroTenantId_example'
+    reimbursement_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
     
     try:
-        api_response = api_instance.get_reimbursement(xeroTenantId, reimbursementID)
+        api_response = api_instance.get_reimbursement(xero_tenant_id, reimbursement_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->getReimbursement: %s\n" % e)</code></pre>
@@ -11195,10 +11195,10 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_reimbursements():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
+    xero_tenant_id = 'xeroTenantId_example'
     
     try:
-        api_response = api_instance.get_reimbursements(xeroTenantId, page)
+        api_response = api_instance.get_reimbursements(xero_tenant_id, page)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->getReimbursements: %s\n" % e)</code></pre>
@@ -11317,10 +11317,10 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_settings():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
+    xero_tenant_id = 'xeroTenantId_example'
     
     try:
-        api_response = api_instance.get_settings(xeroTenantId)
+        api_response = api_instance.get_settings(xero_tenant_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->getSettings: %s\n" % e)</code></pre>
@@ -11412,11 +11412,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_statutory_deduction():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
+    xero_tenant_id = 'xeroTenantId_example'
     id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
     
     try:
-        api_response = api_instance.get_statutory_deduction(xeroTenantId, id)
+        api_response = api_instance.get_statutory_deduction(xero_tenant_id, id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->getStatutoryDeduction: %s\n" % e)</code></pre>
@@ -11541,10 +11541,10 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_statutory_deductions():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
+    xero_tenant_id = 'xeroTenantId_example'
     
     try:
-        api_response = api_instance.get_statutory_deductions(xeroTenantId, page)
+        api_response = api_instance.get_statutory_deductions(xero_tenant_id, page)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->getStatutoryDeductions: %s\n" % e)</code></pre>
@@ -11663,11 +11663,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_superannuation():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    superannuationID = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    xero_tenant_id = 'xeroTenantId_example'
+    superannuation_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
     
     try:
-        api_response = api_instance.get_superannuation(xeroTenantId, superannuationID)
+        api_response = api_instance.get_superannuation(xero_tenant_id, superannuation_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->getSuperannuation: %s\n" % e)</code></pre>
@@ -11792,10 +11792,10 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_superannuations():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
+    xero_tenant_id = 'xeroTenantId_example'
     
     try:
-        api_response = api_instance.get_superannuations(xeroTenantId, page)
+        api_response = api_instance.get_superannuations(xero_tenant_id, page)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->getSuperannuations: %s\n" % e)</code></pre>
@@ -11914,11 +11914,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_timesheet():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    timesheetID = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    xero_tenant_id = 'xeroTenantId_example'
+    timesheet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
     
     try:
-        api_response = api_instance.get_timesheet(xeroTenantId, timesheetID)
+        api_response = api_instance.get_timesheet(xero_tenant_id, timesheet_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->getTimesheet: %s\n" % e)</code></pre>
@@ -12043,15 +12043,15 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_timesheets():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
+    xero_tenant_id = 'xeroTenantId_example'
     filter = 'employeeId==00000000-0000-0000-0000-000000000000,payrollCalendarId==00000000-0000-0000-0000-000000000000'
     status = 'Draft'
-    startDate = '2019-01-02'
-    endDate = '2020-01-02'
+    start_date = '2019-01-02'
+    end_date = '2020-01-02'
     sort = 'startDate'
     
     try:
-        api_response = api_instance.get_timesheets(xeroTenantId, page, filter, status, startDate, endDate, sort)
+        api_response = api_instance.get_timesheets(xero_tenant_id, page, filter, status, start_date, end_date, sort)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->getTimesheets: %s\n" % e)</code></pre>
@@ -12270,10 +12270,10 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_tracking_categories():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
+    xero_tenant_id = 'xeroTenantId_example'
     
     try:
-        api_response = api_instance.get_tracking_categories(xeroTenantId)
+        api_response = api_instance.get_tracking_categories(xero_tenant_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->getTrackingCategories: %s\n" % e)</code></pre>
@@ -12365,11 +12365,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_revert_timesheet():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    timesheetID = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    xero_tenant_id = 'xeroTenantId_example'
+    timesheet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
     
     try:
-        api_response = api_instance.revert_timesheet(xeroTenantId, timesheetID)
+        api_response = api_instance.revert_timesheet(xero_tenant_id, timesheet_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->revertTimesheet: %s\n" % e)</code></pre>
@@ -12489,8 +12489,8 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_update_employee():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    employeeID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'xeroTenantId_example'
+    employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
     date_of_birth = dateutil.parser.parse('2000-10-28T00:00:00Z')
 
     address = Address(
@@ -12506,7 +12506,7 @@ def accounting_update_employee():
         address = address)
     
     try:
-        api_response = api_instance.update_employee(xeroTenantId, employeeID, employee)
+        api_response = api_instance.update_employee(xero_tenant_id, employee_id, employee)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->updateEmployee: %s\n" % e)</code></pre>
@@ -12662,9 +12662,9 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_update_employee_earnings_template():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    employeeID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
-    payTemplateEarningID = '3fa85f64-5717-4562-b3fc-2c963f66afa6'
+    xero_tenant_id = 'xeroTenantId_example'
+    employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    pay_template_earning_id = '3fa85f64-5717-4562-b3fc-2c963f66afa6'
 
     earnings_template = EarningsTemplate(
         pay_template_earning_id = "00000000-0000-0000-0000-000000000000",
@@ -12678,7 +12678,7 @@ def accounting_update_employee_earnings_template():
     earnings_templates.append(earnings_template)
     
     try:
-        api_response = api_instance.update_employee_earnings_template(xeroTenantId, employeeID, payTemplateEarningID, earningsTemplate)
+        api_response = api_instance.update_employee_earnings_template(xero_tenant_id, employee_id, pay_template_earning_id, earningsTemplate)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->updateEmployeeEarningsTemplate: %s\n" % e)</code></pre>
@@ -12860,9 +12860,9 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_update_employee_leave():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    employeeID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
-    leaveID = 'c4be24e5-e840-4c92-9eaa-2d86cd596314'
+    xero_tenant_id = 'xeroTenantId_example'
+    employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    leave_id = 'c4be24e5-e840-4c92-9eaa-2d86cd596314'
     start_date = dateutil.parser.parse('2020-10-28T00:00:00Z')
     end_date = dateutil.parser.parse('2020-10-30T00:00:00Z')
 
@@ -12872,7 +12872,7 @@ def accounting_update_employee_leave():
         end_date = end_date)
     
     try:
-        api_response = api_instance.update_employee_leave(xeroTenantId, employeeID, leaveID, employeeLeave)
+        api_response = api_instance.update_employee_leave(xero_tenant_id, employee_id, leave_id, employeeLeave)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->updateEmployeeLeave: %s\n" % e)</code></pre>
@@ -13054,9 +13054,9 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_update_employee_salary_and_wage():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    employeeID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
-    salaryAndWagesID = '3fa85f64-5717-4562-b3fc-2c963f66afa6'
+    xero_tenant_id = 'xeroTenantId_example'
+    employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    salary_and_wages_id = '3fa85f64-5717-4562-b3fc-2c963f66afa6'
 
     salary_and_wage = SalaryAndWage(
         earnings_rate_id = "00000000-0000-0000-0000-000000000000",
@@ -13065,7 +13065,7 @@ def accounting_update_employee_salary_and_wage():
         payment_type = payment_type_enum.Hourly)
     
     try:
-        api_response = api_instance.update_employee_salary_and_wage(xeroTenantId, employeeID, salaryAndWagesID, salaryAndWage)
+        api_response = api_instance.update_employee_salary_and_wage(xero_tenant_id, employee_id, salary_and_wages_id, salaryAndWage)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->updateEmployeeSalaryAndWage: %s\n" % e)</code></pre>
@@ -13247,8 +13247,8 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_update_employee_tax():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    employeeID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'xeroTenantId_example'
+    employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
     student_loan_as_at = dateutil.parser.parse('2020-10-30T00:00:00Z')
 
     employee_tax = EmployeeTax(
@@ -13266,7 +13266,7 @@ def accounting_update_employee_tax():
         student_loan_as_at = student_loan_as_at)
     
     try:
-        api_response = api_instance.update_employee_tax(xeroTenantId, employeeID, employeeTax)
+        api_response = api_instance.update_employee_tax(xero_tenant_id, employee_id, employeeTax)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->updateEmployeeTax: %s\n" % e)</code></pre>
@@ -13421,8 +13421,8 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_update_pay_run():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    payRunID = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    xero_tenant_id = 'xeroTenantId_example'
+    pay_run_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
     start_date = dateutil.parser.parse('2020-10-28T00:00:00Z')
     payment_date = dateutil.parser.parse('2020-10-30T00:00:00Z')
 
@@ -13432,7 +13432,7 @@ def accounting_update_pay_run():
         payment_date = payment_date)
     
     try:
-        api_response = api_instance.update_pay_run(xeroTenantId, payRunID, payRun)
+        api_response = api_instance.update_pay_run(xero_tenant_id, pay_run_id, payRun)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->updatePayRun: %s\n" % e)</code></pre>
@@ -13588,8 +13588,8 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_update_pay_slip_line_items():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    paySlipID = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    xero_tenant_id = 'xeroTenantId_example'
+    pay_slip_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
 
     earnings_line = EarningsLine(
         earnings_line_id = "00000000-0000-0000-0000-000000000000",
@@ -13606,7 +13606,7 @@ def accounting_update_pay_slip_line_items():
         earningsLines = earnings_lines)
     
     try:
-        api_response = api_instance.update_pay_slip_line_items(xeroTenantId, paySlipID, paySlip)
+        api_response = api_instance.update_pay_slip_line_items(xero_tenant_id, pay_slip_id, paySlip)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->updatePaySlipLineItems: %s\n" % e)</code></pre>
@@ -13762,9 +13762,9 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_update_timesheet_line():
     api_instance = PayrollNzApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    timesheetID = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
-    timesheetLineID = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    xero_tenant_id = 'xeroTenantId_example'
+    timesheet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    timesheet_line_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
     date = dateutil.parser.parse('2020-10-28T00:00:00Z')
 
     timesheet_line = TimesheetLine(
@@ -13775,7 +13775,7 @@ def accounting_update_timesheet_line():
         number_of_units = 6)
     
     try:
-        api_response = api_instance.update_timesheet_line(xeroTenantId, timesheetID, timesheetLineID, timesheetLine)
+        api_response = api_instance.update_timesheet_line(xero_tenant_id, timesheet_id, timesheet_line_id, timesheetLine)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->updateTimesheetLine: %s\n" % e)</code></pre>

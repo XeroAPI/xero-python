@@ -3391,7 +3391,7 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_create_employee():
     api_instance = PayrollAuApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
+    xero_tenant_id = 'xeroTenantId_example'
     date_of_birth = dateutil.parser.parse('2000-10-28T00:00:00Z')
 
     home_address = HomeAddress(
@@ -3407,7 +3407,7 @@ def accounting_create_employee():
         homeAddress = home_address)
     
     try:
-        api_response = api_instance.create_employee(xeroTenantId, employee)
+        api_response = api_instance.create_employee(xero_tenant_id, employee)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->createEmployee: %s\n" % e)</code></pre>
@@ -3533,7 +3533,7 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_create_leave_application():
     api_instance = PayrollAuApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
+    xero_tenant_id = 'xeroTenantId_example'
     start_date = dateutil.parser.parse('2020-10-28T00:00:00Z')
     end_date = dateutil.parser.parse('2020-10-30T00:00:00Z')
 
@@ -3545,7 +3545,7 @@ def accounting_create_leave_application():
         end_date = end_date)
     
     try:
-        api_response = api_instance.create_leave_application(xeroTenantId, leaveApplication)
+        api_response = api_instance.create_leave_application(xero_tenant_id, leaveApplication)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->createLeaveApplication: %s\n" % e)</code></pre>
@@ -3671,7 +3671,7 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_create_pay_item():
     api_instance = PayrollAuApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
+    xero_tenant_id = 'xeroTenantId_example'
 
     earnings_rate = EarningsRate(
         name = "Ordinary Hours 123",
@@ -3715,7 +3715,7 @@ def accounting_create_pay_item():
         reimbursementTypes = reimbursement_types)
     
     try:
-        api_response = api_instance.create_pay_item(xeroTenantId, payItem)
+        api_response = api_instance.create_pay_item(xero_tenant_id, payItem)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->createPayItem: %s\n" % e)</code></pre>
@@ -3838,13 +3838,13 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_create_pay_run():
     api_instance = PayrollAuApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
+    xero_tenant_id = 'xeroTenantId_example'
 
     pay_run = PayRun(
         payroll_calendar_id = "00000000-0000-0000-0000-000000000000")
     
     try:
-        api_response = api_instance.create_pay_run(xeroTenantId, payRun)
+        api_response = api_instance.create_pay_run(xero_tenant_id, payRun)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->createPayRun: %s\n" % e)</code></pre>
@@ -3970,7 +3970,7 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_create_payroll_calendar():
     api_instance = PayrollAuApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
+    xero_tenant_id = 'xeroTenantId_example'
     start_date = dateutil.parser.parse('2020-10-28T00:00:00Z')
     payment_date = dateutil.parser.parse('2000-10-30T00:00:00Z')
 
@@ -3984,7 +3984,7 @@ def accounting_create_payroll_calendar():
     payroll_calendars.append(payroll_calendar)
     
     try:
-        api_response = api_instance.create_payroll_calendar(xeroTenantId, payrollCalendar)
+        api_response = api_instance.create_payroll_calendar(xero_tenant_id, payrollCalendar)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->createPayrollCalendar: %s\n" % e)</code></pre>
@@ -4110,14 +4110,14 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_create_superfund():
     api_instance = PayrollAuApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
+    xero_tenant_id = 'xeroTenantId_example'
 
     super_fund = SuperFund(
         type = "REGULATED",
         USI = "40022701955002")
     
     try:
-        api_response = api_instance.create_superfund(xeroTenantId, superFund)
+        api_response = api_instance.create_superfund(xero_tenant_id, superFund)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->createSuperfund: %s\n" % e)</code></pre>
@@ -4243,7 +4243,7 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_create_timesheet():
     api_instance = PayrollAuApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
+    xero_tenant_id = 'xeroTenantId_example'
     start_date = dateutil.parser.parse('2020-10-23T00:00:00Z')
     end_date = dateutil.parser.parse('2020-10-30T00:00:00Z')
 
@@ -4254,7 +4254,7 @@ def accounting_create_timesheet():
         status = "DRAFT")
     
     try:
-        api_response = api_instance.create_timesheet(xeroTenantId, timesheet)
+        api_response = api_instance.create_timesheet(xero_tenant_id, timesheet)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->createTimesheet: %s\n" % e)</code></pre>
@@ -4380,11 +4380,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_employee():
     api_instance = PayrollAuApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    employeeID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'xeroTenantId_example'
+    employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
     
     try:
-        api_response = api_instance.get_employee(xeroTenantId, employeeID)
+        api_response = api_instance.get_employee(xero_tenant_id, employee_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->getEmployee: %s\n" % e)</code></pre>
@@ -4509,13 +4509,13 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_employees():
     api_instance = PayrollAuApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    ifModifiedSince = dateutil.parser.parse("2020-02-06T12:17:43.202-08:00")
+    xero_tenant_id = 'xeroTenantId_example'
+    if_modified_since = dateutil.parser.parse("2020-02-06T12:17:43.202-08:00")
     where = 'Status=="ACTIVE"'
     order = 'EmailAddress%20DESC'
     
     try:
-        api_response = api_instance.get_employees(xeroTenantId, ifModifiedSince, where, order, page)
+        api_response = api_instance.get_employees(xero_tenant_id, if_modified_since, where, order, page)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->getEmployees: %s\n" % e)</code></pre>
@@ -4697,11 +4697,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_leave_application():
     api_instance = PayrollAuApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    leaveApplicationID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'xeroTenantId_example'
+    leave_application_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
     
     try:
-        api_response = api_instance.get_leave_application(xeroTenantId, leaveApplicationID)
+        api_response = api_instance.get_leave_application(xero_tenant_id, leave_application_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->getLeaveApplication: %s\n" % e)</code></pre>
@@ -4826,13 +4826,13 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_leave_applications():
     api_instance = PayrollAuApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    ifModifiedSince = dateutil.parser.parse("2020-02-06T12:17:43.202-08:00")
+    xero_tenant_id = 'xeroTenantId_example'
+    if_modified_since = dateutil.parser.parse("2020-02-06T12:17:43.202-08:00")
     where = 'Status=="ACTIVE"'
     order = 'EmailAddress%20DESC'
     
     try:
-        api_response = api_instance.get_leave_applications(xeroTenantId, ifModifiedSince, where, order, page)
+        api_response = api_instance.get_leave_applications(xero_tenant_id, if_modified_since, where, order, page)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->getLeaveApplications: %s\n" % e)</code></pre>
@@ -5014,13 +5014,13 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_pay_items():
     api_instance = PayrollAuApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    ifModifiedSince = dateutil.parser.parse("2020-02-06T12:17:43.202-08:00")
+    xero_tenant_id = 'xeroTenantId_example'
+    if_modified_since = dateutil.parser.parse("2020-02-06T12:17:43.202-08:00")
     where = 'Status=="ACTIVE"'
     order = 'EmailAddress%20DESC'
     
     try:
-        api_response = api_instance.get_pay_items(xeroTenantId, ifModifiedSince, where, order, page)
+        api_response = api_instance.get_pay_items(xero_tenant_id, if_modified_since, where, order, page)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->getPayItems: %s\n" % e)</code></pre>
@@ -5202,11 +5202,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_pay_run():
     api_instance = PayrollAuApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    payRunID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'xeroTenantId_example'
+    pay_run_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
     
     try:
-        api_response = api_instance.get_pay_run(xeroTenantId, payRunID)
+        api_response = api_instance.get_pay_run(xero_tenant_id, pay_run_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->getPayRun: %s\n" % e)</code></pre>
@@ -5331,13 +5331,13 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_pay_runs():
     api_instance = PayrollAuApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    ifModifiedSince = dateutil.parser.parse("2020-02-06T12:17:43.202-08:00")
+    xero_tenant_id = 'xeroTenantId_example'
+    if_modified_since = dateutil.parser.parse("2020-02-06T12:17:43.202-08:00")
     where = 'Status=="ACTIVE"'
     order = 'EmailAddress%20DESC'
     
     try:
-        api_response = api_instance.get_pay_runs(xeroTenantId, ifModifiedSince, where, order, page)
+        api_response = api_instance.get_pay_runs(xero_tenant_id, if_modified_since, where, order, page)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->getPayRuns: %s\n" % e)</code></pre>
@@ -5519,11 +5519,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_payroll_calendar():
     api_instance = PayrollAuApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    payrollCalendarID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'xeroTenantId_example'
+    payroll_calendar_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
     
     try:
-        api_response = api_instance.get_payroll_calendar(xeroTenantId, payrollCalendarID)
+        api_response = api_instance.get_payroll_calendar(xero_tenant_id, payroll_calendar_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->getPayrollCalendar: %s\n" % e)</code></pre>
@@ -5648,13 +5648,13 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_payroll_calendars():
     api_instance = PayrollAuApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    ifModifiedSince = dateutil.parser.parse("2020-02-06T12:17:43.202-08:00")
+    xero_tenant_id = 'xeroTenantId_example'
+    if_modified_since = dateutil.parser.parse("2020-02-06T12:17:43.202-08:00")
     where = 'Status=="ACTIVE"'
     order = 'EmailAddress%20DESC'
     
     try:
-        api_response = api_instance.get_payroll_calendars(xeroTenantId, ifModifiedSince, where, order, page)
+        api_response = api_instance.get_payroll_calendars(xero_tenant_id, if_modified_since, where, order, page)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->getPayrollCalendars: %s\n" % e)</code></pre>
@@ -5836,11 +5836,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_payslip():
     api_instance = PayrollAuApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    payslipID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'xeroTenantId_example'
+    payslip_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
     
     try:
-        api_response = api_instance.get_payslip(xeroTenantId, payslipID)
+        api_response = api_instance.get_payslip(xero_tenant_id, payslip_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->getPayslip: %s\n" % e)</code></pre>
@@ -5965,10 +5965,10 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_settings():
     api_instance = PayrollAuApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
+    xero_tenant_id = 'xeroTenantId_example'
     
     try:
-        api_response = api_instance.get_settings(xeroTenantId)
+        api_response = api_instance.get_settings(xero_tenant_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->getSettings: %s\n" % e)</code></pre>
@@ -6060,11 +6060,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_superfund():
     api_instance = PayrollAuApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    superFundID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'xeroTenantId_example'
+    super_fund_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
     
     try:
-        api_response = api_instance.get_superfund(xeroTenantId, superFundID)
+        api_response = api_instance.get_superfund(xero_tenant_id, super_fund_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->getSuperfund: %s\n" % e)</code></pre>
@@ -6189,12 +6189,12 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_superfund_products():
     api_instance = PayrollAuApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
+    xero_tenant_id = 'xeroTenantId_example'
     aBN = '40022701955'
     uSI = 'OSF0001AU'
     
     try:
-        api_response = api_instance.get_superfund_products(xeroTenantId, aBN, uSI)
+        api_response = api_instance.get_superfund_products(xero_tenant_id, aBN, uSI)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->getSuperfundProducts: %s\n" % e)</code></pre>
@@ -6333,13 +6333,13 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_superfunds():
     api_instance = PayrollAuApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    ifModifiedSince = dateutil.parser.parse("2020-02-06T12:17:43.202-08:00")
+    xero_tenant_id = 'xeroTenantId_example'
+    if_modified_since = dateutil.parser.parse("2020-02-06T12:17:43.202-08:00")
     where = 'Status=="ACTIVE"'
     order = 'EmailAddress%20DESC'
     
     try:
-        api_response = api_instance.get_superfunds(xeroTenantId, ifModifiedSince, where, order, page)
+        api_response = api_instance.get_superfunds(xero_tenant_id, if_modified_since, where, order, page)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->getSuperfunds: %s\n" % e)</code></pre>
@@ -6521,11 +6521,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_timesheet():
     api_instance = PayrollAuApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    timesheetID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'xeroTenantId_example'
+    timesheet_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
     
     try:
-        api_response = api_instance.get_timesheet(xeroTenantId, timesheetID)
+        api_response = api_instance.get_timesheet(xero_tenant_id, timesheet_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->getTimesheet: %s\n" % e)</code></pre>
@@ -6650,13 +6650,13 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_timesheets():
     api_instance = PayrollAuApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    ifModifiedSince = dateutil.parser.parse("2020-02-06T12:17:43.202-08:00")
+    xero_tenant_id = 'xeroTenantId_example'
+    if_modified_since = dateutil.parser.parse("2020-02-06T12:17:43.202-08:00")
     where = 'Status=="ACTIVE"'
     order = 'EmailAddress%20DESC'
     
     try:
-        api_response = api_instance.get_timesheets(xeroTenantId, ifModifiedSince, where, order, page)
+        api_response = api_instance.get_timesheets(xero_tenant_id, if_modified_since, where, order, page)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->getTimesheets: %s\n" % e)</code></pre>
@@ -6838,8 +6838,8 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_update_employee():
     api_instance = PayrollAuApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    employeeID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'xeroTenantId_example'
+    employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
     date_of_birth = dateutil.parser.parse('2000-10-28T00:00:00Z')
 
     home_address = HomeAddress(
@@ -6855,7 +6855,7 @@ def accounting_update_employee():
         homeAddress = home_address)
     
     try:
-        api_response = api_instance.update_employee(xeroTenantId, employeeID, employee)
+        api_response = api_instance.update_employee(xero_tenant_id, employee_id, employee)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->updateEmployee: %s\n" % e)</code></pre>
@@ -7010,8 +7010,8 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_update_leave_application():
     api_instance = PayrollAuApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    leaveApplicationID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'xeroTenantId_example'
+    leave_application_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
     start_date = dateutil.parser.parse('2020-10-28T00:00:00Z')
     end_date = dateutil.parser.parse('2020-10-30T00:00:00Z')
 
@@ -7023,7 +7023,7 @@ def accounting_update_leave_application():
         end_date = end_date)
     
     try:
-        api_response = api_instance.update_leave_application(xeroTenantId, leaveApplicationID, leaveApplication)
+        api_response = api_instance.update_leave_application(xero_tenant_id, leave_application_id, leaveApplication)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->updateLeaveApplication: %s\n" % e)</code></pre>
@@ -7182,14 +7182,14 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_update_pay_run():
     api_instance = PayrollAuApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    payRunID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'xeroTenantId_example'
+    pay_run_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
 
     pay_run = PayRun(
         payroll_calendar_id = "00000000-0000-0000-0000-000000000000")
     
     try:
-        api_response = api_instance.update_pay_run(xeroTenantId, payRunID, payRun)
+        api_response = api_instance.update_pay_run(xero_tenant_id, pay_run_id, payRun)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->updatePayRun: %s\n" % e)</code></pre>
@@ -7344,8 +7344,8 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_update_payslip():
     api_instance = PayrollAuApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    payslipID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'xeroTenantId_example'
+    payslip_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
 
     earnings_line = EarningsLine(
         earnings_rate_id = "00000000-0000-0000-0000-000000000000",
@@ -7362,7 +7362,7 @@ def accounting_update_payslip():
     payslip_lines.append(payslip_line)
     
     try:
-        api_response = api_instance.update_payslip(xeroTenantId, payslipID, payslipLines)
+        api_response = api_instance.update_payslip(xero_tenant_id, payslip_id, payslipLines)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->updatePayslip: %s\n" % e)</code></pre>
@@ -7517,15 +7517,15 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_update_superfund():
     api_instance = PayrollAuApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    superFundID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'xeroTenantId_example'
+    super_fund_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
 
     super_fund = SuperFund(
         type = "REGULATED",
         USI = "40022701955002")
     
     try:
-        api_response = api_instance.update_superfund(xeroTenantId, superFundID, superFund)
+        api_response = api_instance.update_superfund(xero_tenant_id, super_fund_id, superFund)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->updateSuperfund: %s\n" % e)</code></pre>
@@ -7680,8 +7680,8 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_update_timesheet():
     api_instance = PayrollAuApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    timesheetID = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'xeroTenantId_example'
+    timesheet_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
     start_date = dateutil.parser.parse('2020-10-23T00:00:00Z')
     end_date = dateutil.parser.parse('2020-10-30T00:00:00Z')
 
@@ -7692,7 +7692,7 @@ def accounting_update_timesheet():
         status = "DRAFT")
     
     try:
-        api_response = api_instance.update_timesheet(xeroTenantId, timesheetID, timesheet)
+        api_response = api_instance.update_timesheet(xero_tenant_id, timesheet_id, timesheet)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->updateTimesheet: %s\n" % e)</code></pre>

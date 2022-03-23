@@ -3308,7 +3308,7 @@ def accounting_get_bank_statement_accounting():
     bank_account_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
     from_date = '2020-07-01'
     to_date = '2021-06-30'
-    summary_only = 'true'
+    summary_only = 'True'
     
     try:
         api_response = api_instance.get_bank_statement_accounting(xero_tenant_id, bank_account_id, from_date, to_date, summary_only)
@@ -3950,7 +3950,7 @@ def accounting_get_financial_statement_contacts_expense():
     api_instance = FinanceApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
     contact_ids = [["00000000-0000-0000-0000-000000000000","00000000-0000-0000-0000-000000000000"]]
-    include_manual_journals = 'true'
+    include_manual_journals = 'True'
     start_date = '2020-09-15'
     end_date = '2020-09-15'
     
@@ -4146,7 +4146,7 @@ def accounting_get_financial_statement_contacts_revenue():
     api_instance = FinanceApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
     contact_ids = [["00000000-0000-0000-0000-000000000000","00000000-0000-0000-0000-000000000000"]]
-    include_manual_journals = 'true'
+    include_manual_journals = 'True'
     start_date = '2020-09-15'
     end_date = '2020-09-15'
     
