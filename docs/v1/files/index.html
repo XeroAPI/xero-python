@@ -1256,11 +1256,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_create_file_association():
     api_instance = FilesApi(api_client)
-    xeroTenantId = 'YOUR_XERO_TENANT_ID'
-    fileId = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'YOUR_XERO_TENANT_ID'
+    file_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
     
     try:
-        api_response = api_instance.create_file_association(xeroTenantId, fileId, association)
+        api_response = api_instance.create_file_association(xero_tenant_id, file_id, association)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling FilesApi->createFileAssociation: %s\n" % e)</code></pre>
@@ -1412,10 +1412,10 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_create_folder():
     api_instance = FilesApi(api_client)
-    xeroTenantId = 'YOUR_XERO_TENANT_ID'
+    xero_tenant_id = 'YOUR_XERO_TENANT_ID'
     
     try:
-        api_response = api_instance.create_folder(xeroTenantId, folder)
+        api_response = api_instance.create_folder(xero_tenant_id, folder)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling FilesApi->createFolder: %s\n" % e)</code></pre>
@@ -1534,11 +1534,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_delete_file():
     api_instance = FilesApi(api_client)
-    xeroTenantId = 'YOUR_XERO_TENANT_ID'
-    fileId = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'YOUR_XERO_TENANT_ID'
+    file_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
     
     try:
-        api_instance.delete_file(xeroTenantId, fileId)
+        api_instance.delete_file(xero_tenant_id, file_id)
     except AccountingBadRequestException as e:
         print("Exception when calling FilesApi->deleteFile: %s\n" % e)</code></pre>
                     </div>
@@ -1657,12 +1657,12 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_delete_file_association():
     api_instance = FilesApi(api_client)
-    xeroTenantId = 'YOUR_XERO_TENANT_ID'
-    fileId = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
-    objectId = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'YOUR_XERO_TENANT_ID'
+    file_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    object_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
     
     try:
-        api_instance.delete_file_association(xeroTenantId, fileId, objectId)
+        api_instance.delete_file_association(xero_tenant_id, file_id, object_id)
     except AccountingBadRequestException as e:
         print("Exception when calling FilesApi->deleteFileAssociation: %s\n" % e)</code></pre>
                     </div>
@@ -1807,11 +1807,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_delete_folder():
     api_instance = FilesApi(api_client)
-    xeroTenantId = 'YOUR_XERO_TENANT_ID'
-    folderId = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'YOUR_XERO_TENANT_ID'
+    folder_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
     
     try:
-        api_instance.delete_folder(xeroTenantId, folderId)
+        api_instance.delete_folder(xero_tenant_id, folder_id)
     except AccountingBadRequestException as e:
         print("Exception when calling FilesApi->deleteFolder: %s\n" % e)</code></pre>
                     </div>
@@ -1930,11 +1930,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_associations_by_object():
     api_instance = FilesApi(api_client)
-    xeroTenantId = 'YOUR_XERO_TENANT_ID'
-    objectId = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'YOUR_XERO_TENANT_ID'
+    object_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
     
     try:
-        api_response = api_instance.get_associations_by_object(xeroTenantId, objectId)
+        api_response = api_instance.get_associations_by_object(xero_tenant_id, object_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling FilesApi->getAssociationsByObject: %s\n" % e)</code></pre>
@@ -2059,11 +2059,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_file():
     api_instance = FilesApi(api_client)
-    xeroTenantId = 'YOUR_XERO_TENANT_ID'
-    fileId = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'YOUR_XERO_TENANT_ID'
+    file_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
     
     try:
-        api_response = api_instance.get_file(xeroTenantId, fileId)
+        api_response = api_instance.get_file(xero_tenant_id, file_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling FilesApi->getFile: %s\n" % e)</code></pre>
@@ -2188,11 +2188,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_file_associations():
     api_instance = FilesApi(api_client)
-    xeroTenantId = 'YOUR_XERO_TENANT_ID'
-    fileId = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'YOUR_XERO_TENANT_ID'
+    file_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
     
     try:
-        api_response = api_instance.get_file_associations(xeroTenantId, fileId)
+        api_response = api_instance.get_file_associations(xero_tenant_id, file_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling FilesApi->getFileAssociations: %s\n" % e)</code></pre>
@@ -2317,11 +2317,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_file_content():
     api_instance = FilesApi(api_client)
-    xeroTenantId = 'YOUR_XERO_TENANT_ID'
-    fileId = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'YOUR_XERO_TENANT_ID'
+    file_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
     
     try:
-        api_response = api_instance.get_file_content(xeroTenantId, fileId)
+        api_response = api_instance.get_file_content(xero_tenant_id, file_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling FilesApi->getFileContent: %s\n" % e)</code></pre>
@@ -2446,11 +2446,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_files():
     api_instance = FilesApi(api_client)
-    xeroTenantId = 'YOUR_XERO_TENANT_ID'
+    xero_tenant_id = 'YOUR_XERO_TENANT_ID'
     sort = 'CreatedDateUTC DESC'
     
     try:
-        api_response = api_instance.get_files(xeroTenantId, pagesize, page, sort)
+        api_response = api_instance.get_files(xero_tenant_id, pagesize, page, sort)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling FilesApi->getFiles: %s\n" % e)</code></pre>
@@ -2609,11 +2609,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_folder():
     api_instance = FilesApi(api_client)
-    xeroTenantId = 'YOUR_XERO_TENANT_ID'
-    folderId = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'YOUR_XERO_TENANT_ID'
+    folder_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
     
     try:
-        api_response = api_instance.get_folder(xeroTenantId, folderId)
+        api_response = api_instance.get_folder(xero_tenant_id, folder_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling FilesApi->getFolder: %s\n" % e)</code></pre>
@@ -2738,11 +2738,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_folders():
     api_instance = FilesApi(api_client)
-    xeroTenantId = 'YOUR_XERO_TENANT_ID'
+    xero_tenant_id = 'YOUR_XERO_TENANT_ID'
     sort = 'CreatedDateUTC DESC'
     
     try:
-        api_response = api_instance.get_folders(xeroTenantId, sort)
+        api_response = api_instance.get_folders(xero_tenant_id, sort)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling FilesApi->getFolders: %s\n" % e)</code></pre>
@@ -2861,10 +2861,10 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_inbox():
     api_instance = FilesApi(api_client)
-    xeroTenantId = 'YOUR_XERO_TENANT_ID'
+    xero_tenant_id = 'YOUR_XERO_TENANT_ID'
     
     try:
-        api_response = api_instance.get_inbox(xeroTenantId)
+        api_response = api_instance.get_inbox(xero_tenant_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling FilesApi->getInbox: %s\n" % e)</code></pre>
@@ -2956,11 +2956,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_update_file():
     api_instance = FilesApi(api_client)
-    xeroTenantId = 'YOUR_XERO_TENANT_ID'
-    fileId = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'YOUR_XERO_TENANT_ID'
+    file_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
     
     try:
-        api_response = api_instance.update_file(xeroTenantId, fileId, fileObject)
+        api_response = api_instance.update_file(xero_tenant_id, file_id, fileObject)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling FilesApi->updateFile: %s\n" % e)</code></pre>
@@ -3112,11 +3112,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_update_folder():
     api_instance = FilesApi(api_client)
-    xeroTenantId = 'YOUR_XERO_TENANT_ID'
-    folderId = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'YOUR_XERO_TENANT_ID'
+    folder_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
     
     try:
-        api_response = api_instance.update_folder(xeroTenantId, folderId, folder)
+        api_response = api_instance.update_folder(xero_tenant_id, folder_id, folder)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling FilesApi->updateFolder: %s\n" % e)</code></pre>
@@ -3272,13 +3272,13 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_upload_file():
     api_instance = FilesApi(api_client)
-    xeroTenantId = 'YOUR_XERO_TENANT_ID'
+    xero_tenant_id = 'YOUR_XERO_TENANT_ID'
     name = 'name_example'
     filename = 'filename_example'
     mimeType = 'mimeType_example'
     
     try:
-        api_response = api_instance.upload_file(xeroTenantId, body, name, filename, mimeType)
+        api_response = api_instance.upload_file(xero_tenant_id, body, name, filename, mimeType)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling FilesApi->uploadFile: %s\n" % e)</code></pre>
@@ -3464,14 +3464,14 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_upload_file_to_folder():
     api_instance = FilesApi(api_client)
-    xeroTenantId = 'YOUR_XERO_TENANT_ID'
-    folderId = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    xero_tenant_id = 'YOUR_XERO_TENANT_ID'
+    folder_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
     name = 'name_example'
     filename = 'filename_example'
     mimeType = 'mimeType_example'
     
     try:
-        api_response = api_instance.upload_file_to_folder(xeroTenantId, folderId, body, name, filename, mimeType)
+        api_response = api_instance.upload_file_to_folder(xero_tenant_id, folder_id, body, name, filename, mimeType)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling FilesApi->uploadFileToFolder: %s\n" % e)</code></pre>
