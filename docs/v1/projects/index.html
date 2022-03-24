@@ -1419,6 +1419,14 @@ ul.nav-tabs {
           <!-- *****REPLACE***** `xero-node` with the correct repo naming pattern + also add/delete api sets (ex. Ruby does not have Bankfeeds) -->
           <option data-url="#">-API-</option>
           <option data-url="https://xeroapi.github.io/xero-python/v1/accounting/index.html" value="Accounting">Accounting</option>
+          <option data-url="https://xeroapi.github.io/xero-python/appstore/index.html" value="AppStore">App Store</option>
+          <option data-url="https://xeroapi.github.io/xero-python/assets/index.html" value="Asset">Assets</option>
+          <option data-url="https://xeroapi.github.io/xero-python/files/index.html" value="Files">Files</option>
+          <option data-url="https://xeroapi.github.io/xero-python/finance/index.html" value="Finance">Finance</option>
+          <option data-url="https://xeroapi.github.io/xero-python/payroll-au/index.html" value="PayrollAu">Payroll (AU)</option>
+          <option data-url="https://xeroapi.github.io/xero-python/payroll-nz/index.html" value="PayrollNz">Payroll (NZ)</option>
+          <option data-url="https://xeroapi.github.io/xero-python/payroll-uk/index.html" value="PayrollUk">Payroll (UK)</option>
+          <option data-url="https://xeroapi.github.io/xero-python/projects/index.html" value="Project">Projects</option>
         </select>
       </fieldset>
       <div class='api-set-wrapper'>
@@ -1557,10 +1565,10 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_create_project():
     api_instance = ProjectApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
+    xero_tenant_id = 'xeroTenantId_example'
     
     try:
-        api_response = api_instance.create_project(xeroTenantId, projectCreateOrUpdate)
+        api_response = api_instance.create_project(xero_tenant_id, projectCreateOrUpdate)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling ProjectApi->createProject: %s\n" % e)</code></pre>
@@ -1684,11 +1692,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_create_time_entry():
     api_instance = ProjectApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    projectId = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    xero_tenant_id = 'xeroTenantId_example'
+    project_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
     
     try:
-        api_response = api_instance.create_time_entry(xeroTenantId, projectId, timeEntryCreateOrUpdate)
+        api_response = api_instance.create_time_entry(xero_tenant_id, project_id, timeEntryCreateOrUpdate)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling ProjectApi->createTimeEntry: %s\n" % e)</code></pre>
@@ -1845,12 +1853,12 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_delete_time_entry():
     api_instance = ProjectApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    projectId = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
-    timeEntryId = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    xero_tenant_id = 'xeroTenantId_example'
+    project_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    time_entry_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
     
     try:
-        api_instance.delete_time_entry(xeroTenantId, projectId, timeEntryId)
+        api_instance.delete_time_entry(xero_tenant_id, project_id, time_entry_id)
     except AccountingBadRequestException as e:
         print("Exception when calling ProjectApi->deleteTimeEntry: %s\n" % e)</code></pre>
                     </div>
@@ -1995,11 +2003,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_project():
     api_instance = ProjectApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    projectId = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    xero_tenant_id = 'xeroTenantId_example'
+    project_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
     
     try:
-        api_response = api_instance.get_project(xeroTenantId, projectId)
+        api_response = api_instance.get_project(xero_tenant_id, project_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling ProjectApi->getProject: %s\n" % e)</code></pre>
@@ -2124,10 +2132,10 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_project_users():
     api_instance = ProjectApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
+    xero_tenant_id = 'xeroTenantId_example'
     
     try:
-        api_response = api_instance.get_project_users(xeroTenantId, page, pageSize)
+        api_response = api_instance.get_project_users(xero_tenant_id, page, page_size)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling ProjectApi->getProjectUsers: %s\n" % e)</code></pre>
@@ -2266,13 +2274,13 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_projects():
     api_instance = ProjectApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    projectIds = []
-    contactID = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    xero_tenant_id = 'xeroTenantId_example'
+    project_ids = []
+    contact_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
     states = 'states_example'
     
     try:
-        api_response = api_instance.get_projects(xeroTenantId, projectIds, contactID, states, page, pageSize)
+        api_response = api_instance.get_projects(xero_tenant_id, project_ids, contact_id, states, page, page_size)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling ProjectApi->getProjects: %s\n" % e)</code></pre>
@@ -2477,12 +2485,12 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_task():
     api_instance = ProjectApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    projectId = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
-    taskId = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    xero_tenant_id = 'xeroTenantId_example'
+    project_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    task_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
     
     try:
-        api_response = api_instance.get_task(xeroTenantId, projectId, taskId)
+        api_response = api_instance.get_task(xero_tenant_id, project_id, task_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling ProjectApi->getTask: %s\n" % e)</code></pre>
@@ -2633,12 +2641,12 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_tasks():
     api_instance = ProjectApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    projectId = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
-    taskIds = 'taskIds_example'
+    xero_tenant_id = 'xeroTenantId_example'
+    project_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    task_ids = 'taskIds_example'
     
     try:
-        api_response = api_instance.get_tasks(xeroTenantId, projectId, page, pageSize, taskIds, chargeType)
+        api_response = api_instance.get_tasks(xero_tenant_id, project_id, page, page_size, task_ids, charge_type)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling ProjectApi->getTasks: %s\n" % e)</code></pre>
@@ -2850,19 +2858,19 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_time_entries():
     api_instance = ProjectApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    projectId = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
-    userId = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
-    taskId = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
-    invoiceId = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
-    contactId = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    xero_tenant_id = 'xeroTenantId_example'
+    project_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    user_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    task_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    invoice_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    contact_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
     states = []
-    isChargeable = 'true'
-    dateAfterUtc = dateutil.parser.parse("2013-10-20T19:20:30+01:00")
-    dateBeforeUtc = dateutil.parser.parse("2013-10-20T19:20:30+01:00")
+    is_chargeable = 'true'
+    date_after_utc = dateutil.parser.parse("2013-10-20T19:20:30+01:00")
+    date_before_utc = dateutil.parser.parse("2013-10-20T19:20:30+01:00")
     
     try:
-        api_response = api_instance.get_time_entries(xeroTenantId, projectId, userId, taskId, invoiceId, contactId, page, pageSize, states, isChargeable, dateAfterUtc, dateBeforeUtc)
+        api_response = api_instance.get_time_entries(xero_tenant_id, project_id, user_id, task_id, invoice_id, contact_id, page, page_size, states, is_chargeable, date_after_utc, date_before_utc)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling ProjectApi->getTimeEntries: %s\n" % e)</code></pre>
@@ -3212,12 +3220,12 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_get_time_entry():
     api_instance = ProjectApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    projectId = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
-    timeEntryId = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    xero_tenant_id = 'xeroTenantId_example'
+    project_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    time_entry_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
     
     try:
-        api_response = api_instance.get_time_entry(xeroTenantId, projectId, timeEntryId)
+        api_response = api_instance.get_time_entry(xero_tenant_id, project_id, time_entry_id)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling ProjectApi->getTimeEntry: %s\n" % e)</code></pre>
@@ -3368,11 +3376,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_patch_project():
     api_instance = ProjectApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    projectId = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    xero_tenant_id = 'xeroTenantId_example'
+    project_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
     
     try:
-        api_instance.patch_project(xeroTenantId, projectId, projectPatch)
+        api_instance.patch_project(xero_tenant_id, project_id, projectPatch)
     except AccountingBadRequestException as e:
         print("Exception when calling ProjectApi->patchProject: %s\n" % e)</code></pre>
                     </div>
@@ -3528,11 +3536,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_update_project():
     api_instance = ProjectApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    projectId = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    xero_tenant_id = 'xeroTenantId_example'
+    project_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
     
     try:
-        api_instance.update_project(xeroTenantId, projectId, projectCreateOrUpdate)
+        api_instance.update_project(xero_tenant_id, project_id, projectCreateOrUpdate)
     except AccountingBadRequestException as e:
         print("Exception when calling ProjectApi->updateProject: %s\n" % e)</code></pre>
                     </div>
@@ -3688,12 +3696,12 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 
 def accounting_update_time_entry():
     api_instance = ProjectApi(api_client)
-    xeroTenantId = 'xeroTenantId_example'
-    projectId = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
-    timeEntryId = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    xero_tenant_id = 'xeroTenantId_example'
+    project_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    time_entry_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
     
     try:
-        api_instance.update_time_entry(xeroTenantId, projectId, timeEntryId, timeEntryCreateOrUpdate)
+        api_instance.update_time_entry(xero_tenant_id, project_id, time_entry_id, timeEntryCreateOrUpdate)
     except AccountingBadRequestException as e:
         print("Exception when calling ProjectApi->updateTimeEntry: %s\n" % e)</code></pre>
                     </div>
