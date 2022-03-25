@@ -32,9 +32,9 @@ This SDK supports full method coverage for the following Xero API sets:
 | [Assets](https://xeroapi.github.io/xero-python/v1/assets/index.html) | The Assets API exposes fixed asset related functions of the Xero Accounting application |
 | [Files](https://xeroapi.github.io/xero-python/v1/files/index.html) | The Files API provides access to the files, folders, and the association of files within a Xero organisation |
 | [Projects](https://xeroapi.github.io/xero-python/v1/projects/index.html) | Xero Projects allows businesses to track time and costs on projects/jobs and report on profitability |
-| [Payroll (AU)](https://xeroapi.github.io/xero-python/v1/payroll_au/index.html) | The (AU) Payroll API exposes payroll related functions of the payroll Xero application |
-| [Payroll (UK)](https://xeroapi.github.io/xero-python/v1/payroll_uk/index.html) | The (UK) Payroll API exposes payroll related functions of the payroll Xero application |
-| [Payroll (NZ)](https://xeroapi.github.io/xero-python/v1/payroll_nz/index.html) | The (NZ) Payroll API exposes payroll related functions of the payroll Xero application |
+| [Payroll (AU)](https://xeroapi.github.io/xero-python/v1/payroll-au/index.html) | The (AU) Payroll API exposes payroll related functions of the payroll Xero application |
+| [Payroll (UK)](https://xeroapi.github.io/xero-python/v1/payroll-uk/index.html) | The (UK) Payroll API exposes payroll related functions of the payroll Xero application |
+| [Payroll (NZ)](https://xeroapi.github.io/xero-python/v1/payroll-nz/index.html) | The (NZ) Payroll API exposes payroll related functions of the payroll Xero application |
 
 <img src="https://i.imgur.com/feMhCtI.png" alt="drawing" width="350"/>
 
