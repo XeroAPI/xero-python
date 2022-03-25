@@ -1009,7 +1009,8 @@ ul.nav-tabs {
       "example" : 33
     }
   },
-  "description" : ""
+  "description" : "",
+  "x-snake" : "asset_type"
 };
       defs["Assets"] = {
   "title" : "",
@@ -1607,12 +1608,12 @@ def accounting_create_asset_type():
         deprecitation_rate = 40,
         depreciation_calculation_method = "None")
 
-    assetType = AssetType(
+    asset_type = AssetType(
         asset_type_name = "Computer Equipment",
         fixed_asset_account_id = "00000000-0000-0000-0000-000000000000",
         depreciation_expense_account_id = "00000000-0000-0000-0000-000000000000",
         accumulated_depreciation_account_id = "00000000-0000-0000-0000-000000000000",
-        bookDepreciationSetting = book_depreciation_setting)
+        book_depreciation_setting = book_depreciation_setting)
     
     try:
         api_response = api_instance.create_asset_type(xero_tenant_id, assetType)
