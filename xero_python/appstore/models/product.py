@@ -29,32 +29,44 @@ class Product(BaseModel):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {"id": "str", "name": "str", "type": "str", "seat_unit": "str"}
+    openapi_types = {
+        "id": "str",
+        "name": "str",
+        "seat_unit": "str",
+        "type": "str",
+        "usage_unit": "str",
+    }
 
     attribute_map = {
         "id": "id",
         "name": "name",
-        "type": "type",
         "seat_unit": "seatUnit",
+        "type": "type",
+        "usage_unit": "usageUnit",
     }
 
-    def __init__(self, id=None, name=None, type=None, seat_unit=None):  # noqa: E501
+    def __init__(
+        self, id=None, name=None, seat_unit=None, type=None, usage_unit=None
+    ):  # noqa: E501
         """Product - a model defined in OpenAPI"""  # noqa: E501
 
         self._id = None
         self._name = None
-        self._type = None
         self._seat_unit = None
+        self._type = None
+        self._usage_unit = None
         self.discriminator = None
 
         if id is not None:
             self.id = id
         if name is not None:
             self.name = name
-        if type is not None:
-            self.type = type
         if seat_unit is not None:
             self.seat_unit = seat_unit
+        if type is not None:
+            self.type = type
+        if usage_unit is not None:
+            self.usage_unit = usage_unit
 
     @property
     def id(self):
@@ -103,38 +115,6 @@ class Product(BaseModel):
         self._name = name
 
     @property
-    def type(self):
-        """Gets the type of this Product.  # noqa: E501
-
-        The pricing model of the product: * FIXED: Customers are charged a fixed amount for each billing period * PER_SEAT: Customers are charged based on the number of units they purchase   # noqa: E501
-
-        :return: The type of this Product.  # noqa: E501
-        :rtype: str
-        """
-        return self._type
-
-    @type.setter
-    def type(self, type):
-        """Sets the type of this Product.
-
-        The pricing model of the product: * FIXED: Customers are charged a fixed amount for each billing period * PER_SEAT: Customers are charged based on the number of units they purchase   # noqa: E501
-
-        :param type: The type of this Product.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["FIXED", "PER_SEAT", "None"]  # noqa: E501
-
-        if type:
-            if type not in allowed_values:
-                raise ValueError(
-                    "Invalid value for `type` ({0}), must be one of {1}".format(  # noqa: E501
-                        type, allowed_values
-                    )
-                )
-
-        self._type = type
-
-    @property
     def seat_unit(self):
         """Gets the seat_unit of this Product.  # noqa: E501
 
@@ -156,3 +136,58 @@ class Product(BaseModel):
         """
 
         self._seat_unit = seat_unit
+
+    @property
+    def type(self):
+        """Gets the type of this Product.  # noqa: E501
+
+        The pricing model of the product: * FIXED: Customers are charged a fixed amount for each billing period * PER_SEAT: Customers are charged based on the number of units they purchase * METERED: Customers are charged per use of this product   # noqa: E501
+
+        :return: The type of this Product.  # noqa: E501
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this Product.
+
+        The pricing model of the product: * FIXED: Customers are charged a fixed amount for each billing period * PER_SEAT: Customers are charged based on the number of units they purchase * METERED: Customers are charged per use of this product   # noqa: E501
+
+        :param type: The type of this Product.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["FIXED", "PER_SEAT", "METERED", "None"]  # noqa: E501
+
+        if type:
+            if type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `type` ({0}), must be one of {1}".format(  # noqa: E501
+                        type, allowed_values
+                    )
+                )
+
+        self._type = type
+
+    @property
+    def usage_unit(self):
+        """Gets the usage_unit of this Product.  # noqa: E501
+
+        The unit of the usage product. e.g. \"user\", \"minutes\", \"SMS\", etc  # noqa: E501
+
+        :return: The usage_unit of this Product.  # noqa: E501
+        :rtype: str
+        """
+        return self._usage_unit
+
+    @usage_unit.setter
+    def usage_unit(self, usage_unit):
+        """Sets the usage_unit of this Product.
+
+        The unit of the usage product. e.g. \"user\", \"minutes\", \"SMS\", etc  # noqa: E501
+
+        :param usage_unit: The usage_unit of this Product.  # noqa: E501
+        :type: str
+        """
+
+        self._usage_unit = usage_unit
