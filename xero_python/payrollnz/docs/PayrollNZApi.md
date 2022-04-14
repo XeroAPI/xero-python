@@ -2791,7 +2791,7 @@ api_instance = PayrollNzApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 page = 56 # int | Page number which specifies the set of records to retrieve. By default the number of the records per set is 100. (optional)
-active_only = True # bool | Filters leave types by active status. By default the API returns all leave types. (optional)
+active_only = true # bool | Filters leave types by active status. By default the API returns all leave types. (optional)
 try:
     # Retrieves leave types
     api_response = api_instance.get_leave_types(xero_tenant_id, page=page, active_only=active_only)

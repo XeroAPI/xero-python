@@ -156,7 +156,22 @@ class Employment(BaseModel):
         :param ni_category: The ni_category of this Employment.  # noqa: E501
         :type: str
         """
-        allowed_values = ["A", "B", "C", "H", "J", "M", "Z", "X", "None"]  # noqa: E501
+        allowed_values = [
+            "A",
+            "B",
+            "C",
+            "F",
+            "H",
+            "I",
+            "J",
+            "L",
+            "M",
+            "S",
+            "V",
+            "X",
+            "Z",
+            "None",
+        ]  # noqa: E501
 
         if ni_category:
             if ni_category not in allowed_values:

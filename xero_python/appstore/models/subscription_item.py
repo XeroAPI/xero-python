@@ -34,6 +34,7 @@ class SubscriptionItem(BaseModel):
         "id": "str",
         "price": "Price",
         "product": "Product",
+        "quantity": "int",
         "start_date": "datetime",
         "status": "str",
         "test_mode": "bool",
@@ -44,6 +45,7 @@ class SubscriptionItem(BaseModel):
         "id": "id",
         "price": "price",
         "product": "product",
+        "quantity": "quantity",
         "start_date": "startDate",
         "status": "status",
         "test_mode": "testMode",
@@ -55,6 +57,7 @@ class SubscriptionItem(BaseModel):
         id=None,
         price=None,
         product=None,
+        quantity=None,
         start_date=None,
         status=None,
         test_mode=None,
@@ -65,6 +68,7 @@ class SubscriptionItem(BaseModel):
         self._id = None
         self._price = None
         self._product = None
+        self._quantity = None
         self._start_date = None
         self._status = None
         self._test_mode = None
@@ -75,6 +79,8 @@ class SubscriptionItem(BaseModel):
         self.id = id
         self.price = price
         self.product = product
+        if quantity is not None:
+            self.quantity = quantity
         self.start_date = start_date
         self.status = status
         if test_mode is not None:
@@ -177,6 +183,29 @@ class SubscriptionItem(BaseModel):
             )  # noqa: E501
 
         self._product = product
+
+    @property
+    def quantity(self):
+        """Gets the quantity of this SubscriptionItem.  # noqa: E501
+
+        The quantity of the item. For a fixed product, it is 1. For a per-seat product, it is a positive integer. For metered products, it is always null.  # noqa: E501
+
+        :return: The quantity of this SubscriptionItem.  # noqa: E501
+        :rtype: int
+        """
+        return self._quantity
+
+    @quantity.setter
+    def quantity(self, quantity):
+        """Sets the quantity of this SubscriptionItem.
+
+        The quantity of the item. For a fixed product, it is 1. For a per-seat product, it is a positive integer. For metered products, it is always null.  # noqa: E501
+
+        :param quantity: The quantity of this SubscriptionItem.  # noqa: E501
+        :type: int
+        """
+
+        self._quantity = quantity
 
     @property
     def start_date(self):

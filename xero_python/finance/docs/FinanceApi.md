@@ -317,7 +317,7 @@ xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 bank_account_id = 'bank_account_id_example' # str | string, GUID    Bank account Id
 from_date = '2020-07-01' # str | date, yyyy-MM-dd     Specifies the start date of the query period.   The maximum range of the query period is 12 months. If the specified query period is more than 12 months the request will be rejected.
 to_date = '2021-06-30' # str | date, yyyy-MM-dd     Specifies the end date of the query period.   If the end date is a future date, the request will be rejected.
-summary_only = True # bool | boolean, true/false    The default value is true if no parameter is provided.    In summary mode, the response will exclude the computation-heavy LineItems fields from bank transaction, invoice, credit note, prepayment and overpayment data, making the API calls quicker and more efficient. (optional)
+summary_only = true # bool | boolean, true/false    The default value is true if no parameter is provided.    In summary mode, the response will exclude the computation-heavy LineItems fields from bank transaction, invoice, credit note, prepayment and overpayment data, making the API calls quicker and more efficient. (optional)
 try:
     # Get Bank Statement Accounting
     api_response = api_instance.get_bank_statement_accounting(xero_tenant_id, bank_account_id, from_date, to_date, summary_only=summary_only)
