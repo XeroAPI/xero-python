@@ -317,6 +317,13 @@ class TaxRate(BaseModel):
             "ZRINPUT",
             "BADDEBT",
             "OTHERINPUT",
+            "BADDEBTRELIEF",
+            "IGDSINPUT3",
+            "SROVR",
+            "TOURISTREFUND",
+            "TXRCN33INPUT",
+            "TXRCREINPUT",
+            "TXRCESSINPUT",
             "None",
         ]  # noqa: E501
 
