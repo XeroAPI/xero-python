@@ -35,6 +35,8 @@ class StatementResponse(BaseModel):
         "end_date": "date",
         "imported_date_time_utc": "datetime",
         "import_source": "str",
+        "start_balance": "float",
+        "end_balance": "float",
         "statement_lines": "list[StatementLineResponse]",
     }
 
@@ -44,6 +46,8 @@ class StatementResponse(BaseModel):
         "end_date": "endDate",
         "imported_date_time_utc": "importedDateTimeUtc",
         "import_source": "importSource",
+        "start_balance": "startBalance",
+        "end_balance": "endBalance",
         "statement_lines": "statementLines",
     }
 
@@ -54,6 +58,8 @@ class StatementResponse(BaseModel):
         end_date=None,
         imported_date_time_utc=None,
         import_source=None,
+        start_balance=None,
+        end_balance=None,
         statement_lines=None,
     ):  # noqa: E501
         """StatementResponse - a model defined in OpenAPI"""  # noqa: E501
@@ -63,6 +69,8 @@ class StatementResponse(BaseModel):
         self._end_date = None
         self._imported_date_time_utc = None
         self._import_source = None
+        self._start_balance = None
+        self._end_balance = None
         self._statement_lines = None
         self.discriminator = None
 
@@ -76,6 +84,10 @@ class StatementResponse(BaseModel):
             self.imported_date_time_utc = imported_date_time_utc
         if import_source is not None:
             self.import_source = import_source
+        if start_balance is not None:
+            self.start_balance = start_balance
+        if end_balance is not None:
+            self.end_balance = end_balance
         if statement_lines is not None:
             self.statement_lines = statement_lines
 
@@ -175,7 +187,7 @@ class StatementResponse(BaseModel):
     def import_source(self):
         """Gets the import_source of this StatementResponse.  # noqa: E501
 
-        Import source of statement (STMTIMPORTSRC/MANUAL, STMTIMPORTSRC/CSV, STMTIMPORTSRC/QIF, STMTIMPORTSRC/OFX, XeroApi)  # noqa: E501
+        Indicates the source of the statement data. Either imported from 1) direct bank feed OR 2) manual customer entry or upload. Manual import sources are STMTIMPORTSRC/MANUAL, STMTIMPORTSRC/CSV, STMTIMPORTSRC/OFX, Ofx or STMTIMPORTSRC/QIF. All other import sources are direct and, depending on the direct solution, may contain the name of the financial institution.  # noqa: E501
 
         :return: The import_source of this StatementResponse.  # noqa: E501
         :rtype: str
@@ -186,13 +198,59 @@ class StatementResponse(BaseModel):
     def import_source(self, import_source):
         """Sets the import_source of this StatementResponse.
 
-        Import source of statement (STMTIMPORTSRC/MANUAL, STMTIMPORTSRC/CSV, STMTIMPORTSRC/QIF, STMTIMPORTSRC/OFX, XeroApi)  # noqa: E501
+        Indicates the source of the statement data. Either imported from 1) direct bank feed OR 2) manual customer entry or upload. Manual import sources are STMTIMPORTSRC/MANUAL, STMTIMPORTSRC/CSV, STMTIMPORTSRC/OFX, Ofx or STMTIMPORTSRC/QIF. All other import sources are direct and, depending on the direct solution, may contain the name of the financial institution.  # noqa: E501
 
         :param import_source: The import_source of this StatementResponse.  # noqa: E501
         :type: str
         """
 
         self._import_source = import_source
+
+    @property
+    def start_balance(self):
+        """Gets the start_balance of this StatementResponse.  # noqa: E501
+
+        Opening balance sourced from imported bank statements (if supplied). Note, for manually uploaded statements, this balance is also manual and usually not supplied.  # noqa: E501
+
+        :return: The start_balance of this StatementResponse.  # noqa: E501
+        :rtype: float
+        """
+        return self._start_balance
+
+    @start_balance.setter
+    def start_balance(self, start_balance):
+        """Sets the start_balance of this StatementResponse.
+
+        Opening balance sourced from imported bank statements (if supplied). Note, for manually uploaded statements, this balance is also manual and usually not supplied.  # noqa: E501
+
+        :param start_balance: The start_balance of this StatementResponse.  # noqa: E501
+        :type: float
+        """
+
+        self._start_balance = start_balance
+
+    @property
+    def end_balance(self):
+        """Gets the end_balance of this StatementResponse.  # noqa: E501
+
+        Closing balance sourced from imported bank statements (if supplied). Note, for manually uploaded statements, this balance is also manual and usually not supplied.  # noqa: E501
+
+        :return: The end_balance of this StatementResponse.  # noqa: E501
+        :rtype: float
+        """
+        return self._end_balance
+
+    @end_balance.setter
+    def end_balance(self, end_balance):
+        """Sets the end_balance of this StatementResponse.
+
+        Closing balance sourced from imported bank statements (if supplied). Note, for manually uploaded statements, this balance is also manual and usually not supplied.  # noqa: E501
+
+        :param end_balance: The end_balance of this StatementResponse.  # noqa: E501
+        :type: float
+        """
+
+        self._end_balance = end_balance
 
     @property
     def statement_lines(self):

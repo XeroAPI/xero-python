@@ -979,6 +979,7 @@ class Organisation(BaseModel):
             "LEDGER",
             "GST_CASHBOOK",
             "NON_GST_CASHBOOK",
+            "ULTIMATE",
             "None",
         ]  # noqa: E501
 

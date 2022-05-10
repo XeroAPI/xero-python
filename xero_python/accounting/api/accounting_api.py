@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.21.0
+    OpenAPI spec version: 2.22.4
 """
 
 import importlib
@@ -10635,6 +10635,82 @@ class AccountingApi(object):
             )
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "get_journal")
+
+    def get_journal_by_number(
+        self,
+        xero_tenant_id,
+        journal_number,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
+        """Retrieves a specific journal using a unique journal number.  # noqa: E501
+        OAuth2 scope: accounting.journals.read
+        :param str xero_tenant_id: Xero identifier for Tenant (required)
+        :param int journal_number: Number of a Journal (required)
+        :param bool _return_http_data_only: return received data only
+        :param bool _preload_content: load received data in models
+        :param bool _request_timeout: maximum wait time for response
+        :return: Journals
+        """
+
+        # verify the required parameter 'xero_tenant_id' is set
+        if xero_tenant_id is None:
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `get_journal_by_number`"
+            )
+        # verify the required parameter 'journal_number' is set
+        if journal_number is None:
+            raise ValueError(
+                "Missing the required parameter `journal_number` "
+                "when calling `get_journal_by_number`"
+            )
+
+        collection_formats = {}
+        path_params = {
+            "JournalNumber": journal_number,
+        }
+
+        query_params = []
+
+        header_params = {
+            "xero-tenant-id": xero_tenant_id,
+        }
+
+        local_var_files = {}
+        form_params = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/Journals/{JournalNumber}")
+
+        try:
+            return self.api_client.call_api(
+                url,
+                "GET",
+                path_params,
+                query_params,
+                header_params,
+                body=body_params,
+                post_params=form_params,
+                files=local_var_files,
+                response_type="Journals",
+                response_model_finder=self.get_model_finder(),
+                auth_settings=auth_settings,
+                _return_http_data_only=_return_http_data_only,
+                _preload_content=_preload_content,
+                _request_timeout=_request_timeout,
+                collection_formats=collection_formats,
+            )
+        except exceptions.HTTPStatusException as error:
+            raise translate_status_exception(error, self, "get_journal_by_number")
 
     def get_journals(
         self,
