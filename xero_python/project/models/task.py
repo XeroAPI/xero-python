@@ -34,14 +34,14 @@ class Task(BaseModel):
         "name": "str",
         "rate": "Amount",
         "charge_type": "ChargeType",
-        "estimate_minutes": "float",
+        "estimate_minutes": "int",
         "project_id": "str",
-        "total_minutes": "float",
+        "total_minutes": "int",
         "total_amount": "Amount",
-        "minutes_invoiced": "float",
-        "minutes_to_be_invoiced": "float",
-        "fixed_minutes": "float",
-        "non_chargeable_minutes": "float",
+        "minutes_invoiced": "int",
+        "minutes_to_be_invoiced": "int",
+        "fixed_minutes": "int",
+        "non_chargeable_minutes": "int",
         "amount_to_be_invoiced": "Amount",
         "amount_invoiced": "Amount",
         "status": "str",
@@ -228,7 +228,7 @@ class Task(BaseModel):
         An estimated time to perform the task  # noqa: E501
 
         :return: The estimate_minutes of this Task.  # noqa: E501
-        :rtype: float
+        :rtype: int
         """
         return self._estimate_minutes
 
@@ -239,7 +239,7 @@ class Task(BaseModel):
         An estimated time to perform the task  # noqa: E501
 
         :param estimate_minutes: The estimate_minutes of this Task.  # noqa: E501
-        :type: float
+        :type: int
         """
 
         self._estimate_minutes = estimate_minutes
@@ -274,7 +274,7 @@ class Task(BaseModel):
         Total minutes which have been logged against the task. Logged by assigning a time entry to a task  # noqa: E501
 
         :return: The total_minutes of this Task.  # noqa: E501
-        :rtype: float
+        :rtype: int
         """
         return self._total_minutes
 
@@ -285,7 +285,7 @@ class Task(BaseModel):
         Total minutes which have been logged against the task. Logged by assigning a time entry to a task  # noqa: E501
 
         :param total_minutes: The total_minutes of this Task.  # noqa: E501
-        :type: float
+        :type: int
         """
 
         self._total_minutes = total_minutes
@@ -318,7 +318,7 @@ class Task(BaseModel):
         Minutes on this task which have been invoiced.  # noqa: E501
 
         :return: The minutes_invoiced of this Task.  # noqa: E501
-        :rtype: float
+        :rtype: int
         """
         return self._minutes_invoiced
 
@@ -329,7 +329,7 @@ class Task(BaseModel):
         Minutes on this task which have been invoiced.  # noqa: E501
 
         :param minutes_invoiced: The minutes_invoiced of this Task.  # noqa: E501
-        :type: float
+        :type: int
         """
 
         self._minutes_invoiced = minutes_invoiced
@@ -341,7 +341,7 @@ class Task(BaseModel):
         Minutes on this task which have not been invoiced.  # noqa: E501
 
         :return: The minutes_to_be_invoiced of this Task.  # noqa: E501
-        :rtype: float
+        :rtype: int
         """
         return self._minutes_to_be_invoiced
 
@@ -352,7 +352,7 @@ class Task(BaseModel):
         Minutes on this task which have not been invoiced.  # noqa: E501
 
         :param minutes_to_be_invoiced: The minutes_to_be_invoiced of this Task.  # noqa: E501
-        :type: float
+        :type: int
         """
 
         self._minutes_to_be_invoiced = minutes_to_be_invoiced
@@ -364,7 +364,7 @@ class Task(BaseModel):
         Minutes logged against this task if its charge type is `FIXED`.  # noqa: E501
 
         :return: The fixed_minutes of this Task.  # noqa: E501
-        :rtype: float
+        :rtype: int
         """
         return self._fixed_minutes
 
@@ -375,7 +375,7 @@ class Task(BaseModel):
         Minutes logged against this task if its charge type is `FIXED`.  # noqa: E501
 
         :param fixed_minutes: The fixed_minutes of this Task.  # noqa: E501
-        :type: float
+        :type: int
         """
 
         self._fixed_minutes = fixed_minutes
@@ -387,7 +387,7 @@ class Task(BaseModel):
         Minutes logged against this task if its charge type is `NON_CHARGEABLE`.  # noqa: E501
 
         :return: The non_chargeable_minutes of this Task.  # noqa: E501
-        :rtype: float
+        :rtype: int
         """
         return self._non_chargeable_minutes
 
@@ -398,7 +398,7 @@ class Task(BaseModel):
         Minutes logged against this task if its charge type is `NON_CHARGEABLE`.  # noqa: E501
 
         :param non_chargeable_minutes: The non_chargeable_minutes of this Task.  # noqa: E501
-        :type: float
+        :type: int
         """
 
         self._non_chargeable_minutes = non_chargeable_minutes

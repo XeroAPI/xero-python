@@ -141,7 +141,7 @@ class TaskCreateOrUpdate(BaseModel):
     def estimate_minutes(self):
         """Gets the estimate_minutes of this TaskCreateOrUpdate.  # noqa: E501
 
-        Estimated time to perform the task. EstimateMinutes has to be greater than 0 if provided.  # noqa: E501
+        An estimated time to perform the task  # noqa: E501
 
         :return: The estimate_minutes of this TaskCreateOrUpdate.  # noqa: E501
         :rtype: int
@@ -152,7 +152,7 @@ class TaskCreateOrUpdate(BaseModel):
     def estimate_minutes(self, estimate_minutes):
         """Sets the estimate_minutes of this TaskCreateOrUpdate.
 
-        Estimated time to perform the task. EstimateMinutes has to be greater than 0 if provided.  # noqa: E501
+        An estimated time to perform the task  # noqa: E501
 
         :param estimate_minutes: The estimate_minutes of this TaskCreateOrUpdate.  # noqa: E501
         :type: int
