@@ -5,7 +5,9 @@ All URIs are relative to *https://api.xero.com/projects.xro/2.0*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_project**](ProjectApi.md#create_project) | **POST** /Projects | Create one or more new projects
+[**create_task**](ProjectApi.md#create_task) | **POST** /Projects/{projectId}/Tasks | Allows you to create a task
 [**create_time_entry**](ProjectApi.md#create_time_entry) | **POST** /Projects/{projectId}/Time | Creates a time entry for a specific project
+[**delete_task**](ProjectApi.md#delete_task) | **DELETE** /Projects/{projectId}/Tasks/{taskId} | Allows you to delete a task
 [**delete_time_entry**](ProjectApi.md#delete_time_entry) | **DELETE** /Projects/{projectId}/Time/{timeEntryId} | Deletes a time entry for a specific project
 [**get_project**](ProjectApi.md#get_project) | **GET** /Projects/{projectId} | Retrieves a single project
 [**get_project_users**](ProjectApi.md#get_project_users) | **GET** /ProjectsUsers | Retrieves a list of all project users
@@ -16,6 +18,7 @@ Method | HTTP request | Description
 [**get_time_entry**](ProjectApi.md#get_time_entry) | **GET** /Projects/{projectId}/Time/{timeEntryId} | Retrieves a single time entry for a specific project
 [**patch_project**](ProjectApi.md#patch_project) | **PATCH** /Projects/{projectId} | creates a project for the specified contact
 [**update_project**](ProjectApi.md#update_project) | **PUT** /Projects/{projectId} | Updates a specific project
+[**update_task**](ProjectApi.md#update_task) | **PUT** /Projects/{projectId}/Tasks/{taskId} | Allows you to update a task
 [**update_time_entry**](ProjectApi.md#update_time_entry) | **PUT** /Projects/{projectId}/Time/{timeEntryId} | Updates a time entry for a specific project
 
 
@@ -70,6 +73,72 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Project**](Project.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_task**
+> create_task(xero_tenant_id, project_id, task_create_or_update)
+
+Allows you to create a task
+
+Allows you to create a specific task
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.project import ProjectApi
+
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = ProjectApi(api_client)
+
+xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
+project_id = 'project_id_example' # str | You can create a task on a specified projectId
+task_create_or_update = { "status": "INPROGRESS" } # TaskCreateOrUpdate | The task object you are creating
+try:
+    # Allows you to create a task
+    api_instance.create_task(xero_tenant_id, project_id, task_create_or_update)
+except ApiException as e:
+    print("Exception when calling ProjectApi->create_task: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **project_id** | [**str**](.md)| You can create a task on a specified projectId | 
+ **task_create_or_update** | [**TaskCreateOrUpdate**](TaskCreateOrUpdate.md)| The task object you are creating | 
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 
@@ -149,6 +218,72 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **delete_task**
+> delete_task(xero_tenant_id, project_id, task_id)
+
+Allows you to delete a task
+
+Allows you to delete a specific task
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.project import ProjectApi
+
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = ProjectApi(api_client)
+
+xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
+project_id = 'project_id_example' # str | You can specify an individual project by appending the projectId to the endpoint
+task_id = 'task_id_example' # str | You can specify an individual task by appending the id to the endpoint
+try:
+    # Allows you to delete a task
+    api_instance.delete_task(xero_tenant_id, project_id, task_id)
+except ApiException as e:
+    print("Exception when calling ProjectApi->delete_task: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **project_id** | [**str**](.md)| You can specify an individual project by appending the projectId to the endpoint | 
+ **task_id** | [**str**](.md)| You can specify an individual task by appending the id to the endpoint | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **delete_time_entry**
 > delete_time_entry(xero_tenant_id, project_id, time_entry_id)
 
@@ -211,7 +346,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -844,6 +979,74 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **update_task**
+> update_task(xero_tenant_id, project_id, task_id, task_create_or_update)
+
+Allows you to update a task
+
+Allows you to update a specific task
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.project import ProjectApi
+
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = ProjectApi(api_client)
+
+xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
+project_id = 'project_id_example' # str | You can specify an individual project by appending the projectId to the endpoint
+task_id = 'task_id_example' # str | You can specify an individual task by appending the id to the endpoint
+task_create_or_update = xero_python.project.TaskCreateOrUpdate() # TaskCreateOrUpdate | The task object you are updating
+try:
+    # Allows you to update a task
+    api_instance.update_task(xero_tenant_id, project_id, task_id, task_create_or_update)
+except ApiException as e:
+    print("Exception when calling ProjectApi->update_task: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **project_id** | [**str**](.md)| You can specify an individual project by appending the projectId to the endpoint | 
+ **task_id** | [**str**](.md)| You can specify an individual task by appending the id to the endpoint | 
+ **task_create_or_update** | [**TaskCreateOrUpdate**](TaskCreateOrUpdate.md)| The task object you are updating | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **update_time_entry**
 > update_time_entry(xero_tenant_id, project_id, time_entry_id, time_entry_create_or_update)
 
@@ -908,7 +1111,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -324,6 +324,7 @@ class TaxRate(BaseModel):
             "TXRCN33INPUT",
             "TXRCREINPUT",
             "TXRCESSINPUT",
+            "TXRCTSINPUT",
             "None",
         ]  # noqa: E501
 

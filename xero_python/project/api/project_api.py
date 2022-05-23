@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.22.4
+    OpenAPI spec version: 2.23.0
 """
 
 import importlib
@@ -135,6 +135,96 @@ class ProjectApi(object):
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "create_project")
 
+    def create_task(
+        self,
+        xero_tenant_id,
+        project_id,
+        task_create_or_update,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
+        """Allows you to create a task  # noqa: E501
+        OAuth2 scope: projects
+        Allows you to create a specific task  # noqa: E501
+        :param str xero_tenant_id: Xero identifier for Tenant (required)
+        :param str project_id: You can create a task on a specified projectId (required)
+        :param TaskCreateOrUpdate task_create_or_update: The task object you are creating (required)
+        :param bool _return_http_data_only: return received data only
+        :param bool _preload_content: load received data in models
+        :param bool _request_timeout: maximum wait time for response
+        :return: None
+        """
+
+        # verify the required parameter 'xero_tenant_id' is set
+        if xero_tenant_id is None:
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `create_task`"
+            )
+        # verify the required parameter 'project_id' is set
+        if project_id is None:
+            raise ValueError(
+                "Missing the required parameter `project_id` "
+                "when calling `create_task`"
+            )
+        # verify the required parameter 'task_create_or_update' is set
+        if task_create_or_update is None:
+            raise ValueError(
+                "Missing the required parameter `task_create_or_update` "
+                "when calling `create_task`"
+            )
+
+        collection_formats = {}
+        path_params = {
+            "projectId": project_id,
+        }
+
+        query_params = []
+
+        header_params = {
+            "Xero-Tenant-Id": xero_tenant_id,
+        }
+
+        local_var_files = {}
+        form_params = []
+
+        body_params = task_create_or_update
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/Projects/{projectId}/Tasks")
+
+        try:
+            return self.api_client.call_api(
+                url,
+                "POST",
+                path_params,
+                query_params,
+                header_params,
+                body=body_params,
+                post_params=form_params,
+                files=local_var_files,
+                response_type=None,
+                response_model_finder=self.get_model_finder(),
+                auth_settings=auth_settings,
+                _return_http_data_only=_return_http_data_only,
+                _preload_content=_preload_content,
+                _request_timeout=_request_timeout,
+                collection_formats=collection_formats,
+            )
+        except exceptions.HTTPStatusException as error:
+            raise translate_status_exception(error, self, "create_task")
+
     def create_time_entry(
         self,
         xero_tenant_id,
@@ -225,6 +315,91 @@ class ProjectApi(object):
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "create_time_entry")
 
+    def delete_task(
+        self,
+        xero_tenant_id,
+        project_id,
+        task_id,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
+        """Allows you to delete a task  # noqa: E501
+        OAuth2 scope: projects
+        Allows you to delete a specific task  # noqa: E501
+        :param str xero_tenant_id: Xero identifier for Tenant (required)
+        :param str project_id: You can specify an individual project by appending the projectId to the endpoint (required)
+        :param str task_id: You can specify an individual task by appending the id to the endpoint (required)
+        :param bool _return_http_data_only: return received data only
+        :param bool _preload_content: load received data in models
+        :param bool _request_timeout: maximum wait time for response
+        :return: None
+        """
+
+        # verify the required parameter 'xero_tenant_id' is set
+        if xero_tenant_id is None:
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `delete_task`"
+            )
+        # verify the required parameter 'project_id' is set
+        if project_id is None:
+            raise ValueError(
+                "Missing the required parameter `project_id` "
+                "when calling `delete_task`"
+            )
+        # verify the required parameter 'task_id' is set
+        if task_id is None:
+            raise ValueError(
+                "Missing the required parameter `task_id` " "when calling `delete_task`"
+            )
+
+        collection_formats = {}
+        path_params = {
+            "projectId": project_id,
+            "taskId": task_id,
+        }
+
+        query_params = []
+
+        header_params = {
+            "Xero-Tenant-Id": xero_tenant_id,
+        }
+
+        local_var_files = {}
+        form_params = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/Projects/{projectId}/Tasks/{taskId}")
+
+        try:
+            return self.api_client.call_api(
+                url,
+                "DELETE",
+                path_params,
+                query_params,
+                header_params,
+                body=body_params,
+                post_params=form_params,
+                files=local_var_files,
+                response_type=None,
+                response_model_finder=self.get_model_finder(),
+                auth_settings=auth_settings,
+                _return_http_data_only=_return_http_data_only,
+                _preload_content=_preload_content,
+                _request_timeout=_request_timeout,
+                collection_formats=collection_formats,
+            )
+        except exceptions.HTTPStatusException as error:
+            raise translate_status_exception(error, self, "delete_task")
+
     def delete_time_entry(
         self,
         xero_tenant_id,
@@ -281,6 +456,11 @@ class ProjectApi(object):
         form_params = []
 
         body_params = None
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
         # Authentication setting
         auth_settings = ["OAuth2"]
         url = self.get_resource_url("/Projects/{projectId}/Time/{timeEntryId}")
@@ -1158,6 +1338,104 @@ class ProjectApi(object):
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "update_project")
 
+    def update_task(
+        self,
+        xero_tenant_id,
+        project_id,
+        task_id,
+        task_create_or_update,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
+        """Allows you to update a task  # noqa: E501
+        OAuth2 scope: projects
+        Allows you to update a specific task  # noqa: E501
+        :param str xero_tenant_id: Xero identifier for Tenant (required)
+        :param str project_id: You can specify an individual project by appending the projectId to the endpoint (required)
+        :param str task_id: You can specify an individual task by appending the id to the endpoint (required)
+        :param TaskCreateOrUpdate task_create_or_update: The task object you are updating (required)
+        :param bool _return_http_data_only: return received data only
+        :param bool _preload_content: load received data in models
+        :param bool _request_timeout: maximum wait time for response
+        :return: None
+        """
+
+        # verify the required parameter 'xero_tenant_id' is set
+        if xero_tenant_id is None:
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `update_task`"
+            )
+        # verify the required parameter 'project_id' is set
+        if project_id is None:
+            raise ValueError(
+                "Missing the required parameter `project_id` "
+                "when calling `update_task`"
+            )
+        # verify the required parameter 'task_id' is set
+        if task_id is None:
+            raise ValueError(
+                "Missing the required parameter `task_id` " "when calling `update_task`"
+            )
+        # verify the required parameter 'task_create_or_update' is set
+        if task_create_or_update is None:
+            raise ValueError(
+                "Missing the required parameter `task_create_or_update` "
+                "when calling `update_task`"
+            )
+
+        collection_formats = {}
+        path_params = {
+            "projectId": project_id,
+            "taskId": task_id,
+        }
+
+        query_params = []
+
+        header_params = {
+            "Xero-Tenant-Id": xero_tenant_id,
+        }
+
+        local_var_files = {}
+        form_params = []
+
+        body_params = task_create_or_update
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/Projects/{projectId}/Tasks/{taskId}")
+
+        try:
+            return self.api_client.call_api(
+                url,
+                "PUT",
+                path_params,
+                query_params,
+                header_params,
+                body=body_params,
+                post_params=form_params,
+                files=local_var_files,
+                response_type=None,
+                response_model_finder=self.get_model_finder(),
+                auth_settings=auth_settings,
+                _return_http_data_only=_return_http_data_only,
+                _preload_content=_preload_content,
+                _request_timeout=_request_timeout,
+                collection_formats=collection_formats,
+            )
+        except exceptions.HTTPStatusException as error:
+            raise translate_status_exception(error, self, "update_task")
+
     def update_time_entry(
         self,
         xero_tenant_id,
@@ -1222,6 +1500,11 @@ class ProjectApi(object):
         form_params = []
 
         body_params = time_entry_create_or_update
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
         # HTTP header `Content-Type`
         header_params["Content-Type"] = self.api_client.select_header_content_type(
             ["application/json"]
