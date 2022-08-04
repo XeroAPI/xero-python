@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.23.0
+    OpenAPI spec version: 2.24.0
 """
 
 import importlib
@@ -4744,6 +4744,90 @@ class AccountingApi(object):
             raise translate_status_exception(
                 error, self, "create_repeating_invoice_history"
             )
+
+    def create_repeating_invoices(
+        self,
+        xero_tenant_id,
+        repeating_invoices,
+        summarize_errors=empty,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
+        """Creates one or more repeating invoice templates  # noqa: E501
+        OAuth2 scope: accounting.transactions
+        :param str xero_tenant_id: Xero identifier for Tenant (required)
+        :param RepeatingInvoices repeating_invoices: RepeatingInvoices with an array of repeating invoice objects in body of request (required)
+        :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
+        :param bool _return_http_data_only: return received data only
+        :param bool _preload_content: load received data in models
+        :param bool _request_timeout: maximum wait time for response
+        :return: RepeatingInvoices
+        """
+
+        # verify the required parameter 'xero_tenant_id' is set
+        if xero_tenant_id is None:
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `create_repeating_invoices`"
+            )
+        # verify the required parameter 'repeating_invoices' is set
+        if repeating_invoices is None:
+            raise ValueError(
+                "Missing the required parameter `repeating_invoices` "
+                "when calling `create_repeating_invoices`"
+            )
+
+        collection_formats = {}
+        path_params = {}
+
+        query_params = []
+
+        if summarize_errors is not empty:
+            query_params.append(("summarizeErrors", summarize_errors))
+
+        header_params = {
+            "xero-tenant-id": xero_tenant_id,
+        }
+
+        local_var_files = {}
+        form_params = []
+
+        body_params = repeating_invoices
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/RepeatingInvoices")
+
+        try:
+            return self.api_client.call_api(
+                url,
+                "PUT",
+                path_params,
+                query_params,
+                header_params,
+                body=body_params,
+                post_params=form_params,
+                files=local_var_files,
+                response_type="RepeatingInvoices",
+                response_model_finder=self.get_model_finder(),
+                auth_settings=auth_settings,
+                _return_http_data_only=_return_http_data_only,
+                _preload_content=_preload_content,
+                _request_timeout=_request_timeout,
+                collection_formats=collection_formats,
+            )
+        except exceptions.HTTPStatusException as error:
+            raise translate_status_exception(error, self, "create_repeating_invoices")
 
     def create_tax_rates(
         self,
@@ -18649,6 +18733,92 @@ class AccountingApi(object):
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "update_or_create_quotes")
 
+    def update_or_create_repeating_invoices(
+        self,
+        xero_tenant_id,
+        repeating_invoices,
+        summarize_errors=empty,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
+        """Creates or deletes one or more repeating invoice templates  # noqa: E501
+        OAuth2 scope: accounting.transactions
+        :param str xero_tenant_id: Xero identifier for Tenant (required)
+        :param RepeatingInvoices repeating_invoices: RepeatingInvoices with an array of repeating invoice objects in body of request (required)
+        :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
+        :param bool _return_http_data_only: return received data only
+        :param bool _preload_content: load received data in models
+        :param bool _request_timeout: maximum wait time for response
+        :return: RepeatingInvoices
+        """
+
+        # verify the required parameter 'xero_tenant_id' is set
+        if xero_tenant_id is None:
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `update_or_create_repeating_invoices`"
+            )
+        # verify the required parameter 'repeating_invoices' is set
+        if repeating_invoices is None:
+            raise ValueError(
+                "Missing the required parameter `repeating_invoices` "
+                "when calling `update_or_create_repeating_invoices`"
+            )
+
+        collection_formats = {}
+        path_params = {}
+
+        query_params = []
+
+        if summarize_errors is not empty:
+            query_params.append(("summarizeErrors", summarize_errors))
+
+        header_params = {
+            "xero-tenant-id": xero_tenant_id,
+        }
+
+        local_var_files = {}
+        form_params = []
+
+        body_params = repeating_invoices
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/RepeatingInvoices")
+
+        try:
+            return self.api_client.call_api(
+                url,
+                "POST",
+                path_params,
+                query_params,
+                header_params,
+                body=body_params,
+                post_params=form_params,
+                files=local_var_files,
+                response_type="RepeatingInvoices",
+                response_model_finder=self.get_model_finder(),
+                auth_settings=auth_settings,
+                _return_http_data_only=_return_http_data_only,
+                _preload_content=_preload_content,
+                _request_timeout=_request_timeout,
+                collection_formats=collection_formats,
+            )
+        except exceptions.HTTPStatusException as error:
+            raise translate_status_exception(
+                error, self, "update_or_create_repeating_invoices"
+            )
+
     def update_purchase_order(
         self,
         xero_tenant_id,
@@ -19221,6 +19391,95 @@ class AccountingApi(object):
             raise translate_status_exception(
                 error, self, "update_receipt_attachment_by_file_name"
             )
+
+    def update_repeating_invoice(
+        self,
+        xero_tenant_id,
+        repeating_invoice_id,
+        repeating_invoices,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
+        """Deletes a specific repeating invoice template  # noqa: E501
+        OAuth2 scope: accounting.transactions
+        :param str xero_tenant_id: Xero identifier for Tenant (required)
+        :param str repeating_invoice_id: Unique identifier for a Repeating Invoice (required)
+        :param RepeatingInvoices repeating_invoices: (required)
+        :param bool _return_http_data_only: return received data only
+        :param bool _preload_content: load received data in models
+        :param bool _request_timeout: maximum wait time for response
+        :return: RepeatingInvoices
+        """
+
+        # verify the required parameter 'xero_tenant_id' is set
+        if xero_tenant_id is None:
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `update_repeating_invoice`"
+            )
+        # verify the required parameter 'repeating_invoice_id' is set
+        if repeating_invoice_id is None:
+            raise ValueError(
+                "Missing the required parameter `repeating_invoice_id` "
+                "when calling `update_repeating_invoice`"
+            )
+        # verify the required parameter 'repeating_invoices' is set
+        if repeating_invoices is None:
+            raise ValueError(
+                "Missing the required parameter `repeating_invoices` "
+                "when calling `update_repeating_invoice`"
+            )
+
+        collection_formats = {}
+        path_params = {
+            "RepeatingInvoiceID": repeating_invoice_id,
+        }
+
+        query_params = []
+
+        header_params = {
+            "xero-tenant-id": xero_tenant_id,
+        }
+
+        local_var_files = {}
+        form_params = []
+
+        body_params = repeating_invoices
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/RepeatingInvoices/{RepeatingInvoiceID}")
+
+        try:
+            return self.api_client.call_api(
+                url,
+                "POST",
+                path_params,
+                query_params,
+                header_params,
+                body=body_params,
+                post_params=form_params,
+                files=local_var_files,
+                response_type="RepeatingInvoices",
+                response_model_finder=self.get_model_finder(),
+                auth_settings=auth_settings,
+                _return_http_data_only=_return_http_data_only,
+                _preload_content=_preload_content,
+                _request_timeout=_request_timeout,
+                collection_formats=collection_formats,
+            )
+        except exceptions.HTTPStatusException as error:
+            raise translate_status_exception(error, self, "update_repeating_invoice")
 
     def update_repeating_invoice_attachment_by_file_name(
         self,
