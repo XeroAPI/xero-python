@@ -61,6 +61,8 @@ Method | HTTP request | Description
 [**create_tracking_category**](AccountingApi.md#create_tracking_category) | **PUT** /TrackingCategories | Create tracking categories
 [**create_tracking_options**](AccountingApi.md#create_tracking_options) | **PUT** /TrackingCategories/{TrackingCategoryID}/Options | Creates options for a specific tracking category
 [**delete_account**](AccountingApi.md#delete_account) | **DELETE** /Accounts/{AccountID} | Deletes a chart of accounts
+[**delete_batch_payment**](AccountingApi.md#delete_batch_payment) | **POST** /BatchPayments | Updates a specific batch payment for invoices and credit notes
+[**delete_batch_payment_by_url_param**](AccountingApi.md#delete_batch_payment_by_url_param) | **POST** /BatchPayments/{BatchPaymentID} | Updates a specific batch payment for invoices and credit notes
 [**delete_contact_group_contact**](AccountingApi.md#delete_contact_group_contact) | **DELETE** /ContactGroups/{ContactGroupID}/Contacts/{ContactID} | Deletes a specific contact from a contact group using a unique contact Id
 [**delete_contact_group_contacts**](AccountingApi.md#delete_contact_group_contacts) | **DELETE** /ContactGroups/{ContactGroupID}/Contacts | Deletes all contacts from a specific contact group
 [**delete_item**](AccountingApi.md#delete_item) | **DELETE** /Items/{ItemID} | Deletes a specific item
@@ -3953,6 +3955,134 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_batch_payment**
+> BatchPayments delete_batch_payment(xero_tenant_id, batch_payment_delete)
+
+Updates a specific batch payment for invoices and credit notes
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.accounting import AccountingApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = AccountingApi(api_client)
+
+xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
+batch_payment_delete = { "BatchPaymentID": "9bf296e9-0748-4d29-a3dc-24dde1098030", "Status":"DELETED" } # BatchPaymentDelete | 
+try:
+    # Updates a specific batch payment for invoices and credit notes
+    api_response = api_instance.delete_batch_payment(xero_tenant_id, batch_payment_delete)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AccountingApi->delete_batch_payment: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **batch_payment_delete** | [**BatchPaymentDelete**](BatchPaymentDelete.md)|  | 
+
+### Return type
+
+[**BatchPayments**](BatchPayments.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_batch_payment_by_url_param**
+> BatchPayments delete_batch_payment_by_url_param(xero_tenant_id, batch_payment_id, batch_payment_delete_by_url_param)
+
+Updates a specific batch payment for invoices and credit notes
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.accounting import AccountingApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = AccountingApi(api_client)
+
+xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
+batch_payment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for BatchPayment
+batch_payment_delete_by_url_param = { "Status":"DELETED" } # BatchPaymentDeleteByUrlParam | 
+try:
+    # Updates a specific batch payment for invoices and credit notes
+    api_response = api_instance.delete_batch_payment_by_url_param(xero_tenant_id, batch_payment_id, batch_payment_delete_by_url_param)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AccountingApi->delete_batch_payment_by_url_param: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **batch_payment_id** | [**str**](.md)| Unique identifier for BatchPayment | 
+ **batch_payment_delete_by_url_param** | [**BatchPaymentDeleteByUrlParam**](BatchPaymentDeleteByUrlParam.md)|  | 
+
+### Return type
+
+[**BatchPayments**](BatchPayments.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

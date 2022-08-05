@@ -45,6 +45,7 @@ class TaxDeclaration(BaseModel):
         "eligible_to_receive_leave_loading": "bool",
         "approved_withholding_variation_percentage": "float",
         "has_student_startup_loan": "bool",
+        "has_loan_or_student_debt": "bool",
         "updated_date_utc": "datetime[ms-format]",
     }
 
@@ -64,6 +65,7 @@ class TaxDeclaration(BaseModel):
         "eligible_to_receive_leave_loading": "EligibleToReceiveLeaveLoading",
         "approved_withholding_variation_percentage": "ApprovedWithholdingVariationPercentage",
         "has_student_startup_loan": "HasStudentStartupLoan",
+        "has_loan_or_student_debt": "HasLoanOrStudentDebt",
         "updated_date_utc": "UpdatedDateUTC",
     }
 
@@ -84,6 +86,7 @@ class TaxDeclaration(BaseModel):
         eligible_to_receive_leave_loading=None,
         approved_withholding_variation_percentage=None,
         has_student_startup_loan=None,
+        has_loan_or_student_debt=None,
         updated_date_utc=None,
     ):  # noqa: E501
         """TaxDeclaration - a model defined in OpenAPI"""  # noqa: E501
@@ -103,6 +106,7 @@ class TaxDeclaration(BaseModel):
         self._eligible_to_receive_leave_loading = None
         self._approved_withholding_variation_percentage = None
         self._has_student_startup_loan = None
+        self._has_loan_or_student_debt = None
         self._updated_date_utc = None
         self.discriminator = None
 
@@ -142,6 +146,8 @@ class TaxDeclaration(BaseModel):
             )
         if has_student_startup_loan is not None:
             self.has_student_startup_loan = has_student_startup_loan
+        if has_loan_or_student_debt is not None:
+            self.has_loan_or_student_debt = has_loan_or_student_debt
         if updated_date_utc is not None:
             self.updated_date_utc = updated_date_utc
 
@@ -495,6 +501,29 @@ class TaxDeclaration(BaseModel):
         """
 
         self._has_student_startup_loan = has_student_startup_loan
+
+    @property
+    def has_loan_or_student_debt(self):
+        """Gets the has_loan_or_student_debt of this TaxDeclaration.  # noqa: E501
+
+        If the employee has any of the following loans or debts: Higher Education Loan Program (HELP/HECS), VET Student Loan (VSL), Financial Supplement (FS), Student Start-up Loan (SSL), or Trade Support Loan (TSL)  # noqa: E501
+
+        :return: The has_loan_or_student_debt of this TaxDeclaration.  # noqa: E501
+        :rtype: bool
+        """
+        return self._has_loan_or_student_debt
+
+    @has_loan_or_student_debt.setter
+    def has_loan_or_student_debt(self, has_loan_or_student_debt):
+        """Sets the has_loan_or_student_debt of this TaxDeclaration.
+
+        If the employee has any of the following loans or debts: Higher Education Loan Program (HELP/HECS), VET Student Loan (VSL), Financial Supplement (FS), Student Start-up Loan (SSL), or Trade Support Loan (TSL)  # noqa: E501
+
+        :param has_loan_or_student_debt: The has_loan_or_student_debt of this TaxDeclaration.  # noqa: E501
+        :type: bool
+        """
+
+        self._has_loan_or_student_debt = has_loan_or_student_debt
 
     @property
     def updated_date_utc(self):

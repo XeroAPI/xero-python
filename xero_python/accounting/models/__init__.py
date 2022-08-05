@@ -34,6 +34,10 @@ from xero_python.accounting.models.bank_transactions import BankTransactions
 from xero_python.accounting.models.bank_transfer import BankTransfer
 from xero_python.accounting.models.bank_transfers import BankTransfers
 from xero_python.accounting.models.batch_payment import BatchPayment
+from xero_python.accounting.models.batch_payment_delete import BatchPaymentDelete
+from xero_python.accounting.models.batch_payment_delete_by_url_param import (
+    BatchPaymentDeleteByUrlParam,
+)
 from xero_python.accounting.models.batch_payment_details import BatchPaymentDetails
 from xero_python.accounting.models.batch_payments import BatchPayments
 from xero_python.accounting.models.bill import Bill

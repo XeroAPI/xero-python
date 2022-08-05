@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.24.0
+    OpenAPI spec version: 2.25.0
 """
 
 import importlib
@@ -5151,6 +5151,176 @@ class AccountingApi(object):
             )
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "delete_account")
+
+    def delete_batch_payment(
+        self,
+        xero_tenant_id,
+        batch_payment_delete,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
+        """Updates a specific batch payment for invoices and credit notes  # noqa: E501
+        OAuth2 scope: accounting.transactions
+        :param str xero_tenant_id: Xero identifier for Tenant (required)
+        :param BatchPaymentDelete batch_payment_delete: (required)
+        :param bool _return_http_data_only: return received data only
+        :param bool _preload_content: load received data in models
+        :param bool _request_timeout: maximum wait time for response
+        :return: BatchPayments
+        """
+
+        # verify the required parameter 'xero_tenant_id' is set
+        if xero_tenant_id is None:
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `delete_batch_payment`"
+            )
+        # verify the required parameter 'batch_payment_delete' is set
+        if batch_payment_delete is None:
+            raise ValueError(
+                "Missing the required parameter `batch_payment_delete` "
+                "when calling `delete_batch_payment`"
+            )
+
+        collection_formats = {}
+        path_params = {}
+
+        query_params = []
+
+        header_params = {
+            "xero-tenant-id": xero_tenant_id,
+        }
+
+        local_var_files = {}
+        form_params = []
+
+        body_params = batch_payment_delete
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/BatchPayments")
+
+        try:
+            return self.api_client.call_api(
+                url,
+                "POST",
+                path_params,
+                query_params,
+                header_params,
+                body=body_params,
+                post_params=form_params,
+                files=local_var_files,
+                response_type="BatchPayments",
+                response_model_finder=self.get_model_finder(),
+                auth_settings=auth_settings,
+                _return_http_data_only=_return_http_data_only,
+                _preload_content=_preload_content,
+                _request_timeout=_request_timeout,
+                collection_formats=collection_formats,
+            )
+        except exceptions.HTTPStatusException as error:
+            raise translate_status_exception(error, self, "delete_batch_payment")
+
+    def delete_batch_payment_by_url_param(
+        self,
+        xero_tenant_id,
+        batch_payment_id,
+        batch_payment_delete_by_url_param,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
+        """Updates a specific batch payment for invoices and credit notes  # noqa: E501
+        OAuth2 scope: accounting.transactions
+        :param str xero_tenant_id: Xero identifier for Tenant (required)
+        :param str batch_payment_id: Unique identifier for BatchPayment (required)
+        :param BatchPaymentDeleteByUrlParam batch_payment_delete_by_url_param: (required)
+        :param bool _return_http_data_only: return received data only
+        :param bool _preload_content: load received data in models
+        :param bool _request_timeout: maximum wait time for response
+        :return: BatchPayments
+        """
+
+        # verify the required parameter 'xero_tenant_id' is set
+        if xero_tenant_id is None:
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `delete_batch_payment_by_url_param`"
+            )
+        # verify the required parameter 'batch_payment_id' is set
+        if batch_payment_id is None:
+            raise ValueError(
+                "Missing the required parameter `batch_payment_id` "
+                "when calling `delete_batch_payment_by_url_param`"
+            )
+        # verify the required parameter 'batch_payment_delete_by_url_param' is set
+        if batch_payment_delete_by_url_param is None:
+            raise ValueError(
+                "Missing the required parameter `batch_payment_delete_by_url_param` "
+                "when calling `delete_batch_payment_by_url_param`"
+            )
+
+        collection_formats = {}
+        path_params = {
+            "BatchPaymentID": batch_payment_id,
+        }
+
+        query_params = []
+
+        header_params = {
+            "xero-tenant-id": xero_tenant_id,
+        }
+
+        local_var_files = {}
+        form_params = []
+
+        body_params = batch_payment_delete_by_url_param
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/BatchPayments/{BatchPaymentID}")
+
+        try:
+            return self.api_client.call_api(
+                url,
+                "POST",
+                path_params,
+                query_params,
+                header_params,
+                body=body_params,
+                post_params=form_params,
+                files=local_var_files,
+                response_type="BatchPayments",
+                response_model_finder=self.get_model_finder(),
+                auth_settings=auth_settings,
+                _return_http_data_only=_return_http_data_only,
+                _preload_content=_preload_content,
+                _request_timeout=_request_timeout,
+                collection_formats=collection_formats,
+            )
+        except exceptions.HTTPStatusException as error:
+            raise translate_status_exception(
+                error, self, "delete_batch_payment_by_url_param"
+            )
 
     def delete_contact_group_contact(
         self,
