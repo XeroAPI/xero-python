@@ -46,6 +46,10 @@ class RepeatingInvoice(BaseModel):
         "id": "str",
         "has_attachments": "bool",
         "attachments": "list[Attachment]",
+        "approved_for_sending": "bool",
+        "send_copy": "bool",
+        "mark_as_sent": "bool",
+        "include_pdf": "bool",
     }
 
     attribute_map = {
@@ -65,6 +69,10 @@ class RepeatingInvoice(BaseModel):
         "id": "ID",
         "has_attachments": "HasAttachments",
         "attachments": "Attachments",
+        "approved_for_sending": "ApprovedForSending",
+        "send_copy": "SendCopy",
+        "mark_as_sent": "MarkAsSent",
+        "include_pdf": "IncludePDF",
     }
 
     def __init__(
@@ -85,6 +93,10 @@ class RepeatingInvoice(BaseModel):
         id=None,
         has_attachments=False,
         attachments=None,
+        approved_for_sending=False,
+        send_copy=False,
+        mark_as_sent=False,
+        include_pdf=False,
     ):  # noqa: E501
         """RepeatingInvoice - a model defined in OpenAPI"""  # noqa: E501
 
@@ -104,6 +116,10 @@ class RepeatingInvoice(BaseModel):
         self._id = None
         self._has_attachments = None
         self._attachments = None
+        self._approved_for_sending = None
+        self._send_copy = None
+        self._mark_as_sent = None
+        self._include_pdf = None
         self.discriminator = None
 
         if type is not None:
@@ -138,6 +154,14 @@ class RepeatingInvoice(BaseModel):
             self.has_attachments = has_attachments
         if attachments is not None:
             self.attachments = attachments
+        if approved_for_sending is not None:
+            self.approved_for_sending = approved_for_sending
+        if send_copy is not None:
+            self.send_copy = send_copy
+        if mark_as_sent is not None:
+            self.mark_as_sent = mark_as_sent
+        if include_pdf is not None:
+            self.include_pdf = include_pdf
 
     @property
     def type(self):
@@ -475,7 +499,7 @@ class RepeatingInvoice(BaseModel):
     def has_attachments(self):
         """Gets the has_attachments of this RepeatingInvoice.  # noqa: E501
 
-        boolean to indicate if an invoice has an attachment  # noqa: E501
+        Boolean to indicate if an invoice has an attachment  # noqa: E501
 
         :return: The has_attachments of this RepeatingInvoice.  # noqa: E501
         :rtype: bool
@@ -486,7 +510,7 @@ class RepeatingInvoice(BaseModel):
     def has_attachments(self, has_attachments):
         """Sets the has_attachments of this RepeatingInvoice.
 
-        boolean to indicate if an invoice has an attachment  # noqa: E501
+        Boolean to indicate if an invoice has an attachment  # noqa: E501
 
         :param has_attachments: The has_attachments of this RepeatingInvoice.  # noqa: E501
         :type: bool
@@ -516,3 +540,95 @@ class RepeatingInvoice(BaseModel):
         """
 
         self._attachments = attachments
+
+    @property
+    def approved_for_sending(self):
+        """Gets the approved_for_sending of this RepeatingInvoice.  # noqa: E501
+
+        Boolean to indicate whether the invoice has been approved for sending  # noqa: E501
+
+        :return: The approved_for_sending of this RepeatingInvoice.  # noqa: E501
+        :rtype: bool
+        """
+        return self._approved_for_sending
+
+    @approved_for_sending.setter
+    def approved_for_sending(self, approved_for_sending):
+        """Sets the approved_for_sending of this RepeatingInvoice.
+
+        Boolean to indicate whether the invoice has been approved for sending  # noqa: E501
+
+        :param approved_for_sending: The approved_for_sending of this RepeatingInvoice.  # noqa: E501
+        :type: bool
+        """
+
+        self._approved_for_sending = approved_for_sending
+
+    @property
+    def send_copy(self):
+        """Gets the send_copy of this RepeatingInvoice.  # noqa: E501
+
+        Boolean to indicate whether a copy is sent to sender's email  # noqa: E501
+
+        :return: The send_copy of this RepeatingInvoice.  # noqa: E501
+        :rtype: bool
+        """
+        return self._send_copy
+
+    @send_copy.setter
+    def send_copy(self, send_copy):
+        """Sets the send_copy of this RepeatingInvoice.
+
+        Boolean to indicate whether a copy is sent to sender's email  # noqa: E501
+
+        :param send_copy: The send_copy of this RepeatingInvoice.  # noqa: E501
+        :type: bool
+        """
+
+        self._send_copy = send_copy
+
+    @property
+    def mark_as_sent(self):
+        """Gets the mark_as_sent of this RepeatingInvoice.  # noqa: E501
+
+        Boolean to indicate whether the invoice in the Xero app displays as \"sent\"  # noqa: E501
+
+        :return: The mark_as_sent of this RepeatingInvoice.  # noqa: E501
+        :rtype: bool
+        """
+        return self._mark_as_sent
+
+    @mark_as_sent.setter
+    def mark_as_sent(self, mark_as_sent):
+        """Sets the mark_as_sent of this RepeatingInvoice.
+
+        Boolean to indicate whether the invoice in the Xero app displays as \"sent\"  # noqa: E501
+
+        :param mark_as_sent: The mark_as_sent of this RepeatingInvoice.  # noqa: E501
+        :type: bool
+        """
+
+        self._mark_as_sent = mark_as_sent
+
+    @property
+    def include_pdf(self):
+        """Gets the include_pdf of this RepeatingInvoice.  # noqa: E501
+
+        Boolean to indicate whether to include PDF attachment  # noqa: E501
+
+        :return: The include_pdf of this RepeatingInvoice.  # noqa: E501
+        :rtype: bool
+        """
+        return self._include_pdf
+
+    @include_pdf.setter
+    def include_pdf(self, include_pdf):
+        """Sets the include_pdf of this RepeatingInvoice.
+
+        Boolean to indicate whether to include PDF attachment  # noqa: E501
+
+        :param include_pdf: The include_pdf of this RepeatingInvoice.  # noqa: E501
+        :type: bool
+        """
+
+        self._include_pdf = include_pdf
