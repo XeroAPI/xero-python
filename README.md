@@ -2,7 +2,7 @@
 [![PyPI version](https://badge.fury.io/py/xero-python.svg)](https://badge.fury.io/py/xero-python)
 [![Github forks](https://img.shields.io/github/forks/XeroAPI/xero-python.svg)](https://github.com/XeroAPI/xero-python/network)
 [![Github stars](https://img.shields.io/github/stars/XeroAPI/xero-python.svg)](https://github.com/XeroAPI/xero-python/stargazers)
-![total downloads](https://ruby-gem-downloads-badge.herokuapp.com/xero-ruby?type=total)
+![PyPi](https://img.shields.io/pypi/dm/xero-python)
 
 The xero-python SDK makes it easy for developers to access Xero's APIs in their python code, and build robust applications and software using small business & general ledger accounting data.
 # Table of Contents
