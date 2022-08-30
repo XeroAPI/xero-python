@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **is_paid_leave** | **bool** | Set this to indicate that an employee will be paid when taking this type of leave | [optional] 
 **show_on_payslip** | **bool** | Set this if you want a balance for this leave type to be shown on your employee’s payslips | [optional] 
 **current_record** | **bool** | Is the current record | [optional] 
+**leave_category_code** | [**LeaveCategoryCode**](LeaveCategoryCode.md) |  | [optional] 
+**sgc_exempt** | **bool** | Set this to indicate that the leave type is exempt from superannuation guarantee contribution | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
