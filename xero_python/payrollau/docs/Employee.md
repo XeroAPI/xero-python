@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **title** | **str** | Title of the employee | [optional] 
 **middle_names** | **str** | Middle name(s) of the employee | [optional] 
 **email** | **str** | The email address for the employee | [optional] 
-**gender** | **str** | The employee’s gender. See Employee Gender | [optional] 
+**gender** | **str** | The employee’s gender. See Employee Gender | [optional] 
 **phone** | **str** | Employee phone number | [optional] 
 **mobile** | **str** | Employee mobile number | [optional] 
 **twitter_user_name** | **str** | Employee’s twitter name | [optional] 

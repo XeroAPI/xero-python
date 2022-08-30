@@ -980,6 +980,7 @@ class Organisation(BaseModel):
             "GST_CASHBOOK",
             "NON_GST_CASHBOOK",
             "ULTIMATE",
+            "LITE",
             "None",
         ]  # noqa: E501
 

@@ -6774,7 +6774,7 @@ i_ds = ['&quot;00000000-0000-0000-0000-000000000000&quot;'] # list[str] | Filter
 page = 1 # int | e.g. page=1 - Up to 100 contacts will be returned in a single API call. (optional)
 include_archived = true # bool | e.g. includeArchived=true - Contacts with a status of ARCHIVED will be included in the response (optional)
 summary_only = False # bool | Use summaryOnly=true in GET Contacts and Invoices endpoint to retrieve a smaller version of the response object. This returns only lightweight fields, excluding computation-heavy fields from the response, making the API calls quick and efficient. (optional) (default to False)
-search_term = 'searchTerm=Joe Bloggs' # str | Search parameter that performs a case-insensitive text search across the Name, FirstName, LastName, ContactNumber and EmailAddress fields. (optional)
+search_term = 'Joe Bloggs' # str | Search parameter that performs a case-insensitive text search across the Name, FirstName, LastName, ContactNumber and EmailAddress fields. (optional)
 try:
     # Retrieves all contacts in a Xero organisation
     api_response = api_instance.get_contacts(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, i_ds=i_ds, page=page, include_archived=include_archived, summary_only=summary_only, search_term=search_term)

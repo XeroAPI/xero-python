@@ -432,7 +432,7 @@ class Employee(BaseModel):
     def gender(self):
         """Gets the gender of this Employee.  # noqa: E501
 
-        The employee’s gender. See Employee Gender  # noqa: E501
+        The employee’s gender. See Employee Gender  # noqa: E501
 
         :return: The gender of this Employee.  # noqa: E501
         :rtype: str
@@ -443,7 +443,7 @@ class Employee(BaseModel):
     def gender(self, gender):
         """Sets the gender of this Employee.
 
-        The employee’s gender. See Employee Gender  # noqa: E501
+        The employee’s gender. See Employee Gender  # noqa: E501
 
         :param gender: The gender of this Employee.  # noqa: E501
         :type: str

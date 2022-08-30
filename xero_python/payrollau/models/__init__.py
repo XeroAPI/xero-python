@@ -45,6 +45,7 @@ from xero_python.payrollau.models.leave_accrual_line import LeaveAccrualLine
 from xero_python.payrollau.models.leave_application import LeaveApplication
 from xero_python.payrollau.models.leave_applications import LeaveApplications
 from xero_python.payrollau.models.leave_balance import LeaveBalance
+from xero_python.payrollau.models.leave_category_code import LeaveCategoryCode
 from xero_python.payrollau.models.leave_earnings_line import LeaveEarningsLine
 from xero_python.payrollau.models.leave_line import LeaveLine
 from xero_python.payrollau.models.leave_line_calculation_type import (

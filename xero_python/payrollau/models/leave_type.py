@@ -39,6 +39,8 @@ class LeaveType(BaseModel):
         "is_paid_leave": "bool",
         "show_on_payslip": "bool",
         "current_record": "bool",
+        "leave_category_code": "LeaveCategoryCode",
+        "sgc_exempt": "bool",
     }
 
     attribute_map = {
@@ -51,6 +53,8 @@ class LeaveType(BaseModel):
         "is_paid_leave": "IsPaidLeave",
         "show_on_payslip": "ShowOnPayslip",
         "current_record": "CurrentRecord",
+        "leave_category_code": "LeaveCategoryCode",
+        "sgc_exempt": "SGCExempt",
     }
 
     def __init__(
@@ -64,6 +68,8 @@ class LeaveType(BaseModel):
         is_paid_leave=None,
         show_on_payslip=None,
         current_record=None,
+        leave_category_code=None,
+        sgc_exempt=None,
     ):  # noqa: E501
         """LeaveType - a model defined in OpenAPI"""  # noqa: E501
 
@@ -76,6 +82,8 @@ class LeaveType(BaseModel):
         self._is_paid_leave = None
         self._show_on_payslip = None
         self._current_record = None
+        self._leave_category_code = None
+        self._sgc_exempt = None
         self.discriminator = None
 
         if name is not None:
@@ -96,6 +104,10 @@ class LeaveType(BaseModel):
             self.show_on_payslip = show_on_payslip
         if current_record is not None:
             self.current_record = current_record
+        if leave_category_code is not None:
+            self.leave_category_code = leave_category_code
+        if sgc_exempt is not None:
+            self.sgc_exempt = sgc_exempt
 
     @property
     def name(self):
@@ -308,3 +320,47 @@ class LeaveType(BaseModel):
         """
 
         self._current_record = current_record
+
+    @property
+    def leave_category_code(self):
+        """Gets the leave_category_code of this LeaveType.  # noqa: E501
+
+
+        :return: The leave_category_code of this LeaveType.  # noqa: E501
+        :rtype: LeaveCategoryCode
+        """
+        return self._leave_category_code
+
+    @leave_category_code.setter
+    def leave_category_code(self, leave_category_code):
+        """Sets the leave_category_code of this LeaveType.
+
+
+        :param leave_category_code: The leave_category_code of this LeaveType.  # noqa: E501
+        :type: LeaveCategoryCode
+        """
+
+        self._leave_category_code = leave_category_code
+
+    @property
+    def sgc_exempt(self):
+        """Gets the sgc_exempt of this LeaveType.  # noqa: E501
+
+        Set this to indicate that the leave type is exempt from superannuation guarantee contribution  # noqa: E501
+
+        :return: The sgc_exempt of this LeaveType.  # noqa: E501
+        :rtype: bool
+        """
+        return self._sgc_exempt
+
+    @sgc_exempt.setter
+    def sgc_exempt(self, sgc_exempt):
+        """Sets the sgc_exempt of this LeaveType.
+
+        Set this to indicate that the leave type is exempt from superannuation guarantee contribution  # noqa: E501
+
+        :param sgc_exempt: The sgc_exempt of this LeaveType.  # noqa: E501
+        :type: bool
+        """
+
+        self._sgc_exempt = sgc_exempt
