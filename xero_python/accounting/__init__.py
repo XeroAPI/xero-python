@@ -14,7 +14,6 @@
 
 # import apis into sdk package
 from xero_python.accounting.api.accounting_api import AccountingApi
-from xero_python.accounting.api.accounting_api import AccountingApi
 
 
 # import models into sdk package
