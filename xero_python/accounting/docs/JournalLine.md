@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **net_amount** | **float** | Net amount of journal line. This will be a positive value for a debit and negative for a credit | [optional] 
 **gross_amount** | **float** | Gross amount of journal line (NetAmount + TaxAmount). | [optional] 
 **tax_amount** | **float** | Total tax on a journal line | [optional] 
-**tax_type** | **str** | The tax type from TaxRates | [optional] 
+**tax_type** | **str** | The tax type from taxRates | [optional] 
 **tax_name** | **str** | see TaxRates | [optional] 
 **tracking_categories** | [**list[TrackingCategory]**](TrackingCategory.md) | Optional Tracking Category – see Tracking. Any JournalLine can have a maximum of 2 &lt;TrackingCategory&gt; elements. | [optional] 
 

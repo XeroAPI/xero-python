@@ -400,7 +400,7 @@ class Account(BaseModel):
     def tax_type(self):
         """Gets the tax_type of this Account.  # noqa: E501
 
-        The tax type from TaxRates  # noqa: E501
+        The tax type from taxRates  # noqa: E501
 
         :return: The tax_type of this Account.  # noqa: E501
         :rtype: str
@@ -411,7 +411,7 @@ class Account(BaseModel):
     def tax_type(self, tax_type):
         """Sets the tax_type of this Account.
 
-        The tax type from TaxRates  # noqa: E501
+        The tax type from taxRates  # noqa: E501
 
         :param tax_type: The tax_type of this Account.  # noqa: E501
         :type: str

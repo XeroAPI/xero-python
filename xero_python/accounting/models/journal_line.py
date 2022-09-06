@@ -324,7 +324,7 @@ class JournalLine(BaseModel):
     def tax_type(self):
         """Gets the tax_type of this JournalLine.  # noqa: E501
 
-        The tax type from TaxRates  # noqa: E501
+        The tax type from taxRates  # noqa: E501
 
         :return: The tax_type of this JournalLine.  # noqa: E501
         :rtype: str
@@ -335,7 +335,7 @@ class JournalLine(BaseModel):
     def tax_type(self, tax_type):
         """Sets the tax_type of this JournalLine.
 
-        The tax type from TaxRates  # noqa: E501
+        The tax type from taxRates  # noqa: E501
 
         :param tax_type: The tax_type of this JournalLine.  # noqa: E501
         :type: str
