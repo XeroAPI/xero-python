@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.29.1
+    OpenAPI spec version: 2.29.3
 """
 
 import importlib
@@ -153,7 +153,7 @@ class ProjectApi(object):
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
-        :return: None
+        :return: Task
         """
 
         # verify the required parameter 'xero_tenant_id' is set
@@ -214,7 +214,7 @@ class ProjectApi(object):
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type=None,
+                response_type="Task",
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,

@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_task**
-> create_task(xero_tenant_id, project_id, task_create_or_update)
+> Task create_task(xero_tenant_id, project_id, task_create_or_update)
 
 Allows you to create a task
 
@@ -100,7 +100,7 @@ from xero_python.api_client import Configuration, ApiClient
 from xero_python.api_client.oauth2 import OAuth2Token
 from xero_python.exceptions import ApiException
 from xero_python.project import ProjectApi
-
+from pprint import pprint
 
 # Configure OAuth2 access token for authorization: OAuth2
 # simplified version, `xero_oauth2_token` represents permanent global token storage
@@ -123,7 +123,8 @@ project_id = 'project_id_example' # str | You can create a task on a specified p
 task_create_or_update = { "status": "INPROGRESS" } # TaskCreateOrUpdate | The task object you are creating
 try:
     # Allows you to create a task
-    api_instance.create_task(xero_tenant_id, project_id, task_create_or_update)
+    api_response = api_instance.create_task(xero_tenant_id, project_id, task_create_or_update)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->create_task: %s\n" % e)
 ```
@@ -138,7 +139,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**Task**](Task.md)
 
 ### Authorization
 
