@@ -33,22 +33,29 @@ class Settings(BaseModel):
         "accounts": "list[Account]",
         "tracking_categories": "SettingsTrackingCategories",
         "days_in_payroll_year": "int",
+        "employees_are_stp2": "bool",
     }
 
     attribute_map = {
         "accounts": "Accounts",
         "tracking_categories": "TrackingCategories",
         "days_in_payroll_year": "DaysInPayrollYear",
+        "employees_are_stp2": "EmployeesAreSTP2",
     }
 
     def __init__(
-        self, accounts=None, tracking_categories=None, days_in_payroll_year=None
+        self,
+        accounts=None,
+        tracking_categories=None,
+        days_in_payroll_year=None,
+        employees_are_stp2=None,
     ):  # noqa: E501
         """Settings - a model defined in OpenAPI"""  # noqa: E501
 
         self._accounts = None
         self._tracking_categories = None
         self._days_in_payroll_year = None
+        self._employees_are_stp2 = None
         self.discriminator = None
 
         if accounts is not None:
@@ -57,6 +64,8 @@ class Settings(BaseModel):
             self.tracking_categories = tracking_categories
         if days_in_payroll_year is not None:
             self.days_in_payroll_year = days_in_payroll_year
+        if employees_are_stp2 is not None:
+            self.employees_are_stp2 = employees_are_stp2
 
     @property
     def accounts(self):
@@ -124,3 +133,26 @@ class Settings(BaseModel):
         """
 
         self._days_in_payroll_year = days_in_payroll_year
+
+    @property
+    def employees_are_stp2(self):
+        """Gets the employees_are_stp2 of this Settings.  # noqa: E501
+
+        Indicates if the organisation has been enabled for STP Phase 2 editing of employees.  # noqa: E501
+
+        :return: The employees_are_stp2 of this Settings.  # noqa: E501
+        :rtype: bool
+        """
+        return self._employees_are_stp2
+
+    @employees_are_stp2.setter
+    def employees_are_stp2(self, employees_are_stp2):
+        """Sets the employees_are_stp2 of this Settings.
+
+        Indicates if the organisation has been enabled for STP Phase 2 editing of employees.  # noqa: E501
+
+        :param employees_are_stp2: The employees_are_stp2 of this Settings.  # noqa: E501
+        :type: bool
+        """
+
+        self._employees_are_stp2 = employees_are_stp2

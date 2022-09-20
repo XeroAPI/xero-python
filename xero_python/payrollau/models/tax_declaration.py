@@ -34,8 +34,12 @@ class TaxDeclaration(BaseModel):
         "employment_basis": "EmploymentBasis",
         "tfn_exemption_type": "TFNExemptionType",
         "tax_file_number": "str",
+        "abn": "str",
         "australian_resident_for_tax_purposes": "bool",
         "residency_status": "ResidencyStatus",
+        "tax_scale_type": "TaxScaleType",
+        "work_condition": "WorkCondition",
+        "senior_marital_status": "SeniorMaritalStatus",
         "tax_free_threshold_claimed": "bool",
         "tax_offset_estimated_amount": "float",
         "has_help_debt": "bool",
@@ -54,8 +58,12 @@ class TaxDeclaration(BaseModel):
         "employment_basis": "EmploymentBasis",
         "tfn_exemption_type": "TFNExemptionType",
         "tax_file_number": "TaxFileNumber",
+        "abn": "ABN",
         "australian_resident_for_tax_purposes": "AustralianResidentForTaxPurposes",
         "residency_status": "ResidencyStatus",
+        "tax_scale_type": "TaxScaleType",
+        "work_condition": "WorkCondition",
+        "senior_marital_status": "SeniorMaritalStatus",
         "tax_free_threshold_claimed": "TaxFreeThresholdClaimed",
         "tax_offset_estimated_amount": "TaxOffsetEstimatedAmount",
         "has_help_debt": "HasHELPDebt",
@@ -75,8 +83,12 @@ class TaxDeclaration(BaseModel):
         employment_basis=None,
         tfn_exemption_type=None,
         tax_file_number=None,
+        abn=None,
         australian_resident_for_tax_purposes=None,
         residency_status=None,
+        tax_scale_type=None,
+        work_condition=None,
+        senior_marital_status=None,
         tax_free_threshold_claimed=None,
         tax_offset_estimated_amount=None,
         has_help_debt=None,
@@ -95,8 +107,12 @@ class TaxDeclaration(BaseModel):
         self._employment_basis = None
         self._tfn_exemption_type = None
         self._tax_file_number = None
+        self._abn = None
         self._australian_resident_for_tax_purposes = None
         self._residency_status = None
+        self._tax_scale_type = None
+        self._work_condition = None
+        self._senior_marital_status = None
         self._tax_free_threshold_claimed = None
         self._tax_offset_estimated_amount = None
         self._has_help_debt = None
@@ -118,12 +134,20 @@ class TaxDeclaration(BaseModel):
             self.tfn_exemption_type = tfn_exemption_type
         if tax_file_number is not None:
             self.tax_file_number = tax_file_number
+        if abn is not None:
+            self.abn = abn
         if australian_resident_for_tax_purposes is not None:
             self.australian_resident_for_tax_purposes = (
                 australian_resident_for_tax_purposes
             )
         if residency_status is not None:
             self.residency_status = residency_status
+        if tax_scale_type is not None:
+            self.tax_scale_type = tax_scale_type
+        if work_condition is not None:
+            self.work_condition = work_condition
+        if senior_marital_status is not None:
+            self.senior_marital_status = senior_marital_status
         if tax_free_threshold_claimed is not None:
             self.tax_free_threshold_claimed = tax_free_threshold_claimed
         if tax_offset_estimated_amount is not None:
@@ -240,6 +264,29 @@ class TaxDeclaration(BaseModel):
         self._tax_file_number = tax_file_number
 
     @property
+    def abn(self):
+        """Gets the abn of this TaxDeclaration.  # noqa: E501
+
+        11-digit Australian Business Number e.g 21006819692 or an empty string (\"\") to unset a previously set value. Only applicable, and mandatory if income type is NONEMPLOYEE.  # noqa: E501
+
+        :return: The abn of this TaxDeclaration.  # noqa: E501
+        :rtype: str
+        """
+        return self._abn
+
+    @abn.setter
+    def abn(self, abn):
+        """Sets the abn of this TaxDeclaration.
+
+        11-digit Australian Business Number e.g 21006819692 or an empty string (\"\") to unset a previously set value. Only applicable, and mandatory if income type is NONEMPLOYEE.  # noqa: E501
+
+        :param abn: The abn of this TaxDeclaration.  # noqa: E501
+        :type: str
+        """
+
+        self._abn = abn
+
+    @property
     def australian_resident_for_tax_purposes(self):
         """Gets the australian_resident_for_tax_purposes of this TaxDeclaration.  # noqa: E501
 
@@ -286,6 +333,69 @@ class TaxDeclaration(BaseModel):
         """
 
         self._residency_status = residency_status
+
+    @property
+    def tax_scale_type(self):
+        """Gets the tax_scale_type of this TaxDeclaration.  # noqa: E501
+
+
+        :return: The tax_scale_type of this TaxDeclaration.  # noqa: E501
+        :rtype: TaxScaleType
+        """
+        return self._tax_scale_type
+
+    @tax_scale_type.setter
+    def tax_scale_type(self, tax_scale_type):
+        """Sets the tax_scale_type of this TaxDeclaration.
+
+
+        :param tax_scale_type: The tax_scale_type of this TaxDeclaration.  # noqa: E501
+        :type: TaxScaleType
+        """
+
+        self._tax_scale_type = tax_scale_type
+
+    @property
+    def work_condition(self):
+        """Gets the work_condition of this TaxDeclaration.  # noqa: E501
+
+
+        :return: The work_condition of this TaxDeclaration.  # noqa: E501
+        :rtype: WorkCondition
+        """
+        return self._work_condition
+
+    @work_condition.setter
+    def work_condition(self, work_condition):
+        """Sets the work_condition of this TaxDeclaration.
+
+
+        :param work_condition: The work_condition of this TaxDeclaration.  # noqa: E501
+        :type: WorkCondition
+        """
+
+        self._work_condition = work_condition
+
+    @property
+    def senior_marital_status(self):
+        """Gets the senior_marital_status of this TaxDeclaration.  # noqa: E501
+
+
+        :return: The senior_marital_status of this TaxDeclaration.  # noqa: E501
+        :rtype: SeniorMaritalStatus
+        """
+        return self._senior_marital_status
+
+    @senior_marital_status.setter
+    def senior_marital_status(self, senior_marital_status):
+        """Sets the senior_marital_status of this TaxDeclaration.
+
+
+        :param senior_marital_status: The senior_marital_status of this TaxDeclaration.  # noqa: E501
+        :type: SeniorMaritalStatus
+        """
+
+        self._senior_marital_status = senior_marital_status
 
     @property
     def tax_free_threshold_claimed(self):
