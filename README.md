@@ -232,12 +232,12 @@ Example Token Set JSON:
   "expires_in": 1800,
   "token_type": "Bearer",
   "refresh_token": "xxxxxxxxx",
-  "scope": "email profile openid accounting.transactions offline_access"
+  "scope": [email, profile, openid, accounting.transactions ,offline_access]
 }
 ```
 
 ---
-## Custom Connections 
+## Custom Connections
 
 Custom Connections are a Xero [premium option](https://developer.xero.com/documentation/oauth2/custom-connections) used for building M2M integrations to a single organisation. A custom connection uses OAuth 2.0's [`client_credentials`](https://www.oauth.com/oauth2-servers/access-tokens/client-credentials/) grant which eliminates the step of exchanging the temporary code for a token set.
 
@@ -335,7 +335,7 @@ Because Custom Connections are only valid for a single organisation you don't ne
 
 ---
 
-## App Store Subscriptions 
+## App Store Subscriptions
 
 If you are implementing subscriptions to participate in Xero's App Store you will need to setup [App Store subscriptions](https://developer.xero.com/documentation/guides/how-to-guides/xero-app-store-referrals/) endpoints.
 
@@ -457,7 +457,7 @@ store_xero_oauth2_token(token_set)
 
 # refresh token set on the api client
 api_client.refresh_oauth2_token()
- 
+
 # call the Xero API
 accounting_api = AccountingApi(api_client)
 read_accounts = accounting_api.get_accounts(xero_tenant_id)
@@ -571,7 +571,7 @@ def accounting_get_invoices():
     include_archived = 'true'
     created_by_my_app = 'false'
     summary_only = 'true'
-    
+
 api_response = api_instance.get_invoices(
     xero_tenant_id,
     if_modified_since,
@@ -593,11 +593,11 @@ api_response = api_instance.get_invoices(
 
 ## Participating in Xero’s developer community
 
-This SDK is one of a number of SDK’s that the Xero Developer team builds and maintains. We are grateful for all the contributions that the community makes. 
+This SDK is one of a number of SDK’s that the Xero Developer team builds and maintains. We are grateful for all the contributions that the community makes.
 
 Here are a few things you should be aware of as a contributor:
 * Xero has adopted the Contributor Covenant [Code of Conduct](https://github.com/XeroAPI/xero-python/blob/master/CODE_OF_CONDUCT.md), we expect all contributors in our community to adhere to it
-* If you raise an issue then please make sure to fill out the Github issue template, doing so helps us help you 
+* If you raise an issue then please make sure to fill out the Github issue template, doing so helps us help you
 * You’re welcome to raise PRs. As our SDKs are generated we may use your code in the core SDK build instead of merging your code
 * We have a [contribution guide](https://github.com/XeroAPI/xero-python/blob/master/CONTRIBUTING.md) for you to follow when contributing to this SDK
 * Curious about how we generate our SDK’s? Have a [read of our process](https://devblog.xero.com/building-sdks-for-the-future-b79ff726dfd6) and have a look at our [OpenAPISpec](https://github.com/XeroAPI/Xero-OpenAPI)
