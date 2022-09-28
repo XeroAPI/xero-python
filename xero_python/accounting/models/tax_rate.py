@@ -325,6 +325,13 @@ class TaxRate(BaseModel):
             "TXRCREINPUT",
             "TXRCESSINPUT",
             "TXRCTSINPUT",
+            "CAPEXINPUT",
+            "UNDEFINED",
+            "CAPEXOUTPUT",
+            "ZEROEXPOUTPUT",
+            "GOODSIMPORT",
+            "NONEINPUT",
+            "NOTREPORTED",
             "None",
         ]  # noqa: E501
 

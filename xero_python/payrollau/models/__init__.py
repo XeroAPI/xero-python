@@ -19,6 +19,7 @@ from xero_python.payrollau.models.allowance_category import AllowanceCategory
 from xero_python.payrollau.models.allowance_type import AllowanceType
 from xero_python.payrollau.models.bank_account import BankAccount
 from xero_python.payrollau.models.calendar_type import CalendarType
+from xero_python.payrollau.models.country_of_residence import CountryOfResidence
 from xero_python.payrollau.models.deduction_line import DeductionLine
 from xero_python.payrollau.models.deduction_type import DeductionType
 from xero_python.payrollau.models.deduction_type_calculation_type import (
@@ -37,10 +38,12 @@ from xero_python.payrollau.models.employment_basis import EmploymentBasis
 from xero_python.payrollau.models.employment_termination_payment_type import (
     EmploymentTerminationPaymentType,
 )
+from xero_python.payrollau.models.employment_type import EmploymentType
 from xero_python.payrollau.models.entitlement_final_pay_payout_type import (
     EntitlementFinalPayPayoutType,
 )
 from xero_python.payrollau.models.home_address import HomeAddress
+from xero_python.payrollau.models.income_type import IncomeType
 from xero_python.payrollau.models.leave_accrual_line import LeaveAccrualLine
 from xero_python.payrollau.models.leave_application import LeaveApplication
 from xero_python.payrollau.models.leave_applications import LeaveApplications
@@ -79,6 +82,7 @@ from xero_python.payrollau.models.reimbursement_line import ReimbursementLine
 from xero_python.payrollau.models.reimbursement_lines import ReimbursementLines
 from xero_python.payrollau.models.reimbursement_type import ReimbursementType
 from xero_python.payrollau.models.residency_status import ResidencyStatus
+from xero_python.payrollau.models.senior_marital_status import SeniorMaritalStatus
 from xero_python.payrollau.models.settings import Settings
 from xero_python.payrollau.models.settings_object import SettingsObject
 from xero_python.payrollau.models.settings_tracking_categories import (
@@ -108,9 +112,11 @@ from xero_python.payrollau.models.superannuation_line import SuperannuationLine
 from xero_python.payrollau.models.tfn_exemption_type import TFNExemptionType
 from xero_python.payrollau.models.tax_declaration import TaxDeclaration
 from xero_python.payrollau.models.tax_line import TaxLine
+from xero_python.payrollau.models.tax_scale_type import TaxScaleType
 from xero_python.payrollau.models.timesheet import Timesheet
 from xero_python.payrollau.models.timesheet_line import TimesheetLine
 from xero_python.payrollau.models.timesheet_object import TimesheetObject
 from xero_python.payrollau.models.timesheet_status import TimesheetStatus
 from xero_python.payrollau.models.timesheets import Timesheets
 from xero_python.payrollau.models.validation_error import ValidationError
+from xero_python.payrollau.models.work_condition import WorkCondition

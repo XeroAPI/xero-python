@@ -56,6 +56,10 @@ class Employee(BaseModel):
         "pay_template": "PayTemplate",
         "opening_balances": "OpeningBalances",
         "tax_declaration": "TaxDeclaration",
+        "income_type": "IncomeType",
+        "employment_type": "EmploymentType",
+        "country_of_residence": "CountryOfResidence",
+        "is_stp2_qualified": "bool",
         "leave_balances": "list[LeaveBalance]",
         "leave_lines": "list[LeaveLine]",
         "super_memberships": "list[SuperMembership]",
@@ -91,6 +95,10 @@ class Employee(BaseModel):
         "pay_template": "PayTemplate",
         "opening_balances": "OpeningBalances",
         "tax_declaration": "TaxDeclaration",
+        "income_type": "IncomeType",
+        "employment_type": "EmploymentType",
+        "country_of_residence": "CountryOfResidence",
+        "is_stp2_qualified": "IsSTP2Qualified",
         "leave_balances": "LeaveBalances",
         "leave_lines": "LeaveLines",
         "super_memberships": "SuperMemberships",
@@ -127,6 +135,10 @@ class Employee(BaseModel):
         pay_template=None,
         opening_balances=None,
         tax_declaration=None,
+        income_type=None,
+        employment_type=None,
+        country_of_residence=None,
+        is_stp2_qualified=None,
         leave_balances=None,
         leave_lines=None,
         super_memberships=None,
@@ -162,6 +174,10 @@ class Employee(BaseModel):
         self._pay_template = None
         self._opening_balances = None
         self._tax_declaration = None
+        self._income_type = None
+        self._employment_type = None
+        self._country_of_residence = None
+        self._is_stp2_qualified = None
         self._leave_balances = None
         self._leave_lines = None
         self._super_memberships = None
@@ -221,6 +237,14 @@ class Employee(BaseModel):
             self.opening_balances = opening_balances
         if tax_declaration is not None:
             self.tax_declaration = tax_declaration
+        if income_type is not None:
+            self.income_type = income_type
+        if employment_type is not None:
+            self.employment_type = employment_type
+        if country_of_residence is not None:
+            self.country_of_residence = country_of_residence
+        if is_stp2_qualified is not None:
+            self.is_stp2_qualified = is_stp2_qualified
         if leave_balances is not None:
             self.leave_balances = leave_balances
         if leave_lines is not None:
@@ -851,6 +875,92 @@ class Employee(BaseModel):
         """
 
         self._tax_declaration = tax_declaration
+
+    @property
+    def income_type(self):
+        """Gets the income_type of this Employee.  # noqa: E501
+
+
+        :return: The income_type of this Employee.  # noqa: E501
+        :rtype: IncomeType
+        """
+        return self._income_type
+
+    @income_type.setter
+    def income_type(self, income_type):
+        """Sets the income_type of this Employee.
+
+
+        :param income_type: The income_type of this Employee.  # noqa: E501
+        :type: IncomeType
+        """
+
+        self._income_type = income_type
+
+    @property
+    def employment_type(self):
+        """Gets the employment_type of this Employee.  # noqa: E501
+
+
+        :return: The employment_type of this Employee.  # noqa: E501
+        :rtype: EmploymentType
+        """
+        return self._employment_type
+
+    @employment_type.setter
+    def employment_type(self, employment_type):
+        """Sets the employment_type of this Employee.
+
+
+        :param employment_type: The employment_type of this Employee.  # noqa: E501
+        :type: EmploymentType
+        """
+
+        self._employment_type = employment_type
+
+    @property
+    def country_of_residence(self):
+        """Gets the country_of_residence of this Employee.  # noqa: E501
+
+
+        :return: The country_of_residence of this Employee.  # noqa: E501
+        :rtype: CountryOfResidence
+        """
+        return self._country_of_residence
+
+    @country_of_residence.setter
+    def country_of_residence(self, country_of_residence):
+        """Sets the country_of_residence of this Employee.
+
+
+        :param country_of_residence: The country_of_residence of this Employee.  # noqa: E501
+        :type: CountryOfResidence
+        """
+
+        self._country_of_residence = country_of_residence
+
+    @property
+    def is_stp2_qualified(self):
+        """Gets the is_stp2_qualified of this Employee.  # noqa: E501
+
+        Indicates if the employee has been updated for STP Phase 2 compliance. Doesn't indicate that the employee is payable.  # noqa: E501
+
+        :return: The is_stp2_qualified of this Employee.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_stp2_qualified
+
+    @is_stp2_qualified.setter
+    def is_stp2_qualified(self, is_stp2_qualified):
+        """Sets the is_stp2_qualified of this Employee.
+
+        Indicates if the employee has been updated for STP Phase 2 compliance. Doesn't indicate that the employee is payable.  # noqa: E501
+
+        :param is_stp2_qualified: The is_stp2_qualified of this Employee.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_stp2_qualified = is_stp2_qualified
 
     @property
     def leave_balances(self):
