@@ -12,9 +12,13 @@
 
 
 # import models into model package
+from xero_python.appstore.models.create_usage_record import CreateUsageRecord
 from xero_python.appstore.models.plan import Plan
 from xero_python.appstore.models.price import Price
 from xero_python.appstore.models.problem_details import ProblemDetails
 from xero_python.appstore.models.product import Product
 from xero_python.appstore.models.subscription import Subscription
 from xero_python.appstore.models.subscription_item import SubscriptionItem
+from xero_python.appstore.models.update_usage_record import UpdateUsageRecord
+from xero_python.appstore.models.usage_record import UsageRecord
+from xero_python.appstore.models.usage_records_list import UsageRecordsList

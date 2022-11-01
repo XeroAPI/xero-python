@@ -365,7 +365,7 @@ class LineItem(BaseModel):
     def line_amount(self):
         """Gets the line_amount of this LineItem.  # noqa: E501
 
-        If you wish to omit either of the <Quantity> or <UnitAmount> you can provide a LineAmount and Xero will calculate the missing amount for you. The line amount reflects the discounted price if a DiscountRate has been used . i.e LineAmount = Quantity * Unit Amount * ((100 – DiscountRate)/100)  # noqa: E501
+        If you wish to omit either the Quantity or UnitAmount you can provide a LineAmount and Xero will calculate the missing amount for you. The line amount reflects the discounted price if either a DiscountRate or DiscountAmount has been used i.e. LineAmount = Quantity * Unit Amount * ((100 - DiscountRate)/100) or LineAmount = (Quantity * UnitAmount) - DiscountAmount  # noqa: E501
 
         :return: The line_amount of this LineItem.  # noqa: E501
         :rtype: float
@@ -376,7 +376,7 @@ class LineItem(BaseModel):
     def line_amount(self, line_amount):
         """Sets the line_amount of this LineItem.
 
-        If you wish to omit either of the <Quantity> or <UnitAmount> you can provide a LineAmount and Xero will calculate the missing amount for you. The line amount reflects the discounted price if a DiscountRate has been used . i.e LineAmount = Quantity * Unit Amount * ((100 – DiscountRate)/100)  # noqa: E501
+        If you wish to omit either the Quantity or UnitAmount you can provide a LineAmount and Xero will calculate the missing amount for you. The line amount reflects the discounted price if either a DiscountRate or DiscountAmount has been used i.e. LineAmount = Quantity * Unit Amount * ((100 - DiscountRate)/100) or LineAmount = (Quantity * UnitAmount) - DiscountAmount  # noqa: E501
 
         :param line_amount: The line_amount of this LineItem.  # noqa: E501
         :type: float
@@ -434,7 +434,7 @@ class LineItem(BaseModel):
     def discount_amount(self):
         """Gets the discount_amount of this LineItem.  # noqa: E501
 
-        Discount amount being applied to a line item. Only supported on ACCREC invoices - ACCPAY invoices and credit notes in Xero do not support discounts.  # noqa: E501
+        Discount amount being applied to a line item. Only supported on ACCREC invoices and quotes. ACCPAY invoices and credit notes in Xero do not support discounts.  # noqa: E501
 
         :return: The discount_amount of this LineItem.  # noqa: E501
         :rtype: float
@@ -445,7 +445,7 @@ class LineItem(BaseModel):
     def discount_amount(self, discount_amount):
         """Sets the discount_amount of this LineItem.
 
-        Discount amount being applied to a line item. Only supported on ACCREC invoices - ACCPAY invoices and credit notes in Xero do not support discounts.  # noqa: E501
+        Discount amount being applied to a line item. Only supported on ACCREC invoices and quotes. ACCPAY invoices and credit notes in Xero do not support discounts.  # noqa: E501
 
         :param discount_amount: The discount_amount of this LineItem.  # noqa: E501
         :type: float
