@@ -660,7 +660,7 @@ xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 project_id = 'project_id_example' # str | You can specify an individual project by appending the projectId to the endpoint
 page = 1 # int | Set to 1 by default. The requested number of the page in paged response - Must be a number greater than 0. (optional)
 page_size = 10 # int | Optional, it is set to 50 by default. The number of items to return per page in a paged response - Must be a number between 1 and 500. (optional)
-task_ids = 'task_ids_example' # str | taskIdsSearch for all tasks that match a comma separated list of taskIds, i.e. GET https://.../tasks?taskIds={taskID},{taskID} (optional)
+task_ids = 'task_ids_example' # str | Search for all tasks that match a comma separated list of taskIds, i.e. GET https://.../tasks?taskIds={taskID},{taskID} (optional)
 charge_type = xero_python.project.ChargeType() # ChargeType |  (optional)
 try:
     # Retrieves all project tasks
@@ -678,7 +678,7 @@ Name | Type | Description  | Notes
  **project_id** | [**str**](.md)| You can specify an individual project by appending the projectId to the endpoint | 
  **page** | **int**| Set to 1 by default. The requested number of the page in paged response - Must be a number greater than 0. | [optional] 
  **page_size** | **int**| Optional, it is set to 50 by default. The number of items to return per page in a paged response - Must be a number between 1 and 500. | [optional] 
- **task_ids** | **str**| taskIdsSearch for all tasks that match a comma separated list of taskIds, i.e. GET https://.../tasks?taskIds&#x3D;{taskID},{taskID} | [optional] 
+ **task_ids** | **str**| Search for all tasks that match a comma separated list of taskIds, i.e. GET https://.../tasks?taskIds&#x3D;{taskID},{taskID} | [optional] 
  **charge_type** | [**ChargeType**](.md)|  | [optional] 
 
 ### Return type

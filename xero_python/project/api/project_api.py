@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.31.0
+    OpenAPI spec version: 2.32.0
 """
 
 import importlib
@@ -865,7 +865,7 @@ class ProjectApi(object):
         :param str project_id: You can specify an individual project by appending the projectId to the endpoint (required)
         :param int page: Set to 1 by default. The requested number of the page in paged response - Must be a number greater than 0.
         :param int page_size: Optional, it is set to 50 by default. The number of items to return per page in a paged response - Must be a number between 1 and 500.
-        :param str task_ids: taskIdsSearch for all tasks that match a comma separated list of taskIds, i.e. GET https://.../tasks?taskIds={taskID},{taskID}
+        :param str task_ids: Search for all tasks that match a comma separated list of taskIds, i.e. GET https://.../tasks?taskIds={taskID},{taskID}
         :param ChargeType charge_type:
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
