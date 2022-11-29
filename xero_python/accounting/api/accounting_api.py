@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.31.0
+    OpenAPI spec version: 2.33.1
 """
 
 import importlib
@@ -968,7 +968,7 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         branding_theme_id,
-        payment_service,
+        payment_services,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -977,7 +977,7 @@ class AccountingApi(object):
         OAuth2 scope: paymentservices
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str branding_theme_id: Unique identifier for a Branding Theme (required)
-        :param PaymentService payment_service: PaymentService object in body of request (required)
+        :param PaymentServices payment_services: PaymentServices array with PaymentService object in body of request (required)
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -996,10 +996,10 @@ class AccountingApi(object):
                 "Missing the required parameter `branding_theme_id` "
                 "when calling `create_branding_theme_payment_services`"
             )
-        # verify the required parameter 'payment_service' is set
-        if payment_service is None:
+        # verify the required parameter 'payment_services' is set
+        if payment_services is None:
             raise ValueError(
-                "Missing the required parameter `payment_service` "
+                "Missing the required parameter `payment_services` "
                 "when calling `create_branding_theme_payment_services`"
             )
 
@@ -1017,7 +1017,7 @@ class AccountingApi(object):
         local_var_files = {}
         form_params = []
 
-        body_params = payment_service
+        body_params = payment_services
         # HTTP header `Accept`
         header_params["Accept"] = self.api_client.select_header_accept(
             ["application/json"]

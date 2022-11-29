@@ -332,6 +332,9 @@ class TaxRate(BaseModel):
             "GOODSIMPORT",
             "NONEINPUT",
             "NOTREPORTED",
+            "SROVRRS",
+            "SROVRLVG",
+            "SRLVG",
             "None",
         ]  # noqa: E501
 

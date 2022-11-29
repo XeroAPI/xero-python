@@ -36,6 +36,7 @@ class Payment(BaseModel):
         "overpayment": "Overpayment",
         "invoice_number": "str",
         "credit_note_number": "str",
+        "batch_payment": "BatchPayment",
         "account": "Account",
         "code": "str",
         "date": "date[ms-format]",
@@ -65,6 +66,7 @@ class Payment(BaseModel):
         "overpayment": "Overpayment",
         "invoice_number": "InvoiceNumber",
         "credit_note_number": "CreditNoteNumber",
+        "batch_payment": "BatchPayment",
         "account": "Account",
         "code": "Code",
         "date": "Date",
@@ -95,6 +97,7 @@ class Payment(BaseModel):
         overpayment=None,
         invoice_number=None,
         credit_note_number=None,
+        batch_payment=None,
         account=None,
         code=None,
         date=None,
@@ -124,6 +127,7 @@ class Payment(BaseModel):
         self._overpayment = None
         self._invoice_number = None
         self._credit_note_number = None
+        self._batch_payment = None
         self._account = None
         self._code = None
         self._date = None
@@ -158,6 +162,8 @@ class Payment(BaseModel):
             self.invoice_number = invoice_number
         if credit_note_number is not None:
             self.credit_note_number = credit_note_number
+        if batch_payment is not None:
+            self.batch_payment = batch_payment
         if account is not None:
             self.account = account
         if code is not None:
@@ -328,6 +334,27 @@ class Payment(BaseModel):
         """
 
         self._credit_note_number = credit_note_number
+
+    @property
+    def batch_payment(self):
+        """Gets the batch_payment of this Payment.  # noqa: E501
+
+
+        :return: The batch_payment of this Payment.  # noqa: E501
+        :rtype: BatchPayment
+        """
+        return self._batch_payment
+
+    @batch_payment.setter
+    def batch_payment(self, batch_payment):
+        """Sets the batch_payment of this Payment.
+
+
+        :param batch_payment: The batch_payment of this Payment.  # noqa: E501
+        :type: BatchPayment
+        """
+
+        self._batch_payment = batch_payment
 
     @property
     def account(self):

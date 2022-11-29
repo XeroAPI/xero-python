@@ -43,9 +43,9 @@ class BatchPayment(BaseModel):
         "payments": "list[Payment]",
         "type": "str",
         "status": "str",
-        "total_amount": "str",
+        "total_amount": "float",
         "updated_date_utc": "datetime[ms-format]",
-        "is_reconciled": "str",
+        "is_reconciled": "bool",
         "validation_errors": "list[ValidationError]",
     }
 
@@ -486,7 +486,7 @@ class BatchPayment(BaseModel):
         The total of the payments that make up the batch (read-only)  # noqa: E501
 
         :return: The total_amount of this BatchPayment.  # noqa: E501
-        :rtype: str
+        :rtype: float
         """
         return self._total_amount
 
@@ -497,7 +497,7 @@ class BatchPayment(BaseModel):
         The total of the payments that make up the batch (read-only)  # noqa: E501
 
         :param total_amount: The total_amount of this BatchPayment.  # noqa: E501
-        :type: str
+        :type: float
         """
 
         self._total_amount = total_amount
@@ -532,7 +532,7 @@ class BatchPayment(BaseModel):
         Booelan that tells you if the batch payment has been reconciled (read-only)  # noqa: E501
 
         :return: The is_reconciled of this BatchPayment.  # noqa: E501
-        :rtype: str
+        :rtype: bool
         """
         return self._is_reconciled
 
@@ -543,7 +543,7 @@ class BatchPayment(BaseModel):
         Booelan that tells you if the batch payment has been reconciled (read-only)  # noqa: E501
 
         :param is_reconciled: The is_reconciled of this BatchPayment.  # noqa: E501
-        :type: str
+        :type: bool
         """
 
         self._is_reconciled = is_reconciled

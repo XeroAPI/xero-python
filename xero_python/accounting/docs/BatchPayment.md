@@ -16,9 +16,9 @@ Name | Type | Description | Notes
 **payments** | [**list[Payment]**](Payment.md) | An array of payments | [optional] 
 **type** | **str** | PAYBATCH for bill payments or RECBATCH for sales invoice payments (read-only) | [optional] 
 **status** | **str** | AUTHORISED or DELETED (read-only). New batch payments will have a status of AUTHORISED. It is not possible to delete batch payments via the API. | [optional] 
-**total_amount** | **str** | The total of the payments that make up the batch (read-only) | [optional] 
+**total_amount** | **float** | The total of the payments that make up the batch (read-only) | [optional] 
 **updated_date_utc** | **datetime** | UTC timestamp of last update to the payment | [optional] 
-**is_reconciled** | **str** | Booelan that tells you if the batch payment has been reconciled (read-only) | [optional] 
+**is_reconciled** | **bool** | Booelan that tells you if the batch payment has been reconciled (read-only) | [optional] 
 **validation_errors** | [**list[ValidationError]**](ValidationError.md) | Displays array of validation error messages from the API | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

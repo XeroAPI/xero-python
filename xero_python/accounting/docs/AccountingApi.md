@@ -893,7 +893,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_branding_theme_payment_services**
-> PaymentServices create_branding_theme_payment_services(xero_tenant_id, branding_theme_id, payment_service)
+> PaymentServices create_branding_theme_payment_services(xero_tenant_id, branding_theme_id, payment_services)
 
 Creates a new custom payment service for a specific branding theme
 
@@ -925,10 +925,10 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 branding_theme_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Branding Theme
-payment_service = { "PaymentServiceID": "00000000-0000-0000-0000-000000000000", "PaymentServiceName": "Payments Service", "PaymentServiceUrl": "https://www.paymentservice.com/", "PayNowText": "Pay Now" } # PaymentService | PaymentService object in body of request
+payment_services = { "PaymentServices": [ { "PaymentServiceID": "54b3b4f6-0443-4fba-bcd1-61ec0c35ca55", "PaymentServiceName": "PayUpNow", "PaymentServiceUrl": "https://www.payupnow.com/", "PaymentServiceType": "Custom", "PayNowText": "Time To Pay" } ] } # PaymentServices | PaymentServices array with PaymentService object in body of request
 try:
     # Creates a new custom payment service for a specific branding theme
-    api_response = api_instance.create_branding_theme_payment_services(xero_tenant_id, branding_theme_id, payment_service)
+    api_response = api_instance.create_branding_theme_payment_services(xero_tenant_id, branding_theme_id, payment_services)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->create_branding_theme_payment_services: %s\n" % e)
@@ -940,7 +940,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **branding_theme_id** | [**str**](.md)| Unique identifier for a Branding Theme | 
- **payment_service** | [**PaymentService**](PaymentService.md)| PaymentService object in body of request | 
+ **payment_services** | [**PaymentServices**](PaymentServices.md)| PaymentServices array with PaymentService object in body of request | 
 
 ### Return type
 
