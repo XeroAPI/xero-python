@@ -174,7 +174,7 @@ class EarningsRate(BaseModel):
             )  # noqa: E501
         allowed_values = [
             "Allowance",
-            "Backpay",
+            "BackPay",
             "Bonus",
             "Commission",
             "LumpSum",

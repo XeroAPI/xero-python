@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **statement_line_id** | **str** | Xero Identifier of statement line | [optional] 
 **posted_date** | **date** | Date of when statement line was posted | [optional] 
+**payee** | **str** | Payee description of statement line | [optional] 
 **reference** | **str** | Reference description of statement line | [optional] 
 **notes** | **str** | Notes description of statement line | [optional] 
 **cheque_no** | **str** | Cheque number of statement line | [optional] 
