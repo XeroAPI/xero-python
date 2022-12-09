@@ -36,6 +36,8 @@ class EarningsRate(BaseModel):
         "is_exempt_from_tax": "bool",
         "is_exempt_from_super": "bool",
         "is_reportable_as_w1": "bool",
+        "allowance_contributes_to_annual_leave_rate": "bool",
+        "allowance_contributes_to_overtime_rate": "bool",
         "earnings_type": "EarningsType",
         "earnings_rate_id": "str",
         "rate_type": "RateType",
@@ -57,6 +59,8 @@ class EarningsRate(BaseModel):
         "is_exempt_from_tax": "IsExemptFromTax",
         "is_exempt_from_super": "IsExemptFromSuper",
         "is_reportable_as_w1": "IsReportableAsW1",
+        "allowance_contributes_to_annual_leave_rate": "AllowanceContributesToAnnualLeaveRate",
+        "allowance_contributes_to_overtime_rate": "AllowanceContributesToOvertimeRate",
         "earnings_type": "EarningsType",
         "earnings_rate_id": "EarningsRateID",
         "rate_type": "RateType",
@@ -79,6 +83,8 @@ class EarningsRate(BaseModel):
         is_exempt_from_tax=None,
         is_exempt_from_super=None,
         is_reportable_as_w1=None,
+        allowance_contributes_to_annual_leave_rate=None,
+        allowance_contributes_to_overtime_rate=None,
         earnings_type=None,
         earnings_rate_id=None,
         rate_type=None,
@@ -100,6 +106,8 @@ class EarningsRate(BaseModel):
         self._is_exempt_from_tax = None
         self._is_exempt_from_super = None
         self._is_reportable_as_w1 = None
+        self._allowance_contributes_to_annual_leave_rate = None
+        self._allowance_contributes_to_overtime_rate = None
         self._earnings_type = None
         self._earnings_rate_id = None
         self._rate_type = None
@@ -126,6 +134,14 @@ class EarningsRate(BaseModel):
             self.is_exempt_from_super = is_exempt_from_super
         if is_reportable_as_w1 is not None:
             self.is_reportable_as_w1 = is_reportable_as_w1
+        if allowance_contributes_to_annual_leave_rate is not None:
+            self.allowance_contributes_to_annual_leave_rate = (
+                allowance_contributes_to_annual_leave_rate
+            )
+        if allowance_contributes_to_overtime_rate is not None:
+            self.allowance_contributes_to_overtime_rate = (
+                allowance_contributes_to_overtime_rate
+            )
         if earnings_type is not None:
             self.earnings_type = earnings_type
         if earnings_rate_id is not None:
@@ -300,6 +316,60 @@ class EarningsRate(BaseModel):
         """
 
         self._is_reportable_as_w1 = is_reportable_as_w1
+
+    @property
+    def allowance_contributes_to_annual_leave_rate(self):
+        """Gets the allowance_contributes_to_annual_leave_rate of this EarningsRate.  # noqa: E501
+
+        Boolean to determine if the allowance earnings rate contributes towards annual leave rate. Only applicable if EarningsType is ALLOWANCE and RateType is RATEPERUNIT  # noqa: E501
+
+        :return: The allowance_contributes_to_annual_leave_rate of this EarningsRate.  # noqa: E501
+        :rtype: bool
+        """
+        return self._allowance_contributes_to_annual_leave_rate
+
+    @allowance_contributes_to_annual_leave_rate.setter
+    def allowance_contributes_to_annual_leave_rate(
+        self, allowance_contributes_to_annual_leave_rate
+    ):
+        """Sets the allowance_contributes_to_annual_leave_rate of this EarningsRate.
+
+        Boolean to determine if the allowance earnings rate contributes towards annual leave rate. Only applicable if EarningsType is ALLOWANCE and RateType is RATEPERUNIT  # noqa: E501
+
+        :param allowance_contributes_to_annual_leave_rate: The allowance_contributes_to_annual_leave_rate of this EarningsRate.  # noqa: E501
+        :type: bool
+        """
+
+        self._allowance_contributes_to_annual_leave_rate = (
+            allowance_contributes_to_annual_leave_rate
+        )
+
+    @property
+    def allowance_contributes_to_overtime_rate(self):
+        """Gets the allowance_contributes_to_overtime_rate of this EarningsRate.  # noqa: E501
+
+        Boolean to determine if the allowance earnings rate contributes towards overtime allowance rate. Only applicable if EarningsType is ALLOWANCE and RateType is RATEPERUNIT  # noqa: E501
+
+        :return: The allowance_contributes_to_overtime_rate of this EarningsRate.  # noqa: E501
+        :rtype: bool
+        """
+        return self._allowance_contributes_to_overtime_rate
+
+    @allowance_contributes_to_overtime_rate.setter
+    def allowance_contributes_to_overtime_rate(
+        self, allowance_contributes_to_overtime_rate
+    ):
+        """Sets the allowance_contributes_to_overtime_rate of this EarningsRate.
+
+        Boolean to determine if the allowance earnings rate contributes towards overtime allowance rate. Only applicable if EarningsType is ALLOWANCE and RateType is RATEPERUNIT  # noqa: E501
+
+        :param allowance_contributes_to_overtime_rate: The allowance_contributes_to_overtime_rate of this EarningsRate.  # noqa: E501
+        :type: bool
+        """
+
+        self._allowance_contributes_to_overtime_rate = (
+            allowance_contributes_to_overtime_rate
+        )
 
     @property
     def earnings_type(self):
