@@ -37,6 +37,8 @@ class StatementResponse(BaseModel):
         "import_source": "str",
         "start_balance": "float",
         "end_balance": "float",
+        "indicative_start_balance": "float",
+        "indicative_end_balance": "float",
         "statement_lines": "list[StatementLineResponse]",
     }
 
@@ -48,6 +50,8 @@ class StatementResponse(BaseModel):
         "import_source": "importSource",
         "start_balance": "startBalance",
         "end_balance": "endBalance",
+        "indicative_start_balance": "indicativeStartBalance",
+        "indicative_end_balance": "indicativeEndBalance",
         "statement_lines": "statementLines",
     }
 
@@ -60,6 +64,8 @@ class StatementResponse(BaseModel):
         import_source=None,
         start_balance=None,
         end_balance=None,
+        indicative_start_balance=None,
+        indicative_end_balance=None,
         statement_lines=None,
     ):  # noqa: E501
         """StatementResponse - a model defined in OpenAPI"""  # noqa: E501
@@ -71,6 +77,8 @@ class StatementResponse(BaseModel):
         self._import_source = None
         self._start_balance = None
         self._end_balance = None
+        self._indicative_start_balance = None
+        self._indicative_end_balance = None
         self._statement_lines = None
         self.discriminator = None
 
@@ -88,6 +96,10 @@ class StatementResponse(BaseModel):
             self.start_balance = start_balance
         if end_balance is not None:
             self.end_balance = end_balance
+        if indicative_start_balance is not None:
+            self.indicative_start_balance = indicative_start_balance
+        if indicative_end_balance is not None:
+            self.indicative_end_balance = indicative_end_balance
         if statement_lines is not None:
             self.statement_lines = statement_lines
 
@@ -210,7 +222,7 @@ class StatementResponse(BaseModel):
     def start_balance(self):
         """Gets the start_balance of this StatementResponse.  # noqa: E501
 
-        Opening balance sourced from imported bank statements (if supplied). Note, for manually uploaded statements, this balance is also manual and usually not supplied.  # noqa: E501
+        Opening balance sourced from imported bank statements (if supplied). Note, for manually uploaded statements, this balance is also manual and usually not supplied. Where not supplied, the value will be 0.  # noqa: E501
 
         :return: The start_balance of this StatementResponse.  # noqa: E501
         :rtype: float
@@ -221,7 +233,7 @@ class StatementResponse(BaseModel):
     def start_balance(self, start_balance):
         """Sets the start_balance of this StatementResponse.
 
-        Opening balance sourced from imported bank statements (if supplied). Note, for manually uploaded statements, this balance is also manual and usually not supplied.  # noqa: E501
+        Opening balance sourced from imported bank statements (if supplied). Note, for manually uploaded statements, this balance is also manual and usually not supplied. Where not supplied, the value will be 0.  # noqa: E501
 
         :param start_balance: The start_balance of this StatementResponse.  # noqa: E501
         :type: float
@@ -233,7 +245,7 @@ class StatementResponse(BaseModel):
     def end_balance(self):
         """Gets the end_balance of this StatementResponse.  # noqa: E501
 
-        Closing balance sourced from imported bank statements (if supplied). Note, for manually uploaded statements, this balance is also manual and usually not supplied.  # noqa: E501
+        Closing balance sourced from imported bank statements (if supplied). Note, for manually uploaded statements, this balance is also manual and usually not supplied. Where not supplied, the value will be 0.  # noqa: E501
 
         :return: The end_balance of this StatementResponse.  # noqa: E501
         :rtype: float
@@ -244,13 +256,59 @@ class StatementResponse(BaseModel):
     def end_balance(self, end_balance):
         """Sets the end_balance of this StatementResponse.
 
-        Closing balance sourced from imported bank statements (if supplied). Note, for manually uploaded statements, this balance is also manual and usually not supplied.  # noqa: E501
+        Closing balance sourced from imported bank statements (if supplied). Note, for manually uploaded statements, this balance is also manual and usually not supplied. Where not supplied, the value will be 0.  # noqa: E501
 
         :param end_balance: The end_balance of this StatementResponse.  # noqa: E501
         :type: float
         """
 
         self._end_balance = end_balance
+
+    @property
+    def indicative_start_balance(self):
+        """Gets the indicative_start_balance of this StatementResponse.  # noqa: E501
+
+        Opening statement balance calculated in Xero (= bank account conversion balance plus sum of imported bank statement lines). Note: If indicative statement balance doesn't match imported statement balance for the same date, either the conversion (opening at inception) balance in Xero is wrong or there's an error in the bank statement lines in Xero. Ref: https://central.xero.com/s/article/Compare-the-statement-balance-in-Xero-to-your-actual-bank-balance?userregion=true   # noqa: E501
+
+        :return: The indicative_start_balance of this StatementResponse.  # noqa: E501
+        :rtype: float
+        """
+        return self._indicative_start_balance
+
+    @indicative_start_balance.setter
+    def indicative_start_balance(self, indicative_start_balance):
+        """Sets the indicative_start_balance of this StatementResponse.
+
+        Opening statement balance calculated in Xero (= bank account conversion balance plus sum of imported bank statement lines). Note: If indicative statement balance doesn't match imported statement balance for the same date, either the conversion (opening at inception) balance in Xero is wrong or there's an error in the bank statement lines in Xero. Ref: https://central.xero.com/s/article/Compare-the-statement-balance-in-Xero-to-your-actual-bank-balance?userregion=true   # noqa: E501
+
+        :param indicative_start_balance: The indicative_start_balance of this StatementResponse.  # noqa: E501
+        :type: float
+        """
+
+        self._indicative_start_balance = indicative_start_balance
+
+    @property
+    def indicative_end_balance(self):
+        """Gets the indicative_end_balance of this StatementResponse.  # noqa: E501
+
+        Closing statement balance calculated in Xero (= bank account conversion balance plus sum of imported bank statement lines). Note: If indicative statement balance doesn't match imported statement balance for the same date, either the conversion (opening at inception) balance in Xero is wrong or there's an error in the bank statement lines in Xero. Ref: https://central.xero.com/s/article/Compare-the-statement-balance-in-Xero-to-your-actual-bank-balance?userregion=true    # noqa: E501
+
+        :return: The indicative_end_balance of this StatementResponse.  # noqa: E501
+        :rtype: float
+        """
+        return self._indicative_end_balance
+
+    @indicative_end_balance.setter
+    def indicative_end_balance(self, indicative_end_balance):
+        """Sets the indicative_end_balance of this StatementResponse.
+
+        Closing statement balance calculated in Xero (= bank account conversion balance plus sum of imported bank statement lines). Note: If indicative statement balance doesn't match imported statement balance for the same date, either the conversion (opening at inception) balance in Xero is wrong or there's an error in the bank statement lines in Xero. Ref: https://central.xero.com/s/article/Compare-the-statement-balance-in-Xero-to-your-actual-bank-balance?userregion=true    # noqa: E501
+
+        :param indicative_end_balance: The indicative_end_balance of this StatementResponse.  # noqa: E501
+        :type: float
+        """
+
+        self._indicative_end_balance = indicative_end_balance
 
     @property
     def statement_lines(self):

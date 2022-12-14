@@ -32,6 +32,7 @@ class StatementLineResponse(BaseModel):
     openapi_types = {
         "statement_line_id": "str",
         "posted_date": "date",
+        "payee": "str",
         "reference": "str",
         "notes": "str",
         "cheque_no": "str",
@@ -48,6 +49,7 @@ class StatementLineResponse(BaseModel):
     attribute_map = {
         "statement_line_id": "statementLineId",
         "posted_date": "postedDate",
+        "payee": "payee",
         "reference": "reference",
         "notes": "notes",
         "cheque_no": "chequeNo",
@@ -65,6 +67,7 @@ class StatementLineResponse(BaseModel):
         self,
         statement_line_id=None,
         posted_date=None,
+        payee=None,
         reference=None,
         notes=None,
         cheque_no=None,
@@ -81,6 +84,7 @@ class StatementLineResponse(BaseModel):
 
         self._statement_line_id = None
         self._posted_date = None
+        self._payee = None
         self._reference = None
         self._notes = None
         self._cheque_no = None
@@ -98,6 +102,8 @@ class StatementLineResponse(BaseModel):
             self.statement_line_id = statement_line_id
         if posted_date is not None:
             self.posted_date = posted_date
+        if payee is not None:
+            self.payee = payee
         if reference is not None:
             self.reference = reference
         if notes is not None:
@@ -166,6 +172,29 @@ class StatementLineResponse(BaseModel):
         """
 
         self._posted_date = posted_date
+
+    @property
+    def payee(self):
+        """Gets the payee of this StatementLineResponse.  # noqa: E501
+
+        Payee description of statement line  # noqa: E501
+
+        :return: The payee of this StatementLineResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._payee
+
+    @payee.setter
+    def payee(self, payee):
+        """Sets the payee of this StatementLineResponse.
+
+        Payee description of statement line  # noqa: E501
+
+        :param payee: The payee of this StatementLineResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._payee = payee
 
     @property
     def reference(self):

@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **is_exempt_from_tax** | **bool** | Most payments are subject to tax, so you should only set this value if you are sure that a payment is exempt from PAYG withholding | [optional] 
 **is_exempt_from_super** | **bool** | See the ATO website for details of which payments are exempt from SGC | [optional] 
 **is_reportable_as_w1** | **bool** | Boolean to determine if the earnings rate is reportable or exempt from W1 | [optional] 
+**allowance_contributes_to_annual_leave_rate** | **bool** | Boolean to determine if the allowance earnings rate contributes towards annual leave rate. Only applicable if EarningsType is ALLOWANCE and RateType is RATEPERUNIT | [optional] 
+**allowance_contributes_to_overtime_rate** | **bool** | Boolean to determine if the allowance earnings rate contributes towards overtime allowance rate. Only applicable if EarningsType is ALLOWANCE and RateType is RATEPERUNIT | [optional] 
 **earnings_type** | [**EarningsType**](EarningsType.md) |  | [optional] 
 **earnings_rate_id** | **str** | Xero identifier | [optional] 
 **rate_type** | [**RateType**](RateType.md) |  | [optional] 
