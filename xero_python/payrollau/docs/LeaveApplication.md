@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **start_date** | **date** | Start date of the leave (YYYY-MM-DD) | [optional] 
 **end_date** | **date** | End date of the leave (YYYY-MM-DD) | [optional] 
 **description** | **str** | The Description of the Leave | [optional] 
+**pay_out_type** | [**PayOutType**](PayOutType.md) |  | [optional] 
 **leave_periods** | [**list[LeavePeriod]**](LeavePeriod.md) |  | [optional] 
 **updated_date_utc** | **datetime** | Last modified timestamp | [optional] 
 **validation_errors** | [**list[ValidationError]**](ValidationError.md) | Displays array of validation error messages from the API | [optional] 

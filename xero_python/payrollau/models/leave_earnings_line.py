@@ -33,22 +33,29 @@ class LeaveEarningsLine(BaseModel):
         "earnings_rate_id": "str",
         "rate_per_unit": "float",
         "number_of_units": "float",
+        "pay_out_type": "PayOutType",
     }
 
     attribute_map = {
         "earnings_rate_id": "EarningsRateID",
         "rate_per_unit": "RatePerUnit",
         "number_of_units": "NumberOfUnits",
+        "pay_out_type": "PayOutType",
     }
 
     def __init__(
-        self, earnings_rate_id=None, rate_per_unit=None, number_of_units=None
+        self,
+        earnings_rate_id=None,
+        rate_per_unit=None,
+        number_of_units=None,
+        pay_out_type=None,
     ):  # noqa: E501
         """LeaveEarningsLine - a model defined in OpenAPI"""  # noqa: E501
 
         self._earnings_rate_id = None
         self._rate_per_unit = None
         self._number_of_units = None
+        self._pay_out_type = None
         self.discriminator = None
 
         if earnings_rate_id is not None:
@@ -57,6 +64,8 @@ class LeaveEarningsLine(BaseModel):
             self.rate_per_unit = rate_per_unit
         if number_of_units is not None:
             self.number_of_units = number_of_units
+        if pay_out_type is not None:
+            self.pay_out_type = pay_out_type
 
     @property
     def earnings_rate_id(self):
@@ -126,3 +135,24 @@ class LeaveEarningsLine(BaseModel):
         """
 
         self._number_of_units = number_of_units
+
+    @property
+    def pay_out_type(self):
+        """Gets the pay_out_type of this LeaveEarningsLine.  # noqa: E501
+
+
+        :return: The pay_out_type of this LeaveEarningsLine.  # noqa: E501
+        :rtype: PayOutType
+        """
+        return self._pay_out_type
+
+    @pay_out_type.setter
+    def pay_out_type(self, pay_out_type):
+        """Sets the pay_out_type of this LeaveEarningsLine.
+
+
+        :param pay_out_type: The pay_out_type of this LeaveEarningsLine.  # noqa: E501
+        :type: PayOutType
+        """
+
+        self._pay_out_type = pay_out_type
