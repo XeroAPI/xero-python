@@ -37,6 +37,7 @@ class OpeningBalances(BaseModel):
         "super_lines": "list[SuperLine]",
         "reimbursement_lines": "list[ReimbursementLine]",
         "leave_lines": "list[LeaveLine]",
+        "paid_leave_earnings_lines": "list[PaidLeaveEarningsLine]",
     }
 
     attribute_map = {
@@ -47,6 +48,7 @@ class OpeningBalances(BaseModel):
         "super_lines": "SuperLines",
         "reimbursement_lines": "ReimbursementLines",
         "leave_lines": "LeaveLines",
+        "paid_leave_earnings_lines": "PaidLeaveEarningsLines",
     }
 
     def __init__(
@@ -58,6 +60,7 @@ class OpeningBalances(BaseModel):
         super_lines=None,
         reimbursement_lines=None,
         leave_lines=None,
+        paid_leave_earnings_lines=None,
     ):  # noqa: E501
         """OpeningBalances - a model defined in OpenAPI"""  # noqa: E501
 
@@ -68,6 +71,7 @@ class OpeningBalances(BaseModel):
         self._super_lines = None
         self._reimbursement_lines = None
         self._leave_lines = None
+        self._paid_leave_earnings_lines = None
         self.discriminator = None
 
         if opening_balance_date is not None:
@@ -84,6 +88,8 @@ class OpeningBalances(BaseModel):
             self.reimbursement_lines = reimbursement_lines
         if leave_lines is not None:
             self.leave_lines = leave_lines
+        if paid_leave_earnings_lines is not None:
+            self.paid_leave_earnings_lines = paid_leave_earnings_lines
 
     @property
     def opening_balance_date(self):
@@ -235,3 +241,24 @@ class OpeningBalances(BaseModel):
         """
 
         self._leave_lines = leave_lines
+
+    @property
+    def paid_leave_earnings_lines(self):
+        """Gets the paid_leave_earnings_lines of this OpeningBalances.  # noqa: E501
+
+
+        :return: The paid_leave_earnings_lines of this OpeningBalances.  # noqa: E501
+        :rtype: list[PaidLeaveEarningsLine]
+        """
+        return self._paid_leave_earnings_lines
+
+    @paid_leave_earnings_lines.setter
+    def paid_leave_earnings_lines(self, paid_leave_earnings_lines):
+        """Sets the paid_leave_earnings_lines of this OpeningBalances.
+
+
+        :param paid_leave_earnings_lines: The paid_leave_earnings_lines of this OpeningBalances.  # noqa: E501
+        :type: list[PaidLeaveEarningsLine]
+        """
+
+        self._paid_leave_earnings_lines = paid_leave_earnings_lines

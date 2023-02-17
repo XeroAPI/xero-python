@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.35.0
+    OpenAPI spec version: 2.36.0
 """
 
 import importlib
@@ -448,7 +448,7 @@ class FilesApi(object):
     ):
         """Retrieves an association object using a unique object ID  # noqa: E501
         OAuth2 scope: files, files.read
-        By passing in the appropriate options,  # noqa: E501
+        By passing in the appropriate options, you can retrieve an association  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str object_id: Object id for single object (required)
         :param bool _return_http_data_only: return received data only
@@ -514,6 +514,85 @@ class FilesApi(object):
             )
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "get_associations_by_object")
+
+    def get_associations_count(
+        self,
+        xero_tenant_id,
+        object_ids,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
+        """Retrieves a count of associations for a list of objects.  # noqa: E501
+        OAuth2 scope: files, files.read
+        By passing in the appropriate options, you can retrieve the association count for objects  # noqa: E501
+        :param str xero_tenant_id: Xero identifier for Tenant (required)
+        :param list[str] object_ids: A comma-separated list of object ids (required)
+        :param bool _return_http_data_only: return received data only
+        :param bool _preload_content: load received data in models
+        :param bool _request_timeout: maximum wait time for response
+        :return: object
+        """
+
+        # verify the required parameter 'xero_tenant_id' is set
+        if xero_tenant_id is None:
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `get_associations_count`"
+            )
+        # verify the required parameter 'object_ids' is set
+        if object_ids is None:
+            raise ValueError(
+                "Missing the required parameter `object_ids` "
+                "when calling `get_associations_count`"
+            )
+
+        collection_formats = {
+            "ObjectIds": "multi",
+        }
+        path_params = {}
+
+        query_params = [
+            ("ObjectIds", object_ids),
+        ]
+
+        header_params = {
+            "xero-tenant-id": xero_tenant_id,
+        }
+
+        local_var_files = {}
+        form_params = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/Associations/Count")
+
+        try:
+            return self.api_client.call_api(
+                url,
+                "GET",
+                path_params,
+                query_params,
+                header_params,
+                body=body_params,
+                post_params=form_params,
+                files=local_var_files,
+                response_type="object",
+                response_model_finder=self.get_model_finder(),
+                auth_settings=auth_settings,
+                _return_http_data_only=_return_http_data_only,
+                _preload_content=_preload_content,
+                _request_timeout=_request_timeout,
+                collection_formats=collection_formats,
+            )
+        except exceptions.HTTPStatusException as error:
+            raise translate_status_exception(error, self, "get_associations_count")
 
     def get_file(
         self,

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **super_lines** | [**list[SuperLine]**](SuperLine.md) |  | [optional] 
 **reimbursement_lines** | [**list[ReimbursementLine]**](ReimbursementLine.md) |  | [optional] 
 **leave_lines** | [**list[LeaveLine]**](LeaveLine.md) |  | [optional] 
+**paid_leave_earnings_lines** | [**list[PaidLeaveEarningsLine]**](PaidLeaveEarningsLine.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

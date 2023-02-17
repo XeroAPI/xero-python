@@ -37,6 +37,7 @@ class LeaveApplication(BaseModel):
         "start_date": "date[ms-format]",
         "end_date": "date[ms-format]",
         "description": "str",
+        "pay_out_type": "PayOutType",
         "leave_periods": "list[LeavePeriod]",
         "updated_date_utc": "datetime[ms-format]",
         "validation_errors": "list[ValidationError]",
@@ -50,6 +51,7 @@ class LeaveApplication(BaseModel):
         "start_date": "StartDate",
         "end_date": "EndDate",
         "description": "Description",
+        "pay_out_type": "PayOutType",
         "leave_periods": "LeavePeriods",
         "updated_date_utc": "UpdatedDateUTC",
         "validation_errors": "ValidationErrors",
@@ -64,6 +66,7 @@ class LeaveApplication(BaseModel):
         start_date=None,
         end_date=None,
         description=None,
+        pay_out_type=None,
         leave_periods=None,
         updated_date_utc=None,
         validation_errors=None,
@@ -77,6 +80,7 @@ class LeaveApplication(BaseModel):
         self._start_date = None
         self._end_date = None
         self._description = None
+        self._pay_out_type = None
         self._leave_periods = None
         self._updated_date_utc = None
         self._validation_errors = None
@@ -96,6 +100,8 @@ class LeaveApplication(BaseModel):
             self.end_date = end_date
         if description is not None:
             self.description = description
+        if pay_out_type is not None:
+            self.pay_out_type = pay_out_type
         if leave_periods is not None:
             self.leave_periods = leave_periods
         if updated_date_utc is not None:
@@ -263,6 +269,27 @@ class LeaveApplication(BaseModel):
         """
 
         self._description = description
+
+    @property
+    def pay_out_type(self):
+        """Gets the pay_out_type of this LeaveApplication.  # noqa: E501
+
+
+        :return: The pay_out_type of this LeaveApplication.  # noqa: E501
+        :rtype: PayOutType
+        """
+        return self._pay_out_type
+
+    @pay_out_type.setter
+    def pay_out_type(self, pay_out_type):
+        """Sets the pay_out_type of this LeaveApplication.
+
+
+        :param pay_out_type: The pay_out_type of this LeaveApplication.  # noqa: E501
+        :type: PayOutType
+        """
+
+        self._pay_out_type = pay_out_type
 
     @property
     def leave_periods(self):
