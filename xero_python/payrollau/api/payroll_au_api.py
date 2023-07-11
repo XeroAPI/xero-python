@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.37.0
+    OpenAPI spec version: 2.38.0
 """
 
 import importlib
@@ -55,6 +55,82 @@ class PayrollAuApi(object):
 
     def get_model_finder(self):
         return ModelFinder(self.models_module)
+
+    def approve_leave_application(
+        self,
+        xero_tenant_id,
+        leave_application_id,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
+        """Approve a requested leave application by a unique leave application id  # noqa: E501
+        OAuth2 scope: payroll.employees
+        :param str xero_tenant_id: Xero identifier for Tenant (required)
+        :param str leave_application_id: Leave Application id for single object (required)
+        :param bool _return_http_data_only: return received data only
+        :param bool _preload_content: load received data in models
+        :param bool _request_timeout: maximum wait time for response
+        :return: LeaveApplications
+        """
+
+        # verify the required parameter 'xero_tenant_id' is set
+        if xero_tenant_id is None:
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `approve_leave_application`"
+            )
+        # verify the required parameter 'leave_application_id' is set
+        if leave_application_id is None:
+            raise ValueError(
+                "Missing the required parameter `leave_application_id` "
+                "when calling `approve_leave_application`"
+            )
+
+        collection_formats = {}
+        path_params = {
+            "LeaveApplicationID": leave_application_id,
+        }
+
+        query_params = []
+
+        header_params = {
+            "Xero-Tenant-Id": xero_tenant_id,
+        }
+
+        local_var_files = {}
+        form_params = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/LeaveApplications/{LeaveApplicationID}/approve")
+
+        try:
+            return self.api_client.call_api(
+                url,
+                "POST",
+                path_params,
+                query_params,
+                header_params,
+                body=body_params,
+                post_params=form_params,
+                files=local_var_files,
+                response_type="LeaveApplications",
+                response_model_finder=self.get_model_finder(),
+                auth_settings=auth_settings,
+                _return_http_data_only=_return_http_data_only,
+                _preload_content=_preload_content,
+                _request_timeout=_request_timeout,
+                collection_formats=collection_formats,
+            )
+        except exceptions.HTTPStatusException as error:
+            raise translate_status_exception(error, self, "approve_leave_application")
 
     def create_employee(
         self,
@@ -932,6 +1008,92 @@ class PayrollAuApi(object):
             )
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "get_leave_applications")
+
+    def get_leave_applications_v2(
+        self,
+        xero_tenant_id,
+        if_modified_since=empty,
+        where=empty,
+        order=empty,
+        page=empty,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
+        """Retrieves leave applications including leave requests  # noqa: E501
+        OAuth2 scope: payroll.employees, payroll.employees.read
+        :param str xero_tenant_id: Xero identifier for Tenant (required)
+        :param datetime if_modified_since: Only records created or modified since this timestamp will be returned
+        :param str where: Filter by an any element
+        :param str order: Order by an any element
+        :param int page: e.g. page=1 – Up to 100 objects will be returned in a single API call
+        :param bool _return_http_data_only: return received data only
+        :param bool _preload_content: load received data in models
+        :param bool _request_timeout: maximum wait time for response
+        :return: LeaveApplications
+        """
+
+        # verify the required parameter 'xero_tenant_id' is set
+        if xero_tenant_id is None:
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `get_leave_applications_v2`"
+            )
+
+        collection_formats = {}
+        path_params = {}
+
+        query_params = []
+
+        if where is not empty:
+            query_params.append(("where", where))
+
+        if order is not empty:
+            query_params.append(("order", order))
+
+        if page is not empty:
+            query_params.append(("page", page))
+
+        header_params = {
+            "Xero-Tenant-Id": xero_tenant_id,
+        }
+
+        if if_modified_since is not empty:
+            header_params["If-Modified-Since"] = if_modified_since
+
+        local_var_files = {}
+        form_params = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/LeaveApplications/v2")
+
+        try:
+            return self.api_client.call_api(
+                url,
+                "GET",
+                path_params,
+                query_params,
+                header_params,
+                body=body_params,
+                post_params=form_params,
+                files=local_var_files,
+                response_type="LeaveApplications",
+                response_model_finder=self.get_model_finder(),
+                auth_settings=auth_settings,
+                _return_http_data_only=_return_http_data_only,
+                _preload_content=_preload_content,
+                _request_timeout=_request_timeout,
+                collection_formats=collection_formats,
+            )
+        except exceptions.HTTPStatusException as error:
+            raise translate_status_exception(error, self, "get_leave_applications_v2")
 
     def get_pay_items(
         self,
@@ -1884,6 +2046,82 @@ class PayrollAuApi(object):
             )
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "get_timesheets")
+
+    def reject_leave_application(
+        self,
+        xero_tenant_id,
+        leave_application_id,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
+        """Reject a leave application by a unique leave application id  # noqa: E501
+        OAuth2 scope: payroll.employees
+        :param str xero_tenant_id: Xero identifier for Tenant (required)
+        :param str leave_application_id: Leave Application id for single object (required)
+        :param bool _return_http_data_only: return received data only
+        :param bool _preload_content: load received data in models
+        :param bool _request_timeout: maximum wait time for response
+        :return: LeaveApplications
+        """
+
+        # verify the required parameter 'xero_tenant_id' is set
+        if xero_tenant_id is None:
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `reject_leave_application`"
+            )
+        # verify the required parameter 'leave_application_id' is set
+        if leave_application_id is None:
+            raise ValueError(
+                "Missing the required parameter `leave_application_id` "
+                "when calling `reject_leave_application`"
+            )
+
+        collection_formats = {}
+        path_params = {
+            "LeaveApplicationID": leave_application_id,
+        }
+
+        query_params = []
+
+        header_params = {
+            "Xero-Tenant-Id": xero_tenant_id,
+        }
+
+        local_var_files = {}
+        form_params = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/LeaveApplications/{LeaveApplicationID}/reject")
+
+        try:
+            return self.api_client.call_api(
+                url,
+                "POST",
+                path_params,
+                query_params,
+                header_params,
+                body=body_params,
+                post_params=form_params,
+                files=local_var_files,
+                response_type="LeaveApplications",
+                response_model_finder=self.get_model_finder(),
+                auth_settings=auth_settings,
+                _return_http_data_only=_return_http_data_only,
+                _preload_content=_preload_content,
+                _request_timeout=_request_timeout,
+                collection_formats=collection_formats,
+            )
+        except exceptions.HTTPStatusException as error:
+            raise translate_status_exception(error, self, "reject_leave_application")
 
     def update_employee(
         self,

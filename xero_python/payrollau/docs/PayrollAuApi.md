@@ -4,6 +4,7 @@ All URIs are relative to *https://api.xero.com/payroll.xro/1.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**approve_leave_application**](PayrollAuApi.md#approve_leave_application) | **POST** /LeaveApplications/{LeaveApplicationID}/approve | Approve a requested leave application by a unique leave application id
 [**create_employee**](PayrollAuApi.md#create_employee) | **POST** /Employees | Creates a payroll employee
 [**create_leave_application**](PayrollAuApi.md#create_leave_application) | **POST** /LeaveApplications | Creates a leave application
 [**create_pay_item**](PayrollAuApi.md#create_pay_item) | **POST** /PayItems | Creates a pay item
@@ -15,6 +16,7 @@ Method | HTTP request | Description
 [**get_employees**](PayrollAuApi.md#get_employees) | **GET** /Employees | Searches payroll employees
 [**get_leave_application**](PayrollAuApi.md#get_leave_application) | **GET** /LeaveApplications/{LeaveApplicationID} | Retrieves a leave application by a unique leave application id
 [**get_leave_applications**](PayrollAuApi.md#get_leave_applications) | **GET** /LeaveApplications | Retrieves leave applications
+[**get_leave_applications_v2**](PayrollAuApi.md#get_leave_applications_v2) | **GET** /LeaveApplications/v2 | Retrieves leave applications including leave requests
 [**get_pay_items**](PayrollAuApi.md#get_pay_items) | **GET** /PayItems | Retrieves pay items
 [**get_pay_run**](PayrollAuApi.md#get_pay_run) | **GET** /PayRuns/{PayRunID} | Retrieves a pay run by using a unique pay run id
 [**get_pay_runs**](PayrollAuApi.md#get_pay_runs) | **GET** /PayRuns | Retrieves pay runs
@@ -27,6 +29,7 @@ Method | HTTP request | Description
 [**get_superfunds**](PayrollAuApi.md#get_superfunds) | **GET** /Superfunds | Retrieves superfunds
 [**get_timesheet**](PayrollAuApi.md#get_timesheet) | **GET** /Timesheets/{TimesheetID} | Retrieves a timesheet by using a unique timesheet id
 [**get_timesheets**](PayrollAuApi.md#get_timesheets) | **GET** /Timesheets | Retrieves timesheets
+[**reject_leave_application**](PayrollAuApi.md#reject_leave_application) | **POST** /LeaveApplications/{LeaveApplicationID}/reject | Reject a leave application by a unique leave application id
 [**update_employee**](PayrollAuApi.md#update_employee) | **POST** /Employees/{EmployeeID} | Updates an employee&#39;s detail
 [**update_leave_application**](PayrollAuApi.md#update_leave_application) | **POST** /LeaveApplications/{LeaveApplicationID} | Updates a specific leave application
 [**update_pay_run**](PayrollAuApi.md#update_pay_run) | **POST** /PayRuns/{PayRunID} | Updates a pay run
@@ -34,6 +37,69 @@ Method | HTTP request | Description
 [**update_superfund**](PayrollAuApi.md#update_superfund) | **POST** /Superfunds/{SuperFundID} | Updates a superfund
 [**update_timesheet**](PayrollAuApi.md#update_timesheet) | **POST** /Timesheets/{TimesheetID} | Updates a timesheet
 
+
+# **approve_leave_application**
+> LeaveApplications approve_leave_application(xero_tenant_id, leave_application_id)
+
+Approve a requested leave application by a unique leave application id
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.payrollau import PayrollAuApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = PayrollAuApi(api_client)
+
+xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
+leave_application_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Leave Application id for single object
+try:
+    # Approve a requested leave application by a unique leave application id
+    api_response = api_instance.approve_leave_application(xero_tenant_id, leave_application_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PayrollAuApi->approve_leave_application: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **leave_application_id** | [**str**](.md)| Leave Application id for single object | 
+
+### Return type
+
+[**LeaveApplications**](LeaveApplications.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_employee**
 > Employees create_employee(xero_tenant_id, employee)
@@ -713,6 +779,75 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PayrollAuApi->get_leave_applications: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **if_modified_since** | **datetime**| Only records created or modified since this timestamp will be returned | [optional] 
+ **where** | **str**| Filter by an any element | [optional] 
+ **order** | **str**| Order by an any element | [optional] 
+ **page** | **int**| e.g. page&#x3D;1 – Up to 100 objects will be returned in a single API call | [optional] 
+
+### Return type
+
+[**LeaveApplications**](LeaveApplications.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_leave_applications_v2**
+> LeaveApplications get_leave_applications_v2(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page)
+
+Retrieves leave applications including leave requests
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.payrollau import PayrollAuApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = PayrollAuApi(api_client)
+
+xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
+if_modified_since = '2020-02-06T12:17:43.202-08:00' # datetime | Only records created or modified since this timestamp will be returned (optional)
+where = 'Status==\"ACTIVE\"' # str | Filter by an any element (optional)
+order = 'EmailAddress%20DESC' # str | Order by an any element (optional)
+page = 56 # int | e.g. page=1 – Up to 100 objects will be returned in a single API call (optional)
+try:
+    # Retrieves leave applications including leave requests
+    api_response = api_instance.get_leave_applications_v2(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PayrollAuApi->get_leave_applications_v2: %s\n" % e)
 ```
 
 ### Parameters
@@ -1526,6 +1661,69 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **reject_leave_application**
+> LeaveApplications reject_leave_application(xero_tenant_id, leave_application_id)
+
+Reject a leave application by a unique leave application id
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.payrollau import PayrollAuApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = PayrollAuApi(api_client)
+
+xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
+leave_application_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Leave Application id for single object
+try:
+    # Reject a leave application by a unique leave application id
+    api_response = api_instance.reject_leave_application(xero_tenant_id, leave_application_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PayrollAuApi->reject_leave_application: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **leave_application_id** | [**str**](.md)| Leave Application id for single object | 
+
+### Return type
+
+[**LeaveApplications**](LeaveApplications.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **update_employee**
 > Employees update_employee(xero_tenant_id, employee_id, employee=employee)
 
@@ -1626,7 +1824,7 @@ api_instance = PayrollAuApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 leave_application_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Leave Application id for single object
-leave_application = [ { "EmployeeID": "cdfb8371-0b21-4b8a-8903-1024df6c391e", "LeaveTypeID": "184ea8f7-d143-46dd-bef3-0c60e1aa6fca", "StartDate": "/Date(1572559200000+0000)/", "EndDate": "/Date(1572645600000+0000)/", "Description": "My updated Description" } ] # list[LeaveApplication] | 
+leave_application = [ { "EmployeeID": "cdfb8371-0b21-4b8a-8903-1024df6c391e", "LeaveApplicationID": "1d4cd583-0107-4386-936b-672eb3d1f624", "LeaveTypeID": "184ea8f7-d143-46dd-bef3-0c60e1aa6fca", "LeavePeriods": [ { "PayPeriodStartDate": "/Date(1572566400000+0000)/", "PayPeriodEndDate": "/Date(1573084800000+0000)/", "LeavePeriodStatus": "SCHEDULED", "NumberOfUnits": 7.6 } ], "Title": "vacation", "Description": "My updated Description", "StartDate": "/Date(1572559200000+0000)/", "EndDate": "/Date(1572645600000+0000)/", "PayOutType": "DEFAULT" } ] # list[LeaveApplication] | 
 try:
     # Updates a specific leave application
     api_response = api_instance.update_leave_application(xero_tenant_id, leave_application_id, leave_application)
