@@ -335,6 +335,11 @@ class TaxRate(BaseModel):
             "SROVRRS",
             "SROVRLVG",
             "SRLVG",
+            "IM",
+            "IMESS",
+            "IMN33",
+            "IMRE",
+            "BADDEBTRECOVERY",
             "None",
         ]  # noqa: E501
 
