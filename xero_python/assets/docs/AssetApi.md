@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **create_asset**
-> Asset create_asset(xero_tenant_id, asset)
+> Asset create_asset(xero_tenant_id, asset, idempotency_key=idempotency_key)
 
 adds a fixed asset
 
@@ -47,9 +47,10 @@ api_instance = AssetApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 asset = { "assetName":"Computer74863", "assetNumber":"123477544", "purchaseDate":"2020-01-01", "purchasePrice":100.0, "disposalPrice":23.23, "assetStatus":"Draft", "bookDepreciationSetting":{ "depreciationMethod":"StraightLine", "averagingMethod":"ActualDays", "depreciationRate":0.5, "depreciationCalculationMethod":"None" }, "bookDepreciationDetail":{ "currentCapitalGain":5.32, "currentGainLoss":3.88, "depreciationStartDate":"2020-01-02", "costLimit":100.0, "currentAccumDepreciationAmount":2.25 }, "AccountingBookValue":99.5 } # Asset | Fixed asset you are creating
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # adds a fixed asset
-    api_response = api_instance.create_asset(xero_tenant_id, asset)
+    api_response = api_instance.create_asset(xero_tenant_id, asset, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AssetApi->create_asset: %s\n" % e)
@@ -61,6 +62,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **asset** | [**Asset**](Asset.md)| Fixed asset you are creating | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -78,7 +80,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_asset_type**
-> AssetType create_asset_type(xero_tenant_id, asset_type=asset_type)
+> AssetType create_asset_type(xero_tenant_id, idempotency_key=idempotency_key, asset_type=asset_type)
 
 adds a fixed asset type
 
@@ -111,10 +113,11 @@ api_client = ApiClient(
 api_instance = AssetApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 asset_type = { "assetTypeName":"Machinery11004", "fixedAssetAccountId":"3d8d063a-c148-4bb8-8b3c-a5e2ad3b1e82", "depreciationExpenseAccountId":"d1602f69-f900-4616-8d34-90af393fa368", "accumulatedDepreciationAccountId":"9195cadd-8645-41e6-9f67-7bcd421defe8", "bookDepreciationSetting":{ "depreciationMethod":"DiminishingValue100", "averagingMethod":"ActualDays", "depreciationRate":0.05, "depreciationCalculationMethod":"None" } } # AssetType | Asset type to add (optional)
 try:
     # adds a fixed asset type
-    api_response = api_instance.create_asset_type(xero_tenant_id, asset_type=asset_type)
+    api_response = api_instance.create_asset_type(xero_tenant_id, idempotency_key=idempotency_key, asset_type=asset_type)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AssetApi->create_asset_type: %s\n" % e)
@@ -125,6 +128,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
  **asset_type** | [**AssetType**](AssetType.md)| Asset type to add | [optional] 
 
 ### Return type

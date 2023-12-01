@@ -25,7 +25,7 @@ Method | HTTP request | Description
 
 
 # **create_file_association**
-> Association create_file_association(xero_tenant_id, file_id, association=association)
+> Association create_file_association(xero_tenant_id, file_id, idempotency_key=idempotency_key, association=association)
 
 Creates a new file association
 
@@ -59,10 +59,11 @@ api_instance = FilesApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 file_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | File id for single object
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 association = { "ObjectId": "1270bf7c-5d18-473a-9231-1e36c4bd33ed", "ObjectGroup": "Contact", "ObjectType": "Business" } # Association |  (optional)
 try:
     # Creates a new file association
-    api_response = api_instance.create_file_association(xero_tenant_id, file_id, association=association)
+    api_response = api_instance.create_file_association(xero_tenant_id, file_id, idempotency_key=idempotency_key, association=association)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FilesApi->create_file_association: %s\n" % e)
@@ -74,6 +75,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **file_id** | [**str**](.md)| File id for single object | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
  **association** | [**Association**](Association.md)|  | [optional] 
 
 ### Return type
@@ -92,7 +94,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_folder**
-> Folder create_folder(xero_tenant_id, folder=folder)
+> Folder create_folder(xero_tenant_id, idempotency_key=idempotency_key, folder=folder)
 
 Creates a new folder
 
@@ -125,10 +127,11 @@ api_client = ApiClient(
 api_instance = FilesApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 folder = { "Name": "My Docs" } # Folder |  (optional)
 try:
     # Creates a new folder
-    api_response = api_instance.create_folder(xero_tenant_id, folder=folder)
+    api_response = api_instance.create_folder(xero_tenant_id, idempotency_key=idempotency_key, folder=folder)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FilesApi->create_folder: %s\n" % e)
@@ -139,6 +142,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
  **folder** | [**Folder**](Folder.md)|  | [optional] 
 
 ### Return type
@@ -351,7 +355,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_associations_by_object**
-> list[Association] get_associations_by_object(xero_tenant_id, object_id)
+> list[Association] get_associations_by_object(xero_tenant_id, object_id, pagesize=pagesize, page=page, sort=sort, direction=direction)
 
 Retrieves an association object using a unique object ID
 
@@ -385,9 +389,13 @@ api_instance = FilesApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 object_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Object id for single object
+pagesize = 50 # int | pass an optional page size value (optional)
+page = 2 # int | number of records to skip for pagination (optional)
+sort = 'Associations/{ObjectId}?sort=CreatedDateUtc' # str | values to sort by (optional)
+direction = 'Associations/{ObjectId}?sort=CreatedDateUtc&direction=DESC' # str | direction to sort by (optional)
 try:
     # Retrieves an association object using a unique object ID
-    api_response = api_instance.get_associations_by_object(xero_tenant_id, object_id)
+    api_response = api_instance.get_associations_by_object(xero_tenant_id, object_id, pagesize=pagesize, page=page, sort=sort, direction=direction)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FilesApi->get_associations_by_object: %s\n" % e)
@@ -399,6 +407,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **object_id** | [**str**](.md)| Object id for single object | 
+ **pagesize** | **int**| pass an optional page size value | [optional] 
+ **page** | **int**| number of records to skip for pagination | [optional] 
+ **sort** | **str**| values to sort by | [optional] 
+ **direction** | **str**| direction to sort by | [optional] 
 
 ### Return type
 
@@ -934,7 +946,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_file**
-> FileObject update_file(xero_tenant_id, file_id, file_object=file_object)
+> FileObject update_file(xero_tenant_id, file_id, idempotency_key=idempotency_key, file_object=file_object)
 
 Update a file
 
@@ -968,10 +980,11 @@ api_instance = FilesApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 file_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | File id for single object
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 file_object = { "FolderId": "bf924975-7097-46f2-a143-1ecfbab3c8c3" } # FileObject |  (optional)
 try:
     # Update a file
-    api_response = api_instance.update_file(xero_tenant_id, file_id, file_object=file_object)
+    api_response = api_instance.update_file(xero_tenant_id, file_id, idempotency_key=idempotency_key, file_object=file_object)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FilesApi->update_file: %s\n" % e)
@@ -983,6 +996,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **file_id** | [**str**](.md)| File id for single object | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
  **file_object** | [**FileObject**](FileObject.md)|  | [optional] 
 
 ### Return type
@@ -1001,7 +1015,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_folder**
-> Folder update_folder(xero_tenant_id, folder_id, folder)
+> Folder update_folder(xero_tenant_id, folder_id, folder, idempotency_key=idempotency_key)
 
 Updates an existing folder
 
@@ -1036,9 +1050,10 @@ api_instance = FilesApi(api_client)
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 folder_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Folder id for single object
 folder = { "Name": "Your Docs" } # Folder | 
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Updates an existing folder
-    api_response = api_instance.update_folder(xero_tenant_id, folder_id, folder)
+    api_response = api_instance.update_folder(xero_tenant_id, folder_id, folder, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FilesApi->update_folder: %s\n" % e)
@@ -1051,6 +1066,7 @@ Name | Type | Description  | Notes
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **folder_id** | [**str**](.md)| Folder id for single object | 
  **folder** | [**Folder**](Folder.md)|  | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -1068,7 +1084,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **upload_file**
-> FileObject upload_file(xero_tenant_id, body, name, filename, mime_type=mime_type)
+> FileObject upload_file(xero_tenant_id, body, name, filename, idempotency_key=idempotency_key, mime_type=mime_type)
 
 Uploads a File to the inbox
 
@@ -1102,10 +1118,11 @@ xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 body = 'body_example' # str | 
 name = 'name_example' # str | exact name of the file you are uploading
 filename = 'filename_example' # str | 
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 mime_type = 'mime_type_example' # str |  (optional)
 try:
     # Uploads a File to the inbox
-    api_response = api_instance.upload_file(xero_tenant_id, body, name, filename, mime_type=mime_type)
+    api_response = api_instance.upload_file(xero_tenant_id, body, name, filename, idempotency_key=idempotency_key, mime_type=mime_type)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FilesApi->upload_file: %s\n" % e)
@@ -1119,6 +1136,7 @@ Name | Type | Description  | Notes
  **body** | **str**|  | 
  **name** | **str**| exact name of the file you are uploading | 
  **filename** | **str**|  | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
  **mime_type** | **str**|  | [optional] 
 
 ### Return type
@@ -1137,7 +1155,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **upload_file_to_folder**
-> FileObject upload_file_to_folder(xero_tenant_id, folder_id, body, name, filename, mime_type=mime_type)
+> FileObject upload_file_to_folder(xero_tenant_id, folder_id, body, name, filename, idempotency_key=idempotency_key, mime_type=mime_type)
 
 Uploads a File to a specific folder
 
@@ -1172,10 +1190,11 @@ folder_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | pass required folder 
 body = 'body_example' # str | 
 name = 'name_example' # str | exact name of the file you are uploading
 filename = 'filename_example' # str | 
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 mime_type = 'mime_type_example' # str |  (optional)
 try:
     # Uploads a File to a specific folder
-    api_response = api_instance.upload_file_to_folder(xero_tenant_id, folder_id, body, name, filename, mime_type=mime_type)
+    api_response = api_instance.upload_file_to_folder(xero_tenant_id, folder_id, body, name, filename, idempotency_key=idempotency_key, mime_type=mime_type)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FilesApi->upload_file_to_folder: %s\n" % e)
@@ -1190,6 +1209,7 @@ Name | Type | Description  | Notes
  **body** | **str**|  | 
  **name** | **str**| exact name of the file you are uploading | 
  **filename** | **str**|  | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
  **mime_type** | **str**|  | [optional] 
 
 ### Return type

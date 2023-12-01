@@ -25,6 +25,9 @@ Name | Type | Description | Notes
 **street_address** | **str** | Contact address on 1099 Form | [optional] 
 **tax_id** | **str** | Contact tax id on 1099 Form | [optional] 
 **contact_id** | **str** | Contact contact id | [optional] 
+**legal_name** | **str** | Contact legal name | [optional] 
+**business_name** | **str** | Contact business name | [optional] 
+**federal_tax_classification** | **str** | Contact federal tax classification | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

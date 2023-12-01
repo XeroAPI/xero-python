@@ -75,7 +75,7 @@ Method | HTTP request | Description
 
 
 # **approve_timesheet**
-> TimesheetObject approve_timesheet(xero_tenant_id, timesheet_id)
+> TimesheetObject approve_timesheet(xero_tenant_id, timesheet_id, idempotency_key=idempotency_key)
 
 Approves a timesheet
 
@@ -107,9 +107,10 @@ api_instance = PayrollNzApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 timesheet_id = 'timesheet_id_example' # str | Identifier for the timesheet
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Approves a timesheet
-    api_response = api_instance.approve_timesheet(xero_tenant_id, timesheet_id)
+    api_response = api_instance.approve_timesheet(xero_tenant_id, timesheet_id, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PayrollNzApi->approve_timesheet: %s\n" % e)
@@ -121,6 +122,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **timesheet_id** | [**str**](.md)| Identifier for the timesheet | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -138,7 +140,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_deduction**
-> DeductionObject create_deduction(xero_tenant_id, deduction)
+> DeductionObject create_deduction(xero_tenant_id, deduction, idempotency_key=idempotency_key)
 
 Creates a new deduction for a specific employee
 
@@ -170,9 +172,10 @@ api_instance = PayrollNzApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 deduction = { "deductionName": "My new deduction", "deductionCategory": "NzOther", "liabilityAccountId": "568f2e9a-0870-46cc-8678-f83f132ed4e3" } # Deduction | 
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates a new deduction for a specific employee
-    api_response = api_instance.create_deduction(xero_tenant_id, deduction)
+    api_response = api_instance.create_deduction(xero_tenant_id, deduction, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PayrollNzApi->create_deduction: %s\n" % e)
@@ -184,6 +187,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **deduction** | [**Deduction**](Deduction.md)|  | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -201,7 +205,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_earnings_rate**
-> EarningsRateObject create_earnings_rate(xero_tenant_id, earnings_rate)
+> EarningsRateObject create_earnings_rate(xero_tenant_id, earnings_rate, idempotency_key=idempotency_key)
 
 Creates a new earnings rate
 
@@ -233,9 +237,10 @@ api_instance = PayrollNzApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 earnings_rate = { "name": "My Earnings Rate", "earningsType": "RegularEarnings", "rateType": "RatePerUnit", "typeOfUnits": "hours", "expenseAccountID": "e4eb36f6-97e3-4427-a394-dd4e1b355c2e" } # EarningsRate | 
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates a new earnings rate
-    api_response = api_instance.create_earnings_rate(xero_tenant_id, earnings_rate)
+    api_response = api_instance.create_earnings_rate(xero_tenant_id, earnings_rate, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PayrollNzApi->create_earnings_rate: %s\n" % e)
@@ -247,6 +252,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **earnings_rate** | [**EarningsRate**](EarningsRate.md)|  | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -264,7 +270,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_employee**
-> EmployeeObject create_employee(xero_tenant_id, employee)
+> EmployeeObject create_employee(xero_tenant_id, employee, idempotency_key=idempotency_key)
 
 Creates an employees
 
@@ -296,9 +302,10 @@ api_instance = PayrollNzApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 employee = { "title": "Mr", "firstName": "Mike", "lastName": "Johntzxzpxhmkgson", "dateOfBirth": "2000-01-01", "address": { "addressLine1": "101 Green St", "city": "San Francisco", "postCode": "4351", "countryName": "United Kingdom" }, "email": "83139@starkindustries.com", "gender": "M" } # Employee | 
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates an employees
-    api_response = api_instance.create_employee(xero_tenant_id, employee)
+    api_response = api_instance.create_employee(xero_tenant_id, employee, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PayrollNzApi->create_employee: %s\n" % e)
@@ -310,6 +317,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **employee** | [**Employee**](Employee.md)|  | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -327,7 +335,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_employee_earnings_template**
-> EarningsTemplateObject create_employee_earnings_template(xero_tenant_id, employee_id, earnings_template)
+> EarningsTemplateObject create_employee_earnings_template(xero_tenant_id, employee_id, earnings_template, idempotency_key=idempotency_key)
 
 Creates earnings template records for an employee
 
@@ -360,9 +368,10 @@ api_instance = PayrollNzApi(api_client)
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Employee id for single object
 earnings_template = { "ratePerUnit": 20, "numberOfUnits": 8, "earningsRateID": "f9d8f5b5-9049-47f4-8541-35e200f750a5", "name": "My New One" } # EarningsTemplate | 
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates earnings template records for an employee
-    api_response = api_instance.create_employee_earnings_template(xero_tenant_id, employee_id, earnings_template)
+    api_response = api_instance.create_employee_earnings_template(xero_tenant_id, employee_id, earnings_template, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PayrollNzApi->create_employee_earnings_template: %s\n" % e)
@@ -375,6 +384,7 @@ Name | Type | Description  | Notes
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **employee_id** | [**str**](.md)| Employee id for single object | 
  **earnings_template** | [**EarningsTemplate**](EarningsTemplate.md)|  | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -392,7 +402,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_employee_leave**
-> EmployeeLeaveObject create_employee_leave(xero_tenant_id, employee_id, employee_leave)
+> EmployeeLeaveObject create_employee_leave(xero_tenant_id, employee_id, employee_leave, idempotency_key=idempotency_key)
 
 Creates leave records for a specific employee
 
@@ -425,9 +435,10 @@ api_instance = PayrollNzApi(api_client)
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Employee id for single object
 employee_leave = { "leaveTypeID": "b0b1b79e-2a25-46c2-ad08-ca25ef48d7e4", "description": "Creating a Description", "startDate": "2020-04-24", "endDate": "2020-04-26" } # EmployeeLeave | 
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates leave records for a specific employee
-    api_response = api_instance.create_employee_leave(xero_tenant_id, employee_id, employee_leave)
+    api_response = api_instance.create_employee_leave(xero_tenant_id, employee_id, employee_leave, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PayrollNzApi->create_employee_leave: %s\n" % e)
@@ -440,6 +451,7 @@ Name | Type | Description  | Notes
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **employee_id** | [**str**](.md)| Employee id for single object | 
  **employee_leave** | [**EmployeeLeave**](EmployeeLeave.md)|  | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -457,7 +469,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_employee_leave_setup**
-> EmployeeLeaveSetupObject create_employee_leave_setup(xero_tenant_id, employee_id, employee_leave_setup)
+> EmployeeLeaveSetupObject create_employee_leave_setup(xero_tenant_id, employee_id, employee_leave_setup, idempotency_key=idempotency_key)
 
 Creates a leave set-up for a specific employee. This is required before viewing, configuring and requesting leave for an employee
 
@@ -490,9 +502,10 @@ api_instance = PayrollNzApi(api_client)
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Employee id for single object
 employee_leave_setup = { "holidayPayOpeningBalance": 10, "annualLeaveOpeningBalance": 100, "sickLeaveHoursToAccrueAnnually": 20, "sickLeaveOpeningBalance": 10 } # EmployeeLeaveSetup | 
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates a leave set-up for a specific employee. This is required before viewing, configuring and requesting leave for an employee
-    api_response = api_instance.create_employee_leave_setup(xero_tenant_id, employee_id, employee_leave_setup)
+    api_response = api_instance.create_employee_leave_setup(xero_tenant_id, employee_id, employee_leave_setup, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PayrollNzApi->create_employee_leave_setup: %s\n" % e)
@@ -505,6 +518,7 @@ Name | Type | Description  | Notes
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **employee_id** | [**str**](.md)| Employee id for single object | 
  **employee_leave_setup** | [**EmployeeLeaveSetup**](EmployeeLeaveSetup.md)|  | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -522,7 +536,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_employee_leave_type**
-> EmployeeLeaveTypeObject create_employee_leave_type(xero_tenant_id, employee_id, employee_leave_type)
+> EmployeeLeaveTypeObject create_employee_leave_type(xero_tenant_id, employee_id, employee_leave_type, idempotency_key=idempotency_key)
 
 Creates leave type records for a specific employee
 
@@ -555,9 +569,10 @@ api_instance = PayrollNzApi(api_client)
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Employee id for single object
 employee_leave_type = { "leaveTypeID": "35da97ae-05b9-427f-9a98-69157ba42cec", "scheduleOfAccrual": "AnnuallyAfter6Months", "hoursAccruedAnnually": 10, "maximumToAccrue": 80, "openingBalance": 100, "rateAccruedHourly": 3.5 } # EmployeeLeaveType | 
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates leave type records for a specific employee
-    api_response = api_instance.create_employee_leave_type(xero_tenant_id, employee_id, employee_leave_type)
+    api_response = api_instance.create_employee_leave_type(xero_tenant_id, employee_id, employee_leave_type, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PayrollNzApi->create_employee_leave_type: %s\n" % e)
@@ -570,6 +585,7 @@ Name | Type | Description  | Notes
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **employee_id** | [**str**](.md)| Employee id for single object | 
  **employee_leave_type** | [**EmployeeLeaveType**](EmployeeLeaveType.md)|  | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -587,7 +603,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_employee_opening_balances**
-> EmployeeOpeningBalancesObject create_employee_opening_balances(xero_tenant_id, employee_id, employee_opening_balance)
+> EmployeeOpeningBalancesObject create_employee_opening_balances(xero_tenant_id, employee_id, employee_opening_balance, idempotency_key=idempotency_key)
 
 Creates opening balances for a specific employee
 
@@ -620,9 +636,10 @@ api_instance = PayrollNzApi(api_client)
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Employee id for single object
 employee_opening_balance = [{"periodEndDate":"2020-10-01","daysPaid":3,"unpaidWeeks":2,"grossEarnings":40.0}] # list[EmployeeOpeningBalance] | 
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates opening balances for a specific employee
-    api_response = api_instance.create_employee_opening_balances(xero_tenant_id, employee_id, employee_opening_balance)
+    api_response = api_instance.create_employee_opening_balances(xero_tenant_id, employee_id, employee_opening_balance, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PayrollNzApi->create_employee_opening_balances: %s\n" % e)
@@ -635,6 +652,7 @@ Name | Type | Description  | Notes
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **employee_id** | [**str**](.md)| Employee id for single object | 
  **employee_opening_balance** | [**list[EmployeeOpeningBalance]**](EmployeeOpeningBalance.md)|  | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -652,7 +670,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_employee_payment_method**
-> PaymentMethodObject create_employee_payment_method(xero_tenant_id, employee_id, payment_method)
+> PaymentMethodObject create_employee_payment_method(xero_tenant_id, employee_id, payment_method, idempotency_key=idempotency_key)
 
 Creates a payment method for an employee
 
@@ -685,9 +703,10 @@ api_instance = PayrollNzApi(api_client)
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Employee id for single object
 payment_method = xero_python.payrollnz.PaymentMethod() # PaymentMethod | 
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates a payment method for an employee
-    api_response = api_instance.create_employee_payment_method(xero_tenant_id, employee_id, payment_method)
+    api_response = api_instance.create_employee_payment_method(xero_tenant_id, employee_id, payment_method, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PayrollNzApi->create_employee_payment_method: %s\n" % e)
@@ -700,6 +719,7 @@ Name | Type | Description  | Notes
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **employee_id** | [**str**](.md)| Employee id for single object | 
  **payment_method** | [**PaymentMethod**](PaymentMethod.md)|  | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -717,7 +737,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_employee_salary_and_wage**
-> SalaryAndWageObject create_employee_salary_and_wage(xero_tenant_id, employee_id, salary_and_wage)
+> SalaryAndWageObject create_employee_salary_and_wage(xero_tenant_id, employee_id, salary_and_wage, idempotency_key=idempotency_key)
 
 Creates an employee salary and wage record
 
@@ -750,9 +770,10 @@ api_instance = PayrollNzApi(api_client)
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Employee id for single object
 salary_and_wage = { "earningsRateID": "f9d8f5b5-9049-47f4-8541-35e200f750a5", "numberOfUnitsPerWeek": 2, "ratePerUnit": 10, "numberOfUnitsPerDay": 2, "daysPerWeek": 1, "effectiveFrom": "2020-05-01", "annualSalary": 100, "status": "Active", "paymentType": "Salary" } # SalaryAndWage | 
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates an employee salary and wage record
-    api_response = api_instance.create_employee_salary_and_wage(xero_tenant_id, employee_id, salary_and_wage)
+    api_response = api_instance.create_employee_salary_and_wage(xero_tenant_id, employee_id, salary_and_wage, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PayrollNzApi->create_employee_salary_and_wage: %s\n" % e)
@@ -765,6 +786,7 @@ Name | Type | Description  | Notes
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **employee_id** | [**str**](.md)| Employee id for single object | 
  **salary_and_wage** | [**SalaryAndWage**](SalaryAndWage.md)|  | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -782,7 +804,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_employment**
-> EmploymentObject create_employment(xero_tenant_id, employee_id, employment)
+> EmploymentObject create_employment(xero_tenant_id, employee_id, employment, idempotency_key=idempotency_key)
 
 Creates an employment detail for a specific employee
 
@@ -815,9 +837,10 @@ api_instance = PayrollNzApi(api_client)
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Employee id for single object
 employment = { "payrollCalendarID": "9aa56064-990f-4ad3-a189-d966d8f6a030", "startDate": "2020-09-02" } # Employment | 
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates an employment detail for a specific employee
-    api_response = api_instance.create_employment(xero_tenant_id, employee_id, employment)
+    api_response = api_instance.create_employment(xero_tenant_id, employee_id, employment, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PayrollNzApi->create_employment: %s\n" % e)
@@ -830,6 +853,7 @@ Name | Type | Description  | Notes
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **employee_id** | [**str**](.md)| Employee id for single object | 
  **employment** | [**Employment**](Employment.md)|  | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -847,7 +871,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_leave_type**
-> LeaveTypeObject create_leave_type(xero_tenant_id, leave_type)
+> LeaveTypeObject create_leave_type(xero_tenant_id, leave_type, idempotency_key=idempotency_key)
 
 Creates a new leave type
 
@@ -879,9 +903,10 @@ api_instance = PayrollNzApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 leave_type = { "name": "My wqwhhiktun Leave", "isPaidLeave": false, "showOnPayslip": true } # LeaveType | 
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates a new leave type
-    api_response = api_instance.create_leave_type(xero_tenant_id, leave_type)
+    api_response = api_instance.create_leave_type(xero_tenant_id, leave_type, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PayrollNzApi->create_leave_type: %s\n" % e)
@@ -893,6 +918,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **leave_type** | [**LeaveType**](LeaveType.md)|  | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -910,7 +936,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_multiple_employee_earnings_template**
-> EmployeeEarningsTemplates create_multiple_employee_earnings_template(xero_tenant_id, employee_id, earnings_template)
+> EmployeeEarningsTemplates create_multiple_employee_earnings_template(xero_tenant_id, employee_id, earnings_template, idempotency_key=idempotency_key)
 
 Creates multiple employee earnings template records for a specific employee
 
@@ -943,9 +969,10 @@ api_instance = PayrollNzApi(api_client)
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Employee id for single object
 earnings_template = [{"ratePerUnit":20.0,"numberOfUnits":8.0,"earningsRateID":"f9d8f5b5-9049-47f4-8541-35e200f750a5"},{"ratePerUnit":0.0,"numberOfUnits":8.0,"earningsRateID":"65b83d94-f20f-45e1-85ae-387fcf460c26"}] # list[EarningsTemplate] | 
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates multiple employee earnings template records for a specific employee
-    api_response = api_instance.create_multiple_employee_earnings_template(xero_tenant_id, employee_id, earnings_template)
+    api_response = api_instance.create_multiple_employee_earnings_template(xero_tenant_id, employee_id, earnings_template, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PayrollNzApi->create_multiple_employee_earnings_template: %s\n" % e)
@@ -958,6 +985,7 @@ Name | Type | Description  | Notes
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **employee_id** | [**str**](.md)| Employee id for single object | 
  **earnings_template** | [**list[EarningsTemplate]**](EarningsTemplate.md)|  | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -975,7 +1003,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_pay_run**
-> PayRunObject create_pay_run(xero_tenant_id, pay_run)
+> PayRunObject create_pay_run(xero_tenant_id, pay_run, idempotency_key=idempotency_key)
 
 Creates a pay run
 
@@ -1007,9 +1035,10 @@ api_instance = PayrollNzApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 pay_run = { "payrollCalendarID": "9aa56064-990f-4ad3-a189-d966d8f6a030", "periodStartDate": "2020-09-08", "periodEndDate": "2020-09-15", "paymentDate": "2020-09-20", "payRunStatus": "Draft", "payRunType": "Scheduled", "calendarType": "Weekly" } # PayRun | 
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates a pay run
-    api_response = api_instance.create_pay_run(xero_tenant_id, pay_run)
+    api_response = api_instance.create_pay_run(xero_tenant_id, pay_run, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PayrollNzApi->create_pay_run: %s\n" % e)
@@ -1021,6 +1050,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **pay_run** | [**PayRun**](PayRun.md)|  | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -1038,7 +1068,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_pay_run_calendar**
-> PayRunCalendarObject create_pay_run_calendar(xero_tenant_id, pay_run_calendar)
+> PayRunCalendarObject create_pay_run_calendar(xero_tenant_id, pay_run_calendar, idempotency_key=idempotency_key)
 
 Creates a new payrun calendar
 
@@ -1070,9 +1100,10 @@ api_instance = PayrollNzApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 pay_run_calendar = { "name": "My Weekly Cal", "calendarType": "Weekly", "periodStartDate": "2020-05-01", "paymentDate": "2020-05-15" } # PayRunCalendar | 
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates a new payrun calendar
-    api_response = api_instance.create_pay_run_calendar(xero_tenant_id, pay_run_calendar)
+    api_response = api_instance.create_pay_run_calendar(xero_tenant_id, pay_run_calendar, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PayrollNzApi->create_pay_run_calendar: %s\n" % e)
@@ -1084,6 +1115,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **pay_run_calendar** | [**PayRunCalendar**](PayRunCalendar.md)|  | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -1101,7 +1133,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_reimbursement**
-> ReimbursementObject create_reimbursement(xero_tenant_id, reimbursement)
+> ReimbursementObject create_reimbursement(xero_tenant_id, reimbursement, idempotency_key=idempotency_key)
 
 Creates a new reimbursement
 
@@ -1133,9 +1165,10 @@ api_instance = PayrollNzApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 reimbursement = { "name": "My new Reimburse", "accountID": "fa5cdc43-643b-4ad8-b4ac-3ffe0d0f4488", "reimbursementCategory": "GSTInclusive", "calculationType": "FixedAmount" } # Reimbursement | 
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates a new reimbursement
-    api_response = api_instance.create_reimbursement(xero_tenant_id, reimbursement)
+    api_response = api_instance.create_reimbursement(xero_tenant_id, reimbursement, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PayrollNzApi->create_reimbursement: %s\n" % e)
@@ -1147,6 +1180,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **reimbursement** | [**Reimbursement**](Reimbursement.md)|  | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -1164,7 +1198,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_superannuation**
-> SuperannuationObject create_superannuation(xero_tenant_id, benefit)
+> SuperannuationObject create_superannuation(xero_tenant_id, benefit, idempotency_key=idempotency_key)
 
 Creates a new superannuation
 
@@ -1196,9 +1230,10 @@ api_instance = PayrollNzApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 benefit = { "name": "SidSaver", "category": "Other", "liabilityAccountId": "568f2e9a-0870-46cc-8678-f83f132ed4e3", "expenseAccountId": "e4eb36f6-97e3-4427-a394-dd4e1b355c2e", "CalculationTypeNZ": "FixedAmount", "standardAmount": 10 } # Benefit | 
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates a new superannuation
-    api_response = api_instance.create_superannuation(xero_tenant_id, benefit)
+    api_response = api_instance.create_superannuation(xero_tenant_id, benefit, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PayrollNzApi->create_superannuation: %s\n" % e)
@@ -1210,6 +1245,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **benefit** | [**Benefit**](Benefit.md)|  | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -1227,7 +1263,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_timesheet**
-> TimesheetObject create_timesheet(xero_tenant_id, timesheet)
+> TimesheetObject create_timesheet(xero_tenant_id, timesheet, idempotency_key=idempotency_key)
 
 Creates a new timesheet
 
@@ -1259,9 +1295,10 @@ api_instance = PayrollNzApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 timesheet = { "payrollCalendarID": "9aa56064-990f-4ad3-a189-d966d8f6a030", "employeeID": "68342973-c405-4b86-b5d3-d7b877c27995", "startDate": "2020-04-13", "endDate": "2020-04-19", "timesheetLines": [ { "date": "2020-04-13", "earningsRateID": "f9d8f5b5-9049-47f4-8541-35e200f750a5", "numberOfUnits": 8 }, { "date": "2020-04-15", "earningsRateID": "f9d8f5b5-9049-47f4-8541-35e200f750a5", "numberOfUnits": 6 } ] } # Timesheet | 
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates a new timesheet
-    api_response = api_instance.create_timesheet(xero_tenant_id, timesheet)
+    api_response = api_instance.create_timesheet(xero_tenant_id, timesheet, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PayrollNzApi->create_timesheet: %s\n" % e)
@@ -1273,6 +1310,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **timesheet** | [**Timesheet**](Timesheet.md)|  | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -1290,7 +1328,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_timesheet_line**
-> TimesheetLineObject create_timesheet_line(xero_tenant_id, timesheet_id, timesheet_line)
+> TimesheetLineObject create_timesheet_line(xero_tenant_id, timesheet_id, timesheet_line, idempotency_key=idempotency_key)
 
 Create a new timesheet line for a specific time sheet
 
@@ -1323,9 +1361,10 @@ api_instance = PayrollNzApi(api_client)
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 timesheet_id = 'timesheet_id_example' # str | Identifier for the timesheet
 timesheet_line = { "date": "2020-08-03", "earningsRateID": "f9d8f5b5-9049-47f4-8541-35e200f750a5", "numberOfUnits": 1 } # TimesheetLine | 
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Create a new timesheet line for a specific time sheet
-    api_response = api_instance.create_timesheet_line(xero_tenant_id, timesheet_id, timesheet_line)
+    api_response = api_instance.create_timesheet_line(xero_tenant_id, timesheet_id, timesheet_line, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PayrollNzApi->create_timesheet_line: %s\n" % e)
@@ -1338,6 +1377,7 @@ Name | Type | Description  | Notes
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **timesheet_id** | [**str**](.md)| Identifier for the timesheet | 
  **timesheet_line** | [**TimesheetLine**](TimesheetLine.md)|  | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -3842,7 +3882,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **revert_timesheet**
-> TimesheetObject revert_timesheet(xero_tenant_id, timesheet_id)
+> TimesheetObject revert_timesheet(xero_tenant_id, timesheet_id, idempotency_key=idempotency_key)
 
 Reverts a timesheet to draft
 
@@ -3874,9 +3914,10 @@ api_instance = PayrollNzApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 timesheet_id = 'timesheet_id_example' # str | Identifier for the timesheet
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Reverts a timesheet to draft
-    api_response = api_instance.revert_timesheet(xero_tenant_id, timesheet_id)
+    api_response = api_instance.revert_timesheet(xero_tenant_id, timesheet_id, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PayrollNzApi->revert_timesheet: %s\n" % e)
@@ -3888,6 +3929,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **timesheet_id** | [**str**](.md)| Identifier for the timesheet | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -3905,7 +3947,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_employee**
-> EmployeeObject update_employee(xero_tenant_id, employee_id, employee)
+> EmployeeObject update_employee(xero_tenant_id, employee_id, employee, idempotency_key=idempotency_key)
 
 Updates an existing employee
 
@@ -3938,9 +3980,10 @@ api_instance = PayrollNzApi(api_client)
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Employee id for single object
 employee = { "title": "Mr", "firstName": "Tony", "lastName": "Starkgtrzgquusrson", "dateOfBirth": "1999-01-01", "address": { "addressLine1": "101 Green St", "city": "San Francisco", "postCode": "4432", "countryName": "United Kingdom" }, "email": "58315@starkindustries.com", "gender": "M" } # Employee | 
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Updates an existing employee
-    api_response = api_instance.update_employee(xero_tenant_id, employee_id, employee)
+    api_response = api_instance.update_employee(xero_tenant_id, employee_id, employee, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PayrollNzApi->update_employee: %s\n" % e)
@@ -3953,6 +3996,7 @@ Name | Type | Description  | Notes
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **employee_id** | [**str**](.md)| Employee id for single object | 
  **employee** | [**Employee**](Employee.md)|  | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -3970,7 +4014,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_employee_earnings_template**
-> EarningsTemplateObject update_employee_earnings_template(xero_tenant_id, employee_id, pay_template_earning_id, earnings_template)
+> EarningsTemplateObject update_employee_earnings_template(xero_tenant_id, employee_id, pay_template_earning_id, earnings_template, idempotency_key=idempotency_key)
 
 Updates an earnings template records for an employee
 
@@ -4004,9 +4048,10 @@ xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Employee id for single object
 pay_template_earning_id = '3fa85f64-5717-4562-b3fc-2c963f66afa6' # str | Id for single pay template earnings object
 earnings_template = { "ratePerUnit": 25, "numberOfUnits": 4, "earningsRateID": "f9d8f5b5-9049-47f4-8541-35e200f750a5" } # EarningsTemplate | 
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Updates an earnings template records for an employee
-    api_response = api_instance.update_employee_earnings_template(xero_tenant_id, employee_id, pay_template_earning_id, earnings_template)
+    api_response = api_instance.update_employee_earnings_template(xero_tenant_id, employee_id, pay_template_earning_id, earnings_template, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PayrollNzApi->update_employee_earnings_template: %s\n" % e)
@@ -4020,6 +4065,7 @@ Name | Type | Description  | Notes
  **employee_id** | [**str**](.md)| Employee id for single object | 
  **pay_template_earning_id** | [**str**](.md)| Id for single pay template earnings object | 
  **earnings_template** | [**EarningsTemplate**](EarningsTemplate.md)|  | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -4037,7 +4083,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_employee_leave**
-> EmployeeLeaveObject update_employee_leave(xero_tenant_id, employee_id, leave_id, employee_leave)
+> EmployeeLeaveObject update_employee_leave(xero_tenant_id, employee_id, leave_id, employee_leave, idempotency_key=idempotency_key)
 
 Updates leave records for a specific employee
 
@@ -4071,9 +4117,10 @@ xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Employee id for single object
 leave_id = 'c4be24e5-e840-4c92-9eaa-2d86cd596314' # str | Leave id for single object
 employee_leave = { "leaveTypeID": "b0b1b79e-2a25-46c2-ad08-ca25ef48d7e4", "description": "Creating a Description", "startDate": "2020-04-24", "endDate": "2020-04-26", "periods": [ { "periodStartDate": "2020-04-20", "periodEndDate": "2020-04-26", "numberOfUnits": 1, "periodStatus": "Approved" } ] } # EmployeeLeave | 
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Updates leave records for a specific employee
-    api_response = api_instance.update_employee_leave(xero_tenant_id, employee_id, leave_id, employee_leave)
+    api_response = api_instance.update_employee_leave(xero_tenant_id, employee_id, leave_id, employee_leave, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PayrollNzApi->update_employee_leave: %s\n" % e)
@@ -4087,6 +4134,7 @@ Name | Type | Description  | Notes
  **employee_id** | [**str**](.md)| Employee id for single object | 
  **leave_id** | [**str**](.md)| Leave id for single object | 
  **employee_leave** | [**EmployeeLeave**](EmployeeLeave.md)|  | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -4104,7 +4152,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_employee_salary_and_wage**
-> SalaryAndWageObject update_employee_salary_and_wage(xero_tenant_id, employee_id, salary_and_wages_id, salary_and_wage)
+> SalaryAndWageObject update_employee_salary_and_wage(xero_tenant_id, employee_id, salary_and_wages_id, salary_and_wage, idempotency_key=idempotency_key)
 
 Updates an employee's salary and wages record
 
@@ -4138,9 +4186,10 @@ xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Employee id for single object
 salary_and_wages_id = '3fa85f64-5717-4562-b3fc-2c963f66afa6' # str | Id for single pay template earnings object
 salary_and_wage = { "earningsRateID": "f9d8f5b5-9049-47f4-8541-35e200f750a5", "numberOfUnitsPerWeek": 3, "ratePerUnit": 11, "numberOfUnitsPerDay": 3, "daysPerWeek": 1, "effectiveFrom": "2020-05-15", "annualSalary": 101, "status": "Active", "paymentType": "Salary" } # SalaryAndWage | 
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Updates an employee's salary and wages record
-    api_response = api_instance.update_employee_salary_and_wage(xero_tenant_id, employee_id, salary_and_wages_id, salary_and_wage)
+    api_response = api_instance.update_employee_salary_and_wage(xero_tenant_id, employee_id, salary_and_wages_id, salary_and_wage, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PayrollNzApi->update_employee_salary_and_wage: %s\n" % e)
@@ -4154,6 +4203,7 @@ Name | Type | Description  | Notes
  **employee_id** | [**str**](.md)| Employee id for single object | 
  **salary_and_wages_id** | [**str**](.md)| Id for single pay template earnings object | 
  **salary_and_wage** | [**SalaryAndWage**](SalaryAndWage.md)|  | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -4171,7 +4221,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_employee_tax**
-> EmployeeTaxObject update_employee_tax(xero_tenant_id, employee_id, employee_tax)
+> EmployeeTaxObject update_employee_tax(xero_tenant_id, employee_id, employee_tax, idempotency_key=idempotency_key)
 
 Updates the tax records for a specific employee
 
@@ -4204,9 +4254,10 @@ api_instance = PayrollNzApi(api_client)
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Employee id for single object
 employee_tax = xero_python.payrollnz.EmployeeTax() # EmployeeTax | 
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Updates the tax records for a specific employee
-    api_response = api_instance.update_employee_tax(xero_tenant_id, employee_id, employee_tax)
+    api_response = api_instance.update_employee_tax(xero_tenant_id, employee_id, employee_tax, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PayrollNzApi->update_employee_tax: %s\n" % e)
@@ -4219,6 +4270,7 @@ Name | Type | Description  | Notes
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **employee_id** | [**str**](.md)| Employee id for single object | 
  **employee_tax** | [**EmployeeTax**](EmployeeTax.md)|  | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -4236,7 +4288,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_pay_run**
-> PayRunObject update_pay_run(xero_tenant_id, pay_run_id, pay_run)
+> PayRunObject update_pay_run(xero_tenant_id, pay_run_id, pay_run, idempotency_key=idempotency_key)
 
 Updates a pay run
 
@@ -4269,9 +4321,10 @@ api_instance = PayrollNzApi(api_client)
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 pay_run_id = 'pay_run_id_example' # str | Identifier for the pay run
 pay_run = { "paymentDate": "2019-07-01" } # PayRun | 
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Updates a pay run
-    api_response = api_instance.update_pay_run(xero_tenant_id, pay_run_id, pay_run)
+    api_response = api_instance.update_pay_run(xero_tenant_id, pay_run_id, pay_run, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PayrollNzApi->update_pay_run: %s\n" % e)
@@ -4284,6 +4337,7 @@ Name | Type | Description  | Notes
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **pay_run_id** | [**str**](.md)| Identifier for the pay run | 
  **pay_run** | [**PayRun**](PayRun.md)|  | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -4301,7 +4355,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_pay_slip_line_items**
-> PaySlipObject update_pay_slip_line_items(xero_tenant_id, pay_slip_id, pay_slip)
+> PaySlipObject update_pay_slip_line_items(xero_tenant_id, pay_slip_id, pay_slip, idempotency_key=idempotency_key)
 
 Creates an employee pay slip
 
@@ -4334,9 +4388,10 @@ api_instance = PayrollNzApi(api_client)
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 pay_slip_id = 'pay_slip_id_example' # str | Identifier for the payslip
 pay_slip = { "earningsLines": [ { "earningsLineID": "f9d8f5b5-9049-47f4-8541-35e200f750a5", "earningsRateID": "f9d8f5b5-9049-47f4-8541-35e200f750a5", "displayName": "Ordinary Time", "ratePerUnit": 25, "numberOfUnits": 0, "amount": 0, "isLinkedToTimesheet": false, "isSystemGenerated": true }, { "earningsLineID": "65b83d94-f20f-45e1-85ae-387fcf460c26", "earningsRateID": "65b83d94-f20f-45e1-85ae-387fcf460c26", "displayName": "Salary", "ratePerUnit": 0, "numberOfUnits": 8, "amount": 0, "isLinkedToTimesheet": false, "isSystemGenerated": false } ], "leaveEarningsLines": [ { "earningsLineID": "0441497f-5dc7-4cd3-a90d-f2e07e21b2a6", "earningsRateID": "39b3560a-5d2f-4538-924a-4349dc86396e", "displayName": "Holiday Pay", "fixedAmount": 268.8, "amount": 268.8, "isLinkedToTimesheet": false, "isSystemGenerated": true } ], "deductionLines": [ { "deductionTypeID": "a3760fe4-68a4-4e38-8326-fe616af7dc74", "amount": 100 } ], "leaveAccrualLines": [ { "leaveTypeID": "0441497f-5dc7-4cd3-a90d-f2e07e21b2a6", "numberOfUnits": 268.8 }, { "leaveTypeID": "b0b1b79e-2a25-46c2-ad08-ca25ef48d7e4", "numberOfUnits": 0 }, { "leaveTypeID": "f2f994cf-1899-46f3-ad4f-5d92d78c3719", "numberOfUnits": 0 }, { "leaveTypeID": "34129765-11cb-4d8c-b568-84a2219beda3", "numberOfUnits": 0 } ], "superannuationLines": [ { "superannuationTypeID": "563273ea-0dae-4f82-86a4-e0db77c008ea", "displayName": "KiwiSaver", "amount": 108.86, "fixedAmount": 3, "percentage": 3, "manualAdjustment": false } ], "employeeTaxLines": [ { "taxLineID": "1084146b-e890-489c-aed3-06de80f63d84", "amount": 1057.22, "globalTaxTypeID": "11", "manualAdjustment": false } ], "employerTaxLines": [ { "taxLineID": "6f9eb8cd-0f4a-440b-939c-bdb0f6ad694c", "amount": 18.9, "globalTaxTypeID": "10", "manualAdjustment": false } ], "statutoryDeductionLines": [ { "statutoryDeductionTypeID": "b5efd8d1-0c93-4a14-a314-b5cba4a4e6b3", "amount": 108.86 } ], "grossEarningsHistory": { "daysPaid": 3, "unpaidWeeks": 0 } } # PaySlip | 
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates an employee pay slip
-    api_response = api_instance.update_pay_slip_line_items(xero_tenant_id, pay_slip_id, pay_slip)
+    api_response = api_instance.update_pay_slip_line_items(xero_tenant_id, pay_slip_id, pay_slip, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PayrollNzApi->update_pay_slip_line_items: %s\n" % e)
@@ -4349,6 +4404,7 @@ Name | Type | Description  | Notes
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **pay_slip_id** | [**str**](.md)| Identifier for the payslip | 
  **pay_slip** | [**PaySlip**](PaySlip.md)|  | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -4366,7 +4422,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_timesheet_line**
-> TimesheetLineObject update_timesheet_line(xero_tenant_id, timesheet_id, timesheet_line_id, timesheet_line)
+> TimesheetLineObject update_timesheet_line(xero_tenant_id, timesheet_id, timesheet_line_id, timesheet_line, idempotency_key=idempotency_key)
 
 Updates a timesheet line for a specific timesheet
 
@@ -4400,9 +4456,10 @@ xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 timesheet_id = 'timesheet_id_example' # str | Identifier for the timesheet
 timesheet_line_id = 'timesheet_line_id_example' # str | Identifier for the timesheet line
 timesheet_line = { "date": "2020-08-04", "earningsRateID": "f9d8f5b5-9049-47f4-8541-35e200f750a5", "numberOfUnits": 2 } # TimesheetLine | 
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Updates a timesheet line for a specific timesheet
-    api_response = api_instance.update_timesheet_line(xero_tenant_id, timesheet_id, timesheet_line_id, timesheet_line)
+    api_response = api_instance.update_timesheet_line(xero_tenant_id, timesheet_id, timesheet_line_id, timesheet_line, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PayrollNzApi->update_timesheet_line: %s\n" % e)
@@ -4416,6 +4473,7 @@ Name | Type | Description  | Notes
  **timesheet_id** | [**str**](.md)| Identifier for the timesheet | 
  **timesheet_line_id** | [**str**](.md)| Identifier for the timesheet line | 
  **timesheet_line** | [**TimesheetLine**](TimesheetLine.md)|  | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 

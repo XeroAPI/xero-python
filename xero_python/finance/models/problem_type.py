@@ -34,3 +34,4 @@ class ProblemType(Enum):
     REQUEST_TIMEOUT = "request-timeout"
     SERVICE_UNAVAILABLE = "service-unavailable"
     UNAUTHORIZED = "unauthorized"
+    RATE_LIMIT_ERROR = "rate-limit-error"

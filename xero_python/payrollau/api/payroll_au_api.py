@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.38.0
+    OpenAPI spec version: 2.40.1
 """
 
 import importlib
@@ -60,6 +60,7 @@ class PayrollAuApi(object):
         self,
         xero_tenant_id,
         leave_application_id,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -68,6 +69,7 @@ class PayrollAuApi(object):
         OAuth2 scope: payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str leave_application_id: Leave Application id for single object (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -97,6 +99,9 @@ class PayrollAuApi(object):
         header_params = {
             "Xero-Tenant-Id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -136,6 +141,7 @@ class PayrollAuApi(object):
         self,
         xero_tenant_id,
         employee,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -144,6 +150,7 @@ class PayrollAuApi(object):
         OAuth2 scope: payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param list[Employee] employee: (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -171,6 +178,9 @@ class PayrollAuApi(object):
         header_params = {
             "Xero-Tenant-Id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -215,6 +225,7 @@ class PayrollAuApi(object):
         self,
         xero_tenant_id,
         leave_application,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -223,6 +234,7 @@ class PayrollAuApi(object):
         OAuth2 scope: payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param list[LeaveApplication] leave_application: (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -250,6 +262,9 @@ class PayrollAuApi(object):
         header_params = {
             "Xero-Tenant-Id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -294,6 +309,7 @@ class PayrollAuApi(object):
         self,
         xero_tenant_id,
         pay_item,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -302,6 +318,7 @@ class PayrollAuApi(object):
         OAuth2 scope: payroll.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param PayItem pay_item: (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -329,6 +346,9 @@ class PayrollAuApi(object):
         header_params = {
             "Xero-Tenant-Id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -373,6 +393,7 @@ class PayrollAuApi(object):
         self,
         xero_tenant_id,
         pay_run,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -381,6 +402,7 @@ class PayrollAuApi(object):
         OAuth2 scope: payroll.payruns
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param list[PayRun] pay_run: (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -408,6 +430,9 @@ class PayrollAuApi(object):
         header_params = {
             "Xero-Tenant-Id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -452,6 +477,7 @@ class PayrollAuApi(object):
         self,
         xero_tenant_id,
         payroll_calendar,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -460,6 +486,7 @@ class PayrollAuApi(object):
         OAuth2 scope: payroll.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param list[PayrollCalendar] payroll_calendar: (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -487,6 +514,9 @@ class PayrollAuApi(object):
         header_params = {
             "Xero-Tenant-Id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -531,6 +561,7 @@ class PayrollAuApi(object):
         self,
         xero_tenant_id,
         super_fund,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -539,6 +570,7 @@ class PayrollAuApi(object):
         OAuth2 scope: payroll.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param list[SuperFund] super_fund: (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -566,6 +598,9 @@ class PayrollAuApi(object):
         header_params = {
             "Xero-Tenant-Id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -610,6 +645,7 @@ class PayrollAuApi(object):
         self,
         xero_tenant_id,
         timesheet,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -618,6 +654,7 @@ class PayrollAuApi(object):
         OAuth2 scope: payroll.timesheets
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param list[Timesheet] timesheet: (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -645,6 +682,9 @@ class PayrollAuApi(object):
         header_params = {
             "Xero-Tenant-Id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -2051,6 +2091,7 @@ class PayrollAuApi(object):
         self,
         xero_tenant_id,
         leave_application_id,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -2059,6 +2100,7 @@ class PayrollAuApi(object):
         OAuth2 scope: payroll.employees
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str leave_application_id: Leave Application id for single object (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -2088,6 +2130,9 @@ class PayrollAuApi(object):
         header_params = {
             "Xero-Tenant-Id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -2127,6 +2172,7 @@ class PayrollAuApi(object):
         self,
         xero_tenant_id,
         employee_id,
+        idempotency_key=empty,
         employee=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -2137,6 +2183,7 @@ class PayrollAuApi(object):
         Update properties on a single employee  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param list[Employee] employee:
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -2167,6 +2214,9 @@ class PayrollAuApi(object):
         header_params = {
             "Xero-Tenant-Id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -2212,6 +2262,7 @@ class PayrollAuApi(object):
         xero_tenant_id,
         leave_application_id,
         leave_application,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -2221,6 +2272,7 @@ class PayrollAuApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str leave_application_id: Leave Application id for single object (required)
         :param list[LeaveApplication] leave_application: (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -2256,6 +2308,9 @@ class PayrollAuApi(object):
         header_params = {
             "Xero-Tenant-Id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -2300,6 +2355,7 @@ class PayrollAuApi(object):
         self,
         xero_tenant_id,
         pay_run_id,
+        idempotency_key=empty,
         pay_run=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -2310,6 +2366,7 @@ class PayrollAuApi(object):
         Update properties on a single PayRun  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str pay_run_id: PayRun id for single object (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param list[PayRun] pay_run:
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -2340,6 +2397,9 @@ class PayrollAuApi(object):
         header_params = {
             "Xero-Tenant-Id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -2384,6 +2444,7 @@ class PayrollAuApi(object):
         self,
         xero_tenant_id,
         payslip_id,
+        idempotency_key=empty,
         payslip_lines=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -2394,6 +2455,7 @@ class PayrollAuApi(object):
         Update lines on a single payslips  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str payslip_id: Payslip id for single object (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param list[PayslipLines] payslip_lines:
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -2424,6 +2486,9 @@ class PayrollAuApi(object):
         header_params = {
             "Xero-Tenant-Id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -2468,6 +2533,7 @@ class PayrollAuApi(object):
         self,
         xero_tenant_id,
         super_fund_id,
+        idempotency_key=empty,
         super_fund=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -2478,6 +2544,7 @@ class PayrollAuApi(object):
         Update properties on a single Superfund  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str super_fund_id: Superfund id for single object (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param list[SuperFund] super_fund:
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -2508,6 +2575,9 @@ class PayrollAuApi(object):
         header_params = {
             "Xero-Tenant-Id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -2552,6 +2622,7 @@ class PayrollAuApi(object):
         self,
         xero_tenant_id,
         timesheet_id,
+        idempotency_key=empty,
         timesheet=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -2562,6 +2633,7 @@ class PayrollAuApi(object):
         Update properties on a single timesheet  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str timesheet_id: Timesheet id for single object (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param list[Timesheet] timesheet:
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -2592,6 +2664,9 @@ class PayrollAuApi(object):
         header_params = {
             "Xero-Tenant-Id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []

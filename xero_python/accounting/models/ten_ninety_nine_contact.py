@@ -52,6 +52,9 @@ class TenNinetyNineContact(BaseModel):
         "street_address": "str",
         "tax_id": "str",
         "contact_id": "str",
+        "legal_name": "str",
+        "business_name": "str",
+        "federal_tax_classification": "str",
     }
 
     attribute_map = {
@@ -77,6 +80,9 @@ class TenNinetyNineContact(BaseModel):
         "street_address": "StreetAddress",
         "tax_id": "TaxID",
         "contact_id": "ContactId",
+        "legal_name": "LegalName",
+        "business_name": "BusinessName",
+        "federal_tax_classification": "FederalTaxClassification",
     }
 
     def __init__(
@@ -103,6 +109,9 @@ class TenNinetyNineContact(BaseModel):
         street_address=None,
         tax_id=None,
         contact_id=None,
+        legal_name=None,
+        business_name=None,
+        federal_tax_classification=None,
     ):  # noqa: E501
         """TenNinetyNineContact - a model defined in OpenAPI"""  # noqa: E501
 
@@ -128,6 +137,9 @@ class TenNinetyNineContact(BaseModel):
         self._street_address = None
         self._tax_id = None
         self._contact_id = None
+        self._legal_name = None
+        self._business_name = None
+        self._federal_tax_classification = None
         self.discriminator = None
 
         if box1 is not None:
@@ -174,6 +186,12 @@ class TenNinetyNineContact(BaseModel):
             self.tax_id = tax_id
         if contact_id is not None:
             self.contact_id = contact_id
+        if legal_name is not None:
+            self.legal_name = legal_name
+        if business_name is not None:
+            self.business_name = business_name
+        if federal_tax_classification is not None:
+            self.federal_tax_classification = federal_tax_classification
 
     @property
     def box1(self):
@@ -680,3 +698,90 @@ class TenNinetyNineContact(BaseModel):
         """
 
         self._contact_id = contact_id
+
+    @property
+    def legal_name(self):
+        """Gets the legal_name of this TenNinetyNineContact.  # noqa: E501
+
+        Contact legal name  # noqa: E501
+
+        :return: The legal_name of this TenNinetyNineContact.  # noqa: E501
+        :rtype: str
+        """
+        return self._legal_name
+
+    @legal_name.setter
+    def legal_name(self, legal_name):
+        """Sets the legal_name of this TenNinetyNineContact.
+
+        Contact legal name  # noqa: E501
+
+        :param legal_name: The legal_name of this TenNinetyNineContact.  # noqa: E501
+        :type: str
+        """
+
+        self._legal_name = legal_name
+
+    @property
+    def business_name(self):
+        """Gets the business_name of this TenNinetyNineContact.  # noqa: E501
+
+        Contact business name  # noqa: E501
+
+        :return: The business_name of this TenNinetyNineContact.  # noqa: E501
+        :rtype: str
+        """
+        return self._business_name
+
+    @business_name.setter
+    def business_name(self, business_name):
+        """Sets the business_name of this TenNinetyNineContact.
+
+        Contact business name  # noqa: E501
+
+        :param business_name: The business_name of this TenNinetyNineContact.  # noqa: E501
+        :type: str
+        """
+
+        self._business_name = business_name
+
+    @property
+    def federal_tax_classification(self):
+        """Gets the federal_tax_classification of this TenNinetyNineContact.  # noqa: E501
+
+        Contact federal tax classification  # noqa: E501
+
+        :return: The federal_tax_classification of this TenNinetyNineContact.  # noqa: E501
+        :rtype: str
+        """
+        return self._federal_tax_classification
+
+    @federal_tax_classification.setter
+    def federal_tax_classification(self, federal_tax_classification):
+        """Sets the federal_tax_classification of this TenNinetyNineContact.
+
+        Contact federal tax classification  # noqa: E501
+
+        :param federal_tax_classification: The federal_tax_classification of this TenNinetyNineContact.  # noqa: E501
+        :type: str
+        """
+        allowed_values = [
+            "SOLE_PROPRIETOR",
+            "PARTNERSHIP",
+            "TRUST_OR_ESTATE",
+            "NONPROFIT",
+            "C_CORP",
+            "S_CORP",
+            "OTHER",
+            "None",
+        ]  # noqa: E501
+
+        if federal_tax_classification:
+            if federal_tax_classification not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `federal_tax_classification` ({0}), must be one of {1}".format(  # noqa: E501
+                        federal_tax_classification, allowed_values
+                    )
+                )
+
+        self._federal_tax_classification = federal_tax_classification

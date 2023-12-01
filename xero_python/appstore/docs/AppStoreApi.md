@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **post_usage_records**
-> UsageRecord post_usage_records(subscription_id, subscription_item_id, create_usage_record)
+> UsageRecord post_usage_records(subscription_id, subscription_item_id, create_usage_record, idempotency_key=idempotency_key)
 
 Send metered usage belonging to this subscription and subscription item
 
@@ -166,9 +166,10 @@ api_instance = AppStoreApi(api_client)
 subscription_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Subscription object
 subscription_item_id = '00000000-0000-0000-0000-000000000000' # str | The unique identifier of the subscriptionItem
 create_usage_record = { "timestamp": "2022-01-21T13:01:00", "quantity": 10 } # CreateUsageRecord | Contains the quantity for the usage record to create
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Send metered usage belonging to this subscription and subscription item
-    api_response = api_instance.post_usage_records(subscription_id, subscription_item_id, create_usage_record)
+    api_response = api_instance.post_usage_records(subscription_id, subscription_item_id, create_usage_record, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AppStoreApi->post_usage_records: %s\n" % e)
@@ -181,6 +182,7 @@ Name | Type | Description  | Notes
  **subscription_id** | [**str**](.md)| Unique identifier for Subscription object | 
  **subscription_item_id** | [**str**](.md)| The unique identifier of the subscriptionItem | 
  **create_usage_record** | [**CreateUsageRecord**](CreateUsageRecord.md)| Contains the quantity for the usage record to create | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -198,7 +200,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **put_usage_records**
-> UsageRecord put_usage_records(subscription_id, subscription_item_id, usage_record_id, update_usage_record)
+> UsageRecord put_usage_records(subscription_id, subscription_item_id, usage_record_id, update_usage_record, idempotency_key=idempotency_key)
 
 Update and existing metered usage belonging to this subscription and subscription item
 
@@ -232,9 +234,10 @@ subscription_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifi
 subscription_item_id = '00000000-0000-0000-0000-000000000000' # str | The unique identifier of the subscriptionItem
 usage_record_id = '00000000-0000-0000-0000-000000000000' # str | The unique identifier of the usage record
 update_usage_record = { "quantity": 10 } # UpdateUsageRecord | Contains the quantity for the usage record to update
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Update and existing metered usage belonging to this subscription and subscription item
-    api_response = api_instance.put_usage_records(subscription_id, subscription_item_id, usage_record_id, update_usage_record)
+    api_response = api_instance.put_usage_records(subscription_id, subscription_item_id, usage_record_id, update_usage_record, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AppStoreApi->put_usage_records: %s\n" % e)
@@ -248,6 +251,7 @@ Name | Type | Description  | Notes
  **subscription_item_id** | [**str**](.md)| The unique identifier of the subscriptionItem | 
  **usage_record_id** | [**str**](.md)| The unique identifier of the usage record | 
  **update_usage_record** | [**UpdateUsageRecord**](UpdateUsageRecord.md)| Contains the quantity for the usage record to update | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
