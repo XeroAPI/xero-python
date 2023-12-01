@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 
 # **create_project**
-> Project create_project(xero_tenant_id, project_create_or_update)
+> Project create_project(xero_tenant_id, project_create_or_update, idempotency_key=idempotency_key)
 
 Create one or more new projects
 
@@ -55,9 +55,10 @@ api_instance = ProjectApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 project_create_or_update = { "contactId": "00000000-0000-0000-000-000000000000", "name": "New Kitchen", "deadlineUtc": "2019-12-10T12:59:59Z", "estimateAmount": "99.99" } # ProjectCreateOrUpdate | Create a new project with ProjectCreateOrUpdate object
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Create one or more new projects
-    api_response = api_instance.create_project(xero_tenant_id, project_create_or_update)
+    api_response = api_instance.create_project(xero_tenant_id, project_create_or_update, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->create_project: %s\n" % e)
@@ -69,6 +70,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **project_create_or_update** | [**ProjectCreateOrUpdate**](ProjectCreateOrUpdate.md)| Create a new project with ProjectCreateOrUpdate object | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -86,7 +88,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_task**
-> Task create_task(xero_tenant_id, project_id, task_create_or_update)
+> Task create_task(xero_tenant_id, project_id, task_create_or_update, idempotency_key=idempotency_key)
 
 Allows you to create a task
 
@@ -121,9 +123,10 @@ api_instance = ProjectApi(api_client)
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 project_id = 'project_id_example' # str | You can create a task on a specified projectId
 task_create_or_update = { "status": "INPROGRESS" } # TaskCreateOrUpdate | The task object you are creating
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Allows you to create a task
-    api_response = api_instance.create_task(xero_tenant_id, project_id, task_create_or_update)
+    api_response = api_instance.create_task(xero_tenant_id, project_id, task_create_or_update, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->create_task: %s\n" % e)
@@ -136,6 +139,7 @@ Name | Type | Description  | Notes
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **project_id** | [**str**](.md)| You can create a task on a specified projectId | 
  **task_create_or_update** | [**TaskCreateOrUpdate**](TaskCreateOrUpdate.md)| The task object you are creating | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -153,7 +157,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_time_entry**
-> TimeEntry create_time_entry(xero_tenant_id, project_id, time_entry_create_or_update)
+> TimeEntry create_time_entry(xero_tenant_id, project_id, time_entry_create_or_update, idempotency_key=idempotency_key)
 
 Creates a time entry for a specific project
 
@@ -188,9 +192,10 @@ api_instance = ProjectApi(api_client)
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 project_id = 'project_id_example' # str | You can specify an individual project by appending the projectId to the endpoint
 time_entry_create_or_update = { "userId": "00000000-0000-0000-0000-000000000000", "taskId": "00000000-0000-0000-0000-000000000000", "dateUtc": "2020-02-26T15:00:00Z", "duration":30, "description": "My description" } # TimeEntryCreateOrUpdate | The time entry object you are creating
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates a time entry for a specific project
-    api_response = api_instance.create_time_entry(xero_tenant_id, project_id, time_entry_create_or_update)
+    api_response = api_instance.create_time_entry(xero_tenant_id, project_id, time_entry_create_or_update, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->create_time_entry: %s\n" % e)
@@ -203,6 +208,7 @@ Name | Type | Description  | Notes
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **project_id** | [**str**](.md)| You can specify an individual project by appending the projectId to the endpoint | 
  **time_entry_create_or_update** | [**TimeEntryCreateOrUpdate**](TimeEntryCreateOrUpdate.md)| The time entry object you are creating | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -849,7 +855,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **patch_project**
-> patch_project(xero_tenant_id, project_id, project_patch)
+> patch_project(xero_tenant_id, project_id, project_patch, idempotency_key=idempotency_key)
 
 creates a project for the specified contact
 
@@ -884,9 +890,10 @@ api_instance = ProjectApi(api_client)
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 project_id = 'project_id_example' # str | You can specify an individual project by appending the projectId to the endpoint
 project_patch = { "status": "INPROGRESS" } # ProjectPatch | Update the status of an existing Project
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # creates a project for the specified contact
-    api_instance.patch_project(xero_tenant_id, project_id, project_patch)
+    api_instance.patch_project(xero_tenant_id, project_id, project_patch, idempotency_key=idempotency_key)
 except ApiException as e:
     print("Exception when calling ProjectApi->patch_project: %s\n" % e)
 ```
@@ -898,6 +905,7 @@ Name | Type | Description  | Notes
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **project_id** | [**str**](.md)| You can specify an individual project by appending the projectId to the endpoint | 
  **project_patch** | [**ProjectPatch**](ProjectPatch.md)| Update the status of an existing Project | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -915,7 +923,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_project**
-> update_project(xero_tenant_id, project_id, project_create_or_update)
+> update_project(xero_tenant_id, project_id, project_create_or_update, idempotency_key=idempotency_key)
 
 Updates a specific project
 
@@ -950,9 +958,10 @@ api_instance = ProjectApi(api_client)
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 project_id = 'project_id_example' # str | You can specify an individual project by appending the projectId to the endpoint
 project_create_or_update = { "name": "New Kitchen", "deadlineUtc": "2017-04-23T18:25:43.511Z", "estimateAmount": 99.99 } # ProjectCreateOrUpdate | Request of type ProjectCreateOrUpdate
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Updates a specific project
-    api_instance.update_project(xero_tenant_id, project_id, project_create_or_update)
+    api_instance.update_project(xero_tenant_id, project_id, project_create_or_update, idempotency_key=idempotency_key)
 except ApiException as e:
     print("Exception when calling ProjectApi->update_project: %s\n" % e)
 ```
@@ -964,6 +973,7 @@ Name | Type | Description  | Notes
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **project_id** | [**str**](.md)| You can specify an individual project by appending the projectId to the endpoint | 
  **project_create_or_update** | [**ProjectCreateOrUpdate**](ProjectCreateOrUpdate.md)| Request of type ProjectCreateOrUpdate | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -981,7 +991,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_task**
-> update_task(xero_tenant_id, project_id, task_id, task_create_or_update)
+> update_task(xero_tenant_id, project_id, task_id, task_create_or_update, idempotency_key=idempotency_key)
 
 Allows you to update a task
 
@@ -1017,9 +1027,10 @@ xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 project_id = 'project_id_example' # str | You can specify an individual project by appending the projectId to the endpoint
 task_id = 'task_id_example' # str | You can specify an individual task by appending the id to the endpoint
 task_create_or_update = xero_python.project.TaskCreateOrUpdate() # TaskCreateOrUpdate | The task object you are updating
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Allows you to update a task
-    api_instance.update_task(xero_tenant_id, project_id, task_id, task_create_or_update)
+    api_instance.update_task(xero_tenant_id, project_id, task_id, task_create_or_update, idempotency_key=idempotency_key)
 except ApiException as e:
     print("Exception when calling ProjectApi->update_task: %s\n" % e)
 ```
@@ -1032,6 +1043,7 @@ Name | Type | Description  | Notes
  **project_id** | [**str**](.md)| You can specify an individual project by appending the projectId to the endpoint | 
  **task_id** | [**str**](.md)| You can specify an individual task by appending the id to the endpoint | 
  **task_create_or_update** | [**TaskCreateOrUpdate**](TaskCreateOrUpdate.md)| The task object you are updating | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -1049,7 +1061,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_time_entry**
-> update_time_entry(xero_tenant_id, project_id, time_entry_id, time_entry_create_or_update)
+> update_time_entry(xero_tenant_id, project_id, time_entry_id, time_entry_create_or_update, idempotency_key=idempotency_key)
 
 Updates a time entry for a specific project
 
@@ -1085,9 +1097,10 @@ xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 project_id = 'project_id_example' # str | You can specify an individual project by appending the projectId to the endpoint
 time_entry_id = 'time_entry_id_example' # str | You can specify an individual time entry by appending the id to the endpoint
 time_entry_create_or_update = { "userId": "00000000-0000-0000-0000-000000000000", "taskId": "00000000-0000-0000-0000-000000000000", "dateUtc": "2020-02-27T15:00:00Z", "duration":45, "description": "My UPDATED description" } # TimeEntryCreateOrUpdate | The time entry object you are updating
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Updates a time entry for a specific project
-    api_instance.update_time_entry(xero_tenant_id, project_id, time_entry_id, time_entry_create_or_update)
+    api_instance.update_time_entry(xero_tenant_id, project_id, time_entry_id, time_entry_create_or_update, idempotency_key=idempotency_key)
 except ApiException as e:
     print("Exception when calling ProjectApi->update_time_entry: %s\n" % e)
 ```
@@ -1100,6 +1113,7 @@ Name | Type | Description  | Notes
  **project_id** | [**str**](.md)| You can specify an individual project by appending the projectId to the endpoint | 
  **time_entry_id** | [**str**](.md)| You can specify an individual time entry by appending the id to the endpoint | 
  **time_entry_create_or_update** | [**TimeEntryCreateOrUpdate**](TimeEntryCreateOrUpdate.md)| The time entry object you are updating | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 

@@ -40,7 +40,6 @@ class Contact(BaseModel):
         "last_name": "str",
         "company_number": "str",
         "email_address": "str",
-        "skype_user_name": "str",
         "contact_persons": "list[ContactPerson]",
         "bank_account_details": "str",
         "tax_number": "str",
@@ -86,7 +85,6 @@ class Contact(BaseModel):
         "last_name": "LastName",
         "company_number": "CompanyNumber",
         "email_address": "EmailAddress",
-        "skype_user_name": "SkypeUserName",
         "contact_persons": "ContactPersons",
         "bank_account_details": "BankAccountDetails",
         "tax_number": "TaxNumber",
@@ -133,7 +131,6 @@ class Contact(BaseModel):
         last_name=None,
         company_number=None,
         email_address=None,
-        skype_user_name=None,
         contact_persons=None,
         bank_account_details=None,
         tax_number=None,
@@ -179,7 +176,6 @@ class Contact(BaseModel):
         self._last_name = None
         self._company_number = None
         self._email_address = None
-        self._skype_user_name = None
         self._contact_persons = None
         self._bank_account_details = None
         self._tax_number = None
@@ -234,8 +230,6 @@ class Contact(BaseModel):
             self.company_number = company_number
         if email_address is not None:
             self.email_address = email_address
-        if skype_user_name is not None:
-            self.skype_user_name = skype_user_name
         if contact_persons is not None:
             self.contact_persons = contact_persons
         if bank_account_details is not None:
@@ -574,29 +568,6 @@ class Contact(BaseModel):
             )  # noqa: E501
 
         self._email_address = email_address
-
-    @property
-    def skype_user_name(self):
-        """Gets the skype_user_name of this Contact.  # noqa: E501
-
-        Skype user name of contact  # noqa: E501
-
-        :return: The skype_user_name of this Contact.  # noqa: E501
-        :rtype: str
-        """
-        return self._skype_user_name
-
-    @skype_user_name.setter
-    def skype_user_name(self, skype_user_name):
-        """Sets the skype_user_name of this Contact.
-
-        Skype user name of contact  # noqa: E501
-
-        :param skype_user_name: The skype_user_name of this Contact.  # noqa: E501
-        :type: str
-        """
-
-        self._skype_user_name = skype_user_name
 
     @property
     def contact_persons(self):

@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.38.0
+    OpenAPI spec version: 2.40.1
 """
 
 import importlib
@@ -60,6 +60,7 @@ class FilesApi(object):
         self,
         xero_tenant_id,
         file_id,
+        idempotency_key=empty,
         association=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -70,6 +71,7 @@ class FilesApi(object):
         By passing in the appropriate options, you can create a new folder  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str file_id: File id for single object (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param Association association:
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -100,6 +102,9 @@ class FilesApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -143,6 +148,7 @@ class FilesApi(object):
     def create_folder(
         self,
         xero_tenant_id,
+        idempotency_key=empty,
         folder=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -152,6 +158,7 @@ class FilesApi(object):
         OAuth2 scope: files
         By passing in the appropriate properties, you can create a new folder  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param Folder folder:
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -174,6 +181,9 @@ class FilesApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -442,6 +452,10 @@ class FilesApi(object):
         self,
         xero_tenant_id,
         object_id,
+        pagesize=empty,
+        page=empty,
+        sort=empty,
+        direction=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -451,6 +465,10 @@ class FilesApi(object):
         By passing in the appropriate options, you can retrieve an association  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str object_id: Object id for single object (required)
+        :param int pagesize: pass an optional page size value
+        :param int page: number of records to skip for pagination
+        :param str sort: values to sort by
+        :param str direction: direction to sort by
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -470,12 +488,38 @@ class FilesApi(object):
                 "when calling `get_associations_by_object`"
             )
 
+        if pagesize is not empty and pagesize > 100:
+            raise ValueError(
+                "Invalid value for parameter `pagesize` "
+                "when calling `get_associations_by_object`, must be a value "
+                "less than or equal to "
+                "`100`"
+            )
+        if page is not empty and page < 1:
+            raise ValueError(
+                "Invalid value for parameter `page` "
+                "when calling `get_associations_by_object`, must be a value "
+                "greater than or equal to "
+                "`1`"
+            )
         collection_formats = {}
         path_params = {
             "ObjectId": object_id,
         }
 
         query_params = []
+
+        if pagesize is not empty:
+            query_params.append(("pagesize", pagesize))
+
+        if page is not empty:
+            query_params.append(("page", page))
+
+        if sort is not empty:
+            query_params.append(("sort", sort))
+
+        if direction is not empty:
+            query_params.append(("direction", direction))
 
         header_params = {
             "xero-tenant-id": xero_tenant_id,
@@ -1138,6 +1182,7 @@ class FilesApi(object):
         self,
         xero_tenant_id,
         file_id,
+        idempotency_key=empty,
         file_object=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -1148,6 +1193,7 @@ class FilesApi(object):
         Updates file properties of a single file  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str file_id: File id for single object (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param FileObject file_object:
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -1177,6 +1223,9 @@ class FilesApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -1222,6 +1271,7 @@ class FilesApi(object):
         xero_tenant_id,
         folder_id,
         folder,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -1232,6 +1282,7 @@ class FilesApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str folder_id: Folder id for single object (required)
         :param Folder folder: (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -1267,6 +1318,9 @@ class FilesApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -1313,6 +1367,7 @@ class FilesApi(object):
         body,
         name,
         filename,
+        idempotency_key=empty,
         mime_type=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -1324,6 +1379,7 @@ class FilesApi(object):
         :param str body: (required)
         :param str name: exact name of the file you are uploading (required)
         :param str filename: (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param str mime_type:
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -1362,6 +1418,9 @@ class FilesApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = [
@@ -1415,6 +1474,7 @@ class FilesApi(object):
         body,
         name,
         filename,
+        idempotency_key=empty,
         mime_type=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -1427,6 +1487,7 @@ class FilesApi(object):
         :param str body: (required)
         :param str name: exact name of the file you are uploading (required)
         :param str filename: (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param str mime_type:
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -1475,6 +1536,9 @@ class FilesApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = [

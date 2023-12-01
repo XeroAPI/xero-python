@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.38.0
+    OpenAPI spec version: 2.40.1
 """
 
 import importlib
@@ -60,6 +60,7 @@ class AssetApi(object):
         self,
         xero_tenant_id,
         asset,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -69,6 +70,7 @@ class AssetApi(object):
         Adds an asset to the system  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param Asset asset: Fixed asset you are creating (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -95,6 +97,9 @@ class AssetApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -138,6 +143,7 @@ class AssetApi(object):
     def create_asset_type(
         self,
         xero_tenant_id,
+        idempotency_key=empty,
         asset_type=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -147,6 +153,7 @@ class AssetApi(object):
         OAuth2 scope: assets
         Adds an fixed asset type to the system  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param AssetType asset_type: Asset type to add
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -169,6 +176,9 @@ class AssetApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []

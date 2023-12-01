@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.38.0
+    OpenAPI spec version: 2.40.1
 """
 
 import importlib
@@ -193,6 +193,7 @@ class AppStoreApi(object):
         subscription_id,
         subscription_item_id,
         create_usage_record,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -202,6 +203,7 @@ class AppStoreApi(object):
         :param str subscription_id: Unique identifier for Subscription object (required)
         :param str subscription_item_id: The unique identifier of the subscriptionItem (required)
         :param CreateUsageRecord create_usage_record: Contains the quantity for the usage record to create (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -236,6 +238,9 @@ class AppStoreApi(object):
         query_params = []
 
         header_params = {}
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -284,6 +289,7 @@ class AppStoreApi(object):
         subscription_item_id,
         usage_record_id,
         update_usage_record,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -294,6 +300,7 @@ class AppStoreApi(object):
         :param str subscription_item_id: The unique identifier of the subscriptionItem (required)
         :param str usage_record_id: The unique identifier of the usage record (required)
         :param UpdateUsageRecord update_usage_record: Contains the quantity for the usage record to update (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -335,6 +342,9 @@ class AppStoreApi(object):
         query_params = []
 
         header_params = {}
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []

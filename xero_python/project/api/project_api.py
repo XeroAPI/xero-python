@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.38.0
+    OpenAPI spec version: 2.40.1
 """
 
 import importlib
@@ -60,6 +60,7 @@ class ProjectApi(object):
         self,
         xero_tenant_id,
         project_create_or_update,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -68,6 +69,7 @@ class ProjectApi(object):
         OAuth2 scope: projects
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param ProjectCreateOrUpdate project_create_or_update: Create a new project with ProjectCreateOrUpdate object (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -95,6 +97,9 @@ class ProjectApi(object):
         header_params = {
             "Xero-Tenant-Id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -140,6 +145,7 @@ class ProjectApi(object):
         xero_tenant_id,
         project_id,
         task_create_or_update,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -150,6 +156,7 @@ class ProjectApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str project_id: You can create a task on a specified projectId (required)
         :param TaskCreateOrUpdate task_create_or_update: The task object you are creating (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -185,6 +192,9 @@ class ProjectApi(object):
         header_params = {
             "Xero-Tenant-Id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -230,6 +240,7 @@ class ProjectApi(object):
         xero_tenant_id,
         project_id,
         time_entry_create_or_update,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -240,6 +251,7 @@ class ProjectApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str project_id: You can specify an individual project by appending the projectId to the endpoint (required)
         :param TimeEntryCreateOrUpdate time_entry_create_or_update: The time entry object you are creating (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -275,6 +287,9 @@ class ProjectApi(object):
         header_params = {
             "Xero-Tenant-Id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -1163,6 +1178,7 @@ class ProjectApi(object):
         xero_tenant_id,
         project_id,
         project_patch,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -1173,6 +1189,7 @@ class ProjectApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str project_id: You can specify an individual project by appending the projectId to the endpoint (required)
         :param ProjectPatch project_patch: Update the status of an existing Project (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -1208,6 +1225,9 @@ class ProjectApi(object):
         header_params = {
             "Xero-Tenant-Id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -1253,6 +1273,7 @@ class ProjectApi(object):
         xero_tenant_id,
         project_id,
         project_create_or_update,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -1263,6 +1284,7 @@ class ProjectApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str project_id: You can specify an individual project by appending the projectId to the endpoint (required)
         :param ProjectCreateOrUpdate project_create_or_update: Request of type ProjectCreateOrUpdate (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -1298,6 +1320,9 @@ class ProjectApi(object):
         header_params = {
             "Xero-Tenant-Id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -1344,6 +1369,7 @@ class ProjectApi(object):
         project_id,
         task_id,
         task_create_or_update,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -1355,6 +1381,7 @@ class ProjectApi(object):
         :param str project_id: You can specify an individual project by appending the projectId to the endpoint (required)
         :param str task_id: You can specify an individual task by appending the id to the endpoint (required)
         :param TaskCreateOrUpdate task_create_or_update: The task object you are updating (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -1396,6 +1423,9 @@ class ProjectApi(object):
         header_params = {
             "Xero-Tenant-Id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -1442,6 +1472,7 @@ class ProjectApi(object):
         project_id,
         time_entry_id,
         time_entry_create_or_update,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -1453,6 +1484,7 @@ class ProjectApi(object):
         :param str project_id: You can specify an individual project by appending the projectId to the endpoint (required)
         :param str time_entry_id: You can specify an individual time entry by appending the id to the endpoint (required)
         :param TimeEntryCreateOrUpdate time_entry_create_or_update: The time entry object you are updating (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -1495,6 +1527,9 @@ class ProjectApi(object):
         header_params = {
             "Xero-Tenant-Id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []

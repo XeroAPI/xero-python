@@ -13,7 +13,6 @@ Name | Type | Description | Notes
 **last_name** | **str** | Last name of contact person (max length &#x3D; 255) | [optional] 
 **company_number** | **str** | Company registration number (max length &#x3D; 50) | [optional] 
 **email_address** | **str** | Email address of contact person (umlauts not supported) (max length  &#x3D; 255) | [optional] 
-**skype_user_name** | **str** | Skype user name of contact | [optional] 
 **contact_persons** | [**list[ContactPerson]**](ContactPerson.md) | See contact persons | [optional] 
 **bank_account_details** | **str** | Bank account number of contact | [optional] 
 **tax_number** | **str** | Tax number of contact – this is also known as the ABN (Australia), GST Number (New Zealand), VAT Number (UK) or Tax ID Number (US and global) in the Xero UI depending on which regionalized version of Xero you are using (max length &#x3D; 50) | [optional] 

@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.38.0
+    OpenAPI spec version: 2.40.1
 """
 
 import importlib
@@ -60,6 +60,7 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         account,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -68,6 +69,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param Account account: Account object in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -95,6 +97,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -141,6 +146,7 @@ class AccountingApi(object):
         account_id,
         file_name,
         body,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -151,6 +157,7 @@ class AccountingApi(object):
         :param str account_id: Unique identifier for Account object (required)
         :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -193,6 +200,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -241,6 +251,7 @@ class AccountingApi(object):
         bank_transaction_id,
         file_name,
         body,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -251,6 +262,7 @@ class AccountingApi(object):
         :param str bank_transaction_id: Xero generated unique identifier for a bank transaction (required)
         :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -293,6 +305,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -342,6 +357,7 @@ class AccountingApi(object):
         xero_tenant_id,
         bank_transaction_id,
         history_records,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -351,6 +367,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str bank_transaction_id: Xero generated unique identifier for a bank transaction (required)
         :param HistoryRecords history_records: HistoryRecords containing an array of HistoryRecord objects in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -386,6 +403,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -432,6 +452,7 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         bank_transactions,
+        idempotency_key=empty,
         summarize_errors=empty,
         unitdp=empty,
         _return_http_data_only=True,
@@ -442,6 +463,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param BankTransactions bank_transactions: BankTransactions with an array of BankTransaction objects in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
         :param bool _return_http_data_only: return received data only
@@ -477,6 +499,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -521,6 +546,7 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         bank_transfers,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -529,6 +555,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param BankTransfers bank_transfers: BankTransfers with array of BankTransfer objects in request body (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -556,6 +583,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -602,6 +632,7 @@ class AccountingApi(object):
         bank_transfer_id,
         file_name,
         body,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -612,6 +643,7 @@ class AccountingApi(object):
         :param str bank_transfer_id: Xero generated unique identifier for a bank transfer (required)
         :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -654,6 +686,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -703,6 +738,7 @@ class AccountingApi(object):
         xero_tenant_id,
         bank_transfer_id,
         history_records,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -712,6 +748,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str bank_transfer_id: Xero generated unique identifier for a bank transfer (required)
         :param HistoryRecords history_records: HistoryRecords containing an array of HistoryRecord objects in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -747,6 +784,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -794,6 +834,7 @@ class AccountingApi(object):
         xero_tenant_id,
         batch_payments,
         summarize_errors=empty,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -803,6 +844,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param BatchPayments batch_payments: BatchPayments with an array of Payments in body of request (required)
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -833,6 +875,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -878,6 +923,7 @@ class AccountingApi(object):
         xero_tenant_id,
         batch_payment_id,
         history_records,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -887,6 +933,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str batch_payment_id: Unique identifier for BatchPayment (required)
         :param HistoryRecords history_records: HistoryRecords containing an array of HistoryRecord objects in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -922,6 +969,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -969,6 +1019,7 @@ class AccountingApi(object):
         xero_tenant_id,
         branding_theme_id,
         payment_services,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -978,6 +1029,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str branding_theme_id: Unique identifier for a Branding Theme (required)
         :param PaymentServices payment_services: PaymentServices array with PaymentService object in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -1013,6 +1065,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -1061,6 +1116,7 @@ class AccountingApi(object):
         contact_id,
         file_name,
         body,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -1071,6 +1127,7 @@ class AccountingApi(object):
         :param str contact_id: Unique identifier for a Contact (required)
         :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -1113,6 +1170,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -1159,6 +1219,7 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         contact_groups,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -1167,6 +1228,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.contacts
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param ContactGroups contact_groups: ContactGroups with an array of names in request body (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -1194,6 +1256,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -1239,6 +1304,7 @@ class AccountingApi(object):
         xero_tenant_id,
         contact_group_id,
         contacts,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -1248,6 +1314,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str contact_group_id: Unique identifier for a Contact Group (required)
         :param Contacts contacts: Contacts with array of contacts specifying the ContactID to be added to ContactGroup in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -1283,6 +1350,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -1330,6 +1400,7 @@ class AccountingApi(object):
         xero_tenant_id,
         contact_id,
         history_records,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -1339,6 +1410,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str contact_id: Unique identifier for a Contact (required)
         :param HistoryRecords history_records: HistoryRecords containing an array of HistoryRecord objects in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -1374,6 +1446,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -1418,6 +1493,7 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         contacts,
+        idempotency_key=empty,
         summarize_errors=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -1427,6 +1503,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.contacts
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param Contacts contacts: Contacts with an array of Contact objects to create in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -1458,6 +1535,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -1503,6 +1583,7 @@ class AccountingApi(object):
         xero_tenant_id,
         credit_note_id,
         allocations,
+        idempotency_key=empty,
         summarize_errors=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -1513,6 +1594,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str credit_note_id: Unique identifier for a Credit Note (required)
         :param Allocations allocations: Allocations with array of Allocation object in body of request. (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -1552,6 +1634,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -1600,6 +1685,7 @@ class AccountingApi(object):
         credit_note_id,
         file_name,
         body,
+        idempotency_key=empty,
         include_online=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -1611,6 +1697,7 @@ class AccountingApi(object):
         :param str credit_note_id: Unique identifier for a Credit Note (required)
         :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool include_online: Allows an attachment to be seen by the end customer within their online invoice
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -1657,6 +1744,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -1706,6 +1796,7 @@ class AccountingApi(object):
         xero_tenant_id,
         credit_note_id,
         history_records,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -1715,6 +1806,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str credit_note_id: Unique identifier for a Credit Note (required)
         :param HistoryRecords history_records: HistoryRecords containing an array of HistoryRecord objects in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -1750,6 +1842,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -1794,6 +1889,7 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         credit_notes,
+        idempotency_key=empty,
         summarize_errors=empty,
         unitdp=empty,
         _return_http_data_only=True,
@@ -1804,6 +1900,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param CreditNotes credit_notes: Credit Notes with array of CreditNote object in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
         :param bool _return_http_data_only: return received data only
@@ -1839,6 +1936,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -1883,6 +1983,7 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         currency,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -1891,6 +1992,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param Currency currency: Currency object in the body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -1918,6 +2020,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -1962,6 +2067,7 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         employees,
+        idempotency_key=empty,
         summarize_errors=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -1971,6 +2077,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param Employees employees: Employees with array of Employee object in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -2002,6 +2109,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -2047,6 +2157,7 @@ class AccountingApi(object):
         xero_tenant_id,
         expense_claim_id,
         history_records,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -2056,6 +2167,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str expense_claim_id: Unique identifier for a ExpenseClaim (required)
         :param HistoryRecords history_records: HistoryRecords containing an array of HistoryRecord objects in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -2091,6 +2203,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -2137,6 +2252,7 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         expense_claims,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -2145,6 +2261,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param ExpenseClaims expense_claims: ExpenseClaims with array of ExpenseClaim object in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -2172,6 +2289,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -2218,6 +2338,7 @@ class AccountingApi(object):
         invoice_id,
         file_name,
         body,
+        idempotency_key=empty,
         include_online=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -2229,6 +2350,7 @@ class AccountingApi(object):
         :param str invoice_id: Unique identifier for an Invoice (required)
         :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool include_online: Allows an attachment to be seen by the end customer within their online invoice
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -2276,6 +2398,9 @@ class AccountingApi(object):
             "xero-tenant-id": xero_tenant_id,
         }
 
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
+
         local_var_files = {}
         form_params = []
 
@@ -2322,6 +2447,7 @@ class AccountingApi(object):
         xero_tenant_id,
         invoice_id,
         history_records,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -2331,6 +2457,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str invoice_id: Unique identifier for an Invoice (required)
         :param HistoryRecords history_records: HistoryRecords containing an array of HistoryRecord objects in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -2366,6 +2493,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -2410,6 +2540,7 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         invoices,
+        idempotency_key=empty,
         summarize_errors=empty,
         unitdp=empty,
         _return_http_data_only=True,
@@ -2420,6 +2551,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param Invoices invoices: Invoices with an array of invoice objects in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
         :param bool _return_http_data_only: return received data only
@@ -2455,6 +2587,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -2500,6 +2635,7 @@ class AccountingApi(object):
         xero_tenant_id,
         item_id,
         history_records,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -2509,6 +2645,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str item_id: Unique identifier for an Item (required)
         :param HistoryRecords history_records: HistoryRecords containing an array of HistoryRecord objects in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -2544,6 +2681,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -2588,6 +2728,7 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         items,
+        idempotency_key=empty,
         summarize_errors=empty,
         unitdp=empty,
         _return_http_data_only=True,
@@ -2598,6 +2739,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param Items items: Items with an array of Item objects in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
         :param bool _return_http_data_only: return received data only
@@ -2632,6 +2774,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -2676,6 +2821,7 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         linked_transaction,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -2684,6 +2830,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param LinkedTransaction linked_transaction: LinkedTransaction object in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -2711,6 +2858,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -2757,6 +2907,7 @@ class AccountingApi(object):
         manual_journal_id,
         file_name,
         body,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -2767,6 +2918,7 @@ class AccountingApi(object):
         :param str manual_journal_id: Unique identifier for a ManualJournal (required)
         :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -2809,6 +2961,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -2858,6 +3013,7 @@ class AccountingApi(object):
         xero_tenant_id,
         manual_journal_id,
         history_records,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -2867,6 +3023,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str manual_journal_id: Unique identifier for a ManualJournal (required)
         :param HistoryRecords history_records: HistoryRecords containing an array of HistoryRecord objects in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -2902,6 +3059,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -2948,6 +3108,7 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         manual_journals,
+        idempotency_key=empty,
         summarize_errors=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -2957,6 +3118,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param ManualJournals manual_journals: ManualJournals array with ManualJournal object in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -2988,6 +3150,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -3033,6 +3198,7 @@ class AccountingApi(object):
         xero_tenant_id,
         overpayment_id,
         allocations,
+        idempotency_key=empty,
         summarize_errors=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -3043,6 +3209,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str overpayment_id: Unique identifier for a Overpayment (required)
         :param Allocations allocations: Allocations array with Allocation object in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -3082,6 +3249,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -3129,6 +3299,7 @@ class AccountingApi(object):
         xero_tenant_id,
         overpayment_id,
         history_records,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -3138,6 +3309,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str overpayment_id: Unique identifier for a Overpayment (required)
         :param HistoryRecords history_records: HistoryRecords containing an array of HistoryRecord objects in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -3173,6 +3345,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -3217,6 +3392,7 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         payment,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -3225,6 +3401,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param Payment payment: Request body with a single Payment object (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -3252,6 +3429,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -3297,6 +3477,7 @@ class AccountingApi(object):
         xero_tenant_id,
         payment_id,
         history_records,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -3306,6 +3487,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str payment_id: Unique identifier for a Payment (required)
         :param HistoryRecords history_records: HistoryRecords containing an array of HistoryRecord objects in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -3341,6 +3523,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -3385,6 +3570,7 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         payment_services,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -3393,6 +3579,7 @@ class AccountingApi(object):
         OAuth2 scope: paymentservices
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param PaymentServices payment_services: PaymentServices array with PaymentService object in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -3420,6 +3607,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -3464,6 +3654,7 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         payments,
+        idempotency_key=empty,
         summarize_errors=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -3473,6 +3664,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param Payments payments: Payments array with Payment object in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -3504,6 +3696,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -3549,6 +3744,7 @@ class AccountingApi(object):
         xero_tenant_id,
         prepayment_id,
         allocations,
+        idempotency_key=empty,
         summarize_errors=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -3559,6 +3755,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str prepayment_id: Unique identifier for a PrePayment (required)
         :param Allocations allocations: Allocations with an array of Allocation object in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -3598,6 +3795,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -3645,6 +3845,7 @@ class AccountingApi(object):
         xero_tenant_id,
         prepayment_id,
         history_records,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -3654,6 +3855,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str prepayment_id: Unique identifier for a PrePayment (required)
         :param HistoryRecords history_records: HistoryRecords containing an array of HistoryRecord objects in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -3689,6 +3891,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -3735,6 +3940,7 @@ class AccountingApi(object):
         purchase_order_id,
         file_name,
         body,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -3745,6 +3951,7 @@ class AccountingApi(object):
         :param str purchase_order_id: Unique identifier for an Purchase Order (required)
         :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -3787,6 +3994,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -3836,6 +4046,7 @@ class AccountingApi(object):
         xero_tenant_id,
         purchase_order_id,
         history_records,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -3845,6 +4056,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str purchase_order_id: Unique identifier for an Purchase Order (required)
         :param HistoryRecords history_records: HistoryRecords containing an array of HistoryRecord objects in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -3880,6 +4092,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -3926,6 +4141,7 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         purchase_orders,
+        idempotency_key=empty,
         summarize_errors=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -3935,6 +4151,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param PurchaseOrders purchase_orders: PurchaseOrders with an array of PurchaseOrder object in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -3966,6 +4183,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -4012,6 +4232,7 @@ class AccountingApi(object):
         quote_id,
         file_name,
         body,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -4022,6 +4243,7 @@ class AccountingApi(object):
         :param str quote_id: Unique identifier for an Quote (required)
         :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -4064,6 +4286,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -4111,6 +4336,7 @@ class AccountingApi(object):
         xero_tenant_id,
         quote_id,
         history_records,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -4120,6 +4346,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str quote_id: Unique identifier for an Quote (required)
         :param HistoryRecords history_records: HistoryRecords containing an array of HistoryRecord objects in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -4155,6 +4382,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -4199,6 +4429,7 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         quotes,
+        idempotency_key=empty,
         summarize_errors=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -4208,6 +4439,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param Quotes quotes: Quotes with an array of Quote object in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -4239,6 +4471,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -4283,6 +4518,7 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         receipts,
+        idempotency_key=empty,
         unitdp=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -4292,6 +4528,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param Receipts receipts: Receipts with an array of Receipt object in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -4323,6 +4560,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -4369,6 +4609,7 @@ class AccountingApi(object):
         receipt_id,
         file_name,
         body,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -4379,6 +4620,7 @@ class AccountingApi(object):
         :param str receipt_id: Unique identifier for a Receipt (required)
         :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -4421,6 +4663,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -4468,6 +4713,7 @@ class AccountingApi(object):
         xero_tenant_id,
         receipt_id,
         history_records,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -4477,6 +4723,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str receipt_id: Unique identifier for a Receipt (required)
         :param HistoryRecords history_records: HistoryRecords containing an array of HistoryRecord objects in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -4512,6 +4759,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -4558,6 +4808,7 @@ class AccountingApi(object):
         repeating_invoice_id,
         file_name,
         body,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -4568,6 +4819,7 @@ class AccountingApi(object):
         :param str repeating_invoice_id: Unique identifier for a Repeating Invoice (required)
         :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -4610,6 +4862,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -4659,6 +4914,7 @@ class AccountingApi(object):
         xero_tenant_id,
         repeating_invoice_id,
         history_records,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -4668,6 +4924,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str repeating_invoice_id: Unique identifier for a Repeating Invoice (required)
         :param HistoryRecords history_records: HistoryRecords containing an array of HistoryRecord objects in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -4703,6 +4960,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -4749,6 +5009,7 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         repeating_invoices,
+        idempotency_key=empty,
         summarize_errors=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -4758,6 +5019,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param RepeatingInvoices repeating_invoices: RepeatingInvoices with an array of repeating invoice objects in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -4789,6 +5051,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -4833,6 +5098,7 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         tax_rates,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -4841,6 +5107,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param TaxRates tax_rates: TaxRates array with TaxRate object in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -4868,6 +5135,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -4912,6 +5182,7 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         tracking_category,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -4920,6 +5191,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param TrackingCategory tracking_category: TrackingCategory object in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -4947,6 +5219,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -4992,6 +5267,7 @@ class AccountingApi(object):
         xero_tenant_id,
         tracking_category_id,
         tracking_option,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -5001,6 +5277,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str tracking_category_id: Unique identifier for a TrackingCategory (required)
         :param TrackingOption tracking_option: TrackingOption object in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -5036,6 +5313,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -5156,6 +5436,7 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         batch_payment_delete,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -5164,6 +5445,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param BatchPaymentDelete batch_payment_delete: (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -5191,6 +5473,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -5236,6 +5521,7 @@ class AccountingApi(object):
         xero_tenant_id,
         batch_payment_id,
         batch_payment_delete_by_url_param,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -5245,6 +5531,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str batch_payment_id: Unique identifier for BatchPayment (required)
         :param BatchPaymentDeleteByUrlParam batch_payment_delete_by_url_param: (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -5280,6 +5567,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -5484,6 +5774,95 @@ class AccountingApi(object):
                 error, self, "delete_contact_group_contacts"
             )
 
+    def delete_credit_note_allocations(
+        self,
+        xero_tenant_id,
+        credit_note_id,
+        allocation_id,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
+        """Deletes an Allocation from a Credit Note  # noqa: E501
+        OAuth2 scope: accounting.transactions
+        :param str xero_tenant_id: Xero identifier for Tenant (required)
+        :param str credit_note_id: Unique identifier for a Credit Note (required)
+        :param str allocation_id: Unique identifier for Allocation object (required)
+        :param bool _return_http_data_only: return received data only
+        :param bool _preload_content: load received data in models
+        :param bool _request_timeout: maximum wait time for response
+        :return: Allocation
+        """
+
+        # verify the required parameter 'xero_tenant_id' is set
+        if xero_tenant_id is None:
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `delete_credit_note_allocations`"
+            )
+        # verify the required parameter 'credit_note_id' is set
+        if credit_note_id is None:
+            raise ValueError(
+                "Missing the required parameter `credit_note_id` "
+                "when calling `delete_credit_note_allocations`"
+            )
+        # verify the required parameter 'allocation_id' is set
+        if allocation_id is None:
+            raise ValueError(
+                "Missing the required parameter `allocation_id` "
+                "when calling `delete_credit_note_allocations`"
+            )
+
+        collection_formats = {}
+        path_params = {
+            "CreditNoteID": credit_note_id,
+            "AllocationID": allocation_id,
+        }
+
+        query_params = []
+
+        header_params = {
+            "xero-tenant-id": xero_tenant_id,
+        }
+
+        local_var_files = {}
+        form_params = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url(
+            "/CreditNotes/{CreditNoteID}/Allocations/{AllocationID}"
+        )
+
+        try:
+            return self.api_client.call_api(
+                url,
+                "DELETE",
+                path_params,
+                query_params,
+                header_params,
+                body=body_params,
+                post_params=form_params,
+                files=local_var_files,
+                response_type="Allocation",
+                response_model_finder=self.get_model_finder(),
+                auth_settings=auth_settings,
+                _return_http_data_only=_return_http_data_only,
+                _preload_content=_preload_content,
+                _request_timeout=_request_timeout,
+                collection_formats=collection_formats,
+            )
+        except exceptions.HTTPStatusException as error:
+            raise translate_status_exception(
+                error, self, "delete_credit_note_allocations"
+            )
+
     def delete_item(
         self,
         xero_tenant_id,
@@ -5635,11 +6014,101 @@ class AccountingApi(object):
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "delete_linked_transaction")
 
+    def delete_overpayment_allocations(
+        self,
+        xero_tenant_id,
+        overpayment_id,
+        allocation_id,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
+        """Deletes an Allocation from an overpayment  # noqa: E501
+        OAuth2 scope: accounting.transactions
+        :param str xero_tenant_id: Xero identifier for Tenant (required)
+        :param str overpayment_id: Unique identifier for a Overpayment (required)
+        :param str allocation_id: Unique identifier for Allocation object (required)
+        :param bool _return_http_data_only: return received data only
+        :param bool _preload_content: load received data in models
+        :param bool _request_timeout: maximum wait time for response
+        :return: Allocation
+        """
+
+        # verify the required parameter 'xero_tenant_id' is set
+        if xero_tenant_id is None:
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `delete_overpayment_allocations`"
+            )
+        # verify the required parameter 'overpayment_id' is set
+        if overpayment_id is None:
+            raise ValueError(
+                "Missing the required parameter `overpayment_id` "
+                "when calling `delete_overpayment_allocations`"
+            )
+        # verify the required parameter 'allocation_id' is set
+        if allocation_id is None:
+            raise ValueError(
+                "Missing the required parameter `allocation_id` "
+                "when calling `delete_overpayment_allocations`"
+            )
+
+        collection_formats = {}
+        path_params = {
+            "OverpaymentID": overpayment_id,
+            "AllocationID": allocation_id,
+        }
+
+        query_params = []
+
+        header_params = {
+            "xero-tenant-id": xero_tenant_id,
+        }
+
+        local_var_files = {}
+        form_params = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url(
+            "/Overpayments/{OverpaymentID}/Allocations/{AllocationID}"
+        )
+
+        try:
+            return self.api_client.call_api(
+                url,
+                "DELETE",
+                path_params,
+                query_params,
+                header_params,
+                body=body_params,
+                post_params=form_params,
+                files=local_var_files,
+                response_type="Allocation",
+                response_model_finder=self.get_model_finder(),
+                auth_settings=auth_settings,
+                _return_http_data_only=_return_http_data_only,
+                _preload_content=_preload_content,
+                _request_timeout=_request_timeout,
+                collection_formats=collection_formats,
+            )
+        except exceptions.HTTPStatusException as error:
+            raise translate_status_exception(
+                error, self, "delete_overpayment_allocations"
+            )
+
     def delete_payment(
         self,
         xero_tenant_id,
         payment_id,
         payment_delete,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -5649,6 +6118,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str payment_id: Unique identifier for a Payment (required)
         :param PaymentDelete payment_delete: (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -5684,6 +6154,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -5723,6 +6196,95 @@ class AccountingApi(object):
             )
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "delete_payment")
+
+    def delete_prepayment_allocations(
+        self,
+        xero_tenant_id,
+        prepayment_id,
+        allocation_id,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
+        """Deletes an Allocation from a Prepayment  # noqa: E501
+        OAuth2 scope: accounting.transactions
+        :param str xero_tenant_id: Xero identifier for Tenant (required)
+        :param str prepayment_id: Unique identifier for a PrePayment (required)
+        :param str allocation_id: Unique identifier for Allocation object (required)
+        :param bool _return_http_data_only: return received data only
+        :param bool _preload_content: load received data in models
+        :param bool _request_timeout: maximum wait time for response
+        :return: Allocation
+        """
+
+        # verify the required parameter 'xero_tenant_id' is set
+        if xero_tenant_id is None:
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `delete_prepayment_allocations`"
+            )
+        # verify the required parameter 'prepayment_id' is set
+        if prepayment_id is None:
+            raise ValueError(
+                "Missing the required parameter `prepayment_id` "
+                "when calling `delete_prepayment_allocations`"
+            )
+        # verify the required parameter 'allocation_id' is set
+        if allocation_id is None:
+            raise ValueError(
+                "Missing the required parameter `allocation_id` "
+                "when calling `delete_prepayment_allocations`"
+            )
+
+        collection_formats = {}
+        path_params = {
+            "PrepaymentID": prepayment_id,
+            "AllocationID": allocation_id,
+        }
+
+        query_params = []
+
+        header_params = {
+            "xero-tenant-id": xero_tenant_id,
+        }
+
+        local_var_files = {}
+        form_params = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url(
+            "/Prepayments/{PrepaymentID}/Allocations/{AllocationID}"
+        )
+
+        try:
+            return self.api_client.call_api(
+                url,
+                "DELETE",
+                path_params,
+                query_params,
+                header_params,
+                body=body_params,
+                post_params=form_params,
+                files=local_var_files,
+                response_type="Allocation",
+                response_model_finder=self.get_model_finder(),
+                auth_settings=auth_settings,
+                _return_http_data_only=_return_http_data_only,
+                _preload_content=_preload_content,
+                _request_timeout=_request_timeout,
+                collection_formats=collection_formats,
+            )
+        except exceptions.HTTPStatusException as error:
+            raise translate_status_exception(
+                error, self, "delete_prepayment_allocations"
+            )
 
     def delete_tracking_category(
         self,
@@ -5892,6 +6454,7 @@ class AccountingApi(object):
         xero_tenant_id,
         invoice_id,
         request_empty,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -5901,6 +6464,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str invoice_id: Unique identifier for an Invoice (required)
         :param RequestEmpty request_empty: (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -5936,6 +6500,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -16505,6 +17072,7 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         setup,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -16513,6 +17081,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param Setup setup: Object including an accounts array, a conversion balances array and a conversion date object in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -16539,6 +17108,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -16584,6 +17156,7 @@ class AccountingApi(object):
         xero_tenant_id,
         account_id,
         accounts,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -16593,6 +17166,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str account_id: Unique identifier for Account object (required)
         :param Accounts accounts: Request of type Accounts array with one Account (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -16628,6 +17202,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -16674,6 +17251,7 @@ class AccountingApi(object):
         account_id,
         file_name,
         body,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -16684,6 +17262,7 @@ class AccountingApi(object):
         :param str account_id: Unique identifier for Account object (required)
         :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -16726,6 +17305,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -16773,6 +17355,7 @@ class AccountingApi(object):
         xero_tenant_id,
         bank_transaction_id,
         bank_transactions,
+        idempotency_key=empty,
         unitdp=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -16783,6 +17366,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str bank_transaction_id: Xero generated unique identifier for a bank transaction (required)
         :param BankTransactions bank_transactions: (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -16822,6 +17406,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -16868,6 +17455,7 @@ class AccountingApi(object):
         bank_transaction_id,
         file_name,
         body,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -16878,6 +17466,7 @@ class AccountingApi(object):
         :param str bank_transaction_id: Xero generated unique identifier for a bank transaction (required)
         :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -16920,6 +17509,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -16970,6 +17562,7 @@ class AccountingApi(object):
         bank_transfer_id,
         file_name,
         body,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -16980,6 +17573,7 @@ class AccountingApi(object):
         :param str bank_transfer_id: Xero generated unique identifier for a bank transfer (required)
         :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -17022,6 +17616,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -17071,6 +17668,7 @@ class AccountingApi(object):
         xero_tenant_id,
         contact_id,
         contacts,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -17080,6 +17678,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str contact_id: Unique identifier for a Contact (required)
         :param Contacts contacts: an array of Contacts containing single Contact object with properties to update (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -17115,6 +17714,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -17161,6 +17763,7 @@ class AccountingApi(object):
         contact_id,
         file_name,
         body,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -17171,6 +17774,7 @@ class AccountingApi(object):
         :param str contact_id: Unique identifier for a Contact (required)
         :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -17213,6 +17817,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -17260,6 +17867,7 @@ class AccountingApi(object):
         xero_tenant_id,
         contact_group_id,
         contact_groups,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -17269,6 +17877,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str contact_group_id: Unique identifier for a Contact Group (required)
         :param ContactGroups contact_groups: an array of Contact groups with Name of specific group to update (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -17304,6 +17913,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -17349,6 +17961,7 @@ class AccountingApi(object):
         xero_tenant_id,
         credit_note_id,
         credit_notes,
+        idempotency_key=empty,
         unitdp=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -17359,6 +17972,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str credit_note_id: Unique identifier for a Credit Note (required)
         :param CreditNotes credit_notes: an array of Credit Notes containing credit note details to update (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -17398,6 +18012,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -17444,6 +18061,7 @@ class AccountingApi(object):
         credit_note_id,
         file_name,
         body,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -17454,6 +18072,7 @@ class AccountingApi(object):
         :param str credit_note_id: Unique identifier for a Credit Note (required)
         :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -17496,6 +18115,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -17545,6 +18167,7 @@ class AccountingApi(object):
         xero_tenant_id,
         expense_claim_id,
         expense_claims,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -17554,6 +18177,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str expense_claim_id: Unique identifier for a ExpenseClaim (required)
         :param ExpenseClaims expense_claims: (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -17589,6 +18213,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -17634,6 +18261,7 @@ class AccountingApi(object):
         xero_tenant_id,
         invoice_id,
         invoices,
+        idempotency_key=empty,
         unitdp=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -17644,6 +18272,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str invoice_id: Unique identifier for an Invoice (required)
         :param Invoices invoices: (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -17683,6 +18312,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -17729,6 +18361,7 @@ class AccountingApi(object):
         invoice_id,
         file_name,
         body,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -17739,6 +18372,7 @@ class AccountingApi(object):
         :param str invoice_id: Unique identifier for an Invoice (required)
         :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -17781,6 +18415,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -17828,6 +18465,7 @@ class AccountingApi(object):
         xero_tenant_id,
         item_id,
         items,
+        idempotency_key=empty,
         unitdp=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -17838,6 +18476,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str item_id: Unique identifier for an Item (required)
         :param Items items: (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -17875,6 +18514,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -17920,6 +18562,7 @@ class AccountingApi(object):
         xero_tenant_id,
         linked_transaction_id,
         linked_transactions,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -17929,6 +18572,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str linked_transaction_id: Unique identifier for a LinkedTransaction (required)
         :param LinkedTransactions linked_transactions: (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -17964,6 +18608,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -18009,6 +18656,7 @@ class AccountingApi(object):
         xero_tenant_id,
         manual_journal_id,
         manual_journals,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -18018,6 +18666,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str manual_journal_id: Unique identifier for a ManualJournal (required)
         :param ManualJournals manual_journals: (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -18053,6 +18702,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -18099,6 +18751,7 @@ class AccountingApi(object):
         manual_journal_id,
         file_name,
         body,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -18109,6 +18762,7 @@ class AccountingApi(object):
         :param str manual_journal_id: Unique identifier for a ManualJournal (required)
         :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -18151,6 +18805,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -18199,6 +18856,7 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         bank_transactions,
+        idempotency_key=empty,
         summarize_errors=empty,
         unitdp=empty,
         _return_http_data_only=True,
@@ -18209,6 +18867,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param BankTransactions bank_transactions: (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
         :param bool _return_http_data_only: return received data only
@@ -18244,6 +18903,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -18290,6 +18952,7 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         contacts,
+        idempotency_key=empty,
         summarize_errors=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -18299,6 +18962,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.contacts
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param Contacts contacts: (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -18330,6 +18994,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -18374,6 +19041,7 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         credit_notes,
+        idempotency_key=empty,
         summarize_errors=empty,
         unitdp=empty,
         _return_http_data_only=True,
@@ -18384,6 +19052,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param CreditNotes credit_notes: an array of Credit Notes with a single CreditNote object. (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
         :param bool _return_http_data_only: return received data only
@@ -18419,6 +19088,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -18465,6 +19137,7 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         employees,
+        idempotency_key=empty,
         summarize_errors=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -18474,6 +19147,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param Employees employees: Employees with array of Employee object in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -18505,6 +19179,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -18549,6 +19226,7 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         invoices,
+        idempotency_key=empty,
         summarize_errors=empty,
         unitdp=empty,
         _return_http_data_only=True,
@@ -18559,6 +19237,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param Invoices invoices: (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
         :param bool _return_http_data_only: return received data only
@@ -18594,6 +19273,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -18638,6 +19320,7 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         items,
+        idempotency_key=empty,
         summarize_errors=empty,
         unitdp=empty,
         _return_http_data_only=True,
@@ -18648,6 +19331,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param Items items: (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
         :param bool _return_http_data_only: return received data only
@@ -18683,6 +19367,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -18727,6 +19414,7 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         manual_journals,
+        idempotency_key=empty,
         summarize_errors=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -18736,6 +19424,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param ManualJournals manual_journals: ManualJournals array with ManualJournal object in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -18767,6 +19456,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -18813,6 +19505,7 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         purchase_orders,
+        idempotency_key=empty,
         summarize_errors=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -18822,6 +19515,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param PurchaseOrders purchase_orders: (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -18853,6 +19547,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -18899,6 +19596,7 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         quotes,
+        idempotency_key=empty,
         summarize_errors=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -18908,6 +19606,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param Quotes quotes: (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -18939,6 +19638,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -18983,6 +19685,7 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         repeating_invoices,
+        idempotency_key=empty,
         summarize_errors=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -18992,6 +19695,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param RepeatingInvoices repeating_invoices: RepeatingInvoices with an array of repeating invoice objects in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -19023,6 +19727,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -19070,6 +19777,7 @@ class AccountingApi(object):
         xero_tenant_id,
         purchase_order_id,
         purchase_orders,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -19079,6 +19787,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str purchase_order_id: Unique identifier for an Purchase Order (required)
         :param PurchaseOrders purchase_orders: (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -19114,6 +19823,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -19160,6 +19872,7 @@ class AccountingApi(object):
         purchase_order_id,
         file_name,
         body,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -19170,6 +19883,7 @@ class AccountingApi(object):
         :param str purchase_order_id: Unique identifier for an Purchase Order (required)
         :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -19212,6 +19926,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -19261,6 +19978,7 @@ class AccountingApi(object):
         xero_tenant_id,
         quote_id,
         quotes,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -19270,6 +19988,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str quote_id: Unique identifier for an Quote (required)
         :param Quotes quotes: (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -19304,6 +20023,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -19350,6 +20072,7 @@ class AccountingApi(object):
         quote_id,
         file_name,
         body,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -19360,6 +20083,7 @@ class AccountingApi(object):
         :param str quote_id: Unique identifier for an Quote (required)
         :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -19402,6 +20126,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -19449,6 +20176,7 @@ class AccountingApi(object):
         xero_tenant_id,
         receipt_id,
         receipts,
+        idempotency_key=empty,
         unitdp=empty,
         _return_http_data_only=True,
         _preload_content=True,
@@ -19459,6 +20187,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str receipt_id: Unique identifier for a Receipt (required)
         :param Receipts receipts: (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -19498,6 +20227,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -19544,6 +20276,7 @@ class AccountingApi(object):
         receipt_id,
         file_name,
         body,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -19554,6 +20287,7 @@ class AccountingApi(object):
         :param str receipt_id: Unique identifier for a Receipt (required)
         :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -19596,6 +20330,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -19643,6 +20380,7 @@ class AccountingApi(object):
         xero_tenant_id,
         repeating_invoice_id,
         repeating_invoices,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -19652,6 +20390,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str repeating_invoice_id: Unique identifier for a Repeating Invoice (required)
         :param RepeatingInvoices repeating_invoices: (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -19687,6 +20426,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -19733,6 +20475,7 @@ class AccountingApi(object):
         repeating_invoice_id,
         file_name,
         body,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -19743,6 +20486,7 @@ class AccountingApi(object):
         :param str repeating_invoice_id: Unique identifier for a Repeating Invoice (required)
         :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -19785,6 +20529,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -19833,6 +20580,7 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         tax_rates,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -19841,6 +20589,7 @@ class AccountingApi(object):
         OAuth2 scope: accounting.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param TaxRates tax_rates: (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -19868,6 +20617,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -19913,6 +20665,7 @@ class AccountingApi(object):
         xero_tenant_id,
         tracking_category_id,
         tracking_category,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -19922,6 +20675,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str tracking_category_id: Unique identifier for a TrackingCategory (required)
         :param TrackingCategory tracking_category: (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -19957,6 +20711,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
@@ -20003,6 +20760,7 @@ class AccountingApi(object):
         tracking_category_id,
         tracking_option_id,
         tracking_option,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -20013,6 +20771,7 @@ class AccountingApi(object):
         :param str tracking_category_id: Unique identifier for a TrackingCategory (required)
         :param str tracking_option_id: Unique identifier for a Tracking Option (required)
         :param TrackingOption tracking_option: (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -20055,6 +20814,9 @@ class AccountingApi(object):
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
 
         local_var_files = {}
         form_params = []
