@@ -22,7 +22,7 @@ DATETIME_RE = re.compile(
 )
 
 MS_DATETIME_RE = re.compile(r"/Date\((?P<timestamp>-?\d+)(?P<tzinfo>[+-]\d{2,4})?\)/$")
-DATE_WITH_NO_DAY_RE = re.compile("(\d\d\d\d)-(\d\d)")
+DATE_WITH_NO_DAY_RE = re.compile(r"(\d\d\d\d)-(\d\d)")
 
 
 def deserialize_routing(data_type, data, model_finder):
