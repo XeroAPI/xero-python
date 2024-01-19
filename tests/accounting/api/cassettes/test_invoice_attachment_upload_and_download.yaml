@@ -3191,7 +3191,7 @@ interactions:
         \"OK\",\r\n  \"ProviderName\": \"python-sdk\",\r\n  \"DateTimeUTC\": \"\\/Date(1588633398797)\\/\",\r\n
         \ \"Attachments\": [\r\n    {\r\n      \"AttachmentID\": \"40fa0d97-8b94-4948-b299-4bcbe73dafc3\",\r\n
         \     \"FileName\": \"inv-0032.pdf\",\r\n      \"Url\": \"https://api.xero.com/api.xro/2.0/Invoices/22b3fab4-ef56-4d70-a110-a7cc3c1a26cd/Attachments/inv-0032.pdf\",\r\n
-        \     \"MimeType\": \"application/pdf\",\r\n      \"ContentLength\": 54574\r\n
+        \     \"MimeType\": \"application/pdf\",\r\n      \"ContentLength\": 54574,\r\n      \"IncludeOnline\": true
         \   }\r\n  ]\r\n}"
     headers:
       Cache-Control:
@@ -3244,7 +3244,7 @@ interactions:
         \"OK\",\r\n  \"ProviderName\": \"python-sdk\",\r\n  \"DateTimeUTC\": \"\\/Date(1588633399616)\\/\",\r\n
         \ \"Attachments\": [\r\n    {\r\n      \"AttachmentID\": \"40fa0d97-8b94-4948-b299-4bcbe73dafc3\",\r\n
         \     \"FileName\": \"inv-0032.pdf\",\r\n      \"Url\": \"https://api.xero.com/api.xro/2.0/Invoices/22b3fab4-ef56-4d70-a110-a7cc3c1a26cd/Attachments/inv-0032.pdf\",\r\n
-        \     \"MimeType\": \"application/pdf\",\r\n      \"ContentLength\": 54574\r\n
+        \     \"MimeType\": \"application/pdf\",\r\n      \"ContentLength\": 54574,\r\n      \"IncludeOnline\": true
         \   }\r\n  ]\r\n}"
     headers:
       Cache-Control:

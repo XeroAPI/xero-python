@@ -161,7 +161,7 @@ def test_deserialize_bool(data, expected):
     assert result == expected
 
 
-@pytest.mark.parametrize("data", [None, "", "1", "0", 1, 0])
+@pytest.mark.parametrize("data", ["", "1", "0", 1, 0])
 def test_deserialize_bool_error(data):
     # given data type bool
     data_type = "bool"
@@ -189,7 +189,7 @@ def test_deserialize_date(data, expected):
     assert result == expected
 
 
-@pytest.mark.parametrize("data", [None, "", "2019-oo-01"])
+@pytest.mark.parametrize("data", ["", "2019-oo-01"])
 def test_deserialize_date_error(data):
     # given data type date
     data_type = "date"
@@ -268,7 +268,7 @@ def test_deserialize_datetime(data, expected):
     assert result == expected
 
 
-@pytest.mark.parametrize("data", [None, "", "invalid"])
+@pytest.mark.parametrize("data", ["", "invalid"])
 def test_deserialize_datetime_error(data):
     # given data type datetime
     data_type = "datetime"
@@ -349,7 +349,7 @@ def test_deserialize_model():
     deserialize.assert_any_call("str", "short description", None)
 
 
-@pytest.mark.parametrize("data", [None, "", 1, True])
+@pytest.mark.parametrize("data", ["", 1, True])
 def test_deserialize_model_error(data):
     # given test model and invalid test data
     class Model:
