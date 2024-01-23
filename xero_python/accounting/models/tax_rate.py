@@ -340,6 +340,7 @@ class TaxRate(BaseModel):
             "IMN33",
             "IMRE",
             "BADDEBTRECOVERY",
+            "USSALESTAX",
             "None",
         ]  # noqa: E501
 

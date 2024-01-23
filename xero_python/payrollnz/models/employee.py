@@ -44,6 +44,7 @@ class Employee(BaseModel):
         "payroll_calendar_id": "str",
         "updated_date_utc": "datetime",
         "created_date_utc": "datetime",
+        "job_title": "str",
     }
 
     attribute_map = {
@@ -61,6 +62,7 @@ class Employee(BaseModel):
         "payroll_calendar_id": "payrollCalendarID",
         "updated_date_utc": "updatedDateUTC",
         "created_date_utc": "createdDateUTC",
+        "job_title": "jobTitle",
     }
 
     def __init__(
@@ -79,6 +81,7 @@ class Employee(BaseModel):
         payroll_calendar_id=None,
         updated_date_utc=None,
         created_date_utc=None,
+        job_title=None,
     ):  # noqa: E501
         """Employee - a model defined in OpenAPI"""  # noqa: E501
 
@@ -96,6 +99,7 @@ class Employee(BaseModel):
         self._payroll_calendar_id = None
         self._updated_date_utc = None
         self._created_date_utc = None
+        self._job_title = None
         self.discriminator = None
 
         if employee_id is not None:
@@ -126,6 +130,8 @@ class Employee(BaseModel):
             self.updated_date_utc = updated_date_utc
         if created_date_utc is not None:
             self.created_date_utc = created_date_utc
+        if job_title is not None:
+            self.job_title = job_title
 
     @property
     def employee_id(self):
@@ -455,3 +461,26 @@ class Employee(BaseModel):
         """
 
         self._created_date_utc = created_date_utc
+
+    @property
+    def job_title(self):
+        """Gets the job_title of this Employee.  # noqa: E501
+
+        Employee's job title  # noqa: E501
+
+        :return: The job_title of this Employee.  # noqa: E501
+        :rtype: str
+        """
+        return self._job_title
+
+    @job_title.setter
+    def job_title(self, job_title):
+        """Sets the job_title of this Employee.
+
+        Employee's job title  # noqa: E501
+
+        :param job_title: The job_title of this Employee.  # noqa: E501
+        :type: str
+        """
+
+        self._job_title = job_title
