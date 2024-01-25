@@ -187,4 +187,3 @@ class CurrencyCode(Enum):
     ZMW = "ZMW"
     ZMK = "ZMK"
     ZWD = "ZWD"
-    EMPTY = ""

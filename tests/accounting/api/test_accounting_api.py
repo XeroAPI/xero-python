@@ -43,7 +43,7 @@ def accounting_api(api_client):
 def sandbox_accounting_api(api_client):
     return AccountingApi(
         api_client=api_client,
-        base_url="https://xero-accounting.getsandbox.com/api.xro/2.0",
+        base_url="https://25faf04a-c71e-40e7-b7ce-f1fae0149465.mock.pstmn.io/api.xro/2.0",
     )
 
 
@@ -373,6 +373,7 @@ def test_get_invoices(sandbox_accounting_api: AccountingApi, xero_tenant_id):
                 is_discounted=False,
                 line_amount_types=LineAmountTypes.EXCLUSIVE,
                 reference="Red Fish, Blue Fish",
+                repeating_invoice_id= '428c0d75-909f-4b04-8403-a48dc27283b0',
                 sent_to_contact=True,
                 status="VOIDED",
                 sub_total=Decimal("40.00"),

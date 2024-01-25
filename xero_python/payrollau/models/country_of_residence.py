@@ -274,4 +274,3 @@ class CountryOfResidence(Enum):
     CW = "CW"
     SX = "SX"
     SS = "SS"
-    EMPTY = ""

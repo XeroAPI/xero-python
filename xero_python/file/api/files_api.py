@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.40.1
+    OpenAPI spec version: 2.40.3
 """
 
 import importlib

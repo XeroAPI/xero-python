@@ -11,7 +11,7 @@ interactions:
       User-Agent:
       - xero-python (0.1.0)
     method: GET
-    uri: https://api.xero.com/connections
+    uri: https://api.xero.com/Connections
   response:
     body:
       string: '[{"id":"f4a87932-0878-4884-abcf-73191dd810ba","tenantId":"a46fcb6f-2773-40c4-a119-8aa08bca1e8e","tenantType":"ORGANISATION","createdDateUtc":"2020-03-18T21:20:07.7179250","updatedDateUtc":"2020-03-30T05:15:13.3513620"}]'
