@@ -2052,7 +2052,7 @@ ul.nav-tabs {
   "title" : "",
   "type" : "string",
   "description" : "",
-  "enum" : [ "NotSet", "bank-account-not-found", "internal-error", "invalid-application", "invalid-request", "organisation-not-found", "organisation-offline", "request-timeout", "service-unavailable", "unauthorized" ]
+  "enum" : [ "NotSet", "bank-account-not-found", "internal-error", "invalid-application", "invalid-request", "organisation-not-found", "organisation-offline", "request-timeout", "service-unavailable", "unauthorized", "rate-limit-error" ]
 };
       defs["ProfitAndLossResponse"] = {
   "title" : "",
@@ -2160,6 +2160,10 @@ ul.nav-tabs {
       "type" : "string",
       "description" : "Date of when statement line was posted",
       "format" : "date"
+    },
+    "payee" : {
+      "type" : "string",
+      "description" : "Payee description of statement line"
     },
     "reference" : {
       "type" : "string",
@@ -2345,7 +2349,31 @@ ul.nav-tabs {
     },
     "importSource" : {
       "type" : "string",
-      "description" : "Import source of statement (STMTIMPORTSRC/MANUAL, STMTIMPORTSRC/CSV, STMTIMPORTSRC/QIF, STMTIMPORTSRC/OFX, XeroApi)"
+      "description" : "Identifies where the statement data in Xero was sourced, 1) direct bank feed, automatically loaded from the bank (eg STMTIMPORTSRC/CBAFEED); 2) indirect bank feed, automatically loaded from a 3rd party provider (eg STMTIMPORTSRC/YODLEE); 3) manually uploaded bank feed (eg STMTIMPORTSRC/CSV) or 4) manually entered statement data (STMTIMPORTSRC/MANUAL)."
+    },
+    "startBalance" : {
+      "type" : "number",
+      "description" : "Opening balance sourced from imported bank statements (if supplied). Note, for manually uploaded statements, this balance is also manual and usually not supplied. Where not supplied, the value will be 0.",
+      "format" : "double",
+      "x-is-money" : true
+    },
+    "endBalance" : {
+      "type" : "number",
+      "description" : "Closing balance sourced from imported bank statements (if supplied). Note, for manually uploaded statements, this balance is also manual and usually not supplied. Where not supplied, the value will be 0.",
+      "format" : "double",
+      "x-is-money" : true
+    },
+    "indicativeStartBalance" : {
+      "type" : "number",
+      "description" : "Opening statement balance calculated in Xero (= bank account conversion balance plus sum of imported bank statement lines). Note: If indicative statement balance doesn't match imported statement balance for the same date, either the conversion (opening at inception) balance in Xero is wrong or there's an error in the bank statement lines in Xero. Ref: https://central.xero.com/s/article/Compare-the-statement-balance-in-Xero-to-your-actual-bank-balance?userregion=true\n",
+      "format" : "double",
+      "x-is-money" : true
+    },
+    "indicativeEndBalance" : {
+      "type" : "number",
+      "description" : "Closing statement balance calculated in Xero (= bank account conversion balance plus sum of imported bank statement lines). Note: If indicative statement balance doesn't match imported statement balance for the same date, either the conversion (opening at inception) balance in Xero is wrong or there's an error in the bank statement lines in Xero. Ref: https://central.xero.com/s/article/Compare-the-statement-balance-in-Xero-to-your-actual-bank-balance?userregion=true \n",
+      "format" : "double",
+      "x-is-money" : true
     },
     "statementLines" : {
       "type" : "array",

@@ -1469,6 +1469,7 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_create_asset():
     api_instance = AssetApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
+    idempotency_key = 'KEY_VALUE'
 
     asset = Asset(
         asset_name = "Other Computer",
@@ -1476,7 +1477,7 @@ def accounting_create_asset():
         status = "Draft")
     
     try:
-        api_response = api_instance.create_asset(xero_tenant_id, asset)
+        api_response = api_instance.create_asset(xero_tenant_id, asset, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AssetApi->createAsset: %s\n" % e)</code></pre>
@@ -1516,6 +1517,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_createAsset_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>
@@ -1601,6 +1622,7 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_create_asset_type():
     api_instance = AssetApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
+    idempotency_key = 'KEY_VALUE'
 
     book_depreciation_setting = BookDepreciationSetting(
         depreciation_method = "DiminishingValue100",
@@ -1616,7 +1638,7 @@ def accounting_create_asset_type():
         book_depreciation_setting = book_depreciation_setting)
     
     try:
-        api_response = api_instance.create_asset_type(xero_tenant_id, assetType)
+        api_response = api_instance.create_asset_type(xero_tenant_id, idempotency_key, assetType)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AssetApi->createAssetType: %s\n" % e)</code></pre>
@@ -1656,6 +1678,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_createAssetType_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>

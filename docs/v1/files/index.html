@@ -1175,6 +1175,9 @@ ul.nav-tabs {
               <li data-group="Files" data-name="getAssociationsByObject" class="">
                 <a href="#api-Files-getAssociationsByObject">getAssociationsByObject</a>
               </li>
+              <li data-group="Files" data-name="getAssociationsCount" class="">
+                <a href="#api-Files-getAssociationsCount">getAssociationsCount</a>
+              </li>
               <li data-group="Files" data-name="getFile" class="">
                 <a href="#api-Files-getFile">getFile</a>
               </li>
@@ -1266,9 +1269,10 @@ def accounting_create_file_association():
     api_instance = FilesApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
     file_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    idempotency_key = 'KEY_VALUE'
     
     try:
-        api_response = api_instance.create_file_association(xero_tenant_id, file_id, association)
+        api_response = api_instance.create_file_association(xero_tenant_id, file_id, idempotency_key, association)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling FilesApi->createFileAssociation: %s\n" % e)</code></pre>
@@ -1341,6 +1345,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_createFileAssociation_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>
@@ -1421,9 +1445,10 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_create_folder():
     api_instance = FilesApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
+    idempotency_key = 'KEY_VALUE'
     
     try:
-        api_response = api_instance.create_folder(xero_tenant_id, folder)
+        api_response = api_instance.create_folder(xero_tenant_id, idempotency_key, folder)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling FilesApi->createFolder: %s\n" % e)</code></pre>
@@ -1463,6 +1488,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_createFolder_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>
@@ -1909,7 +1954,7 @@ Xero identifier for Tenant
                   <div class="pull-right"></div>
                   <div class="clearfix"></div>
                   <p></p>
-                  <p class="marked">By passing in the appropriate options,</p>
+                  <p class="marked">By passing in the appropriate options, you can retrieve an association</p>
                   <p></p>
                   <br />
                   <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/Associations/{ObjectId}</span></code></pre>
@@ -1940,9 +1985,11 @@ def accounting_get_associations_by_object():
     api_instance = FilesApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
     object_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    sort = 'Associations/{ObjectId}?sort=CreatedDateUtc'
+    direction = 'Associations/{ObjectId}?sort=CreatedDateUtc&direction=DESC'
     
     try:
-        api_response = api_instance.get_associations_by_object(xero_tenant_id, object_id)
+        api_response = api_instance.get_associations_by_object(xero_tenant_id, object_id, pagesize, page, sort, direction)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling FilesApi->getAssociationsByObject: %s\n" % e)</code></pre>
@@ -2015,6 +2062,222 @@ Object id for single object
 
                     <div class="inner description marked">
 Xero identifier for Tenant
+                    </div>
+            </div>
+                <div class="inner required">
+                    Required
+                </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                  </table>
+                  <div class="methodsubtabletitle">Query parameters</div>
+                  <table id="methodsubtable">
+                    <tr>
+                      <th width="150px">Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr><td style="width:150px;">pagesize</td>
+<td>
+
+
+    <div id="d2e199_getAssociationsByObject_pagesize">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    Integer
+                </span>
+
+                    <div class="inner description marked">
+pass an optional page size value
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">page</td>
+<td>
+
+
+    <div id="d2e199_getAssociationsByObject_page">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    Integer
+                </span>
+
+                    <div class="inner description marked">
+number of records to skip for pagination
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">sort</td>
+<td>
+
+
+    <div id="d2e199_getAssociationsByObject_sort">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+values to sort by
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">direction</td>
+<td>
+
+
+    <div id="d2e199_getAssociationsByObject_direction">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+direction to sort by
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                  </table>
+                </article>
+              </div>
+              <hr>
+              <div id="api-Files-getAssociationsCount">
+                <article id="api-Files-getAssociationsCount-0" data-group="User" data-name="getAssociationsCount" data-version="0">
+                  <div class="pull-left">
+                    <h1>getAssociationsCount</h1>
+                    <p>Retrieves a count of associations for a list of objects.</p>
+                  </div>
+                  <div class="pull-right"></div>
+                  <div class="clearfix"></div>
+                  <p></p>
+                  <p class="marked">By passing in the appropriate options, you can retrieve the association count for objects</p>
+                  <p></p>
+                  <br />
+                  <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/Associations/Count</span></code></pre>
+                  <p>
+                  <h3>Usage and SDK Samples</h3>
+                  </p>
+                  <ul class="nav nav-tabs nav-tabs-examples">
+                    <!-- *****REPLACE***** comment out the other languages <li> -->
+                    <li class=""><a href="#examples-Files-getAssociationsCount-0-python">Python</a></li>
+                  </ul>
+                  <div class="tab-content">
+                    <!-- *****REPLACE***** comment out the other languages tab-pane -->
+                    <div class="tab-pane" id="examples-Files-getAssociationsCount-0-python">
+                      <pre class="prettyprint"><code class="language-python"># configure api_client for use with xero-python sdk client
+api_client = ApiClient(
+    Configuration(
+        debug=false,
+        oauth2_token=OAuth2Token(
+            client_id="YOUR_CLIENT_ID", client_secret="YOUR_CLIENT_SECRET"
+        ),
+    ),
+    pool_threads=1,
+)
+
+api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
+
+def accounting_get_associations_count():
+    api_instance = FilesApi(api_client)
+    xero_tenant_id = 'YOUR_XERO_TENANT_ID'
+    objectIds = []
+    
+    try:
+        api_response = api_instance.get_associations_count(xero_tenant_id, objectIds)
+        print(api_response)
+    except AccountingBadRequestException as e:
+        print("Exception when calling FilesApi->getAssociationsCount: %s\n" % e)</code></pre>
+                    </div>
+                  </div>
+                  <h2>Scopes</h2>
+                  <table>
+                    
+                    <tr>
+                      <td>files</td>
+                      <td>Grant read-write access to files and folders</td>
+                    </tr>
+                    
+                    <tr>
+                      <td>files.read</td>
+                      <td>Grant read-only access to files and folders</td>
+                    </tr>
+                    
+                  </table>
+                  <h2>Parameters</h2>
+                  <div class="methodsubtabletitle">Header parameters</div>
+                  <table id="methodsubtable">
+                    <tr>
+                      <th width="150px">Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr><td style="width:150px;">xero-tenant-id<span style="color:red;">*</span></td>
+<td>
+
+
+    <div id="d2e199_getAssociationsCount_xeroTenantId">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+Xero identifier for Tenant
+                    </div>
+            </div>
+                <div class="inner required">
+                    Required
+                </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                  </table>
+                  <div class="methodsubtabletitle">Query parameters</div>
+                  <table id="methodsubtable">
+                    <tr>
+                      <th width="150px">Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr><td style="width:150px;">ObjectIds<span style="color:red;">*</span></td>
+<td>
+
+
+    <div id="d2e199_getAssociationsCount_objectIds">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    array[UUID]
+                </span>
+                    <span class="format">
+                        (uuid)
+                    </span>
+
+                    <div class="inner description marked">
+A comma-separated list of object ids
                     </div>
             </div>
                 <div class="inner required">
@@ -2966,9 +3229,10 @@ def accounting_update_file():
     api_instance = FilesApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
     file_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    idempotency_key = 'KEY_VALUE'
     
     try:
-        api_response = api_instance.update_file(xero_tenant_id, file_id, fileObject)
+        api_response = api_instance.update_file(xero_tenant_id, file_id, idempotency_key, fileObject)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling FilesApi->updateFile: %s\n" % e)</code></pre>
@@ -3041,6 +3305,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_updateFile_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>
@@ -3122,9 +3406,10 @@ def accounting_update_folder():
     api_instance = FilesApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
     folder_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    idempotency_key = 'KEY_VALUE'
     
     try:
-        api_response = api_instance.update_folder(xero_tenant_id, folder_id, folder)
+        api_response = api_instance.update_folder(xero_tenant_id, folder_id, folder, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling FilesApi->updateFolder: %s\n" % e)</code></pre>
@@ -3197,6 +3482,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_updateFolder_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>
@@ -3283,10 +3588,11 @@ def accounting_upload_file():
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
     name = 'name_example'
     filename = 'filename_example'
+    idempotency_key = 'KEY_VALUE'
     mimeType = 'mimeType_example'
     
     try:
-        api_response = api_instance.upload_file(xero_tenant_id, body, name, filename, mimeType)
+        api_response = api_instance.upload_file(xero_tenant_id, body, name, filename, idempotency_key, mimeType)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling FilesApi->uploadFile: %s\n" % e)</code></pre>
@@ -3326,6 +3632,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_uploadFile_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>
@@ -3476,10 +3802,11 @@ def accounting_upload_file_to_folder():
     folder_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
     name = 'name_example'
     filename = 'filename_example'
+    idempotency_key = 'KEY_VALUE'
     mimeType = 'mimeType_example'
     
     try:
-        api_response = api_instance.upload_file_to_folder(xero_tenant_id, folder_id, body, name, filename, mimeType)
+        api_response = api_instance.upload_file_to_folder(xero_tenant_id, folder_id, body, name, filename, idempotency_key, mimeType)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling FilesApi->uploadFileToFolder: %s\n" % e)</code></pre>
@@ -3552,6 +3879,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_uploadFileToFolder_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>

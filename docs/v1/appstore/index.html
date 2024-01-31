@@ -862,6 +862,25 @@ ul.nav-tabs {
     <script>
       // Script section to load models into a JS Var
       var defs = {}
+      defs["CreateUsageRecord"] = {
+  "title" : "",
+  "required" : [ "quantity", "timestamp" ],
+  "type" : "object",
+  "properties" : {
+    "quantity" : {
+      "type" : "integer",
+      "description" : "The initial quantity for the usage record. Must be a whole number that is greater than or equal to 0",
+      "format" : "int32"
+    },
+    "timestamp" : {
+      "type" : "string",
+      "description" : "DateTime in UTC of when the the product was consumed/used",
+      "format" : "date-time",
+      "x-is-datetime" : true
+    }
+  },
+  "description" : "Data transfer object for public create usage end point"
+};
       defs["Plan"] = {
   "title" : "",
   "required" : [ "id", "name", "status", "subscriptionItems" ],
@@ -951,14 +970,18 @@ ul.nav-tabs {
       "type" : "string",
       "description" : "The name of the product"
     },
-    "type" : {
-      "type" : "string",
-      "description" : "The pricing model of the product:\n* FIXED: Customers are charged a fixed amount for each billing period\n* PER_SEAT: Customers are charged based on the number of units they purchase\n",
-      "enum" : [ "FIXED", "PER_SEAT" ]
-    },
     "seatUnit" : {
       "type" : "string",
       "description" : "The unit of the per seat product. e.g. \"user\", \"organisation\", \"SMS\", etc"
+    },
+    "type" : {
+      "type" : "string",
+      "description" : "The pricing model of the product:\n* FIXED: Customers are charged a fixed amount for each billing period\n* PER_SEAT: Customers are charged based on the number of units they purchase\n* METERED: Customers are charged per use of this product\n",
+      "enum" : [ "FIXED", "PER_SEAT", "METERED" ]
+    },
+    "usageUnit" : {
+      "type" : "string",
+      "description" : "The unit of the usage product. e.g. \"user\", \"minutes\", \"SMS\", etc"
     }
   },
   "description" : ""
@@ -971,12 +994,14 @@ ul.nav-tabs {
     "currentPeriodEnd" : {
       "type" : "string",
       "description" : "End of the current period that the subscription has been invoiced for.\n",
-      "format" : "date-time"
+      "format" : "date-time",
+      "x-is-datetime" : true
     },
     "endDate" : {
       "type" : "string",
       "description" : "If the subscription has been canceled, this is the date when the subscription ends. If null, the subscription is active and has not been cancelled",
-      "format" : "date-time"
+      "format" : "date-time",
+      "x-is-datetime" : true
     },
     "id" : {
       "type" : "string",
@@ -998,7 +1023,8 @@ ul.nav-tabs {
     "startDate" : {
       "type" : "string",
       "description" : "Date when the subscription was first created.",
-      "format" : "date-time"
+      "format" : "date-time",
+      "x-is-datetime" : true
     },
     "status" : {
       "type" : "string",
@@ -1020,7 +1046,8 @@ ul.nav-tabs {
     "endDate" : {
       "type" : "string",
       "description" : "Date when the subscription to this product will end",
-      "format" : "date-time"
+      "format" : "date-time",
+      "x-is-datetime" : true
     },
     "id" : {
       "type" : "string",
@@ -1033,10 +1060,15 @@ ul.nav-tabs {
     "product" : {
       "$ref" : "#/components/schemas/Product"
     },
+    "quantity" : {
+      "type" : "integer",
+      "description" : "The quantity of the item. For a fixed product, it is 1. For a per-seat product, it is a positive integer. For metered products, it is always null."
+    },
     "startDate" : {
       "type" : "string",
       "description" : "Date the subscription started, or will start. Note: this could be in\nthe future for downgrades or reduced number of seats that haven't taken effect yet.\n",
-      "format" : "date-time"
+      "format" : "date-time",
+      "x-is-datetime" : true
     },
     "status" : {
       "type" : "string",
@@ -1049,6 +1081,82 @@ ul.nav-tabs {
     }
   },
   "description" : ""
+};
+      defs["UpdateUsageRecord"] = {
+  "title" : "",
+  "required" : [ "quantity" ],
+  "type" : "object",
+  "properties" : {
+    "quantity" : {
+      "type" : "integer",
+      "description" : "The new quantity for the usage record. Must be a whole number that is greater than or equal to 0",
+      "format" : "int32"
+    }
+  },
+  "description" : "Data transfer object for public update usage end point"
+};
+      defs["UsageRecord"] = {
+  "title" : "",
+  "required" : [ "pricePerUnit", "productId", "quantity", "recordedAt", "subscriptionId", "subscriptionItemId", "testMode", "usageRecordId" ],
+  "type" : "object",
+  "properties" : {
+    "quantity" : {
+      "type" : "integer",
+      "description" : "The quantity recorded",
+      "format" : "int32"
+    },
+    "subscriptionId" : {
+      "type" : "string",
+      "description" : "The unique identifier of the Subscription.",
+      "format" : "guid"
+    },
+    "subscriptionItemId" : {
+      "type" : "string",
+      "description" : "The unique identifier of the SubscriptionItem.",
+      "format" : "guid"
+    },
+    "testMode" : {
+      "type" : "boolean",
+      "description" : "If the subscription is a test subscription"
+    },
+    "recordedAt" : {
+      "type" : "string",
+      "description" : "The time when this usage was recorded in UTC",
+      "format" : "date-time",
+      "x-is-datetime" : true
+    },
+    "usageRecordId" : {
+      "type" : "string",
+      "description" : "The unique identifier of the usageRecord.",
+      "format" : "guid"
+    },
+    "pricePerUnit" : {
+      "type" : "number",
+      "description" : "The price per unit",
+      "format" : "decimal"
+    },
+    "productId" : {
+      "type" : "string",
+      "description" : "The unique identifier of the linked Product",
+      "format" : "guid"
+    }
+  },
+  "description" : ""
+};
+      defs["UsageRecordsList"] = {
+  "title" : "",
+  "required" : [ "usageRecords" ],
+  "type" : "object",
+  "properties" : {
+    "usageRecords" : {
+      "type" : "array",
+      "description" : "A collection of usage records",
+      "items" : {
+        "$ref" : "#/components/schemas/UsageRecord"
+      }
+    }
+  },
+  "description" : "Response to get usage record"
 };
 
       var errs = {};
@@ -1137,6 +1245,15 @@ ul.nav-tabs {
               <li class="nav-header" data-group="AppStore"><a href="#api-AppStore">Methods</a></li>
               <li data-group="AppStore" data-name="getSubscription" class="">
                 <a href="#api-AppStore-getSubscription">getSubscription</a>
+              </li>
+              <li data-group="AppStore" data-name="getUsageRecords" class="">
+                <a href="#api-AppStore-getUsageRecords">getUsageRecords</a>
+              </li>
+              <li data-group="AppStore" data-name="postUsageRecords" class="">
+                <a href="#api-AppStore-postUsageRecords">postUsageRecords</a>
+              </li>
+              <li data-group="AppStore" data-name="putUsageRecords" class="">
+                <a href="#api-AppStore-putUsageRecords">putUsageRecords</a>
               </li>
             </ul>
           </nav>
@@ -1245,6 +1362,496 @@ Unique identifier for Subscription object
 </td>
 </tr>
 
+                  </table>
+                </article>
+              </div>
+              <hr>
+              <div id="api-AppStore-getUsageRecords">
+                <article id="api-AppStore-getUsageRecords-0" data-group="User" data-name="getUsageRecords" data-version="0">
+                  <div class="pull-left">
+                    <h1>getUsageRecords</h1>
+                    <p>Gets all usage records related to the subscription</p>
+                  </div>
+                  <div class="pull-right"></div>
+                  <div class="clearfix"></div>
+                  <p></p>
+                  <p class="marked"></p>
+                  <p></p>
+                  <br />
+                  <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/subscriptions/{subscriptionId}/usage-records</span></code></pre>
+                  <p>
+                  <h3>Usage and SDK Samples</h3>
+                  </p>
+                  <ul class="nav nav-tabs nav-tabs-examples">
+                    <!-- *****REPLACE***** comment out the other languages <li> -->
+                    <li class=""><a href="#examples-AppStore-getUsageRecords-0-python">Python</a></li>
+                  </ul>
+                  <div class="tab-content">
+                    <!-- *****REPLACE***** comment out the other languages tab-pane -->
+                    <div class="tab-pane" id="examples-AppStore-getUsageRecords-0-python">
+                      <pre class="prettyprint"><code class="language-python"># configure api_client for use with xero-python sdk client
+api_client = ApiClient(
+    Configuration(
+        debug=false,
+        oauth2_token=OAuth2Token(
+            client_id="YOUR_CLIENT_ID", client_secret="YOUR_CLIENT_SECRET"
+        ),
+    ),
+    pool_threads=1,
+)
+
+api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
+
+def accounting_get_usage_records():
+    api_instance = AppStoreApi(api_client)
+    subscription_id = '00000000-0000-0000-0000-000000000000'
+    
+    try:
+        api_response = api_instance.get_usage_records(subscription_id)
+        print(api_response)
+    except AccountingBadRequestException as e:
+        print("Exception when calling AppStoreApi->getUsageRecords: %s\n" % e)</code></pre>
+                    </div>
+                  </div>
+                  <h2>Scopes</h2>
+                  <table>
+                    
+                    <tr>
+                      <td>marketplace.billing</td>
+                      <td>Grant read-only access to fixed assets</td>
+                    </tr>
+                    
+                  </table>
+                  <h2>Parameters</h2>
+                  <div class="methodsubtabletitle">Path parameters</div>
+                  <table id="methodsubtable">
+                    <tr>
+                      <th width="150px">Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr><td style="width:150px;">subscriptionId<span style="color:red;">*</span></td>
+<td>
+
+
+    <div id="d2e199_getUsageRecords_subscriptionId">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    UUID
+                </span>
+                    <span class="format">
+                        (uuid)
+                    </span>
+
+                    <div class="inner description marked">
+Unique identifier for Subscription object
+                    </div>
+            </div>
+                <div class="inner required">
+                    Required
+                </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                  </table>
+                </article>
+              </div>
+              <hr>
+              <div id="api-AppStore-postUsageRecords">
+                <article id="api-AppStore-postUsageRecords-0" data-group="User" data-name="postUsageRecords" data-version="0">
+                  <div class="pull-left">
+                    <h1>postUsageRecords</h1>
+                    <p>Send metered usage belonging to this subscription and subscription item</p>
+                  </div>
+                  <div class="pull-right"></div>
+                  <div class="clearfix"></div>
+                  <p></p>
+                  <p class="marked"></p>
+                  <p></p>
+                  <br />
+                  <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/subscriptions/{subscriptionId}/items/{subscriptionItemId}/usage-records</span></code></pre>
+                  <p>
+                  <h3>Usage and SDK Samples</h3>
+                  </p>
+                  <ul class="nav nav-tabs nav-tabs-examples">
+                    <!-- *****REPLACE***** comment out the other languages <li> -->
+                    <li class=""><a href="#examples-AppStore-postUsageRecords-0-python">Python</a></li>
+                  </ul>
+                  <div class="tab-content">
+                    <!-- *****REPLACE***** comment out the other languages tab-pane -->
+                    <div class="tab-pane" id="examples-AppStore-postUsageRecords-0-python">
+                      <pre class="prettyprint"><code class="language-python"># configure api_client for use with xero-python sdk client
+api_client = ApiClient(
+    Configuration(
+        debug=false,
+        oauth2_token=OAuth2Token(
+            client_id="YOUR_CLIENT_ID", client_secret="YOUR_CLIENT_SECRET"
+        ),
+    ),
+    pool_threads=1,
+)
+
+api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
+
+def accounting_post_usage_records():
+    api_instance = AppStoreApi(api_client)
+    subscription_id = '00000000-0000-0000-0000-000000000000'
+    subscription_item_id = '00000000-0000-0000-0000-000000000000'
+    idempotency_key = 'KEY_VALUE'
+    
+    try:
+        api_response = api_instance.post_usage_records(subscription_id, subscription_item_id, createUsageRecord, idempotency_key)
+        print(api_response)
+    except AccountingBadRequestException as e:
+        print("Exception when calling AppStoreApi->postUsageRecords: %s\n" % e)</code></pre>
+                    </div>
+                  </div>
+                  <h2>Scopes</h2>
+                  <table>
+                    
+                    <tr>
+                      <td>marketplace.billing</td>
+                      <td>Grant read-only access to fixed assets</td>
+                    </tr>
+                    
+                  </table>
+                  <h2>Parameters</h2>
+                  <div class="methodsubtabletitle">Path parameters</div>
+                  <table id="methodsubtable">
+                    <tr>
+                      <th width="150px">Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr><td style="width:150px;">subscriptionId<span style="color:red;">*</span></td>
+<td>
+
+
+    <div id="d2e199_postUsageRecords_subscriptionId">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    UUID
+                </span>
+                    <span class="format">
+                        (uuid)
+                    </span>
+
+                    <div class="inner description marked">
+Unique identifier for Subscription object
+                    </div>
+            </div>
+                <div class="inner required">
+                    Required
+                </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">subscriptionItemId<span style="color:red;">*</span></td>
+<td>
+
+
+    <div id="d2e199_postUsageRecords_subscriptionItemId">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    UUID
+                </span>
+                    <span class="format">
+                        (uuid)
+                    </span>
+
+                    <div class="inner description marked">
+The unique identifier of the subscriptionItem
+                    </div>
+            </div>
+                <div class="inner required">
+                    Required
+                </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                  </table>
+                  <div class="methodsubtabletitle">Header parameters</div>
+                  <table id="methodsubtable">
+                    <tr>
+                      <th width="150px">Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_postUsageRecords_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                  </table>
+                  <div class="methodsubtabletitle">Body parameters</div>
+                  <table id="methodsubtable">
+                    <tr>
+                      <th width="150px">Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr>
+  <td style="width:150px;">createUsageRecord <span style="color:red;">*</span></td>
+  <td>
+    <div class="json-schema-view">
+      <div class="primitive">
+        <span class="type">
+        CreateUsageRecord
+        </span>
+        <div class="inner description marked">
+          Contains the quantity for the usage record to create
+        </div>
+      </div>
+      <div class="inner required">
+        Required
+      </div>
+    </div>
+    <script type="application/ld+json">
+      {
+  "description" : "Contains the quantity for the usage record to create",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/CreateUsageRecord"
+      },
+      "example" : "{ \"timestamp\": \"2022-01-21T13:01:00\", \"quantity\": 10 }"
+    }
+  },
+  "required" : true
+}
+    </script>
+                  </table>
+                </article>
+              </div>
+              <hr>
+              <div id="api-AppStore-putUsageRecords">
+                <article id="api-AppStore-putUsageRecords-0" data-group="User" data-name="putUsageRecords" data-version="0">
+                  <div class="pull-left">
+                    <h1>putUsageRecords</h1>
+                    <p>Update and existing metered usage belonging to this subscription and subscription item</p>
+                  </div>
+                  <div class="pull-right"></div>
+                  <div class="clearfix"></div>
+                  <p></p>
+                  <p class="marked"></p>
+                  <p></p>
+                  <br />
+                  <pre class="prettyprint language-html prettyprinted" data-type="put"><code><span class="pln">/subscriptions/{subscriptionId}/items/{subscriptionItemId}/usage-records/{usageRecordId}</span></code></pre>
+                  <p>
+                  <h3>Usage and SDK Samples</h3>
+                  </p>
+                  <ul class="nav nav-tabs nav-tabs-examples">
+                    <!-- *****REPLACE***** comment out the other languages <li> -->
+                    <li class=""><a href="#examples-AppStore-putUsageRecords-0-python">Python</a></li>
+                  </ul>
+                  <div class="tab-content">
+                    <!-- *****REPLACE***** comment out the other languages tab-pane -->
+                    <div class="tab-pane" id="examples-AppStore-putUsageRecords-0-python">
+                      <pre class="prettyprint"><code class="language-python"># configure api_client for use with xero-python sdk client
+api_client = ApiClient(
+    Configuration(
+        debug=false,
+        oauth2_token=OAuth2Token(
+            client_id="YOUR_CLIENT_ID", client_secret="YOUR_CLIENT_SECRET"
+        ),
+    ),
+    pool_threads=1,
+)
+
+api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
+
+def accounting_put_usage_records():
+    api_instance = AppStoreApi(api_client)
+    subscription_id = '00000000-0000-0000-0000-000000000000'
+    subscription_item_id = '00000000-0000-0000-0000-000000000000'
+    usage_record_id = '00000000-0000-0000-0000-000000000000'
+    idempotency_key = 'KEY_VALUE'
+    
+    try:
+        api_response = api_instance.put_usage_records(subscription_id, subscription_item_id, usage_record_id, updateUsageRecord, idempotency_key)
+        print(api_response)
+    except AccountingBadRequestException as e:
+        print("Exception when calling AppStoreApi->putUsageRecords: %s\n" % e)</code></pre>
+                    </div>
+                  </div>
+                  <h2>Scopes</h2>
+                  <table>
+                    
+                    <tr>
+                      <td>marketplace.billing</td>
+                      <td>Grant read-only access to fixed assets</td>
+                    </tr>
+                    
+                  </table>
+                  <h2>Parameters</h2>
+                  <div class="methodsubtabletitle">Path parameters</div>
+                  <table id="methodsubtable">
+                    <tr>
+                      <th width="150px">Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr><td style="width:150px;">subscriptionId<span style="color:red;">*</span></td>
+<td>
+
+
+    <div id="d2e199_putUsageRecords_subscriptionId">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    UUID
+                </span>
+                    <span class="format">
+                        (uuid)
+                    </span>
+
+                    <div class="inner description marked">
+Unique identifier for Subscription object
+                    </div>
+            </div>
+                <div class="inner required">
+                    Required
+                </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">subscriptionItemId<span style="color:red;">*</span></td>
+<td>
+
+
+    <div id="d2e199_putUsageRecords_subscriptionItemId">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    UUID
+                </span>
+                    <span class="format">
+                        (uuid)
+                    </span>
+
+                    <div class="inner description marked">
+The unique identifier of the subscriptionItem
+                    </div>
+            </div>
+                <div class="inner required">
+                    Required
+                </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">usageRecordId<span style="color:red;">*</span></td>
+<td>
+
+
+    <div id="d2e199_putUsageRecords_usageRecordId">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    UUID
+                </span>
+                    <span class="format">
+                        (uuid)
+                    </span>
+
+                    <div class="inner description marked">
+The unique identifier of the usage record
+                    </div>
+            </div>
+                <div class="inner required">
+                    Required
+                </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                  </table>
+                  <div class="methodsubtabletitle">Header parameters</div>
+                  <table id="methodsubtable">
+                    <tr>
+                      <th width="150px">Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_putUsageRecords_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                  </table>
+                  <div class="methodsubtabletitle">Body parameters</div>
+                  <table id="methodsubtable">
+                    <tr>
+                      <th width="150px">Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr>
+  <td style="width:150px;">updateUsageRecord <span style="color:red;">*</span></td>
+  <td>
+    <div class="json-schema-view">
+      <div class="primitive">
+        <span class="type">
+        UpdateUsageRecord
+        </span>
+        <div class="inner description marked">
+          Contains the quantity for the usage record to update
+        </div>
+      </div>
+      <div class="inner required">
+        Required
+      </div>
+    </div>
+    <script type="application/ld+json">
+      {
+  "description" : "Contains the quantity for the usage record to update",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/UpdateUsageRecord"
+      },
+      "example" : "{ \"quantity\": 10 }"
+    }
+  },
+  "required" : true
+}
+    </script>
                   </table>
                 </article>
               </div>
