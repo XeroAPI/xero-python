@@ -1502,6 +1502,11 @@ ul.nav-tabs {
       "description" : "UTC timestamp when the employee was created in Xero",
       "format" : "date-time",
       "x-is-datetime" : true
+    },
+    "jobTitle" : {
+      "type" : "string",
+      "description" : "Employee's job title",
+      "example" : "General Manager"
     }
   },
   "description" : ""
@@ -4102,9 +4107,10 @@ def accounting_approve_timesheet():
     api_instance = PayrollNzApi(api_client)
     xero_tenant_id = 'xeroTenantId_example'
     timesheet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    idempotency_key = 'KEY_VALUE'
     
     try:
-        api_response = api_instance.approve_timesheet(xero_tenant_id, timesheet_id)
+        api_response = api_instance.approve_timesheet(xero_tenant_id, timesheet_id, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->approveTimesheet: %s\n" % e)</code></pre>
@@ -4182,6 +4188,26 @@ Xero identifier for Tenant
 </td>
 </tr>
 
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_approveTimesheet_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
                   </table>
                 </article>
               </div>
@@ -4225,6 +4251,7 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_create_deduction():
     api_instance = PayrollNzApi(api_client)
     xero_tenant_id = 'xeroTenantId_example'
+    idempotency_key = 'KEY_VALUE'
 
     deduction = Deduction(
         deduction_name = "Deduction test",
@@ -4232,7 +4259,7 @@ def accounting_create_deduction():
         liability_account_id = "00000000-0000-0000-0000-000000000000")
     
     try:
-        api_response = api_instance.create_deduction(xero_tenant_id, deduction)
+        api_response = api_instance.create_deduction(xero_tenant_id, deduction, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->createDeduction: %s\n" % e)</code></pre>
@@ -4272,6 +4299,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_createDeduction_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>
@@ -4356,6 +4403,7 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_create_earnings_rate():
     api_instance = PayrollNzApi(api_client)
     xero_tenant_id = 'xeroTenantId_example'
+    idempotency_key = 'KEY_VALUE'
 
     earnings_rate = EarningsRate(
         earnings_type = "RegularEarnings",
@@ -4363,7 +4411,7 @@ def accounting_create_earnings_rate():
         expense_account_ID = "00000000-0000-0000-0000-000000000000")
     
     try:
-        api_response = api_instance.create_earnings_rate(xero_tenant_id, earningsRate)
+        api_response = api_instance.create_earnings_rate(xero_tenant_id, earningsRate, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->createEarningsRate: %s\n" % e)</code></pre>
@@ -4403,6 +4451,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_createEarningsRate_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>
@@ -4487,6 +4555,7 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_create_employee():
     api_instance = PayrollNzApi(api_client)
     xero_tenant_id = 'xeroTenantId_example'
+    idempotency_key = 'KEY_VALUE'
     date_of_birth = dateutil.parser.parse('2000-10-28T00:00:00Z')
 
     address = Address(
@@ -4502,7 +4571,7 @@ def accounting_create_employee():
         address = address)
     
     try:
-        api_response = api_instance.create_employee(xero_tenant_id, employee)
+        api_response = api_instance.create_employee(xero_tenant_id, employee, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->createEmployee: %s\n" % e)</code></pre>
@@ -4542,6 +4611,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_createEmployee_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>
@@ -4627,6 +4716,7 @@ def accounting_create_employee_earnings_template():
     api_instance = PayrollNzApi(api_client)
     xero_tenant_id = 'xeroTenantId_example'
     employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    idempotency_key = 'KEY_VALUE'
 
     earnings_template = EarningsTemplate(
         pay_template_earning_id = "00000000-0000-0000-0000-000000000000",
@@ -4640,7 +4730,7 @@ def accounting_create_employee_earnings_template():
     earnings_templates.append(earnings_template)
     
     try:
-        api_response = api_instance.create_employee_earnings_template(xero_tenant_id, employee_id, earningsTemplate)
+        api_response = api_instance.create_employee_earnings_template(xero_tenant_id, employee_id, earningsTemplate, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->createEmployeeEarningsTemplate: %s\n" % e)</code></pre>
@@ -4713,6 +4803,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_createEmployeeEarningsTemplate_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>
@@ -4798,6 +4908,7 @@ def accounting_create_employee_leave():
     api_instance = PayrollNzApi(api_client)
     xero_tenant_id = 'xeroTenantId_example'
     employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    idempotency_key = 'KEY_VALUE'
     start_date = dateutil.parser.parse('2020-10-28T00:00:00Z')
     end_date = dateutil.parser.parse('2020-10-30T00:00:00Z')
 
@@ -4807,7 +4918,7 @@ def accounting_create_employee_leave():
         end_date = end_date)
     
     try:
-        api_response = api_instance.create_employee_leave(xero_tenant_id, employee_id, employeeLeave)
+        api_response = api_instance.create_employee_leave(xero_tenant_id, employee_id, employeeLeave, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->createEmployeeLeave: %s\n" % e)</code></pre>
@@ -4880,6 +4991,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_createEmployeeLeave_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>
@@ -4965,6 +5096,7 @@ def accounting_create_employee_leave_setup():
     api_instance = PayrollNzApi(api_client)
     xero_tenant_id = 'xeroTenantId_example'
     employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    idempotency_key = 'KEY_VALUE'
 
     employee_leave_setup = EmployeeLeaveSetup(
         include_holiday_pay = false,
@@ -4975,7 +5107,7 @@ def accounting_create_employee_leave_setup():
         sick_leave_opening_balance = 10.5)
     
     try:
-        api_response = api_instance.create_employee_leave_setup(xero_tenant_id, employee_id, employeeLeaveSetup)
+        api_response = api_instance.create_employee_leave_setup(xero_tenant_id, employee_id, employeeLeaveSetup, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->createEmployeeLeaveSetup: %s\n" % e)</code></pre>
@@ -5048,6 +5180,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_createEmployeeLeaveSetup_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>
@@ -5133,6 +5285,7 @@ def accounting_create_employee_leave_type():
     api_instance = PayrollNzApi(api_client)
     xero_tenant_id = 'xeroTenantId_example'
     employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    idempotency_key = 'KEY_VALUE'
 
     employee_leave_type = EmployeeLeaveType(
         leave_type_id = "00000000-0000-0000-0000-000000000000",
@@ -5140,7 +5293,7 @@ def accounting_create_employee_leave_type():
         opening_balance = 5.25)
     
     try:
-        api_response = api_instance.create_employee_leave_type(xero_tenant_id, employee_id, employeeLeaveType)
+        api_response = api_instance.create_employee_leave_type(xero_tenant_id, employee_id, employeeLeaveType, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->createEmployeeLeaveType: %s\n" % e)</code></pre>
@@ -5213,6 +5366,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_createEmployeeLeaveType_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>
@@ -5298,6 +5471,7 @@ def accounting_create_employee_opening_balances():
     api_instance = PayrollNzApi(api_client)
     xero_tenant_id = 'xeroTenantId_example'
     employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    idempotency_key = 'KEY_VALUE'
     period_end_date = dateutil.parser.parse('2020-10-30T00:00:00Z')
 
     employee_opening_balance = EmployeeOpeningBalance(
@@ -5310,7 +5484,7 @@ def accounting_create_employee_opening_balances():
     employee_opening_balances.append(employee_opening_balance)
     
     try:
-        api_response = api_instance.create_employee_opening_balances(xero_tenant_id, employee_id, employeeOpeningBalance)
+        api_response = api_instance.create_employee_opening_balances(xero_tenant_id, employee_id, employeeOpeningBalance, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->createEmployeeOpeningBalances: %s\n" % e)</code></pre>
@@ -5383,6 +5557,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_createEmployeeOpeningBalances_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>
@@ -5468,6 +5662,7 @@ def accounting_create_employee_payment_method():
     api_instance = PayrollNzApi(api_client)
     xero_tenant_id = 'xeroTenantId_example'
     employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    idempotency_key = 'KEY_VALUE'
 
     bank_account = BankAccount(
         account_name = "Charlotte Danes",
@@ -5481,7 +5676,7 @@ def accounting_create_employee_payment_method():
         bankAccounts = bankAccounts)
     
     try:
-        api_response = api_instance.create_employee_payment_method(xero_tenant_id, employee_id, paymentMethod)
+        api_response = api_instance.create_employee_payment_method(xero_tenant_id, employee_id, paymentMethod, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->createEmployeePaymentMethod: %s\n" % e)</code></pre>
@@ -5554,6 +5749,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_createEmployeePaymentMethod_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>
@@ -5638,6 +5853,7 @@ def accounting_create_employee_salary_and_wage():
     api_instance = PayrollNzApi(api_client)
     xero_tenant_id = 'xeroTenantId_example'
     employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    idempotency_key = 'KEY_VALUE'
 
     salary_and_wage = SalaryAndWage(
         earnings_rate_id = "00000000-0000-0000-0000-000000000000",
@@ -5646,7 +5862,7 @@ def accounting_create_employee_salary_and_wage():
         payment_type = payment_type_enum.Hourly)
     
     try:
-        api_response = api_instance.create_employee_salary_and_wage(xero_tenant_id, employee_id, salaryAndWage)
+        api_response = api_instance.create_employee_salary_and_wage(xero_tenant_id, employee_id, salaryAndWage, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->createEmployeeSalaryAndWage: %s\n" % e)</code></pre>
@@ -5719,6 +5935,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_createEmployeeSalaryAndWage_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>
@@ -5804,6 +6040,7 @@ def accounting_create_employment():
     api_instance = PayrollNzApi(api_client)
     xero_tenant_id = 'xeroTenantId_example'
     employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    idempotency_key = 'KEY_VALUE'
     start_date = dateutil.parser.parse('2020-10-28T00:00:00Z')
 
     employment = Employment(
@@ -5811,7 +6048,7 @@ def accounting_create_employment():
         start_date = start_date)
     
     try:
-        api_response = api_instance.create_employment(xero_tenant_id, employee_id, employment)
+        api_response = api_instance.create_employment(xero_tenant_id, employee_id, employment, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->createEmployment: %s\n" % e)</code></pre>
@@ -5884,6 +6121,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_createEmployment_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>
@@ -5968,6 +6225,7 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_create_leave_type():
     api_instance = PayrollNzApi(api_client)
     xero_tenant_id = 'xeroTenantId_example'
+    idempotency_key = 'KEY_VALUE'
 
     leave_type = LeaveType(
         name = "LeaveType",
@@ -5975,7 +6233,7 @@ def accounting_create_leave_type():
         show_on_payslip = true)
     
     try:
-        api_response = api_instance.create_leave_type(xero_tenant_id, leaveType)
+        api_response = api_instance.create_leave_type(xero_tenant_id, leaveType, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->createLeaveType: %s\n" % e)</code></pre>
@@ -6015,6 +6273,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_createLeaveType_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>
@@ -6100,6 +6378,7 @@ def accounting_create_multiple_employee_earnings_template():
     api_instance = PayrollNzApi(api_client)
     xero_tenant_id = 'xeroTenantId_example'
     employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    idempotency_key = 'KEY_VALUE'
 
     earnings_template = EarningsTemplate(
         pay_template_earning_id = "00000000-0000-0000-0000-000000000000",
@@ -6113,7 +6392,7 @@ def accounting_create_multiple_employee_earnings_template():
     earnings_templates.append(earnings_template)
     
     try:
-        api_response = api_instance.create_multiple_employee_earnings_template(xero_tenant_id, employee_id, earningsTemplate)
+        api_response = api_instance.create_multiple_employee_earnings_template(xero_tenant_id, employee_id, earningsTemplate, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->createMultipleEmployeeEarningsTemplate: %s\n" % e)</code></pre>
@@ -6186,6 +6465,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_createMultipleEmployeeEarningsTemplate_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>
@@ -6270,13 +6569,14 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_create_pay_run():
     api_instance = PayrollNzApi(api_client)
     xero_tenant_id = 'xeroTenantId_example'
+    idempotency_key = 'KEY_VALUE'
 
     pay_run = PayRun(
         pay_run_type = pay_run_type_enum.Scheduled,
         payroll_calendar_id = "00000000-0000-0000-0000-000000000000")
     
     try:
-        api_response = api_instance.create_pay_run(xero_tenant_id, payRun)
+        api_response = api_instance.create_pay_run(xero_tenant_id, payRun, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->createPayRun: %s\n" % e)</code></pre>
@@ -6316,6 +6616,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_createPayRun_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>
@@ -6400,6 +6720,7 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_create_pay_run_calendar():
     api_instance = PayrollNzApi(api_client)
     xero_tenant_id = 'xeroTenantId_example'
+    idempotency_key = 'KEY_VALUE'
     start_date = dateutil.parser.parse('2020-10-28T00:00:00Z')
     payment_date = dateutil.parser.parse('2020-10-30T00:00:00Z')
 
@@ -6409,7 +6730,7 @@ def accounting_create_pay_run_calendar():
         payment_date = payment_date)
     
     try:
-        api_response = api_instance.create_pay_run_calendar(xero_tenant_id, payRunCalendar)
+        api_response = api_instance.create_pay_run_calendar(xero_tenant_id, payRunCalendar, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->createPayRunCalendar: %s\n" % e)</code></pre>
@@ -6449,6 +6770,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_createPayRunCalendar_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>
@@ -6533,6 +6874,7 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_create_reimbursement():
     api_instance = PayrollNzApi(api_client)
     xero_tenant_id = 'xeroTenantId_example'
+    idempotency_key = 'KEY_VALUE'
 
     reimbursement = Reimbursement(
         name = "Test Reimbursement",
@@ -6541,7 +6883,7 @@ def accounting_create_reimbursement():
         reimbursement_category = reimbursement_category_enum.GST)
     
     try:
-        api_response = api_instance.create_reimbursement(xero_tenant_id, reimbursement)
+        api_response = api_instance.create_reimbursement(xero_tenant_id, reimbursement, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->createReimbursement: %s\n" % e)</code></pre>
@@ -6581,6 +6923,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_createReimbursement_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>
@@ -6665,6 +7027,7 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_create_superannuation():
     api_instance = PayrollNzApi(api_client)
     xero_tenant_id = 'xeroTenantId_example'
+    idempotency_key = 'KEY_VALUE'
 
     benefit = Benefit(
         category = "ComplyingFund",
@@ -6675,7 +7038,7 @@ def accounting_create_superannuation():
         standard_amount = 100)
     
     try:
-        api_response = api_instance.create_superannuation(xero_tenant_id, benefit)
+        api_response = api_instance.create_superannuation(xero_tenant_id, benefit, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->createSuperannuation: %s\n" % e)</code></pre>
@@ -6715,6 +7078,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_createSuperannuation_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>
@@ -6799,6 +7182,7 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_create_timesheet():
     api_instance = PayrollNzApi(api_client)
     xero_tenant_id = 'xeroTenantId_example'
+    idempotency_key = 'KEY_VALUE'
     start_date = dateutil.parser.parse('2020-10-28T00:00:00Z')
     end_date = dateutil.parser.parse('2020-10-30T00:00:00Z')
 
@@ -6809,7 +7193,7 @@ def accounting_create_timesheet():
         end_date = end_date)
     
     try:
-        api_response = api_instance.create_timesheet(xero_tenant_id, timesheet)
+        api_response = api_instance.create_timesheet(xero_tenant_id, timesheet, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->createTimesheet: %s\n" % e)</code></pre>
@@ -6849,6 +7233,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_createTimesheet_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>
@@ -6934,6 +7338,7 @@ def accounting_create_timesheet_line():
     api_instance = PayrollNzApi(api_client)
     xero_tenant_id = 'xeroTenantId_example'
     timesheet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    idempotency_key = 'KEY_VALUE'
     date = dateutil.parser.parse('2020-10-28T00:00:00Z')
 
     timesheet_line = TimesheetLine(
@@ -6944,7 +7349,7 @@ def accounting_create_timesheet_line():
         number_of_units = 6)
     
     try:
-        api_response = api_instance.create_timesheet_line(xero_tenant_id, timesheet_id, timesheetLine)
+        api_response = api_instance.create_timesheet_line(xero_tenant_id, timesheet_id, timesheetLine, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->createTimesheetLine: %s\n" % e)</code></pre>
@@ -7017,6 +7422,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_createTimesheetLine_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>
@@ -12375,9 +12800,10 @@ def accounting_revert_timesheet():
     api_instance = PayrollNzApi(api_client)
     xero_tenant_id = 'xeroTenantId_example'
     timesheet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    idempotency_key = 'KEY_VALUE'
     
     try:
-        api_response = api_instance.revert_timesheet(xero_tenant_id, timesheet_id)
+        api_response = api_instance.revert_timesheet(xero_tenant_id, timesheet_id, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->revertTimesheet: %s\n" % e)</code></pre>
@@ -12455,6 +12881,26 @@ Xero identifier for Tenant
 </td>
 </tr>
 
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_revertTimesheet_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
                   </table>
                 </article>
               </div>
@@ -12499,6 +12945,7 @@ def accounting_update_employee():
     api_instance = PayrollNzApi(api_client)
     xero_tenant_id = 'xeroTenantId_example'
     employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    idempotency_key = 'KEY_VALUE'
     date_of_birth = dateutil.parser.parse('2000-10-28T00:00:00Z')
 
     address = Address(
@@ -12514,7 +12961,7 @@ def accounting_update_employee():
         address = address)
     
     try:
-        api_response = api_instance.update_employee(xero_tenant_id, employee_id, employee)
+        api_response = api_instance.update_employee(xero_tenant_id, employee_id, employee, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->updateEmployee: %s\n" % e)</code></pre>
@@ -12587,6 +13034,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_updateEmployee_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>
@@ -12673,6 +13140,7 @@ def accounting_update_employee_earnings_template():
     xero_tenant_id = 'xeroTenantId_example'
     employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
     pay_template_earning_id = '3fa85f64-5717-4562-b3fc-2c963f66afa6'
+    idempotency_key = 'KEY_VALUE'
 
     earnings_template = EarningsTemplate(
         pay_template_earning_id = "00000000-0000-0000-0000-000000000000",
@@ -12686,7 +13154,7 @@ def accounting_update_employee_earnings_template():
     earnings_templates.append(earnings_template)
     
     try:
-        api_response = api_instance.update_employee_earnings_template(xero_tenant_id, employee_id, pay_template_earning_id, earningsTemplate)
+        api_response = api_instance.update_employee_earnings_template(xero_tenant_id, employee_id, pay_template_earning_id, earningsTemplate, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->updateEmployeeEarningsTemplate: %s\n" % e)</code></pre>
@@ -12790,6 +13258,26 @@ Xero identifier for Tenant
 </td>
 </tr>
 
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_updateEmployeeEarningsTemplate_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
                   </table>
                   <div class="methodsubtabletitle">Body parameters</div>
                   <table id="methodsubtable">
@@ -12871,6 +13359,7 @@ def accounting_update_employee_leave():
     xero_tenant_id = 'xeroTenantId_example'
     employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
     leave_id = 'c4be24e5-e840-4c92-9eaa-2d86cd596314'
+    idempotency_key = 'KEY_VALUE'
     start_date = dateutil.parser.parse('2020-10-28T00:00:00Z')
     end_date = dateutil.parser.parse('2020-10-30T00:00:00Z')
 
@@ -12880,7 +13369,7 @@ def accounting_update_employee_leave():
         end_date = end_date)
     
     try:
-        api_response = api_instance.update_employee_leave(xero_tenant_id, employee_id, leave_id, employeeLeave)
+        api_response = api_instance.update_employee_leave(xero_tenant_id, employee_id, leave_id, employeeLeave, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->updateEmployeeLeave: %s\n" % e)</code></pre>
@@ -12984,6 +13473,26 @@ Xero identifier for Tenant
 </td>
 </tr>
 
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_updateEmployeeLeave_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
                   </table>
                   <div class="methodsubtabletitle">Body parameters</div>
                   <table id="methodsubtable">
@@ -13065,6 +13574,7 @@ def accounting_update_employee_salary_and_wage():
     xero_tenant_id = 'xeroTenantId_example'
     employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
     salary_and_wages_id = '3fa85f64-5717-4562-b3fc-2c963f66afa6'
+    idempotency_key = 'KEY_VALUE'
 
     salary_and_wage = SalaryAndWage(
         earnings_rate_id = "00000000-0000-0000-0000-000000000000",
@@ -13073,7 +13583,7 @@ def accounting_update_employee_salary_and_wage():
         payment_type = payment_type_enum.Hourly)
     
     try:
-        api_response = api_instance.update_employee_salary_and_wage(xero_tenant_id, employee_id, salary_and_wages_id, salaryAndWage)
+        api_response = api_instance.update_employee_salary_and_wage(xero_tenant_id, employee_id, salary_and_wages_id, salaryAndWage, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->updateEmployeeSalaryAndWage: %s\n" % e)</code></pre>
@@ -13177,6 +13687,26 @@ Xero identifier for Tenant
 </td>
 </tr>
 
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_updateEmployeeSalaryAndWage_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
                   </table>
                   <div class="methodsubtabletitle">Body parameters</div>
                   <table id="methodsubtable">
@@ -13257,6 +13787,7 @@ def accounting_update_employee_tax():
     api_instance = PayrollNzApi(api_client)
     xero_tenant_id = 'xeroTenantId_example'
     employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    idempotency_key = 'KEY_VALUE'
     student_loan_as_at = dateutil.parser.parse('2020-10-30T00:00:00Z')
 
     employee_tax = EmployeeTax(
@@ -13274,7 +13805,7 @@ def accounting_update_employee_tax():
         student_loan_as_at = student_loan_as_at)
     
     try:
-        api_response = api_instance.update_employee_tax(xero_tenant_id, employee_id, employeeTax)
+        api_response = api_instance.update_employee_tax(xero_tenant_id, employee_id, employeeTax, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->updateEmployeeTax: %s\n" % e)</code></pre>
@@ -13347,6 +13878,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_updateEmployeeTax_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>
@@ -13431,6 +13982,7 @@ def accounting_update_pay_run():
     api_instance = PayrollNzApi(api_client)
     xero_tenant_id = 'xeroTenantId_example'
     pay_run_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    idempotency_key = 'KEY_VALUE'
     start_date = dateutil.parser.parse('2020-10-28T00:00:00Z')
     payment_date = dateutil.parser.parse('2020-10-30T00:00:00Z')
 
@@ -13440,7 +13992,7 @@ def accounting_update_pay_run():
         payment_date = payment_date)
     
     try:
-        api_response = api_instance.update_pay_run(xero_tenant_id, pay_run_id, payRun)
+        api_response = api_instance.update_pay_run(xero_tenant_id, pay_run_id, payRun, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->updatePayRun: %s\n" % e)</code></pre>
@@ -13513,6 +14065,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_updatePayRun_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>
@@ -13598,6 +14170,7 @@ def accounting_update_pay_slip_line_items():
     api_instance = PayrollNzApi(api_client)
     xero_tenant_id = 'xeroTenantId_example'
     pay_slip_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    idempotency_key = 'KEY_VALUE'
 
     earnings_line = EarningsLine(
         earnings_line_id = "00000000-0000-0000-0000-000000000000",
@@ -13614,7 +14187,7 @@ def accounting_update_pay_slip_line_items():
         earningsLines = earnings_lines)
     
     try:
-        api_response = api_instance.update_pay_slip_line_items(xero_tenant_id, pay_slip_id, paySlip)
+        api_response = api_instance.update_pay_slip_line_items(xero_tenant_id, pay_slip_id, paySlip, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->updatePaySlipLineItems: %s\n" % e)</code></pre>
@@ -13687,6 +14260,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_updatePaySlipLineItems_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>
@@ -13773,6 +14366,7 @@ def accounting_update_timesheet_line():
     xero_tenant_id = 'xeroTenantId_example'
     timesheet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
     timesheet_line_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+    idempotency_key = 'KEY_VALUE'
     date = dateutil.parser.parse('2020-10-28T00:00:00Z')
 
     timesheet_line = TimesheetLine(
@@ -13783,7 +14377,7 @@ def accounting_update_timesheet_line():
         number_of_units = 6)
     
     try:
-        api_response = api_instance.update_timesheet_line(xero_tenant_id, timesheet_id, timesheet_line_id, timesheetLine)
+        api_response = api_instance.update_timesheet_line(xero_tenant_id, timesheet_id, timesheet_line_id, timesheetLine, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollNzApi->updateTimesheetLine: %s\n" % e)</code></pre>
@@ -13882,6 +14476,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_updateTimesheetLine_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>

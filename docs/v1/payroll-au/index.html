@@ -974,6 +974,13 @@ ul.nav-tabs {
   "description" : "",
   "enum" : [ "WEEKLY", "FORTNIGHTLY", "FOURWEEKLY", "MONTHLY", "TWICEMONTHLY", "QUARTERLY" ]
 };
+      defs["CountryOfResidence"] = {
+  "title" : "",
+  "type" : "string",
+  "description" : "Country of residence as a valid ISO 3166-1 alpha-2 country code e.g. &quot;AU&quot;, &quot;NZ&quot;, &quot;CA&quot;. Only applicable, and mandatory if income type is WORKINGHOLIDAYMAKER.",
+  "example" : "AU",
+  "enum" : [ "AF", "AX", "AL", "DZ", "AS", "AD", "AO", "AI", "AQ", "AG", "AR", "AM", "AW", "AU", "AT", "AZ", "BS", "BH", "BD", "BB", "BY", "BE", "BZ", "BJ", "BM", "BT", "BO", "BA", "BW", "BV", "BR", "IO", "BN", "BG", "BF", "BI", "KH", "CM", "CA", "CV", "KY", "CF", "TD", "CL", "CN", "CX", "CC", "CO", "KM", "CG", "CD", "CK", "CR", "CI", "HR", "CU", "CY", "CZ", "DK", "DJ", "DM", "DO", "EC", "EG", "SV", "GQ", "ER", "EE", "ET", "FK", "FO", "FJ", "FI", "FR", "GF", "PF", "TF", "GA", "GM", "GE", "DE", "GH", "GI", "GR", "GL", "GD", "GP", "GU", "GT", "GG", "GN", "GW", "GY", "HT", "HM", "VA", "HN", "HK", "HU", "IS", "IN", "ID", "IR", "IQ", "IE", "IM", "IL", "IT", "JM", "JP", "JE", "JO", "KZ", "KE", "KI", "KP", "KR", "KW", "KG", "LA", "LV", "LB", "LS", "LR", "LY", "LI", "LT", "LU", "MO", "MK", "MG", "MW", "MY", "MV", "ML", "MT", "MH", "MQ", "MR", "MU", "YT", "MX", "FM", "MD", "MC", "MN", "ME", "MS", "MA", "MZ", "MM", "NA", "NR", "NP", "NL", "AN", "NC", "NZ", "NI", "NE", "NG", "NU", "NF", "MP", "NO", "OM", "PK", "PW", "PS", "PA", "PG", "PY", "PE", "PH", "PN", "PL", "PT", "PR", "QA", "RE", "RO", "RU", "RW", "BL", "SH", "KN", "LC", "MF", "PM", "VC", "WS", "SM", "ST", "SA", "SN", "RS", "SC", "SL", "SG", "SK", "SI", "SB", "SO", "ZA", "GS", "ES", "LK", "SD", "SR", "SJ", "SZ", "SE", "CH", "SY", "TW", "TJ", "TZ", "TH", "TL", "TG", "TK", "TO", "TT", "TN", "TR", "TM", "TC", "TV", "UG", "UA", "AE", "GB", "US", "UM", "UY", "UZ", "VU", "VE", "VN", "VG", "VI", "WF", "EH", "YE", "ZM", "ZW", "BQ", "CW", "SX", "SS" ]
+};
       defs["DeductionLine"] = {
   "title" : "",
   "required" : [ "DeductionTypeID" ],
@@ -1175,6 +1182,16 @@ ul.nav-tabs {
       "description" : "Boolean to determine if the earnings rate is reportable or exempt from W1",
       "example" : false
     },
+    "AllowanceContributesToAnnualLeaveRate" : {
+      "type" : "boolean",
+      "description" : "Boolean to determine if the allowance earnings rate contributes towards annual leave rate. Only applicable if EarningsType is ALLOWANCE and RateType is RATEPERUNIT",
+      "example" : false
+    },
+    "AllowanceContributesToOvertimeRate" : {
+      "type" : "boolean",
+      "description" : "Boolean to determine if the allowance earnings rate contributes towards overtime allowance rate. Only applicable if EarningsType is ALLOWANCE and RateType is RATEPERUNIT",
+      "example" : false
+    },
     "EarningsType" : {
       "$ref" : "#/components/schemas/EarningsType"
     },
@@ -1245,7 +1262,7 @@ ul.nav-tabs {
   "title" : "",
   "type" : "string",
   "description" : "",
-  "enum" : [ "FIXED", "ORDINARYTIMEEARNINGS", "OVERTIMEEARNINGS", "ALLOWANCE", "LUMPSUMD", "EMPLOYMENTTERMINATIONPAYMENT", "LUMPSUMA", "LUMPSUMB", "BONUSESANDCOMMISSIONS", "LUMPSUME", "LUMPSUMW", "DIRECTORSFEES" ]
+  "enum" : [ "FIXED", "ORDINARYTIMEEARNINGS", "OVERTIMEEARNINGS", "ALLOWANCE", "LUMPSUMD", "EMPLOYMENTTERMINATIONPAYMENT", "LUMPSUMA", "LUMPSUMB", "BONUSESANDCOMMISSIONS", "LUMPSUME", "LUMPSUMW", "DIRECTORSFEES", "PAIDPARENTALLEAVE", "WORKERSCOMPENSATION" ]
 };
       defs["Employee"] = {
   "title" : "",
@@ -1294,7 +1311,7 @@ ul.nav-tabs {
     },
     "Gender" : {
       "type" : "string",
-      "description" : "The employee’s gender. See Employee Gender",
+      "description" : "The employee’s gender. See Employee Gender",
       "example" : "F",
       "enum" : [ "N", "M", "F", "I" ]
     },
@@ -1382,6 +1399,20 @@ ul.nav-tabs {
     "TaxDeclaration" : {
       "$ref" : "#/components/schemas/TaxDeclaration"
     },
+    "IncomeType" : {
+      "$ref" : "#/components/schemas/IncomeType"
+    },
+    "EmploymentType" : {
+      "$ref" : "#/components/schemas/EmploymentType"
+    },
+    "CountryOfResidence" : {
+      "$ref" : "#/components/schemas/CountryOfResidence"
+    },
+    "IsSTP2Qualified" : {
+      "type" : "boolean",
+      "description" : "Indicates if the employee has been updated for STP Phase 2 compliance. Doesn't indicate that the employee is payable.",
+      "example" : true
+    },
     "LeaveBalances" : {
       "type" : "array",
       "items" : {
@@ -1444,13 +1475,19 @@ ul.nav-tabs {
   "title" : "",
   "type" : "string",
   "description" : "",
-  "enum" : [ "FULLTIME", "PARTTIME", "CASUAL", "LABOURHIRE", "SUPERINCOMESTREAM" ]
+  "enum" : [ "FULLTIME", "PARTTIME", "CASUAL", "LABOURHIRE", "SUPERINCOMESTREAM", "NONEMPLOYEE" ]
 };
       defs["EmploymentTerminationPaymentType"] = {
   "title" : "",
   "type" : "string",
   "description" : "",
   "enum" : [ "O", "R" ]
+};
+      defs["EmploymentType"] = {
+  "title" : "",
+  "type" : "string",
+  "description" : "",
+  "enum" : [ "EMPLOYEE", "CONTRACTOR" ]
 };
       defs["EntitlementFinalPayPayoutType"] = {
   "title" : "",
@@ -1493,6 +1530,12 @@ ul.nav-tabs {
     }
   },
   "description" : ""
+};
+      defs["IncomeType"] = {
+  "title" : "",
+  "type" : "string",
+  "description" : "",
+  "enum" : [ "SALARYANDWAGES", "WORKINGHOLIDAYMAKER", "NONEMPLOYEE", "CLOSELYHELDPAYEES", "LABOURHIRE" ]
 };
       defs["LeaveAccrualLine"] = {
   "title" : "",
@@ -1563,6 +1606,9 @@ ul.nav-tabs {
       "description" : "The Description of the Leave",
       "example" : "My leave"
     },
+    "PayOutType" : {
+      "$ref" : "#/components/schemas/PayOutType"
+    },
     "LeavePeriods" : {
       "type" : "array",
       "items" : {
@@ -1629,6 +1675,13 @@ ul.nav-tabs {
   },
   "description" : ""
 };
+      defs["LeaveCategoryCode"] = {
+  "title" : "",
+  "type" : "string",
+  "description" : "Code used to identify the Leave Category",
+  "example" : "ANNUALLEAVE",
+  "enum" : [ "ANNUALLEAVE", "LONGSERVICELEAVE", "PERSONALSICKCARERSLEAVE", "ROSTEREDDAYOFF", "TIMEOFFINLIEU", "COMPASSIONATEANDBEREAVEMENTLEAVE", "STUDYLEAVE", "FAMILYANDDOMESTICVIOLENCELEAVE", "SPECIALPAIDLEAVE", "COMMUNITYSERVICELEAVE", "JURYDUTYLEAVE", "DEFENCERESERVELEAVE" ]
+};
       defs["LeaveEarningsLine"] = {
   "title" : "",
   "type" : "object",
@@ -1652,6 +1705,9 @@ ul.nav-tabs {
       "format" : "double",
       "example" : 2.5,
       "x-is-money" : true
+    },
+    "PayOutType" : {
+      "$ref" : "#/components/schemas/PayOutType"
     }
   },
   "description" : ""
@@ -1757,7 +1813,7 @@ ul.nav-tabs {
   "title" : "",
   "type" : "string",
   "description" : "",
-  "enum" : [ "SCHEDULED", "PROCESSED" ]
+  "enum" : [ "SCHEDULED", "PROCESSED", "REQUESTED", "REJECTED" ]
 };
       defs["LeaveType"] = {
   "title" : "",
@@ -1812,6 +1868,14 @@ ul.nav-tabs {
     "CurrentRecord" : {
       "type" : "boolean",
       "description" : "Is the current record",
+      "example" : true
+    },
+    "LeaveCategoryCode" : {
+      "$ref" : "#/components/schemas/LeaveCategoryCode"
+    },
+    "SGCExempt" : {
+      "type" : "boolean",
+      "description" : "Set this to indicate that the leave type is exempt from superannuation guarantee contribution",
       "example" : true
     }
   },
@@ -1873,6 +1937,52 @@ ul.nav-tabs {
       "items" : {
         "$ref" : "#/components/schemas/LeaveLine"
       }
+    },
+    "PaidLeaveEarningsLines" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/components/schemas/PaidLeaveEarningsLine"
+      }
+    }
+  },
+  "description" : ""
+};
+      defs["PaidLeaveEarningsLine"] = {
+  "title" : "",
+  "required" : [ "Amount", "LeaveTypeID" ],
+  "type" : "object",
+  "properties" : {
+    "LeaveTypeID" : {
+      "type" : "string",
+      "description" : "Xero leave type identifier",
+      "format" : "uuid",
+      "example" : "742998cb-7584-4ecf-aa88-d694f59c50f9"
+    },
+    "Amount" : {
+      "type" : "number",
+      "description" : "Paid leave amount",
+      "format" : "double",
+      "example" : 500.0,
+      "x-is-money" : true
+    },
+    "SGCAppliedLeaveLoadingAmount" : {
+      "type" : "number",
+      "description" : "The amount of leave loading applied for the leave type that is subject to Superannuation Guarantee Contributions. *Only applicable for Leave Types with Annual Leave Categories",
+      "format" : "double",
+      "example" : 50.0,
+      "x-is-money" : true
+    },
+    "SGCExemptedLeaveLoadingAmount" : {
+      "type" : "number",
+      "description" : "The amount of leave loading applied for the leave type that is exempt from Superannuation Guarantee Contributions. *Only applicable for Leave Types with Annual Leave Categories",
+      "format" : "double",
+      "example" : 60.0,
+      "x-is-money" : true
+    },
+    "ResetSTPCategorisation" : {
+      "type" : "boolean",
+      "description" : "Reset the STP categorisations for the leave type. *Only applicable for Leave Types with Annual Leave Categories",
+      "example" : true
     }
   },
   "description" : ""
@@ -1918,6 +2028,12 @@ ul.nav-tabs {
   },
   "description" : "",
   "x-isObjectArray" : true
+};
+      defs["PayOutType"] = {
+  "title" : "",
+  "type" : "string",
+  "description" : "How the requested leave will be paid out, e.g. cashed out.",
+  "enum" : [ "DEFAULT", "CASHED_OUT" ]
 };
       defs["PayRun"] = {
   "title" : "",
@@ -2539,6 +2655,12 @@ ul.nav-tabs {
   "description" : "",
   "enum" : [ "AUSTRALIANRESIDENT", "FOREIGNRESIDENT", "WORKINGHOLIDAYMAKER" ]
 };
+      defs["SeniorMaritalStatus"] = {
+  "title" : "",
+  "type" : "string",
+  "description" : "",
+  "enum" : [ "MEMBEROFCOUPLE", "MEMBEROFILLNESSSEPARATEDCOUPLE", "SINGLE" ]
+};
       defs["Settings"] = {
   "title" : "",
   "type" : "object",
@@ -2558,6 +2680,11 @@ ul.nav-tabs {
       "description" : "Number of days in the Payroll year",
       "format" : "int32",
       "example" : 365
+    },
+    "EmployeesAreSTP2" : {
+      "type" : "boolean",
+      "description" : "Indicates if the organisation has been enabled for STP Phase 2 editing of employees.",
+      "example" : true
     }
   },
   "description" : ""
@@ -2929,6 +3056,11 @@ ul.nav-tabs {
       "description" : "The tax file number e.g 123123123.",
       "example" : "123123123"
     },
+    "ABN" : {
+      "type" : "string",
+      "description" : "11-digit Australian Business Number e.g 21006819692 or an empty string (\"\") to unset a previously set value. Only applicable, and mandatory if income type is NONEMPLOYEE.",
+      "example" : "21006819692"
+    },
     "AustralianResidentForTaxPurposes" : {
       "type" : "boolean",
       "description" : "If the employee is Australian resident for tax purposes. e.g true or false",
@@ -2936,6 +3068,15 @@ ul.nav-tabs {
     },
     "ResidencyStatus" : {
       "$ref" : "#/components/schemas/ResidencyStatus"
+    },
+    "TaxScaleType" : {
+      "$ref" : "#/components/schemas/TaxScaleType"
+    },
+    "WorkCondition" : {
+      "$ref" : "#/components/schemas/WorkCondition"
+    },
+    "SeniorMaritalStatus" : {
+      "$ref" : "#/components/schemas/SeniorMaritalStatus"
     },
     "TaxFreeThresholdClaimed" : {
       "type" : "boolean",
@@ -2985,6 +3126,11 @@ ul.nav-tabs {
       "description" : "If the employee is eligible for student startup loan rules",
       "example" : true
     },
+    "HasLoanOrStudentDebt" : {
+      "type" : "boolean",
+      "description" : "If the employee has any of the following loans or debts: Higher Education Loan Program (HELP/HECS), VET Student Loan (VSL), Financial Supplement (FS), Student Start-up Loan (SSL), or Trade Support Loan (TSL)",
+      "example" : true
+    },
     "UpdatedDateUTC" : {
       "type" : "string",
       "description" : "Last modified timestamp",
@@ -3031,6 +3177,12 @@ ul.nav-tabs {
     }
   },
   "description" : ""
+};
+      defs["TaxScaleType"] = {
+  "title" : "",
+  "type" : "string",
+  "description" : "",
+  "enum" : [ "REGULAR", "ACTORSARTISTSENTERTAINERS", "HORTICULTURISTORSHEARER", "SENIORORPENSIONER", "WORKINGHOLIDAYMAKER", "FOREIGN" ]
 };
       defs["Timesheet"] = {
   "title" : "",
@@ -3171,6 +3323,12 @@ ul.nav-tabs {
     "url" : "https://developer.xero.com/documentation/api/http-response-codes"
   }
 };
+      defs["WorkCondition"] = {
+  "title" : "",
+  "type" : "string",
+  "description" : "",
+  "enum" : [ "PROMOTIONAL", "THREELESSPERFORMANCESPERWEEK", "NONE" ]
+};
 
       var errs = {};
 
@@ -3256,6 +3414,9 @@ ul.nav-tabs {
               <li class="nav-header" data-group="PayrollAu"><strong>SDK: </strong><span id='sdk-name'></span></li>
               <li class="nav-header" data-group="PayrollAu"><strong>VSN: </strong>1.27.0</li>
               <li class="nav-header" data-group="PayrollAu"><a href="#api-PayrollAu">Methods</a></li>
+              <li data-group="PayrollAu" data-name="approveLeaveApplication" class="">
+                <a href="#api-PayrollAu-approveLeaveApplication">approveLeaveApplication</a>
+              </li>
               <li data-group="PayrollAu" data-name="createEmployee" class="">
                 <a href="#api-PayrollAu-createEmployee">createEmployee</a>
               </li>
@@ -3288,6 +3449,9 @@ ul.nav-tabs {
               </li>
               <li data-group="PayrollAu" data-name="getLeaveApplications" class="">
                 <a href="#api-PayrollAu-getLeaveApplications">getLeaveApplications</a>
+              </li>
+              <li data-group="PayrollAu" data-name="getLeaveApplicationsV2" class="">
+                <a href="#api-PayrollAu-getLeaveApplicationsV2">getLeaveApplicationsV2</a>
               </li>
               <li data-group="PayrollAu" data-name="getPayItems" class="">
                 <a href="#api-PayrollAu-getPayItems">getPayItems</a>
@@ -3325,6 +3489,9 @@ ul.nav-tabs {
               <li data-group="PayrollAu" data-name="getTimesheets" class="">
                 <a href="#api-PayrollAu-getTimesheets">getTimesheets</a>
               </li>
+              <li data-group="PayrollAu" data-name="rejectLeaveApplication" class="">
+                <a href="#api-PayrollAu-rejectLeaveApplication">rejectLeaveApplication</a>
+              </li>
               <li data-group="PayrollAu" data-name="updateEmployee" class="">
                 <a href="#api-PayrollAu-updateEmployee">updateEmployee</a>
               </li>
@@ -3361,6 +3528,151 @@ ul.nav-tabs {
           <div id="sections">
             <section id="api-PayrollAu">
               <h1>PayrollAu</h1>
+              <div id="api-PayrollAu-approveLeaveApplication">
+                <article id="api-PayrollAu-approveLeaveApplication-0" data-group="User" data-name="approveLeaveApplication" data-version="0">
+                  <div class="pull-left">
+                    <h1>approveLeaveApplication</h1>
+                    <p>Approve a requested leave application by a unique leave application id</p>
+                  </div>
+                  <div class="pull-right"></div>
+                  <div class="clearfix"></div>
+                  <p></p>
+                  <p class="marked"></p>
+                  <p></p>
+                  <br />
+                  <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/LeaveApplications/{LeaveApplicationID}/approve</span></code></pre>
+                  <p>
+                  <h3>Usage and SDK Samples</h3>
+                  </p>
+                  <ul class="nav nav-tabs nav-tabs-examples">
+                    <!-- *****REPLACE***** comment out the other languages <li> -->
+                    <li class=""><a href="#examples-PayrollAu-approveLeaveApplication-0-python">Python</a></li>
+                  </ul>
+                  <div class="tab-content">
+                    <!-- *****REPLACE***** comment out the other languages tab-pane -->
+                    <div class="tab-pane" id="examples-PayrollAu-approveLeaveApplication-0-python">
+                      <pre class="prettyprint"><code class="language-python"># configure api_client for use with xero-python sdk client
+api_client = ApiClient(
+    Configuration(
+        debug=false,
+        oauth2_token=OAuth2Token(
+            client_id="YOUR_CLIENT_ID", client_secret="YOUR_CLIENT_SECRET"
+        ),
+    ),
+    pool_threads=1,
+)
+
+api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
+
+def accounting_approve_leave_application():
+    api_instance = PayrollAuApi(api_client)
+    xero_tenant_id = 'xeroTenantId_example'
+    leave_application_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    idempotency_key = 'KEY_VALUE'
+    
+    try:
+        api_response = api_instance.approve_leave_application(xero_tenant_id, leave_application_id, idempotency_key)
+        print(api_response)
+    except AccountingBadRequestException as e:
+        print("Exception when calling PayrollAuApi->approveLeaveApplication: %s\n" % e)</code></pre>
+                    </div>
+                  </div>
+                  <h2>Scopes</h2>
+                  <table>
+                    
+                    <tr>
+                      <td>payroll.employees</td>
+                      <td>Grant read-write access to payroll employees</td>
+                    </tr>
+                    
+                  </table>
+                  <h2>Parameters</h2>
+                  <div class="methodsubtabletitle">Path parameters</div>
+                  <table id="methodsubtable">
+                    <tr>
+                      <th width="150px">Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr><td style="width:150px;">LeaveApplicationID<span style="color:red;">*</span></td>
+<td>
+
+
+    <div id="d2e199_approveLeaveApplication_leaveApplicationID">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    UUID
+                </span>
+                    <span class="format">
+                        (uuid)
+                    </span>
+
+                    <div class="inner description marked">
+Leave Application id for single object
+                    </div>
+            </div>
+                <div class="inner required">
+                    Required
+                </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                  </table>
+                  <div class="methodsubtabletitle">Header parameters</div>
+                  <table id="methodsubtable">
+                    <tr>
+                      <th width="150px">Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr><td style="width:150px;">Xero-Tenant-Id<span style="color:red;">*</span></td>
+<td>
+
+
+    <div id="d2e199_approveLeaveApplication_xeroTenantId">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+Xero identifier for Tenant
+                    </div>
+            </div>
+                <div class="inner required">
+                    Required
+                </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_approveLeaveApplication_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                  </table>
+                </article>
+              </div>
+              <hr>
               <div id="api-PayrollAu-createEmployee">
                 <article id="api-PayrollAu-createEmployee-0" data-group="User" data-name="createEmployee" data-version="0">
                   <div class="pull-left">
@@ -3400,6 +3712,7 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_create_employee():
     api_instance = PayrollAuApi(api_client)
     xero_tenant_id = 'xeroTenantId_example'
+    idempotency_key = 'KEY_VALUE'
     date_of_birth = dateutil.parser.parse('2000-10-28T00:00:00Z')
 
     home_address = HomeAddress(
@@ -3415,7 +3728,7 @@ def accounting_create_employee():
         homeAddress = home_address)
     
     try:
-        api_response = api_instance.create_employee(xero_tenant_id, employee)
+        api_response = api_instance.create_employee(xero_tenant_id, employee, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->createEmployee: %s\n" % e)</code></pre>
@@ -3455,6 +3768,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_createEmployee_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>
@@ -3542,6 +3875,7 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_create_leave_application():
     api_instance = PayrollAuApi(api_client)
     xero_tenant_id = 'xeroTenantId_example'
+    idempotency_key = 'KEY_VALUE'
     start_date = dateutil.parser.parse('2020-10-28T00:00:00Z')
     end_date = dateutil.parser.parse('2020-10-30T00:00:00Z')
 
@@ -3553,7 +3887,7 @@ def accounting_create_leave_application():
         end_date = end_date)
     
     try:
-        api_response = api_instance.create_leave_application(xero_tenant_id, leaveApplication)
+        api_response = api_instance.create_leave_application(xero_tenant_id, leaveApplication, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->createLeaveApplication: %s\n" % e)</code></pre>
@@ -3593,6 +3927,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_createLeaveApplication_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>
@@ -3680,6 +4034,7 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_create_pay_item():
     api_instance = PayrollAuApi(api_client)
     xero_tenant_id = 'xeroTenantId_example'
+    idempotency_key = 'KEY_VALUE'
 
     earnings_rate = EarningsRate(
         name = "Ordinary Hours 123",
@@ -3723,7 +4078,7 @@ def accounting_create_pay_item():
         reimbursementTypes = reimbursement_types)
     
     try:
-        api_response = api_instance.create_pay_item(xero_tenant_id, payItem)
+        api_response = api_instance.create_pay_item(xero_tenant_id, payItem, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->createPayItem: %s\n" % e)</code></pre>
@@ -3768,6 +4123,26 @@ Xero identifier for Tenant
 </td>
 </tr>
 
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_createPayItem_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
                   </table>
                   <div class="methodsubtabletitle">Body parameters</div>
                   <table id="methodsubtable">
@@ -3798,7 +4173,7 @@ Xero identifier for Tenant
       "schema" : {
         "$ref" : "#/components/schemas/PayItem"
       },
-      "example" : "{ \"EarningsRates\": [ { \"Name\": \"MyRate\", \"AccountCode\": \"400\", \"TypeOfUnits\": \"4.00\", \"IsExemptFromTax\": true, \"IsExemptFromSuper\": true, \"IsReportableAsW1\": false, \"EarningsType\": \"ORDINARYTIMEEARNINGS\", \"EarningsRateID\": \"1fa4e226-b711-46ba-a8a7-4344c9c5fb87\", \"RateType\": \"MULTIPLE\", \"RatePerUnit\": \"10.0\", \"Multiplier\": 1.5, \"Amount\": 5, \"EmploymentTerminationPaymentType\": \"O\" } ] }"
+      "example" : "{ \"EarningsRates\": [ { \"Name\": \"MyRate\", \"AccountCode\": \"400\", \"TypeOfUnits\": \"4.00\", \"IsExemptFromTax\": true, \"IsExemptFromSuper\": true, \"IsReportableAsW1\": false, \"AllowanceContributesToAnnualLeaveRate\": false, \"AllowanceContributesToOvertimeRate\": false, \"EarningsType\": \"ORDINARYTIMEEARNINGS\", \"EarningsRateID\": \"1fa4e226-b711-46ba-a8a7-4344c9c5fb87\", \"RateType\": \"MULTIPLE\", \"RatePerUnit\": \"10.0\", \"Multiplier\": 1.5, \"Amount\": 5, \"EmploymentTerminationPaymentType\": \"O\" } ] }"
     }
   },
   "required" : true
@@ -3847,12 +4222,13 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_create_pay_run():
     api_instance = PayrollAuApi(api_client)
     xero_tenant_id = 'xeroTenantId_example'
+    idempotency_key = 'KEY_VALUE'
 
     pay_run = PayRun(
         payroll_calendar_id = "00000000-0000-0000-0000-000000000000")
     
     try:
-        api_response = api_instance.create_pay_run(xero_tenant_id, payRun)
+        api_response = api_instance.create_pay_run(xero_tenant_id, payRun, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->createPayRun: %s\n" % e)</code></pre>
@@ -3892,6 +4268,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_createPayRun_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>
@@ -3979,6 +4375,7 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_create_payroll_calendar():
     api_instance = PayrollAuApi(api_client)
     xero_tenant_id = 'xeroTenantId_example'
+    idempotency_key = 'KEY_VALUE'
     start_date = dateutil.parser.parse('2020-10-28T00:00:00Z')
     payment_date = dateutil.parser.parse('2000-10-30T00:00:00Z')
 
@@ -3992,7 +4389,7 @@ def accounting_create_payroll_calendar():
     payroll_calendars.append(payroll_calendar)
     
     try:
-        api_response = api_instance.create_payroll_calendar(xero_tenant_id, payrollCalendar)
+        api_response = api_instance.create_payroll_calendar(xero_tenant_id, payrollCalendar, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->createPayrollCalendar: %s\n" % e)</code></pre>
@@ -4032,6 +4429,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_createPayrollCalendar_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>
@@ -4119,13 +4536,14 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_create_superfund():
     api_instance = PayrollAuApi(api_client)
     xero_tenant_id = 'xeroTenantId_example'
+    idempotency_key = 'KEY_VALUE'
 
     super_fund = SuperFund(
         type = "REGULATED",
         USI = "40022701955002")
     
     try:
-        api_response = api_instance.create_superfund(xero_tenant_id, superFund)
+        api_response = api_instance.create_superfund(xero_tenant_id, superFund, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->createSuperfund: %s\n" % e)</code></pre>
@@ -4165,6 +4583,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_createSuperfund_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>
@@ -4252,6 +4690,7 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_create_timesheet():
     api_instance = PayrollAuApi(api_client)
     xero_tenant_id = 'xeroTenantId_example'
+    idempotency_key = 'KEY_VALUE'
     start_date = dateutil.parser.parse('2020-10-23T00:00:00Z')
     end_date = dateutil.parser.parse('2020-10-30T00:00:00Z')
 
@@ -4262,7 +4701,7 @@ def accounting_create_timesheet():
         status = "DRAFT")
     
     try:
-        api_response = api_instance.create_timesheet(xero_tenant_id, timesheet)
+        api_response = api_instance.create_timesheet(xero_tenant_id, timesheet, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->createTimesheet: %s\n" % e)</code></pre>
@@ -4302,6 +4741,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_createTimesheet_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>
@@ -4965,6 +5424,194 @@ Order by an any element
 
 
     <div id="d2e199_getLeaveApplications_page">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    Integer
+                </span>
+
+                    <div class="inner description marked">
+e.g. page=1 – Up to 100 objects will be returned in a single API call
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                  </table>
+                </article>
+              </div>
+              <hr>
+              <div id="api-PayrollAu-getLeaveApplicationsV2">
+                <article id="api-PayrollAu-getLeaveApplicationsV2-0" data-group="User" data-name="getLeaveApplicationsV2" data-version="0">
+                  <div class="pull-left">
+                    <h1>getLeaveApplicationsV2</h1>
+                    <p>Retrieves leave applications including leave requests</p>
+                  </div>
+                  <div class="pull-right"></div>
+                  <div class="clearfix"></div>
+                  <p></p>
+                  <p class="marked"></p>
+                  <p></p>
+                  <br />
+                  <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/LeaveApplications/v2</span></code></pre>
+                  <p>
+                  <h3>Usage and SDK Samples</h3>
+                  </p>
+                  <ul class="nav nav-tabs nav-tabs-examples">
+                    <!-- *****REPLACE***** comment out the other languages <li> -->
+                    <li class=""><a href="#examples-PayrollAu-getLeaveApplicationsV2-0-python">Python</a></li>
+                  </ul>
+                  <div class="tab-content">
+                    <!-- *****REPLACE***** comment out the other languages tab-pane -->
+                    <div class="tab-pane" id="examples-PayrollAu-getLeaveApplicationsV2-0-python">
+                      <pre class="prettyprint"><code class="language-python"># configure api_client for use with xero-python sdk client
+api_client = ApiClient(
+    Configuration(
+        debug=false,
+        oauth2_token=OAuth2Token(
+            client_id="YOUR_CLIENT_ID", client_secret="YOUR_CLIENT_SECRET"
+        ),
+    ),
+    pool_threads=1,
+)
+
+api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
+
+def accounting_get_leave_applications_v2():
+    api_instance = PayrollAuApi(api_client)
+    xero_tenant_id = 'xeroTenantId_example'
+    if_modified_since = dateutil.parser.parse("2020-02-06T12:17:43.202-08:00")
+    where = 'Status=="ACTIVE"'
+    order = 'EmailAddress%20DESC'
+    
+    try:
+        api_response = api_instance.get_leave_applications_v2(xero_tenant_id, if_modified_since, where, order, page)
+        print(api_response)
+    except AccountingBadRequestException as e:
+        print("Exception when calling PayrollAuApi->getLeaveApplicationsV2: %s\n" % e)</code></pre>
+                    </div>
+                  </div>
+                  <h2>Scopes</h2>
+                  <table>
+                    
+                    <tr>
+                      <td>payroll.employees</td>
+                      <td>Grant read-write access to payroll employees</td>
+                    </tr>
+                    
+                    <tr>
+                      <td>payroll.employees.read</td>
+                      <td>Grant read-only access to payroll employees</td>
+                    </tr>
+                    
+                  </table>
+                  <h2>Parameters</h2>
+                  <div class="methodsubtabletitle">Header parameters</div>
+                  <table id="methodsubtable">
+                    <tr>
+                      <th width="150px">Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr><td style="width:150px;">Xero-Tenant-Id<span style="color:red;">*</span></td>
+<td>
+
+
+    <div id="d2e199_getLeaveApplicationsV2_xeroTenantId">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+Xero identifier for Tenant
+                    </div>
+            </div>
+                <div class="inner required">
+                    Required
+                </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">If-Modified-Since</td>
+<td>
+
+
+    <div id="d2e199_getLeaveApplicationsV2_ifModifiedSince">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    Date
+                </span>
+                    <span class="format">
+                        (date-time)
+                    </span>
+
+                    <div class="inner description marked">
+Only records created or modified since this timestamp will be returned
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                  </table>
+                  <div class="methodsubtabletitle">Query parameters</div>
+                  <table id="methodsubtable">
+                    <tr>
+                      <th width="150px">Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr><td style="width:150px;">where</td>
+<td>
+
+
+    <div id="d2e199_getLeaveApplicationsV2_where">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+Filter by an any element
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">order</td>
+<td>
+
+
+    <div id="d2e199_getLeaveApplicationsV2_order">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+Order by an any element
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">page</td>
+<td>
+
+
+    <div id="d2e199_getLeaveApplicationsV2_page">
         <div class="json-schema-view">
             <div class="primitive">
                 <span class="type">
@@ -6808,6 +7455,151 @@ e.g. page=1 – Up to 100 timesheets will be returned in a single API call
                 </article>
               </div>
               <hr>
+              <div id="api-PayrollAu-rejectLeaveApplication">
+                <article id="api-PayrollAu-rejectLeaveApplication-0" data-group="User" data-name="rejectLeaveApplication" data-version="0">
+                  <div class="pull-left">
+                    <h1>rejectLeaveApplication</h1>
+                    <p>Reject a leave application by a unique leave application id</p>
+                  </div>
+                  <div class="pull-right"></div>
+                  <div class="clearfix"></div>
+                  <p></p>
+                  <p class="marked"></p>
+                  <p></p>
+                  <br />
+                  <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/LeaveApplications/{LeaveApplicationID}/reject</span></code></pre>
+                  <p>
+                  <h3>Usage and SDK Samples</h3>
+                  </p>
+                  <ul class="nav nav-tabs nav-tabs-examples">
+                    <!-- *****REPLACE***** comment out the other languages <li> -->
+                    <li class=""><a href="#examples-PayrollAu-rejectLeaveApplication-0-python">Python</a></li>
+                  </ul>
+                  <div class="tab-content">
+                    <!-- *****REPLACE***** comment out the other languages tab-pane -->
+                    <div class="tab-pane" id="examples-PayrollAu-rejectLeaveApplication-0-python">
+                      <pre class="prettyprint"><code class="language-python"># configure api_client for use with xero-python sdk client
+api_client = ApiClient(
+    Configuration(
+        debug=false,
+        oauth2_token=OAuth2Token(
+            client_id="YOUR_CLIENT_ID", client_secret="YOUR_CLIENT_SECRET"
+        ),
+    ),
+    pool_threads=1,
+)
+
+api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
+
+def accounting_reject_leave_application():
+    api_instance = PayrollAuApi(api_client)
+    xero_tenant_id = 'xeroTenantId_example'
+    leave_application_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    idempotency_key = 'KEY_VALUE'
+    
+    try:
+        api_response = api_instance.reject_leave_application(xero_tenant_id, leave_application_id, idempotency_key)
+        print(api_response)
+    except AccountingBadRequestException as e:
+        print("Exception when calling PayrollAuApi->rejectLeaveApplication: %s\n" % e)</code></pre>
+                    </div>
+                  </div>
+                  <h2>Scopes</h2>
+                  <table>
+                    
+                    <tr>
+                      <td>payroll.employees</td>
+                      <td>Grant read-write access to payroll employees</td>
+                    </tr>
+                    
+                  </table>
+                  <h2>Parameters</h2>
+                  <div class="methodsubtabletitle">Path parameters</div>
+                  <table id="methodsubtable">
+                    <tr>
+                      <th width="150px">Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr><td style="width:150px;">LeaveApplicationID<span style="color:red;">*</span></td>
+<td>
+
+
+    <div id="d2e199_rejectLeaveApplication_leaveApplicationID">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    UUID
+                </span>
+                    <span class="format">
+                        (uuid)
+                    </span>
+
+                    <div class="inner description marked">
+Leave Application id for single object
+                    </div>
+            </div>
+                <div class="inner required">
+                    Required
+                </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                  </table>
+                  <div class="methodsubtabletitle">Header parameters</div>
+                  <table id="methodsubtable">
+                    <tr>
+                      <th width="150px">Name</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr><td style="width:150px;">Xero-Tenant-Id<span style="color:red;">*</span></td>
+<td>
+
+
+    <div id="d2e199_rejectLeaveApplication_xeroTenantId">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+Xero identifier for Tenant
+                    </div>
+            </div>
+                <div class="inner required">
+                    Required
+                </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_rejectLeaveApplication_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                  </table>
+                </article>
+              </div>
+              <hr>
               <div id="api-PayrollAu-updateEmployee">
                 <article id="api-PayrollAu-updateEmployee-0" data-group="User" data-name="updateEmployee" data-version="0">
                   <div class="pull-left">
@@ -6848,6 +7640,7 @@ def accounting_update_employee():
     api_instance = PayrollAuApi(api_client)
     xero_tenant_id = 'xeroTenantId_example'
     employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    idempotency_key = 'KEY_VALUE'
     date_of_birth = dateutil.parser.parse('2000-10-28T00:00:00Z')
 
     home_address = HomeAddress(
@@ -6863,7 +7656,7 @@ def accounting_update_employee():
         homeAddress = home_address)
     
     try:
-        api_response = api_instance.update_employee(xero_tenant_id, employee_id, employee)
+        api_response = api_instance.update_employee(xero_tenant_id, employee_id, idempotency_key, employee)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->updateEmployee: %s\n" % e)</code></pre>
@@ -6936,6 +7729,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_updateEmployee_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>
@@ -7020,6 +7833,7 @@ def accounting_update_leave_application():
     api_instance = PayrollAuApi(api_client)
     xero_tenant_id = 'xeroTenantId_example'
     leave_application_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    idempotency_key = 'KEY_VALUE'
     start_date = dateutil.parser.parse('2020-10-28T00:00:00Z')
     end_date = dateutil.parser.parse('2020-10-30T00:00:00Z')
 
@@ -7031,7 +7845,7 @@ def accounting_update_leave_application():
         end_date = end_date)
     
     try:
-        api_response = api_instance.update_leave_application(xero_tenant_id, leave_application_id, leaveApplication)
+        api_response = api_instance.update_leave_application(xero_tenant_id, leave_application_id, leaveApplication, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->updateLeaveApplication: %s\n" % e)</code></pre>
@@ -7109,6 +7923,26 @@ Xero identifier for Tenant
 </td>
 </tr>
 
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_updateLeaveApplication_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
                   </table>
                   <div class="methodsubtabletitle">Body parameters</div>
                   <table id="methodsubtable">
@@ -7142,7 +7976,7 @@ Xero identifier for Tenant
           "$ref" : "#/components/schemas/LeaveApplication"
         }
       },
-      "example" : "[ { \"EmployeeID\": \"cdfb8371-0b21-4b8a-8903-1024df6c391e\", \"LeaveTypeID\": \"184ea8f7-d143-46dd-bef3-0c60e1aa6fca\", \"StartDate\": \"/Date(1572559200000+0000)/\", \"EndDate\": \"/Date(1572645600000+0000)/\", \"Description\": \"My updated Description\" } ]"
+      "example" : "[ { \"EmployeeID\": \"cdfb8371-0b21-4b8a-8903-1024df6c391e\", \"LeaveApplicationID\": \"1d4cd583-0107-4386-936b-672eb3d1f624\", \"LeaveTypeID\": \"184ea8f7-d143-46dd-bef3-0c60e1aa6fca\", \"LeavePeriods\": [ { \"PayPeriodStartDate\": \"/Date(1572566400000+0000)/\", \"PayPeriodEndDate\": \"/Date(1573084800000+0000)/\", \"LeavePeriodStatus\": \"SCHEDULED\", \"NumberOfUnits\": 7.6 } ], \"Title\": \"vacation\", \"Description\": \"My updated Description\", \"StartDate\": \"/Date(1572559200000+0000)/\", \"EndDate\": \"/Date(1572645600000+0000)/\", \"PayOutType\": \"DEFAULT\" } ]"
     }
   },
   "required" : true
@@ -7192,12 +8026,13 @@ def accounting_update_pay_run():
     api_instance = PayrollAuApi(api_client)
     xero_tenant_id = 'xeroTenantId_example'
     pay_run_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    idempotency_key = 'KEY_VALUE'
 
     pay_run = PayRun(
         payroll_calendar_id = "00000000-0000-0000-0000-000000000000")
     
     try:
-        api_response = api_instance.update_pay_run(xero_tenant_id, pay_run_id, payRun)
+        api_response = api_instance.update_pay_run(xero_tenant_id, pay_run_id, idempotency_key, payRun)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->updatePayRun: %s\n" % e)</code></pre>
@@ -7270,6 +8105,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_updatePayRun_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>
@@ -7354,6 +8209,7 @@ def accounting_update_payslip():
     api_instance = PayrollAuApi(api_client)
     xero_tenant_id = 'xeroTenantId_example'
     payslip_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    idempotency_key = 'KEY_VALUE'
 
     earnings_line = EarningsLine(
         earnings_rate_id = "00000000-0000-0000-0000-000000000000",
@@ -7370,7 +8226,7 @@ def accounting_update_payslip():
     payslip_lines.append(payslip_line)
     
     try:
-        api_response = api_instance.update_payslip(xero_tenant_id, payslip_id, payslipLines)
+        api_response = api_instance.update_payslip(xero_tenant_id, payslip_id, idempotency_key, payslipLines)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->updatePayslip: %s\n" % e)</code></pre>
@@ -7443,6 +8299,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_updatePayslip_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>
@@ -7527,13 +8403,14 @@ def accounting_update_superfund():
     api_instance = PayrollAuApi(api_client)
     xero_tenant_id = 'xeroTenantId_example'
     super_fund_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    idempotency_key = 'KEY_VALUE'
 
     super_fund = SuperFund(
         type = "REGULATED",
         USI = "40022701955002")
     
     try:
-        api_response = api_instance.update_superfund(xero_tenant_id, super_fund_id, superFund)
+        api_response = api_instance.update_superfund(xero_tenant_id, super_fund_id, idempotency_key, superFund)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->updateSuperfund: %s\n" % e)</code></pre>
@@ -7606,6 +8483,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_updateSuperfund_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>
@@ -7690,6 +8587,7 @@ def accounting_update_timesheet():
     api_instance = PayrollAuApi(api_client)
     xero_tenant_id = 'xeroTenantId_example'
     timesheet_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c'
+    idempotency_key = 'KEY_VALUE'
     start_date = dateutil.parser.parse('2020-10-23T00:00:00Z')
     end_date = dateutil.parser.parse('2020-10-30T00:00:00Z')
 
@@ -7700,7 +8598,7 @@ def accounting_update_timesheet():
         status = "DRAFT")
     
     try:
-        api_response = api_instance.update_timesheet(xero_tenant_id, timesheet_id, timesheet)
+        api_response = api_instance.update_timesheet(xero_tenant_id, timesheet_id, idempotency_key, timesheet)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling PayrollAuApi->updateTimesheet: %s\n" % e)</code></pre>
@@ -7773,6 +8671,26 @@ Xero identifier for Tenant
                 <div class="inner required">
                     Required
                 </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">Idempotency-Key</td>
+<td>
+
+
+    <div id="d2e199_updateTimesheet_idempotencyKey">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+                    </div>
+            </div>
         </div>
     </div>
 </td>
