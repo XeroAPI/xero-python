@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.40.3
+    OpenAPI spec version: 3.0.0
 """
 
 import importlib
@@ -2172,8 +2172,8 @@ class PayrollAuApi(object):
         self,
         xero_tenant_id,
         employee_id,
+        employee,
         idempotency_key=empty,
-        employee=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -2183,8 +2183,8 @@ class PayrollAuApi(object):
         Update properties on a single employee  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
+        :param list[Employee] employee: (required)
         :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
-        :param list[Employee] employee:
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -2201,6 +2201,12 @@ class PayrollAuApi(object):
         if employee_id is None:
             raise ValueError(
                 "Missing the required parameter `employee_id` "
+                "when calling `update_employee`"
+            )
+        # verify the required parameter 'employee' is set
+        if employee is None:
+            raise ValueError(
+                "Missing the required parameter `employee` "
                 "when calling `update_employee`"
             )
 
@@ -2355,8 +2361,8 @@ class PayrollAuApi(object):
         self,
         xero_tenant_id,
         pay_run_id,
+        pay_run,
         idempotency_key=empty,
-        pay_run=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -2366,8 +2372,8 @@ class PayrollAuApi(object):
         Update properties on a single PayRun  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str pay_run_id: PayRun id for single object (required)
+        :param list[PayRun] pay_run: (required)
         :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
-        :param list[PayRun] pay_run:
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -2384,6 +2390,12 @@ class PayrollAuApi(object):
         if pay_run_id is None:
             raise ValueError(
                 "Missing the required parameter `pay_run_id` "
+                "when calling `update_pay_run`"
+            )
+        # verify the required parameter 'pay_run' is set
+        if pay_run is None:
+            raise ValueError(
+                "Missing the required parameter `pay_run` "
                 "when calling `update_pay_run`"
             )
 
@@ -2444,8 +2456,8 @@ class PayrollAuApi(object):
         self,
         xero_tenant_id,
         payslip_id,
+        payslip_lines,
         idempotency_key=empty,
-        payslip_lines=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -2455,8 +2467,8 @@ class PayrollAuApi(object):
         Update lines on a single payslips  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str payslip_id: Payslip id for single object (required)
+        :param list[PayslipLines] payslip_lines: (required)
         :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
-        :param list[PayslipLines] payslip_lines:
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -2473,6 +2485,12 @@ class PayrollAuApi(object):
         if payslip_id is None:
             raise ValueError(
                 "Missing the required parameter `payslip_id` "
+                "when calling `update_payslip`"
+            )
+        # verify the required parameter 'payslip_lines' is set
+        if payslip_lines is None:
+            raise ValueError(
+                "Missing the required parameter `payslip_lines` "
                 "when calling `update_payslip`"
             )
 
@@ -2533,8 +2551,8 @@ class PayrollAuApi(object):
         self,
         xero_tenant_id,
         super_fund_id,
+        super_fund,
         idempotency_key=empty,
-        super_fund=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -2544,8 +2562,8 @@ class PayrollAuApi(object):
         Update properties on a single Superfund  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str super_fund_id: Superfund id for single object (required)
+        :param list[SuperFund] super_fund: (required)
         :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
-        :param list[SuperFund] super_fund:
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -2562,6 +2580,12 @@ class PayrollAuApi(object):
         if super_fund_id is None:
             raise ValueError(
                 "Missing the required parameter `super_fund_id` "
+                "when calling `update_superfund`"
+            )
+        # verify the required parameter 'super_fund' is set
+        if super_fund is None:
+            raise ValueError(
+                "Missing the required parameter `super_fund` "
                 "when calling `update_superfund`"
             )
 
@@ -2622,8 +2646,8 @@ class PayrollAuApi(object):
         self,
         xero_tenant_id,
         timesheet_id,
+        timesheet,
         idempotency_key=empty,
-        timesheet=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -2633,8 +2657,8 @@ class PayrollAuApi(object):
         Update properties on a single timesheet  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str timesheet_id: Timesheet id for single object (required)
+        :param list[Timesheet] timesheet: (required)
         :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
-        :param list[Timesheet] timesheet:
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -2651,6 +2675,12 @@ class PayrollAuApi(object):
         if timesheet_id is None:
             raise ValueError(
                 "Missing the required parameter `timesheet_id` "
+                "when calling `update_timesheet`"
+            )
+        # verify the required parameter 'timesheet' is set
+        if timesheet is None:
+            raise ValueError(
+                "Missing the required parameter `timesheet` "
                 "when calling `update_timesheet`"
             )
 

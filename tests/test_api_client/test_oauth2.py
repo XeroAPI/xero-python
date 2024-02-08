@@ -205,6 +205,7 @@ def test_auth2_call_refresh_token_api(oauth2_refresh_token):
     assert call_kwargs == {}
     assert new_token is token
 
+
 def test_auth2_call_refresh_token_api_without_id_token(oauth2_token_without_id_token):
     # Given valid refresh token and client credentials without using OpenID scope (id_token absent)
     oauth2_token = OAuth2Token()

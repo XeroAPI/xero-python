@@ -20,7 +20,7 @@ def load_requirements(file_name):
 
 
 def read_file(filename):
-    with open(filename, encoding='utf-8') as fp:
+    with open(filename, encoding="utf-8") as fp:
         return fp.read()
 
 
@@ -48,5 +48,5 @@ setup(
     keywords="xero python sdk API oAuth",
     name="xero_python",
     packages=find_packages(include=["xero_python", "xero_python.*"]),
-    version="1.27.0",
+    version="2.0.0",
 )

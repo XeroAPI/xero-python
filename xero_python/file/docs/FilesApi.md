@@ -25,7 +25,7 @@ Method | HTTP request | Description
 
 
 # **create_file_association**
-> Association create_file_association(xero_tenant_id, file_id, idempotency_key=idempotency_key, association=association)
+> Association create_file_association(xero_tenant_id, file_id, association, idempotency_key=idempotency_key)
 
 Creates a new file association
 
@@ -59,11 +59,11 @@ api_instance = FilesApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 file_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | File id for single object
+association = { "ObjectId": "1270bf7c-5d18-473a-9231-1e36c4bd33ed", "ObjectGroup": "Contact", "ObjectType": "Business" } # Association | 
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
-association = { "ObjectId": "1270bf7c-5d18-473a-9231-1e36c4bd33ed", "ObjectGroup": "Contact", "ObjectType": "Business" } # Association |  (optional)
 try:
     # Creates a new file association
-    api_response = api_instance.create_file_association(xero_tenant_id, file_id, idempotency_key=idempotency_key, association=association)
+    api_response = api_instance.create_file_association(xero_tenant_id, file_id, association, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FilesApi->create_file_association: %s\n" % e)
@@ -75,8 +75,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **file_id** | [**str**](.md)| File id for single object | 
+ **association** | [**Association**](Association.md)|  | 
  **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
- **association** | [**Association**](Association.md)|  | [optional] 
 
 ### Return type
 
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_folder**
-> Folder create_folder(xero_tenant_id, idempotency_key=idempotency_key, folder=folder)
+> Folder create_folder(xero_tenant_id, folder, idempotency_key=idempotency_key)
 
 Creates a new folder
 
@@ -127,11 +127,11 @@ api_client = ApiClient(
 api_instance = FilesApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
+folder = { "Name": "My Docs" } # Folder | 
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
-folder = { "Name": "My Docs" } # Folder |  (optional)
 try:
     # Creates a new folder
-    api_response = api_instance.create_folder(xero_tenant_id, idempotency_key=idempotency_key, folder=folder)
+    api_response = api_instance.create_folder(xero_tenant_id, folder, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FilesApi->create_folder: %s\n" % e)
@@ -142,8 +142,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **folder** | [**Folder**](Folder.md)|  | 
  **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
- **folder** | [**Folder**](Folder.md)|  | [optional] 
 
 ### Return type
 
@@ -946,7 +946,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_file**
-> FileObject update_file(xero_tenant_id, file_id, idempotency_key=idempotency_key, file_object=file_object)
+> FileObject update_file(xero_tenant_id, file_id, file_object, idempotency_key=idempotency_key)
 
 Update a file
 
@@ -980,11 +980,11 @@ api_instance = FilesApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 file_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | File id for single object
+file_object = { "FolderId": "bf924975-7097-46f2-a143-1ecfbab3c8c3" } # FileObject | 
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
-file_object = { "FolderId": "bf924975-7097-46f2-a143-1ecfbab3c8c3" } # FileObject |  (optional)
 try:
     # Update a file
-    api_response = api_instance.update_file(xero_tenant_id, file_id, idempotency_key=idempotency_key, file_object=file_object)
+    api_response = api_instance.update_file(xero_tenant_id, file_id, file_object, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FilesApi->update_file: %s\n" % e)
@@ -996,8 +996,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **file_id** | [**str**](.md)| File id for single object | 
+ **file_object** | [**FileObject**](FileObject.md)|  | 
  **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
- **file_object** | [**FileObject**](FileObject.md)|  | [optional] 
 
 ### Return type
 
