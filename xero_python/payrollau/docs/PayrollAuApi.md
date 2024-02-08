@@ -1743,7 +1743,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_employee**
-> Employees update_employee(xero_tenant_id, employee_id, idempotency_key=idempotency_key, employee=employee)
+> Employees update_employee(xero_tenant_id, employee_id, employee, idempotency_key=idempotency_key)
 
 Updates an employee's detail
 
@@ -1777,11 +1777,11 @@ api_instance = PayrollAuApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Employee id for single object
+employee = [ { "MiddleNames": "Frank" } ] # list[Employee] | 
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
-employee = [ { "MiddleNames": "Frank" } ] # list[Employee] |  (optional)
 try:
     # Updates an employee's detail
-    api_response = api_instance.update_employee(xero_tenant_id, employee_id, idempotency_key=idempotency_key, employee=employee)
+    api_response = api_instance.update_employee(xero_tenant_id, employee_id, employee, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PayrollAuApi->update_employee: %s\n" % e)
@@ -1793,8 +1793,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **employee_id** | [**str**](.md)| Employee id for single object | 
+ **employee** | [**list[Employee]**](Employee.md)|  | 
  **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
- **employee** | [**list[Employee]**](Employee.md)|  | [optional] 
 
 ### Return type
 
@@ -1879,7 +1879,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_pay_run**
-> PayRuns update_pay_run(xero_tenant_id, pay_run_id, idempotency_key=idempotency_key, pay_run=pay_run)
+> PayRuns update_pay_run(xero_tenant_id, pay_run_id, pay_run, idempotency_key=idempotency_key)
 
 Updates a pay run
 
@@ -1913,11 +1913,11 @@ api_instance = PayrollAuApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 pay_run_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | PayRun id for single object
+pay_run = [xero_python.payrollau.PayRun()] # list[PayRun] | 
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
-pay_run = [xero_python.payrollau.PayRun()] # list[PayRun] |  (optional)
 try:
     # Updates a pay run
-    api_response = api_instance.update_pay_run(xero_tenant_id, pay_run_id, idempotency_key=idempotency_key, pay_run=pay_run)
+    api_response = api_instance.update_pay_run(xero_tenant_id, pay_run_id, pay_run, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PayrollAuApi->update_pay_run: %s\n" % e)
@@ -1929,8 +1929,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **pay_run_id** | [**str**](.md)| PayRun id for single object | 
+ **pay_run** | [**list[PayRun]**](PayRun.md)|  | 
  **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
- **pay_run** | [**list[PayRun]**](PayRun.md)|  | [optional] 
 
 ### Return type
 
@@ -1948,7 +1948,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_payslip**
-> Payslips update_payslip(xero_tenant_id, payslip_id, idempotency_key=idempotency_key, payslip_lines=payslip_lines)
+> Payslips update_payslip(xero_tenant_id, payslip_id, payslip_lines, idempotency_key=idempotency_key)
 
 Updates a payslip
 
@@ -1982,11 +1982,11 @@ api_instance = PayrollAuApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 payslip_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Payslip id for single object
+payslip_lines = { "Payslip": { "EmployeeID": "cdfb8371-0b21-4b8a-8903-1024df6c391e", "DeductionLines": [ { "DeductionTypeID": "727af5e8-b347-4ae7-85fc-9b82266d0aec", "CalculationType": "FIXEDAMOUNT", "NumberOfUnits": 10 } ] } } # list[PayslipLines] | 
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
-payslip_lines = { "Payslip": { "EmployeeID": "cdfb8371-0b21-4b8a-8903-1024df6c391e", "DeductionLines": [ { "DeductionTypeID": "727af5e8-b347-4ae7-85fc-9b82266d0aec", "CalculationType": "FIXEDAMOUNT", "NumberOfUnits": 10 } ] } } # list[PayslipLines] |  (optional)
 try:
     # Updates a payslip
-    api_response = api_instance.update_payslip(xero_tenant_id, payslip_id, idempotency_key=idempotency_key, payslip_lines=payslip_lines)
+    api_response = api_instance.update_payslip(xero_tenant_id, payslip_id, payslip_lines, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PayrollAuApi->update_payslip: %s\n" % e)
@@ -1998,8 +1998,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **payslip_id** | [**str**](.md)| Payslip id for single object | 
+ **payslip_lines** | [**list[PayslipLines]**](PayslipLines.md)|  | 
  **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
- **payslip_lines** | [**list[PayslipLines]**](PayslipLines.md)|  | [optional] 
 
 ### Return type
 
@@ -2017,7 +2017,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_superfund**
-> SuperFunds update_superfund(xero_tenant_id, super_fund_id, idempotency_key=idempotency_key, super_fund=super_fund)
+> SuperFunds update_superfund(xero_tenant_id, super_fund_id, super_fund, idempotency_key=idempotency_key)
 
 Updates a superfund
 
@@ -2051,11 +2051,11 @@ api_instance = PayrollAuApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 super_fund_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Superfund id for single object
+super_fund =  [ { "Type":"REGULATED", "Name":"Nice23534" } ] # list[SuperFund] | 
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
-super_fund =  [ { "Type":"REGULATED", "Name":"Nice23534" } ] # list[SuperFund] |  (optional)
 try:
     # Updates a superfund
-    api_response = api_instance.update_superfund(xero_tenant_id, super_fund_id, idempotency_key=idempotency_key, super_fund=super_fund)
+    api_response = api_instance.update_superfund(xero_tenant_id, super_fund_id, super_fund, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PayrollAuApi->update_superfund: %s\n" % e)
@@ -2067,8 +2067,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **super_fund_id** | [**str**](.md)| Superfund id for single object | 
+ **super_fund** | [**list[SuperFund]**](SuperFund.md)|  | 
  **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
- **super_fund** | [**list[SuperFund]**](SuperFund.md)|  | [optional] 
 
 ### Return type
 
@@ -2086,7 +2086,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_timesheet**
-> Timesheets update_timesheet(xero_tenant_id, timesheet_id, idempotency_key=idempotency_key, timesheet=timesheet)
+> Timesheets update_timesheet(xero_tenant_id, timesheet_id, timesheet, idempotency_key=idempotency_key)
 
 Updates a timesheet
 
@@ -2120,11 +2120,11 @@ api_instance = PayrollAuApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 timesheet_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Timesheet id for single object
+timesheet = [ { "EmployeeID":"b34e89ff-770d-4099-b7e5-f968767118bc", "StartDate":"/Date(1573171200000+0000)/", "EndDate":"/Date(1573689600000+0000)/", "Status":"APPROVED", "Hours":22.0, "TimesheetID":"a7eb0a79-8511-4ee7-b473-3a25f28abcb9", "TimesheetLines":[ { "EarningsRateID":"ab874dfb-ab09-4c91-954e-43acf6fc23b4", "TrackingItemID":"af5e9ce2-2349-4136-be99-3561b189f473", "NumberOfUnits":[ 2.0, 10.0, 0.0, 0.0, 5.0, 0.0, 5.0 ], "UpdatedDateUTC":"/Date(1573516185127+0000)/" } ] } ] # list[Timesheet] | 
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
-timesheet = [ { "EmployeeID":"b34e89ff-770d-4099-b7e5-f968767118bc", "StartDate":"/Date(1573171200000+0000)/", "EndDate":"/Date(1573689600000+0000)/", "Status":"APPROVED", "Hours":22.0, "TimesheetID":"a7eb0a79-8511-4ee7-b473-3a25f28abcb9", "TimesheetLines":[ { "EarningsRateID":"ab874dfb-ab09-4c91-954e-43acf6fc23b4", "TrackingItemID":"af5e9ce2-2349-4136-be99-3561b189f473", "NumberOfUnits":[ 2.0, 10.0, 0.0, 0.0, 5.0, 0.0, 5.0 ], "UpdatedDateUTC":"/Date(1573516185127+0000)/" } ] } ] # list[Timesheet] |  (optional)
 try:
     # Updates a timesheet
-    api_response = api_instance.update_timesheet(xero_tenant_id, timesheet_id, idempotency_key=idempotency_key, timesheet=timesheet)
+    api_response = api_instance.update_timesheet(xero_tenant_id, timesheet_id, timesheet, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PayrollAuApi->update_timesheet: %s\n" % e)
@@ -2136,8 +2136,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **timesheet_id** | [**str**](.md)| Timesheet id for single object | 
+ **timesheet** | [**list[Timesheet]**](Timesheet.md)|  | 
  **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
- **timesheet** | [**list[Timesheet]**](Timesheet.md)|  | [optional] 
 
 ### Return type
 

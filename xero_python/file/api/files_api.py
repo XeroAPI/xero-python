@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.40.3
+    OpenAPI spec version: 3.0.0
 """
 
 import importlib
@@ -60,8 +60,8 @@ class FilesApi(object):
         self,
         xero_tenant_id,
         file_id,
+        association,
         idempotency_key=empty,
-        association=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -71,8 +71,8 @@ class FilesApi(object):
         By passing in the appropriate options, you can create a new folder  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str file_id: File id for single object (required)
+        :param Association association: (required)
         :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
-        :param Association association:
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -89,6 +89,12 @@ class FilesApi(object):
         if file_id is None:
             raise ValueError(
                 "Missing the required parameter `file_id` "
+                "when calling `create_file_association`"
+            )
+        # verify the required parameter 'association' is set
+        if association is None:
+            raise ValueError(
+                "Missing the required parameter `association` "
                 "when calling `create_file_association`"
             )
 
@@ -148,8 +154,8 @@ class FilesApi(object):
     def create_folder(
         self,
         xero_tenant_id,
+        folder,
         idempotency_key=empty,
-        folder=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -158,8 +164,8 @@ class FilesApi(object):
         OAuth2 scope: files
         By passing in the appropriate properties, you can create a new folder  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
+        :param Folder folder: (required)
         :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
-        :param Folder folder:
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -170,6 +176,12 @@ class FilesApi(object):
         if xero_tenant_id is None:
             raise ValueError(
                 "Missing the required parameter `xero_tenant_id` "
+                "when calling `create_folder`"
+            )
+        # verify the required parameter 'folder' is set
+        if folder is None:
+            raise ValueError(
+                "Missing the required parameter `folder` "
                 "when calling `create_folder`"
             )
 
@@ -1182,8 +1194,8 @@ class FilesApi(object):
         self,
         xero_tenant_id,
         file_id,
+        file_object,
         idempotency_key=empty,
-        file_object=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -1193,8 +1205,8 @@ class FilesApi(object):
         Updates file properties of a single file  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str file_id: File id for single object (required)
+        :param FileObject file_object: (required)
         :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
-        :param FileObject file_object:
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -1211,6 +1223,12 @@ class FilesApi(object):
         if file_id is None:
             raise ValueError(
                 "Missing the required parameter `file_id` " "when calling `update_file`"
+            )
+        # verify the required parameter 'file_object' is set
+        if file_object is None:
+            raise ValueError(
+                "Missing the required parameter `file_object` "
+                "when calling `update_file`"
             )
 
         collection_formats = {}

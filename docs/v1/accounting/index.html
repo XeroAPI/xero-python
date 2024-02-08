@@ -6093,7 +6093,7 @@ ul.nav-tabs {
           <nav id="scrollingNav">
             <ul class="sidenav nav nav-list">
               <li class="nav-header" data-group="Accounting"><strong>SDK: </strong><span id='sdk-name'></span></li>
-              <li class="nav-header" data-group="Accounting"><strong>VSN: </strong>1.27.0</li>
+              <li class="nav-header" data-group="Accounting"><strong>VSN: </strong>2.0.0</li>
               <li class="nav-header" data-group="Accounting"><a href="#api-Accounting">Methods</a></li>
               <li data-group="Accounting" data-name="createAccount" class="">
                 <a href="#api-Accounting-createAccount">createAccount</a>
@@ -7622,8 +7622,8 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_create_bank_transactions():
     api_instance = AccountingApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
-    idempotency_key = 'KEY_VALUE'
     summarize_errors = 'True'
+    idempotency_key = 'KEY_VALUE'
 
     contact = Contact(
         contact_id = "00000000-0000-0000-0000-000000000000")
@@ -7650,7 +7650,7 @@ def accounting_create_bank_transactions():
         bank_transactions = [bank_transaction])
     
     try:
-        api_response = api_instance.create_bank_transactions(xero_tenant_id, bankTransactions, idempotency_key, summarize_errors, unitdp)
+        api_response = api_instance.create_bank_transactions(xero_tenant_id, bankTransactions, summarize_errors, unitdp, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->createBankTransactions: %s\n" % e)</code></pre>
@@ -9725,8 +9725,8 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_create_contacts():
     api_instance = AccountingApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
-    idempotency_key = 'KEY_VALUE'
     summarize_errors = 'True'
+    idempotency_key = 'KEY_VALUE'
 
     phone = Phone(
         phone_number = "555-1212",
@@ -9744,7 +9744,7 @@ def accounting_create_contacts():
         contacts = [contact])
     
     try:
-        api_response = api_instance.create_contacts(xero_tenant_id, contacts, idempotency_key, summarize_errors)
+        api_response = api_instance.create_contacts(xero_tenant_id, contacts, summarize_errors, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->createContacts: %s\n" % e)</code></pre>
@@ -9917,8 +9917,8 @@ def accounting_create_credit_note_allocation():
     api_instance = AccountingApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
     credit_note_id = '00000000-0000-0000-0000-000000000000'
-    idempotency_key = 'KEY_VALUE'
     summarize_errors = 'True'
+    idempotency_key = 'KEY_VALUE'
     curr_date = dateutil.parser.parse('2020-12-03T00:00:00Z')
 
     invoice = Invoice(
@@ -9933,7 +9933,7 @@ def accounting_create_credit_note_allocation():
         allocations = [allocation])
     
     try:
-        api_response = api_instance.create_credit_note_allocation(xero_tenant_id, credit_note_id, allocations, idempotency_key, summarize_errors)
+        api_response = api_instance.create_credit_note_allocation(xero_tenant_id, credit_note_id, allocations, summarize_errors, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->createCreditNoteAllocation: %s\n" % e)</code></pre>
@@ -10140,15 +10140,15 @@ def accounting_create_credit_note_attachment_by_file_name():
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
     credit_note_id = '00000000-0000-0000-0000-000000000000'
     file_name = 'xero-dev.jpg'
-    idempotency_key = 'KEY_VALUE'
     include_online = 'True'
+    idempotency_key = 'KEY_VALUE'
     
     path_to_upload = Path(__file__).resolve().parent.joinpath(fileName)
     open_file = open(path_to_upload, 'rb')
         body = open_file.read()
     
     try:
-        api_response = api_instance.create_credit_note_attachment_by_file_name(xero_tenant_id, credit_note_id, file_name, body, idempotency_key, include_online)
+        api_response = api_instance.create_credit_note_attachment_by_file_name(xero_tenant_id, credit_note_id, file_name, body, include_online, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->createCreditNoteAttachmentByFileName: %s\n" % e)</code></pre>
@@ -10564,8 +10564,8 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_create_credit_notes():
     api_instance = AccountingApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
-    idempotency_key = 'KEY_VALUE'
     summarize_errors = 'True'
+    idempotency_key = 'KEY_VALUE'
     curr_date = dateutil.parser.parse('2020-12-03T00:00:00Z')
 
     contact = Contact(
@@ -10590,7 +10590,7 @@ def accounting_create_credit_notes():
         credit_notes = [credit_note])
     
     try:
-        api_response = api_instance.create_credit_notes(xero_tenant_id, creditNotes, idempotency_key, summarize_errors, unitdp)
+        api_response = api_instance.create_credit_notes(xero_tenant_id, creditNotes, summarize_errors, unitdp, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->createCreditNotes: %s\n" % e)</code></pre>
@@ -10934,8 +10934,8 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_create_employees():
     api_instance = AccountingApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
-    idempotency_key = 'KEY_VALUE'
     summarize_errors = 'True'
+    idempotency_key = 'KEY_VALUE'
 
     employee = Employee(
         first_name = "Nick",
@@ -10945,7 +10945,7 @@ def accounting_create_employees():
         employees = [employee])
     
     try:
-        api_response = api_instance.create_employees(xero_tenant_id, employees, idempotency_key, summarize_errors)
+        api_response = api_instance.create_employees(xero_tenant_id, employees, summarize_errors, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->createEmployees: %s\n" % e)</code></pre>
@@ -11474,15 +11474,15 @@ def accounting_create_invoice_attachment_by_file_name():
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
     invoice_id = '00000000-0000-0000-0000-000000000000'
     file_name = 'xero-dev.jpg'
-    idempotency_key = 'KEY_VALUE'
     include_online = 'True'
+    idempotency_key = 'KEY_VALUE'
     
     path_to_upload = Path(__file__).resolve().parent.joinpath(fileName)
     open_file = open(path_to_upload, 'rb')
         body = open_file.read()
     
     try:
-        api_response = api_instance.create_invoice_attachment_by_file_name(xero_tenant_id, invoice_id, file_name, body, idempotency_key, include_online)
+        api_response = api_instance.create_invoice_attachment_by_file_name(xero_tenant_id, invoice_id, file_name, body, include_online, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->createInvoiceAttachmentByFileName: %s\n" % e)</code></pre>
@@ -11898,8 +11898,8 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_create_invoices():
     api_instance = AccountingApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
-    idempotency_key = 'KEY_VALUE'
     summarize_errors = 'True'
+    idempotency_key = 'KEY_VALUE'
     date_value = dateutil.parser.parse('2020-10-10T00:00:00Z')
     due_date_value = dateutil.parser.parse('2020-10-28T00:00:00Z')
 
@@ -11936,7 +11936,7 @@ def accounting_create_invoices():
         invoices = [invoice])
     
     try:
-        api_response = api_instance.create_invoices(xero_tenant_id, invoices, idempotency_key, summarize_errors, unitdp)
+        api_response = api_instance.create_invoices(xero_tenant_id, invoices, summarize_errors, unitdp, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->createInvoices: %s\n" % e)</code></pre>
@@ -12316,8 +12316,8 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_create_items():
     api_instance = AccountingApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
-    idempotency_key = 'KEY_VALUE'
     summarize_errors = 'True'
+    idempotency_key = 'KEY_VALUE'
 
     purchase_details = Purchase(
         cogs_account_code = "500")
@@ -12333,7 +12333,7 @@ def accounting_create_items():
         items = [item])
     
     try:
-        api_response = api_instance.create_items(xero_tenant_id, items, idempotency_key, summarize_errors, unitdp)
+        api_response = api_instance.create_items(xero_tenant_id, items, summarize_errors, unitdp, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->createItems: %s\n" % e)</code></pre>
@@ -13075,8 +13075,8 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_create_manual_journals():
     api_instance = AccountingApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
-    idempotency_key = 'KEY_VALUE'
     summarize_errors = 'True'
+    idempotency_key = 'KEY_VALUE'
     date_value = dateutil.parser.parse('2020-12-03T00:00:00Z')
     
     manual_journal_lines = []
@@ -13102,7 +13102,7 @@ def accounting_create_manual_journals():
         manual_journals = [manual_journal])
     
     try:
-        api_response = api_instance.create_manual_journals(xero_tenant_id, manualJournals, idempotency_key, summarize_errors)
+        api_response = api_instance.create_manual_journals(xero_tenant_id, manualJournals, summarize_errors, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->createManualJournals: %s\n" % e)</code></pre>
@@ -13275,8 +13275,8 @@ def accounting_create_overpayment_allocations():
     api_instance = AccountingApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
     overpayment_id = '00000000-0000-0000-0000-000000000000'
-    idempotency_key = 'KEY_VALUE'
     summarize_errors = 'True'
+    idempotency_key = 'KEY_VALUE'
     curr_date = dateutil.parser.parse('2020-12-03T00:00:00Z')
 
     invoice = Invoice(
@@ -13291,7 +13291,7 @@ def accounting_create_overpayment_allocations():
         allocations = [allocation])
     
     try:
-        api_response = api_instance.create_overpayment_allocations(xero_tenant_id, overpayment_id, allocations, idempotency_key, summarize_errors)
+        api_response = api_instance.create_overpayment_allocations(xero_tenant_id, overpayment_id, allocations, summarize_errors, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->createOverpaymentAllocations: %s\n" % e)</code></pre>
@@ -14192,8 +14192,8 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_create_payments():
     api_instance = AccountingApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
-    idempotency_key = 'KEY_VALUE'
     summarize_errors = 'True'
+    idempotency_key = 'KEY_VALUE'
     date_value = dateutil.parser.parse('2020-10-10T00:00:00Z')
 
     invoice = Invoice(
@@ -14212,7 +14212,7 @@ def accounting_create_payments():
         payments = [payment])
     
     try:
-        api_response = api_instance.create_payments(xero_tenant_id, payments, idempotency_key, summarize_errors)
+        api_response = api_instance.create_payments(xero_tenant_id, payments, summarize_errors, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->createPayments: %s\n" % e)</code></pre>
@@ -14385,8 +14385,8 @@ def accounting_create_prepayment_allocations():
     api_instance = AccountingApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
     prepayment_id = '00000000-0000-0000-0000-000000000000'
-    idempotency_key = 'KEY_VALUE'
     summarize_errors = 'True'
+    idempotency_key = 'KEY_VALUE'
     curr_date = dateutil.parser.parse('2020-12-03T00:00:00Z')
 
     invoice = Invoice(
@@ -14401,7 +14401,7 @@ def accounting_create_prepayment_allocations():
         allocations = [allocation])
     
     try:
-        api_response = api_instance.create_prepayment_allocations(xero_tenant_id, prepayment_id, allocations, idempotency_key, summarize_errors)
+        api_response = api_instance.create_prepayment_allocations(xero_tenant_id, prepayment_id, allocations, summarize_errors, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->createPrepaymentAllocations: %s\n" % e)</code></pre>
@@ -15192,8 +15192,8 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_create_purchase_orders():
     api_instance = AccountingApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
-    idempotency_key = 'KEY_VALUE'
     summarize_errors = 'True'
+    idempotency_key = 'KEY_VALUE'
     date_value = dateutil.parser.parse('2020-12-03T00:00:00Z')
 
     contact = Contact(
@@ -15217,7 +15217,7 @@ def accounting_create_purchase_orders():
         purchase_orders = [purchase_order])
     
     try:
-        api_response = api_instance.create_purchase_orders(xero_tenant_id, purchaseOrders, idempotency_key, summarize_errors)
+        api_response = api_instance.create_purchase_orders(xero_tenant_id, purchaseOrders, summarize_errors, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->createPurchaseOrders: %s\n" % e)</code></pre>
@@ -15787,8 +15787,8 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_create_quotes():
     api_instance = AccountingApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
-    idempotency_key = 'KEY_VALUE'
     summarize_errors = 'True'
+    idempotency_key = 'KEY_VALUE'
     date_value = dateutil.parser.parse('2020-12-03T00:00:00Z')
 
     contact = Contact(
@@ -15812,7 +15812,7 @@ def accounting_create_quotes():
         quotes = [quote])
     
     try:
-        api_response = api_instance.create_quotes(xero_tenant_id, quotes, idempotency_key, summarize_errors)
+        api_response = api_instance.create_quotes(xero_tenant_id, quotes, summarize_errors, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->createQuotes: %s\n" % e)</code></pre>
@@ -16012,7 +16012,7 @@ def accounting_create_receipt():
         receipts = [receipt])
     
     try:
-        api_response = api_instance.create_receipt(xero_tenant_id, receipts, idempotency_key, unitdp)
+        api_response = api_instance.create_receipt(xero_tenant_id, receipts, unitdp, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->createReceipt: %s\n" % e)</code></pre>
@@ -16980,11 +16980,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_create_repeating_invoices():
     api_instance = AccountingApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
-    idempotency_key = 'KEY_VALUE'
     summarize_errors = 'True'
+    idempotency_key = 'KEY_VALUE'
     
     try:
-        api_response = api_instance.create_repeating_invoices(xero_tenant_id, repeatingInvoices, idempotency_key, summarize_errors)
+        api_response = api_instance.create_repeating_invoices(xero_tenant_id, repeatingInvoices, summarize_errors, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->createRepeatingInvoices: %s\n" % e)</code></pre>
@@ -39977,7 +39977,7 @@ def accounting_update_bank_transaction():
         bank_transactions = [bank_transaction])
     
     try:
-        api_response = api_instance.update_bank_transaction(xero_tenant_id, bank_transaction_id, bankTransactions, idempotency_key, unitdp)
+        api_response = api_instance.update_bank_transaction(xero_tenant_id, bank_transaction_id, bankTransactions, unitdp, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->updateBankTransaction: %s\n" % e)</code></pre>
@@ -41216,7 +41216,7 @@ def accounting_update_credit_note():
         credit_notes = [credit_note])
     
     try:
-        api_response = api_instance.update_credit_note(xero_tenant_id, credit_note_id, creditNotes, idempotency_key, unitdp)
+        api_response = api_instance.update_credit_note(xero_tenant_id, credit_note_id, creditNotes, unitdp, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->updateCreditNote: %s\n" % e)</code></pre>
@@ -41841,7 +41841,7 @@ def accounting_update_invoice():
         invoices = [invoice])
     
     try:
-        api_response = api_instance.update_invoice(xero_tenant_id, invoice_id, invoices, idempotency_key, unitdp)
+        api_response = api_instance.update_invoice(xero_tenant_id, invoice_id, invoices, unitdp, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->updateInvoice: %s\n" % e)</code></pre>
@@ -42266,7 +42266,7 @@ def accounting_update_item():
         items = [item])
     
     try:
-        api_response = api_instance.update_item(xero_tenant_id, item_id, items, idempotency_key, unitdp)
+        api_response = api_instance.update_item(xero_tenant_id, item_id, items, unitdp, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->updateItem: %s\n" % e)</code></pre>
@@ -43072,8 +43072,8 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_update_or_create_bank_transactions():
     api_instance = AccountingApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
-    idempotency_key = 'KEY_VALUE'
     summarize_errors = 'True'
+    idempotency_key = 'KEY_VALUE'
 
     contact = Contact(
         contact_id = "00000000-0000-0000-0000-000000000000")
@@ -43100,7 +43100,7 @@ def accounting_update_or_create_bank_transactions():
         bank_transactions = [bank_transaction])
     
     try:
-        api_response = api_instance.update_or_create_bank_transactions(xero_tenant_id, bankTransactions, idempotency_key, summarize_errors, unitdp)
+        api_response = api_instance.update_or_create_bank_transactions(xero_tenant_id, bankTransactions, summarize_errors, unitdp, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->updateOrCreateBankTransactions: %s\n" % e)</code></pre>
@@ -43291,8 +43291,8 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_update_or_create_contacts():
     api_instance = AccountingApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
-    idempotency_key = 'KEY_VALUE'
     summarize_errors = 'True'
+    idempotency_key = 'KEY_VALUE'
 
     phone = Phone(
         phone_number = "555-1212",
@@ -43310,7 +43310,7 @@ def accounting_update_or_create_contacts():
         contacts = [contact])
     
     try:
-        api_response = api_instance.update_or_create_contacts(xero_tenant_id, contacts, idempotency_key, summarize_errors)
+        api_response = api_instance.update_or_create_contacts(xero_tenant_id, contacts, summarize_errors, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->updateOrCreateContacts: %s\n" % e)</code></pre>
@@ -43481,8 +43481,8 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_update_or_create_credit_notes():
     api_instance = AccountingApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
-    idempotency_key = 'KEY_VALUE'
     summarize_errors = 'True'
+    idempotency_key = 'KEY_VALUE'
     curr_date = dateutil.parser.parse('2020-12-03T00:00:00Z')
 
     contact = Contact(
@@ -43507,7 +43507,7 @@ def accounting_update_or_create_credit_notes():
         credit_notes = [credit_note])
     
     try:
-        api_response = api_instance.update_or_create_credit_notes(xero_tenant_id, creditNotes, idempotency_key, summarize_errors, unitdp)
+        api_response = api_instance.update_or_create_credit_notes(xero_tenant_id, creditNotes, summarize_errors, unitdp, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->updateOrCreateCreditNotes: %s\n" % e)</code></pre>
@@ -43699,8 +43699,8 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_update_or_create_employees():
     api_instance = AccountingApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
-    idempotency_key = 'KEY_VALUE'
     summarize_errors = 'True'
+    idempotency_key = 'KEY_VALUE'
 
     employee = Employee(
         first_name = "Nick",
@@ -43710,7 +43710,7 @@ def accounting_update_or_create_employees():
         employees = [employee])
     
     try:
-        api_response = api_instance.update_or_create_employees(xero_tenant_id, employees, idempotency_key, summarize_errors)
+        api_response = api_instance.update_or_create_employees(xero_tenant_id, employees, summarize_errors, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->updateOrCreateEmployees: %s\n" % e)</code></pre>
@@ -43882,8 +43882,8 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_update_or_create_invoices():
     api_instance = AccountingApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
-    idempotency_key = 'KEY_VALUE'
     summarize_errors = 'True'
+    idempotency_key = 'KEY_VALUE'
     date_value = dateutil.parser.parse('2020-10-10T00:00:00Z')
     due_date_value = dateutil.parser.parse('2020-10-28T00:00:00Z')
 
@@ -43912,7 +43912,7 @@ def accounting_update_or_create_invoices():
         invoices = [invoice])
     
     try:
-        api_response = api_instance.update_or_create_invoices(xero_tenant_id, invoices, idempotency_key, summarize_errors, unitdp)
+        api_response = api_instance.update_or_create_invoices(xero_tenant_id, invoices, summarize_errors, unitdp, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->updateOrCreateInvoices: %s\n" % e)</code></pre>
@@ -44103,8 +44103,8 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_update_or_create_items():
     api_instance = AccountingApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
-    idempotency_key = 'KEY_VALUE'
     summarize_errors = 'True'
+    idempotency_key = 'KEY_VALUE'
 
     item = Item(
         code = "abcXYZ123",
@@ -44115,7 +44115,7 @@ def accounting_update_or_create_items():
         items = [item])
     
     try:
-        api_response = api_instance.update_or_create_items(xero_tenant_id, items, idempotency_key, summarize_errors, unitdp)
+        api_response = api_instance.update_or_create_items(xero_tenant_id, items, summarize_errors, unitdp, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->updateOrCreateItems: %s\n" % e)</code></pre>
@@ -44306,8 +44306,8 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_update_or_create_manual_journals():
     api_instance = AccountingApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
-    idempotency_key = 'KEY_VALUE'
     summarize_errors = 'True'
+    idempotency_key = 'KEY_VALUE'
     date_value = dateutil.parser.parse('2020-12-03T00:00:00Z')
     
     manual_journal_lines = []
@@ -44333,7 +44333,7 @@ def accounting_update_or_create_manual_journals():
         manual_journals = [manual_journal])
     
     try:
-        api_response = api_instance.update_or_create_manual_journals(xero_tenant_id, manualJournals, idempotency_key, summarize_errors)
+        api_response = api_instance.update_or_create_manual_journals(xero_tenant_id, manualJournals, summarize_errors, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->updateOrCreateManualJournals: %s\n" % e)</code></pre>
@@ -44505,8 +44505,8 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_update_or_create_purchase_orders():
     api_instance = AccountingApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
-    idempotency_key = 'KEY_VALUE'
     summarize_errors = 'True'
+    idempotency_key = 'KEY_VALUE'
     date_value = dateutil.parser.parse('2020-12-03T00:00:00Z')
 
     contact = Contact(
@@ -44530,7 +44530,7 @@ def accounting_update_or_create_purchase_orders():
         purchase_orders = [purchase_order])
     
     try:
-        api_response = api_instance.update_or_create_purchase_orders(xero_tenant_id, purchaseOrders, idempotency_key, summarize_errors)
+        api_response = api_instance.update_or_create_purchase_orders(xero_tenant_id, purchaseOrders, summarize_errors, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->updateOrCreatePurchaseOrders: %s\n" % e)</code></pre>
@@ -44701,8 +44701,8 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_update_or_create_quotes():
     api_instance = AccountingApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
-    idempotency_key = 'KEY_VALUE'
     summarize_errors = 'True'
+    idempotency_key = 'KEY_VALUE'
     date_value = dateutil.parser.parse('2020-12-03T00:00:00Z')
 
     contact = Contact(
@@ -44726,7 +44726,7 @@ def accounting_update_or_create_quotes():
         quotes = [quote])
     
     try:
-        api_response = api_instance.update_or_create_quotes(xero_tenant_id, quotes, idempotency_key, summarize_errors)
+        api_response = api_instance.update_or_create_quotes(xero_tenant_id, quotes, summarize_errors, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->updateOrCreateQuotes: %s\n" % e)</code></pre>
@@ -44897,11 +44897,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_update_or_create_repeating_invoices():
     api_instance = AccountingApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
-    idempotency_key = 'KEY_VALUE'
     summarize_errors = 'True'
+    idempotency_key = 'KEY_VALUE'
     
     try:
-        api_response = api_instance.update_or_create_repeating_invoices(xero_tenant_id, repeatingInvoices, idempotency_key, summarize_errors)
+        api_response = api_instance.update_or_create_repeating_invoices(xero_tenant_id, repeatingInvoices, summarize_errors, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->updateOrCreateRepeatingInvoices: %s\n" % e)</code></pre>
@@ -45889,7 +45889,7 @@ def accounting_update_receipt():
         receipts = [receipt])
     
     try:
-        api_response = api_instance.update_receipt(xero_tenant_id, receipt_id, receipts, idempotency_key, unitdp)
+        api_response = api_instance.update_receipt(xero_tenant_id, receipt_id, receipts, unitdp, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->updateReceipt: %s\n" % e)</code></pre>

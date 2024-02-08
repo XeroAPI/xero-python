@@ -1155,7 +1155,7 @@ ul.nav-tabs {
           <nav id="scrollingNav">
             <ul class="sidenav nav nav-list">
               <li class="nav-header" data-group="Files"><strong>SDK: </strong><span id='sdk-name'></span></li>
-              <li class="nav-header" data-group="Files"><strong>VSN: </strong>1.27.0</li>
+              <li class="nav-header" data-group="Files"><strong>VSN: </strong>2.0.0</li>
               <li class="nav-header" data-group="Files"><a href="#api-Files">Methods</a></li>
               <li data-group="Files" data-name="createFileAssociation" class="">
                 <a href="#api-Files-createFileAssociation">createFileAssociation</a>
@@ -1272,7 +1272,7 @@ def accounting_create_file_association():
     idempotency_key = 'KEY_VALUE'
     
     try:
-        api_response = api_instance.create_file_association(xero_tenant_id, file_id, idempotency_key, association)
+        api_response = api_instance.create_file_association(xero_tenant_id, file_id, association, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling FilesApi->createFileAssociation: %s\n" % e)</code></pre>
@@ -1378,7 +1378,7 @@ This allows you to safely retry requests without the risk of duplicate processin
                       <th>Description</th>
                     </tr>
                     <tr>
-  <td style="width:150px;">association </td>
+  <td style="width:150px;">association <span style="color:red;">*</span></td>
   <td>
     <div class="json-schema-view">
       <div class="primitive">
@@ -1388,6 +1388,9 @@ This allows you to safely retry requests without the risk of duplicate processin
         <div class="inner description marked">
           
         </div>
+      </div>
+      <div class="inner required">
+        Required
       </div>
     </div>
     <script type="application/ld+json">
@@ -1399,7 +1402,8 @@ This allows you to safely retry requests without the risk of duplicate processin
       },
       "example" : "{ \"ObjectId\": \"1270bf7c-5d18-473a-9231-1e36c4bd33ed\", \"ObjectGroup\": \"Contact\", \"ObjectType\": \"Business\" }"
     }
-  }
+  },
+  "required" : true
 }
     </script>
                   </table>
@@ -1448,7 +1452,7 @@ def accounting_create_folder():
     idempotency_key = 'KEY_VALUE'
     
     try:
-        api_response = api_instance.create_folder(xero_tenant_id, idempotency_key, folder)
+        api_response = api_instance.create_folder(xero_tenant_id, folder, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling FilesApi->createFolder: %s\n" % e)</code></pre>
@@ -1521,7 +1525,7 @@ This allows you to safely retry requests without the risk of duplicate processin
                       <th>Description</th>
                     </tr>
                     <tr>
-  <td style="width:150px;">folder </td>
+  <td style="width:150px;">folder <span style="color:red;">*</span></td>
   <td>
     <div class="json-schema-view">
       <div class="primitive">
@@ -1531,6 +1535,9 @@ This allows you to safely retry requests without the risk of duplicate processin
         <div class="inner description marked">
           
         </div>
+      </div>
+      <div class="inner required">
+        Required
       </div>
     </div>
     <script type="application/ld+json">
@@ -1542,7 +1549,8 @@ This allows you to safely retry requests without the risk of duplicate processin
       },
       "example" : "{ \"Name\": \"My Docs\" }"
     }
-  }
+  },
+  "required" : true
 }
     </script>
                   </table>
@@ -3232,7 +3240,7 @@ def accounting_update_file():
     idempotency_key = 'KEY_VALUE'
     
     try:
-        api_response = api_instance.update_file(xero_tenant_id, file_id, idempotency_key, fileObject)
+        api_response = api_instance.update_file(xero_tenant_id, file_id, fileObject, idempotency_key)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling FilesApi->updateFile: %s\n" % e)</code></pre>
@@ -3338,7 +3346,7 @@ This allows you to safely retry requests without the risk of duplicate processin
                       <th>Description</th>
                     </tr>
                     <tr>
-  <td style="width:150px;">fileObject </td>
+  <td style="width:150px;">fileObject <span style="color:red;">*</span></td>
   <td>
     <div class="json-schema-view">
       <div class="primitive">
@@ -3348,6 +3356,9 @@ This allows you to safely retry requests without the risk of duplicate processin
         <div class="inner description marked">
           
         </div>
+      </div>
+      <div class="inner required">
+        Required
       </div>
     </div>
     <script type="application/ld+json">
@@ -3359,7 +3370,8 @@ This allows you to safely retry requests without the risk of duplicate processin
       },
       "example" : "{ \"FolderId\": \"bf924975-7097-46f2-a143-1ecfbab3c8c3\" }"
     }
-  }
+  },
+  "required" : true
 }
     </script>
                   </table>

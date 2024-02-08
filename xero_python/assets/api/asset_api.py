@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.40.3
+    OpenAPI spec version: 3.0.0
 """
 
 import importlib
@@ -143,8 +143,8 @@ class AssetApi(object):
     def create_asset_type(
         self,
         xero_tenant_id,
+        asset_type,
         idempotency_key=empty,
-        asset_type=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -153,8 +153,8 @@ class AssetApi(object):
         OAuth2 scope: assets
         Adds an fixed asset type to the system  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
+        :param AssetType asset_type: Asset type to add (required)
         :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
-        :param AssetType asset_type: Asset type to add
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -165,6 +165,12 @@ class AssetApi(object):
         if xero_tenant_id is None:
             raise ValueError(
                 "Missing the required parameter `xero_tenant_id` "
+                "when calling `create_asset_type`"
+            )
+        # verify the required parameter 'asset_type' is set
+        if asset_type is None:
+            raise ValueError(
+                "Missing the required parameter `asset_type` "
                 "when calling `create_asset_type`"
             )
 

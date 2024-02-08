@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 2.40.3
+    OpenAPI spec version: 3.0.0
 """
 
 import importlib
@@ -452,9 +452,9 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         bank_transactions,
-        idempotency_key=empty,
         summarize_errors=empty,
         unitdp=empty,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -463,9 +463,9 @@ class AccountingApi(object):
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param BankTransactions bank_transactions: BankTransactions with an array of BankTransaction objects in body of request (required)
-        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -1493,8 +1493,8 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         contacts,
-        idempotency_key=empty,
         summarize_errors=empty,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -1503,8 +1503,8 @@ class AccountingApi(object):
         OAuth2 scope: accounting.contacts
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param Contacts contacts: Contacts with an array of Contact objects to create in body of request (required)
-        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -1583,8 +1583,8 @@ class AccountingApi(object):
         xero_tenant_id,
         credit_note_id,
         allocations,
-        idempotency_key=empty,
         summarize_errors=empty,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -1594,8 +1594,8 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str credit_note_id: Unique identifier for a Credit Note (required)
         :param Allocations allocations: Allocations with array of Allocation object in body of request. (required)
-        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -1685,8 +1685,8 @@ class AccountingApi(object):
         credit_note_id,
         file_name,
         body,
-        idempotency_key=empty,
         include_online=empty,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -1697,8 +1697,8 @@ class AccountingApi(object):
         :param str credit_note_id: Unique identifier for a Credit Note (required)
         :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
-        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool include_online: Allows an attachment to be seen by the end customer within their online invoice
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -1889,9 +1889,9 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         credit_notes,
-        idempotency_key=empty,
         summarize_errors=empty,
         unitdp=empty,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -1900,9 +1900,9 @@ class AccountingApi(object):
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param CreditNotes credit_notes: Credit Notes with array of CreditNote object in body of request (required)
-        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -2067,8 +2067,8 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         employees,
-        idempotency_key=empty,
         summarize_errors=empty,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -2077,8 +2077,8 @@ class AccountingApi(object):
         OAuth2 scope: accounting.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param Employees employees: Employees with array of Employee object in body of request (required)
-        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -2338,8 +2338,8 @@ class AccountingApi(object):
         invoice_id,
         file_name,
         body,
-        idempotency_key=empty,
         include_online=empty,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -2350,8 +2350,8 @@ class AccountingApi(object):
         :param str invoice_id: Unique identifier for an Invoice (required)
         :param str file_name: Name of the attachment (required)
         :param str body: Byte array of file in body of request (required)
-        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool include_online: Allows an attachment to be seen by the end customer within their online invoice
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -2540,9 +2540,9 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         invoices,
-        idempotency_key=empty,
         summarize_errors=empty,
         unitdp=empty,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -2551,9 +2551,9 @@ class AccountingApi(object):
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param Invoices invoices: Invoices with an array of invoice objects in body of request (required)
-        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -2728,9 +2728,9 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         items,
-        idempotency_key=empty,
         summarize_errors=empty,
         unitdp=empty,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -2739,9 +2739,9 @@ class AccountingApi(object):
         OAuth2 scope: accounting.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param Items items: Items with an array of Item objects in body of request (required)
-        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -3108,8 +3108,8 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         manual_journals,
-        idempotency_key=empty,
         summarize_errors=empty,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -3118,8 +3118,8 @@ class AccountingApi(object):
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param ManualJournals manual_journals: ManualJournals array with ManualJournal object in body of request (required)
-        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -3198,8 +3198,8 @@ class AccountingApi(object):
         xero_tenant_id,
         overpayment_id,
         allocations,
-        idempotency_key=empty,
         summarize_errors=empty,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -3209,8 +3209,8 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str overpayment_id: Unique identifier for a Overpayment (required)
         :param Allocations allocations: Allocations array with Allocation object in body of request (required)
-        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -3654,8 +3654,8 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         payments,
-        idempotency_key=empty,
         summarize_errors=empty,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -3664,8 +3664,8 @@ class AccountingApi(object):
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param Payments payments: Payments array with Payment object in body of request (required)
-        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -3744,8 +3744,8 @@ class AccountingApi(object):
         xero_tenant_id,
         prepayment_id,
         allocations,
-        idempotency_key=empty,
         summarize_errors=empty,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -3755,8 +3755,8 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str prepayment_id: Unique identifier for a PrePayment (required)
         :param Allocations allocations: Allocations with an array of Allocation object in body of request (required)
-        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -4141,8 +4141,8 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         purchase_orders,
-        idempotency_key=empty,
         summarize_errors=empty,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -4151,8 +4151,8 @@ class AccountingApi(object):
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param PurchaseOrders purchase_orders: PurchaseOrders with an array of PurchaseOrder object in body of request (required)
-        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -4429,8 +4429,8 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         quotes,
-        idempotency_key=empty,
         summarize_errors=empty,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -4439,8 +4439,8 @@ class AccountingApi(object):
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param Quotes quotes: Quotes with an array of Quote object in body of request (required)
-        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -4518,8 +4518,8 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         receipts,
-        idempotency_key=empty,
         unitdp=empty,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -4528,8 +4528,8 @@ class AccountingApi(object):
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param Receipts receipts: Receipts with an array of Receipt object in body of request (required)
-        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -5009,8 +5009,8 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         repeating_invoices,
-        idempotency_key=empty,
         summarize_errors=empty,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -5019,8 +5019,8 @@ class AccountingApi(object):
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param RepeatingInvoices repeating_invoices: RepeatingInvoices with an array of repeating invoice objects in body of request (required)
-        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -17355,8 +17355,8 @@ class AccountingApi(object):
         xero_tenant_id,
         bank_transaction_id,
         bank_transactions,
-        idempotency_key=empty,
         unitdp=empty,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -17366,8 +17366,8 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str bank_transaction_id: Xero generated unique identifier for a bank transaction (required)
         :param BankTransactions bank_transactions: (required)
-        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -17961,8 +17961,8 @@ class AccountingApi(object):
         xero_tenant_id,
         credit_note_id,
         credit_notes,
-        idempotency_key=empty,
         unitdp=empty,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -17972,8 +17972,8 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str credit_note_id: Unique identifier for a Credit Note (required)
         :param CreditNotes credit_notes: an array of Credit Notes containing credit note details to update (required)
-        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -18261,8 +18261,8 @@ class AccountingApi(object):
         xero_tenant_id,
         invoice_id,
         invoices,
-        idempotency_key=empty,
         unitdp=empty,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -18272,8 +18272,8 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str invoice_id: Unique identifier for an Invoice (required)
         :param Invoices invoices: (required)
-        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -18465,8 +18465,8 @@ class AccountingApi(object):
         xero_tenant_id,
         item_id,
         items,
-        idempotency_key=empty,
         unitdp=empty,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -18476,8 +18476,8 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str item_id: Unique identifier for an Item (required)
         :param Items items: (required)
-        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -18856,9 +18856,9 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         bank_transactions,
-        idempotency_key=empty,
         summarize_errors=empty,
         unitdp=empty,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -18867,9 +18867,9 @@ class AccountingApi(object):
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param BankTransactions bank_transactions: (required)
-        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -18952,8 +18952,8 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         contacts,
-        idempotency_key=empty,
         summarize_errors=empty,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -18962,8 +18962,8 @@ class AccountingApi(object):
         OAuth2 scope: accounting.contacts
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param Contacts contacts: (required)
-        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -19041,9 +19041,9 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         credit_notes,
-        idempotency_key=empty,
         summarize_errors=empty,
         unitdp=empty,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -19052,9 +19052,9 @@ class AccountingApi(object):
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param CreditNotes credit_notes: an array of Credit Notes with a single CreditNote object. (required)
-        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -19137,8 +19137,8 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         employees,
-        idempotency_key=empty,
         summarize_errors=empty,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -19147,8 +19147,8 @@ class AccountingApi(object):
         OAuth2 scope: accounting.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param Employees employees: Employees with array of Employee object in body of request (required)
-        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -19226,9 +19226,9 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         invoices,
-        idempotency_key=empty,
         summarize_errors=empty,
         unitdp=empty,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -19237,9 +19237,9 @@ class AccountingApi(object):
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param Invoices invoices: (required)
-        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -19320,9 +19320,9 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         items,
-        idempotency_key=empty,
         summarize_errors=empty,
         unitdp=empty,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -19331,9 +19331,9 @@ class AccountingApi(object):
         OAuth2 scope: accounting.settings
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param Items items: (required)
-        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -19414,8 +19414,8 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         manual_journals,
-        idempotency_key=empty,
         summarize_errors=empty,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -19424,8 +19424,8 @@ class AccountingApi(object):
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param ManualJournals manual_journals: ManualJournals array with ManualJournal object in body of request (required)
-        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -19505,8 +19505,8 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         purchase_orders,
-        idempotency_key=empty,
         summarize_errors=empty,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -19515,8 +19515,8 @@ class AccountingApi(object):
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param PurchaseOrders purchase_orders: (required)
-        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -19596,8 +19596,8 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         quotes,
-        idempotency_key=empty,
         summarize_errors=empty,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -19606,8 +19606,8 @@ class AccountingApi(object):
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param Quotes quotes: (required)
-        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -19685,8 +19685,8 @@ class AccountingApi(object):
         self,
         xero_tenant_id,
         repeating_invoices,
-        idempotency_key=empty,
         summarize_errors=empty,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -19695,8 +19695,8 @@ class AccountingApi(object):
         OAuth2 scope: accounting.transactions
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param RepeatingInvoices repeating_invoices: RepeatingInvoices with an array of repeating invoice objects in body of request (required)
-        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -20176,8 +20176,8 @@ class AccountingApi(object):
         xero_tenant_id,
         receipt_id,
         receipts,
-        idempotency_key=empty,
         unitdp=empty,
+        idempotency_key=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -20187,8 +20187,8 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str receipt_id: Unique identifier for a Receipt (required)
         :param Receipts receipts: (required)
-        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response

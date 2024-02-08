@@ -127,6 +127,7 @@ def oauth2_token(
         "token_type": "Bearer",
     }
 
+
 @pytest.fixture()
 def oauth2_token_without_id_token(
     xero_access_token,

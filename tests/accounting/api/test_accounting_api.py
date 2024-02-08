@@ -86,11 +86,11 @@ def test_invoice_attachment_upload_and_download(
 ):
     """This is a full integration test, tested steps are:
 
-       1. get first page of invoices
-       2. choose first invoice
-       3. upload test pdf file as invoice attachment
-       4. confirm the invoice has new attachment
-       5. download uploaded pdf file
+    1. get first page of invoices
+    2. choose first invoice
+    3. upload test pdf file as invoice attachment
+    4. confirm the invoice has new attachment
+    5. download uploaded pdf file
     """
 
     # 1. get first page of invoices
@@ -373,7 +373,7 @@ def test_get_invoices(sandbox_accounting_api: AccountingApi, xero_tenant_id):
                 is_discounted=False,
                 line_amount_types=LineAmountTypes.EXCLUSIVE,
                 reference="Red Fish, Blue Fish",
-                repeating_invoice_id= '428c0d75-909f-4b04-8403-a48dc27283b0',
+                repeating_invoice_id="428c0d75-909f-4b04-8403-a48dc27283b0",
                 sent_to_contact=True,
                 status="VOIDED",
                 sub_total=Decimal("40.00"),

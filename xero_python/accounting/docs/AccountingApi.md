@@ -513,7 +513,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_bank_transactions**
-> BankTransactions create_bank_transactions(xero_tenant_id, bank_transactions, idempotency_key=idempotency_key, summarize_errors=summarize_errors, unitdp=unitdp)
+> BankTransactions create_bank_transactions(xero_tenant_id, bank_transactions, summarize_errors=summarize_errors, unitdp=unitdp, idempotency_key=idempotency_key)
 
 Creates one or more spent or received money transaction
 
@@ -545,12 +545,12 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 bank_transactions = { bankTransactions: [{ type: BankTransaction.TypeEnum.SPEND, contact: { contactID: "00000000-0000-0000-0000-000000000000" }, lineItems: [{ description: "Foobar", quantity: 1.0, unitAmount: 20.0, accountCode: "000" } ], bankAccount: { code: "000" }}]} # BankTransactions | BankTransactions with an array of BankTransaction objects in body of request
-idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates one or more spent or received money transaction
-    api_response = api_instance.create_bank_transactions(xero_tenant_id, bank_transactions, idempotency_key=idempotency_key, summarize_errors=summarize_errors, unitdp=unitdp)
+    api_response = api_instance.create_bank_transactions(xero_tenant_id, bank_transactions, summarize_errors=summarize_errors, unitdp=unitdp, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->create_bank_transactions: %s\n" % e)
@@ -562,9 +562,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **bank_transactions** | [**BankTransactions**](BankTransactions.md)| BankTransactions with an array of BankTransaction objects in body of request | 
- **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
  **summarize_errors** | **bool**| If false return 200 OK and mix of successfully created objects and any with validation errors | [optional] [default to False]
  **unitdp** | **int**| e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts | [optional] 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -1250,7 +1250,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_contacts**
-> Contacts create_contacts(xero_tenant_id, contacts, idempotency_key=idempotency_key, summarize_errors=summarize_errors)
+> Contacts create_contacts(xero_tenant_id, contacts, summarize_errors=summarize_errors, idempotency_key=idempotency_key)
 
 Creates multiple contacts (bulk) in a Xero organisation
 
@@ -1282,11 +1282,11 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 contacts = { "Contacts": [ { "ContactID": "3ff6d40c-af9a-40a3-89ce-3c1556a25591", "ContactStatus": "ACTIVE", "Name": "Foo9987", "EmailAddress": "sid32476@blah.com", "BankAccountDetails": "", "Addresses": [ { "AddressType": "STREET", "City": "", "Region": "", "PostalCode": "", "Country": "" }, { "AddressType": "POBOX", "City": "", "Region": "", "PostalCode": "", "Country": "" } ], "Phones": [ { "PhoneType": "DEFAULT", "PhoneNumber": "", "PhoneAreaCode": "", "PhoneCountryCode": "" }, { "PhoneType": "DDI", "PhoneNumber": "", "PhoneAreaCode": "", "PhoneCountryCode": "" }, { "PhoneType": "FAX", "PhoneNumber": "", "PhoneAreaCode": "", "PhoneCountryCode": "" }, { "PhoneType": "MOBILE", "PhoneNumber": "555-1212", "PhoneAreaCode": "415", "PhoneCountryCode": "" } ], "UpdatedDateUTC": "/Date(1551399321043+0000)/", "ContactGroups": [], "IsSupplier": false, "IsCustomer": false, "SalesTrackingCategories": [], "PurchasesTrackingCategories": [], "PaymentTerms": { "Bills": { "Day": 15, "Type": "OFCURRENTMONTH" }, "Sales": { "Day": 10, "Type": "DAYSAFTERBILLMONTH" } }, "ContactPersons": [] } ] } # Contacts | Contacts with an array of Contact objects to create in body of request
-idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates multiple contacts (bulk) in a Xero organisation
-    api_response = api_instance.create_contacts(xero_tenant_id, contacts, idempotency_key=idempotency_key, summarize_errors=summarize_errors)
+    api_response = api_instance.create_contacts(xero_tenant_id, contacts, summarize_errors=summarize_errors, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->create_contacts: %s\n" % e)
@@ -1298,8 +1298,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **contacts** | [**Contacts**](Contacts.md)| Contacts with an array of Contact objects to create in body of request | 
- **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
  **summarize_errors** | **bool**| If false return 200 OK and mix of successfully created objects and any with validation errors | [optional] [default to False]
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -1317,7 +1317,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_credit_note_allocation**
-> Allocations create_credit_note_allocation(xero_tenant_id, credit_note_id, allocations, idempotency_key=idempotency_key, summarize_errors=summarize_errors)
+> Allocations create_credit_note_allocation(xero_tenant_id, credit_note_id, allocations, summarize_errors=summarize_errors, idempotency_key=idempotency_key)
 
 Creates allocation for a specific credit note
 
@@ -1350,11 +1350,11 @@ api_instance = AccountingApi(api_client)
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 credit_note_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Credit Note
 allocations = { "Allocations": [ { "Invoice": { "LineItems": [], "InvoiceID": "c45720a1-ade3-4a38-a064-d15489be6841" }, "Amount": 1, "Date": "2019-03-05" } ] } # Allocations | Allocations with array of Allocation object in body of request.
-idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates allocation for a specific credit note
-    api_response = api_instance.create_credit_note_allocation(xero_tenant_id, credit_note_id, allocations, idempotency_key=idempotency_key, summarize_errors=summarize_errors)
+    api_response = api_instance.create_credit_note_allocation(xero_tenant_id, credit_note_id, allocations, summarize_errors=summarize_errors, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->create_credit_note_allocation: %s\n" % e)
@@ -1367,8 +1367,8 @@ Name | Type | Description  | Notes
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **credit_note_id** | [**str**](.md)| Unique identifier for a Credit Note | 
  **allocations** | [**Allocations**](Allocations.md)| Allocations with array of Allocation object in body of request. | 
- **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
  **summarize_errors** | **bool**| If false return 200 OK and mix of successfully created objects and any with validation errors | [optional] [default to False]
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -1386,7 +1386,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_credit_note_attachment_by_file_name**
-> Attachments create_credit_note_attachment_by_file_name(xero_tenant_id, credit_note_id, file_name, body, idempotency_key=idempotency_key, include_online=include_online)
+> Attachments create_credit_note_attachment_by_file_name(xero_tenant_id, credit_note_id, file_name, body, include_online=include_online, idempotency_key=idempotency_key)
 
 Creates an attachment for a specific credit note
 
@@ -1420,11 +1420,11 @@ xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 credit_note_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Credit Note
 file_name = 'xero-dev.jpg' # str | Name of the attachment
 body = 'body_example' # str | Byte array of file in body of request
-idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 include_online = False # bool | Allows an attachment to be seen by the end customer within their online invoice (optional) (default to False)
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates an attachment for a specific credit note
-    api_response = api_instance.create_credit_note_attachment_by_file_name(xero_tenant_id, credit_note_id, file_name, body, idempotency_key=idempotency_key, include_online=include_online)
+    api_response = api_instance.create_credit_note_attachment_by_file_name(xero_tenant_id, credit_note_id, file_name, body, include_online=include_online, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->create_credit_note_attachment_by_file_name: %s\n" % e)
@@ -1438,8 +1438,8 @@ Name | Type | Description  | Notes
  **credit_note_id** | [**str**](.md)| Unique identifier for a Credit Note | 
  **file_name** | **str**| Name of the attachment | 
  **body** | **str**| Byte array of file in body of request | 
- **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
  **include_online** | **bool**| Allows an attachment to be seen by the end customer within their online invoice | [optional] [default to False]
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -1524,7 +1524,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_credit_notes**
-> CreditNotes create_credit_notes(xero_tenant_id, credit_notes, idempotency_key=idempotency_key, summarize_errors=summarize_errors, unitdp=unitdp)
+> CreditNotes create_credit_notes(xero_tenant_id, credit_notes, summarize_errors=summarize_errors, unitdp=unitdp, idempotency_key=idempotency_key)
 
 Creates a new credit note
 
@@ -1556,12 +1556,12 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 credit_notes = { "CreditNotes":[ { "Type":"ACCPAYCREDIT", "Contact":{ "ContactID":"430fa14a-f945-44d3-9f97-5df5e28441b8" }, "Date":"2019-01-05", "LineItems":[ { "Description":"Foobar", "Quantity":2.0, "UnitAmount":20.0, "AccountCode":"400" } ] } ] } # CreditNotes | Credit Notes with array of CreditNote object in body of request
-idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates a new credit note
-    api_response = api_instance.create_credit_notes(xero_tenant_id, credit_notes, idempotency_key=idempotency_key, summarize_errors=summarize_errors, unitdp=unitdp)
+    api_response = api_instance.create_credit_notes(xero_tenant_id, credit_notes, summarize_errors=summarize_errors, unitdp=unitdp, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->create_credit_notes: %s\n" % e)
@@ -1573,9 +1573,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **credit_notes** | [**CreditNotes**](CreditNotes.md)| Credit Notes with array of CreditNote object in body of request | 
- **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
  **summarize_errors** | **bool**| If false return 200 OK and mix of successfully created objects and any with validation errors | [optional] [default to False]
  **unitdp** | **int**| e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts | [optional] 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -1658,7 +1658,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_employees**
-> Employees create_employees(xero_tenant_id, employees, idempotency_key=idempotency_key, summarize_errors=summarize_errors)
+> Employees create_employees(xero_tenant_id, employees, summarize_errors=summarize_errors, idempotency_key=idempotency_key)
 
 Creates new employees used in Xero payrun
 
@@ -1690,11 +1690,11 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 employees = { "Employees": [ { "FirstName": "Nick", "LastName": "Fury", "ExternalLink": { "Url": "http://twitter.com/#!/search/Nick+Fury" } } ] } # Employees | Employees with array of Employee object in body of request
-idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates new employees used in Xero payrun
-    api_response = api_instance.create_employees(xero_tenant_id, employees, idempotency_key=idempotency_key, summarize_errors=summarize_errors)
+    api_response = api_instance.create_employees(xero_tenant_id, employees, summarize_errors=summarize_errors, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->create_employees: %s\n" % e)
@@ -1706,8 +1706,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **employees** | [**Employees**](Employees.md)| Employees with array of Employee object in body of request | 
- **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
  **summarize_errors** | **bool**| If false return 200 OK and mix of successfully created objects and any with validation errors | [optional] [default to False]
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -1857,7 +1857,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_invoice_attachment_by_file_name**
-> Attachments create_invoice_attachment_by_file_name(xero_tenant_id, invoice_id, file_name, body, idempotency_key=idempotency_key, include_online=include_online)
+> Attachments create_invoice_attachment_by_file_name(xero_tenant_id, invoice_id, file_name, body, include_online=include_online, idempotency_key=idempotency_key)
 
 Creates an attachment for a specific invoice or purchase bill by filename
 
@@ -1891,11 +1891,11 @@ xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 invoice_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Invoice
 file_name = 'xero-dev.jpg' # str | Name of the attachment
 body = 'body_example' # str | Byte array of file in body of request
-idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 include_online = False # bool | Allows an attachment to be seen by the end customer within their online invoice (optional) (default to False)
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates an attachment for a specific invoice or purchase bill by filename
-    api_response = api_instance.create_invoice_attachment_by_file_name(xero_tenant_id, invoice_id, file_name, body, idempotency_key=idempotency_key, include_online=include_online)
+    api_response = api_instance.create_invoice_attachment_by_file_name(xero_tenant_id, invoice_id, file_name, body, include_online=include_online, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->create_invoice_attachment_by_file_name: %s\n" % e)
@@ -1909,8 +1909,8 @@ Name | Type | Description  | Notes
  **invoice_id** | [**str**](.md)| Unique identifier for an Invoice | 
  **file_name** | **str**| Name of the attachment | 
  **body** | **str**| Byte array of file in body of request | 
- **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
  **include_online** | **bool**| Allows an attachment to be seen by the end customer within their online invoice | [optional] [default to False]
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -1995,7 +1995,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_invoices**
-> Invoices create_invoices(xero_tenant_id, invoices, idempotency_key=idempotency_key, summarize_errors=summarize_errors, unitdp=unitdp)
+> Invoices create_invoices(xero_tenant_id, invoices, summarize_errors=summarize_errors, unitdp=unitdp, idempotency_key=idempotency_key)
 
 Creates one or more sales invoices or purchase bills
 
@@ -2027,12 +2027,12 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 invoices = { "Invoices": [ { "Type": "ACCREC", "Contact": { "ContactID": "430fa14a-f945-44d3-9f97-5df5e28441b8" }, "LineItems": [ { "Description": "Acme Tires", "Quantity": 2, "UnitAmount": 20, "AccountCode": "200", "TaxType": "NONE", "LineAmount": 40 } ], "Date": "2019-03-11", "DueDate": "2018-12-10", "Reference": "Website Design", "Status": "AUTHORISED" } ] } # Invoices | Invoices with an array of invoice objects in body of request
-idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates one or more sales invoices or purchase bills
-    api_response = api_instance.create_invoices(xero_tenant_id, invoices, idempotency_key=idempotency_key, summarize_errors=summarize_errors, unitdp=unitdp)
+    api_response = api_instance.create_invoices(xero_tenant_id, invoices, summarize_errors=summarize_errors, unitdp=unitdp, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->create_invoices: %s\n" % e)
@@ -2044,9 +2044,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **invoices** | [**Invoices**](Invoices.md)| Invoices with an array of invoice objects in body of request | 
- **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
  **summarize_errors** | **bool**| If false return 200 OK and mix of successfully created objects and any with validation errors | [optional] [default to False]
  **unitdp** | **int**| e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts | [optional] 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -2131,7 +2131,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_items**
-> Items create_items(xero_tenant_id, items, idempotency_key=idempotency_key, summarize_errors=summarize_errors, unitdp=unitdp)
+> Items create_items(xero_tenant_id, items, summarize_errors=summarize_errors, unitdp=unitdp, idempotency_key=idempotency_key)
 
 Creates one or more items
 
@@ -2163,12 +2163,12 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 items = { "Items": [ { "Code": "code123", "Name": "Item Name XYZ", "Description": "Foobar", "InventoryAssetAccountCode": "140", "PurchaseDetails": { "COGSAccountCode": "500" } } ] } # Items | Items with an array of Item objects in body of request
-idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates one or more items
-    api_response = api_instance.create_items(xero_tenant_id, items, idempotency_key=idempotency_key, summarize_errors=summarize_errors, unitdp=unitdp)
+    api_response = api_instance.create_items(xero_tenant_id, items, summarize_errors=summarize_errors, unitdp=unitdp, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->create_items: %s\n" % e)
@@ -2180,9 +2180,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **items** | [**Items**](Items.md)| Items with an array of Item objects in body of request | 
- **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
  **summarize_errors** | **bool**| If false return 200 OK and mix of successfully created objects and any with validation errors | [optional] [default to False]
  **unitdp** | **int**| e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts | [optional] 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -2401,7 +2401,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_manual_journals**
-> ManualJournals create_manual_journals(xero_tenant_id, manual_journals, idempotency_key=idempotency_key, summarize_errors=summarize_errors)
+> ManualJournals create_manual_journals(xero_tenant_id, manual_journals, summarize_errors=summarize_errors, idempotency_key=idempotency_key)
 
 Creates one or more manual journals
 
@@ -2433,11 +2433,11 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 manual_journals = { "ManualJournals": [ { "Narration": "Journal Desc", "JournalLines": [ { "LineAmount": 100, "AccountCode": "400", "Description": "Money Movement" }, { "LineAmount": -100, "AccountCode": "400", "Description": "Prepayment of things", "Tracking": [ { "Name": "North", "Option": "Region" } ] } ], "Date": "2019-03-14" } ] } # ManualJournals | ManualJournals array with ManualJournal object in body of request
-idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates one or more manual journals
-    api_response = api_instance.create_manual_journals(xero_tenant_id, manual_journals, idempotency_key=idempotency_key, summarize_errors=summarize_errors)
+    api_response = api_instance.create_manual_journals(xero_tenant_id, manual_journals, summarize_errors=summarize_errors, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->create_manual_journals: %s\n" % e)
@@ -2449,8 +2449,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **manual_journals** | [**ManualJournals**](ManualJournals.md)| ManualJournals array with ManualJournal object in body of request | 
- **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
  **summarize_errors** | **bool**| If false return 200 OK and mix of successfully created objects and any with validation errors | [optional] [default to False]
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -2468,7 +2468,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_overpayment_allocations**
-> Allocations create_overpayment_allocations(xero_tenant_id, overpayment_id, allocations, idempotency_key=idempotency_key, summarize_errors=summarize_errors)
+> Allocations create_overpayment_allocations(xero_tenant_id, overpayment_id, allocations, summarize_errors=summarize_errors, idempotency_key=idempotency_key)
 
 Creates a single allocation for a specific overpayment
 
@@ -2501,11 +2501,11 @@ api_instance = AccountingApi(api_client)
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 overpayment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Overpayment
 allocations = { "Allocations": [ { "Invoice": { "InvoiceID": "00000000-0000-0000-0000-000000000000", "LineItems": [], "Contact": {}, "Type": "ACCPAY" }, "Amount": 10.00, "Date": "2019-03-12" } ] } # Allocations | Allocations array with Allocation object in body of request
-idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates a single allocation for a specific overpayment
-    api_response = api_instance.create_overpayment_allocations(xero_tenant_id, overpayment_id, allocations, idempotency_key=idempotency_key, summarize_errors=summarize_errors)
+    api_response = api_instance.create_overpayment_allocations(xero_tenant_id, overpayment_id, allocations, summarize_errors=summarize_errors, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->create_overpayment_allocations: %s\n" % e)
@@ -2518,8 +2518,8 @@ Name | Type | Description  | Notes
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **overpayment_id** | [**str**](.md)| Unique identifier for a Overpayment | 
  **allocations** | [**Allocations**](Allocations.md)| Allocations array with Allocation object in body of request | 
- **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
  **summarize_errors** | **bool**| If false return 200 OK and mix of successfully created objects and any with validation errors | [optional] [default to False]
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -2801,7 +2801,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_payments**
-> Payments create_payments(xero_tenant_id, payments, idempotency_key=idempotency_key, summarize_errors=summarize_errors)
+> Payments create_payments(xero_tenant_id, payments, summarize_errors=summarize_errors, idempotency_key=idempotency_key)
 
 Creates multiple payments for invoices or credit notes
 
@@ -2833,11 +2833,11 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 payments = { "Payments": [ { "Invoice": { "LineItems": [], "InvoiceID": "00000000-0000-0000-0000-000000000000" }, "Account": { "Code": "970" }, "Date": "2019-03-12", "Amount": 1 } ] } # Payments | Payments array with Payment object in body of request
-idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates multiple payments for invoices or credit notes
-    api_response = api_instance.create_payments(xero_tenant_id, payments, idempotency_key=idempotency_key, summarize_errors=summarize_errors)
+    api_response = api_instance.create_payments(xero_tenant_id, payments, summarize_errors=summarize_errors, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->create_payments: %s\n" % e)
@@ -2849,8 +2849,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **payments** | [**Payments**](Payments.md)| Payments array with Payment object in body of request | 
- **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
  **summarize_errors** | **bool**| If false return 200 OK and mix of successfully created objects and any with validation errors | [optional] [default to False]
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -2868,7 +2868,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_prepayment_allocations**
-> Allocations create_prepayment_allocations(xero_tenant_id, prepayment_id, allocations, idempotency_key=idempotency_key, summarize_errors=summarize_errors)
+> Allocations create_prepayment_allocations(xero_tenant_id, prepayment_id, allocations, summarize_errors=summarize_errors, idempotency_key=idempotency_key)
 
 Allows you to create an Allocation for prepayments
 
@@ -2901,11 +2901,11 @@ api_instance = AccountingApi(api_client)
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 prepayment_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a PrePayment
 allocations = { "Allocations": [ { "Invoice": { "LineItems": [], "InvoiceID": "00000000-0000-0000-0000-000000000000" }, "Amount": 1, "Date": "2019-01-10" } ] } # Allocations | Allocations with an array of Allocation object in body of request
-idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Allows you to create an Allocation for prepayments
-    api_response = api_instance.create_prepayment_allocations(xero_tenant_id, prepayment_id, allocations, idempotency_key=idempotency_key, summarize_errors=summarize_errors)
+    api_response = api_instance.create_prepayment_allocations(xero_tenant_id, prepayment_id, allocations, summarize_errors=summarize_errors, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->create_prepayment_allocations: %s\n" % e)
@@ -2918,8 +2918,8 @@ Name | Type | Description  | Notes
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **prepayment_id** | [**str**](.md)| Unique identifier for a PrePayment | 
  **allocations** | [**Allocations**](Allocations.md)| Allocations with an array of Allocation object in body of request | 
- **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
  **summarize_errors** | **bool**| If false return 200 OK and mix of successfully created objects and any with validation errors | [optional] [default to False]
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -3140,7 +3140,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_purchase_orders**
-> PurchaseOrders create_purchase_orders(xero_tenant_id, purchase_orders, idempotency_key=idempotency_key, summarize_errors=summarize_errors)
+> PurchaseOrders create_purchase_orders(xero_tenant_id, purchase_orders, summarize_errors=summarize_errors, idempotency_key=idempotency_key)
 
 Creates one or more purchase orders
 
@@ -3172,11 +3172,11 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 purchase_orders = { "PurchaseOrders": [ { "Contact": { "ContactID": "00000000-0000-0000-0000-000000000000" }, "LineItems": [ { "Description": "Foobar", "Quantity": 1, "UnitAmount": 20, "AccountCode": "710" } ], "Date": "2019-03-13" } ] } # PurchaseOrders | PurchaseOrders with an array of PurchaseOrder object in body of request
-idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates one or more purchase orders
-    api_response = api_instance.create_purchase_orders(xero_tenant_id, purchase_orders, idempotency_key=idempotency_key, summarize_errors=summarize_errors)
+    api_response = api_instance.create_purchase_orders(xero_tenant_id, purchase_orders, summarize_errors=summarize_errors, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->create_purchase_orders: %s\n" % e)
@@ -3188,8 +3188,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **purchase_orders** | [**PurchaseOrders**](PurchaseOrders.md)| PurchaseOrders with an array of PurchaseOrder object in body of request | 
- **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
  **summarize_errors** | **bool**| If false return 200 OK and mix of successfully created objects and any with validation errors | [optional] [default to False]
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -3343,7 +3343,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_quotes**
-> Quotes create_quotes(xero_tenant_id, quotes, idempotency_key=idempotency_key, summarize_errors=summarize_errors)
+> Quotes create_quotes(xero_tenant_id, quotes, summarize_errors=summarize_errors, idempotency_key=idempotency_key)
 
 Create one or more quotes
 
@@ -3375,11 +3375,11 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 quotes = { "Quotes": [ { "Contact": { "ContactID": "00000000-0000-0000-0000-000000000000" }, "LineItems": [ { "Description": "Foobar", "Quantity": 1, "UnitAmount": 20, "AccountCode": "12775" } ], "Date": "2020-02-01" } ] } # Quotes | Quotes with an array of Quote object in body of request
-idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Create one or more quotes
-    api_response = api_instance.create_quotes(xero_tenant_id, quotes, idempotency_key=idempotency_key, summarize_errors=summarize_errors)
+    api_response = api_instance.create_quotes(xero_tenant_id, quotes, summarize_errors=summarize_errors, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->create_quotes: %s\n" % e)
@@ -3391,8 +3391,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **quotes** | [**Quotes**](Quotes.md)| Quotes with an array of Quote object in body of request | 
- **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
  **summarize_errors** | **bool**| If false return 200 OK and mix of successfully created objects and any with validation errors | [optional] [default to False]
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -3410,7 +3410,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_receipt**
-> Receipts create_receipt(xero_tenant_id, receipts, idempotency_key=idempotency_key, unitdp=unitdp)
+> Receipts create_receipt(xero_tenant_id, receipts, unitdp=unitdp, idempotency_key=idempotency_key)
 
 Creates draft expense claim receipts for any user
 
@@ -3442,11 +3442,11 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 receipts = { "Receipts": [ { "Contact": { "ContactID": "00000000-0000-0000-0000-000000000000" }, "Lineitems": [ { "Description": "Foobar", "Quantity": 2, "UnitAmount": 20, "AccountCode": "400", "TaxType": "NONE", "LineAmount": 40 } ], "User": { "UserID": "00000000-0000-0000-0000-000000000000" }, "LineAmountTypes": "NoTax", "Status": "DRAFT" } ] } # Receipts | Receipts with an array of Receipt object in body of request
-idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates draft expense claim receipts for any user
-    api_response = api_instance.create_receipt(xero_tenant_id, receipts, idempotency_key=idempotency_key, unitdp=unitdp)
+    api_response = api_instance.create_receipt(xero_tenant_id, receipts, unitdp=unitdp, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->create_receipt: %s\n" % e)
@@ -3458,8 +3458,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **receipts** | [**Receipts**](Receipts.md)| Receipts with an array of Receipt object in body of request | 
- **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
  **unitdp** | **int**| e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts | [optional] 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -3749,7 +3749,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_repeating_invoices**
-> RepeatingInvoices create_repeating_invoices(xero_tenant_id, repeating_invoices, idempotency_key=idempotency_key, summarize_errors=summarize_errors)
+> RepeatingInvoices create_repeating_invoices(xero_tenant_id, repeating_invoices, summarize_errors=summarize_errors, idempotency_key=idempotency_key)
 
 Creates one or more repeating invoice templates
 
@@ -3781,11 +3781,11 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 repeating_invoices = { "RepeatingInvoices": [ { "Schedule": { "Period": 1, "Unit": "MONTHLY", "DueDate": 10, "DueDateType": "OFFOLLOWINGMONTH", "StartDate": "\/Date(1555286400000+0000)\/" }, "Type": "ACCREC", "Reference": "[Week]", "ApprovedForSending": false, "SendCopy": false, "MarkAsSent": false, "IncludePDF": false, "Contact": { "ContactID": "430fa14a-f945-44d3-9f97-5df5e28441b8", "Name": "Liam Gallagher" }, "Status": "AUTHORISED", "LineAmountTypes": "Exclusive", "LineItems": [ { "Description": "Guitars Fender Strat", "UnitAmount": 5000.00, "TaxType": "OUTPUT2", "TaxAmount": 750.00, "LineAmount": 5000.00, "AccountCode": "200", "Tracking": [], "Quantity": 1.0000, "LineItemID": "13a8353c-d2af-4d5b-920c-438449f08900", "DiscountEnteredAsPercent": true } ], "CurrencyCode": "NZD" } ] } # RepeatingInvoices | RepeatingInvoices with an array of repeating invoice objects in body of request
-idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates one or more repeating invoice templates
-    api_response = api_instance.create_repeating_invoices(xero_tenant_id, repeating_invoices, idempotency_key=idempotency_key, summarize_errors=summarize_errors)
+    api_response = api_instance.create_repeating_invoices(xero_tenant_id, repeating_invoices, summarize_errors=summarize_errors, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->create_repeating_invoices: %s\n" % e)
@@ -3797,8 +3797,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **repeating_invoices** | [**RepeatingInvoices**](RepeatingInvoices.md)| RepeatingInvoices with an array of repeating invoice objects in body of request | 
- **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
  **summarize_errors** | **bool**| If false return 200 OK and mix of successfully created objects and any with validation errors | [optional] [default to False]
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -13432,7 +13432,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_bank_transaction**
-> BankTransactions update_bank_transaction(xero_tenant_id, bank_transaction_id, bank_transactions, idempotency_key=idempotency_key, unitdp=unitdp)
+> BankTransactions update_bank_transaction(xero_tenant_id, bank_transaction_id, bank_transactions, unitdp=unitdp, idempotency_key=idempotency_key)
 
 Updates a single spent or received money transaction
 
@@ -13465,11 +13465,11 @@ api_instance = AccountingApi(api_client)
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 bank_transaction_id = '00000000-0000-0000-0000-000000000000' # str | Xero generated unique identifier for a bank transaction
 bank_transactions = { "BankTransactions": [ { "Type": "SPEND", "Contact": { "ContactID": "00000000-0000-0000-0000-000000000000", "ContactStatus": "ACTIVE", "Name": "Buzz Lightyear", "FirstName": "Buzz", "LastName": "Lightyear", "EmailAddress": "buzz.Lightyear@email.com", "ContactPersons": [], "BankAccountDetails": "", "Addresses": [ { "AddressType": "STREET", "City": "", "Region": "", "PostalCode": "", "Country": "" }, { "AddressType": "POBOX", "AddressLine1": "", "AddressLine2": "", "AddressLine3": "", "AddressLine4": "", "City": "Palo Alto", "Region": "CA", "PostalCode": "94020", "Country": "United States" } ], "Phones": [ { "PhoneType": "DEFAULT", "PhoneNumber": "847-1294", "PhoneAreaCode": "(626)", "PhoneCountryCode": "" }, { "PhoneType": "DDI", "PhoneNumber": "", "PhoneAreaCode": "", "PhoneCountryCode": "" }, { "PhoneType": "FAX", "PhoneNumber": "", "PhoneAreaCode": "", "PhoneCountryCode": "" }, { "PhoneType": "MOBILE", "PhoneNumber": "", "PhoneAreaCode": "", "PhoneCountryCode": "" } ], "UpdatedDateUTC": "2017-08-21T13:49:04.227-07:00", "ContactGroups": [] }, "Lineitems": [], "BankAccount": { "Code": "088", "Name": "Business Wells Fargo", "AccountID": "00000000-0000-0000-0000-000000000000" }, "IsReconciled": false, "Date": "2019-02-25", "Reference": "You just updated", "CurrencyCode": "USD", "CurrencyRate": 1, "Status": "AUTHORISED", "LineAmountTypes": "Inclusive", "TotalTax": 1.74, "BankTransactionID": "00000000-0000-0000-0000-000000000000", "UpdatedDateUTC": "2019-02-26T12:39:27.813-08:00" } ] } # BankTransactions | 
-idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Updates a single spent or received money transaction
-    api_response = api_instance.update_bank_transaction(xero_tenant_id, bank_transaction_id, bank_transactions, idempotency_key=idempotency_key, unitdp=unitdp)
+    api_response = api_instance.update_bank_transaction(xero_tenant_id, bank_transaction_id, bank_transactions, unitdp=unitdp, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->update_bank_transaction: %s\n" % e)
@@ -13482,8 +13482,8 @@ Name | Type | Description  | Notes
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **bank_transaction_id** | [**str**](.md)| Xero generated unique identifier for a bank transaction | 
  **bank_transactions** | [**BankTransactions**](BankTransactions.md)|  | 
- **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
  **unitdp** | **int**| e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts | [optional] 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -13840,7 +13840,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_credit_note**
-> CreditNotes update_credit_note(xero_tenant_id, credit_note_id, credit_notes, idempotency_key=idempotency_key, unitdp=unitdp)
+> CreditNotes update_credit_note(xero_tenant_id, credit_note_id, credit_notes, unitdp=unitdp, idempotency_key=idempotency_key)
 
 Updates a specific credit note
 
@@ -13873,11 +13873,11 @@ api_instance = AccountingApi(api_client)
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 credit_note_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Credit Note
 credit_notes = { "CreditNotes": [ { "Type": "ACCPAYCREDIT", "Contact": { "ContactID": "430fa14a-f945-44d3-9f97-5df5e28441b8" }, "Date": "2019-01-05", "Status": "AUTHORISED", "Reference": "HelloWorld", "LineItems": [ { "Description": "Foobar", "Quantity": 2, "UnitAmount": 20, "AccountCode": "400" } ] } ] } # CreditNotes | an array of Credit Notes containing credit note details to update
-idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Updates a specific credit note
-    api_response = api_instance.update_credit_note(xero_tenant_id, credit_note_id, credit_notes, idempotency_key=idempotency_key, unitdp=unitdp)
+    api_response = api_instance.update_credit_note(xero_tenant_id, credit_note_id, credit_notes, unitdp=unitdp, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->update_credit_note: %s\n" % e)
@@ -13890,8 +13890,8 @@ Name | Type | Description  | Notes
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **credit_note_id** | [**str**](.md)| Unique identifier for a Credit Note | 
  **credit_notes** | [**CreditNotes**](CreditNotes.md)| an array of Credit Notes containing credit note details to update | 
- **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
  **unitdp** | **int**| e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts | [optional] 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -14045,7 +14045,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_invoice**
-> Invoices update_invoice(xero_tenant_id, invoice_id, invoices, idempotency_key=idempotency_key, unitdp=unitdp)
+> Invoices update_invoice(xero_tenant_id, invoice_id, invoices, unitdp=unitdp, idempotency_key=idempotency_key)
 
 Updates a specific sales invoices or purchase bills
 
@@ -14078,11 +14078,11 @@ api_instance = AccountingApi(api_client)
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 invoice_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Invoice
 invoices = { "Invoices": [{ Reference: "May the force be with you", "InvoiceID": "00000000-0000-0000-0000-000000000000", "LineItems": [], "Contact": {}, "Type": "ACCPAY" }]} # Invoices | 
-idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Updates a specific sales invoices or purchase bills
-    api_response = api_instance.update_invoice(xero_tenant_id, invoice_id, invoices, idempotency_key=idempotency_key, unitdp=unitdp)
+    api_response = api_instance.update_invoice(xero_tenant_id, invoice_id, invoices, unitdp=unitdp, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->update_invoice: %s\n" % e)
@@ -14095,8 +14095,8 @@ Name | Type | Description  | Notes
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **invoice_id** | [**str**](.md)| Unique identifier for an Invoice | 
  **invoices** | [**Invoices**](Invoices.md)|  | 
- **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
  **unitdp** | **int**| e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts | [optional] 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -14183,7 +14183,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_item**
-> Items update_item(xero_tenant_id, item_id, items, idempotency_key=idempotency_key, unitdp=unitdp)
+> Items update_item(xero_tenant_id, item_id, items, unitdp=unitdp, idempotency_key=idempotency_key)
 
 Updates a specific item
 
@@ -14216,11 +14216,11 @@ api_instance = AccountingApi(api_client)
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 item_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for an Item
 items = { "Items": [ { "Code": "ItemCode123", "Description": "Description 123" } ] } # Items | 
-idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Updates a specific item
-    api_response = api_instance.update_item(xero_tenant_id, item_id, items, idempotency_key=idempotency_key, unitdp=unitdp)
+    api_response = api_instance.update_item(xero_tenant_id, item_id, items, unitdp=unitdp, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->update_item: %s\n" % e)
@@ -14233,8 +14233,8 @@ Name | Type | Description  | Notes
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **item_id** | [**str**](.md)| Unique identifier for an Item | 
  **items** | [**Items**](Items.md)|  | 
- **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
  **unitdp** | **int**| e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts | [optional] 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -14455,7 +14455,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_or_create_bank_transactions**
-> BankTransactions update_or_create_bank_transactions(xero_tenant_id, bank_transactions, idempotency_key=idempotency_key, summarize_errors=summarize_errors, unitdp=unitdp)
+> BankTransactions update_or_create_bank_transactions(xero_tenant_id, bank_transactions, summarize_errors=summarize_errors, unitdp=unitdp, idempotency_key=idempotency_key)
 
 Updates or creates one or more spent or received money transaction
 
@@ -14487,12 +14487,12 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 bank_transactions = { "BankTransactions": [ { "Type": "SPEND", "Contact": { "ContactID": "00000000-0000-0000-0000-000000000000" }, "Lineitems": [ { "Description": "Foobar", "Quantity": 1, "UnitAmount": 20, "AccountCode": "400" } ], "BankAccount": { "Code": "088" } } ] } # BankTransactions | 
-idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Updates or creates one or more spent or received money transaction
-    api_response = api_instance.update_or_create_bank_transactions(xero_tenant_id, bank_transactions, idempotency_key=idempotency_key, summarize_errors=summarize_errors, unitdp=unitdp)
+    api_response = api_instance.update_or_create_bank_transactions(xero_tenant_id, bank_transactions, summarize_errors=summarize_errors, unitdp=unitdp, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->update_or_create_bank_transactions: %s\n" % e)
@@ -14504,9 +14504,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **bank_transactions** | [**BankTransactions**](BankTransactions.md)|  | 
- **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
  **summarize_errors** | **bool**| If false return 200 OK and mix of successfully created objects and any with validation errors | [optional] [default to False]
  **unitdp** | **int**| e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts | [optional] 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -14524,7 +14524,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_or_create_contacts**
-> Contacts update_or_create_contacts(xero_tenant_id, contacts, idempotency_key=idempotency_key, summarize_errors=summarize_errors)
+> Contacts update_or_create_contacts(xero_tenant_id, contacts, summarize_errors=summarize_errors, idempotency_key=idempotency_key)
 
 Updates or creates one or more contacts in a Xero organisation
 
@@ -14556,11 +14556,11 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 contacts = { "Contacts": [ { "Name": "Bruce Banner", "EmailAddress": "hulk@avengers.com", "Phones": [ { "PhoneType": "MOBILE", "PhoneNumber": "555-1212", "PhoneAreaCode": "415" } ], "PaymentTerms": { "Bills": { "Day": 15, "Type": "OFCURRENTMONTH" }, "Sales": { "Day": 10, "Type": "DAYSAFTERBILLMONTH" } } } ] } # Contacts | 
-idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Updates or creates one or more contacts in a Xero organisation
-    api_response = api_instance.update_or_create_contacts(xero_tenant_id, contacts, idempotency_key=idempotency_key, summarize_errors=summarize_errors)
+    api_response = api_instance.update_or_create_contacts(xero_tenant_id, contacts, summarize_errors=summarize_errors, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->update_or_create_contacts: %s\n" % e)
@@ -14572,8 +14572,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **contacts** | [**Contacts**](Contacts.md)|  | 
- **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
  **summarize_errors** | **bool**| If false return 200 OK and mix of successfully created objects and any with validation errors | [optional] [default to False]
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -14591,7 +14591,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_or_create_credit_notes**
-> CreditNotes update_or_create_credit_notes(xero_tenant_id, credit_notes, idempotency_key=idempotency_key, summarize_errors=summarize_errors, unitdp=unitdp)
+> CreditNotes update_or_create_credit_notes(xero_tenant_id, credit_notes, summarize_errors=summarize_errors, unitdp=unitdp, idempotency_key=idempotency_key)
 
 Updates or creates one or more credit notes
 
@@ -14623,12 +14623,12 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 credit_notes = { "CreditNotes":[ { "Type":"ACCPAYCREDIT", "Contact":{ "ContactID":"430fa14a-f945-44d3-9f97-5df5e28441b8" }, "Date":"2019-01-05", "Status":"AUTHORISED", "Reference": "HelloWorld", "LineItems":[ { "Description":"Foobar", "Quantity":2.0, "UnitAmount":20.0, "AccountCode":"400" } ] } ] } # CreditNotes | an array of Credit Notes with a single CreditNote object.
-idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Updates or creates one or more credit notes
-    api_response = api_instance.update_or_create_credit_notes(xero_tenant_id, credit_notes, idempotency_key=idempotency_key, summarize_errors=summarize_errors, unitdp=unitdp)
+    api_response = api_instance.update_or_create_credit_notes(xero_tenant_id, credit_notes, summarize_errors=summarize_errors, unitdp=unitdp, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->update_or_create_credit_notes: %s\n" % e)
@@ -14640,9 +14640,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **credit_notes** | [**CreditNotes**](CreditNotes.md)| an array of Credit Notes with a single CreditNote object. | 
- **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
  **summarize_errors** | **bool**| If false return 200 OK and mix of successfully created objects and any with validation errors | [optional] [default to False]
  **unitdp** | **int**| e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts | [optional] 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -14660,7 +14660,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_or_create_employees**
-> Employees update_or_create_employees(xero_tenant_id, employees, idempotency_key=idempotency_key, summarize_errors=summarize_errors)
+> Employees update_or_create_employees(xero_tenant_id, employees, summarize_errors=summarize_errors, idempotency_key=idempotency_key)
 
 Creates a single new employees used in Xero payrun
 
@@ -14692,11 +14692,11 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 employees = { "Employees": [ { "FirstName": "Nick", "LastName": "Fury", "ExternalLink": { "Url": "http://twitter.com/#!/search/Nick+Fury" } } ] } # Employees | Employees with array of Employee object in body of request
-idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates a single new employees used in Xero payrun
-    api_response = api_instance.update_or_create_employees(xero_tenant_id, employees, idempotency_key=idempotency_key, summarize_errors=summarize_errors)
+    api_response = api_instance.update_or_create_employees(xero_tenant_id, employees, summarize_errors=summarize_errors, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->update_or_create_employees: %s\n" % e)
@@ -14708,8 +14708,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **employees** | [**Employees**](Employees.md)| Employees with array of Employee object in body of request | 
- **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
  **summarize_errors** | **bool**| If false return 200 OK and mix of successfully created objects and any with validation errors | [optional] [default to False]
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -14727,7 +14727,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_or_create_invoices**
-> Invoices update_or_create_invoices(xero_tenant_id, invoices, idempotency_key=idempotency_key, summarize_errors=summarize_errors, unitdp=unitdp)
+> Invoices update_or_create_invoices(xero_tenant_id, invoices, summarize_errors=summarize_errors, unitdp=unitdp, idempotency_key=idempotency_key)
 
 Updates or creates one or more sales invoices or purchase bills
 
@@ -14759,12 +14759,12 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 invoices = { "Invoices": [ { "Type": "ACCREC", "Contact": { "ContactID": "430fa14a-f945-44d3-9f97-5df5e28441b8" }, "LineItems": [ { "Description": "Acme Tires", "Quantity": 2, "UnitAmount": 20, "AccountCode": "200", "TaxType": "NONE", "LineAmount": 40 } ], "Date": "2019-03-11", "DueDate": "2018-12-10", "Reference": "Website Design", "Status": "AUTHORISED" } ] } # Invoices | 
-idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Updates or creates one or more sales invoices or purchase bills
-    api_response = api_instance.update_or_create_invoices(xero_tenant_id, invoices, idempotency_key=idempotency_key, summarize_errors=summarize_errors, unitdp=unitdp)
+    api_response = api_instance.update_or_create_invoices(xero_tenant_id, invoices, summarize_errors=summarize_errors, unitdp=unitdp, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->update_or_create_invoices: %s\n" % e)
@@ -14776,9 +14776,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **invoices** | [**Invoices**](Invoices.md)|  | 
- **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
  **summarize_errors** | **bool**| If false return 200 OK and mix of successfully created objects and any with validation errors | [optional] [default to False]
  **unitdp** | **int**| e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts | [optional] 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -14796,7 +14796,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_or_create_items**
-> Items update_or_create_items(xero_tenant_id, items, idempotency_key=idempotency_key, summarize_errors=summarize_errors, unitdp=unitdp)
+> Items update_or_create_items(xero_tenant_id, items, summarize_errors=summarize_errors, unitdp=unitdp, idempotency_key=idempotency_key)
 
 Updates or creates one or more items
 
@@ -14828,12 +14828,12 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 items = { "Items": [ { "Code": "ItemCode123", "Name": "ItemName XYZ", "Description": "Item Description ABC" } ] } # Items | 
-idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Updates or creates one or more items
-    api_response = api_instance.update_or_create_items(xero_tenant_id, items, idempotency_key=idempotency_key, summarize_errors=summarize_errors, unitdp=unitdp)
+    api_response = api_instance.update_or_create_items(xero_tenant_id, items, summarize_errors=summarize_errors, unitdp=unitdp, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->update_or_create_items: %s\n" % e)
@@ -14845,9 +14845,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **items** | [**Items**](Items.md)|  | 
- **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
  **summarize_errors** | **bool**| If false return 200 OK and mix of successfully created objects and any with validation errors | [optional] [default to False]
  **unitdp** | **int**| e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts | [optional] 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -14865,7 +14865,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_or_create_manual_journals**
-> ManualJournals update_or_create_manual_journals(xero_tenant_id, manual_journals, idempotency_key=idempotency_key, summarize_errors=summarize_errors)
+> ManualJournals update_or_create_manual_journals(xero_tenant_id, manual_journals, summarize_errors=summarize_errors, idempotency_key=idempotency_key)
 
 Updates or creates a single manual journal
 
@@ -14897,11 +14897,11 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 manual_journals = { "ManualJournals": [ { "Narration": "Journal Desc", "JournalLines": [ { "LineAmount": 100, "AccountCode": "400", "Description": "Money Movement" }, { "LineAmount": -100, "AccountCode": "400", "Description": "Prepayment of things", "Tracking": [ { "Name": "North", "Option": "Region" } ] } ], "Date": "2019-03-14" } ] } # ManualJournals | ManualJournals array with ManualJournal object in body of request
-idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Updates or creates a single manual journal
-    api_response = api_instance.update_or_create_manual_journals(xero_tenant_id, manual_journals, idempotency_key=idempotency_key, summarize_errors=summarize_errors)
+    api_response = api_instance.update_or_create_manual_journals(xero_tenant_id, manual_journals, summarize_errors=summarize_errors, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->update_or_create_manual_journals: %s\n" % e)
@@ -14913,8 +14913,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **manual_journals** | [**ManualJournals**](ManualJournals.md)| ManualJournals array with ManualJournal object in body of request | 
- **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
  **summarize_errors** | **bool**| If false return 200 OK and mix of successfully created objects and any with validation errors | [optional] [default to False]
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -14932,7 +14932,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_or_create_purchase_orders**
-> PurchaseOrders update_or_create_purchase_orders(xero_tenant_id, purchase_orders, idempotency_key=idempotency_key, summarize_errors=summarize_errors)
+> PurchaseOrders update_or_create_purchase_orders(xero_tenant_id, purchase_orders, summarize_errors=summarize_errors, idempotency_key=idempotency_key)
 
 Updates or creates one or more purchase orders
 
@@ -14964,11 +14964,11 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 purchase_orders = { "PurchaseOrders": [ { "Contact": { "ContactID": "00000000-0000-0000-0000-000000000000" }, "LineItems": [ { "Description": "Foobar", "Quantity": 1, "UnitAmount": 20, "AccountCode": "710" } ], "Date": "2019-03-13" } ] } # PurchaseOrders | 
-idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Updates or creates one or more purchase orders
-    api_response = api_instance.update_or_create_purchase_orders(xero_tenant_id, purchase_orders, idempotency_key=idempotency_key, summarize_errors=summarize_errors)
+    api_response = api_instance.update_or_create_purchase_orders(xero_tenant_id, purchase_orders, summarize_errors=summarize_errors, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->update_or_create_purchase_orders: %s\n" % e)
@@ -14980,8 +14980,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **purchase_orders** | [**PurchaseOrders**](PurchaseOrders.md)|  | 
- **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
  **summarize_errors** | **bool**| If false return 200 OK and mix of successfully created objects and any with validation errors | [optional] [default to False]
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -14999,7 +14999,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_or_create_quotes**
-> Quotes update_or_create_quotes(xero_tenant_id, quotes, idempotency_key=idempotency_key, summarize_errors=summarize_errors)
+> Quotes update_or_create_quotes(xero_tenant_id, quotes, summarize_errors=summarize_errors, idempotency_key=idempotency_key)
 
 Updates or creates one or more quotes
 
@@ -15031,11 +15031,11 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 quotes = { "Quotes": [ { "Contact": { "ContactID": "00000000-0000-0000-0000-000000000000" }, "LineItems": [ { "Description": "Foobar", "Quantity": 1, "UnitAmount": 20, "AccountCode": "12775" } ], "Date": "2020-02-01" } ] } # Quotes | 
-idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Updates or creates one or more quotes
-    api_response = api_instance.update_or_create_quotes(xero_tenant_id, quotes, idempotency_key=idempotency_key, summarize_errors=summarize_errors)
+    api_response = api_instance.update_or_create_quotes(xero_tenant_id, quotes, summarize_errors=summarize_errors, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->update_or_create_quotes: %s\n" % e)
@@ -15047,8 +15047,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **quotes** | [**Quotes**](Quotes.md)|  | 
- **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
  **summarize_errors** | **bool**| If false return 200 OK and mix of successfully created objects and any with validation errors | [optional] [default to False]
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -15066,7 +15066,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_or_create_repeating_invoices**
-> RepeatingInvoices update_or_create_repeating_invoices(xero_tenant_id, repeating_invoices, idempotency_key=idempotency_key, summarize_errors=summarize_errors)
+> RepeatingInvoices update_or_create_repeating_invoices(xero_tenant_id, repeating_invoices, summarize_errors=summarize_errors, idempotency_key=idempotency_key)
 
 Creates or deletes one or more repeating invoice templates
 
@@ -15098,11 +15098,11 @@ api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 repeating_invoices = { "RepeatingInvoices": [ { "Schedule": { "Period": 1, "Unit": "MONTHLY", "DueDate": 10, "DueDateType": "OFFOLLOWINGMONTH", "StartDate": "\/Date(1555286400000+0000)\/" }, "Type": "ACCREC", "Reference": "[Week]", "ApprovedForSending": false, "SendCopy": false, "MarkAsSent": false, "IncludePDF": false, "Contact": { "ContactID": "430fa14a-f945-44d3-9f97-5df5e28441b8", "Name": "Liam Gallagher" }, "Status": "AUTHORISED", "LineAmountTypes": "Exclusive", "LineItems": [ { "Description": "Guitars Fender Strat", "UnitAmount": 5000.00, "TaxType": "OUTPUT2", "TaxAmount": 750.00, "LineAmount": 5000.00, "AccountCode": "200", "Tracking": [], "Quantity": 1.0000, "LineItemID": "13a8353c-d2af-4d5b-920c-438449f08900", "DiscountEnteredAsPercent": true } ], "CurrencyCode": "NZD" } ] } # RepeatingInvoices | RepeatingInvoices with an array of repeating invoice objects in body of request
-idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates or deletes one or more repeating invoice templates
-    api_response = api_instance.update_or_create_repeating_invoices(xero_tenant_id, repeating_invoices, idempotency_key=idempotency_key, summarize_errors=summarize_errors)
+    api_response = api_instance.update_or_create_repeating_invoices(xero_tenant_id, repeating_invoices, summarize_errors=summarize_errors, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->update_or_create_repeating_invoices: %s\n" % e)
@@ -15114,8 +15114,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **repeating_invoices** | [**RepeatingInvoices**](RepeatingInvoices.md)| RepeatingInvoices with an array of repeating invoice objects in body of request | 
- **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
  **summarize_errors** | **bool**| If false return 200 OK and mix of successfully created objects and any with validation errors | [optional] [default to False]
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
@@ -15405,7 +15405,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_receipt**
-> Receipts update_receipt(xero_tenant_id, receipt_id, receipts, idempotency_key=idempotency_key, unitdp=unitdp)
+> Receipts update_receipt(xero_tenant_id, receipt_id, receipts, unitdp=unitdp, idempotency_key=idempotency_key)
 
 Updates a specific draft expense claim receipts
 
@@ -15438,11 +15438,11 @@ api_instance = AccountingApi(api_client)
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 receipt_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Receipt
 receipts = { "Receipts": [ { "Lineitems": [], "User": { "UserID": "00000000-0000-0000-0000-000000000000" }, "Reference": "Foobar" } ] } # Receipts | 
-idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Updates a specific draft expense claim receipts
-    api_response = api_instance.update_receipt(xero_tenant_id, receipt_id, receipts, idempotency_key=idempotency_key, unitdp=unitdp)
+    api_response = api_instance.update_receipt(xero_tenant_id, receipt_id, receipts, unitdp=unitdp, idempotency_key=idempotency_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->update_receipt: %s\n" % e)
@@ -15455,8 +15455,8 @@ Name | Type | Description  | Notes
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **receipt_id** | [**str**](.md)| Unique identifier for a Receipt | 
  **receipts** | [**Receipts**](Receipts.md)|  | 
- **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
  **unitdp** | **int**| e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts | [optional] 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
 
 ### Return type
 
