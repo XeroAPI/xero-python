@@ -196,6 +196,7 @@ Method | HTTP request | Description
 [**get_report_ten_ninety_nine**](AccountingApi.md#get_report_ten_ninety_nine) | **GET** /Reports/TenNinetyNine | Retrieve reports for 1099
 [**get_report_trial_balance**](AccountingApi.md#get_report_trial_balance) | **GET** /Reports/TrialBalance | Retrieves report for trial balance
 [**get_reports_list**](AccountingApi.md#get_reports_list) | **GET** /Reports | Retrieves a list of the organistaions unique reports that require a uuid to fetch
+[**get_tax_rate_by_tax_type**](AccountingApi.md#get_tax_rate_by_tax_type) | **GET** /TaxRates/{TaxType} | Retrieves a specific tax rate according to given TaxType code
 [**get_tax_rates**](AccountingApi.md#get_tax_rates) | **GET** /TaxRates | Retrieves tax rates
 [**get_tracking_categories**](AccountingApi.md#get_tracking_categories) | **GET** /TrackingCategories | Retrieves tracking categories and options
 [**get_tracking_category**](AccountingApi.md#get_tracking_category) | **GET** /TrackingCategories/{TrackingCategoryID} | Retrieves specific tracking categories and options using a unique tracking category Id
@@ -12903,8 +12904,71 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_tax_rate_by_tax_type**
+> TaxRates get_tax_rate_by_tax_type(xero_tenant_id, tax_type)
+
+Retrieves a specific tax rate according to given TaxType code
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.accounting import AccountingApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = AccountingApi(api_client)
+
+xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
+tax_type = 'INPUT2' # str | A valid TaxType code
+try:
+    # Retrieves a specific tax rate according to given TaxType code
+    api_response = api_instance.get_tax_rate_by_tax_type(xero_tenant_id, tax_type)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AccountingApi->get_tax_rate_by_tax_type: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **tax_type** | **str**| A valid TaxType code | 
+
+### Return type
+
+[**TaxRates**](TaxRates.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_tax_rates**
-> TaxRates get_tax_rates(xero_tenant_id, where=where, order=order, tax_type=tax_type)
+> TaxRates get_tax_rates(xero_tenant_id, where=where, order=order)
 
 Retrieves tax rates
 
@@ -12937,10 +13001,9 @@ api_instance = AccountingApi(api_client)
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 where = 'Status==\"ACTIVE\"' # str | Filter by an any element (optional)
 order = 'Name ASC' # str | Order by an any element (optional)
-tax_type = 'INPUT' # str | Filter by tax type (optional)
 try:
     # Retrieves tax rates
-    api_response = api_instance.get_tax_rates(xero_tenant_id, where=where, order=order, tax_type=tax_type)
+    api_response = api_instance.get_tax_rates(xero_tenant_id, where=where, order=order)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->get_tax_rates: %s\n" % e)
@@ -12953,7 +13016,6 @@ Name | Type | Description  | Notes
  **xero_tenant_id** | **str**| Xero identifier for Tenant | 
  **where** | **str**| Filter by an any element | [optional] 
  **order** | **str**| Order by an any element | [optional] 
- **tax_type** | **str**| Filter by tax type | [optional] 
 
 ### Return type
 

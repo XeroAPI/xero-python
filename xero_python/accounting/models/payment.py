@@ -57,6 +57,7 @@ class Payment(BaseModel):
         "has_validation_errors": "bool",
         "status_attribute_string": "str",
         "validation_errors": "list[ValidationError]",
+        "warnings": "list[ValidationError]",
     }
 
     attribute_map = {
@@ -87,6 +88,7 @@ class Payment(BaseModel):
         "has_validation_errors": "HasValidationErrors",
         "status_attribute_string": "StatusAttributeString",
         "validation_errors": "ValidationErrors",
+        "warnings": "Warnings",
     }
 
     def __init__(
@@ -118,6 +120,7 @@ class Payment(BaseModel):
         has_validation_errors=False,
         status_attribute_string=None,
         validation_errors=None,
+        warnings=None,
     ):  # noqa: E501
         """Payment - a model defined in OpenAPI"""  # noqa: E501
 
@@ -148,6 +151,7 @@ class Payment(BaseModel):
         self._has_validation_errors = None
         self._status_attribute_string = None
         self._validation_errors = None
+        self._warnings = None
         self.discriminator = None
 
         if invoice is not None:
@@ -204,6 +208,8 @@ class Payment(BaseModel):
             self.status_attribute_string = status_attribute_string
         if validation_errors is not None:
             self.validation_errors = validation_errors
+        if warnings is not None:
+            self.warnings = warnings
 
     @property
     def invoice(self):
@@ -841,3 +847,26 @@ class Payment(BaseModel):
         """
 
         self._validation_errors = validation_errors
+
+    @property
+    def warnings(self):
+        """Gets the warnings of this Payment.  # noqa: E501
+
+        Displays array of warning messages from the API  # noqa: E501
+
+        :return: The warnings of this Payment.  # noqa: E501
+        :rtype: list[ValidationError]
+        """
+        return self._warnings
+
+    @warnings.setter
+    def warnings(self, warnings):
+        """Sets the warnings of this Payment.
+
+        Displays array of warning messages from the API  # noqa: E501
+
+        :param warnings: The warnings of this Payment.  # noqa: E501
+        :type: list[ValidationError]
+        """
+
+        self._warnings = warnings

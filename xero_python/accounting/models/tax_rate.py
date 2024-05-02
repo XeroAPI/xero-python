@@ -341,6 +341,7 @@ class TaxRate(BaseModel):
             "IMRE",
             "BADDEBTRECOVERY",
             "USSALESTAX",
+            "BLINPUT3",
             "None",
         ]  # noqa: E501
 
