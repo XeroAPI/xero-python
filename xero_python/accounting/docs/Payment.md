@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **has_validation_errors** | **bool** | A boolean to indicate if a contact has an validation errors | [optional] [default to False]
 **status_attribute_string** | **str** | A string to indicate if a invoice status | [optional] 
 **validation_errors** | [**list[ValidationError]**](ValidationError.md) | Displays array of validation error messages from the API | [optional] 
+**warnings** | [**list[ValidationError]**](ValidationError.md) | Displays array of warning messages from the API | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

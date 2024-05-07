@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 3.0.0
+    OpenAPI spec version: 3.0.3
 """
 
 import importlib
@@ -16674,12 +16674,87 @@ class AccountingApi(object):
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "get_reports_list")
 
+    def get_tax_rate_by_tax_type(
+        self,
+        xero_tenant_id,
+        tax_type,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
+        """Retrieves a specific tax rate according to given TaxType code  # noqa: E501
+        OAuth2 scope: accounting.settings, accounting.settings.read
+        :param str xero_tenant_id: Xero identifier for Tenant (required)
+        :param str tax_type: A valid TaxType code (required)
+        :param bool _return_http_data_only: return received data only
+        :param bool _preload_content: load received data in models
+        :param bool _request_timeout: maximum wait time for response
+        :return: TaxRates
+        """
+
+        # verify the required parameter 'xero_tenant_id' is set
+        if xero_tenant_id is None:
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `get_tax_rate_by_tax_type`"
+            )
+        # verify the required parameter 'tax_type' is set
+        if tax_type is None:
+            raise ValueError(
+                "Missing the required parameter `tax_type` "
+                "when calling `get_tax_rate_by_tax_type`"
+            )
+
+        collection_formats = {}
+        path_params = {
+            "TaxType": tax_type,
+        }
+
+        query_params = []
+
+        header_params = {
+            "xero-tenant-id": xero_tenant_id,
+        }
+
+        local_var_files = {}
+        form_params = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/TaxRates/{TaxType}")
+
+        try:
+            return self.api_client.call_api(
+                url,
+                "GET",
+                path_params,
+                query_params,
+                header_params,
+                body=body_params,
+                post_params=form_params,
+                files=local_var_files,
+                response_type="TaxRates",
+                response_model_finder=self.get_model_finder(),
+                auth_settings=auth_settings,
+                _return_http_data_only=_return_http_data_only,
+                _preload_content=_preload_content,
+                _request_timeout=_request_timeout,
+                collection_formats=collection_formats,
+            )
+        except exceptions.HTTPStatusException as error:
+            raise translate_status_exception(error, self, "get_tax_rate_by_tax_type")
+
     def get_tax_rates(
         self,
         xero_tenant_id,
         where=empty,
         order=empty,
-        tax_type=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -16689,7 +16764,6 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str where: Filter by an any element
         :param str order: Order by an any element
-        :param str tax_type: Filter by tax type
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -16713,9 +16787,6 @@ class AccountingApi(object):
 
         if order is not empty:
             query_params.append(("order", order))
-
-        if tax_type is not empty:
-            query_params.append(("TaxType", tax_type))
 
         header_params = {
             "xero-tenant-id": xero_tenant_id,

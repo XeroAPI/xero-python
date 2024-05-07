@@ -30,7 +30,6 @@ class AllowanceType(Enum):
     MEALS = "MEALS"
     TRAVEL = "TRAVEL"
     OTHER = "OTHER"
-    JOBKEEPER = "JOBKEEPER"
     TOOLS = "TOOLS"
     TASKS = "TASKS"
     QUALIFICATIONS = "QUALIFICATIONS"
