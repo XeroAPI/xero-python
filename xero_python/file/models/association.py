@@ -30,6 +30,9 @@ class Association(BaseModel):
                             and the value is json key in definition.
     """
     openapi_types = {
+        "send_with_object": "bool",
+        "name": "str",
+        "size": "int",
         "file_id": "str",
         "object_id": "str",
         "object_group": "ObjectGroup",
@@ -37,6 +40,9 @@ class Association(BaseModel):
     }
 
     attribute_map = {
+        "send_with_object": "SendWithObject",
+        "name": "Name",
+        "size": "Size",
         "file_id": "FileId",
         "object_id": "ObjectId",
         "object_group": "ObjectGroup",
@@ -44,16 +50,32 @@ class Association(BaseModel):
     }
 
     def __init__(
-        self, file_id=None, object_id=None, object_group=None, object_type=None
+        self,
+        send_with_object=None,
+        name=None,
+        size=None,
+        file_id=None,
+        object_id=None,
+        object_group=None,
+        object_type=None,
     ):  # noqa: E501
         """Association - a model defined in OpenAPI"""  # noqa: E501
 
+        self._send_with_object = None
+        self._name = None
+        self._size = None
         self._file_id = None
         self._object_id = None
         self._object_group = None
         self._object_type = None
         self.discriminator = None
 
+        if send_with_object is not None:
+            self.send_with_object = send_with_object
+        if name is not None:
+            self.name = name
+        if size is not None:
+            self.size = size
         if file_id is not None:
             self.file_id = file_id
         if object_id is not None:
@@ -62,6 +84,75 @@ class Association(BaseModel):
             self.object_group = object_group
         if object_type is not None:
             self.object_type = object_type
+
+    @property
+    def send_with_object(self):
+        """Gets the send_with_object of this Association.  # noqa: E501
+
+        Boolean flag to determines whether the file is sent with the document it is attached to on client facing communications. Note- The SendWithObject element is only returned when using /Associations/{ObjectId} endpoint.  # noqa: E501
+
+        :return: The send_with_object of this Association.  # noqa: E501
+        :rtype: bool
+        """
+        return self._send_with_object
+
+    @send_with_object.setter
+    def send_with_object(self, send_with_object):
+        """Sets the send_with_object of this Association.
+
+        Boolean flag to determines whether the file is sent with the document it is attached to on client facing communications. Note- The SendWithObject element is only returned when using /Associations/{ObjectId} endpoint.  # noqa: E501
+
+        :param send_with_object: The send_with_object of this Association.  # noqa: E501
+        :type: bool
+        """
+
+        self._send_with_object = send_with_object
+
+    @property
+    def name(self):
+        """Gets the name of this Association.  # noqa: E501
+
+        The name of the associated file. Note- The Name element is only returned when using /Associations/{ObjectId} endpoint.  # noqa: E501
+
+        :return: The name of this Association.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this Association.
+
+        The name of the associated file. Note- The Name element is only returned when using /Associations/{ObjectId} endpoint.  # noqa: E501
+
+        :param name: The name of this Association.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
+
+    @property
+    def size(self):
+        """Gets the size of this Association.  # noqa: E501
+
+        The size of the associated file in bytes. Note- The Size element is only returned when using /Associations/{ObjectId} endpoint.  # noqa: E501
+
+        :return: The size of this Association.  # noqa: E501
+        :rtype: int
+        """
+        return self._size
+
+    @size.setter
+    def size(self, size):
+        """Sets the size of this Association.
+
+        The size of the associated file in bytes. Note- The Size element is only returned when using /Associations/{ObjectId} endpoint.  # noqa: E501
+
+        :param size: The size of this Association.  # noqa: E501
+        :type: int
+        """
+
+        self._size = size
 
     @property
     def file_id(self):
