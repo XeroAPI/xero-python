@@ -213,7 +213,7 @@ class OAuth2Token:
         """
         return (
             self.refresh_token
-            and isinstance(self.scope, (list, tuple))
+            and isinstance(self.scope, (list, tuple, str))
             and self.client_id
             and self.client_secret
         )
@@ -278,6 +278,7 @@ class OAuth2Token:
         expires_at=None,
         refresh_token=None,
         id_token=None,
+        **kwargs
     ):
         """
         Set new auth2 token details
