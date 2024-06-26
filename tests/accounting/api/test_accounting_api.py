@@ -340,7 +340,6 @@ def test_get_invoices(sandbox_accounting_api: AccountingApi, xero_tenant_id):
     # Given sandbox API, tenant id, and hardcoded test invoices data
     # When getting all invoices
     result = sandbox_accounting_api.get_invoices(xero_tenant_id)
-    print(result)
     # Then expect correct invoices received
     expected = Invoices(
         invoices=[
