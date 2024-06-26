@@ -5504,7 +5504,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_bank_transactions**
-> BankTransactions get_bank_transactions(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp)
+> GetBankTransactionsResponse get_bank_transactions(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp)
 
 Retrieves any spent or received money transactions
 
@@ -5561,7 +5561,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BankTransactions**](BankTransactions.md)
+[**GetBankTransactionsResponse**](GetBankTransactionsResponse.md)
 
 ### Authorization
 
@@ -7119,7 +7119,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_contacts**
-> Contacts get_contacts(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, i_ds=i_ds, page=page, include_archived=include_archived, summary_only=summary_only, search_term=search_term)
+> GetContactsResponse get_contacts(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, i_ds=i_ds, page=page, include_archived=include_archived, summary_only=summary_only, search_term=search_term)
 
 Retrieves all contacts in a Xero organisation
 
@@ -7182,7 +7182,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Contacts**](Contacts.md)
+[**GetContactsResponse**](GetContactsResponse.md)
 
 ### Authorization
 
@@ -7584,7 +7584,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_credit_notes**
-> CreditNotes get_credit_notes(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp)
+> GetCreditNotesResponse get_credit_notes(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp)
 
 Retrieves any credit notes
 
@@ -7641,7 +7641,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CreditNotes**](CreditNotes.md)
+[**GetCreditNotesResponse**](GetCreditNotesResponse.md)
 
 ### Authorization
 
@@ -8492,7 +8492,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_invoices**
-> Invoices get_invoices(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, i_ds=i_ds, invoice_numbers=invoice_numbers, contact_i_ds=contact_i_ds, statuses=statuses, page=page, include_archived=include_archived, created_by_my_app=created_by_my_app, unitdp=unitdp, summary_only=summary_only)
+> GetInvoicesResponse get_invoices(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, i_ds=i_ds, invoice_numbers=invoice_numbers, contact_i_ds=contact_i_ds, statuses=statuses, page=page, include_archived=include_archived, created_by_my_app=created_by_my_app, unitdp=unitdp, summary_only=summary_only)
 
 Retrieves sales invoices or purchase bills
 
@@ -8563,7 +8563,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Invoices**](Invoices.md)
+[**GetInvoicesResponse**](GetInvoicesResponse.md)
 
 ### Authorization
 
@@ -9363,7 +9363,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_manual_journals**
-> ManualJournals get_manual_journals(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page)
+> GetManualJournalsResponse get_manual_journals(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page)
 
 Retrieves manual journals
 
@@ -9418,7 +9418,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ManualJournals**](ManualJournals.md)
+[**GetManualJournalsResponse**](GetManualJournalsResponse.md)
 
 ### Authorization
 
@@ -9869,7 +9869,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_overpayments**
-> Overpayments get_overpayments(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp)
+> GetOverpaymentsResponse get_overpayments(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp)
 
 Retrieves overpayments
 
@@ -9926,7 +9926,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Overpayments**](Overpayments.md)
+[**GetOverpaymentsResponse**](GetOverpaymentsResponse.md)
 
 ### Authorization
 
@@ -10127,7 +10127,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_payments**
-> Payments get_payments(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page)
+> GetPaymentsResponse get_payments(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page)
 
 Retrieves payments for invoices and credit notes
 
@@ -10182,7 +10182,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Payments**](Payments.md)
+[**GetPaymentsResponse**](GetPaymentsResponse.md)
 
 ### Authorization
 
@@ -10322,7 +10322,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_prepayments**
-> Prepayments get_prepayments(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp)
+> GetPrepaymentsResponse get_prepayments(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp)
 
 Retrieves prepayments
 
@@ -10379,7 +10379,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Prepayments**](Prepayments.md)
+[**GetPrepaymentsResponse**](GetPrepaymentsResponse.md)
 
 ### Authorization
 
@@ -10842,7 +10842,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_purchase_orders**
-> PurchaseOrders get_purchase_orders(xero_tenant_id, if_modified_since=if_modified_since, status=status, date_from=date_from, date_to=date_to, order=order, page=page)
+> GetPurchaseOrdersResponse get_purchase_orders(xero_tenant_id, if_modified_since=if_modified_since, status=status, date_from=date_from, date_to=date_to, order=order, page=page)
 
 Retrieves purchase orders
 
@@ -10901,7 +10901,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PurchaseOrders**](PurchaseOrders.md)
+[**GetPurchaseOrdersResponse**](GetPurchaseOrdersResponse.md)
 
 ### Authorization
 

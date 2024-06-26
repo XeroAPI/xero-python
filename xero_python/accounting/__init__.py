@@ -76,6 +76,27 @@ from xero_python.accounting.models.error import Error
 from xero_python.accounting.models.expense_claim import ExpenseClaim
 from xero_python.accounting.models.expense_claims import ExpenseClaims
 from xero_python.accounting.models.external_link import ExternalLink
+from xero_python.accounting.models.get_bank_transactions_response import (
+    GetBankTransactionsResponse,
+)
+from xero_python.accounting.models.get_contacts_response import GetContactsResponse
+from xero_python.accounting.models.get_credit_notes_response import (
+    GetCreditNotesResponse,
+)
+from xero_python.accounting.models.get_invoices_response import GetInvoicesResponse
+from xero_python.accounting.models.get_manual_journals_response import (
+    GetManualJournalsResponse,
+)
+from xero_python.accounting.models.get_overpayments_response import (
+    GetOverpaymentsResponse,
+)
+from xero_python.accounting.models.get_payments_response import GetPaymentsResponse
+from xero_python.accounting.models.get_prepayments_response import (
+    GetPrepaymentsResponse,
+)
+from xero_python.accounting.models.get_purchase_orders_response import (
+    GetPurchaseOrdersResponse,
+)
 from xero_python.accounting.models.history_record import HistoryRecord
 from xero_python.accounting.models.history_records import HistoryRecords
 from xero_python.accounting.models.import_summary import ImportSummary
@@ -108,6 +129,7 @@ from xero_python.accounting.models.organisation import Organisation
 from xero_python.accounting.models.organisations import Organisations
 from xero_python.accounting.models.overpayment import Overpayment
 from xero_python.accounting.models.overpayments import Overpayments
+from xero_python.accounting.models.page_info import PageInfo
 from xero_python.accounting.models.payment import Payment
 from xero_python.accounting.models.payment_delete import PaymentDelete
 from xero_python.accounting.models.payment_service import PaymentService

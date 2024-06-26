@@ -2860,6 +2860,267 @@ ul.nav-tabs {
     "url" : "http://developer.xero.com/documentation/api/organisation/"
   }
 };
+      defs["GetBankTransactionsResponse"] = {
+  "title" : "",
+  "type" : "object",
+  "properties" : {
+    "Id" : {
+      "type" : "string"
+    },
+    "Status" : {
+      "type" : "string"
+    },
+    "ProviderName" : {
+      "type" : "string"
+    },
+    "DateTimeUTC" : {
+      "type" : "string"
+    },
+    "PageInfo" : {
+      "$ref" : "#/components/schemas/PageInfo"
+    },
+    "BankTransactions" : {
+      "minItems" : 1,
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/components/schemas/BankTransactions"
+      }
+    }
+  },
+  "description" : ""
+};
+      defs["GetContactsResponse"] = {
+  "title" : "",
+  "type" : "object",
+  "properties" : {
+    "Id" : {
+      "type" : "string"
+    },
+    "Status" : {
+      "type" : "string"
+    },
+    "ProviderName" : {
+      "type" : "string"
+    },
+    "DateTimeUTC" : {
+      "type" : "string"
+    },
+    "PageInfo" : {
+      "$ref" : "#/components/schemas/PageInfo"
+    },
+    "Contacts" : {
+      "minItems" : 1,
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/components/schemas/Contacts"
+      }
+    }
+  },
+  "description" : ""
+};
+      defs["GetCreditNotesResponse"] = {
+  "title" : "",
+  "type" : "object",
+  "properties" : {
+    "Id" : {
+      "type" : "string"
+    },
+    "Status" : {
+      "type" : "string"
+    },
+    "ProviderName" : {
+      "type" : "string"
+    },
+    "DateTimeUTC" : {
+      "type" : "string"
+    },
+    "PageInfo" : {
+      "$ref" : "#/components/schemas/PageInfo"
+    },
+    "CreditNotes" : {
+      "minItems" : 1,
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/components/schemas/CreditNotes"
+      }
+    }
+  },
+  "description" : ""
+};
+      defs["GetInvoicesResponse"] = {
+  "title" : "",
+  "type" : "object",
+  "properties" : {
+    "Id" : {
+      "type" : "string"
+    },
+    "Status" : {
+      "type" : "string"
+    },
+    "ProviderName" : {
+      "type" : "string"
+    },
+    "DateTimeUTC" : {
+      "type" : "string"
+    },
+    "PageInfo" : {
+      "$ref" : "#/components/schemas/PageInfo"
+    },
+    "Invoices" : {
+      "minItems" : 1,
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/components/schemas/Invoices"
+      }
+    }
+  },
+  "description" : ""
+};
+      defs["GetManualJournalsResponse"] = {
+  "title" : "",
+  "type" : "object",
+  "properties" : {
+    "Id" : {
+      "type" : "string"
+    },
+    "Status" : {
+      "type" : "string"
+    },
+    "ProviderName" : {
+      "type" : "string"
+    },
+    "DateTimeUTC" : {
+      "type" : "string"
+    },
+    "PageInfo" : {
+      "$ref" : "#/components/schemas/PageInfo"
+    },
+    "ManualJournals" : {
+      "minItems" : 1,
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/components/schemas/ManualJournals"
+      }
+    }
+  },
+  "description" : ""
+};
+      defs["GetOverpaymentsResponse"] = {
+  "title" : "",
+  "type" : "object",
+  "properties" : {
+    "Id" : {
+      "type" : "string"
+    },
+    "Status" : {
+      "type" : "string"
+    },
+    "ProviderName" : {
+      "type" : "string"
+    },
+    "DateTimeUTC" : {
+      "type" : "string"
+    },
+    "PageInfo" : {
+      "$ref" : "#/components/schemas/PageInfo"
+    },
+    "Overpayments" : {
+      "minItems" : 1,
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/components/schemas/Overpayments"
+      }
+    }
+  },
+  "description" : ""
+};
+      defs["GetPaymentsResponse"] = {
+  "title" : "",
+  "type" : "object",
+  "properties" : {
+    "Id" : {
+      "type" : "string"
+    },
+    "Status" : {
+      "type" : "string"
+    },
+    "ProviderName" : {
+      "type" : "string"
+    },
+    "DateTimeUTC" : {
+      "type" : "string"
+    },
+    "PageInfo" : {
+      "$ref" : "#/components/schemas/PageInfo"
+    },
+    "Payments" : {
+      "minItems" : 1,
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/components/schemas/Payments"
+      }
+    }
+  },
+  "description" : ""
+};
+      defs["GetPrepaymentsResponse"] = {
+  "title" : "",
+  "type" : "object",
+  "properties" : {
+    "Id" : {
+      "type" : "string"
+    },
+    "Status" : {
+      "type" : "string"
+    },
+    "ProviderName" : {
+      "type" : "string"
+    },
+    "DateTimeUTC" : {
+      "type" : "string"
+    },
+    "PageInfo" : {
+      "$ref" : "#/components/schemas/PageInfo"
+    },
+    "Prepayments" : {
+      "minItems" : 1,
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/components/schemas/Prepayments"
+      }
+    }
+  },
+  "description" : ""
+};
+      defs["GetPurchaseOrdersResponse"] = {
+  "title" : "",
+  "type" : "object",
+  "properties" : {
+    "Id" : {
+      "type" : "string"
+    },
+    "Status" : {
+      "type" : "string"
+    },
+    "ProviderName" : {
+      "type" : "string"
+    },
+    "DateTimeUTC" : {
+      "type" : "string"
+    },
+    "PageInfo" : {
+      "$ref" : "#/components/schemas/PageInfo"
+    },
+    "PurchaseOrders" : {
+      "minItems" : 1,
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/components/schemas/PurchaseOrders"
+      }
+    }
+  },
+  "description" : ""
+};
       defs["HistoryRecord"] = {
   "title" : "",
   "type" : "object",
@@ -4247,6 +4508,25 @@ ul.nav-tabs {
   },
   "description" : "",
   "x-isObjectArray" : true
+};
+      defs["PageInfo"] = {
+  "title" : "",
+  "type" : "object",
+  "properties" : {
+    "Page" : {
+      "type" : "integer"
+    },
+    "PageSize" : {
+      "type" : "integer"
+    },
+    "TotalPages" : {
+      "type" : "integer"
+    },
+    "TotalRows" : {
+      "type" : "integer"
+    }
+  },
+  "description" : "Pagination information"
 };
       defs["Payment"] = {
   "title" : "",
