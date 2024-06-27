@@ -7331,6 +7331,7 @@ class AccountingApi(object):
         order=empty,
         page=empty,
         unitdp=empty,
+        page_size=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -7343,6 +7344,7 @@ class AccountingApi(object):
         :param str order: Order by an any element
         :param int page: Up to 100 bank transactions will be returned in a single API call with line items details
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+        :param int page_size: Number of records to retrieve per page
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -7372,6 +7374,9 @@ class AccountingApi(object):
 
         if unitdp is not empty:
             query_params.append(("unitdp", unitdp))
+
+        if page_size is not empty:
+            query_params.append(("pageSize", page_size))
 
         header_params = {
             "xero-tenant-id": xero_tenant_id,
@@ -9358,6 +9363,7 @@ class AccountingApi(object):
         include_archived=empty,
         summary_only=empty,
         search_term=empty,
+        page_size=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -9373,6 +9379,7 @@ class AccountingApi(object):
         :param bool include_archived: e.g. includeArchived=true - Contacts with a status of ARCHIVED will be included in the response
         :param bool summary_only: Use summaryOnly=true in GET Contacts and Invoices endpoint to retrieve a smaller version of the response object. This returns only lightweight fields, excluding computation-heavy fields from the response, making the API calls quick and efficient.
         :param str search_term: Search parameter that performs a case-insensitive text search across the Name, FirstName, LastName, ContactNumber and EmailAddress fields.
+        :param int page_size: Number of records to retrieve per page
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -9413,6 +9420,9 @@ class AccountingApi(object):
 
         if search_term is not empty:
             query_params.append(("searchTerm", search_term))
+
+        if page_size is not empty:
+            query_params.append(("pageSize", page_size))
 
         header_params = {
             "xero-tenant-id": xero_tenant_id,
@@ -9968,6 +9978,7 @@ class AccountingApi(object):
         order=empty,
         page=empty,
         unitdp=empty,
+        page_size=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -9980,6 +9991,7 @@ class AccountingApi(object):
         :param str order: Order by an any element
         :param int page: e.g. page=1 – Up to 100 credit notes will be returned in a single API call with line items shown for each credit note
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+        :param int page_size: Number of records to retrieve per page
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -10009,6 +10021,9 @@ class AccountingApi(object):
 
         if unitdp is not empty:
             query_params.append(("unitdp", unitdp))
+
+        if page_size is not empty:
+            query_params.append(("pageSize", page_size))
 
         header_params = {
             "xero-tenant-id": xero_tenant_id,
@@ -11099,6 +11114,7 @@ class AccountingApi(object):
         created_by_my_app=empty,
         unitdp=empty,
         summary_only=empty,
+        page_size=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -11118,6 +11134,7 @@ class AccountingApi(object):
         :param bool created_by_my_app: When set to true you'll only retrieve Invoices created by your app
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
         :param bool summary_only: Use summaryOnly=true in GET Contacts and Invoices endpoint to retrieve a smaller version of the response object. This returns only lightweight fields, excluding computation-heavy fields from the response, making the API calls quick and efficient.
+        :param int page_size: Number of records to retrieve per page
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -11173,6 +11190,9 @@ class AccountingApi(object):
 
         if summary_only is not empty:
             query_params.append(("summaryOnly", summary_only))
+
+        if page_size is not empty:
+            query_params.append(("pageSize", page_size))
 
         header_params = {
             "xero-tenant-id": xero_tenant_id,
@@ -12219,6 +12239,7 @@ class AccountingApi(object):
         where=empty,
         order=empty,
         page=empty,
+        page_size=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -12230,6 +12251,7 @@ class AccountingApi(object):
         :param str where: Filter by an any element
         :param str order: Order by an any element
         :param int page: e.g. page=1 – Up to 100 manual journals will be returned in a single API call with line items shown for each overpayment
+        :param int page_size: Number of records to retrieve per page
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -12256,6 +12278,9 @@ class AccountingApi(object):
 
         if page is not empty:
             query_params.append(("page", page))
+
+        if page_size is not empty:
+            query_params.append(("pageSize", page_size))
 
         header_params = {
             "xero-tenant-id": xero_tenant_id,
@@ -13128,6 +13153,7 @@ class AccountingApi(object):
         where=empty,
         order=empty,
         page=empty,
+        page_size=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -13139,6 +13165,7 @@ class AccountingApi(object):
         :param str where: Filter by an any element
         :param str order: Order by an any element
         :param int page: Up to 100 payments will be returned in a single API call
+        :param int page_size: Number of records to retrieve per page
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -13165,6 +13192,9 @@ class AccountingApi(object):
 
         if page is not empty:
             query_params.append(("page", page))
+
+        if page_size is not empty:
+            query_params.append(("pageSize", page_size))
 
         header_params = {
             "xero-tenant-id": xero_tenant_id,
@@ -14039,6 +14069,7 @@ class AccountingApi(object):
         date_to=empty,
         order=empty,
         page=empty,
+        page_size=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -14052,6 +14083,7 @@ class AccountingApi(object):
         :param str date_to: Filter by purchase order date (e.g. GET https://.../PurchaseOrders?DateFrom=2015-12-01&DateTo=2015-12-31
         :param str order: Order by an any element
         :param int page: To specify a page, append the page parameter to the URL e.g. ?page=1. If there are 100 records in the response you will need to check if there is any more data by fetching the next page e.g ?page=2 and continuing this process until no more results are returned.
+        :param int page_size: Number of records to retrieve per page
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -14084,6 +14116,9 @@ class AccountingApi(object):
 
         if page is not empty:
             query_params.append(("page", page))
+
+        if page_size is not empty:
+            query_params.append(("pageSize", page_size))
 
         header_params = {
             "xero-tenant-id": xero_tenant_id,

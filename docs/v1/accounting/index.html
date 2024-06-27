@@ -21443,7 +21443,7 @@ def accounting_get_bank_transactions():
     order = 'Type ASC'
     
     try:
-        api_response = api_instance.get_bank_transactions(xero_tenant_id, if_modified_since, where, order, page, unitdp)
+        api_response = api_instance.get_bank_transactions(xero_tenant_id, if_modified_since, where, order, page, unitdp, pageSize)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->getBankTransactions: %s\n" % e)</code></pre>
@@ -21596,6 +21596,26 @@ Up to 100 bank transactions will be returned in a single API call with line item
 
                     <div class="inner description marked">
 e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">pageSize</td>
+<td>
+
+
+    <div id="d2e199_getBankTransactions_pageSize">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    Integer
+                </span>
+
+                    <div class="inner description marked">
+Number of records to retrieve per page
                     </div>
             </div>
         </div>
@@ -25090,7 +25110,7 @@ def accounting_get_contacts():
     search_term = 'Joe Bloggs'
     
     try:
-        api_response = api_instance.get_contacts(xero_tenant_id, if_modified_since, where, order, ids, page, include_archived, summary_only, search_term)
+        api_response = api_instance.get_contacts(xero_tenant_id, if_modified_since, where, order, ids, page, include_archived, summary_only, search_term, pageSize)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->getContacts: %s\n" % e)</code></pre>
@@ -25306,6 +25326,26 @@ Use summaryOnly=true in GET Contacts and Invoices endpoint to retrieve a smaller
 
                     <div class="inner description marked">
 Search parameter that performs a case-insensitive text search across the Name, FirstName, LastName, ContactNumber and EmailAddress fields.
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">pageSize</td>
+<td>
+
+
+    <div id="d2e199_getContacts_pageSize">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    Integer
+                </span>
+
+                    <div class="inner description marked">
+Number of records to retrieve per page
                     </div>
             </div>
         </div>
@@ -26261,7 +26301,7 @@ def accounting_get_credit_notes():
     order = 'CreditNoteNumber ASC'
     
     try:
-        api_response = api_instance.get_credit_notes(xero_tenant_id, if_modified_since, where, order, page, unitdp)
+        api_response = api_instance.get_credit_notes(xero_tenant_id, if_modified_since, where, order, page, unitdp, pageSize)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->getCreditNotes: %s\n" % e)</code></pre>
@@ -26414,6 +26454,26 @@ e.g. page=1 – Up to 100 credit notes will be returned in a single API call wit
 
                     <div class="inner description marked">
 e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">pageSize</td>
+<td>
+
+
+    <div id="d2e199_getCreditNotes_pageSize">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    Integer
+                </span>
+
+                    <div class="inner description marked">
+Number of records to retrieve per page
                     </div>
             </div>
         </div>
@@ -28338,7 +28398,7 @@ def accounting_get_invoices():
     summary_only = 'True'
     
     try:
-        api_response = api_instance.get_invoices(xero_tenant_id, if_modified_since, where, order, ids, invoice_numbers, contact_ids, statuses, page, include_archived, created_by_my_app, unitdp, summary_only)
+        api_response = api_instance.get_invoices(xero_tenant_id, if_modified_since, where, order, ids, invoice_numbers, contact_ids, statuses, page, include_archived, created_by_my_app, unitdp, summary_only, pageSize)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->getInvoices: %s\n" % e)</code></pre>
@@ -28637,6 +28697,26 @@ e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal place
 
                     <div class="inner description marked">
 Use summaryOnly=true in GET Contacts and Invoices endpoint to retrieve a smaller version of the response object. This returns only lightweight fields, excluding computation-heavy fields from the response, making the API calls quick and efficient.
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">pageSize</td>
+<td>
+
+
+    <div id="d2e199_getInvoices_pageSize">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    Integer
+                </span>
+
+                    <div class="inner description marked">
+Number of records to retrieve per page
                     </div>
             </div>
         </div>
@@ -30554,7 +30634,7 @@ def accounting_get_manual_journals():
     order = 'Date ASC'
     
     try:
-        api_response = api_instance.get_manual_journals(xero_tenant_id, if_modified_since, where, order, page)
+        api_response = api_instance.get_manual_journals(xero_tenant_id, if_modified_since, where, order, page, pageSize)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->getManualJournals: %s\n" % e)</code></pre>
@@ -30687,6 +30767,26 @@ Order by an any element
 
                     <div class="inner description marked">
 e.g. page=1 – Up to 100 manual journals will be returned in a single API call with line items shown for each overpayment
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">pageSize</td>
+<td>
+
+
+    <div id="d2e199_getManualJournals_pageSize">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    Integer
+                </span>
+
+                    <div class="inner description marked">
+Number of records to retrieve per page
                     </div>
             </div>
         </div>
@@ -32133,7 +32233,7 @@ def accounting_get_payments():
     order = 'Amount ASC'
     
     try:
-        api_response = api_instance.get_payments(xero_tenant_id, if_modified_since, where, order, page)
+        api_response = api_instance.get_payments(xero_tenant_id, if_modified_since, where, order, page, pageSize)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->getPayments: %s\n" % e)</code></pre>
@@ -32266,6 +32366,26 @@ Order by an any element
 
                     <div class="inner description marked">
 Up to 100 payments will be returned in a single API call
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">pageSize</td>
+<td>
+
+
+    <div id="d2e199_getPayments_pageSize">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    Integer
+                </span>
+
+                    <div class="inner description marked">
+Number of records to retrieve per page
                     </div>
             </div>
         </div>
@@ -33788,7 +33908,7 @@ def accounting_get_purchase_orders():
     order = 'PurchaseOrderNumber ASC'
     
     try:
-        api_response = api_instance.get_purchase_orders(xero_tenant_id, if_modified_since, status, date_from, date_to, order, page)
+        api_response = api_instance.get_purchase_orders(xero_tenant_id, if_modified_since, status, date_from, date_to, order, page, pageSize)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->getPurchaseOrders: %s\n" % e)</code></pre>
@@ -33961,6 +34081,26 @@ Order by an any element
 
                     <div class="inner description marked">
 To specify a page, append the page parameter to the URL e.g. ?page=1. If there are 100 records in the response you will need to check if there is any more data by fetching the next page e.g ?page=2 and continuing this process until no more results are returned.
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">pageSize</td>
+<td>
+
+
+    <div id="d2e199_getPurchaseOrders_pageSize">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    Integer
+                </span>
+
+                    <div class="inner description marked">
+Number of records to retrieve per page
                     </div>
             </div>
         </div>
