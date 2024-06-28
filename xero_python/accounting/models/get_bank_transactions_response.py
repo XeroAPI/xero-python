@@ -35,7 +35,7 @@ class GetBankTransactionsResponse(BaseModel):
         "provider_name": "str",
         "date_time_utc": "str",
         "page_info": "PageInfo",
-        "bank_transactions": "list[BankTransactions]",
+        "bank_transactions": "list[BankTransaction]",
     }
 
     attribute_map = {
@@ -190,7 +190,7 @@ class GetBankTransactionsResponse(BaseModel):
 
 
         :return: The bank_transactions of this GetBankTransactionsResponse.  # noqa: E501
-        :rtype: list[BankTransactions]
+        :rtype: list[BankTransaction]
         """
         return self._bank_transactions
 
@@ -200,7 +200,7 @@ class GetBankTransactionsResponse(BaseModel):
 
 
         :param bank_transactions: The bank_transactions of this GetBankTransactionsResponse.  # noqa: E501
-        :type: list[BankTransactions]
+        :type: list[BankTransaction]
         """
 
         self._bank_transactions = bank_transactions

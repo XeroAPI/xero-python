@@ -35,7 +35,7 @@ class GetPurchaseOrdersResponse(BaseModel):
         "provider_name": "str",
         "date_time_utc": "str",
         "page_info": "PageInfo",
-        "purchase_orders": "list[PurchaseOrders]",
+        "purchase_orders": "list[PurchaseOrder]",
     }
 
     attribute_map = {
@@ -190,7 +190,7 @@ class GetPurchaseOrdersResponse(BaseModel):
 
 
         :return: The purchase_orders of this GetPurchaseOrdersResponse.  # noqa: E501
-        :rtype: list[PurchaseOrders]
+        :rtype: list[PurchaseOrder]
         """
         return self._purchase_orders
 
@@ -200,7 +200,7 @@ class GetPurchaseOrdersResponse(BaseModel):
 
 
         :param purchase_orders: The purchase_orders of this GetPurchaseOrdersResponse.  # noqa: E501
-        :type: list[PurchaseOrders]
+        :type: list[PurchaseOrder]
         """
 
         self._purchase_orders = purchase_orders

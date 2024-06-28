@@ -35,7 +35,7 @@ class GetPrepaymentsResponse(BaseModel):
         "provider_name": "str",
         "date_time_utc": "str",
         "page_info": "PageInfo",
-        "prepayments": "list[Prepayments]",
+        "prepayments": "list[Prepayment]",
     }
 
     attribute_map = {
@@ -190,7 +190,7 @@ class GetPrepaymentsResponse(BaseModel):
 
 
         :return: The prepayments of this GetPrepaymentsResponse.  # noqa: E501
-        :rtype: list[Prepayments]
+        :rtype: list[Prepayment]
         """
         return self._prepayments
 
@@ -200,7 +200,7 @@ class GetPrepaymentsResponse(BaseModel):
 
 
         :param prepayments: The prepayments of this GetPrepaymentsResponse.  # noqa: E501
-        :type: list[Prepayments]
+        :type: list[Prepayment]
         """
 
         self._prepayments = prepayments

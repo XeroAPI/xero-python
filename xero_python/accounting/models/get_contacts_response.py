@@ -35,7 +35,7 @@ class GetContactsResponse(BaseModel):
         "provider_name": "str",
         "date_time_utc": "str",
         "page_info": "PageInfo",
-        "contacts": "list[Contacts]",
+        "contacts": "list[Contact]",
     }
 
     attribute_map = {
@@ -190,7 +190,7 @@ class GetContactsResponse(BaseModel):
 
 
         :return: The contacts of this GetContactsResponse.  # noqa: E501
-        :rtype: list[Contacts]
+        :rtype: list[Contact]
         """
         return self._contacts
 
@@ -200,7 +200,7 @@ class GetContactsResponse(BaseModel):
 
 
         :param contacts: The contacts of this GetContactsResponse.  # noqa: E501
-        :type: list[Contacts]
+        :type: list[Contact]
         """
 
         self._contacts = contacts

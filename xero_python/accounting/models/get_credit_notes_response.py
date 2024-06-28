@@ -35,7 +35,7 @@ class GetCreditNotesResponse(BaseModel):
         "provider_name": "str",
         "date_time_utc": "str",
         "page_info": "PageInfo",
-        "credit_notes": "list[CreditNotes]",
+        "credit_notes": "list[CreditNote]",
     }
 
     attribute_map = {
@@ -190,7 +190,7 @@ class GetCreditNotesResponse(BaseModel):
 
 
         :return: The credit_notes of this GetCreditNotesResponse.  # noqa: E501
-        :rtype: list[CreditNotes]
+        :rtype: list[CreditNote]
         """
         return self._credit_notes
 
@@ -200,7 +200,7 @@ class GetCreditNotesResponse(BaseModel):
 
 
         :param credit_notes: The credit_notes of this GetCreditNotesResponse.  # noqa: E501
-        :type: list[CreditNotes]
+        :type: list[CreditNote]
         """
 
         self._credit_notes = credit_notes

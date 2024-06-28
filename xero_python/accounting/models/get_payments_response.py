@@ -35,7 +35,7 @@ class GetPaymentsResponse(BaseModel):
         "provider_name": "str",
         "date_time_utc": "str",
         "page_info": "PageInfo",
-        "payments": "list[Payments]",
+        "payments": "list[Payment]",
     }
 
     attribute_map = {
@@ -190,7 +190,7 @@ class GetPaymentsResponse(BaseModel):
 
 
         :return: The payments of this GetPaymentsResponse.  # noqa: E501
-        :rtype: list[Payments]
+        :rtype: list[Payment]
         """
         return self._payments
 
@@ -200,7 +200,7 @@ class GetPaymentsResponse(BaseModel):
 
 
         :param payments: The payments of this GetPaymentsResponse.  # noqa: E501
-        :type: list[Payments]
+        :type: list[Payment]
         """
 
         self._payments = payments

@@ -35,7 +35,7 @@ class GetManualJournalsResponse(BaseModel):
         "provider_name": "str",
         "date_time_utc": "str",
         "page_info": "PageInfo",
-        "manual_journals": "list[ManualJournals]",
+        "manual_journals": "list[ManualJournal]",
     }
 
     attribute_map = {
@@ -190,7 +190,7 @@ class GetManualJournalsResponse(BaseModel):
 
 
         :return: The manual_journals of this GetManualJournalsResponse.  # noqa: E501
-        :rtype: list[ManualJournals]
+        :rtype: list[ManualJournal]
         """
         return self._manual_journals
 
@@ -200,7 +200,7 @@ class GetManualJournalsResponse(BaseModel):
 
 
         :param manual_journals: The manual_journals of this GetManualJournalsResponse.  # noqa: E501
-        :type: list[ManualJournals]
+        :type: list[ManualJournal]
         """
 
         self._manual_journals = manual_journals

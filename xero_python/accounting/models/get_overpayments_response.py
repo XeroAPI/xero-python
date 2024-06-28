@@ -35,7 +35,7 @@ class GetOverpaymentsResponse(BaseModel):
         "provider_name": "str",
         "date_time_utc": "str",
         "page_info": "PageInfo",
-        "overpayments": "list[Overpayments]",
+        "overpayments": "list[Overpayment]",
     }
 
     attribute_map = {
@@ -190,7 +190,7 @@ class GetOverpaymentsResponse(BaseModel):
 
 
         :return: The overpayments of this GetOverpaymentsResponse.  # noqa: E501
-        :rtype: list[Overpayments]
+        :rtype: list[Overpayment]
         """
         return self._overpayments
 
@@ -200,7 +200,7 @@ class GetOverpaymentsResponse(BaseModel):
 
 
         :param overpayments: The overpayments of this GetOverpaymentsResponse.  # noqa: E501
-        :type: list[Overpayments]
+        :type: list[Overpayment]
         """
 
         self._overpayments = overpayments
