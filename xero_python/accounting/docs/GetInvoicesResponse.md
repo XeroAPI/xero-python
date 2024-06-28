@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **provider_name** | **str** |  | [optional] 
 **date_time_utc** | **str** |  | [optional] 
 **page_info** | [**PageInfo**](PageInfo.md) |  | [optional] 
-**invoices** | [**list[Invoices]**](Invoices.md) |  | [optional] 
+**invoices** | [**list[Invoice]**](Invoice.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

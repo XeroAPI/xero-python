@@ -100,13 +100,13 @@ def test_invoice_attachment_upload_and_download(
     assert len(invoiceResponse.invoices)
     # 2. choose first invoice
     invoice = invoiceResponse.invoices[0]
-    assert isinstance(invoice, Invoices)
+    assert isinstance(invoice, Invoice)
     # 3. upload test pdf file as invoice attachment
     include_online = True
     with invoice_pdf.open("rb") as pdf:
         response = accounting_api.create_invoice_attachment_by_file_name(
             xero_tenant_id,
-            invoice[0].invoice_id,
+            invoice.invoice_id,
             file_name=invoice_pdf.name,
             include_online=include_online,
             body=pdf.read(),

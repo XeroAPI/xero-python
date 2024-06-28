@@ -35,7 +35,7 @@ class GetInvoicesResponse(BaseModel):
         "provider_name": "str",
         "date_time_utc": "str",
         "page_info": "PageInfo",
-        "invoices": "list[Invoices]",
+        "invoices": "list[Invoice]",
     }
 
     attribute_map = {
@@ -190,7 +190,7 @@ class GetInvoicesResponse(BaseModel):
 
 
         :return: The invoices of this GetInvoicesResponse.  # noqa: E501
-        :rtype: list[Invoices]
+        :rtype: list[Invoice]
         """
         return self._invoices
 
@@ -200,7 +200,7 @@ class GetInvoicesResponse(BaseModel):
 
 
         :param invoices: The invoices of this GetInvoicesResponse.  # noqa: E501
-        :type: list[Invoices]
+        :type: list[Invoice]
         """
 
         self._invoices = invoices
