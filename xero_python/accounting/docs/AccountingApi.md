@@ -5504,7 +5504,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_bank_transactions**
-> BankTransactions get_bank_transactions(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp)
+> GetBankTransactionsResponse get_bank_transactions(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp, page_size=page_size)
 
 Retrieves any spent or received money transactions
 
@@ -5540,9 +5540,10 @@ where = 'Status==\"AUTHORISED\"' # str | Filter by an any element (optional)
 order = 'Type ASC' # str | Order by an any element (optional)
 page = 1 # int | Up to 100 bank transactions will be returned in a single API call with line items details (optional)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
+page_size = 100 # int | Number of records to retrieve per page (optional)
 try:
     # Retrieves any spent or received money transactions
-    api_response = api_instance.get_bank_transactions(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp)
+    api_response = api_instance.get_bank_transactions(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->get_bank_transactions: %s\n" % e)
@@ -5558,10 +5559,11 @@ Name | Type | Description  | Notes
  **order** | **str**| Order by an any element | [optional] 
  **page** | **int**| Up to 100 bank transactions will be returned in a single API call with line items details | [optional] 
  **unitdp** | **int**| e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts | [optional] 
+ **page_size** | **int**| Number of records to retrieve per page | [optional] 
 
 ### Return type
 
-[**BankTransactions**](BankTransactions.md)
+[**GetBankTransactionsResponse**](GetBankTransactionsResponse.md)
 
 ### Authorization
 
@@ -7119,7 +7121,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_contacts**
-> Contacts get_contacts(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, i_ds=i_ds, page=page, include_archived=include_archived, summary_only=summary_only, search_term=search_term)
+> GetContactsResponse get_contacts(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, i_ds=i_ds, page=page, include_archived=include_archived, summary_only=summary_only, search_term=search_term, page_size=page_size)
 
 Retrieves all contacts in a Xero organisation
 
@@ -7158,9 +7160,10 @@ page = 1 # int | e.g. page=1 - Up to 100 contacts will be returned in a single A
 include_archived = true # bool | e.g. includeArchived=true - Contacts with a status of ARCHIVED will be included in the response (optional)
 summary_only = False # bool | Use summaryOnly=true in GET Contacts and Invoices endpoint to retrieve a smaller version of the response object. This returns only lightweight fields, excluding computation-heavy fields from the response, making the API calls quick and efficient. (optional) (default to False)
 search_term = 'Joe Bloggs' # str | Search parameter that performs a case-insensitive text search across the Name, FirstName, LastName, ContactNumber and EmailAddress fields. (optional)
+page_size = 100 # int | Number of records to retrieve per page (optional)
 try:
     # Retrieves all contacts in a Xero organisation
-    api_response = api_instance.get_contacts(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, i_ds=i_ds, page=page, include_archived=include_archived, summary_only=summary_only, search_term=search_term)
+    api_response = api_instance.get_contacts(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, i_ds=i_ds, page=page, include_archived=include_archived, summary_only=summary_only, search_term=search_term, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->get_contacts: %s\n" % e)
@@ -7179,10 +7182,11 @@ Name | Type | Description  | Notes
  **include_archived** | **bool**| e.g. includeArchived&#x3D;true - Contacts with a status of ARCHIVED will be included in the response | [optional] 
  **summary_only** | **bool**| Use summaryOnly&#x3D;true in GET Contacts and Invoices endpoint to retrieve a smaller version of the response object. This returns only lightweight fields, excluding computation-heavy fields from the response, making the API calls quick and efficient. | [optional] [default to False]
  **search_term** | **str**| Search parameter that performs a case-insensitive text search across the Name, FirstName, LastName, ContactNumber and EmailAddress fields. | [optional] 
+ **page_size** | **int**| Number of records to retrieve per page | [optional] 
 
 ### Return type
 
-[**Contacts**](Contacts.md)
+[**GetContactsResponse**](GetContactsResponse.md)
 
 ### Authorization
 
@@ -7584,7 +7588,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_credit_notes**
-> CreditNotes get_credit_notes(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp)
+> GetCreditNotesResponse get_credit_notes(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp, page_size=page_size)
 
 Retrieves any credit notes
 
@@ -7620,9 +7624,10 @@ where = 'Status==\"DRAFT\"' # str | Filter by an any element (optional)
 order = 'CreditNoteNumber ASC' # str | Order by an any element (optional)
 page = 1 # int | e.g. page=1 – Up to 100 credit notes will be returned in a single API call with line items shown for each credit note (optional)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
+page_size = 100 # int | Number of records to retrieve per page (optional)
 try:
     # Retrieves any credit notes
-    api_response = api_instance.get_credit_notes(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp)
+    api_response = api_instance.get_credit_notes(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->get_credit_notes: %s\n" % e)
@@ -7638,10 +7643,11 @@ Name | Type | Description  | Notes
  **order** | **str**| Order by an any element | [optional] 
  **page** | **int**| e.g. page&#x3D;1 – Up to 100 credit notes will be returned in a single API call with line items shown for each credit note | [optional] 
  **unitdp** | **int**| e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts | [optional] 
+ **page_size** | **int**| Number of records to retrieve per page | [optional] 
 
 ### Return type
 
-[**CreditNotes**](CreditNotes.md)
+[**GetCreditNotesResponse**](GetCreditNotesResponse.md)
 
 ### Authorization
 
@@ -8492,7 +8498,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_invoices**
-> Invoices get_invoices(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, i_ds=i_ds, invoice_numbers=invoice_numbers, contact_i_ds=contact_i_ds, statuses=statuses, page=page, include_archived=include_archived, created_by_my_app=created_by_my_app, unitdp=unitdp, summary_only=summary_only)
+> GetInvoicesResponse get_invoices(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, i_ds=i_ds, invoice_numbers=invoice_numbers, contact_i_ds=contact_i_ds, statuses=statuses, page=page, include_archived=include_archived, created_by_my_app=created_by_my_app, unitdp=unitdp, summary_only=summary_only, page_size=page_size)
 
 Retrieves sales invoices or purchase bills
 
@@ -8535,9 +8541,10 @@ include_archived = true # bool | e.g. includeArchived=true - Invoices with a sta
 created_by_my_app = false # bool | When set to true you'll only retrieve Invoices created by your app (optional)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 summary_only = False # bool | Use summaryOnly=true in GET Contacts and Invoices endpoint to retrieve a smaller version of the response object. This returns only lightweight fields, excluding computation-heavy fields from the response, making the API calls quick and efficient. (optional) (default to False)
+page_size = 100 # int | Number of records to retrieve per page (optional)
 try:
     # Retrieves sales invoices or purchase bills
-    api_response = api_instance.get_invoices(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, i_ds=i_ds, invoice_numbers=invoice_numbers, contact_i_ds=contact_i_ds, statuses=statuses, page=page, include_archived=include_archived, created_by_my_app=created_by_my_app, unitdp=unitdp, summary_only=summary_only)
+    api_response = api_instance.get_invoices(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, i_ds=i_ds, invoice_numbers=invoice_numbers, contact_i_ds=contact_i_ds, statuses=statuses, page=page, include_archived=include_archived, created_by_my_app=created_by_my_app, unitdp=unitdp, summary_only=summary_only, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->get_invoices: %s\n" % e)
@@ -8560,10 +8567,11 @@ Name | Type | Description  | Notes
  **created_by_my_app** | **bool**| When set to true you&#39;ll only retrieve Invoices created by your app | [optional] 
  **unitdp** | **int**| e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts | [optional] 
  **summary_only** | **bool**| Use summaryOnly&#x3D;true in GET Contacts and Invoices endpoint to retrieve a smaller version of the response object. This returns only lightweight fields, excluding computation-heavy fields from the response, making the API calls quick and efficient. | [optional] [default to False]
+ **page_size** | **int**| Number of records to retrieve per page | [optional] 
 
 ### Return type
 
-[**Invoices**](Invoices.md)
+[**GetInvoicesResponse**](GetInvoicesResponse.md)
 
 ### Authorization
 
@@ -9363,7 +9371,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_manual_journals**
-> ManualJournals get_manual_journals(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page)
+> GetManualJournalsResponse get_manual_journals(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, page_size=page_size)
 
 Retrieves manual journals
 
@@ -9398,9 +9406,10 @@ if_modified_since = '2020-02-06T12:17:43.202-08:00' # datetime | Only records cr
 where = 'Status==\"DRAFT\"' # str | Filter by an any element (optional)
 order = 'Date ASC' # str | Order by an any element (optional)
 page = 1 # int | e.g. page=1 – Up to 100 manual journals will be returned in a single API call with line items shown for each overpayment (optional)
+page_size = 100 # int | Number of records to retrieve per page (optional)
 try:
     # Retrieves manual journals
-    api_response = api_instance.get_manual_journals(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page)
+    api_response = api_instance.get_manual_journals(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->get_manual_journals: %s\n" % e)
@@ -9415,10 +9424,11 @@ Name | Type | Description  | Notes
  **where** | **str**| Filter by an any element | [optional] 
  **order** | **str**| Order by an any element | [optional] 
  **page** | **int**| e.g. page&#x3D;1 – Up to 100 manual journals will be returned in a single API call with line items shown for each overpayment | [optional] 
+ **page_size** | **int**| Number of records to retrieve per page | [optional] 
 
 ### Return type
 
-[**ManualJournals**](ManualJournals.md)
+[**GetManualJournalsResponse**](GetManualJournalsResponse.md)
 
 ### Authorization
 
@@ -9869,7 +9879,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_overpayments**
-> Overpayments get_overpayments(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp)
+> GetOverpaymentsResponse get_overpayments(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp)
 
 Retrieves overpayments
 
@@ -9926,7 +9936,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Overpayments**](Overpayments.md)
+[**GetOverpaymentsResponse**](GetOverpaymentsResponse.md)
 
 ### Authorization
 
@@ -10127,7 +10137,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_payments**
-> Payments get_payments(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page)
+> GetPaymentsResponse get_payments(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, page_size=page_size)
 
 Retrieves payments for invoices and credit notes
 
@@ -10162,9 +10172,10 @@ if_modified_since = '2020-02-06T12:17:43.202-08:00' # datetime | Only records cr
 where = 'Status==\"AUTHORISED\"' # str | Filter by an any element (optional)
 order = 'Amount ASC' # str | Order by an any element (optional)
 page = 1 # int | Up to 100 payments will be returned in a single API call (optional)
+page_size = 100 # int | Number of records to retrieve per page (optional)
 try:
     # Retrieves payments for invoices and credit notes
-    api_response = api_instance.get_payments(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page)
+    api_response = api_instance.get_payments(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->get_payments: %s\n" % e)
@@ -10179,10 +10190,11 @@ Name | Type | Description  | Notes
  **where** | **str**| Filter by an any element | [optional] 
  **order** | **str**| Order by an any element | [optional] 
  **page** | **int**| Up to 100 payments will be returned in a single API call | [optional] 
+ **page_size** | **int**| Number of records to retrieve per page | [optional] 
 
 ### Return type
 
-[**Payments**](Payments.md)
+[**GetPaymentsResponse**](GetPaymentsResponse.md)
 
 ### Authorization
 
@@ -10322,7 +10334,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_prepayments**
-> Prepayments get_prepayments(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp)
+> GetPrepaymentsResponse get_prepayments(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp)
 
 Retrieves prepayments
 
@@ -10379,7 +10391,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Prepayments**](Prepayments.md)
+[**GetPrepaymentsResponse**](GetPrepaymentsResponse.md)
 
 ### Authorization
 
@@ -10842,7 +10854,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_purchase_orders**
-> PurchaseOrders get_purchase_orders(xero_tenant_id, if_modified_since=if_modified_since, status=status, date_from=date_from, date_to=date_to, order=order, page=page)
+> GetPurchaseOrdersResponse get_purchase_orders(xero_tenant_id, if_modified_since=if_modified_since, status=status, date_from=date_from, date_to=date_to, order=order, page=page, page_size=page_size)
 
 Retrieves purchase orders
 
@@ -10879,9 +10891,10 @@ date_from = '2019-12-01' # str | Filter by purchase order date (e.g. GET https:/
 date_to = '2019-12-31' # str | Filter by purchase order date (e.g. GET https://.../PurchaseOrders?DateFrom=2015-12-01&DateTo=2015-12-31 (optional)
 order = 'PurchaseOrderNumber ASC' # str | Order by an any element (optional)
 page = 1 # int | To specify a page, append the page parameter to the URL e.g. ?page=1. If there are 100 records in the response you will need to check if there is any more data by fetching the next page e.g ?page=2 and continuing this process until no more results are returned. (optional)
+page_size = 100 # int | Number of records to retrieve per page (optional)
 try:
     # Retrieves purchase orders
-    api_response = api_instance.get_purchase_orders(xero_tenant_id, if_modified_since=if_modified_since, status=status, date_from=date_from, date_to=date_to, order=order, page=page)
+    api_response = api_instance.get_purchase_orders(xero_tenant_id, if_modified_since=if_modified_since, status=status, date_from=date_from, date_to=date_to, order=order, page=page, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->get_purchase_orders: %s\n" % e)
@@ -10898,10 +10911,11 @@ Name | Type | Description  | Notes
  **date_to** | **str**| Filter by purchase order date (e.g. GET https://.../PurchaseOrders?DateFrom&#x3D;2015-12-01&amp;DateTo&#x3D;2015-12-31 | [optional] 
  **order** | **str**| Order by an any element | [optional] 
  **page** | **int**| To specify a page, append the page parameter to the URL e.g. ?page&#x3D;1. If there are 100 records in the response you will need to check if there is any more data by fetching the next page e.g ?page&#x3D;2 and continuing this process until no more results are returned. | [optional] 
+ **page_size** | **int**| Number of records to retrieve per page | [optional] 
 
 ### Return type
 
-[**PurchaseOrders**](PurchaseOrders.md)
+[**GetPurchaseOrdersResponse**](GetPurchaseOrdersResponse.md)
 
 ### Authorization
 

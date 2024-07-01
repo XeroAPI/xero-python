@@ -137,7 +137,7 @@ class DataSourceResponse(BaseModel):
     def direct_bank_feed(self):
         """Gets the direct_bank_feed of this DataSourceResponse.  # noqa: E501
 
-        Sum of the amounts of all statement lines where the source of the data was a direct bank feed in to Xero.   This gives an indication on the certainty of correctness of the data.  # noqa: E501
+        Sum of the amounts of all statement lines where the source of the data was a direct bank feed in to Xero via an API integration.   This could be from a bank or aggregator.   This gives an indication on the certainty of correctness of the data.  # noqa: E501
 
         :return: The direct_bank_feed of this DataSourceResponse.  # noqa: E501
         :rtype: float
@@ -148,7 +148,7 @@ class DataSourceResponse(BaseModel):
     def direct_bank_feed(self, direct_bank_feed):
         """Sets the direct_bank_feed of this DataSourceResponse.
 
-        Sum of the amounts of all statement lines where the source of the data was a direct bank feed in to Xero.   This gives an indication on the certainty of correctness of the data.  # noqa: E501
+        Sum of the amounts of all statement lines where the source of the data was a direct bank feed in to Xero via an API integration.   This could be from a bank or aggregator.   This gives an indication on the certainty of correctness of the data.  # noqa: E501
 
         :param direct_bank_feed: The direct_bank_feed of this DataSourceResponse.  # noqa: E501
         :type: float
@@ -160,7 +160,7 @@ class DataSourceResponse(BaseModel):
     def indirect_bank_feed(self):
         """Gets the indirect_bank_feed of this DataSourceResponse.  # noqa: E501
 
-        Sum of the amounts of all statement lines where the source of the data was a indirect bank feed to Xero (usually via Yodlee).   This gives an indication on the certainty of correctness of the data.  # noqa: E501
+        No longer in use.  # noqa: E501
 
         :return: The indirect_bank_feed of this DataSourceResponse.  # noqa: E501
         :rtype: float
@@ -171,7 +171,7 @@ class DataSourceResponse(BaseModel):
     def indirect_bank_feed(self, indirect_bank_feed):
         """Sets the indirect_bank_feed of this DataSourceResponse.
 
-        Sum of the amounts of all statement lines where the source of the data was a indirect bank feed to Xero (usually via Yodlee).   This gives an indication on the certainty of correctness of the data.  # noqa: E501
+        No longer in use.  # noqa: E501
 
         :param indirect_bank_feed: The indirect_bank_feed of this DataSourceResponse.  # noqa: E501
         :type: float
@@ -183,7 +183,7 @@ class DataSourceResponse(BaseModel):
     def file_upload(self):
         """Gets the file_upload of this DataSourceResponse.  # noqa: E501
 
-        Sum of the amounts of all statement lines where the source of the data was a CSV file upload in to Xero.   This gives an indication on the certainty of correctness of the data.  # noqa: E501
+        Sum of the amounts of all statement lines where the source of the data was a file manually uploaded in to Xero.   This gives an indication on the certainty of correctness of the data.  # noqa: E501
 
         :return: The file_upload of this DataSourceResponse.  # noqa: E501
         :rtype: float
@@ -194,7 +194,7 @@ class DataSourceResponse(BaseModel):
     def file_upload(self, file_upload):
         """Sets the file_upload of this DataSourceResponse.
 
-        Sum of the amounts of all statement lines where the source of the data was a CSV file upload in to Xero.   This gives an indication on the certainty of correctness of the data.  # noqa: E501
+        Sum of the amounts of all statement lines where the source of the data was a file manually uploaded in to Xero.   This gives an indication on the certainty of correctness of the data.  # noqa: E501
 
         :param file_upload: The file_upload of this DataSourceResponse.  # noqa: E501
         :type: float
@@ -206,7 +206,7 @@ class DataSourceResponse(BaseModel):
     def manual(self):
         """Gets the manual of this DataSourceResponse.  # noqa: E501
 
-        Sum of the amounts of all statement lines where the source of the data was manually keyed in to Xero.   This gives an indication on the certainty of correctness of the data.  # noqa: E501
+        Sum of the amounts of all statement lines where the source of the data was manually input in to Xero.   This gives an indication on the certainty of correctness of the data.  # noqa: E501
 
         :return: The manual of this DataSourceResponse.  # noqa: E501
         :rtype: float
@@ -217,7 +217,7 @@ class DataSourceResponse(BaseModel):
     def manual(self, manual):
         """Sets the manual of this DataSourceResponse.
 
-        Sum of the amounts of all statement lines where the source of the data was manually keyed in to Xero.   This gives an indication on the certainty of correctness of the data.  # noqa: E501
+        Sum of the amounts of all statement lines where the source of the data was manually input in to Xero.   This gives an indication on the certainty of correctness of the data.  # noqa: E501
 
         :param manual: The manual of this DataSourceResponse.  # noqa: E501
         :type: float
@@ -229,7 +229,7 @@ class DataSourceResponse(BaseModel):
     def direct_bank_feed_pos(self):
         """Gets the direct_bank_feed_pos of this DataSourceResponse.  # noqa: E501
 
-        Sum of the amounts of all statement lines where the source of the data was a direct bank feed in to Xero.  This gives an indication on the certainty of correctness of the data.  Only positive transactions are included.  # noqa: E501
+        Sum of the amounts of all statement lines where the source of the data was a direct bank feed in to Xero via an API integration.   This could be from a bank or aggregator.  This gives an indication on the certainty of correctness of the data.  Only positive transactions are included.  # noqa: E501
 
         :return: The direct_bank_feed_pos of this DataSourceResponse.  # noqa: E501
         :rtype: float
@@ -240,7 +240,7 @@ class DataSourceResponse(BaseModel):
     def direct_bank_feed_pos(self, direct_bank_feed_pos):
         """Sets the direct_bank_feed_pos of this DataSourceResponse.
 
-        Sum of the amounts of all statement lines where the source of the data was a direct bank feed in to Xero.  This gives an indication on the certainty of correctness of the data.  Only positive transactions are included.  # noqa: E501
+        Sum of the amounts of all statement lines where the source of the data was a direct bank feed in to Xero via an API integration.   This could be from a bank or aggregator.  This gives an indication on the certainty of correctness of the data.  Only positive transactions are included.  # noqa: E501
 
         :param direct_bank_feed_pos: The direct_bank_feed_pos of this DataSourceResponse.  # noqa: E501
         :type: float
@@ -252,7 +252,7 @@ class DataSourceResponse(BaseModel):
     def indirect_bank_feed_pos(self):
         """Gets the indirect_bank_feed_pos of this DataSourceResponse.  # noqa: E501
 
-        Sum of the amounts of all statement lines where the source of the data was a indirect bank feed to Xero (usually via Yodlee).   This gives an indication on the certainty of correctness of the data. Only positive transactions are included.  # noqa: E501
+        No longer in use.  # noqa: E501
 
         :return: The indirect_bank_feed_pos of this DataSourceResponse.  # noqa: E501
         :rtype: float
@@ -263,7 +263,7 @@ class DataSourceResponse(BaseModel):
     def indirect_bank_feed_pos(self, indirect_bank_feed_pos):
         """Sets the indirect_bank_feed_pos of this DataSourceResponse.
 
-        Sum of the amounts of all statement lines where the source of the data was a indirect bank feed to Xero (usually via Yodlee).   This gives an indication on the certainty of correctness of the data. Only positive transactions are included.  # noqa: E501
+        No longer in use.  # noqa: E501
 
         :param indirect_bank_feed_pos: The indirect_bank_feed_pos of this DataSourceResponse.  # noqa: E501
         :type: float
@@ -275,7 +275,7 @@ class DataSourceResponse(BaseModel):
     def file_upload_pos(self):
         """Gets the file_upload_pos of this DataSourceResponse.  # noqa: E501
 
-        Sum of the amounts of all statement lines where the source of the data was a CSV file upload in to Xero.   This gives an indication on the certainty of correctness of the data. Only positive transactions are included.  # noqa: E501
+        Sum of the amounts of all statement lines where the source of the data was a file manually uploaded in to Xero.   This gives an indication on the certainty of correctness of the data. Only positive transactions are included.  # noqa: E501
 
         :return: The file_upload_pos of this DataSourceResponse.  # noqa: E501
         :rtype: float
@@ -286,7 +286,7 @@ class DataSourceResponse(BaseModel):
     def file_upload_pos(self, file_upload_pos):
         """Sets the file_upload_pos of this DataSourceResponse.
 
-        Sum of the amounts of all statement lines where the source of the data was a CSV file upload in to Xero.   This gives an indication on the certainty of correctness of the data. Only positive transactions are included.  # noqa: E501
+        Sum of the amounts of all statement lines where the source of the data was a file manually uploaded in to Xero.   This gives an indication on the certainty of correctness of the data. Only positive transactions are included.  # noqa: E501
 
         :param file_upload_pos: The file_upload_pos of this DataSourceResponse.  # noqa: E501
         :type: float
@@ -298,7 +298,7 @@ class DataSourceResponse(BaseModel):
     def manual_pos(self):
         """Gets the manual_pos of this DataSourceResponse.  # noqa: E501
 
-        Sum of the amounts of all statement lines where the source of the data was manually keyed in to Xero.   This gives an indication on the certainty of correctness of the data. Only positive transactions are included.  # noqa: E501
+        Sum of the amounts of all statement lines where the source of the data was manually input in to Xero.   This gives an indication on the certainty of correctness of the data. Only positive transactions are included.  # noqa: E501
 
         :return: The manual_pos of this DataSourceResponse.  # noqa: E501
         :rtype: float
@@ -309,7 +309,7 @@ class DataSourceResponse(BaseModel):
     def manual_pos(self, manual_pos):
         """Sets the manual_pos of this DataSourceResponse.
 
-        Sum of the amounts of all statement lines where the source of the data was manually keyed in to Xero.   This gives an indication on the certainty of correctness of the data. Only positive transactions are included.  # noqa: E501
+        Sum of the amounts of all statement lines where the source of the data was manually input in to Xero.   This gives an indication on the certainty of correctness of the data. Only positive transactions are included.  # noqa: E501
 
         :param manual_pos: The manual_pos of this DataSourceResponse.  # noqa: E501
         :type: float
@@ -321,7 +321,7 @@ class DataSourceResponse(BaseModel):
     def direct_bank_feed_neg(self):
         """Gets the direct_bank_feed_neg of this DataSourceResponse.  # noqa: E501
 
-        Sum of the amounts of all statement lines where the source of the data was a direct bank feed in to Xero.   This gives an indication on the certainty of correctness of the data.  Only negative transactions are included.  # noqa: E501
+        Sum of the amounts of all statement lines where the source of the data was a direct bank feed in to Xero via an API integration.   This could be from a bank or aggregator.   This gives an indication on the certainty of correctness of the data.  Only negative transactions are included.  # noqa: E501
 
         :return: The direct_bank_feed_neg of this DataSourceResponse.  # noqa: E501
         :rtype: float
@@ -332,7 +332,7 @@ class DataSourceResponse(BaseModel):
     def direct_bank_feed_neg(self, direct_bank_feed_neg):
         """Sets the direct_bank_feed_neg of this DataSourceResponse.
 
-        Sum of the amounts of all statement lines where the source of the data was a direct bank feed in to Xero.   This gives an indication on the certainty of correctness of the data.  Only negative transactions are included.  # noqa: E501
+        Sum of the amounts of all statement lines where the source of the data was a direct bank feed in to Xero via an API integration.   This could be from a bank or aggregator.   This gives an indication on the certainty of correctness of the data.  Only negative transactions are included.  # noqa: E501
 
         :param direct_bank_feed_neg: The direct_bank_feed_neg of this DataSourceResponse.  # noqa: E501
         :type: float
@@ -344,7 +344,7 @@ class DataSourceResponse(BaseModel):
     def indirect_bank_feed_neg(self):
         """Gets the indirect_bank_feed_neg of this DataSourceResponse.  # noqa: E501
 
-        Sum of the amounts of all statement lines where the source of the data was a indirect bank feed to Xero (usually via Yodlee).   This gives an indication on the certainty of correctness of the data.  Only negative transactions are included.  # noqa: E501
+        No longer in use.  # noqa: E501
 
         :return: The indirect_bank_feed_neg of this DataSourceResponse.  # noqa: E501
         :rtype: float
@@ -355,7 +355,7 @@ class DataSourceResponse(BaseModel):
     def indirect_bank_feed_neg(self, indirect_bank_feed_neg):
         """Sets the indirect_bank_feed_neg of this DataSourceResponse.
 
-        Sum of the amounts of all statement lines where the source of the data was a indirect bank feed to Xero (usually via Yodlee).   This gives an indication on the certainty of correctness of the data.  Only negative transactions are included.  # noqa: E501
+        No longer in use.  # noqa: E501
 
         :param indirect_bank_feed_neg: The indirect_bank_feed_neg of this DataSourceResponse.  # noqa: E501
         :type: float
@@ -367,7 +367,7 @@ class DataSourceResponse(BaseModel):
     def file_upload_neg(self):
         """Gets the file_upload_neg of this DataSourceResponse.  # noqa: E501
 
-        Sum of the amounts of all statement lines where the source of the data was a CSV file upload in to Xero.   This gives an indication on the certainty of correctness of the data.  Only negative transactions are included.  # noqa: E501
+        Sum of the amounts of all statement lines where the source of the data was a file manually uploaded in to Xero.   This gives an indication on the certainty of correctness of the data.  Only negative transactions are included.  # noqa: E501
 
         :return: The file_upload_neg of this DataSourceResponse.  # noqa: E501
         :rtype: float
@@ -378,7 +378,7 @@ class DataSourceResponse(BaseModel):
     def file_upload_neg(self, file_upload_neg):
         """Sets the file_upload_neg of this DataSourceResponse.
 
-        Sum of the amounts of all statement lines where the source of the data was a CSV file upload in to Xero.   This gives an indication on the certainty of correctness of the data.  Only negative transactions are included.  # noqa: E501
+        Sum of the amounts of all statement lines where the source of the data was a file manually uploaded in to Xero.   This gives an indication on the certainty of correctness of the data.  Only negative transactions are included.  # noqa: E501
 
         :param file_upload_neg: The file_upload_neg of this DataSourceResponse.  # noqa: E501
         :type: float
@@ -390,7 +390,7 @@ class DataSourceResponse(BaseModel):
     def manual_neg(self):
         """Gets the manual_neg of this DataSourceResponse.  # noqa: E501
 
-        Sum of the amounts of all statement lines where the source of the data was manually keyed in to Xero.   This gives an indication on the certainty of correctness of the data.  Only negative transactions are included.  # noqa: E501
+        Sum of the amounts of all statement lines where the source of the data was manually input in to Xero.   This gives an indication on the certainty of correctness of the data.  Only negative transactions are included.  # noqa: E501
 
         :return: The manual_neg of this DataSourceResponse.  # noqa: E501
         :rtype: float
@@ -401,7 +401,7 @@ class DataSourceResponse(BaseModel):
     def manual_neg(self, manual_neg):
         """Sets the manual_neg of this DataSourceResponse.
 
-        Sum of the amounts of all statement lines where the source of the data was manually keyed in to Xero.   This gives an indication on the certainty of correctness of the data.  Only negative transactions are included.  # noqa: E501
+        Sum of the amounts of all statement lines where the source of the data was manually input in to Xero.   This gives an indication on the certainty of correctness of the data.  Only negative transactions are included.  # noqa: E501
 
         :param manual_neg: The manual_neg of this DataSourceResponse.  # noqa: E501
         :type: float
@@ -413,7 +413,7 @@ class DataSourceResponse(BaseModel):
     def other_pos(self):
         """Gets the other_pos of this DataSourceResponse.  # noqa: E501
 
-        Sum of the amounts of all statement lines where the source of the data was any other category.   This gives an indication on the certainty of correctness of the data.  Only positive transactions are included.  # noqa: E501
+        Sum of the amounts of all statement lines where the source of the data was unknown.   This gives an indication on the certainty of correctness of the data.  Only positive transactions are included.  # noqa: E501
 
         :return: The other_pos of this DataSourceResponse.  # noqa: E501
         :rtype: float
@@ -424,7 +424,7 @@ class DataSourceResponse(BaseModel):
     def other_pos(self, other_pos):
         """Sets the other_pos of this DataSourceResponse.
 
-        Sum of the amounts of all statement lines where the source of the data was any other category.   This gives an indication on the certainty of correctness of the data.  Only positive transactions are included.  # noqa: E501
+        Sum of the amounts of all statement lines where the source of the data was unknown.   This gives an indication on the certainty of correctness of the data.  Only positive transactions are included.  # noqa: E501
 
         :param other_pos: The other_pos of this DataSourceResponse.  # noqa: E501
         :type: float
@@ -436,7 +436,7 @@ class DataSourceResponse(BaseModel):
     def other_neg(self):
         """Gets the other_neg of this DataSourceResponse.  # noqa: E501
 
-        Sum of the amounts of all statement lines where the source of the data was any other category.   This gives an indication on the certainty of correctness of the data.  Only negative transactions are included.  # noqa: E501
+        Sum of the amounts of all statement lines where the source of the data was unknown.   This gives an indication on the certainty of correctness of the data.  Only negative transactions are included.  # noqa: E501
 
         :return: The other_neg of this DataSourceResponse.  # noqa: E501
         :rtype: float
@@ -447,7 +447,7 @@ class DataSourceResponse(BaseModel):
     def other_neg(self, other_neg):
         """Sets the other_neg of this DataSourceResponse.
 
-        Sum of the amounts of all statement lines where the source of the data was any other category.   This gives an indication on the certainty of correctness of the data.  Only negative transactions are included.  # noqa: E501
+        Sum of the amounts of all statement lines where the source of the data was unknown.   This gives an indication on the certainty of correctness of the data.  Only negative transactions are included.  # noqa: E501
 
         :param other_neg: The other_neg of this DataSourceResponse.  # noqa: E501
         :type: float
@@ -459,7 +459,7 @@ class DataSourceResponse(BaseModel):
     def other(self):
         """Gets the other of this DataSourceResponse.  # noqa: E501
 
-        Sum of the amounts of all statement lines where the source of the data was any other category.   This gives an indication on the certainty of correctness of the data.  # noqa: E501
+        Sum of the amounts of all statement lines where the source of the data was unknown.   This gives an indication on the certainty of correctness of the data.  # noqa: E501
 
         :return: The other of this DataSourceResponse.  # noqa: E501
         :rtype: float
@@ -470,7 +470,7 @@ class DataSourceResponse(BaseModel):
     def other(self, other):
         """Sets the other of this DataSourceResponse.
 
-        Sum of the amounts of all statement lines where the source of the data was any other category.   This gives an indication on the certainty of correctness of the data.  # noqa: E501
+        Sum of the amounts of all statement lines where the source of the data was unknown.   This gives an indication on the certainty of correctness of the data.  # noqa: E501
 
         :param other: The other of this DataSourceResponse.  # noqa: E501
         :type: float
