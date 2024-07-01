@@ -48,5 +48,5 @@ setup(
     keywords="xero python sdk API oAuth",
     name="xero_python",
     packages=find_packages(include=["xero_python", "xero_python.*"]),
-    version="4.0.0",
+    version="5.0.0",
 )
