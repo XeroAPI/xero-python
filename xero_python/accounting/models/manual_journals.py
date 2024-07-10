@@ -29,18 +29,45 @@ class ManualJournals(BaseModel):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {"manual_journals": "list[ManualJournal]"}
+    openapi_types = {
+        "pagination": "Pagination",
+        "manual_journals": "list[ManualJournal]",
+    }
 
-    attribute_map = {"manual_journals": "ManualJournals"}
+    attribute_map = {"pagination": "pagination", "manual_journals": "ManualJournals"}
 
-    def __init__(self, manual_journals=None):  # noqa: E501
+    def __init__(self, pagination=None, manual_journals=None):  # noqa: E501
         """ManualJournals - a model defined in OpenAPI"""  # noqa: E501
 
+        self._pagination = None
         self._manual_journals = None
         self.discriminator = None
 
+        if pagination is not None:
+            self.pagination = pagination
         if manual_journals is not None:
             self.manual_journals = manual_journals
+
+    @property
+    def pagination(self):
+        """Gets the pagination of this ManualJournals.  # noqa: E501
+
+
+        :return: The pagination of this ManualJournals.  # noqa: E501
+        :rtype: Pagination
+        """
+        return self._pagination
+
+    @pagination.setter
+    def pagination(self, pagination):
+        """Sets the pagination of this ManualJournals.
+
+
+        :param pagination: The pagination of this ManualJournals.  # noqa: E501
+        :type: Pagination
+        """
+
+        self._pagination = pagination
 
     @property
     def manual_journals(self):

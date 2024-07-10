@@ -29,18 +29,48 @@ class BankTransactions(BaseModel):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {"bank_transactions": "list[BankTransaction]"}
+    openapi_types = {
+        "pagination": "Pagination",
+        "bank_transactions": "list[BankTransaction]",
+    }
 
-    attribute_map = {"bank_transactions": "BankTransactions"}
+    attribute_map = {
+        "pagination": "pagination",
+        "bank_transactions": "BankTransactions",
+    }
 
-    def __init__(self, bank_transactions=None):  # noqa: E501
+    def __init__(self, pagination=None, bank_transactions=None):  # noqa: E501
         """BankTransactions - a model defined in OpenAPI"""  # noqa: E501
 
+        self._pagination = None
         self._bank_transactions = None
         self.discriminator = None
 
+        if pagination is not None:
+            self.pagination = pagination
         if bank_transactions is not None:
             self.bank_transactions = bank_transactions
+
+    @property
+    def pagination(self):
+        """Gets the pagination of this BankTransactions.  # noqa: E501
+
+
+        :return: The pagination of this BankTransactions.  # noqa: E501
+        :rtype: Pagination
+        """
+        return self._pagination
+
+    @pagination.setter
+    def pagination(self, pagination):
+        """Sets the pagination of this BankTransactions.
+
+
+        :param pagination: The pagination of this BankTransactions.  # noqa: E501
+        :type: Pagination
+        """
+
+        self._pagination = pagination
 
     @property
     def bank_transactions(self):

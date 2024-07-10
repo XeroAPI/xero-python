@@ -29,18 +29,45 @@ class PurchaseOrders(BaseModel):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {"purchase_orders": "list[PurchaseOrder]"}
+    openapi_types = {
+        "pagination": "Pagination",
+        "purchase_orders": "list[PurchaseOrder]",
+    }
 
-    attribute_map = {"purchase_orders": "PurchaseOrders"}
+    attribute_map = {"pagination": "pagination", "purchase_orders": "PurchaseOrders"}
 
-    def __init__(self, purchase_orders=None):  # noqa: E501
+    def __init__(self, pagination=None, purchase_orders=None):  # noqa: E501
         """PurchaseOrders - a model defined in OpenAPI"""  # noqa: E501
 
+        self._pagination = None
         self._purchase_orders = None
         self.discriminator = None
 
+        if pagination is not None:
+            self.pagination = pagination
         if purchase_orders is not None:
             self.purchase_orders = purchase_orders
+
+    @property
+    def pagination(self):
+        """Gets the pagination of this PurchaseOrders.  # noqa: E501
+
+
+        :return: The pagination of this PurchaseOrders.  # noqa: E501
+        :rtype: Pagination
+        """
+        return self._pagination
+
+    @pagination.setter
+    def pagination(self, pagination):
+        """Sets the pagination of this PurchaseOrders.
+
+
+        :param pagination: The pagination of this PurchaseOrders.  # noqa: E501
+        :type: Pagination
+        """
+
+        self._pagination = pagination
 
     @property
     def purchase_orders(self):
