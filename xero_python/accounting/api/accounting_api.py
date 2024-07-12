@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 5.0.0
+    OpenAPI spec version: 6.0.0
 """
 
 import importlib
@@ -7348,7 +7348,7 @@ class AccountingApi(object):
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
-        :return: GetBankTransactionsResponse
+        :return: BankTransactions
         """
 
         # verify the required parameter 'xero_tenant_id' is set
@@ -7408,7 +7408,7 @@ class AccountingApi(object):
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type="GetBankTransactionsResponse",
+                response_type="BankTransactions",
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
@@ -9383,7 +9383,7 @@ class AccountingApi(object):
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
-        :return: GetContactsResponse
+        :return: Contacts
         """
 
         # verify the required parameter 'xero_tenant_id' is set
@@ -9454,7 +9454,7 @@ class AccountingApi(object):
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type="GetContactsResponse",
+                response_type="Contacts",
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
@@ -9995,7 +9995,7 @@ class AccountingApi(object):
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
-        :return: GetCreditNotesResponse
+        :return: CreditNotes
         """
 
         # verify the required parameter 'xero_tenant_id' is set
@@ -10055,7 +10055,7 @@ class AccountingApi(object):
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type="GetCreditNotesResponse",
+                response_type="CreditNotes",
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
@@ -11115,6 +11115,7 @@ class AccountingApi(object):
         unitdp=empty,
         summary_only=empty,
         page_size=empty,
+        search_term=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -11135,10 +11136,11 @@ class AccountingApi(object):
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
         :param bool summary_only: Use summaryOnly=true in GET Contacts and Invoices endpoint to retrieve a smaller version of the response object. This returns only lightweight fields, excluding computation-heavy fields from the response, making the API calls quick and efficient.
         :param int page_size: Number of records to retrieve per page
+        :param str search_term: Search parameter that performs a case-insensitive text search across the fields e.g. InvoiceNumber, Reference.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
-        :return: GetInvoicesResponse
+        :return: Invoices
         """
 
         # verify the required parameter 'xero_tenant_id' is set
@@ -11194,6 +11196,9 @@ class AccountingApi(object):
         if page_size is not empty:
             query_params.append(("pageSize", page_size))
 
+        if search_term is not empty:
+            query_params.append(("searchTerm", search_term))
+
         header_params = {
             "xero-tenant-id": xero_tenant_id,
         }
@@ -11224,7 +11229,7 @@ class AccountingApi(object):
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type="GetInvoicesResponse",
+                response_type="Invoices",
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
@@ -12255,7 +12260,7 @@ class AccountingApi(object):
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
-        :return: GetManualJournalsResponse
+        :return: ManualJournals
         """
 
         # verify the required parameter 'xero_tenant_id' is set
@@ -12312,7 +12317,7 @@ class AccountingApi(object):
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type="GetManualJournalsResponse",
+                response_type="ManualJournals",
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
@@ -12845,6 +12850,7 @@ class AccountingApi(object):
         order=empty,
         page=empty,
         unitdp=empty,
+        page_size=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -12857,10 +12863,11 @@ class AccountingApi(object):
         :param str order: Order by an any element
         :param int page: e.g. page=1 – Up to 100 overpayments will be returned in a single API call with line items shown for each overpayment
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+        :param int page_size: Number of records to retrieve per page
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
-        :return: GetOverpaymentsResponse
+        :return: Overpayments
         """
 
         # verify the required parameter 'xero_tenant_id' is set
@@ -12886,6 +12893,9 @@ class AccountingApi(object):
 
         if unitdp is not empty:
             query_params.append(("unitdp", unitdp))
+
+        if page_size is not empty:
+            query_params.append(("pageSize", page_size))
 
         header_params = {
             "xero-tenant-id": xero_tenant_id,
@@ -12917,7 +12927,7 @@ class AccountingApi(object):
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type="GetOverpaymentsResponse",
+                response_type="Overpayments",
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
@@ -13169,7 +13179,7 @@ class AccountingApi(object):
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
-        :return: GetPaymentsResponse
+        :return: Payments
         """
 
         # verify the required parameter 'xero_tenant_id' is set
@@ -13226,7 +13236,7 @@ class AccountingApi(object):
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type="GetPaymentsResponse",
+                response_type="Payments",
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
@@ -13397,6 +13407,7 @@ class AccountingApi(object):
         order=empty,
         page=empty,
         unitdp=empty,
+        page_size=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -13409,10 +13420,11 @@ class AccountingApi(object):
         :param str order: Order by an any element
         :param int page: e.g. page=1 – Up to 100 prepayments will be returned in a single API call with line items shown for each overpayment
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+        :param int page_size: Number of records to retrieve per page
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
-        :return: GetPrepaymentsResponse
+        :return: Prepayments
         """
 
         # verify the required parameter 'xero_tenant_id' is set
@@ -13438,6 +13450,9 @@ class AccountingApi(object):
 
         if unitdp is not empty:
             query_params.append(("unitdp", unitdp))
+
+        if page_size is not empty:
+            query_params.append(("pageSize", page_size))
 
         header_params = {
             "xero-tenant-id": xero_tenant_id,
@@ -13469,7 +13484,7 @@ class AccountingApi(object):
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type="GetPrepaymentsResponse",
+                response_type="Prepayments",
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,
@@ -14087,7 +14102,7 @@ class AccountingApi(object):
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
-        :return: GetPurchaseOrdersResponse
+        :return: PurchaseOrders
         """
 
         # verify the required parameter 'xero_tenant_id' is set
@@ -14150,7 +14165,7 @@ class AccountingApi(object):
                 body=body_params,
                 post_params=form_params,
                 files=local_var_files,
-                response_type="GetPurchaseOrdersResponse",
+                response_type="PurchaseOrders",
                 response_model_finder=self.get_model_finder(),
                 auth_settings=auth_settings,
                 _return_http_data_only=_return_http_data_only,

@@ -29,18 +29,42 @@ class Overpayments(BaseModel):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {"overpayments": "list[Overpayment]"}
+    openapi_types = {"pagination": "Pagination", "overpayments": "list[Overpayment]"}
 
-    attribute_map = {"overpayments": "Overpayments"}
+    attribute_map = {"pagination": "pagination", "overpayments": "Overpayments"}
 
-    def __init__(self, overpayments=None):  # noqa: E501
+    def __init__(self, pagination=None, overpayments=None):  # noqa: E501
         """Overpayments - a model defined in OpenAPI"""  # noqa: E501
 
+        self._pagination = None
         self._overpayments = None
         self.discriminator = None
 
+        if pagination is not None:
+            self.pagination = pagination
         if overpayments is not None:
             self.overpayments = overpayments
+
+    @property
+    def pagination(self):
+        """Gets the pagination of this Overpayments.  # noqa: E501
+
+
+        :return: The pagination of this Overpayments.  # noqa: E501
+        :rtype: Pagination
+        """
+        return self._pagination
+
+    @pagination.setter
+    def pagination(self, pagination):
+        """Sets the pagination of this Overpayments.
+
+
+        :param pagination: The pagination of this Overpayments.  # noqa: E501
+        :type: Pagination
+        """
+
+        self._pagination = pagination
 
     @property
     def overpayments(self):

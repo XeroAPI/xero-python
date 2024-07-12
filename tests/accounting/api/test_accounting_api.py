@@ -29,7 +29,6 @@ from xero_python.accounting import (
     LineItem,
     Attachments,
     Attachment,
-    GetInvoicesResponse
 )
 from xero_python.api_client import ApiClient
 from xero_python.rest import RESTClientObject
@@ -96,7 +95,7 @@ def test_invoice_attachment_upload_and_download(
 
     # 1. get first page of invoices
     invoiceResponse = accounting_api.get_invoices(xero_tenant_id, page=1)
-    assert isinstance(invoiceResponse, GetInvoicesResponse)
+    assert isinstance(invoiceResponse, Invoices)
     assert len(invoiceResponse.invoices)
     # 2. choose first invoice
     invoice = invoiceResponse.invoices[0]
@@ -342,7 +341,7 @@ def test_get_invoices(sandbox_accounting_api: AccountingApi, xero_tenant_id):
     # When getting all invoices
     result = sandbox_accounting_api.get_invoices(xero_tenant_id)
     # Then expect correct invoices received
-    expected = GetInvoicesResponse(
+    expected = Invoices(
         invoices=[
             Invoice(
                 amount_credited=Decimal("0.00"),
@@ -475,10 +474,6 @@ def test_get_invoices(sandbox_accounting_api: AccountingApi, xero_tenant_id):
                 ),
             ),
         ],
-    provider_name = 'Provider Name Example',
-    status = 'OK',
-    date_time_utc = '/Date(1552326816230)/',
-    id = '900c500b-e83c-4ce2-902a-b8ba04751748'
     )
     assert result == expected
 
