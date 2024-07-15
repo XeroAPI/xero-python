@@ -29,18 +29,42 @@ class Payments(BaseModel):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {"payments": "list[Payment]"}
+    openapi_types = {"pagination": "Pagination", "payments": "list[Payment]"}
 
-    attribute_map = {"payments": "Payments"}
+    attribute_map = {"pagination": "pagination", "payments": "Payments"}
 
-    def __init__(self, payments=None):  # noqa: E501
+    def __init__(self, pagination=None, payments=None):  # noqa: E501
         """Payments - a model defined in OpenAPI"""  # noqa: E501
 
+        self._pagination = None
         self._payments = None
         self.discriminator = None
 
+        if pagination is not None:
+            self.pagination = pagination
         if payments is not None:
             self.payments = payments
+
+    @property
+    def pagination(self):
+        """Gets the pagination of this Payments.  # noqa: E501
+
+
+        :return: The pagination of this Payments.  # noqa: E501
+        :rtype: Pagination
+        """
+        return self._pagination
+
+    @pagination.setter
+    def pagination(self, pagination):
+        """Sets the pagination of this Payments.
+
+
+        :param pagination: The pagination of this Payments.  # noqa: E501
+        :type: Pagination
+        """
+
+        self._pagination = pagination
 
     @property
     def payments(self):

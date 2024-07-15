@@ -29,18 +29,42 @@ class Prepayments(BaseModel):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {"prepayments": "list[Prepayment]"}
+    openapi_types = {"pagination": "Pagination", "prepayments": "list[Prepayment]"}
 
-    attribute_map = {"prepayments": "Prepayments"}
+    attribute_map = {"pagination": "pagination", "prepayments": "Prepayments"}
 
-    def __init__(self, prepayments=None):  # noqa: E501
+    def __init__(self, pagination=None, prepayments=None):  # noqa: E501
         """Prepayments - a model defined in OpenAPI"""  # noqa: E501
 
+        self._pagination = None
         self._prepayments = None
         self.discriminator = None
 
+        if pagination is not None:
+            self.pagination = pagination
         if prepayments is not None:
             self.prepayments = prepayments
+
+    @property
+    def pagination(self):
+        """Gets the pagination of this Prepayments.  # noqa: E501
+
+
+        :return: The pagination of this Prepayments.  # noqa: E501
+        :rtype: Pagination
+        """
+        return self._pagination
+
+    @pagination.setter
+    def pagination(self, pagination):
+        """Sets the pagination of this Prepayments.
+
+
+        :param pagination: The pagination of this Prepayments.  # noqa: E501
+        :type: Pagination
+        """
+
+        self._pagination = pagination
 
     @property
     def prepayments(self):

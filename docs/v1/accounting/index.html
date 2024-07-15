@@ -1465,6 +1465,9 @@ ul.nav-tabs {
   "title" : "",
   "type" : "object",
   "properties" : {
+    "pagination" : {
+      "$ref" : "#/components/schemas/Pagination"
+    },
     "BankTransactions" : {
       "type" : "array",
       "items" : {
@@ -2320,6 +2323,9 @@ ul.nav-tabs {
   "title" : "",
   "type" : "object",
   "properties" : {
+    "pagination" : {
+      "$ref" : "#/components/schemas/Pagination"
+    },
     "Contacts" : {
       "type" : "array",
       "items" : {
@@ -2555,6 +2561,9 @@ ul.nav-tabs {
   "title" : "",
   "type" : "object",
   "properties" : {
+    "pagination" : {
+      "$ref" : "#/components/schemas/Pagination"
+    },
     "CreditNotes" : {
       "type" : "array",
       "items" : {
@@ -2859,267 +2868,6 @@ ul.nav-tabs {
   "externalDocs" : {
     "url" : "http://developer.xero.com/documentation/api/organisation/"
   }
-};
-      defs["GetBankTransactionsResponse"] = {
-  "title" : "",
-  "type" : "object",
-  "properties" : {
-    "Id" : {
-      "type" : "string"
-    },
-    "Status" : {
-      "type" : "string"
-    },
-    "ProviderName" : {
-      "type" : "string"
-    },
-    "DateTimeUTC" : {
-      "type" : "string"
-    },
-    "PageInfo" : {
-      "$ref" : "#/components/schemas/PageInfo"
-    },
-    "BankTransactions" : {
-      "minItems" : 1,
-      "type" : "array",
-      "items" : {
-        "$ref" : "#/components/schemas/BankTransaction"
-      }
-    }
-  },
-  "description" : ""
-};
-      defs["GetContactsResponse"] = {
-  "title" : "",
-  "type" : "object",
-  "properties" : {
-    "Id" : {
-      "type" : "string"
-    },
-    "Status" : {
-      "type" : "string"
-    },
-    "ProviderName" : {
-      "type" : "string"
-    },
-    "DateTimeUTC" : {
-      "type" : "string"
-    },
-    "PageInfo" : {
-      "$ref" : "#/components/schemas/PageInfo"
-    },
-    "Contacts" : {
-      "minItems" : 1,
-      "type" : "array",
-      "items" : {
-        "$ref" : "#/components/schemas/Contact"
-      }
-    }
-  },
-  "description" : ""
-};
-      defs["GetCreditNotesResponse"] = {
-  "title" : "",
-  "type" : "object",
-  "properties" : {
-    "Id" : {
-      "type" : "string"
-    },
-    "Status" : {
-      "type" : "string"
-    },
-    "ProviderName" : {
-      "type" : "string"
-    },
-    "DateTimeUTC" : {
-      "type" : "string"
-    },
-    "PageInfo" : {
-      "$ref" : "#/components/schemas/PageInfo"
-    },
-    "CreditNotes" : {
-      "minItems" : 1,
-      "type" : "array",
-      "items" : {
-        "$ref" : "#/components/schemas/CreditNote"
-      }
-    }
-  },
-  "description" : ""
-};
-      defs["GetInvoicesResponse"] = {
-  "title" : "",
-  "type" : "object",
-  "properties" : {
-    "Id" : {
-      "type" : "string"
-    },
-    "Status" : {
-      "type" : "string"
-    },
-    "ProviderName" : {
-      "type" : "string"
-    },
-    "DateTimeUTC" : {
-      "type" : "string"
-    },
-    "PageInfo" : {
-      "$ref" : "#/components/schemas/PageInfo"
-    },
-    "Invoices" : {
-      "minItems" : 1,
-      "type" : "array",
-      "items" : {
-        "$ref" : "#/components/schemas/Invoice"
-      }
-    }
-  },
-  "description" : ""
-};
-      defs["GetManualJournalsResponse"] = {
-  "title" : "",
-  "type" : "object",
-  "properties" : {
-    "Id" : {
-      "type" : "string"
-    },
-    "Status" : {
-      "type" : "string"
-    },
-    "ProviderName" : {
-      "type" : "string"
-    },
-    "DateTimeUTC" : {
-      "type" : "string"
-    },
-    "PageInfo" : {
-      "$ref" : "#/components/schemas/PageInfo"
-    },
-    "ManualJournals" : {
-      "minItems" : 1,
-      "type" : "array",
-      "items" : {
-        "$ref" : "#/components/schemas/ManualJournal"
-      }
-    }
-  },
-  "description" : ""
-};
-      defs["GetOverpaymentsResponse"] = {
-  "title" : "",
-  "type" : "object",
-  "properties" : {
-    "Id" : {
-      "type" : "string"
-    },
-    "Status" : {
-      "type" : "string"
-    },
-    "ProviderName" : {
-      "type" : "string"
-    },
-    "DateTimeUTC" : {
-      "type" : "string"
-    },
-    "PageInfo" : {
-      "$ref" : "#/components/schemas/PageInfo"
-    },
-    "Overpayments" : {
-      "minItems" : 1,
-      "type" : "array",
-      "items" : {
-        "$ref" : "#/components/schemas/Overpayment"
-      }
-    }
-  },
-  "description" : ""
-};
-      defs["GetPaymentsResponse"] = {
-  "title" : "",
-  "type" : "object",
-  "properties" : {
-    "Id" : {
-      "type" : "string"
-    },
-    "Status" : {
-      "type" : "string"
-    },
-    "ProviderName" : {
-      "type" : "string"
-    },
-    "DateTimeUTC" : {
-      "type" : "string"
-    },
-    "PageInfo" : {
-      "$ref" : "#/components/schemas/PageInfo"
-    },
-    "Payments" : {
-      "minItems" : 1,
-      "type" : "array",
-      "items" : {
-        "$ref" : "#/components/schemas/Payment"
-      }
-    }
-  },
-  "description" : ""
-};
-      defs["GetPrepaymentsResponse"] = {
-  "title" : "",
-  "type" : "object",
-  "properties" : {
-    "Id" : {
-      "type" : "string"
-    },
-    "Status" : {
-      "type" : "string"
-    },
-    "ProviderName" : {
-      "type" : "string"
-    },
-    "DateTimeUTC" : {
-      "type" : "string"
-    },
-    "PageInfo" : {
-      "$ref" : "#/components/schemas/PageInfo"
-    },
-    "Prepayments" : {
-      "minItems" : 1,
-      "type" : "array",
-      "items" : {
-        "$ref" : "#/components/schemas/Prepayment"
-      }
-    }
-  },
-  "description" : ""
-};
-      defs["GetPurchaseOrdersResponse"] = {
-  "title" : "",
-  "type" : "object",
-  "properties" : {
-    "Id" : {
-      "type" : "string"
-    },
-    "Status" : {
-      "type" : "string"
-    },
-    "ProviderName" : {
-      "type" : "string"
-    },
-    "DateTimeUTC" : {
-      "type" : "string"
-    },
-    "PageInfo" : {
-      "$ref" : "#/components/schemas/PageInfo"
-    },
-    "PurchaseOrders" : {
-      "minItems" : 1,
-      "type" : "array",
-      "items" : {
-        "$ref" : "#/components/schemas/PurchaseOrder"
-      }
-    }
-  },
-  "description" : ""
 };
       defs["HistoryRecord"] = {
   "title" : "",
@@ -3529,6 +3277,9 @@ ul.nav-tabs {
   "title" : "",
   "type" : "object",
   "properties" : {
+    "pagination" : {
+      "$ref" : "#/components/schemas/Pagination"
+    },
     "Invoices" : {
       "type" : "array",
       "items" : {
@@ -4165,6 +3916,9 @@ ul.nav-tabs {
   "title" : "",
   "type" : "object",
   "properties" : {
+    "pagination" : {
+      "$ref" : "#/components/schemas/Pagination"
+    },
     "ManualJournals" : {
       "type" : "array",
       "items" : {
@@ -4499,6 +4253,9 @@ ul.nav-tabs {
   "title" : "",
   "type" : "object",
   "properties" : {
+    "pagination" : {
+      "$ref" : "#/components/schemas/Pagination"
+    },
     "Overpayments" : {
       "type" : "array",
       "items" : {
@@ -4509,24 +4266,24 @@ ul.nav-tabs {
   "description" : "",
   "x-isObjectArray" : true
 };
-      defs["PageInfo"] = {
+      defs["Pagination"] = {
   "title" : "",
   "type" : "object",
   "properties" : {
-    "Page" : {
+    "page" : {
       "type" : "integer"
     },
-    "PageSize" : {
+    "pageSize" : {
       "type" : "integer"
     },
-    "TotalPages" : {
+    "pageCount" : {
       "type" : "integer"
     },
-    "TotalRows" : {
+    "itemCount" : {
       "type" : "integer"
     }
   },
-  "description" : "Pagination information"
+  "description" : ""
 };
       defs["Payment"] = {
   "title" : "",
@@ -4764,6 +4521,9 @@ ul.nav-tabs {
   "title" : "",
   "type" : "object",
   "properties" : {
+    "pagination" : {
+      "$ref" : "#/components/schemas/Pagination"
+    },
     "Payments" : {
       "type" : "array",
       "items" : {
@@ -4929,6 +4689,9 @@ ul.nav-tabs {
   "title" : "",
   "type" : "object",
   "properties" : {
+    "pagination" : {
+      "$ref" : "#/components/schemas/Pagination"
+    },
     "Prepayments" : {
       "type" : "array",
       "items" : {
@@ -5128,6 +4891,9 @@ ul.nav-tabs {
   "title" : "",
   "type" : "object",
   "properties" : {
+    "pagination" : {
+      "$ref" : "#/components/schemas/Pagination"
+    },
     "PurchaseOrders" : {
       "type" : "array",
       "items" : {
@@ -6380,7 +6146,7 @@ ul.nav-tabs {
           <nav id="scrollingNav">
             <ul class="sidenav nav nav-list">
               <li class="nav-header" data-group="Accounting"><strong>SDK: </strong><span id='sdk-name'></span></li>
-              <li class="nav-header" data-group="Accounting"><strong>VSN: </strong>5.0.0</li>
+              <li class="nav-header" data-group="Accounting"><strong>VSN: </strong>6.0.0</li>
               <li class="nav-header" data-group="Accounting"><a href="#api-Accounting">Methods</a></li>
               <li data-group="Accounting" data-name="createAccount" class="">
                 <a href="#api-Accounting-createAccount">createAccount</a>
@@ -13372,13 +13138,13 @@ def accounting_create_manual_journals():
     manual_journal_lines = []
 
     credit = ManualJournalLine(
-        line_amount = 100.0,
+        line_amount = -100.0,
         account_code = "400",
         description = "Hello there")    
     manual_journal_lines.append(credit)
 
     debit = ManualJournalLine(
-        line_amount = -100.0,
+        line_amount = 100.0,
         account_code = "120",
         description = "Hello there")    
     manual_journal_lines.append(debit)
@@ -28396,9 +28162,10 @@ def accounting_get_invoices():
     include_archived = 'True'
     created_by_my_app = 'False'
     summary_only = 'True'
+    search_term = 'True'
     
     try:
-        api_response = api_instance.get_invoices(xero_tenant_id, if_modified_since, where, order, ids, invoice_numbers, contact_ids, statuses, page, include_archived, created_by_my_app, unitdp, summary_only, pageSize)
+        api_response = api_instance.get_invoices(xero_tenant_id, if_modified_since, where, order, ids, invoice_numbers, contact_ids, statuses, page, include_archived, created_by_my_app, unitdp, summary_only, pageSize, search_term)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->getInvoices: %s\n" % e)</code></pre>
@@ -28717,6 +28484,26 @@ Use summaryOnly=true in GET Contacts and Invoices endpoint to retrieve a smaller
 
                     <div class="inner description marked">
 Number of records to retrieve per page
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">searchTerm</td>
+<td>
+
+
+    <div id="d2e199_getInvoices_searchTerm">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+Search parameter that performs a case-insensitive text search across the fields e.g. InvoiceNumber, Reference.
                     </div>
             </div>
         </div>
@@ -31677,7 +31464,7 @@ def accounting_get_overpayments():
     order = 'Status ASC'
     
     try:
-        api_response = api_instance.get_overpayments(xero_tenant_id, if_modified_since, where, order, page, unitdp)
+        api_response = api_instance.get_overpayments(xero_tenant_id, if_modified_since, where, order, page, unitdp, pageSize)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->getOverpayments: %s\n" % e)</code></pre>
@@ -31830,6 +31617,26 @@ e.g. page=1 – Up to 100 overpayments will be returned in a single API call wit
 
                     <div class="inner description marked">
 e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">pageSize</td>
+<td>
+
+
+    <div id="d2e199_getOverpayments_pageSize">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    Integer
+                </span>
+
+                    <div class="inner description marked">
+Number of records to retrieve per page
                     </div>
             </div>
         </div>
@@ -32699,7 +32506,7 @@ def accounting_get_prepayments():
     order = 'Reference ASC'
     
     try:
-        api_response = api_instance.get_prepayments(xero_tenant_id, if_modified_since, where, order, page, unitdp)
+        api_response = api_instance.get_prepayments(xero_tenant_id, if_modified_since, where, order, page, unitdp, pageSize)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->getPrepayments: %s\n" % e)</code></pre>
@@ -32852,6 +32659,26 @@ e.g. page=1 – Up to 100 prepayments will be returned in a single API call with
 
                     <div class="inner description marked">
 e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">pageSize</td>
+<td>
+
+
+    <div id="d2e199_getPrepayments_pageSize">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    Integer
+                </span>
+
+                    <div class="inner description marked">
+Number of records to retrieve per page
                     </div>
             </div>
         </div>
@@ -43200,13 +43027,13 @@ def accounting_update_manual_journal():
     manual_journal_lines = []
 
     credit = ManualJournalLine(
-        line_amount = 100.0,
+        line_amount = -100.0,
         account_code = "400",
         description = "Hello there")    
     manual_journal_lines.append(credit)
 
     debit = ManualJournalLine(
-        line_amount = -100.0,
+        line_amount = 100.0,
         account_code = "120",
         description = "Hello there")    
     manual_journal_lines.append(debit)
@@ -44848,13 +44675,13 @@ def accounting_update_or_create_manual_journals():
     manual_journal_lines = []
 
     credit = ManualJournalLine(
-        line_amount = 100.0,
+        line_amount = -100.0,
         account_code = "400",
         description = "Hello there")    
     manual_journal_lines.append(credit)
 
     debit = ManualJournalLine(
-        line_amount = -100.0,
+        line_amount = 100.0,
         account_code = "120",
         description = "Hello there")    
     manual_journal_lines.append(debit)

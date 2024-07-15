@@ -29,18 +29,42 @@ class CreditNotes(BaseModel):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {"credit_notes": "list[CreditNote]"}
+    openapi_types = {"pagination": "Pagination", "credit_notes": "list[CreditNote]"}
 
-    attribute_map = {"credit_notes": "CreditNotes"}
+    attribute_map = {"pagination": "pagination", "credit_notes": "CreditNotes"}
 
-    def __init__(self, credit_notes=None):  # noqa: E501
+    def __init__(self, pagination=None, credit_notes=None):  # noqa: E501
         """CreditNotes - a model defined in OpenAPI"""  # noqa: E501
 
+        self._pagination = None
         self._credit_notes = None
         self.discriminator = None
 
+        if pagination is not None:
+            self.pagination = pagination
         if credit_notes is not None:
             self.credit_notes = credit_notes
+
+    @property
+    def pagination(self):
+        """Gets the pagination of this CreditNotes.  # noqa: E501
+
+
+        :return: The pagination of this CreditNotes.  # noqa: E501
+        :rtype: Pagination
+        """
+        return self._pagination
+
+    @pagination.setter
+    def pagination(self, pagination):
+        """Sets the pagination of this CreditNotes.
+
+
+        :param pagination: The pagination of this CreditNotes.  # noqa: E501
+        :type: Pagination
+        """
+
+        self._pagination = pagination
 
     @property
     def credit_notes(self):
