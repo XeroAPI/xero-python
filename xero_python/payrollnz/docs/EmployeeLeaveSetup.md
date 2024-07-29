@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **sick_leave_hours_to_accrue_annually** | **float** | Number of hours accrued annually for sick leave. Multiply the number of days they&#39;re entitled to by the hours worked per day | [optional] 
 **sick_leave_maximum_hours_to_accrue** | **float** | Maximum number of hours accrued annually for sick leave. Multiply the maximum days they can accrue by the hours worked per day | [optional] 
 **sick_leave_opening_balance** | **float** | Initial sick leave balance. This will be positive unless they&#39;ve taken sick leave in advance | [optional] 
+**sick_leave_schedule_of_accrual** | **str** | Set Schedule of Accrual Type for Sick Leave | [optional] 
+**sick_leave_anniversary_date** | **date** | If Sick Leave Schedule of Accrual is \&quot;OnAnniversaryDate\&quot;, this is the date when entitled to Sick Leave | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

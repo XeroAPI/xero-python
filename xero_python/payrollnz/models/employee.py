@@ -45,6 +45,8 @@ class Employee(BaseModel):
         "updated_date_utc": "datetime",
         "created_date_utc": "datetime",
         "job_title": "str",
+        "engagement_type": "str",
+        "fixed_term_end_date": "date",
     }
 
     attribute_map = {
@@ -63,6 +65,8 @@ class Employee(BaseModel):
         "updated_date_utc": "updatedDateUTC",
         "created_date_utc": "createdDateUTC",
         "job_title": "jobTitle",
+        "engagement_type": "engagementType",
+        "fixed_term_end_date": "fixedTermEndDate",
     }
 
     def __init__(
@@ -82,6 +86,8 @@ class Employee(BaseModel):
         updated_date_utc=None,
         created_date_utc=None,
         job_title=None,
+        engagement_type=None,
+        fixed_term_end_date=None,
     ):  # noqa: E501
         """Employee - a model defined in OpenAPI"""  # noqa: E501
 
@@ -100,6 +106,8 @@ class Employee(BaseModel):
         self._updated_date_utc = None
         self._created_date_utc = None
         self._job_title = None
+        self._engagement_type = None
+        self._fixed_term_end_date = None
         self.discriminator = None
 
         if employee_id is not None:
@@ -132,6 +140,10 @@ class Employee(BaseModel):
             self.created_date_utc = created_date_utc
         if job_title is not None:
             self.job_title = job_title
+        if engagement_type is not None:
+            self.engagement_type = engagement_type
+        if fixed_term_end_date is not None:
+            self.fixed_term_end_date = fixed_term_end_date
 
     @property
     def employee_id(self):
@@ -484,3 +496,49 @@ class Employee(BaseModel):
         """
 
         self._job_title = job_title
+
+    @property
+    def engagement_type(self):
+        """Gets the engagement_type of this Employee.  # noqa: E501
+
+        Engagement type of the employee  # noqa: E501
+
+        :return: The engagement_type of this Employee.  # noqa: E501
+        :rtype: str
+        """
+        return self._engagement_type
+
+    @engagement_type.setter
+    def engagement_type(self, engagement_type):
+        """Sets the engagement_type of this Employee.
+
+        Engagement type of the employee  # noqa: E501
+
+        :param engagement_type: The engagement_type of this Employee.  # noqa: E501
+        :type: str
+        """
+
+        self._engagement_type = engagement_type
+
+    @property
+    def fixed_term_end_date(self):
+        """Gets the fixed_term_end_date of this Employee.  # noqa: E501
+
+        End date for an employee with a fixed-term engagement type  # noqa: E501
+
+        :return: The fixed_term_end_date of this Employee.  # noqa: E501
+        :rtype: date
+        """
+        return self._fixed_term_end_date
+
+    @fixed_term_end_date.setter
+    def fixed_term_end_date(self, fixed_term_end_date):
+        """Sets the fixed_term_end_date of this Employee.
+
+        End date for an employee with a fixed-term engagement type  # noqa: E501
+
+        :param fixed_term_end_date: The fixed_term_end_date of this Employee.  # noqa: E501
+        :type: date
+        """
+
+        self._fixed_term_end_date = fixed_term_end_date

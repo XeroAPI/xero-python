@@ -31,20 +31,30 @@ class ManualJournals(BaseModel):
     """
     openapi_types = {
         "pagination": "Pagination",
+        "warnings": "list[ValidationError]",
         "manual_journals": "list[ManualJournal]",
     }
 
-    attribute_map = {"pagination": "pagination", "manual_journals": "ManualJournals"}
+    attribute_map = {
+        "pagination": "pagination",
+        "warnings": "Warnings",
+        "manual_journals": "ManualJournals",
+    }
 
-    def __init__(self, pagination=None, manual_journals=None):  # noqa: E501
+    def __init__(
+        self, pagination=None, warnings=None, manual_journals=None
+    ):  # noqa: E501
         """ManualJournals - a model defined in OpenAPI"""  # noqa: E501
 
         self._pagination = None
+        self._warnings = None
         self._manual_journals = None
         self.discriminator = None
 
         if pagination is not None:
             self.pagination = pagination
+        if warnings is not None:
+            self.warnings = warnings
         if manual_journals is not None:
             self.manual_journals = manual_journals
 
@@ -68,6 +78,29 @@ class ManualJournals(BaseModel):
         """
 
         self._pagination = pagination
+
+    @property
+    def warnings(self):
+        """Gets the warnings of this ManualJournals.  # noqa: E501
+
+        Displays array of warning messages from the API  # noqa: E501
+
+        :return: The warnings of this ManualJournals.  # noqa: E501
+        :rtype: list[ValidationError]
+        """
+        return self._warnings
+
+    @warnings.setter
+    def warnings(self, warnings):
+        """Sets the warnings of this ManualJournals.
+
+        Displays array of warning messages from the API  # noqa: E501
+
+        :param warnings: The warnings of this ManualJournals.  # noqa: E501
+        :type: list[ValidationError]
+        """
+
+        self._warnings = warnings
 
     @property
     def manual_journals(self):

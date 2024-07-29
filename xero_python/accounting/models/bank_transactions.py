@@ -31,23 +31,30 @@ class BankTransactions(BaseModel):
     """
     openapi_types = {
         "pagination": "Pagination",
+        "warnings": "list[ValidationError]",
         "bank_transactions": "list[BankTransaction]",
     }
 
     attribute_map = {
         "pagination": "pagination",
+        "warnings": "Warnings",
         "bank_transactions": "BankTransactions",
     }
 
-    def __init__(self, pagination=None, bank_transactions=None):  # noqa: E501
+    def __init__(
+        self, pagination=None, warnings=None, bank_transactions=None
+    ):  # noqa: E501
         """BankTransactions - a model defined in OpenAPI"""  # noqa: E501
 
         self._pagination = None
+        self._warnings = None
         self._bank_transactions = None
         self.discriminator = None
 
         if pagination is not None:
             self.pagination = pagination
+        if warnings is not None:
+            self.warnings = warnings
         if bank_transactions is not None:
             self.bank_transactions = bank_transactions
 
@@ -71,6 +78,29 @@ class BankTransactions(BaseModel):
         """
 
         self._pagination = pagination
+
+    @property
+    def warnings(self):
+        """Gets the warnings of this BankTransactions.  # noqa: E501
+
+        Displays array of warning messages from the API  # noqa: E501
+
+        :return: The warnings of this BankTransactions.  # noqa: E501
+        :rtype: list[ValidationError]
+        """
+        return self._warnings
+
+    @warnings.setter
+    def warnings(self, warnings):
+        """Sets the warnings of this BankTransactions.
+
+        Displays array of warning messages from the API  # noqa: E501
+
+        :param warnings: The warnings of this BankTransactions.  # noqa: E501
+        :type: list[ValidationError]
+        """
+
+        self._warnings = warnings
 
     @property
     def bank_transactions(self):

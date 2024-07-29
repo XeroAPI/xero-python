@@ -37,6 +37,8 @@ class EmployeeLeaveSetup(BaseModel):
         "sick_leave_hours_to_accrue_annually": "float",
         "sick_leave_maximum_hours_to_accrue": "float",
         "sick_leave_opening_balance": "float",
+        "sick_leave_schedule_of_accrual": "str",
+        "sick_leave_anniversary_date": "date",
     }
 
     attribute_map = {
@@ -47,6 +49,8 @@ class EmployeeLeaveSetup(BaseModel):
         "sick_leave_hours_to_accrue_annually": "sickLeaveHoursToAccrueAnnually",
         "sick_leave_maximum_hours_to_accrue": "sickLeaveMaximumHoursToAccrue",
         "sick_leave_opening_balance": "sickLeaveOpeningBalance",
+        "sick_leave_schedule_of_accrual": "SickLeaveScheduleOfAccrual",
+        "sick_leave_anniversary_date": "SickLeaveAnniversaryDate",
     }
 
     def __init__(
@@ -58,6 +62,8 @@ class EmployeeLeaveSetup(BaseModel):
         sick_leave_hours_to_accrue_annually=None,
         sick_leave_maximum_hours_to_accrue=None,
         sick_leave_opening_balance=None,
+        sick_leave_schedule_of_accrual=None,
+        sick_leave_anniversary_date=None,
     ):  # noqa: E501
         """EmployeeLeaveSetup - a model defined in OpenAPI"""  # noqa: E501
 
@@ -68,6 +74,8 @@ class EmployeeLeaveSetup(BaseModel):
         self._sick_leave_hours_to_accrue_annually = None
         self._sick_leave_maximum_hours_to_accrue = None
         self._sick_leave_opening_balance = None
+        self._sick_leave_schedule_of_accrual = None
+        self._sick_leave_anniversary_date = None
         self.discriminator = None
 
         if include_holiday_pay is not None:
@@ -88,6 +96,10 @@ class EmployeeLeaveSetup(BaseModel):
             self.sick_leave_maximum_hours_to_accrue = sick_leave_maximum_hours_to_accrue
         if sick_leave_opening_balance is not None:
             self.sick_leave_opening_balance = sick_leave_opening_balance
+        if sick_leave_schedule_of_accrual is not None:
+            self.sick_leave_schedule_of_accrual = sick_leave_schedule_of_accrual
+        if sick_leave_anniversary_date is not None:
+            self.sick_leave_anniversary_date = sick_leave_anniversary_date
 
     @property
     def include_holiday_pay(self):
@@ -253,3 +265,49 @@ class EmployeeLeaveSetup(BaseModel):
         """
 
         self._sick_leave_opening_balance = sick_leave_opening_balance
+
+    @property
+    def sick_leave_schedule_of_accrual(self):
+        """Gets the sick_leave_schedule_of_accrual of this EmployeeLeaveSetup.  # noqa: E501
+
+        Set Schedule of Accrual Type for Sick Leave  # noqa: E501
+
+        :return: The sick_leave_schedule_of_accrual of this EmployeeLeaveSetup.  # noqa: E501
+        :rtype: str
+        """
+        return self._sick_leave_schedule_of_accrual
+
+    @sick_leave_schedule_of_accrual.setter
+    def sick_leave_schedule_of_accrual(self, sick_leave_schedule_of_accrual):
+        """Sets the sick_leave_schedule_of_accrual of this EmployeeLeaveSetup.
+
+        Set Schedule of Accrual Type for Sick Leave  # noqa: E501
+
+        :param sick_leave_schedule_of_accrual: The sick_leave_schedule_of_accrual of this EmployeeLeaveSetup.  # noqa: E501
+        :type: str
+        """
+
+        self._sick_leave_schedule_of_accrual = sick_leave_schedule_of_accrual
+
+    @property
+    def sick_leave_anniversary_date(self):
+        """Gets the sick_leave_anniversary_date of this EmployeeLeaveSetup.  # noqa: E501
+
+        If Sick Leave Schedule of Accrual is \"OnAnniversaryDate\", this is the date when entitled to Sick Leave  # noqa: E501
+
+        :return: The sick_leave_anniversary_date of this EmployeeLeaveSetup.  # noqa: E501
+        :rtype: date
+        """
+        return self._sick_leave_anniversary_date
+
+    @sick_leave_anniversary_date.setter
+    def sick_leave_anniversary_date(self, sick_leave_anniversary_date):
+        """Sets the sick_leave_anniversary_date of this EmployeeLeaveSetup.
+
+        If Sick Leave Schedule of Accrual is \"OnAnniversaryDate\", this is the date when entitled to Sick Leave  # noqa: E501
+
+        :param sick_leave_anniversary_date: The sick_leave_anniversary_date of this EmployeeLeaveSetup.  # noqa: E501
+        :type: date
+        """
+
+        self._sick_leave_anniversary_date = sick_leave_anniversary_date
