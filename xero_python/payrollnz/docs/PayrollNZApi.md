@@ -808,7 +808,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_employee_working_pattern**
-> EmployeeWorkingPatternWithWorkingWeeks create_employee_working_pattern(xero_tenant_id, employee_id, employee_working_pattern_with_working_weeks_request, idempotency_key=idempotency_key)
+> EmployeeWorkingPatternWithWorkingWeeksObject create_employee_working_pattern(xero_tenant_id, employee_id, employee_working_pattern_with_working_weeks_request, idempotency_key=idempotency_key)
 
 Creates an employee working pattern
 
@@ -861,7 +861,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EmployeeWorkingPatternWithWorkingWeeks**](EmployeeWorkingPatternWithWorkingWeeks.md)
+[**EmployeeWorkingPatternWithWorkingWeeksObject**](EmployeeWorkingPatternWithWorkingWeeksObject.md)
 
 ### Authorization
 
