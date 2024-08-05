@@ -87,6 +87,19 @@ from xero_python.payrollnz.models.employee_statutory_sick_leaves import (
 )
 from xero_python.payrollnz.models.employee_tax import EmployeeTax
 from xero_python.payrollnz.models.employee_tax_object import EmployeeTaxObject
+from xero_python.payrollnz.models.employee_working_pattern import EmployeeWorkingPattern
+from xero_python.payrollnz.models.employee_working_pattern_with_working_weeks import (
+    EmployeeWorkingPatternWithWorkingWeeks,
+)
+from xero_python.payrollnz.models.employee_working_pattern_with_working_weeks_object import (
+    EmployeeWorkingPatternWithWorkingWeeksObject,
+)
+from xero_python.payrollnz.models.employee_working_pattern_with_working_weeks_request import (
+    EmployeeWorkingPatternWithWorkingWeeksRequest,
+)
+from xero_python.payrollnz.models.employee_working_patterns_object import (
+    EmployeeWorkingPatternsObject,
+)
 from xero_python.payrollnz.models.employees import Employees
 from xero_python.payrollnz.models.employment import Employment
 from xero_python.payrollnz.models.employment_object import EmploymentObject
@@ -144,3 +157,4 @@ from xero_python.payrollnz.models.timesheet_object import TimesheetObject
 from xero_python.payrollnz.models.timesheets import Timesheets
 from xero_python.payrollnz.models.tracking_categories import TrackingCategories
 from xero_python.payrollnz.models.tracking_category import TrackingCategory
+from xero_python.payrollnz.models.working_week import WorkingWeek

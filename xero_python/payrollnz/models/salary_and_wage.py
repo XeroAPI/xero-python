@@ -40,6 +40,7 @@ class SalaryAndWage(BaseModel):
         "annual_salary": "float",
         "status": "str",
         "payment_type": "str",
+        "work_pattern_type": "str",
     }
 
     attribute_map = {
@@ -53,6 +54,7 @@ class SalaryAndWage(BaseModel):
         "annual_salary": "annualSalary",
         "status": "status",
         "payment_type": "paymentType",
+        "work_pattern_type": "workPatternType",
     }
 
     def __init__(
@@ -67,6 +69,7 @@ class SalaryAndWage(BaseModel):
         annual_salary=None,
         status=None,
         payment_type=None,
+        work_pattern_type=None,
     ):  # noqa: E501
         """SalaryAndWage - a model defined in OpenAPI"""  # noqa: E501
 
@@ -80,6 +83,7 @@ class SalaryAndWage(BaseModel):
         self._annual_salary = None
         self._status = None
         self._payment_type = None
+        self._work_pattern_type = None
         self.discriminator = None
 
         if salary_and_wages_id is not None:
@@ -95,6 +99,8 @@ class SalaryAndWage(BaseModel):
         self.annual_salary = annual_salary
         self.status = status
         self.payment_type = payment_type
+        if work_pattern_type is not None:
+            self.work_pattern_type = work_pattern_type
 
     @property
     def salary_and_wages_id(self):
@@ -371,3 +377,35 @@ class SalaryAndWage(BaseModel):
                 )
 
         self._payment_type = payment_type
+
+    @property
+    def work_pattern_type(self):
+        """Gets the work_pattern_type of this SalaryAndWage.  # noqa: E501
+
+        The type of the Working Pattern of the corresponding salary and wages  # noqa: E501
+
+        :return: The work_pattern_type of this SalaryAndWage.  # noqa: E501
+        :rtype: str
+        """
+        return self._work_pattern_type
+
+    @work_pattern_type.setter
+    def work_pattern_type(self, work_pattern_type):
+        """Sets the work_pattern_type of this SalaryAndWage.
+
+        The type of the Working Pattern of the corresponding salary and wages  # noqa: E501
+
+        :param work_pattern_type: The work_pattern_type of this SalaryAndWage.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["DaysAndHours", "RegularWeek", "None"]  # noqa: E501
+
+        if work_pattern_type:
+            if work_pattern_type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `work_pattern_type` ({0}), must be one of {1}".format(  # noqa: E501
+                        work_pattern_type, allowed_values
+                    )
+                )
+
+        self._work_pattern_type = work_pattern_type

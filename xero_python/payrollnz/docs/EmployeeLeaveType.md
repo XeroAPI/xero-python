@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **include_holiday_pay_every_pay** | **bool** | Specific to Holiday pay. Flag determining if pay for leave type is added on each pay run. | [optional] 
 **show_annual_leave_in_advance** | **bool** | Specific to Annual Leave. Flag to include leave available to take in advance in the balance in the payslip | [optional] 
 **annual_leave_total_amount_paid** | **float** | Specific to Annual Leave. Annual leave balance in dollars | [optional] 
+**schedule_of_accrual_date** | **date** | The date when an employee becomes entitled to their accrual. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

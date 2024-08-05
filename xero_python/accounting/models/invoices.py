@@ -29,19 +29,30 @@ class Invoices(BaseModel):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {"pagination": "Pagination", "invoices": "list[Invoice]"}
+    openapi_types = {
+        "pagination": "Pagination",
+        "warnings": "list[ValidationError]",
+        "invoices": "list[Invoice]",
+    }
 
-    attribute_map = {"pagination": "pagination", "invoices": "Invoices"}
+    attribute_map = {
+        "pagination": "pagination",
+        "warnings": "Warnings",
+        "invoices": "Invoices",
+    }
 
-    def __init__(self, pagination=None, invoices=None):  # noqa: E501
+    def __init__(self, pagination=None, warnings=None, invoices=None):  # noqa: E501
         """Invoices - a model defined in OpenAPI"""  # noqa: E501
 
         self._pagination = None
+        self._warnings = None
         self._invoices = None
         self.discriminator = None
 
         if pagination is not None:
             self.pagination = pagination
+        if warnings is not None:
+            self.warnings = warnings
         if invoices is not None:
             self.invoices = invoices
 
@@ -65,6 +76,29 @@ class Invoices(BaseModel):
         """
 
         self._pagination = pagination
+
+    @property
+    def warnings(self):
+        """Gets the warnings of this Invoices.  # noqa: E501
+
+        Displays array of warning messages from the API  # noqa: E501
+
+        :return: The warnings of this Invoices.  # noqa: E501
+        :rtype: list[ValidationError]
+        """
+        return self._warnings
+
+    @warnings.setter
+    def warnings(self, warnings):
+        """Sets the warnings of this Invoices.
+
+        Displays array of warning messages from the API  # noqa: E501
+
+        :param warnings: The warnings of this Invoices.  # noqa: E501
+        :type: list[ValidationError]
+        """
+
+        self._warnings = warnings
 
     @property
     def invoices(self):

@@ -10,7 +10,7 @@
 """
 
 """
-    OpenAPI spec version: 6.0.0
+    OpenAPI spec version: 6.1.1
 """
 
 import importlib
@@ -460,7 +460,7 @@ class PayrollNzApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Employees/{EmployeeID}/PayTemplates/earnings")
+        url = self.get_resource_url("/Employees/{EmployeeID}/PayTemplates/Earnings")
 
         try:
             return self.api_client.call_api(
@@ -650,7 +650,7 @@ class PayrollNzApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Employees/{EmployeeID}/leaveSetup")
+        url = self.get_resource_url("/Employees/{EmployeeID}/LeaveSetup")
 
         try:
             return self.api_client.call_api(
@@ -838,7 +838,7 @@ class PayrollNzApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Employees/{EmployeeID}/openingBalances")
+        url = self.get_resource_url("/Employees/{EmployeeID}/OpeningBalances")
 
         try:
             return self.api_client.call_api(
@@ -1053,6 +1053,102 @@ class PayrollNzApi(object):
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(
                 error, self, "create_employee_salary_and_wage"
+            )
+
+    def create_employee_working_pattern(
+        self,
+        xero_tenant_id,
+        employee_id,
+        employee_working_pattern_with_working_weeks_request,
+        idempotency_key=empty,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
+        """Creates an employee working pattern  # noqa: E501
+        OAuth2 scope: payroll.employees
+        :param str xero_tenant_id: Xero identifier for Tenant (required)
+        :param str employee_id: Employee id for single object (required)
+        :param EmployeeWorkingPatternWithWorkingWeeksRequest employee_working_pattern_with_working_weeks_request: (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+        :param bool _return_http_data_only: return received data only
+        :param bool _preload_content: load received data in models
+        :param bool _request_timeout: maximum wait time for response
+        :return: EmployeeWorkingPatternWithWorkingWeeksObject
+        """
+
+        # verify the required parameter 'xero_tenant_id' is set
+        if xero_tenant_id is None:
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `create_employee_working_pattern`"
+            )
+        # verify the required parameter 'employee_id' is set
+        if employee_id is None:
+            raise ValueError(
+                "Missing the required parameter `employee_id` "
+                "when calling `create_employee_working_pattern`"
+            )
+        # verify the required parameter 'employee_working_pattern_with_working_weeks_request' is set
+        if employee_working_pattern_with_working_weeks_request is None:
+            raise ValueError(
+                "Missing the required parameter `employee_working_pattern_with_working_weeks_request` "
+                "when calling `create_employee_working_pattern`"
+            )
+
+        collection_formats = {}
+        path_params = {
+            "EmployeeID": employee_id,
+        }
+
+        query_params = []
+
+        header_params = {
+            "Xero-Tenant-Id": xero_tenant_id,
+        }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
+
+        local_var_files = {}
+        form_params = []
+
+        body_params = employee_working_pattern_with_working_weeks_request
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/Employees/{EmployeeID}/Working-Patterns")
+
+        try:
+            return self.api_client.call_api(
+                url,
+                "POST",
+                path_params,
+                query_params,
+                header_params,
+                body=body_params,
+                post_params=form_params,
+                files=local_var_files,
+                response_type="EmployeeWorkingPatternWithWorkingWeeksObject",
+                response_model_finder=self.get_model_finder(),
+                auth_settings=auth_settings,
+                _return_http_data_only=_return_http_data_only,
+                _preload_content=_preload_content,
+                _request_timeout=_request_timeout,
+                collection_formats=collection_formats,
+            )
+        except exceptions.HTTPStatusException as error:
+            raise translate_status_exception(
+                error, self, "create_employee_working_pattern"
             )
 
     def create_employment(
@@ -1304,7 +1400,7 @@ class PayrollNzApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Employees/{EmployeeID}/paytemplateearnings")
+        url = self.get_resource_url("/Employees/{EmployeeID}/PayTemplateEarnings")
 
         try:
             return self.api_client.call_api(
@@ -1906,7 +2002,7 @@ class PayrollNzApi(object):
         # Authentication setting
         auth_settings = ["OAuth2"]
         url = self.get_resource_url(
-            "/Employees/{EmployeeID}/PayTemplates/earnings/{PayTemplateEarningID}"
+            "/Employees/{EmployeeID}/PayTemplates/Earnings/{PayTemplateEarningID}"
         )
 
         try:
@@ -2104,6 +2200,95 @@ class PayrollNzApi(object):
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(
                 error, self, "delete_employee_salary_and_wage"
+            )
+
+    def delete_employee_working_pattern(
+        self,
+        xero_tenant_id,
+        employee_id,
+        employee_working_pattern_id,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
+        """deletes employee's working patterns  # noqa: E501
+        OAuth2 scope: payroll.employees
+        :param str xero_tenant_id: Xero identifier for Tenant (required)
+        :param str employee_id: Employee id for single object (required)
+        :param str employee_working_pattern_id: Employee working pattern id for single object (required)
+        :param bool _return_http_data_only: return received data only
+        :param bool _preload_content: load received data in models
+        :param bool _request_timeout: maximum wait time for response
+        :return: EmployeeLeaveObject
+        """
+
+        # verify the required parameter 'xero_tenant_id' is set
+        if xero_tenant_id is None:
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `delete_employee_working_pattern`"
+            )
+        # verify the required parameter 'employee_id' is set
+        if employee_id is None:
+            raise ValueError(
+                "Missing the required parameter `employee_id` "
+                "when calling `delete_employee_working_pattern`"
+            )
+        # verify the required parameter 'employee_working_pattern_id' is set
+        if employee_working_pattern_id is None:
+            raise ValueError(
+                "Missing the required parameter `employee_working_pattern_id` "
+                "when calling `delete_employee_working_pattern`"
+            )
+
+        collection_formats = {}
+        path_params = {
+            "EmployeeID": employee_id,
+            "EmployeeWorkingPatternID": employee_working_pattern_id,
+        }
+
+        query_params = []
+
+        header_params = {
+            "Xero-Tenant-Id": xero_tenant_id,
+        }
+
+        local_var_files = {}
+        form_params = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url(
+            "/Employees/{EmployeeID}/Working-Patterns/{EmployeeWorkingPatternID}"
+        )
+
+        try:
+            return self.api_client.call_api(
+                url,
+                "DELETE",
+                path_params,
+                query_params,
+                header_params,
+                body=body_params,
+                post_params=form_params,
+                files=local_var_files,
+                response_type="EmployeeLeaveObject",
+                response_model_finder=self.get_model_finder(),
+                auth_settings=auth_settings,
+                _return_http_data_only=_return_http_data_only,
+                _preload_content=_preload_content,
+                _request_timeout=_request_timeout,
+                collection_formats=collection_formats,
+            )
+        except exceptions.HTTPStatusException as error:
+            raise translate_status_exception(
+                error, self, "delete_employee_working_pattern"
             )
 
     def delete_timesheet(
@@ -3004,7 +3189,7 @@ class PayrollNzApi(object):
 
         # Authentication setting
         auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/Employees/{EmployeeID}/openingBalances")
+        url = self.get_resource_url("/Employees/{EmployeeID}/OpeningBalances")
 
         try:
             return self.api_client.call_api(
@@ -3428,6 +3613,173 @@ class PayrollNzApi(object):
             )
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "get_employee_tax")
+
+    def get_employee_working_pattern(
+        self,
+        xero_tenant_id,
+        employee_id,
+        employee_working_pattern_id,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
+        """Retrieves employee's working patterns  # noqa: E501
+        OAuth2 scope: payroll.employees, payroll.employees.read
+        :param str xero_tenant_id: Xero identifier for Tenant (required)
+        :param str employee_id: Employee id for single object (required)
+        :param str employee_working_pattern_id: Employee working pattern id for single object (required)
+        :param bool _return_http_data_only: return received data only
+        :param bool _preload_content: load received data in models
+        :param bool _request_timeout: maximum wait time for response
+        :return: EmployeeWorkingPatternWithWorkingWeeksObject
+        """
+
+        # verify the required parameter 'xero_tenant_id' is set
+        if xero_tenant_id is None:
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `get_employee_working_pattern`"
+            )
+        # verify the required parameter 'employee_id' is set
+        if employee_id is None:
+            raise ValueError(
+                "Missing the required parameter `employee_id` "
+                "when calling `get_employee_working_pattern`"
+            )
+        # verify the required parameter 'employee_working_pattern_id' is set
+        if employee_working_pattern_id is None:
+            raise ValueError(
+                "Missing the required parameter `employee_working_pattern_id` "
+                "when calling `get_employee_working_pattern`"
+            )
+
+        collection_formats = {}
+        path_params = {
+            "EmployeeID": employee_id,
+            "EmployeeWorkingPatternID": employee_working_pattern_id,
+        }
+
+        query_params = []
+
+        header_params = {
+            "Xero-Tenant-Id": xero_tenant_id,
+        }
+
+        local_var_files = {}
+        form_params = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url(
+            "/Employees/{EmployeeID}/Working-Patterns/{EmployeeWorkingPatternID}"
+        )
+
+        try:
+            return self.api_client.call_api(
+                url,
+                "GET",
+                path_params,
+                query_params,
+                header_params,
+                body=body_params,
+                post_params=form_params,
+                files=local_var_files,
+                response_type="EmployeeWorkingPatternWithWorkingWeeksObject",
+                response_model_finder=self.get_model_finder(),
+                auth_settings=auth_settings,
+                _return_http_data_only=_return_http_data_only,
+                _preload_content=_preload_content,
+                _request_timeout=_request_timeout,
+                collection_formats=collection_formats,
+            )
+        except exceptions.HTTPStatusException as error:
+            raise translate_status_exception(
+                error, self, "get_employee_working_pattern"
+            )
+
+    def get_employee_working_patterns(
+        self,
+        xero_tenant_id,
+        employee_id,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
+        """Retrieves employee's working patterns  # noqa: E501
+        OAuth2 scope: payroll.employees, payroll.employees.read
+        :param str xero_tenant_id: Xero identifier for Tenant (required)
+        :param str employee_id: Employee id for single object (required)
+        :param bool _return_http_data_only: return received data only
+        :param bool _preload_content: load received data in models
+        :param bool _request_timeout: maximum wait time for response
+        :return: EmployeeWorkingPatternsObject
+        """
+
+        # verify the required parameter 'xero_tenant_id' is set
+        if xero_tenant_id is None:
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `get_employee_working_patterns`"
+            )
+        # verify the required parameter 'employee_id' is set
+        if employee_id is None:
+            raise ValueError(
+                "Missing the required parameter `employee_id` "
+                "when calling `get_employee_working_patterns`"
+            )
+
+        collection_formats = {}
+        path_params = {
+            "EmployeeID": employee_id,
+        }
+
+        query_params = []
+
+        header_params = {
+            "Xero-Tenant-Id": xero_tenant_id,
+        }
+
+        local_var_files = {}
+        form_params = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/Employees/{EmployeeID}/Working-Patterns")
+
+        try:
+            return self.api_client.call_api(
+                url,
+                "GET",
+                path_params,
+                query_params,
+                header_params,
+                body=body_params,
+                post_params=form_params,
+                files=local_var_files,
+                response_type="EmployeeWorkingPatternsObject",
+                response_model_finder=self.get_model_finder(),
+                auth_settings=auth_settings,
+                _return_http_data_only=_return_http_data_only,
+                _preload_content=_preload_content,
+                _request_timeout=_request_timeout,
+                collection_formats=collection_formats,
+            )
+        except exceptions.HTTPStatusException as error:
+            raise translate_status_exception(
+                error, self, "get_employee_working_patterns"
+            )
 
     def get_employees(
         self,
@@ -5114,7 +5466,7 @@ class PayrollNzApi(object):
         # Authentication setting
         auth_settings = ["OAuth2"]
         url = self.get_resource_url(
-            "/Employees/{EmployeeID}/PayTemplates/earnings/{PayTemplateEarningID}"
+            "/Employees/{EmployeeID}/PayTemplates/Earnings/{PayTemplateEarningID}"
         )
 
         try:

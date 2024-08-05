@@ -40,6 +40,7 @@ class EmployeeLeaveType(BaseModel):
         "include_holiday_pay_every_pay": "bool",
         "show_annual_leave_in_advance": "bool",
         "annual_leave_total_amount_paid": "float",
+        "schedule_of_accrual_date": "date",
     }
 
     attribute_map = {
@@ -53,6 +54,7 @@ class EmployeeLeaveType(BaseModel):
         "include_holiday_pay_every_pay": "includeHolidayPayEveryPay",
         "show_annual_leave_in_advance": "showAnnualLeaveInAdvance",
         "annual_leave_total_amount_paid": "annualLeaveTotalAmountPaid",
+        "schedule_of_accrual_date": "scheduleOfAccrualDate",
     }
 
     def __init__(
@@ -67,6 +69,7 @@ class EmployeeLeaveType(BaseModel):
         include_holiday_pay_every_pay=None,
         show_annual_leave_in_advance=None,
         annual_leave_total_amount_paid=None,
+        schedule_of_accrual_date=None,
     ):  # noqa: E501
         """EmployeeLeaveType - a model defined in OpenAPI"""  # noqa: E501
 
@@ -80,6 +83,7 @@ class EmployeeLeaveType(BaseModel):
         self._include_holiday_pay_every_pay = None
         self._show_annual_leave_in_advance = None
         self._annual_leave_total_amount_paid = None
+        self._schedule_of_accrual_date = None
         self.discriminator = None
 
         if leave_type_id is not None:
@@ -102,6 +106,8 @@ class EmployeeLeaveType(BaseModel):
             self.show_annual_leave_in_advance = show_annual_leave_in_advance
         if annual_leave_total_amount_paid is not None:
             self.annual_leave_total_amount_paid = annual_leave_total_amount_paid
+        if schedule_of_accrual_date is not None:
+            self.schedule_of_accrual_date = schedule_of_accrual_date
 
     @property
     def leave_type_id(self):
@@ -347,3 +353,26 @@ class EmployeeLeaveType(BaseModel):
         """
 
         self._annual_leave_total_amount_paid = annual_leave_total_amount_paid
+
+    @property
+    def schedule_of_accrual_date(self):
+        """Gets the schedule_of_accrual_date of this EmployeeLeaveType.  # noqa: E501
+
+        The date when an employee becomes entitled to their accrual.  # noqa: E501
+
+        :return: The schedule_of_accrual_date of this EmployeeLeaveType.  # noqa: E501
+        :rtype: date
+        """
+        return self._schedule_of_accrual_date
+
+    @schedule_of_accrual_date.setter
+    def schedule_of_accrual_date(self, schedule_of_accrual_date):
+        """Sets the schedule_of_accrual_date of this EmployeeLeaveType.
+
+        The date when an employee becomes entitled to their accrual.  # noqa: E501
+
+        :param schedule_of_accrual_date: The schedule_of_accrual_date of this EmployeeLeaveType.  # noqa: E501
+        :type: date
+        """
+
+        self._schedule_of_accrual_date = schedule_of_accrual_date

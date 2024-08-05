@@ -29,19 +29,30 @@ class Prepayments(BaseModel):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {"pagination": "Pagination", "prepayments": "list[Prepayment]"}
+    openapi_types = {
+        "pagination": "Pagination",
+        "warnings": "list[ValidationError]",
+        "prepayments": "list[Prepayment]",
+    }
 
-    attribute_map = {"pagination": "pagination", "prepayments": "Prepayments"}
+    attribute_map = {
+        "pagination": "pagination",
+        "warnings": "Warnings",
+        "prepayments": "Prepayments",
+    }
 
-    def __init__(self, pagination=None, prepayments=None):  # noqa: E501
+    def __init__(self, pagination=None, warnings=None, prepayments=None):  # noqa: E501
         """Prepayments - a model defined in OpenAPI"""  # noqa: E501
 
         self._pagination = None
+        self._warnings = None
         self._prepayments = None
         self.discriminator = None
 
         if pagination is not None:
             self.pagination = pagination
+        if warnings is not None:
+            self.warnings = warnings
         if prepayments is not None:
             self.prepayments = prepayments
 
@@ -65,6 +76,29 @@ class Prepayments(BaseModel):
         """
 
         self._pagination = pagination
+
+    @property
+    def warnings(self):
+        """Gets the warnings of this Prepayments.  # noqa: E501
+
+        Displays array of warning messages from the API  # noqa: E501
+
+        :return: The warnings of this Prepayments.  # noqa: E501
+        :rtype: list[ValidationError]
+        """
+        return self._warnings
+
+    @warnings.setter
+    def warnings(self, warnings):
+        """Sets the warnings of this Prepayments.
+
+        Displays array of warning messages from the API  # noqa: E501
+
+        :param warnings: The warnings of this Prepayments.  # noqa: E501
+        :type: list[ValidationError]
+        """
+
+        self._warnings = warnings
 
     @property
     def prepayments(self):

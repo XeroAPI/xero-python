@@ -1,11 +1,10 @@
-# Invoices
+# EmployeeWorkingPatternWithWorkingWeeksRequest
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pagination** | [**Pagination**](Pagination.md) |  | [optional] 
-**warnings** | [**list[ValidationError]**](ValidationError.md) | Displays array of warning messages from the API | [optional] 
-**invoices** | [**list[Invoice]**](Invoice.md) |  | [optional] 
+**effective_from** | **date** | The effective date of the corresponding salary and wages | 
+**working_weeks** | [**list[WorkingWeek]**](WorkingWeek.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
