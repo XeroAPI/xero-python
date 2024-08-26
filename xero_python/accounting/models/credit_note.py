@@ -661,7 +661,7 @@ class CreditNote(BaseModel):
     def sent_to_contact(self):
         """Gets the sent_to_contact of this CreditNote.  # noqa: E501
 
-        boolean to indicate if a credit note has been sent to a contact via  the Xero app (currently read only)  # noqa: E501
+        Boolean to set whether the credit note in the Xero app should be marked as “sent”. This can be set only on credit notes that have been approved  # noqa: E501
 
         :return: The sent_to_contact of this CreditNote.  # noqa: E501
         :rtype: bool
@@ -672,7 +672,7 @@ class CreditNote(BaseModel):
     def sent_to_contact(self, sent_to_contact):
         """Sets the sent_to_contact of this CreditNote.
 
-        boolean to indicate if a credit note has been sent to a contact via  the Xero app (currently read only)  # noqa: E501
+        Boolean to set whether the credit note in the Xero app should be marked as “sent”. This can be set only on credit notes that have been approved  # noqa: E501
 
         :param sent_to_contact: The sent_to_contact of this CreditNote.  # noqa: E501
         :type: bool
