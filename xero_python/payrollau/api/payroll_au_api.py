@@ -1,5 +1,16 @@
 # coding: utf-8
 
+import importlib
+import re  # noqa: F401
+
+from xero_python import exceptions
+from xero_python.api_client import ApiClient, ModelFinder
+
+try:
+    from .exception_handler import translate_status_exception
+except ImportError:
+    translate_status_exception = exceptions.translate_status_exception
+
 """
     Xero Payroll AU API
 
@@ -12,17 +23,6 @@
 """
     OpenAPI spec version: 6.2.0
 """
-
-import importlib
-import re  # noqa: F401
-
-from xero_python import exceptions
-from xero_python.api_client import ApiClient, ModelFinder
-
-try:
-    from .exception_handler import translate_status_exception
-except ImportError:
-    translate_status_exception = exceptions.translate_status_exception
 
 
 class empty:
