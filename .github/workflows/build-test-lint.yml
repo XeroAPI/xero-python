@@ -26,13 +26,12 @@ jobs:
                 source venv/bin/activate
                 pip install --upgrade pip
                 pip install black
-                pip install flake8
+                sudo pip install flake8
                 pip install -r requirements.txt -r requirements/dev.txt
               working-directory: xero-python
                 
             - name: Run Flake8
-              run: |
-                flake8 xero_python
+              run: flake8 xero_python
               working-directory: xero-python
                 
             - name: Build package
