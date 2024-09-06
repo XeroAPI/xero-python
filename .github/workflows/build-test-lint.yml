@@ -1,0 +1,45 @@
+name: PHP Build, Lint
+
+on:
+    push:
+
+jobs:
+    build-test-lint:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout xero-python repo
+              uses: actions/checkout@v4
+              with:
+                repository: XeroAPI/xero-python
+                path: xero-python
+
+            - name: Set up Python environment
+              uses: actions/setup-python@v5
+              with: 
+                python-version: '3.8'
+                cache: 'pip'
+
+            - name: Install dependencies
+              run: |
+                python -m venv venv
+                source venv/bin/activate
+                pip install --upgrade pip
+                pip install -r requirements.txt -r requirements/dev.txt
+              working-directory: xero-python
+                
+            - name: Run Flake8
+              run: |
+                flake8 xero_python
+              working-directory: xero-python
+                
+            - name: Build package
+              run: python setup.py sdist
+              working-directory: xero-python
+
+            # - name: Run Test
+            #   run: |
+            #     source venv/bin/activate
+            #     pip install -r requirements/test.txt
+            #     pytest -v
+            #   working-directory: xero-python
