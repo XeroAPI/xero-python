@@ -1,4 +1,4 @@
-name: PHP Build, Lint
+name: Python Build, Lint
 
 on:
     push:
