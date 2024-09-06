@@ -25,6 +25,8 @@ jobs:
                 python -m venv venv
                 source venv/bin/activate
                 pip install --upgrade pip
+                pip install black
+                pip install flake8
                 pip install -r requirements.txt -r requirements/dev.txt
               working-directory: xero-python
                 
