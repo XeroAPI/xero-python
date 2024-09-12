@@ -3,8 +3,10 @@ import datetime
 import filecmp
 from decimal import Decimal
 from pathlib import Path
+from pydoc import pager
 
 import pytest
+from black import nullcontext
 from dateutil import tz
 
 from xero_python.accounting import (
@@ -31,6 +33,7 @@ from xero_python.accounting import (
     Attachment,
 )
 from xero_python.api_client import ApiClient
+from xero_python.assets import Pagination
 from xero_python.rest import RESTClientObject
 
 
@@ -43,7 +46,7 @@ def accounting_api(api_client):
 def sandbox_accounting_api(api_client):
     return AccountingApi(
         api_client=api_client,
-        base_url="https://25faf04a-c71e-40e7-b7ce-f1fae0149465.mock.pstmn.io/api.xro/2.0",
+        base_url="http://127.0.0.1:4010",
     )
 
 
@@ -339,31 +342,27 @@ def test_get_account_attachments(sandbox_accounting_api: AccountingApi, xero_ten
 def test_get_invoices(sandbox_accounting_api: AccountingApi, xero_tenant_id):
     # Given sandbox API, tenant id, and hardcoded test invoices data
     # When getting all invoices
-    result = sandbox_accounting_api.get_invoices(xero_tenant_id)
+    result: Invoices = sandbox_accounting_api.get_invoices(xero_tenant_id)
     # Then expect correct invoices received
-    expected = Invoices(
+    expected = Invoices (
         invoices=[
             Invoice(
-                amount_credited=Decimal("0.00"),
-                amount_due=Decimal("0.00"),
-                amount_paid=Decimal("0.00"),
+                amount_credited = Decimal("0"),
+                amount_due = Decimal("0"),
+                amount_paid= Decimal("0"),
                 contact=Contact(
+                    addresses=[],
+                    contact_groups=[],
                     contact_id="a3675fc4-f8dd-4f03-ba5b-f1870566bcd7",
+                    contact_persons=[],
                     has_attachments=False,
                     has_validation_errors=False,
                     name="Barney Rubble-83203",
-                    addresses=[],
-                    contact_groups=[],
-                    contact_persons=[],
                     phones=[],
                 ),
                 credit_notes=[],
-                line_items=[],
-                overpayments=[],
-                payments=[],
-                prepayments=[],
                 currency_code=CurrencyCode.NZD,
-                currency_rate=Decimal("1.000000"),
+                currency_rate=Decimal(1),
                 date=datetime.date(2018, 10, 20),
                 due_date=datetime.date(2018, 12, 30),
                 has_attachments=False,
@@ -372,38 +371,37 @@ def test_get_invoices(sandbox_accounting_api: AccountingApi, xero_tenant_id):
                 invoice_number="INV-0001",
                 is_discounted=False,
                 line_amount_types=LineAmountTypes.EXCLUSIVE,
+                line_items=[],
+                overpayments=[],
+                payments=[],
+                prepayments=[],
                 reference="Red Fish, Blue Fish",
                 repeating_invoice_id="428c0d75-909f-4b04-8403-a48dc27283b0",
                 sent_to_contact=True,
                 status="VOIDED",
-                sub_total=Decimal("40.00"),
-                total=Decimal("40.00"),
-                total_tax=Decimal("0.00"),
+                sub_total=Decimal("40"),
+                total=Decimal("40"),
+                total_tax=Decimal("0"),
                 type="ACCREC",
-                updated_date_utc=datetime.datetime(
-                    2018, 11, 2, 16, 31, 30, 160000, tzinfo=tz.UTC
-                ),
+                updated_date_utc=datetime.datetime(2018, 11, 2, 16, 31, 30, 160000, tzinfo=tz.UTC),
             ),
             Invoice(
-                amount_credited=Decimal("0.00"),
-                amount_due=Decimal("0.00"),
-                amount_paid=Decimal("46.00"),
+                amount_credited=Decimal("0"),
+                amount_due=Decimal("0"),
+                amount_paid=Decimal("46"),
                 contact=Contact(
+                    addresses=[],
+                    contact_groups=[],
                     contact_id="a3675fc4-f8dd-4f03-ba5b-f1870566bcd7",
+                    contact_persons=[],
                     has_attachments=False,
                     has_validation_errors=False,
                     name="Barney Rubble-83203",
-                    addresses=[],
-                    contact_groups=[],
-                    contact_persons=[],
                     phones=[],
                 ),
                 credit_notes=[],
-                line_items=[],
-                overpayments=[],
-                prepayments=[],
                 currency_code=CurrencyCode.NZD,
-                currency_rate=Decimal("1.000000"),
+                currency_rate=Decimal(1),
                 date=datetime.date(2018, 10, 20),
                 due_date=datetime.date(2018, 12, 30),
                 fully_paid_on_date=datetime.date(2018, 11, 29),
@@ -413,70 +411,75 @@ def test_get_invoices(sandbox_accounting_api: AccountingApi, xero_tenant_id):
                 invoice_number="INV-0002",
                 is_discounted=False,
                 line_amount_types=LineAmountTypes.EXCLUSIVE,
+                line_items=[],
+                overpayments=[],
                 payments=[
                     Payment(
-                        amount=Decimal("46.00"),
-                        currency_rate=Decimal("1.000000"),
+                        amount=Decimal("46"),
+                        currency_rate=Decimal(1),
                         date=datetime.date(2018, 11, 29),
                         has_account=False,
                         has_validation_errors=False,
                         payment_id="99ea7f6b-c513-4066-bc27-b7c65dcd76c2",
                     )
-                ],
+                    ],
+                prepayments=[],
                 reference="Red Fish, Blue Fish",
+                #repeating_invoice_id="428c0d75-909f-4b04-8403-a48dc27283b0",
                 sent_to_contact=True,
                 status="PAID",
-                sub_total=Decimal("40.00"),
-                total=Decimal("46.00"),
-                total_tax=Decimal("6.00"),
+                sub_total=Decimal("40"),
+                total=Decimal("46"),
+                total_tax=Decimal("6"),
                 type="ACCREC",
-                updated_date_utc=datetime.datetime(
-                    2018, 11, 2, 16, 36, 32, 690000, tzinfo=tz.UTC
-                ),
+                updated_date_utc=datetime.datetime(2018, 11, 2, 16, 36, 32, 690000, tzinfo=tz.UTC),
             ),
             Invoice(
-                amount_credited=Decimal("0.00"),
-                amount_due=Decimal("115.00"),
-                amount_paid=Decimal("0.00"),
+                amount_credited=Decimal(0),
+                amount_due=Decimal(115),
+                amount_paid=Decimal("0"),
                 contact=Contact(
+                    addresses=[],
+                    contact_groups=[],
                     contact_id="a3675fc4-f8dd-4f03-ba5b-f1870566bcd7",
+                    contact_persons=[],
                     has_attachments=False,
                     has_validation_errors=False,
                     name="Barney Rubble-83203",
-                    addresses=[],
-                    contact_groups=[],
-                    contact_persons=[],
                     phones=[],
                 ),
                 credit_notes=[],
-                line_items=[],
-                overpayments=[],
-                payments=[],
-                prepayments=[],
                 currency_code=CurrencyCode.NZD,
-                currency_rate=Decimal("1.000000"),
+                currency_rate=Decimal(1),
                 date=datetime.date(2018, 11, 2),
                 due_date=datetime.date(2018, 11, 7),
                 has_attachments=False,
                 has_errors=False,
-                invoice_id="7ef31b20-de17-4312-8382-412f869b1510",
                 invoice_number="INV-0003",
+                invoice_id="7ef31b20-de17-4312-8382-412f869b1510",
                 is_discounted=False,
                 line_amount_types=LineAmountTypes.EXCLUSIVE,
+                line_items=[],
+                overpayments=[],
+                payments=[],
+                prepayments=[],
                 reference="",
                 status="AUTHORISED",
-                sub_total=Decimal("100.00"),
-                total=Decimal("115.00"),
-                total_tax=Decimal("15.00"),
+                sub_total=Decimal("100"),
+                total=Decimal("115"),
+                total_tax=Decimal("15"),
                 type="ACCREC",
-                updated_date_utc=datetime.datetime(
-                    2018, 11, 2, 16, 37, 28, 927000, tzinfo=tz.UTC
-                ),
-            ),
+                updated_date_utc=datetime.datetime(2018, 11, 2, 16, 37, 28, 927000, tzinfo=tz.UTC)
+            )
         ],
+        pagination= Pagination(
+            item_count= 3,
+            page = 1,
+            page_count= 1,
+            page_size= 100
+        )
     )
-    assert result == expected
-
+    assert str(result) == str(expected)
 
 @pytest.mark.sandbox
 def test_get_invoice_history(sandbox_accounting_api: AccountingApi, xero_tenant_id):
@@ -485,7 +488,22 @@ def test_get_invoice_history(sandbox_accounting_api: AccountingApi, xero_tenant_
     # When getting invoice history
     result = sandbox_accounting_api.get_invoice_history(xero_tenant_id, invoice_id)
     # Then expect invoice history to be received
-    expected = HistoryRecords()  # todo confirm empty response from sandbox is correct
+    expected = HistoryRecords(
+        [
+            HistoryRecord(
+                changes="Attached a file",
+                date_utc= datetime.datetime(2018, 11, 8, 15, 1, 21, 470000, tzinfo=tz.UTC),
+                details= "Attached the file sample2.jpg through the Xero API using Xero API Partner",
+                user="System Generated",
+            ),
+            HistoryRecord(
+                changes="Credit Applied",
+                date_utc=datetime.datetime(2016, 10, 17, 20, 46, 1, 173000, tzinfo=tz.UTC),
+                details="Bank transfer from Business Wells Fargo to My Savings on November 12, 2016 for 20.00.",
+                user="System Generated",
+            )
+        ]
+    )
     assert result == expected
 
 
@@ -647,7 +665,12 @@ def test_create_invoice_history(sandbox_accounting_api: AccountingApi, xero_tena
         xero_tenant_id, invoice_id, history_records
     )
     # Then expect created invoice history records
-    expected = HistoryRecords()  # todo confirm empty response from sandbox is correct
+    expected = HistoryRecords(
+        [HistoryRecord(
+            date_utc=datetime.datetime(2019, 2, 23, 5, 23, 20, 362000, tzinfo=tz.UTC),
+            details="Hello World"
+        )]
+    )
     assert result == expected
 
 
