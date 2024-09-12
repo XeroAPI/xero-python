@@ -3,10 +3,8 @@ import datetime
 import filecmp
 from decimal import Decimal
 from pathlib import Path
-from pydoc import pager
 
 import pytest
-from black import nullcontext
 from dateutil import tz
 
 from xero_python.accounting import (
@@ -347,9 +345,9 @@ def test_get_invoices(sandbox_accounting_api: AccountingApi, xero_tenant_id):
     expected = Invoices (
         invoices=[
             Invoice(
-                amount_credited = Decimal("0"),
-                amount_due = Decimal("0"),
-                amount_paid= Decimal("0"),
+                amount_credited = Decimal(0),
+                amount_due = Decimal(0),
+                amount_paid= Decimal(0),
                 contact=Contact(
                     addresses=[],
                     contact_groups=[],
@@ -379,16 +377,16 @@ def test_get_invoices(sandbox_accounting_api: AccountingApi, xero_tenant_id):
                 repeating_invoice_id="428c0d75-909f-4b04-8403-a48dc27283b0",
                 sent_to_contact=True,
                 status="VOIDED",
-                sub_total=Decimal("40"),
-                total=Decimal("40"),
-                total_tax=Decimal("0"),
+                sub_total=Decimal(40),
+                total=Decimal(40),
+                total_tax=Decimal(0),
                 type="ACCREC",
                 updated_date_utc=datetime.datetime(2018, 11, 2, 16, 31, 30, 160000, tzinfo=tz.UTC),
             ),
             Invoice(
-                amount_credited=Decimal("0"),
-                amount_due=Decimal("0"),
-                amount_paid=Decimal("46"),
+                amount_credited=Decimal(0),
+                amount_due=Decimal(0),
+                amount_paid=Decimal(46),
                 contact=Contact(
                     addresses=[],
                     contact_groups=[],
@@ -415,7 +413,7 @@ def test_get_invoices(sandbox_accounting_api: AccountingApi, xero_tenant_id):
                 overpayments=[],
                 payments=[
                     Payment(
-                        amount=Decimal("46"),
+                        amount=Decimal(46),
                         currency_rate=Decimal(1),
                         date=datetime.date(2018, 11, 29),
                         has_account=False,
@@ -428,16 +426,16 @@ def test_get_invoices(sandbox_accounting_api: AccountingApi, xero_tenant_id):
                 #repeating_invoice_id="428c0d75-909f-4b04-8403-a48dc27283b0",
                 sent_to_contact=True,
                 status="PAID",
-                sub_total=Decimal("40"),
-                total=Decimal("46"),
-                total_tax=Decimal("6"),
+                sub_total=Decimal(40),
+                total=Decimal(46),
+                total_tax=Decimal(6),
                 type="ACCREC",
                 updated_date_utc=datetime.datetime(2018, 11, 2, 16, 36, 32, 690000, tzinfo=tz.UTC),
             ),
             Invoice(
                 amount_credited=Decimal(0),
                 amount_due=Decimal(115),
-                amount_paid=Decimal("0"),
+                amount_paid=Decimal(0),
                 contact=Contact(
                     addresses=[],
                     contact_groups=[],
@@ -465,9 +463,9 @@ def test_get_invoices(sandbox_accounting_api: AccountingApi, xero_tenant_id):
                 prepayments=[],
                 reference="",
                 status="AUTHORISED",
-                sub_total=Decimal("100"),
-                total=Decimal("115"),
-                total_tax=Decimal("15"),
+                sub_total=Decimal(100),
+                total=Decimal(115),
+                total_tax=Decimal(15),
                 type="ACCREC",
                 updated_date_utc=datetime.datetime(2018, 11, 2, 16, 37, 28, 927000, tzinfo=tz.UTC)
             )
