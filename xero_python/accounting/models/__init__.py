@@ -80,6 +80,7 @@ from xero_python.accounting.models.import_summary_organisation import (
     ImportSummaryOrganisation,
 )
 from xero_python.accounting.models.invoice import Invoice
+from xero_python.accounting.models.invoice_address import InvoiceAddress
 from xero_python.accounting.models.invoice_reminder import InvoiceReminder
 from xero_python.accounting.models.invoice_reminders import InvoiceReminders
 from xero_python.accounting.models.invoices import Invoices
@@ -139,6 +140,7 @@ from xero_python.accounting.models.row_type import RowType
 from xero_python.accounting.models.sales_tracking_category import SalesTrackingCategory
 from xero_python.accounting.models.schedule import Schedule
 from xero_python.accounting.models.setup import Setup
+from xero_python.accounting.models.tax_breakdown_component import TaxBreakdownComponent
 from xero_python.accounting.models.tax_component import TaxComponent
 from xero_python.accounting.models.tax_rate import TaxRate
 from xero_python.accounting.models.tax_rates import TaxRates
