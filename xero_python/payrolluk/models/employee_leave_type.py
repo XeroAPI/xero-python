@@ -36,6 +36,7 @@ class EmployeeLeaveType(BaseModel):
         "maximum_to_accrue": "float",
         "opening_balance": "float",
         "rate_accrued_hourly": "float",
+        "schedule_of_accrual_date": "date",
     }
 
     attribute_map = {
@@ -45,6 +46,7 @@ class EmployeeLeaveType(BaseModel):
         "maximum_to_accrue": "maximumToAccrue",
         "opening_balance": "openingBalance",
         "rate_accrued_hourly": "rateAccruedHourly",
+        "schedule_of_accrual_date": "scheduleOfAccrualDate",
     }
 
     def __init__(
@@ -55,6 +57,7 @@ class EmployeeLeaveType(BaseModel):
         maximum_to_accrue=None,
         opening_balance=None,
         rate_accrued_hourly=None,
+        schedule_of_accrual_date=None,
     ):  # noqa: E501
         """EmployeeLeaveType - a model defined in OpenAPI"""  # noqa: E501
 
@@ -64,6 +67,7 @@ class EmployeeLeaveType(BaseModel):
         self._maximum_to_accrue = None
         self._opening_balance = None
         self._rate_accrued_hourly = None
+        self._schedule_of_accrual_date = None
         self.discriminator = None
 
         self.leave_type_id = leave_type_id
@@ -76,6 +80,8 @@ class EmployeeLeaveType(BaseModel):
             self.opening_balance = opening_balance
         if rate_accrued_hourly is not None:
             self.rate_accrued_hourly = rate_accrued_hourly
+        if schedule_of_accrual_date is not None:
+            self.schedule_of_accrual_date = schedule_of_accrual_date
 
     @property
     def leave_type_id(self):
@@ -237,3 +243,26 @@ class EmployeeLeaveType(BaseModel):
         """
 
         self._rate_accrued_hourly = rate_accrued_hourly
+
+    @property
+    def schedule_of_accrual_date(self):
+        """Gets the schedule_of_accrual_date of this EmployeeLeaveType.  # noqa: E501
+
+        The date when an employee becomes entitled to their accrual. Only applicable when scheduleOfAccrual is \"OnAnniversaryDate\"  # noqa: E501
+
+        :return: The schedule_of_accrual_date of this EmployeeLeaveType.  # noqa: E501
+        :rtype: date
+        """
+        return self._schedule_of_accrual_date
+
+    @schedule_of_accrual_date.setter
+    def schedule_of_accrual_date(self, schedule_of_accrual_date):
+        """Sets the schedule_of_accrual_date of this EmployeeLeaveType.
+
+        The date when an employee becomes entitled to their accrual. Only applicable when scheduleOfAccrual is \"OnAnniversaryDate\"  # noqa: E501
+
+        :param schedule_of_accrual_date: The schedule_of_accrual_date of this EmployeeLeaveType.  # noqa: E501
+        :type: date
+        """
+
+        self._schedule_of_accrual_date = schedule_of_accrual_date

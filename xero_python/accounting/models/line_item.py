@@ -45,6 +45,9 @@ class LineItem(BaseModel):
         "discount_rate": "float",
         "discount_amount": "float",
         "repeating_invoice_id": "str",
+        "taxability": "str",
+        "sales_tax_code_id": "float",
+        "tax_breakdown": "list[TaxBreakdownComponent]",
     }
 
     attribute_map = {
@@ -63,6 +66,9 @@ class LineItem(BaseModel):
         "discount_rate": "DiscountRate",
         "discount_amount": "DiscountAmount",
         "repeating_invoice_id": "RepeatingInvoiceID",
+        "taxability": "Taxability",
+        "sales_tax_code_id": "SalesTaxCodeId",
+        "tax_breakdown": "TaxBreakdown",
     }
 
     def __init__(
@@ -82,6 +88,9 @@ class LineItem(BaseModel):
         discount_rate=None,
         discount_amount=None,
         repeating_invoice_id=None,
+        taxability=None,
+        sales_tax_code_id=None,
+        tax_breakdown=None,
     ):  # noqa: E501
         """LineItem - a model defined in OpenAPI"""  # noqa: E501
 
@@ -100,6 +109,9 @@ class LineItem(BaseModel):
         self._discount_rate = None
         self._discount_amount = None
         self._repeating_invoice_id = None
+        self._taxability = None
+        self._sales_tax_code_id = None
+        self._tax_breakdown = None
         self.discriminator = None
 
         if line_item_id is not None:
@@ -132,6 +144,12 @@ class LineItem(BaseModel):
             self.discount_amount = discount_amount
         if repeating_invoice_id is not None:
             self.repeating_invoice_id = repeating_invoice_id
+        if taxability is not None:
+            self.taxability = taxability
+        if sales_tax_code_id is not None:
+            self.sales_tax_code_id = sales_tax_code_id
+        if tax_breakdown is not None:
+            self.tax_breakdown = tax_breakdown
 
     @property
     def line_item_id(self):
@@ -475,3 +493,88 @@ class LineItem(BaseModel):
         """
 
         self._repeating_invoice_id = repeating_invoice_id
+
+    @property
+    def taxability(self):
+        """Gets the taxability of this LineItem.  # noqa: E501
+
+        The type of taxability  # noqa: E501
+
+        :return: The taxability of this LineItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._taxability
+
+    @taxability.setter
+    def taxability(self, taxability):
+        """Sets the taxability of this LineItem.
+
+        The type of taxability  # noqa: E501
+
+        :param taxability: The taxability of this LineItem.  # noqa: E501
+        :type: str
+        """
+        allowed_values = [
+            "TAXABLE",
+            "NON_TAXABLE",
+            "EXEMPT",
+            "PART_TAXABLE",
+            "NOT_APPLICABLE",
+            "None",
+        ]  # noqa: E501
+
+        if taxability:
+            if taxability not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `taxability` ({0}), must be one of {1}".format(  # noqa: E501
+                        taxability, allowed_values
+                    )
+                )
+
+        self._taxability = taxability
+
+    @property
+    def sales_tax_code_id(self):
+        """Gets the sales_tax_code_id of this LineItem.  # noqa: E501
+
+        The ID of the sales tax code  # noqa: E501
+
+        :return: The sales_tax_code_id of this LineItem.  # noqa: E501
+        :rtype: float
+        """
+        return self._sales_tax_code_id
+
+    @sales_tax_code_id.setter
+    def sales_tax_code_id(self, sales_tax_code_id):
+        """Sets the sales_tax_code_id of this LineItem.
+
+        The ID of the sales tax code  # noqa: E501
+
+        :param sales_tax_code_id: The sales_tax_code_id of this LineItem.  # noqa: E501
+        :type: float
+        """
+
+        self._sales_tax_code_id = sales_tax_code_id
+
+    @property
+    def tax_breakdown(self):
+        """Gets the tax_breakdown of this LineItem.  # noqa: E501
+
+        An array of tax components defined for this line item  # noqa: E501
+
+        :return: The tax_breakdown of this LineItem.  # noqa: E501
+        :rtype: list[TaxBreakdownComponent]
+        """
+        return self._tax_breakdown
+
+    @tax_breakdown.setter
+    def tax_breakdown(self, tax_breakdown):
+        """Sets the tax_breakdown of this LineItem.
+
+        An array of tax components defined for this line item  # noqa: E501
+
+        :param tax_breakdown: The tax_breakdown of this LineItem.  # noqa: E501
+        :type: list[TaxBreakdownComponent]
+        """
+
+        self._tax_breakdown = tax_breakdown

@@ -60,6 +60,7 @@ class CreditNote(BaseModel):
         "has_errors": "bool",
         "validation_errors": "list[ValidationError]",
         "warnings": "list[ValidationError]",
+        "invoice_addresses": "list[InvoiceAddress]",
     }
 
     attribute_map = {
@@ -93,6 +94,7 @@ class CreditNote(BaseModel):
         "has_errors": "HasErrors",
         "validation_errors": "ValidationErrors",
         "warnings": "Warnings",
+        "invoice_addresses": "InvoiceAddresses",
     }
 
     def __init__(
@@ -127,6 +129,7 @@ class CreditNote(BaseModel):
         has_errors=False,
         validation_errors=None,
         warnings=None,
+        invoice_addresses=None,
     ):  # noqa: E501
         """CreditNote - a model defined in OpenAPI"""  # noqa: E501
 
@@ -160,6 +163,7 @@ class CreditNote(BaseModel):
         self._has_errors = None
         self._validation_errors = None
         self._warnings = None
+        self._invoice_addresses = None
         self.discriminator = None
 
         if type is not None:
@@ -222,6 +226,8 @@ class CreditNote(BaseModel):
             self.validation_errors = validation_errors
         if warnings is not None:
             self.warnings = warnings
+        if invoice_addresses is not None:
+            self.invoice_addresses = invoice_addresses
 
     @property
     def type(self):
@@ -932,3 +938,26 @@ class CreditNote(BaseModel):
         """
 
         self._warnings = warnings
+
+    @property
+    def invoice_addresses(self):
+        """Gets the invoice_addresses of this CreditNote.  # noqa: E501
+
+        An array of addresses used to auto calculate sales tax  # noqa: E501
+
+        :return: The invoice_addresses of this CreditNote.  # noqa: E501
+        :rtype: list[InvoiceAddress]
+        """
+        return self._invoice_addresses
+
+    @invoice_addresses.setter
+    def invoice_addresses(self, invoice_addresses):
+        """Sets the invoice_addresses of this CreditNote.
+
+        An array of addresses used to auto calculate sales tax  # noqa: E501
+
+        :param invoice_addresses: The invoice_addresses of this CreditNote.  # noqa: E501
+        :type: list[InvoiceAddress]
+        """
+
+        self._invoice_addresses = invoice_addresses

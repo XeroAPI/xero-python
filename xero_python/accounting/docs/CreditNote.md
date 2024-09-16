@@ -33,6 +33,7 @@ Name | Type | Description | Notes
 **has_errors** | **bool** | A boolean to indicate if a credit note has an validation errors | [optional] [default to False]
 **validation_errors** | [**list[ValidationError]**](ValidationError.md) | Displays array of validation error messages from the API | [optional] 
 **warnings** | [**list[ValidationError]**](ValidationError.md) | Displays array of warning messages from the API | [optional] 
+**invoice_addresses** | [**list[InvoiceAddress]**](InvoiceAddress.md) | An array of addresses used to auto calculate sales tax | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

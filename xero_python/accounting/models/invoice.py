@@ -70,6 +70,7 @@ class Invoice(BaseModel):
         "status_attribute_string": "str",
         "validation_errors": "list[ValidationError]",
         "warnings": "list[ValidationError]",
+        "invoice_addresses": "list[InvoiceAddress]",
     }
 
     attribute_map = {
@@ -113,6 +114,7 @@ class Invoice(BaseModel):
         "status_attribute_string": "StatusAttributeString",
         "validation_errors": "ValidationErrors",
         "warnings": "Warnings",
+        "invoice_addresses": "InvoiceAddresses",
     }
 
     def __init__(
@@ -157,6 +159,7 @@ class Invoice(BaseModel):
         status_attribute_string=None,
         validation_errors=None,
         warnings=None,
+        invoice_addresses=None,
     ):  # noqa: E501
         """Invoice - a model defined in OpenAPI"""  # noqa: E501
 
@@ -200,6 +203,7 @@ class Invoice(BaseModel):
         self._status_attribute_string = None
         self._validation_errors = None
         self._warnings = None
+        self._invoice_addresses = None
         self.discriminator = None
 
         if type is not None:
@@ -282,6 +286,8 @@ class Invoice(BaseModel):
             self.validation_errors = validation_errors
         if warnings is not None:
             self.warnings = warnings
+        if invoice_addresses is not None:
+            self.invoice_addresses = invoice_addresses
 
     @property
     def type(self):
@@ -1237,3 +1243,26 @@ class Invoice(BaseModel):
         """
 
         self._warnings = warnings
+
+    @property
+    def invoice_addresses(self):
+        """Gets the invoice_addresses of this Invoice.  # noqa: E501
+
+        An array of addresses used to auto calculate sales tax  # noqa: E501
+
+        :return: The invoice_addresses of this Invoice.  # noqa: E501
+        :rtype: list[InvoiceAddress]
+        """
+        return self._invoice_addresses
+
+    @invoice_addresses.setter
+    def invoice_addresses(self, invoice_addresses):
+        """Sets the invoice_addresses of this Invoice.
+
+        An array of addresses used to auto calculate sales tax  # noqa: E501
+
+        :param invoice_addresses: The invoice_addresses of this Invoice.  # noqa: E501
+        :type: list[InvoiceAddress]
+        """
+
+        self._invoice_addresses = invoice_addresses

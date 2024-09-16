@@ -18,6 +18,9 @@ Name | Type | Description | Notes
 **discount_rate** | **float** | Percentage discount being applied to a line item (only supported on  ACCREC invoices – ACC PAY invoices and credit notes in Xero do not support discounts | [optional] 
 **discount_amount** | **float** | Discount amount being applied to a line item. Only supported on ACCREC invoices and quotes. ACCPAY invoices and credit notes in Xero do not support discounts. | [optional] 
 **repeating_invoice_id** | **str** | The Xero identifier for a Repeating Invoice | [optional] 
+**taxability** | **str** | The type of taxability | [optional] 
+**sales_tax_code_id** | **float** | The ID of the sales tax code | [optional] 
+**tax_breakdown** | [**list[TaxBreakdownComponent]**](TaxBreakdownComponent.md) | An array of tax components defined for this line item | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
