@@ -27,11 +27,11 @@ jobs:
                 sudo pip install twine
               working-directory: xero-python
 
-            - name: Build new package version
+            - name: Build Package
               run: python setup.py sdist
               working-directory: xero-python
 
-            - name: Deploy to test PyPi
+            - name: Deploy to PyPi
               env:
                 TWINE_USERNAME: __token__
                 TWINE_PASSWORD: ${{ secrets.PYPI_APIKEY }}
