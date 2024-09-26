@@ -1,12 +1,11 @@
-name: Python Build, Lint
-
+name: Deploy
 on:
-    push:
+    release:
+        types: [published]
 
 jobs:
-    build-test-lint:
+    deploy:
         runs-on: ubuntu-latest
-
         steps:
             - name: Checkout xero-python repo
               uses: actions/checkout@v4
@@ -30,17 +29,17 @@ jobs:
                 pip install -r requirements.txt -r requirements/dev.txt
               working-directory: xero-python
 
-            - name: Run Flake8
-              run: flake8 xero_python
-              working-directory: xero-python
-
-            - name: Build package
+            - name: Build new package version
               run: python setup.py sdist
               working-directory: xero-python
 
-            # - name: Run Test
-            #   run: |
-            #     source venv/bin/activate
-            #     pip install -r requirements/test.txt
-            #     pytest -v
-            #   working-directory: xero-python
+            - name: Verify new package version
+              run: ls -al dist
+              working-directory: xero-python
+
+            - name: Deploy to test PyPi
+              env:
+                TWINE_USERNAME: __token__
+                TWINE_PASSWORD: ${{ secrets.PYPI_APIKEY }}
+              run: twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+              working-directory: xero-python
