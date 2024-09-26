@@ -25,15 +25,10 @@ jobs:
                 source venv/bin/activate
                 pip install --upgrade pip
                 sudo pip install twine
-                pip install -r requirements.txt -r requirements/dev.txt
               working-directory: xero-python
 
             - name: Build new package version
               run: python setup.py sdist
-              working-directory: xero-python
-
-            - name: Verify new package version
-              run: ls -al dist
               working-directory: xero-python
 
             - name: Deploy to test PyPi
