@@ -1,10 +1,10 @@
-name: Deploy
+name: Publish
 on:
     release:
         types: [published]
 
 jobs:
-    deploy:
+    publish:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout xero-python repo
@@ -31,7 +31,7 @@ jobs:
               run: python setup.py sdist
               working-directory: xero-python
 
-            - name: Deploy to PyPi
+            - name: Publish to PyPi
               env:
                 TWINE_USERNAME: __token__
                 TWINE_PASSWORD: ${{ secrets.PYPI_APIKEY }}
