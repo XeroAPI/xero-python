@@ -26,13 +26,14 @@ jobs:
                 source venv/bin/activate
                 pip install --upgrade pip
                 pip install black
-                pip install pip-audit
                 sudo pip install flake8
                 pip install -r requirements.txt -r requirements/dev.txt
               working-directory: xero-python
 
             - name: Run audit on requirements.txt
               run: |
+               pip install pip-audit
+               pip install -r requirements.txt
                pip-audit -r requirements.txt -o json > audit-result.json
                if [ -s audit-result.json ]; then
                 echo "Vulnerabilities found!"
@@ -45,6 +46,8 @@ jobs:
 
             - name: Run audit on dev.txt
               run: |
+               pip install pip-audit
+               pip install -r requirements/dev.txt
                pip-audit -r requirements/dev.txt -o json > audit-result.json
                if [ -s audit-result.json ]; then
                 echo "Vulnerabilities found!"
