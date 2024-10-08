@@ -26,8 +26,33 @@ jobs:
                 source venv/bin/activate
                 pip install --upgrade pip
                 pip install black
+                pip install pip-audit
                 sudo pip install flake8
                 pip install -r requirements.txt -r requirements/dev.txt
+              working-directory: xero-python
+
+            - name: Run audit on requirements.txt
+              run: |
+               pip-audit -r requirements.txt -o json > audit-result.json
+               if [ -s audit-result.json ]; then
+                echo "Vulnerabilities found!"
+                cat audit-result.json
+                exit 1
+               else
+                echo "No vulnerabilities found"
+               fi
+              working-directory: xero-python
+
+            - name: Run audit on dev.txt
+              run: |
+               pip-audit -r requirements/dev.txt -o json > audit-result.json
+               if [ -s audit-result.json ]; then
+                echo "Vulnerabilities found!"
+                cat audit-result.json
+                exit 1
+               else
+                echo "No vulnerabilities found"
+               fi
               working-directory: xero-python
 
             - name: Run Flake8
