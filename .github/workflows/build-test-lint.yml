@@ -33,19 +33,14 @@ jobs:
 
             - name: Run audit on requirements.txt
               run: |
+
                echo "running audit on requirements.txt...."
                pip-audit -r requirements.txt
+
                echo "running audit on dev.txt...."
                pip-audit -r requirements/dev.txt
-              working-directory: xero-python
 
-            # - name: Run audit on dev.txt
-            #   run: |
-            #    pip install pip-audit
-            #    pip install -r requirements/dev.txt
-            #    echo "running audit...."
-            #    pip-audit -r requirements/dev.txt
-            #   working-directory: xero-python
+              working-directory: xero-python
 
             - name: Run Flake8
               run: flake8 xero_python
