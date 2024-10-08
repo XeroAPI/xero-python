@@ -31,7 +31,7 @@ jobs:
                 pip install -r requirements.txt -r requirements/dev.txt
               working-directory: xero-python
 
-            - name: Run audit
+            - name: Check vulnerable packages
               run: pip-audit -r requirements.txt -r requirements/dev.txt
               working-directory: xero-python
 
