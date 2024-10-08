@@ -27,7 +27,7 @@ jobs:
                 pip install --upgrade pip
                 pip install black
                 sudo pip install flake8
-                pip install pip-audit
+                sudo pip install pip-audit
                 pip install -r requirements.txt -r requirements/dev.txt
               working-directory: xero-python
 
