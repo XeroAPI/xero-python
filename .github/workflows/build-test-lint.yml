@@ -27,7 +27,12 @@ jobs:
                 pip install --upgrade pip
                 pip install black
                 sudo pip install flake8
+                sudo pip install pip-audit
                 pip install -r requirements.txt -r requirements/dev.txt
+              working-directory: xero-python
+
+            - name: Check vulnerable packages
+              run: pip-audit -r requirements.txt -r requirements/dev.txt
               working-directory: xero-python
 
             - name: Run Flake8
