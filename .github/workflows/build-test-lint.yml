@@ -31,7 +31,7 @@ jobs:
                 pip install -r requirements.txt -r requirements/dev.txt
               working-directory: xero-python
 
-            - name: Run audit on requirements.txt
+            - name: Run audit
               run: |
 
                echo "running audit on requirements.txt...."
