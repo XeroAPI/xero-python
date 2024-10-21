@@ -2,10 +2,18 @@ name: Publish
 on:
     release:
         types: [published]
+    pull_request:
+        branches:
+            - master
 
 jobs:
     publish:
         runs-on: ubuntu-latest
+        outputs:
+            release_number: ${{steps.get_latest_release_number.outputs.release_tag}}
+        permissions:
+          contents: write
+          pull-requests: write
         steps:
             - name: Checkout xero-python repo
               uses: actions/checkout@v4
@@ -27,6 +35,16 @@ jobs:
                 sudo pip install twine
               working-directory: xero-python
 
+            - name: Fetch Latest release number
+              id: get_latest_release_number
+              run: |
+                latest_version=$(gh release view --json tagName --jq '.tagName')
+                echo "Latest release version is - $latest_version"
+                echo "::set-output name=release_tag::$latest_version"
+              working-directory: xero-python
+              env:
+               GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
             - name: Build Package
               run: python setup.py sdist
               working-directory: xero-python
@@ -34,6 +52,52 @@ jobs:
             - name: Publish to PyPi
               env:
                 TWINE_USERNAME: __token__
-                TWINE_PASSWORD: ${{ secrets.PYPI_APIKEY }}
+                # TWINE_PASSWORD: ${{ secrets.PYPI_APIKEY }}
               run: twine upload --repository-url https://test.pypi.org/legacy/ dist/*
               working-directory: xero-python
+
+    notify-slack-on-success:
+     runs-on: ubuntu-latest
+     needs: publish
+     if: success()
+     steps:
+      - name: Checkout xero-node repo
+        uses: actions/checkout@v4
+        with:
+            repository: XeroAPI/xero-node
+            path: xero-node
+
+      - name: Send slack notification on success
+        uses: ./xero-node/.github/actions/notify-slack
+        with:
+            heading_text: "Publish job has succeeded !"
+            alert_type: "thumbsup"
+            job_status: "Success"
+            XERO_SLACK_WEBHOOK_URL: ${{secrets.XERO_SLACK_WEBHOOK_URL}}
+            job_url: "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}"
+            button_type: "primary"
+            package_version: ${{needs.publish.outputs.release_number}}
+            repo_link: ${{github.server_url}}/${{github.repository}}
+
+    notify-slack-on-failure:
+     runs-on: ubuntu-latest
+     needs: publish
+     if: failure()
+     steps:
+      - name: Checkout xero-node repo
+        uses: actions/checkout@v4
+        with:
+            repository: XeroAPI/xero-node
+            path: xero-node
+
+      - name: Send slack notification on failure
+        uses: ./xero-node/.github/actions/notify-slack
+        with:
+            heading_text: "Publish job has failed !"
+            alert_type: "alert"
+            job_status: "Failed"
+            XERO_SLACK_WEBHOOK_URL: ${{secrets.XERO_SLACK_WEBHOOK_URL}}
+            job_url: "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}"
+            button_type: "danger"
+            package_version: ${{needs.publish.outputs.release_number}}
+            repo_link: ${{github.server_url}}/${{github.repository}}
