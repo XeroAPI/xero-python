@@ -61,14 +61,14 @@ jobs:
      needs: publish
      if: success()
      steps:
-      - name: Checkout xero-node repo
+      - name: Checkout xero-pythonrepo
         uses: actions/checkout@v4
         with:
-            repository: XeroAPI/xero-node
-            path: xero-node
+            repository: XeroAPI/xero-python
+            path: xero-python
 
       - name: Send slack notification on success
-        uses: ./xero-node/.github/actions/notify-slack
+        uses: ./xero-python/.github/actions/notify-slack
         with:
             heading_text: "Publish job has succeeded !"
             alert_type: "thumbsup"
@@ -84,14 +84,14 @@ jobs:
      needs: publish
      if: failure()
      steps:
-      - name: Checkout xero-node repo
+      - name: Checkout xero-python repo
         uses: actions/checkout@v4
         with:
-            repository: XeroAPI/xero-node
-            path: xero-node
+            repository: XeroAPI/xero-python
+            path: xero-python
 
       - name: Send slack notification on failure
-        uses: ./xero-node/.github/actions/notify-slack
+        uses: ./xero-python/.github/actions/notify-slack
         with:
             heading_text: "Publish job has failed !"
             alert_type: "alert"
