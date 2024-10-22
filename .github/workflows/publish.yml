@@ -35,5 +35,5 @@ jobs:
               env:
                 TWINE_USERNAME: __token__
                 TWINE_PASSWORD: ${{ secrets.PYPI_APIKEY }}
-              run: twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+              run: twine upload dist/*
               working-directory: xero-python
