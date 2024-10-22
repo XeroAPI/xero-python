@@ -1,3 +1,5 @@
+#!/bin/bash
+
 prism mock https://raw.githubusercontent.com/XeroAPI/Xero-OpenAPI/refs/heads/master/xero_accounting.yaml --host 127.0.0.1 --port 4010 &
 prism mock https://raw.githubusercontent.com/XeroAPI/Xero-OpenAPI/refs/heads/master/xero-app-store.yaml --host 127.0.0.1 --port 4011 &
 prism mock https://raw.githubusercontent.com/XeroAPI/Xero-OpenAPI/refs/heads/master/xero_assets.yaml --host 127.0.0.1 --port 4012 &
