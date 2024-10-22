@@ -43,6 +43,14 @@ jobs:
               run: python setup.py sdist
               working-directory: xero-python
 
+            - name: Install Node.js
+              uses: actions/setup-node@v2
+              with:
+                node-version: 20
+
+            - name: Install Prism
+              run: npm install -g @stoplight/prism-cli
+
             - name: Start PRISM Server
               run: sudo ./start-prism.sh
               working-directory: xero-python/tests/utils
