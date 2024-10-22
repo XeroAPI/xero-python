@@ -43,9 +43,16 @@ jobs:
               run: python setup.py sdist
               working-directory: xero-python
 
-            # - name: Run Test
-            #   run: |
-            #     source venv/bin/activate
-            #     pip install -r requirements/test.txt
-            #     pytest -v
-            #   working-directory: xero-python
+            - name: Start PRISM Server
+              run: sudo ./start-prism.sh
+              working-directory: xero-python/tests/utils
+
+            - name: Run Test
+              run: |
+                source venv/bin/activate
+                pytest -v
+              working-directory: xero-python
+
+            - name: Stop PRISM
+              run: pkill -f prism
+              working-directory: xero-python
