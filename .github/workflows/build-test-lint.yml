@@ -51,6 +51,9 @@ jobs:
             - name: Install Prism
               run: npm install -g @stoplight/prism-cli
 
+            - name: CHeck PRISM
+              run: prism --version
+
             - name: Start PRISM Server
               run: sudo ./start-prism.sh
               working-directory: xero-python/tests/utils
