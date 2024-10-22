@@ -2,6 +2,9 @@ name: Publish
 on:
     release:
         types: [published]
+    pull_request:
+        branches:
+            - master
 
 jobs:
     publish:
@@ -46,12 +49,12 @@ jobs:
               run: python setup.py sdist
               working-directory: xero-python
 
-            - name: Publish to PyPi
-              env:
-                TWINE_USERNAME: __token__
-                TWINE_PASSWORD: ${{ secrets.PYPI_APIKEY }}
-              run: twine upload --repository-url https://test.pypi.org/legacy/ dist/*
-              working-directory: xero-python
+            # - name: Publish to PyPi
+            #   env:
+            #     TWINE_USERNAME: __token__
+            #     # TWINE_PASSWORD: ${{ secrets.PYPI_APIKEY }}
+            #   run: twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+            #   working-directory: xero-python
 
     notify-slack-on-success:
      runs-on: ubuntu-latest
