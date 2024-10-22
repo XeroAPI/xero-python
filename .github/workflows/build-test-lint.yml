@@ -55,7 +55,7 @@ jobs:
               run: prism --version
 
             - name: Start PRISM Server
-              run: sudo ./start-prism.sh
+              run: ./start-prism.sh
               working-directory: xero-python/tests/utils
 
             - name: Run Test
