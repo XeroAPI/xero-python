@@ -2,6 +2,7 @@ name: Publish
 on:
     release:
         types: [published]
+    push:
 
 jobs:
     publish:
@@ -35,11 +36,5 @@ jobs:
               env:
                 TWINE_USERNAME: __token__
                 TWINE_PASSWORD: ${{ secrets.PYPI_APIKEY }}
-              run: |
-                if [[ "${{ github.event.release.name }}" == *"alpha"* || "${{ github.event.release.name }}" == *"beta"* ]]; then
-                    TWINE_PASSWORD: ${{ secrets.PYPI_APIKEY }} twine upload --repository-url https://test.pypi.org/legacy/ dist/* --verbose
-                else
-                    TWINE_PASSWORD: ${{ secrets.PYPI_APIKEY }}
-                    twine upload dist/* --verbose
-                fi
+              run: twine upload dist/* --verbose
               working-directory: xero-python
