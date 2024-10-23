@@ -54,7 +54,7 @@ jobs:
             - name: Start PRISM Server
               run: |
                 ./start-prism.sh & echo $! > prism_pid.txt
-                sleep 10
+                sleep 15
               working-directory: xero-python/tests/utils
 
             - name: Run Test
@@ -63,7 +63,6 @@ jobs:
                 source venv/bin/activate
                 pytest -v
               working-directory: xero-python
-              continue-on-error: true
 
             - name: Stop PRISM
               if: success() || failure()
