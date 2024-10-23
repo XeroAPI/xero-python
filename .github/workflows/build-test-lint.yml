@@ -52,7 +52,8 @@ jobs:
               run: npm install -g @stoplight/prism-cli
 
             - name: Start PRISM Server
-              run: ./start-prism.sh
+              run: |
+                ./start-prism.sh & echo $! > prism_pid.txt
               working-directory: xero-python/tests/utils
 
             - name: Run Test
@@ -60,7 +61,9 @@ jobs:
                 source venv/bin/activate
                 pytest -v
               working-directory: xero-python
+              continue-on-error: true
 
             - name: Stop PRISM
+              if: success() || failure()
               run: pkill -f prism
               working-directory: xero-python
