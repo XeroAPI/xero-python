@@ -53,13 +53,14 @@ jobs:
 
             - name: Start PRISM Server
               run: |
-                ./start-prism.sh & echo $! > prism_pid.txt
+                ./start-prism.sh
+                # & echo $! > prism_pid.txt
                 sleep 15
               working-directory: xero-python/tests/utils
 
             - name: Run Test
               run: |
-                python -m venv venv
+                # python -m venv venv
                 source venv/bin/activate
                 pytest -v
               working-directory: xero-python
