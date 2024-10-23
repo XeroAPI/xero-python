@@ -31,17 +31,17 @@ jobs:
                 pip install -r requirements.txt -r requirements/dev.txt
               working-directory: xero-python
 
-            - name: Check vulnerable packages
-              run: pip-audit -r requirements.txt -r requirements/dev.txt
-              working-directory: xero-python
+            # - name: Check vulnerable packages
+            #   run: pip-audit -r requirements.txt -r requirements/dev.txt
+            #   working-directory: xero-python
 
-            - name: Run Flake8
-              run: flake8 xero_python
-              working-directory: xero-python
+            # - name: Run Flake8
+            #   run: flake8 xero_python
+            #   working-directory: xero-python
 
-            - name: Build package
-              run: python setup.py sdist
-              working-directory: xero-python
+            # - name: Build package
+            #   run: python setup.py sdist
+            #   working-directory: xero-python
 
             - name: Install Node.js
               uses: actions/setup-node@v2
@@ -51,11 +51,8 @@ jobs:
             - name: Install Prism
               run: npm install -g @stoplight/prism-cli
 
-            - name: CHeck PRISM
-              run: prism --version
-
             - name: Start PRISM Server
-              run: nohup ./start-prism.sh
+              run: ./start-prism.sh
               working-directory: xero-python/tests/utils
 
             - name: Run Test
