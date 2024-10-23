@@ -9,5 +9,3 @@ prism mock https://raw.githubusercontent.com/XeroAPI/Xero-OpenAPI/refs/heads/mas
 prism mock https://raw.githubusercontent.com/XeroAPI/Xero-OpenAPI/refs/heads/master/xero-payroll-nz.yaml --host 127.0.0.1 --port 4016 &
 prism mock https://raw.githubusercontent.com/XeroAPI/Xero-OpenAPI/refs/heads/master/xero-payroll-au.yaml --host 127.0.0.1 --port 4017 &
 prism mock https://raw.githubusercontent.com/XeroAPI/Xero-OpenAPI/refs/heads/master/xero-projects.yaml --host 127.0.0.1 --port 4018
-
-disown
