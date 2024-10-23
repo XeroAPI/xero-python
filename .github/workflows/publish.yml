@@ -45,16 +45,16 @@ jobs:
               env:
                GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
-            - name: Build Package
-              run: python setup.py sdist
-              working-directory: xero-python
+            # - name: Build Package
+            #   run: python setup.py sdist
+            #   working-directory: xero-python
 
-            - name: Publish to PyPi
-              env:
-                TWINE_USERNAME: __token__
-                TWINE_PASSWORD: ${{ secrets.PYPI_APIKEY }}
-              run: twine upload dist/*
-              working-directory: xero-python
+            # - name: Publish to PyPi
+            #   env:
+            #     TWINE_USERNAME: __token__
+            #     TWINE_PASSWORD: ${{ secrets.PYPI_APIKEY }}
+            #   run: twine upload dist/*
+            #   working-directory: xero-python
 
     notify-slack-on-success:
      runs-on: ubuntu-latest
