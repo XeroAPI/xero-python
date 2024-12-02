@@ -278,7 +278,6 @@ class OAuth2Token:
         expires_at=None,
         refresh_token=None,
         id_token=None,
-        **kwargs
     ):
         """
         Set new auth2 token details
