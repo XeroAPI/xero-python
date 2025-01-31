@@ -198,7 +198,7 @@ class CurrentStatementResponse(BaseModel):
     def import_source_type(self):
         """Gets the import_source_type of this CurrentStatementResponse.  # noqa: E501
 
-        Looking at the most recent bank statement, this field indicates the source of the data (direct bank feed, indirect bank feed, file upload, or manual keying).  # noqa: E501
+        Looking at the most recent bank statement, this field indicates the source of the data (direct bank feed, file upload, or manual keying).  # noqa: E501
 
         :return: The import_source_type of this CurrentStatementResponse.  # noqa: E501
         :rtype: str
@@ -209,7 +209,7 @@ class CurrentStatementResponse(BaseModel):
     def import_source_type(self, import_source_type):
         """Sets the import_source_type of this CurrentStatementResponse.
 
-        Looking at the most recent bank statement, this field indicates the source of the data (direct bank feed, indirect bank feed, file upload, or manual keying).  # noqa: E501
+        Looking at the most recent bank statement, this field indicates the source of the data (direct bank feed, file upload, or manual keying).  # noqa: E501
 
         :param import_source_type: The import_source_type of this CurrentStatementResponse.  # noqa: E501
         :type: str

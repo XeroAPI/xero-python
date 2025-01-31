@@ -36,9 +36,12 @@ class EmployeeLeaveSetup(BaseModel):
         "negative_annual_leave_balance_paid_amount": "float",
         "sick_leave_hours_to_accrue_annually": "float",
         "sick_leave_maximum_hours_to_accrue": "float",
+        "sick_leave_to_accrue_annually": "float",
+        "sick_leave_maximum_to_accrue": "float",
         "sick_leave_opening_balance": "float",
         "sick_leave_schedule_of_accrual": "str",
         "sick_leave_anniversary_date": "date",
+        "annual_leave_anniversary_date": "date",
     }
 
     attribute_map = {
@@ -48,9 +51,12 @@ class EmployeeLeaveSetup(BaseModel):
         "negative_annual_leave_balance_paid_amount": "negativeAnnualLeaveBalancePaidAmount",
         "sick_leave_hours_to_accrue_annually": "sickLeaveHoursToAccrueAnnually",
         "sick_leave_maximum_hours_to_accrue": "sickLeaveMaximumHoursToAccrue",
+        "sick_leave_to_accrue_annually": "SickLeaveToAccrueAnnually",
+        "sick_leave_maximum_to_accrue": "SickLeaveMaximumToAccrue",
         "sick_leave_opening_balance": "sickLeaveOpeningBalance",
         "sick_leave_schedule_of_accrual": "SickLeaveScheduleOfAccrual",
         "sick_leave_anniversary_date": "SickLeaveAnniversaryDate",
+        "annual_leave_anniversary_date": "AnnualLeaveAnniversaryDate",
     }
 
     def __init__(
@@ -61,9 +67,12 @@ class EmployeeLeaveSetup(BaseModel):
         negative_annual_leave_balance_paid_amount=None,
         sick_leave_hours_to_accrue_annually=None,
         sick_leave_maximum_hours_to_accrue=None,
+        sick_leave_to_accrue_annually=None,
+        sick_leave_maximum_to_accrue=None,
         sick_leave_opening_balance=None,
         sick_leave_schedule_of_accrual=None,
         sick_leave_anniversary_date=None,
+        annual_leave_anniversary_date=None,
     ):  # noqa: E501
         """EmployeeLeaveSetup - a model defined in OpenAPI"""  # noqa: E501
 
@@ -73,9 +82,12 @@ class EmployeeLeaveSetup(BaseModel):
         self._negative_annual_leave_balance_paid_amount = None
         self._sick_leave_hours_to_accrue_annually = None
         self._sick_leave_maximum_hours_to_accrue = None
+        self._sick_leave_to_accrue_annually = None
+        self._sick_leave_maximum_to_accrue = None
         self._sick_leave_opening_balance = None
         self._sick_leave_schedule_of_accrual = None
         self._sick_leave_anniversary_date = None
+        self._annual_leave_anniversary_date = None
         self.discriminator = None
 
         if include_holiday_pay is not None:
@@ -94,12 +106,18 @@ class EmployeeLeaveSetup(BaseModel):
             )
         if sick_leave_maximum_hours_to_accrue is not None:
             self.sick_leave_maximum_hours_to_accrue = sick_leave_maximum_hours_to_accrue
+        if sick_leave_to_accrue_annually is not None:
+            self.sick_leave_to_accrue_annually = sick_leave_to_accrue_annually
+        if sick_leave_maximum_to_accrue is not None:
+            self.sick_leave_maximum_to_accrue = sick_leave_maximum_to_accrue
         if sick_leave_opening_balance is not None:
             self.sick_leave_opening_balance = sick_leave_opening_balance
         if sick_leave_schedule_of_accrual is not None:
             self.sick_leave_schedule_of_accrual = sick_leave_schedule_of_accrual
         if sick_leave_anniversary_date is not None:
             self.sick_leave_anniversary_date = sick_leave_anniversary_date
+        if annual_leave_anniversary_date is not None:
+            self.annual_leave_anniversary_date = annual_leave_anniversary_date
 
     @property
     def include_holiday_pay(self):
@@ -201,7 +219,7 @@ class EmployeeLeaveSetup(BaseModel):
     def sick_leave_hours_to_accrue_annually(self):
         """Gets the sick_leave_hours_to_accrue_annually of this EmployeeLeaveSetup.  # noqa: E501
 
-        Number of hours accrued annually for sick leave. Multiply the number of days they're entitled to by the hours worked per day  # noqa: E501
+        Deprecated use SickLeaveToAccrueAnnually  # noqa: E501
 
         :return: The sick_leave_hours_to_accrue_annually of this EmployeeLeaveSetup.  # noqa: E501
         :rtype: float
@@ -212,7 +230,7 @@ class EmployeeLeaveSetup(BaseModel):
     def sick_leave_hours_to_accrue_annually(self, sick_leave_hours_to_accrue_annually):
         """Sets the sick_leave_hours_to_accrue_annually of this EmployeeLeaveSetup.
 
-        Number of hours accrued annually for sick leave. Multiply the number of days they're entitled to by the hours worked per day  # noqa: E501
+        Deprecated use SickLeaveToAccrueAnnually  # noqa: E501
 
         :param sick_leave_hours_to_accrue_annually: The sick_leave_hours_to_accrue_annually of this EmployeeLeaveSetup.  # noqa: E501
         :type: float
@@ -224,7 +242,7 @@ class EmployeeLeaveSetup(BaseModel):
     def sick_leave_maximum_hours_to_accrue(self):
         """Gets the sick_leave_maximum_hours_to_accrue of this EmployeeLeaveSetup.  # noqa: E501
 
-        Maximum number of hours accrued annually for sick leave. Multiply the maximum days they can accrue by the hours worked per day  # noqa: E501
+        Deprecated use SickLeaveMaximumToAccrue  # noqa: E501
 
         :return: The sick_leave_maximum_hours_to_accrue of this EmployeeLeaveSetup.  # noqa: E501
         :rtype: float
@@ -235,13 +253,59 @@ class EmployeeLeaveSetup(BaseModel):
     def sick_leave_maximum_hours_to_accrue(self, sick_leave_maximum_hours_to_accrue):
         """Sets the sick_leave_maximum_hours_to_accrue of this EmployeeLeaveSetup.
 
-        Maximum number of hours accrued annually for sick leave. Multiply the maximum days they can accrue by the hours worked per day  # noqa: E501
+        Deprecated use SickLeaveMaximumToAccrue  # noqa: E501
 
         :param sick_leave_maximum_hours_to_accrue: The sick_leave_maximum_hours_to_accrue of this EmployeeLeaveSetup.  # noqa: E501
         :type: float
         """
 
         self._sick_leave_maximum_hours_to_accrue = sick_leave_maximum_hours_to_accrue
+
+    @property
+    def sick_leave_to_accrue_annually(self):
+        """Gets the sick_leave_to_accrue_annually of this EmployeeLeaveSetup.  # noqa: E501
+
+        Number of units accrued annually for sick leave. The type of units is determined by the property \"TypeOfUnitsToAccrue\" on the \"Sick Leave\" leave type  # noqa: E501
+
+        :return: The sick_leave_to_accrue_annually of this EmployeeLeaveSetup.  # noqa: E501
+        :rtype: float
+        """
+        return self._sick_leave_to_accrue_annually
+
+    @sick_leave_to_accrue_annually.setter
+    def sick_leave_to_accrue_annually(self, sick_leave_to_accrue_annually):
+        """Sets the sick_leave_to_accrue_annually of this EmployeeLeaveSetup.
+
+        Number of units accrued annually for sick leave. The type of units is determined by the property \"TypeOfUnitsToAccrue\" on the \"Sick Leave\" leave type  # noqa: E501
+
+        :param sick_leave_to_accrue_annually: The sick_leave_to_accrue_annually of this EmployeeLeaveSetup.  # noqa: E501
+        :type: float
+        """
+
+        self._sick_leave_to_accrue_annually = sick_leave_to_accrue_annually
+
+    @property
+    def sick_leave_maximum_to_accrue(self):
+        """Gets the sick_leave_maximum_to_accrue of this EmployeeLeaveSetup.  # noqa: E501
+
+        Maximum number of units accrued annually for sick leave. The type of units is determined by the property \"TypeOfUnitsToAccrue\" on the \"Sick Leave\" leave type  # noqa: E501
+
+        :return: The sick_leave_maximum_to_accrue of this EmployeeLeaveSetup.  # noqa: E501
+        :rtype: float
+        """
+        return self._sick_leave_maximum_to_accrue
+
+    @sick_leave_maximum_to_accrue.setter
+    def sick_leave_maximum_to_accrue(self, sick_leave_maximum_to_accrue):
+        """Sets the sick_leave_maximum_to_accrue of this EmployeeLeaveSetup.
+
+        Maximum number of units accrued annually for sick leave. The type of units is determined by the property \"TypeOfUnitsToAccrue\" on the \"Sick Leave\" leave type  # noqa: E501
+
+        :param sick_leave_maximum_to_accrue: The sick_leave_maximum_to_accrue of this EmployeeLeaveSetup.  # noqa: E501
+        :type: float
+        """
+
+        self._sick_leave_maximum_to_accrue = sick_leave_maximum_to_accrue
 
     @property
     def sick_leave_opening_balance(self):
@@ -293,7 +357,7 @@ class EmployeeLeaveSetup(BaseModel):
     def sick_leave_anniversary_date(self):
         """Gets the sick_leave_anniversary_date of this EmployeeLeaveSetup.  # noqa: E501
 
-        If Sick Leave Schedule of Accrual is \"OnAnniversaryDate\", this is the date when entitled to Sick Leave  # noqa: E501
+        If Sick Leave Schedule of Accrual is \"OnAnniversaryDate\", this is the date when entitled to Sick Leave. When null the Employee's start date is used as the anniversary date  # noqa: E501
 
         :return: The sick_leave_anniversary_date of this EmployeeLeaveSetup.  # noqa: E501
         :rtype: date
@@ -304,10 +368,33 @@ class EmployeeLeaveSetup(BaseModel):
     def sick_leave_anniversary_date(self, sick_leave_anniversary_date):
         """Sets the sick_leave_anniversary_date of this EmployeeLeaveSetup.
 
-        If Sick Leave Schedule of Accrual is \"OnAnniversaryDate\", this is the date when entitled to Sick Leave  # noqa: E501
+        If Sick Leave Schedule of Accrual is \"OnAnniversaryDate\", this is the date when entitled to Sick Leave. When null the Employee's start date is used as the anniversary date  # noqa: E501
 
         :param sick_leave_anniversary_date: The sick_leave_anniversary_date of this EmployeeLeaveSetup.  # noqa: E501
         :type: date
         """
 
         self._sick_leave_anniversary_date = sick_leave_anniversary_date
+
+    @property
+    def annual_leave_anniversary_date(self):
+        """Gets the annual_leave_anniversary_date of this EmployeeLeaveSetup.  # noqa: E501
+
+        The first date the employee will accrue Annual Leave. When null the Employee's start date is used as the anniversary date  # noqa: E501
+
+        :return: The annual_leave_anniversary_date of this EmployeeLeaveSetup.  # noqa: E501
+        :rtype: date
+        """
+        return self._annual_leave_anniversary_date
+
+    @annual_leave_anniversary_date.setter
+    def annual_leave_anniversary_date(self, annual_leave_anniversary_date):
+        """Sets the annual_leave_anniversary_date of this EmployeeLeaveSetup.
+
+        The first date the employee will accrue Annual Leave. When null the Employee's start date is used as the anniversary date  # noqa: E501
+
+        :param annual_leave_anniversary_date: The annual_leave_anniversary_date of this EmployeeLeaveSetup.  # noqa: E501
+        :type: date
+        """
+
+        self._annual_leave_anniversary_date = annual_leave_anniversary_date

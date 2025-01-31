@@ -33,6 +33,9 @@ class LeavePeriod(BaseModel):
         "period_start_date": "date",
         "period_end_date": "date",
         "number_of_units": "float",
+        "number_of_units_taken": "float",
+        "type_of_units": "str",
+        "type_of_units_taken": "str",
         "period_status": "str",
     }
 
@@ -40,6 +43,9 @@ class LeavePeriod(BaseModel):
         "period_start_date": "periodStartDate",
         "period_end_date": "periodEndDate",
         "number_of_units": "numberOfUnits",
+        "number_of_units_taken": "numberOfUnitsTaken",
+        "type_of_units": "typeOfUnits",
+        "type_of_units_taken": "typeOfUnitsTaken",
         "period_status": "periodStatus",
     }
 
@@ -48,6 +54,9 @@ class LeavePeriod(BaseModel):
         period_start_date=None,
         period_end_date=None,
         number_of_units=None,
+        number_of_units_taken=None,
+        type_of_units=None,
+        type_of_units_taken=None,
         period_status=None,
     ):  # noqa: E501
         """LeavePeriod - a model defined in OpenAPI"""  # noqa: E501
@@ -55,6 +64,9 @@ class LeavePeriod(BaseModel):
         self._period_start_date = None
         self._period_end_date = None
         self._number_of_units = None
+        self._number_of_units_taken = None
+        self._type_of_units = None
+        self._type_of_units_taken = None
         self._period_status = None
         self.discriminator = None
 
@@ -64,6 +76,12 @@ class LeavePeriod(BaseModel):
             self.period_end_date = period_end_date
         if number_of_units is not None:
             self.number_of_units = number_of_units
+        if number_of_units_taken is not None:
+            self.number_of_units_taken = number_of_units_taken
+        if type_of_units is not None:
+            self.type_of_units = type_of_units
+        if type_of_units_taken is not None:
+            self.type_of_units_taken = type_of_units_taken
         if period_status is not None:
             self.period_status = period_status
 
@@ -137,10 +155,79 @@ class LeavePeriod(BaseModel):
         self._number_of_units = number_of_units
 
     @property
+    def number_of_units_taken(self):
+        """Gets the number_of_units_taken of this LeavePeriod.  # noqa: E501
+
+        The number of units taken for the leave  # noqa: E501
+
+        :return: The number_of_units_taken of this LeavePeriod.  # noqa: E501
+        :rtype: float
+        """
+        return self._number_of_units_taken
+
+    @number_of_units_taken.setter
+    def number_of_units_taken(self, number_of_units_taken):
+        """Sets the number_of_units_taken of this LeavePeriod.
+
+        The number of units taken for the leave  # noqa: E501
+
+        :param number_of_units_taken: The number_of_units_taken of this LeavePeriod.  # noqa: E501
+        :type: float
+        """
+
+        self._number_of_units_taken = number_of_units_taken
+
+    @property
+    def type_of_units(self):
+        """Gets the type_of_units of this LeavePeriod.  # noqa: E501
+
+        The type of units paid for the leave  # noqa: E501
+
+        :return: The type_of_units of this LeavePeriod.  # noqa: E501
+        :rtype: str
+        """
+        return self._type_of_units
+
+    @type_of_units.setter
+    def type_of_units(self, type_of_units):
+        """Sets the type_of_units of this LeavePeriod.
+
+        The type of units paid for the leave  # noqa: E501
+
+        :param type_of_units: The type_of_units of this LeavePeriod.  # noqa: E501
+        :type: str
+        """
+
+        self._type_of_units = type_of_units
+
+    @property
+    def type_of_units_taken(self):
+        """Gets the type_of_units_taken of this LeavePeriod.  # noqa: E501
+
+        The type of units taken for the leave  # noqa: E501
+
+        :return: The type_of_units_taken of this LeavePeriod.  # noqa: E501
+        :rtype: str
+        """
+        return self._type_of_units_taken
+
+    @type_of_units_taken.setter
+    def type_of_units_taken(self, type_of_units_taken):
+        """Sets the type_of_units_taken of this LeavePeriod.
+
+        The type of units taken for the leave  # noqa: E501
+
+        :param type_of_units_taken: The type_of_units_taken of this LeavePeriod.  # noqa: E501
+        :type: str
+        """
+
+        self._type_of_units_taken = type_of_units_taken
+
+    @property
     def period_status(self):
         """Gets the period_status of this LeavePeriod.  # noqa: E501
 
-        Period Status  # noqa: E501
+        Status of leave  # noqa: E501
 
         :return: The period_status of this LeavePeriod.  # noqa: E501
         :rtype: str
@@ -151,12 +238,12 @@ class LeavePeriod(BaseModel):
     def period_status(self, period_status):
         """Sets the period_status of this LeavePeriod.
 
-        Period Status  # noqa: E501
+        Status of leave  # noqa: E501
 
         :param period_status: The period_status of this LeavePeriod.  # noqa: E501
         :type: str
         """
-        allowed_values = ["Approved", "Completed", "None"]  # noqa: E501
+        allowed_values = ["Approved", "Completed", "Estimated", "None"]  # noqa: E501
 
         if period_status:
             if period_status not in allowed_values:
