@@ -33,8 +33,11 @@ class EmployeeLeaveType(BaseModel):
         "leave_type_id": "str",
         "schedule_of_accrual": "str",
         "hours_accrued_annually": "float",
+        "units_accrued_annually": "float",
+        "type_of_units_to_accrue": "str",
         "maximum_to_accrue": "float",
         "opening_balance": "float",
+        "opening_balance_type_of_units": "str",
         "rate_accrued_hourly": "float",
         "percentage_of_gross_earnings": "float",
         "include_holiday_pay_every_pay": "bool",
@@ -47,8 +50,11 @@ class EmployeeLeaveType(BaseModel):
         "leave_type_id": "leaveTypeID",
         "schedule_of_accrual": "scheduleOfAccrual",
         "hours_accrued_annually": "hoursAccruedAnnually",
+        "units_accrued_annually": "UnitsAccruedAnnually",
+        "type_of_units_to_accrue": "typeOfUnitsToAccrue",
         "maximum_to_accrue": "maximumToAccrue",
         "opening_balance": "openingBalance",
+        "opening_balance_type_of_units": "openingBalanceTypeOfUnits",
         "rate_accrued_hourly": "rateAccruedHourly",
         "percentage_of_gross_earnings": "percentageOfGrossEarnings",
         "include_holiday_pay_every_pay": "includeHolidayPayEveryPay",
@@ -62,8 +68,11 @@ class EmployeeLeaveType(BaseModel):
         leave_type_id=None,
         schedule_of_accrual=None,
         hours_accrued_annually=None,
+        units_accrued_annually=None,
+        type_of_units_to_accrue=None,
         maximum_to_accrue=None,
         opening_balance=None,
+        opening_balance_type_of_units=None,
         rate_accrued_hourly=None,
         percentage_of_gross_earnings=None,
         include_holiday_pay_every_pay=None,
@@ -76,8 +85,11 @@ class EmployeeLeaveType(BaseModel):
         self._leave_type_id = None
         self._schedule_of_accrual = None
         self._hours_accrued_annually = None
+        self._units_accrued_annually = None
+        self._type_of_units_to_accrue = None
         self._maximum_to_accrue = None
         self._opening_balance = None
+        self._opening_balance_type_of_units = None
         self._rate_accrued_hourly = None
         self._percentage_of_gross_earnings = None
         self._include_holiday_pay_every_pay = None
@@ -92,10 +104,16 @@ class EmployeeLeaveType(BaseModel):
             self.schedule_of_accrual = schedule_of_accrual
         if hours_accrued_annually is not None:
             self.hours_accrued_annually = hours_accrued_annually
+        if units_accrued_annually is not None:
+            self.units_accrued_annually = units_accrued_annually
+        if type_of_units_to_accrue is not None:
+            self.type_of_units_to_accrue = type_of_units_to_accrue
         if maximum_to_accrue is not None:
             self.maximum_to_accrue = maximum_to_accrue
         if opening_balance is not None:
             self.opening_balance = opening_balance
+        if opening_balance_type_of_units is not None:
+            self.opening_balance_type_of_units = opening_balance_type_of_units
         if rate_accrued_hourly is not None:
             self.rate_accrued_hourly = rate_accrued_hourly
         if percentage_of_gross_earnings is not None:
@@ -174,7 +192,7 @@ class EmployeeLeaveType(BaseModel):
     def hours_accrued_annually(self):
         """Gets the hours_accrued_annually of this EmployeeLeaveType.  # noqa: E501
 
-        The number of hours accrued for the leave annually. This is 0 when the scheduleOfAccrual chosen is \"OnHourWorked\"  # noqa: E501
+        Deprecated use UnitsAccruedAnnually  # noqa: E501
 
         :return: The hours_accrued_annually of this EmployeeLeaveType.  # noqa: E501
         :rtype: float
@@ -185,7 +203,7 @@ class EmployeeLeaveType(BaseModel):
     def hours_accrued_annually(self, hours_accrued_annually):
         """Sets the hours_accrued_annually of this EmployeeLeaveType.
 
-        The number of hours accrued for the leave annually. This is 0 when the scheduleOfAccrual chosen is \"OnHourWorked\"  # noqa: E501
+        Deprecated use UnitsAccruedAnnually  # noqa: E501
 
         :param hours_accrued_annually: The hours_accrued_annually of this EmployeeLeaveType.  # noqa: E501
         :type: float
@@ -194,10 +212,56 @@ class EmployeeLeaveType(BaseModel):
         self._hours_accrued_annually = hours_accrued_annually
 
     @property
+    def units_accrued_annually(self):
+        """Gets the units_accrued_annually of this EmployeeLeaveType.  # noqa: E501
+
+        The number of units accrued for the leave annually. This is 0 when the ScheduleOfAccrual chosen is \"NoAccruals\"  # noqa: E501
+
+        :return: The units_accrued_annually of this EmployeeLeaveType.  # noqa: E501
+        :rtype: float
+        """
+        return self._units_accrued_annually
+
+    @units_accrued_annually.setter
+    def units_accrued_annually(self, units_accrued_annually):
+        """Sets the units_accrued_annually of this EmployeeLeaveType.
+
+        The number of units accrued for the leave annually. This is 0 when the ScheduleOfAccrual chosen is \"NoAccruals\"  # noqa: E501
+
+        :param units_accrued_annually: The units_accrued_annually of this EmployeeLeaveType.  # noqa: E501
+        :type: float
+        """
+
+        self._units_accrued_annually = units_accrued_annually
+
+    @property
+    def type_of_units_to_accrue(self):
+        """Gets the type_of_units_to_accrue of this EmployeeLeaveType.  # noqa: E501
+
+        The type of units accrued for the leave annually  # noqa: E501
+
+        :return: The type_of_units_to_accrue of this EmployeeLeaveType.  # noqa: E501
+        :rtype: str
+        """
+        return self._type_of_units_to_accrue
+
+    @type_of_units_to_accrue.setter
+    def type_of_units_to_accrue(self, type_of_units_to_accrue):
+        """Sets the type_of_units_to_accrue of this EmployeeLeaveType.
+
+        The type of units accrued for the leave annually  # noqa: E501
+
+        :param type_of_units_to_accrue: The type_of_units_to_accrue of this EmployeeLeaveType.  # noqa: E501
+        :type: str
+        """
+
+        self._type_of_units_to_accrue = type_of_units_to_accrue
+
+    @property
     def maximum_to_accrue(self):
         """Gets the maximum_to_accrue of this EmployeeLeaveType.  # noqa: E501
 
-        The maximum number of hours that can be accrued for the leave  # noqa: E501
+        The maximum number of units that can be accrued for the leave  # noqa: E501
 
         :return: The maximum_to_accrue of this EmployeeLeaveType.  # noqa: E501
         :rtype: float
@@ -208,7 +272,7 @@ class EmployeeLeaveType(BaseModel):
     def maximum_to_accrue(self, maximum_to_accrue):
         """Sets the maximum_to_accrue of this EmployeeLeaveType.
 
-        The maximum number of hours that can be accrued for the leave  # noqa: E501
+        The maximum number of units that can be accrued for the leave  # noqa: E501
 
         :param maximum_to_accrue: The maximum_to_accrue of this EmployeeLeaveType.  # noqa: E501
         :type: float
@@ -220,7 +284,7 @@ class EmployeeLeaveType(BaseModel):
     def opening_balance(self):
         """Gets the opening_balance of this EmployeeLeaveType.  # noqa: E501
 
-        The initial number of hours assigned when the leave was added to the employee  # noqa: E501
+        The initial number of units assigned when the leave was added to the employee  # noqa: E501
 
         :return: The opening_balance of this EmployeeLeaveType.  # noqa: E501
         :rtype: float
@@ -231,13 +295,36 @@ class EmployeeLeaveType(BaseModel):
     def opening_balance(self, opening_balance):
         """Sets the opening_balance of this EmployeeLeaveType.
 
-        The initial number of hours assigned when the leave was added to the employee  # noqa: E501
+        The initial number of units assigned when the leave was added to the employee  # noqa: E501
 
         :param opening_balance: The opening_balance of this EmployeeLeaveType.  # noqa: E501
         :type: float
         """
 
         self._opening_balance = opening_balance
+
+    @property
+    def opening_balance_type_of_units(self):
+        """Gets the opening_balance_type_of_units of this EmployeeLeaveType.  # noqa: E501
+
+        The type of units for the opening balance  # noqa: E501
+
+        :return: The opening_balance_type_of_units of this EmployeeLeaveType.  # noqa: E501
+        :rtype: str
+        """
+        return self._opening_balance_type_of_units
+
+    @opening_balance_type_of_units.setter
+    def opening_balance_type_of_units(self, opening_balance_type_of_units):
+        """Sets the opening_balance_type_of_units of this EmployeeLeaveType.
+
+        The type of units for the opening balance  # noqa: E501
+
+        :param opening_balance_type_of_units: The opening_balance_type_of_units of this EmployeeLeaveType.  # noqa: E501
+        :type: str
+        """
+
+        self._opening_balance_type_of_units = opening_balance_type_of_units
 
     @property
     def rate_accrued_hourly(self):

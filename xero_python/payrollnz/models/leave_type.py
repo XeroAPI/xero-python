@@ -36,6 +36,8 @@ class LeaveType(BaseModel):
         "show_on_payslip": "bool",
         "updated_date_utc": "datetime",
         "is_active": "bool",
+        "type_of_units": "str",
+        "type_of_units_to_accrue": "str",
     }
 
     attribute_map = {
@@ -45,6 +47,8 @@ class LeaveType(BaseModel):
         "show_on_payslip": "showOnPayslip",
         "updated_date_utc": "updatedDateUTC",
         "is_active": "isActive",
+        "type_of_units": "typeOfUnits",
+        "type_of_units_to_accrue": "typeOfUnitsToAccrue",
     }
 
     def __init__(
@@ -55,6 +59,8 @@ class LeaveType(BaseModel):
         show_on_payslip=None,
         updated_date_utc=None,
         is_active=None,
+        type_of_units=None,
+        type_of_units_to_accrue=None,
     ):  # noqa: E501
         """LeaveType - a model defined in OpenAPI"""  # noqa: E501
 
@@ -64,6 +70,8 @@ class LeaveType(BaseModel):
         self._show_on_payslip = None
         self._updated_date_utc = None
         self._is_active = None
+        self._type_of_units = None
+        self._type_of_units_to_accrue = None
         self.discriminator = None
 
         if leave_type_id is not None:
@@ -75,6 +83,10 @@ class LeaveType(BaseModel):
             self.updated_date_utc = updated_date_utc
         if is_active is not None:
             self.is_active = is_active
+        if type_of_units is not None:
+            self.type_of_units = type_of_units
+        if type_of_units_to_accrue is not None:
+            self.type_of_units_to_accrue = type_of_units_to_accrue
 
     @property
     def leave_type_id(self):
@@ -225,3 +237,49 @@ class LeaveType(BaseModel):
         """
 
         self._is_active = is_active
+
+    @property
+    def type_of_units(self):
+        """Gets the type_of_units of this LeaveType.  # noqa: E501
+
+        The type of units to be paid for the leave type  # noqa: E501
+
+        :return: The type_of_units of this LeaveType.  # noqa: E501
+        :rtype: str
+        """
+        return self._type_of_units
+
+    @type_of_units.setter
+    def type_of_units(self, type_of_units):
+        """Sets the type_of_units of this LeaveType.
+
+        The type of units to be paid for the leave type  # noqa: E501
+
+        :param type_of_units: The type_of_units of this LeaveType.  # noqa: E501
+        :type: str
+        """
+
+        self._type_of_units = type_of_units
+
+    @property
+    def type_of_units_to_accrue(self):
+        """Gets the type_of_units_to_accrue of this LeaveType.  # noqa: E501
+
+        The type of units to be accrued for the leave type  # noqa: E501
+
+        :return: The type_of_units_to_accrue of this LeaveType.  # noqa: E501
+        :rtype: str
+        """
+        return self._type_of_units_to_accrue
+
+    @type_of_units_to_accrue.setter
+    def type_of_units_to_accrue(self, type_of_units_to_accrue):
+        """Sets the type_of_units_to_accrue of this LeaveType.
+
+        The type of units to be accrued for the leave type  # noqa: E501
+
+        :param type_of_units_to_accrue: The type_of_units_to_accrue of this LeaveType.  # noqa: E501
+        :type: str
+        """
+
+        self._type_of_units_to_accrue = type_of_units_to_accrue

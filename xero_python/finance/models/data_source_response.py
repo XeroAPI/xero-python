@@ -31,15 +31,12 @@ class DataSourceResponse(BaseModel):
     """
     openapi_types = {
         "direct_bank_feed": "float",
-        "indirect_bank_feed": "float",
         "file_upload": "float",
         "manual": "float",
         "direct_bank_feed_pos": "float",
-        "indirect_bank_feed_pos": "float",
         "file_upload_pos": "float",
         "manual_pos": "float",
         "direct_bank_feed_neg": "float",
-        "indirect_bank_feed_neg": "float",
         "file_upload_neg": "float",
         "manual_neg": "float",
         "other_pos": "float",
@@ -49,15 +46,12 @@ class DataSourceResponse(BaseModel):
 
     attribute_map = {
         "direct_bank_feed": "directBankFeed",
-        "indirect_bank_feed": "indirectBankFeed",
         "file_upload": "fileUpload",
         "manual": "manual",
         "direct_bank_feed_pos": "directBankFeedPos",
-        "indirect_bank_feed_pos": "indirectBankFeedPos",
         "file_upload_pos": "fileUploadPos",
         "manual_pos": "manualPos",
         "direct_bank_feed_neg": "directBankFeedNeg",
-        "indirect_bank_feed_neg": "indirectBankFeedNeg",
         "file_upload_neg": "fileUploadNeg",
         "manual_neg": "manualNeg",
         "other_pos": "otherPos",
@@ -68,15 +62,12 @@ class DataSourceResponse(BaseModel):
     def __init__(
         self,
         direct_bank_feed=None,
-        indirect_bank_feed=None,
         file_upload=None,
         manual=None,
         direct_bank_feed_pos=None,
-        indirect_bank_feed_pos=None,
         file_upload_pos=None,
         manual_pos=None,
         direct_bank_feed_neg=None,
-        indirect_bank_feed_neg=None,
         file_upload_neg=None,
         manual_neg=None,
         other_pos=None,
@@ -86,15 +77,12 @@ class DataSourceResponse(BaseModel):
         """DataSourceResponse - a model defined in OpenAPI"""  # noqa: E501
 
         self._direct_bank_feed = None
-        self._indirect_bank_feed = None
         self._file_upload = None
         self._manual = None
         self._direct_bank_feed_pos = None
-        self._indirect_bank_feed_pos = None
         self._file_upload_pos = None
         self._manual_pos = None
         self._direct_bank_feed_neg = None
-        self._indirect_bank_feed_neg = None
         self._file_upload_neg = None
         self._manual_neg = None
         self._other_pos = None
@@ -104,24 +92,18 @@ class DataSourceResponse(BaseModel):
 
         if direct_bank_feed is not None:
             self.direct_bank_feed = direct_bank_feed
-        if indirect_bank_feed is not None:
-            self.indirect_bank_feed = indirect_bank_feed
         if file_upload is not None:
             self.file_upload = file_upload
         if manual is not None:
             self.manual = manual
         if direct_bank_feed_pos is not None:
             self.direct_bank_feed_pos = direct_bank_feed_pos
-        if indirect_bank_feed_pos is not None:
-            self.indirect_bank_feed_pos = indirect_bank_feed_pos
         if file_upload_pos is not None:
             self.file_upload_pos = file_upload_pos
         if manual_pos is not None:
             self.manual_pos = manual_pos
         if direct_bank_feed_neg is not None:
             self.direct_bank_feed_neg = direct_bank_feed_neg
-        if indirect_bank_feed_neg is not None:
-            self.indirect_bank_feed_neg = indirect_bank_feed_neg
         if file_upload_neg is not None:
             self.file_upload_neg = file_upload_neg
         if manual_neg is not None:
@@ -155,29 +137,6 @@ class DataSourceResponse(BaseModel):
         """
 
         self._direct_bank_feed = direct_bank_feed
-
-    @property
-    def indirect_bank_feed(self):
-        """Gets the indirect_bank_feed of this DataSourceResponse.  # noqa: E501
-
-        No longer in use.  # noqa: E501
-
-        :return: The indirect_bank_feed of this DataSourceResponse.  # noqa: E501
-        :rtype: float
-        """
-        return self._indirect_bank_feed
-
-    @indirect_bank_feed.setter
-    def indirect_bank_feed(self, indirect_bank_feed):
-        """Sets the indirect_bank_feed of this DataSourceResponse.
-
-        No longer in use.  # noqa: E501
-
-        :param indirect_bank_feed: The indirect_bank_feed of this DataSourceResponse.  # noqa: E501
-        :type: float
-        """
-
-        self._indirect_bank_feed = indirect_bank_feed
 
     @property
     def file_upload(self):
@@ -249,29 +208,6 @@ class DataSourceResponse(BaseModel):
         self._direct_bank_feed_pos = direct_bank_feed_pos
 
     @property
-    def indirect_bank_feed_pos(self):
-        """Gets the indirect_bank_feed_pos of this DataSourceResponse.  # noqa: E501
-
-        No longer in use.  # noqa: E501
-
-        :return: The indirect_bank_feed_pos of this DataSourceResponse.  # noqa: E501
-        :rtype: float
-        """
-        return self._indirect_bank_feed_pos
-
-    @indirect_bank_feed_pos.setter
-    def indirect_bank_feed_pos(self, indirect_bank_feed_pos):
-        """Sets the indirect_bank_feed_pos of this DataSourceResponse.
-
-        No longer in use.  # noqa: E501
-
-        :param indirect_bank_feed_pos: The indirect_bank_feed_pos of this DataSourceResponse.  # noqa: E501
-        :type: float
-        """
-
-        self._indirect_bank_feed_pos = indirect_bank_feed_pos
-
-    @property
     def file_upload_pos(self):
         """Gets the file_upload_pos of this DataSourceResponse.  # noqa: E501
 
@@ -339,29 +275,6 @@ class DataSourceResponse(BaseModel):
         """
 
         self._direct_bank_feed_neg = direct_bank_feed_neg
-
-    @property
-    def indirect_bank_feed_neg(self):
-        """Gets the indirect_bank_feed_neg of this DataSourceResponse.  # noqa: E501
-
-        No longer in use.  # noqa: E501
-
-        :return: The indirect_bank_feed_neg of this DataSourceResponse.  # noqa: E501
-        :rtype: float
-        """
-        return self._indirect_bank_feed_neg
-
-    @indirect_bank_feed_neg.setter
-    def indirect_bank_feed_neg(self, indirect_bank_feed_neg):
-        """Sets the indirect_bank_feed_neg of this DataSourceResponse.
-
-        No longer in use.  # noqa: E501
-
-        :param indirect_bank_feed_neg: The indirect_bank_feed_neg of this DataSourceResponse.  # noqa: E501
-        :type: float
-        """
-
-        self._indirect_bank_feed_neg = indirect_bank_feed_neg
 
     @property
     def file_upload_neg(self):
