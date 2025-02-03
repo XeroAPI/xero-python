@@ -26,6 +26,7 @@ jobs:
 
             - name: Install dependencies
               run: |
+                python3 -m pip install build
                 python -m venv venv
                 source venv/bin/activate
                 pip install --upgrade pip
@@ -43,7 +44,7 @@ jobs:
                GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
             - name: Build Package
-              run: python setup.py sdist
+              run: python3 -m build
               working-directory: xero-python
 
             - name: Publish to PyPi

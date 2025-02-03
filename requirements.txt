@@ -2,4 +2,3 @@
 python-dateutil>=2.7
 urllib3
 certifi
-setuptools>=75.1.0
