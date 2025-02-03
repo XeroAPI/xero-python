@@ -22,6 +22,7 @@ jobs:
 
             - name: Install dependencies
               run: |
+                python3 -m pip install build
                 python -m venv venv
                 source venv/bin/activate
                 pip install --upgrade pip
@@ -40,7 +41,7 @@ jobs:
               working-directory: xero-python
 
             - name: Build package
-              run: python setup.py sdist
+              run: python3 -m build
               working-directory: xero-python
 
             - name: Set up Node environment
