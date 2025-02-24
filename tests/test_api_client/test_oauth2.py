@@ -151,6 +151,49 @@ def test_auth2_refresh_access_token():
     assert oauth2_token.access_token == new_token["access_token"]
     assert oauth2_token.refresh_token == new_token["refresh_token"]
 
+def test_auth2_refresh_access_token_having_scope_as_string():
+    # given OAuth2Token with expired access_token
+    api_client = FakeClass()
+    api_client.set_oauth2_token = FakeMethod()
+    refresh_token = "refresh-token-value"
+    scope = (
+        "email profile openid accounting.reports.read "
+        "accounting.attachments.read accounting.settings "
+        "accounting.settings.read accounting.attachments "
+        "accounting.transactions accounting.journals.read "
+        "accounting.transactions.read accounting.contacts "
+        "accounting.contacts.read offline_access"
+    )
+    new_token = {
+        "id_token": "new-id-token-value",
+        "access_token": "new-access-token-value",
+        "expires_in": 1800,
+        "expires_at": time.time() + 1800,
+        "token_type": "Bearer",
+        "refresh_token": "new-refresh-token-value",
+        "scope": scope,
+    }
+    oauth2_token = OAuth2Token(client_id="client_id", client_secret="client_secret")
+    oauth2_token.refresh_token = refresh_token
+    oauth2_token.scope = scope
+    oauth2_token.fetch_access_token = FakeMethod(return_value=new_token)
+    # When refreshing access_token
+    assert oauth2_token.refresh_access_token(api_client=api_client)
+    # Then expected set new token function called
+    assert len(oauth2_token.fetch_access_token.calls) == 1
+    assert len(api_client.set_oauth2_token.calls) == 1
+    call_args, call_kwargs = api_client.set_oauth2_token.calls[0]
+    assert call_args == (new_token,)
+    assert call_kwargs == {}
+    # Then expected new valid access and refresh tokens set on oauth2_token
+    assert oauth2_token.expires_at == new_token["expires_at"]
+    assert oauth2_token.is_access_token_valid()
+    assert oauth2_token.id_token == new_token["id_token"]
+    assert oauth2_token.expires_in == new_token["expires_in"]
+    assert oauth2_token.token_type == new_token["token_type"]
+    assert oauth2_token.scope == new_token["scope"]
+    assert oauth2_token.access_token == new_token["access_token"]
+    assert oauth2_token.refresh_token == new_token["refresh_token"]
 
 def test_auth2_fetch_access_token():
     # Given OAuth2Token with valid refresh_token
