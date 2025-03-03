@@ -213,7 +213,7 @@ class OAuth2Token:
         """
         return (
             self.refresh_token
-            and isinstance(self.scope, (list, tuple))
+            and isinstance(self.scope, (list, tuple, str))
             and self.client_id
             and self.client_secret
         )
