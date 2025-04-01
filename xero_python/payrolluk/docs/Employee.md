@@ -17,6 +17,8 @@ Name | Type | Description | Notes
 **payroll_calendar_id** | **str** | Xero unique identifier for the payroll calendar of the employee | [optional] 
 **updated_date_utc** | **datetime** | UTC timestamp of last update to the employee | [optional] 
 **created_date_utc** | **datetime** | UTC timestamp when the employee was created in Xero | [optional] 
+**ni_category** | [**NICategoryLetter**](NICategoryLetter.md) |  | [optional] 
+**ni_categories** | [**list[NICategory]**](NICategory.md) | The employee&#39;s NI categories | [optional] 
 **national_insurance_number** | **str** | National insurance number of the employee | [optional] 
 **is_off_payroll_worker** | **bool** | Whether the employee is an off payroll worker | [optional] 
 
