@@ -196,6 +196,8 @@ class EarningsRate(BaseModel):
             "TipsNonDirect",
             "TipsDirect",
             "TerminationPay",
+            "StatutoryNeonatalCarePay",
+            "StatutoryNeonatalCarePayNonPensionable",
             "None",
         ]  # noqa: E501
 
