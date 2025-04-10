@@ -292,7 +292,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -466,7 +466,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -640,7 +640,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -814,7 +814,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -988,7 +988,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -1179,7 +1179,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -1370,7 +1370,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -1561,7 +1561,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -1756,7 +1756,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -1947,7 +1947,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -2138,7 +2138,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -2316,7 +2316,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -2502,7 +2502,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -2676,7 +2676,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -2867,7 +2867,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -3041,7 +3041,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -3215,7 +3215,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -3389,7 +3389,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -3580,7 +3580,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -3737,7 +3737,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -3899,7 +3899,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -4054,7 +4054,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -4204,7 +4204,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -4367,7 +4367,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -4510,7 +4510,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -4664,7 +4664,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -4813,7 +4813,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -4967,7 +4967,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -5116,7 +5116,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -5272,7 +5272,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -5421,7 +5421,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -5577,7 +5577,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -5726,7 +5726,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -5888,7 +5888,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -6037,7 +6037,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -6233,7 +6233,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -6383,7 +6383,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -6532,7 +6532,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -6681,7 +6681,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -6831,7 +6831,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -6981,7 +6981,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -7145,7 +7145,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -7314,7 +7314,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -7507,7 +7507,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -7658,7 +7658,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -7807,7 +7807,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -7983,7 +7983,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -8132,7 +8132,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -8307,7 +8307,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -8456,7 +8456,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -8605,7 +8605,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -8761,7 +8761,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -8936,7 +8936,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -9085,7 +9085,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -9262,7 +9262,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -9411,7 +9411,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -9567,7 +9567,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -9702,7 +9702,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -9870,7 +9870,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -10019,7 +10019,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -10274,7 +10274,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -10411,7 +10411,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -10580,7 +10580,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -10766,7 +10766,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -10978,7 +10978,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -11188,7 +11188,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -11383,7 +11383,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -11595,7 +11595,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -11781,7 +11781,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
@@ -11991,7 +11991,7 @@ class PayrollUkApi:
             _return_http_data_only=_params.get("_return_http_data_only"),  # noqa: E501
             _preload_content=_params.get("_preload_content", True),
             _request_timeout=_params.get("_request_timeout"),
-            _host=self.basePath,
+            _host=self.base_url,
             collection_formats=_collection_formats,
             _request_auth=_params.get("_request_auth"),
         )
