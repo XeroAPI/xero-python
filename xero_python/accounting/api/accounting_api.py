@@ -18235,7 +18235,7 @@ class AccountingApi:
         :param xero_tenant_id: Xero identifier for Tenant (required)
         :type xero_tenant_id: str
         :param ids: Filter by BudgetID. Allows you to retrieve a specific individual budget.
-        :type ids: List[str]
+        :type ids: list[str]
         :param date_to: Filter by start date
         :type date_to: date
         :param date_from: Filter by end date
@@ -18282,7 +18282,7 @@ class AccountingApi:
         :param xero_tenant_id: Xero identifier for Tenant (required)
         :type xero_tenant_id: str
         :param ids: Filter by BudgetID. Allows you to retrieve a specific individual budget.
-        :type ids: List[str]
+        :type ids: list[str]
         :param date_to: Filter by start date
         :type date_to: date
         :param date_from: Filter by end date
@@ -19909,7 +19909,7 @@ class AccountingApi:
         :param order: Order by an any element
         :type order: str
         :param ids: Filter by a comma separated list of ContactIDs. Allows you to retrieve a specific set of contacts in a single call.
-        :type ids: List[str]
+        :type ids: list[str]
         :param page: e.g. page=1 - Up to 100 contacts will be returned in a single API call.
         :type page: int
         :param include_archived: e.g. includeArchived=true - Contacts with a status of ARCHIVED will be included in the response
@@ -20012,7 +20012,7 @@ class AccountingApi:
         :param order: Order by an any element
         :type order: str
         :param ids: Filter by a comma separated list of ContactIDs. Allows you to retrieve a specific set of contacts in a single call.
-        :type ids: List[str]
+        :type ids: list[str]
         :param page: e.g. page=1 - Up to 100 contacts will be returned in a single API call.
         :type page: int
         :param include_archived: e.g. includeArchived=true - Contacts with a status of ARCHIVED will be included in the response
@@ -23573,13 +23573,13 @@ class AccountingApi:
         :param order: Order by an any element
         :type order: str
         :param ids: Filter by a comma-separated list of InvoicesIDs.
-        :type ids: List[str]
+        :type ids: list[str]
         :param invoice_numbers: Filter by a comma-separated list of InvoiceNumbers.
-        :type invoice_numbers: List[str]
+        :type invoice_numbers: list[str]
         :param contact_ids: Filter by a comma-separated list of ContactIDs.
-        :type contact_ids: List[str]
+        :type contact_ids: list[str]
         :param statuses: Filter by a comma-separated list Statuses. For faster response times we recommend using these explicit parameters instead of passing OR conditions into the Where filter.
-        :type statuses: List[str]
+        :type statuses: list[str]
         :param page: e.g. page=1 – Up to 100 invoices will be returned in a single API call with line items shown for each invoice
         :type page: int
         :param include_archived: e.g. includeArchived=true - Invoices with a status of ARCHIVED will be included in the response
@@ -23715,13 +23715,13 @@ class AccountingApi:
         :param order: Order by an any element
         :type order: str
         :param ids: Filter by a comma-separated list of InvoicesIDs.
-        :type ids: List[str]
+        :type ids: list[str]
         :param invoice_numbers: Filter by a comma-separated list of InvoiceNumbers.
-        :type invoice_numbers: List[str]
+        :type invoice_numbers: list[str]
         :param contact_ids: Filter by a comma-separated list of ContactIDs.
-        :type contact_ids: List[str]
+        :type contact_ids: list[str]
         :param statuses: Filter by a comma-separated list Statuses. For faster response times we recommend using these explicit parameters instead of passing OR conditions into the Where filter.
-        :type statuses: List[str]
+        :type statuses: list[str]
         :param page: e.g. page=1 – Up to 100 invoices will be returned in a single API call with line items shown for each invoice
         :type page: int
         :param include_archived: e.g. includeArchived=true - Invoices with a status of ARCHIVED will be included in the response

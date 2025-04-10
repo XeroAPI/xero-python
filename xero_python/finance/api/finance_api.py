@@ -963,7 +963,7 @@ class FinanceApi:
             ),
         ] = None,
         **kwargs,
-    ) -> List[CashValidationResponse]:  # noqa: E501
+    ) -> list[CashValidationResponse]:  # noqa: E501
         """Get cash validation  # noqa: E501
 
         Summarizes the total cash position for each account for an org  # noqa: E501
@@ -983,7 +983,7 @@ class FinanceApi:
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: List[CashValidationResponse]
+        :rtype: list[CashValidationResponse]
         """
         kwargs["_return_http_data_only"] = True
         if "_preload_content" in kwargs:
@@ -1050,7 +1050,7 @@ class FinanceApi:
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(List[CashValidationResponse], status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(list[CashValidationResponse], status_code(int), headers(HTTPHeaderDict))
         """
 
         _params = locals()
@@ -1117,7 +1117,7 @@ class FinanceApi:
         _auth_settings = ["OAuth2"]  # noqa: E501
 
         _response_types_map = {
-            "200": "List[CashValidationResponse]",
+            "200": "list[CashValidationResponse]",
             "400": "Problem",
         }
 
@@ -1518,7 +1518,7 @@ class FinanceApi:
         :param xero_tenant_id: Xero identifier for Tenant (required)
         :type xero_tenant_id: str
         :param contact_ids: Specifies the customer contacts to be included in the report.    If no parameter is provided, all customer contacts will be included
-        :type contact_ids: List[str]
+        :type contact_ids: list[str]
         :param include_manual_journals: Specifies whether to include the manual journals in the report.                If no parameter is provided, manual journals will not be included.
         :type include_manual_journals: bool
         :param start_date: Date yyyy-MM-dd    Specifies the start date for the report.                If no parameter is provided, the date of 12 months before the end date will be used.                It is recommended to always specify both a start date and end date; While the initial range may be set to 12 months, this may need to be reduced for high volume organisations in order to improve latency.
@@ -1585,7 +1585,7 @@ class FinanceApi:
         :param xero_tenant_id: Xero identifier for Tenant (required)
         :type xero_tenant_id: str
         :param contact_ids: Specifies the customer contacts to be included in the report.    If no parameter is provided, all customer contacts will be included
-        :type contact_ids: List[str]
+        :type contact_ids: list[str]
         :param include_manual_journals: Specifies whether to include the manual journals in the report.                If no parameter is provided, manual journals will not be included.
         :type include_manual_journals: bool
         :param start_date: Date yyyy-MM-dd    Specifies the start date for the report.                If no parameter is provided, the date of 12 months before the end date will be used.                It is recommended to always specify both a start date and end date; While the initial range may be set to 12 months, this may need to be reduced for high volume organisations in order to improve latency.
@@ -1748,7 +1748,7 @@ class FinanceApi:
         :param xero_tenant_id: Xero identifier for Tenant (required)
         :type xero_tenant_id: str
         :param contact_ids: Specifies the customer contacts to be included in the report.    If no parameter is provided, all customer contacts will be included
-        :type contact_ids: List[str]
+        :type contact_ids: list[str]
         :param include_manual_journals: Specifies whether to include the manual journals in the report.                If no parameter is provided, manual journals will not be included.
         :type include_manual_journals: bool
         :param start_date: Date yyyy-MM-dd    Specifies the start date for the report.                If no parameter is provided, the date of 12 months before the end date will be used.                It is recommended to always specify both a start date and end date; While the initial range may be set to 12 months, this may need to be reduced for high volume organisations in order to improve latency.
@@ -1815,7 +1815,7 @@ class FinanceApi:
         :param xero_tenant_id: Xero identifier for Tenant (required)
         :type xero_tenant_id: str
         :param contact_ids: Specifies the customer contacts to be included in the report.    If no parameter is provided, all customer contacts will be included
-        :type contact_ids: List[str]
+        :type contact_ids: list[str]
         :param include_manual_journals: Specifies whether to include the manual journals in the report.                If no parameter is provided, manual journals will not be included.
         :type include_manual_journals: bool
         :param start_date: Date yyyy-MM-dd    Specifies the start date for the report.                If no parameter is provided, the date of 12 months before the end date will be used.                It is recommended to always specify both a start date and end date; While the initial range may be set to 12 months, this may need to be reduced for high volume organisations in order to improve latency.

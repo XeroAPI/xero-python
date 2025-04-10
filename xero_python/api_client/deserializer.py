@@ -5,7 +5,7 @@ from decimal import Decimal
 from enum import Enum
 
 from dateutil import tz
-from dateutil.parser.isoparser import isoparse, DEFAULT_ISOPARSER
+from dateutil.parser.isoparser import DEFAULT_ISOPARSER, isoparse
 
 from xero_python.single_dispatch_str import single_dispatch_str
 

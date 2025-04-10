@@ -884,7 +884,7 @@ class FilesApi:
             Optional[StrictStr], Field(description="direction to sort by")
         ] = None,
         **kwargs,
-    ) -> List[Association]:  # noqa: E501
+    ) -> list[Association]:  # noqa: E501
         """Retrieves an association object using a unique object ID  # noqa: E501
 
         By passing in the appropriate options, you can retrieve an association  # noqa: E501
@@ -908,7 +908,7 @@ class FilesApi:
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: List[Association]
+        :rtype: list[Association]
         """
         kwargs["_return_http_data_only"] = True
         if "_preload_content" in kwargs:
@@ -978,7 +978,7 @@ class FilesApi:
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(List[Association], status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(list[Association], status_code(int), headers(HTTPHeaderDict))
         """
 
         _params = locals()
@@ -1052,7 +1052,7 @@ class FilesApi:
         _auth_settings = ["OAuth2"]  # noqa: E501
 
         _response_types_map = {
-            "200": "List[Association]",
+            "200": "list[Association]",
         }
 
         return await self.api_client.call_api(
@@ -1093,7 +1093,7 @@ class FilesApi:
         :param xero_tenant_id: Xero identifier for Tenant (required)
         :type xero_tenant_id: str
         :param object_ids: A comma-separated list of object ids (required)
-        :type object_ids: List[str]
+        :type object_ids: list[str]
         :param _request_timeout: timeout setting for this request.
                If one number provided, it will be total request
                timeout. It can also be a pair (tuple) of
@@ -1129,7 +1129,7 @@ class FilesApi:
         :param xero_tenant_id: Xero identifier for Tenant (required)
         :type xero_tenant_id: str
         :param object_ids: A comma-separated list of object ids (required)
-        :type object_ids: List[str]
+        :type object_ids: list[str]
         :param _preload_content: if False, the ApiResponse.data will
                                  be set to none and raw_data will store the
                                  HTTP response body without reading/decoding.
@@ -1386,7 +1386,7 @@ class FilesApi:
             StrictStr, Field(..., description="File id for single object")
         ],
         **kwargs,
-    ) -> List[Association]:  # noqa: E501
+    ) -> list[Association]:  # noqa: E501
         """Retrieves a specific file associations  # noqa: E501
 
         By passing in the appropriate options,    # noqa: E501
@@ -1402,7 +1402,7 @@ class FilesApi:
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: List[Association]
+        :rtype: list[Association]
         """
         kwargs["_return_http_data_only"] = True
         if "_preload_content" in kwargs:
@@ -1450,7 +1450,7 @@ class FilesApi:
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(List[Association], status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(list[Association], status_code(int), headers(HTTPHeaderDict))
         """
 
         _params = locals()
@@ -1505,7 +1505,7 @@ class FilesApi:
         _auth_settings = ["OAuth2"]  # noqa: E501
 
         _response_types_map = {
-            "200": "List[Association]",
+            "200": "list[Association]",
         }
 
         return await self.api_client.call_api(
@@ -2017,7 +2017,7 @@ class FilesApi:
             Optional[StrictStr], Field(description="values to sort by")
         ] = None,
         **kwargs,
-    ) -> List[Folder]:  # noqa: E501
+    ) -> list[Folder]:  # noqa: E501
         """Retrieves folders  # noqa: E501
 
         By passing in the appropriate options, you can search for available folders  # noqa: E501
@@ -2033,7 +2033,7 @@ class FilesApi:
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: List[Folder]
+        :rtype: list[Folder]
         """
         kwargs["_return_http_data_only"] = True
         if "_preload_content" in kwargs:
@@ -2079,7 +2079,7 @@ class FilesApi:
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(List[Folder], status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(list[Folder], status_code(int), headers(HTTPHeaderDict))
         """
 
         _params = locals()
@@ -2135,7 +2135,7 @@ class FilesApi:
         _auth_settings = ["OAuth2"]  # noqa: E501
 
         _response_types_map = {
-            "200": "List[Folder]",
+            "200": "list[Folder]",
         }
 
         return await self.api_client.call_api(

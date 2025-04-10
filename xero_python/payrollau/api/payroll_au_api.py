@@ -259,7 +259,7 @@ class PayrollAuApi:
         :param xero_tenant_id: Xero identifier for Tenant (required)
         :type xero_tenant_id: str
         :param employee: (required)
-        :type employee: List[Employee]
+        :type employee: list[Employee]
         :param idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :type idempotency_key: str
         :param _request_timeout: timeout setting for this request.
@@ -299,7 +299,7 @@ class PayrollAuApi:
         :param xero_tenant_id: Xero identifier for Tenant (required)
         :type xero_tenant_id: str
         :param employee: (required)
-        :type employee: List[Employee]
+        :type employee: list[Employee]
         :param idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :type idempotency_key: str
         :param _preload_content: if False, the ApiResponse.data will
@@ -433,7 +433,7 @@ class PayrollAuApi:
         :param xero_tenant_id: Xero identifier for Tenant (required)
         :type xero_tenant_id: str
         :param leave_application: (required)
-        :type leave_application: List[LeaveApplication]
+        :type leave_application: list[LeaveApplication]
         :param idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :type idempotency_key: str
         :param _request_timeout: timeout setting for this request.
@@ -473,7 +473,7 @@ class PayrollAuApi:
         :param xero_tenant_id: Xero identifier for Tenant (required)
         :type xero_tenant_id: str
         :param leave_application: (required)
-        :type leave_application: List[LeaveApplication]
+        :type leave_application: list[LeaveApplication]
         :param idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :type idempotency_key: str
         :param _preload_content: if False, the ApiResponse.data will
@@ -781,7 +781,7 @@ class PayrollAuApi:
         :param xero_tenant_id: Xero identifier for Tenant (required)
         :type xero_tenant_id: str
         :param pay_run: (required)
-        :type pay_run: List[PayRun]
+        :type pay_run: list[PayRun]
         :param idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :type idempotency_key: str
         :param _request_timeout: timeout setting for this request.
@@ -821,7 +821,7 @@ class PayrollAuApi:
         :param xero_tenant_id: Xero identifier for Tenant (required)
         :type xero_tenant_id: str
         :param pay_run: (required)
-        :type pay_run: List[PayRun]
+        :type pay_run: list[PayRun]
         :param idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :type idempotency_key: str
         :param _preload_content: if False, the ApiResponse.data will
@@ -955,7 +955,7 @@ class PayrollAuApi:
         :param xero_tenant_id: Xero identifier for Tenant (required)
         :type xero_tenant_id: str
         :param payroll_calendar: (required)
-        :type payroll_calendar: List[PayrollCalendar]
+        :type payroll_calendar: list[PayrollCalendar]
         :param idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :type idempotency_key: str
         :param _request_timeout: timeout setting for this request.
@@ -995,7 +995,7 @@ class PayrollAuApi:
         :param xero_tenant_id: Xero identifier for Tenant (required)
         :type xero_tenant_id: str
         :param payroll_calendar: (required)
-        :type payroll_calendar: List[PayrollCalendar]
+        :type payroll_calendar: list[PayrollCalendar]
         :param idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :type idempotency_key: str
         :param _preload_content: if False, the ApiResponse.data will
@@ -1129,7 +1129,7 @@ class PayrollAuApi:
         :param xero_tenant_id: Xero identifier for Tenant (required)
         :type xero_tenant_id: str
         :param super_fund: (required)
-        :type super_fund: List[SuperFund]
+        :type super_fund: list[SuperFund]
         :param idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :type idempotency_key: str
         :param _request_timeout: timeout setting for this request.
@@ -1169,7 +1169,7 @@ class PayrollAuApi:
         :param xero_tenant_id: Xero identifier for Tenant (required)
         :type xero_tenant_id: str
         :param super_fund: (required)
-        :type super_fund: List[SuperFund]
+        :type super_fund: list[SuperFund]
         :param idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :type idempotency_key: str
         :param _preload_content: if False, the ApiResponse.data will
@@ -1303,7 +1303,7 @@ class PayrollAuApi:
         :param xero_tenant_id: Xero identifier for Tenant (required)
         :type xero_tenant_id: str
         :param timesheet: (required)
-        :type timesheet: List[Timesheet]
+        :type timesheet: list[Timesheet]
         :param idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :type idempotency_key: str
         :param _request_timeout: timeout setting for this request.
@@ -1343,7 +1343,7 @@ class PayrollAuApi:
         :param xero_tenant_id: Xero identifier for Tenant (required)
         :type xero_tenant_id: str
         :param timesheet: (required)
-        :type timesheet: List[Timesheet]
+        :type timesheet: list[Timesheet]
         :param idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :type idempotency_key: str
         :param _preload_content: if False, the ApiResponse.data will
@@ -4611,7 +4611,7 @@ class PayrollAuApi:
         :param employee_id: Employee id for single object (required)
         :type employee_id: str
         :param employee: (required)
-        :type employee: List[Employee]
+        :type employee: list[Employee]
         :param idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :type idempotency_key: str
         :param _request_timeout: timeout setting for this request.
@@ -4657,7 +4657,7 @@ class PayrollAuApi:
         :param employee_id: Employee id for single object (required)
         :type employee_id: str
         :param employee: (required)
-        :type employee: List[Employee]
+        :type employee: list[Employee]
         :param idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :type idempotency_key: str
         :param _preload_content: if False, the ApiResponse.data will
@@ -4797,7 +4797,7 @@ class PayrollAuApi:
         :param leave_application_id: Leave Application id for single object (required)
         :type leave_application_id: str
         :param leave_application: (required)
-        :type leave_application: List[LeaveApplication]
+        :type leave_application: list[LeaveApplication]
         :param idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :type idempotency_key: str
         :param _request_timeout: timeout setting for this request.
@@ -4846,7 +4846,7 @@ class PayrollAuApi:
         :param leave_application_id: Leave Application id for single object (required)
         :type leave_application_id: str
         :param leave_application: (required)
-        :type leave_application: List[LeaveApplication]
+        :type leave_application: list[LeaveApplication]
         :param idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :type idempotency_key: str
         :param _preload_content: if False, the ApiResponse.data will
@@ -4993,7 +4993,7 @@ class PayrollAuApi:
         :param pay_run_id: PayRun id for single object (required)
         :type pay_run_id: str
         :param pay_run: (required)
-        :type pay_run: List[PayRun]
+        :type pay_run: list[PayRun]
         :param idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :type idempotency_key: str
         :param _request_timeout: timeout setting for this request.
@@ -5039,7 +5039,7 @@ class PayrollAuApi:
         :param pay_run_id: PayRun id for single object (required)
         :type pay_run_id: str
         :param pay_run: (required)
-        :type pay_run: List[PayRun]
+        :type pay_run: list[PayRun]
         :param idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :type idempotency_key: str
         :param _preload_content: if False, the ApiResponse.data will
@@ -5180,7 +5180,7 @@ class PayrollAuApi:
         :param payslip_id: Payslip id for single object (required)
         :type payslip_id: str
         :param payslip_lines: (required)
-        :type payslip_lines: List[PayslipLines]
+        :type payslip_lines: list[PayslipLines]
         :param idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :type idempotency_key: str
         :param _request_timeout: timeout setting for this request.
@@ -5226,7 +5226,7 @@ class PayrollAuApi:
         :param payslip_id: Payslip id for single object (required)
         :type payslip_id: str
         :param payslip_lines: (required)
-        :type payslip_lines: List[PayslipLines]
+        :type payslip_lines: list[PayslipLines]
         :param idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :type idempotency_key: str
         :param _preload_content: if False, the ApiResponse.data will
@@ -5372,7 +5372,7 @@ class PayrollAuApi:
         :param super_fund_id: Superfund id for single object (required)
         :type super_fund_id: str
         :param super_fund: (required)
-        :type super_fund: List[SuperFund]
+        :type super_fund: list[SuperFund]
         :param idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :type idempotency_key: str
         :param _request_timeout: timeout setting for this request.
@@ -5418,7 +5418,7 @@ class PayrollAuApi:
         :param super_fund_id: Superfund id for single object (required)
         :type super_fund_id: str
         :param super_fund: (required)
-        :type super_fund: List[SuperFund]
+        :type super_fund: list[SuperFund]
         :param idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :type idempotency_key: str
         :param _preload_content: if False, the ApiResponse.data will
@@ -5564,7 +5564,7 @@ class PayrollAuApi:
         :param timesheet_id: Timesheet id for single object (required)
         :type timesheet_id: str
         :param timesheet: (required)
-        :type timesheet: List[Timesheet]
+        :type timesheet: list[Timesheet]
         :param idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :type idempotency_key: str
         :param _request_timeout: timeout setting for this request.
@@ -5610,7 +5610,7 @@ class PayrollAuApi:
         :param timesheet_id: Timesheet id for single object (required)
         :type timesheet_id: str
         :param timesheet: (required)
-        :type timesheet: List[Timesheet]
+        :type timesheet: list[Timesheet]
         :param idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :type idempotency_key: str
         :param _preload_content: if False, the ApiResponse.data will

@@ -13,7 +13,7 @@ class ApiResponse:
     """
 
     status_code: Optional[StrictInt] = Field(None, description="HTTP status code")
-    headers: Optional[Dict[StrictStr, StrictStr]] = Field(
+    headers: Optional[dict[StrictStr, StrictStr]] = Field(
         None, description="HTTP headers"
     )
     data: Optional[Any] = Field(

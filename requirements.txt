@@ -1,5 +1,5 @@
 # make sure content of this file can be parsed by setup.load_requirements
 python-dateutil>=2.7
-urllib3
+aiohttp>=3.0.0
 certifi
 setuptools>=75.1.0

@@ -1400,7 +1400,7 @@ class ProjectApi:
         :param xero_tenant_id: Xero identifier for Tenant (required)
         :type xero_tenant_id: str
         :param project_ids: Search for all projects that match a comma separated list of projectIds
-        :type project_ids: List[str]
+        :type project_ids: list[str]
         :param contact_id: Filter for projects for a specific contact
         :type contact_id: str
         :param states: Filter for projects in a particular state (INPROGRESS or CLOSED)
@@ -1468,7 +1468,7 @@ class ProjectApi:
         :param xero_tenant_id: Xero identifier for Tenant (required)
         :type xero_tenant_id: str
         :param project_ids: Search for all projects that match a comma separated list of projectIds
-        :type project_ids: List[str]
+        :type project_ids: list[str]
         :param contact_id: Filter for projects for a specific contact
         :type contact_id: str
         :param states: Filter for projects in a particular state (INPROGRESS or CLOSED)
@@ -2102,7 +2102,7 @@ class ProjectApi:
         :param page_size: Optional, it is set to 50 by default. The number of items to return per page in a paged response - Must be a number between 1 and 500.
         :type page_size: int
         :param states: Comma-separated list of states to find. Will find all time entries that are in the status of whatever is specified.
-        :type states: List[str]
+        :type states: list[str]
         :param is_chargeable: Finds all time entries which relate to tasks with the charge type `TIME` or `FIXED`.
         :type is_chargeable: bool
         :param date_after_utc: ISO 8601 UTC date. Finds all time entries on or after this date filtered on the `dateUtc` field.
@@ -2229,7 +2229,7 @@ class ProjectApi:
         :param page_size: Optional, it is set to 50 by default. The number of items to return per page in a paged response - Must be a number between 1 and 500.
         :type page_size: int
         :param states: Comma-separated list of states to find. Will find all time entries that are in the status of whatever is specified.
-        :type states: List[str]
+        :type states: list[str]
         :param is_chargeable: Finds all time entries which relate to tasks with the charge type `TIME` or `FIXED`.
         :type is_chargeable: bool
         :param date_after_utc: ISO 8601 UTC date. Finds all time entries on or after this date filtered on the `dateUtc` field.

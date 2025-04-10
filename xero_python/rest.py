@@ -162,7 +162,7 @@ class RESTClientObject:
                          declared content type."""
                 raise ApiException(status=0, reason=msg)
 
-        r = await self.pool_manager.request(**args)
+        r = await self.pool_manager.request(**args, raise_for_status=True)
         if _preload_content:
             data = await r.read()
             r = RESTResponse(r, data)

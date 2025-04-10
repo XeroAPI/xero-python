@@ -182,7 +182,7 @@ class IdentityApi:
             Optional[StrictStr], Field(description="Filter by authEventId")
         ] = None,
         **kwargs,
-    ) -> List[Connection]:  # noqa: E501
+    ) -> list[Connection]:  # noqa: E501
         """Retrieves the connections for this user  # noqa: E501
 
         Override the base server url that include version  # noqa: E501
@@ -196,7 +196,7 @@ class IdentityApi:
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: List[Connection]
+        :rtype: list[Connection]
         """
         kwargs["_return_http_data_only"] = True
         if "_preload_content" in kwargs:
@@ -237,7 +237,7 @@ class IdentityApi:
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(List[Connection], status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(list[Connection], status_code(int), headers(HTTPHeaderDict))
         """
 
         _params = locals()
@@ -290,7 +290,7 @@ class IdentityApi:
         _auth_settings = ["OAuth2"]  # noqa: E501
 
         _response_types_map = {
-            "200": "List[Connection]",
+            "200": "list[Connection]",
         }
 
         return await self.api_client.call_api(

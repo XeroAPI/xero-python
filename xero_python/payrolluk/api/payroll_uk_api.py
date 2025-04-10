@@ -2706,7 +2706,7 @@ class PayrollUkApi:
         :param employee_id: Employee id for single object (required)
         :type employee_id: str
         :param earnings_template: (required)
-        :type earnings_template: List[EarningsTemplate]
+        :type earnings_template: list[EarningsTemplate]
         :param idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :type idempotency_key: str
         :param _request_timeout: timeout setting for this request.
@@ -2751,7 +2751,7 @@ class PayrollUkApi:
         :param employee_id: Employee id for single object (required)
         :type employee_id: str
         :param earnings_template: (required)
-        :type earnings_template: List[EarningsTemplate]
+        :type earnings_template: list[EarningsTemplate]
         :param idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :type idempotency_key: str
         :param _preload_content: if False, the ApiResponse.data will

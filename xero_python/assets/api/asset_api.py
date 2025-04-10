@@ -696,7 +696,7 @@ class AssetApi:
             StrictStr, Field(..., description="Xero identifier for Tenant")
         ],
         **kwargs,
-    ) -> List[AssetType]:  # noqa: E501
+    ) -> list[AssetType]:  # noqa: E501
         """searches fixed asset types  # noqa: E501
 
         By passing in the appropriate options, you can search for available fixed asset types in the system  # noqa: E501
@@ -710,7 +710,7 @@ class AssetApi:
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: List[AssetType]
+        :rtype: list[AssetType]
         """
         kwargs["_return_http_data_only"] = True
         if "_preload_content" in kwargs:
@@ -751,7 +751,7 @@ class AssetApi:
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(List[AssetType], status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(list[AssetType], status_code(int), headers(HTTPHeaderDict))
         """
 
         _params = locals()
@@ -804,7 +804,7 @@ class AssetApi:
         _auth_settings = ["OAuth2"]  # noqa: E501
 
         _response_types_map = {
-            "200": "List[AssetType]",
+            "200": "list[AssetType]",
             "400": None,
         }
 
