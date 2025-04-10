@@ -33,7 +33,8 @@ class Employment(BaseModel):
         "payroll_calendar_id": "str",
         "start_date": "date",
         "employee_number": "str",
-        "ni_category": "str",
+        "ni_category": "NICategoryLetter",
+        "ni_categories": "list[NICategory]",
     }
 
     attribute_map = {
@@ -41,6 +42,7 @@ class Employment(BaseModel):
         "start_date": "startDate",
         "employee_number": "employeeNumber",
         "ni_category": "niCategory",
+        "ni_categories": "niCategories",
     }
 
     def __init__(
@@ -49,6 +51,7 @@ class Employment(BaseModel):
         start_date=None,
         employee_number=None,
         ni_category=None,
+        ni_categories=None,
     ):  # noqa: E501
         """Employment - a model defined in OpenAPI"""  # noqa: E501
 
@@ -56,6 +59,7 @@ class Employment(BaseModel):
         self._start_date = None
         self._employee_number = None
         self._ni_category = None
+        self._ni_categories = None
         self.discriminator = None
 
         if payroll_calendar_id is not None:
@@ -66,6 +70,8 @@ class Employment(BaseModel):
             self.employee_number = employee_number
         if ni_category is not None:
             self.ni_category = ni_category
+        if ni_categories is not None:
+            self.ni_categories = ni_categories
 
     @property
     def payroll_calendar_id(self):
@@ -140,10 +146,9 @@ class Employment(BaseModel):
     def ni_category(self):
         """Gets the ni_category of this Employment.  # noqa: E501
 
-        The NI Category of the employee  # noqa: E501
 
         :return: The ni_category of this Employment.  # noqa: E501
-        :rtype: str
+        :rtype: NICategoryLetter
         """
         return self._ni_category
 
@@ -151,34 +156,32 @@ class Employment(BaseModel):
     def ni_category(self, ni_category):
         """Sets the ni_category of this Employment.
 
-        The NI Category of the employee  # noqa: E501
 
         :param ni_category: The ni_category of this Employment.  # noqa: E501
-        :type: str
+        :type: NICategoryLetter
         """
-        allowed_values = [
-            "A",
-            "B",
-            "C",
-            "F",
-            "H",
-            "I",
-            "J",
-            "L",
-            "M",
-            "S",
-            "V",
-            "X",
-            "Z",
-            "None",
-        ]  # noqa: E501
-
-        if ni_category:
-            if ni_category not in allowed_values:
-                raise ValueError(
-                    "Invalid value for `ni_category` ({0}), must be one of {1}".format(  # noqa: E501
-                        ni_category, allowed_values
-                    )
-                )
 
         self._ni_category = ni_category
+
+    @property
+    def ni_categories(self):
+        """Gets the ni_categories of this Employment.  # noqa: E501
+
+        The employee's NI categories  # noqa: E501
+
+        :return: The ni_categories of this Employment.  # noqa: E501
+        :rtype: list[NICategory]
+        """
+        return self._ni_categories
+
+    @ni_categories.setter
+    def ni_categories(self, ni_categories):
+        """Sets the ni_categories of this Employment.
+
+        The employee's NI categories  # noqa: E501
+
+        :param ni_categories: The ni_categories of this Employment.  # noqa: E501
+        :type: list[NICategory]
+        """
+
+        self._ni_categories = ni_categories
