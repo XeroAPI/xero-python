@@ -11,6 +11,7 @@ Do not edit the class manually.
 """  # noqa: E501
 
 import datetime
+from functools import cached_property
 import json
 import mimetypes
 import os
@@ -87,7 +88,7 @@ class ApiClient:
             configuration = Configuration()
         self.configuration = configuration
 
-        self.rest_client = rest.RESTClientObject(configuration)
+        self._rest_client = None
         self.default_headers = {}
         if header_name is not None:
             self.default_headers[header_name] = header_value
@@ -98,6 +99,12 @@ class ApiClient:
         self._oauth2_token_saver = oauth2_token_saver
         self._oauth2_token_getter = oauth2_token_getter
 
+    @property
+    def rest_client(self) -> rest.RESTClientObject:
+        if self._rest_client is None:
+            self._rest_client = rest.RESTClientObject(self.configuration)
+        return self._rest_client
+
     async def __aenter__(self):
         return self
 
@@ -105,7 +112,8 @@ class ApiClient:
         await self.close()
 
     async def close(self):
-        await self.rest_client.close()
+        if self._rest_client:
+            await self._rest_client.close()
 
     @property
     def user_agent(self):
