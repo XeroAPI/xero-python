@@ -102,6 +102,8 @@ class Configuration(metaclass=TypeWithDefault):
         # Proxy URL
         self.proxy = None
         self.proxy_headers = None
+        self.client_side_validation = None
+        self.host = None
         # Safe chars for path_param
         self.safe_chars_for_path_param = ""
 
