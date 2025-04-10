@@ -17,7 +17,7 @@ import mimetypes
 import os
 import re
 import tempfile
-import time
+
 from urllib.parse import quote
 
 from dateutil.parser import parse
@@ -712,8 +712,12 @@ class ApiClient:
             return
 
         for auth in auth_settings:
-            auth_setting = self.configuration.auth_settings().get(auth)
+            auth_setting = self.configuration.auth_settings()
             if auth_setting:
+                if callable(auth_setting):
+                    auth_setting = auth_setting(self)
+                else:
+                    auth_setting = auth_setting.get(auth)
                 self._apply_auth_params(
                     headers, queries, resource_path, method, body, auth_setting
                 )
