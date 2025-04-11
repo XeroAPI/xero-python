@@ -10,9 +10,9 @@ import time
 
 import pytest
 
-from xero_python.api_client import ApiClient
-from xero_python.api_client.configuration import Configuration
-from xero_python.api_client.oauth2 import OAuth2Token
+from xero.api_client import ApiClient
+from xero.api_client.configuration import Configuration
+from xero.api_client.oauth2 import OAuth2Token
 
 
 @pytest.fixture(scope="module")

@@ -4,8 +4,8 @@
 
 import pytest
 
-from xero_python.accounting import models
-from xero_python.api_client import ModelFinder
+from xero.accounting import models
+from xero.api_client import ModelFinder
 
 
 @pytest.mark.vcr()

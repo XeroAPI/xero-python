@@ -6,10 +6,10 @@ import pytest
 
 from tests import FakeMethod, FakeClass
 from tests.conftest import get_token_value
-from xero_python.api_client import ApiClient
-from xero_python.api_client.configuration import Configuration
-from xero_python.api_client.oauth2 import TokenApi, OAuth2Token
-from xero_python.exceptions import AccessTokenExpiredError
+from xero.api_client import ApiClient
+from xero.api_client.configuration import Configuration
+from xero.api_client.oauth2 import TokenApi, OAuth2Token
+from xero.exceptions import AccessTokenExpiredError
 
 
 # from os.path import join, dirname

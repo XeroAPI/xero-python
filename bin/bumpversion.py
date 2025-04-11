@@ -7,7 +7,7 @@ SETUP_VERSION = re.compile(r'^(\s*version\s*=\s*")[^"]*("\s*,?\s*)$')
 INIT_VERSION = re.compile(r'^(\s*__version__\s*=\s*")[^"]*("\s*)$')
 
 
-FILES = (("setup.py", SETUP_VERSION), ("xero_python/__init__.py", INIT_VERSION))
+FILES = (("setup.py", SETUP_VERSION), ("xero/__init__.py", INIT_VERSION))
 
 
 def replace_in_file(path, pattern, replacement):
