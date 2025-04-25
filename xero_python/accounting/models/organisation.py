@@ -988,6 +988,7 @@ class Organisation(BaseModel):
             "IGNITE",
             "GROW",
             "COMPREHENSIVE",
+            "SIMPLE",
             "None",
         ]  # noqa: E501
 

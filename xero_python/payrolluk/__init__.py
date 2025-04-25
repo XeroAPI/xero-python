@@ -96,6 +96,10 @@ from xero_python.payrolluk.models.leave_periods import LeavePeriods
 from xero_python.payrolluk.models.leave_type import LeaveType
 from xero_python.payrolluk.models.leave_type_object import LeaveTypeObject
 from xero_python.payrolluk.models.leave_types import LeaveTypes
+from xero_python.payrolluk.models.ni_category import NICategory
+from xero_python.payrolluk.models.ni_category_letter import NICategoryLetter
+from xero_python.payrolluk.models.ni_category_one_of import NICategoryOneOf
+from xero_python.payrolluk.models.ni_category_one_of1 import NICategoryOneOf1
 from xero_python.payrolluk.models.pagination import Pagination
 from xero_python.payrolluk.models.pay_run import PayRun
 from xero_python.payrolluk.models.pay_run_calendar import PayRunCalendar

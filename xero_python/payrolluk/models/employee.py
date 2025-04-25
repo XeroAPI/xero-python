@@ -44,6 +44,8 @@ class Employee(BaseModel):
         "payroll_calendar_id": "str",
         "updated_date_utc": "datetime",
         "created_date_utc": "datetime",
+        "ni_category": "NICategoryLetter",
+        "ni_categories": "list[NICategory]",
         "national_insurance_number": "str",
         "is_off_payroll_worker": "bool",
     }
@@ -63,6 +65,8 @@ class Employee(BaseModel):
         "payroll_calendar_id": "payrollCalendarID",
         "updated_date_utc": "updatedDateUTC",
         "created_date_utc": "createdDateUTC",
+        "ni_category": "niCategory",
+        "ni_categories": "niCategories",
         "national_insurance_number": "nationalInsuranceNumber",
         "is_off_payroll_worker": "isOffPayrollWorker",
     }
@@ -83,6 +87,8 @@ class Employee(BaseModel):
         payroll_calendar_id=None,
         updated_date_utc=None,
         created_date_utc=None,
+        ni_category=None,
+        ni_categories=None,
         national_insurance_number=None,
         is_off_payroll_worker=None,
     ):  # noqa: E501
@@ -102,6 +108,8 @@ class Employee(BaseModel):
         self._payroll_calendar_id = None
         self._updated_date_utc = None
         self._created_date_utc = None
+        self._ni_category = None
+        self._ni_categories = None
         self._national_insurance_number = None
         self._is_off_payroll_worker = None
         self.discriminator = None
@@ -134,6 +142,10 @@ class Employee(BaseModel):
             self.updated_date_utc = updated_date_utc
         if created_date_utc is not None:
             self.created_date_utc = created_date_utc
+        if ni_category is not None:
+            self.ni_category = ni_category
+        if ni_categories is not None:
+            self.ni_categories = ni_categories
         if national_insurance_number is not None:
             self.national_insurance_number = national_insurance_number
         if is_off_payroll_worker is not None:
@@ -467,6 +479,50 @@ class Employee(BaseModel):
         """
 
         self._created_date_utc = created_date_utc
+
+    @property
+    def ni_category(self):
+        """Gets the ni_category of this Employee.  # noqa: E501
+
+
+        :return: The ni_category of this Employee.  # noqa: E501
+        :rtype: NICategoryLetter
+        """
+        return self._ni_category
+
+    @ni_category.setter
+    def ni_category(self, ni_category):
+        """Sets the ni_category of this Employee.
+
+
+        :param ni_category: The ni_category of this Employee.  # noqa: E501
+        :type: NICategoryLetter
+        """
+
+        self._ni_category = ni_category
+
+    @property
+    def ni_categories(self):
+        """Gets the ni_categories of this Employee.  # noqa: E501
+
+        The employee's NI categories  # noqa: E501
+
+        :return: The ni_categories of this Employee.  # noqa: E501
+        :rtype: list[NICategory]
+        """
+        return self._ni_categories
+
+    @ni_categories.setter
+    def ni_categories(self, ni_categories):
+        """Sets the ni_categories of this Employee.
+
+        The employee's NI categories  # noqa: E501
+
+        :param ni_categories: The ni_categories of this Employee.  # noqa: E501
+        :type: list[NICategory]
+        """
+
+        self._ni_categories = ni_categories
 
     @property
     def national_insurance_number(self):
