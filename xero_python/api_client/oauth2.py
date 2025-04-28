@@ -294,6 +294,9 @@ class OAuth2Token:
         self.expires_in = expires_in
         self.id_token = id_token
         self.refresh_token = refresh_token
+        assert isinstance(scope, (list, tuple)), (
+            "Scope must be list or tuple, please split it if you are using authlib for initial login"
+        )
         self.scope = scope
         self.token_type = token_type
 
