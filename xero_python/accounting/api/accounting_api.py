@@ -156,7 +156,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str account_id: Unique identifier for Account object (required)
         :param str file_name: Name of the attachment (required)
-        :param str body: Byte array of file in body of request (required)
+        :param file body: Byte array of file in body of request (required)
         :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -261,7 +261,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str bank_transaction_id: Xero generated unique identifier for a bank transaction (required)
         :param str file_name: Name of the attachment (required)
-        :param str body: Byte array of file in body of request (required)
+        :param file body: Byte array of file in body of request (required)
         :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -642,7 +642,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str bank_transfer_id: Xero generated unique identifier for a bank transfer (required)
         :param str file_name: Name of the attachment (required)
-        :param str body: Byte array of file in body of request (required)
+        :param file body: Byte array of file in body of request (required)
         :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -1126,7 +1126,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str contact_id: Unique identifier for a Contact (required)
         :param str file_name: Name of the attachment (required)
-        :param str body: Byte array of file in body of request (required)
+        :param file body: Byte array of file in body of request (required)
         :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -1696,7 +1696,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str credit_note_id: Unique identifier for a Credit Note (required)
         :param str file_name: Name of the attachment (required)
-        :param str body: Byte array of file in body of request (required)
+        :param file body: Byte array of file in body of request (required)
         :param bool include_online: Allows an attachment to be seen by the end customer within their online invoice
         :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
@@ -2349,7 +2349,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str invoice_id: Unique identifier for an Invoice (required)
         :param str file_name: Name of the attachment (required)
-        :param str body: Byte array of file in body of request (required)
+        :param file body: Byte array of file in body of request (required)
         :param bool include_online: Allows an attachment to be seen by the end customer within their online invoice
         :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
@@ -2917,7 +2917,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str manual_journal_id: Unique identifier for a ManualJournal (required)
         :param str file_name: Name of the attachment (required)
-        :param str body: Byte array of file in body of request (required)
+        :param file body: Byte array of file in body of request (required)
         :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -3950,7 +3950,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str purchase_order_id: Unique identifier for an Purchase Order (required)
         :param str file_name: Name of the attachment (required)
-        :param str body: Byte array of file in body of request (required)
+        :param file body: Byte array of file in body of request (required)
         :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -4242,7 +4242,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str quote_id: Unique identifier for an Quote (required)
         :param str file_name: Name of the attachment (required)
-        :param str body: Byte array of file in body of request (required)
+        :param file body: Byte array of file in body of request (required)
         :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -4619,7 +4619,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str receipt_id: Unique identifier for a Receipt (required)
         :param str file_name: Name of the attachment (required)
-        :param str body: Byte array of file in body of request (required)
+        :param file body: Byte array of file in body of request (required)
         :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -4818,7 +4818,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str repeating_invoice_id: Unique identifier for a Repeating Invoice (required)
         :param str file_name: Name of the attachment (required)
-        :param str body: Byte array of file in body of request (required)
+        :param file body: Byte array of file in body of request (required)
         :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -17382,7 +17382,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str account_id: Unique identifier for Account object (required)
         :param str file_name: Name of the attachment (required)
-        :param str body: Byte array of file in body of request (required)
+        :param file body: Byte array of file in body of request (required)
         :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -17586,7 +17586,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str bank_transaction_id: Xero generated unique identifier for a bank transaction (required)
         :param str file_name: Name of the attachment (required)
-        :param str body: Byte array of file in body of request (required)
+        :param file body: Byte array of file in body of request (required)
         :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -17693,7 +17693,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str bank_transfer_id: Xero generated unique identifier for a bank transfer (required)
         :param str file_name: Name of the attachment (required)
-        :param str body: Byte array of file in body of request (required)
+        :param file body: Byte array of file in body of request (required)
         :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -17894,7 +17894,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str contact_id: Unique identifier for a Contact (required)
         :param str file_name: Name of the attachment (required)
-        :param str body: Byte array of file in body of request (required)
+        :param file body: Byte array of file in body of request (required)
         :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -18192,7 +18192,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str credit_note_id: Unique identifier for a Credit Note (required)
         :param str file_name: Name of the attachment (required)
-        :param str body: Byte array of file in body of request (required)
+        :param file body: Byte array of file in body of request (required)
         :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -18492,7 +18492,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str invoice_id: Unique identifier for an Invoice (required)
         :param str file_name: Name of the attachment (required)
-        :param str body: Byte array of file in body of request (required)
+        :param file body: Byte array of file in body of request (required)
         :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -18882,7 +18882,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str manual_journal_id: Unique identifier for a ManualJournal (required)
         :param str file_name: Name of the attachment (required)
-        :param str body: Byte array of file in body of request (required)
+        :param file body: Byte array of file in body of request (required)
         :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -20003,7 +20003,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str purchase_order_id: Unique identifier for an Purchase Order (required)
         :param str file_name: Name of the attachment (required)
-        :param str body: Byte array of file in body of request (required)
+        :param file body: Byte array of file in body of request (required)
         :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -20203,7 +20203,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str quote_id: Unique identifier for an Quote (required)
         :param str file_name: Name of the attachment (required)
-        :param str body: Byte array of file in body of request (required)
+        :param file body: Byte array of file in body of request (required)
         :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -20407,7 +20407,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str receipt_id: Unique identifier for a Receipt (required)
         :param str file_name: Name of the attachment (required)
-        :param str body: Byte array of file in body of request (required)
+        :param file body: Byte array of file in body of request (required)
         :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
@@ -20606,7 +20606,7 @@ class AccountingApi(object):
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str repeating_invoice_id: Unique identifier for a Repeating Invoice (required)
         :param str file_name: Name of the attachment (required)
-        :param str body: Byte array of file in body of request (required)
+        :param file body: Byte array of file in body of request (required)
         :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models

@@ -114,14 +114,10 @@ class Employee(BaseModel):
             self.employee_id = employee_id
         if title is not None:
             self.title = title
-        if first_name is not None:
-            self.first_name = first_name
-        if last_name is not None:
-            self.last_name = last_name
-        if date_of_birth is not None:
-            self.date_of_birth = date_of_birth
-        if address is not None:
-            self.address = address
+        self.first_name = first_name
+        self.last_name = last_name
+        self.date_of_birth = date_of_birth
+        self.address = address
         if email is not None:
             self.email = email
         if gender is not None:
@@ -211,6 +207,10 @@ class Employee(BaseModel):
         :param first_name: The first_name of this Employee.  # noqa: E501
         :type: str
         """
+        if first_name is None:
+            raise ValueError(
+                "Invalid value for `first_name`, must not be `None`"
+            )  # noqa: E501
 
         self._first_name = first_name
 
@@ -234,6 +234,10 @@ class Employee(BaseModel):
         :param last_name: The last_name of this Employee.  # noqa: E501
         :type: str
         """
+        if last_name is None:
+            raise ValueError(
+                "Invalid value for `last_name`, must not be `None`"
+            )  # noqa: E501
 
         self._last_name = last_name
 
@@ -257,6 +261,10 @@ class Employee(BaseModel):
         :param date_of_birth: The date_of_birth of this Employee.  # noqa: E501
         :type: date
         """
+        if date_of_birth is None:
+            raise ValueError(
+                "Invalid value for `date_of_birth`, must not be `None`"
+            )  # noqa: E501
 
         self._date_of_birth = date_of_birth
 
@@ -278,6 +286,10 @@ class Employee(BaseModel):
         :param address: The address of this Employee.  # noqa: E501
         :type: Address
         """
+        if address is None:
+            raise ValueError(
+                "Invalid value for `address`, must not be `None`"
+            )  # noqa: E501
 
         self._address = address
 
