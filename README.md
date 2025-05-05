@@ -18,6 +18,7 @@ The xero-python SDK makes it easy for developers to access Xero's APIs in their 
 - [Helper Methods](#helper-methods)
 - [Usage Examples](#usage-examples)
 - [SDK conventions](#sdk-conventions)
+- [Running Test(s) in Local](#running-tests-in-local)
 - [Participating in Xero’s developer community](#participating-in-xeros-developer-community)
 - [Contributing](#contributing)
 
@@ -539,6 +540,18 @@ created_invoice_attachments_by_file_name = accounting_api.create_invoice_attachm
 
 ---
 ## SDK conventions
+
+
+---
+## Running Test(s) in Local
+For Running Test cases PRISM Mock Server needs to be started in the local machine.
+Steps to Run Test(s)
+* Install PRISM from npm using the command:  **npm install -g @stoplight/prism-cli**
+* Verify Installation: **prism --version**
+* Navigate to **tests--> utils--> ** folder in the terminal
+* Execute the script **./start-prism.sh**
+* This will start the PRISM Server in Local
+* Run **pytest** to run the dotnet test cases.
 
 ### Querying & Filtering
 

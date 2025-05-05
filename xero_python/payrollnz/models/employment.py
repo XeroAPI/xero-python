@@ -62,14 +62,11 @@ class Employment(BaseModel):
         self._fixed_term_end_date = None
         self.discriminator = None
 
-        if payroll_calendar_id is not None:
-            self.payroll_calendar_id = payroll_calendar_id
+        self.payroll_calendar_id = payroll_calendar_id
         if pay_run_calendar_id is not None:
             self.pay_run_calendar_id = pay_run_calendar_id
-        if start_date is not None:
-            self.start_date = start_date
-        if engagement_type is not None:
-            self.engagement_type = engagement_type
+        self.start_date = start_date
+        self.engagement_type = engagement_type
         if fixed_term_end_date is not None:
             self.fixed_term_end_date = fixed_term_end_date
 
@@ -93,6 +90,10 @@ class Employment(BaseModel):
         :param payroll_calendar_id: The payroll_calendar_id of this Employment.  # noqa: E501
         :type: str
         """
+        if payroll_calendar_id is None:
+            raise ValueError(
+                "Invalid value for `payroll_calendar_id`, must not be `None`"
+            )  # noqa: E501
 
         self._payroll_calendar_id = payroll_calendar_id
 
@@ -139,6 +140,10 @@ class Employment(BaseModel):
         :param start_date: The start_date of this Employment.  # noqa: E501
         :type: date
         """
+        if start_date is None:
+            raise ValueError(
+                "Invalid value for `start_date`, must not be `None`"
+            )  # noqa: E501
 
         self._start_date = start_date
 
@@ -162,6 +167,10 @@ class Employment(BaseModel):
         :param engagement_type: The engagement_type of this Employment.  # noqa: E501
         :type: str
         """
+        if engagement_type is None:
+            raise ValueError(
+                "Invalid value for `engagement_type`, must not be `None`"
+            )  # noqa: E501
 
         self._engagement_type = engagement_type
 
