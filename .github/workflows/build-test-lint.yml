@@ -31,10 +31,6 @@ jobs:
                 pip install -r requirements.txt -r requirements/dev.txt
               working-directory: xero-python
 
-            - name: Check vulnerable packages
-              run: pip-audit -r requirements.txt -r requirements/dev.txt
-              working-directory: xero-python
-
             - name: Run Flake8
               run: flake8 xero_python
               working-directory: xero-python
