@@ -11,12 +11,12 @@ Do not edit the class manually.
 """  # noqa: E501
 
 import datetime
-from functools import cached_property
 import json
 import mimetypes
 import os
 import re
 import tempfile
+from functools import cached_property
 from urllib.parse import quote
 
 from dateutil.parser import parse
@@ -231,28 +231,25 @@ class ApiClient:
             url_query = self.parameters_to_url_query(query_params, collection_formats)
             url += "?" + url_query
 
-        try:
-            # perform request and return response
-            response_data = await self.request(
-                method,
-                url,
-                query_params=query_params,
-                headers=header_params,
-                post_params=post_params,
-                body=body,
-                _preload_content=_preload_content,
-                _request_timeout=_request_timeout,
-            )
-        except ApiException as e:
-            if e.body:
-                e.body = e.body.decode("utf-8")
-            raise e
-
+        # perform request and return response
+        response_data = await self.request(
+            method,
+            url,
+            query_params=query_params,
+            headers=header_params,
+            post_params=post_params,
+            body=body,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+        )
         self.last_response = response_data
 
         return_data = None  # assuming deserialization is not needed
         # data needs deserialization or returns HTTP data (deserialized) only
-        if _preload_content or _return_http_data_only:
+        if not _preload_content:
+            return response_data
+        response_type = None
+        if response_types_map:
             response_type = response_types_map.get(str(response_data.status), None)
             if (
                 not response_type
@@ -264,25 +261,23 @@ class ApiClient:
                     str(response_data.status)[0] + "XX", None
                 )
 
-            if response_type == "bytearray":
-                response_data.data = response_data.data
-            else:
-                match = None
-                content_type = response_data.getheader("content-type")
-                if content_type is not None:
-                    match = re.search(r"charset=([a-zA-Z\-\d]+)[\s;]?", content_type)
-                encoding = match.group(1) if match else "utf-8"
-                response_data.data = response_data.data.decode(encoding)
+        if response_type != "bytearray":
+            match = None
+            content_type = response_data.getheader("content-type")
+            if content_type is not None:
+                match = re.search(r"charset=([a-zA-Z\-\d]+)[\s;]?", content_type)
+            encoding = match.group(1) if match else "utf-8"
+            response_data.data = response_data.data.decode(encoding)
 
-            # deserialize response data
-            if response_type == "bytearray":
-                return_data = response_data.data
-            elif response_type:
-                return_data = self.deserialize(
-                    response_data, response_type, response_model_finder
-                )
-            else:
-                return_data = None
+        # deserialize response data
+        if response_type == "bytearray":
+            return_data = response_data.data
+        elif response_type:
+            return_data = self.deserialize(
+                response_data, response_type, response_model_finder
+            )
+        else:
+            return_data = None
 
         if _return_http_data_only:
             return return_data

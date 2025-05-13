@@ -77,7 +77,6 @@ pip install xero-python
 ## Configuration
 
 ```python
-# -*- coding: utf-8 -*-
 import os
 from functools import wraps
 from io import BytesIO
@@ -265,7 +264,6 @@ Custom Connections are a Xero [premium option](https://developer.xero.com/docume
 To use this SDK with a Custom Connections:
 
 ```python
-# -*- coding: utf-8 -*-
 import os
 from functools import wraps
 from io import BytesIO

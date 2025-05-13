@@ -1,11 +1,15 @@
-# -*- coding: utf-8 -*-
 import json
 import time
+from base64 import b64encode
+from typing import TYPE_CHECKING
+
+from aiohttp import ClientResponse
 
 from xero.api_client.api_response import ApiResponse
-
 from xero.exceptions import AccessTokenExpiredError
-from xero.rest import RESTResponse
+
+if TYPE_CHECKING:
+    pass
 
 
 class TokenApi:
@@ -22,7 +26,7 @@ class TokenApi:
         self.client_id = client_id
         self.client_secret = client_secret
 
-    async def refresh_token(self, refresh_token, scope):
+    async def refresh_token(self, refresh_token):
         """
         Call xero identity API to refresh auth2 access token using refresh token
         :param refresh_token: str auth2 refresh token
@@ -31,29 +35,28 @@ class TokenApi:
         """
         post_data = {
             "grant_type": "refresh_token",
-            "scope": " ".join(scope),
             "refresh_token": refresh_token,
-            "client_id": self.client_id,
-            "client_secret": self.client_secret,
         }
-        response: ApiResponse = await self.api_client.call_api(
-            self.refresh_token_url,
+        response: ClientResponse = await self.api_client.request(
             "POST",
-            header_params={
+            self.refresh_token_url,
+            query_params=None,
+            headers={
                 "Accept": "application/json",
                 "Content-Type": "application/x-www-form-urlencoded",
+                "Authorization": f"Basic {b64encode(f'{self.client_id}:{self.client_secret}'.encode()).decode()}",
             },
             post_params=post_data,
-            auth_settings=None,  # important to prevent infinite recursive loop
             _preload_content=False,
         )
-        if response.status_code != 200:
+        if response.status != 200:
             # todo improve error handling
             raise Exception(
-                "refresh token status {} {} {!r}".format(response.status, response.data, response.getheaders())
+                "refresh token status {} {} {!r}".format(
+                    response.status, await response.text(), response.headers
+                )
             )
-        # todo validate response is json
-        return self.parse_token_response(response.data)
+        return await response.json()
 
     async def revoke_token(self, refresh_token):
         """
@@ -80,7 +83,9 @@ class TokenApi:
         if response.status_code != 200:
             # todo improve error handling
             raise Exception(
-                "refresh token status {} {} {!r}".format(response.status_code, response.data, response.headers)
+                "refresh token status {} {} {!r}".format(
+                    response.status_code, response.data, response.headers
+                )
             )
         return response.status_code
 
@@ -110,7 +115,9 @@ class TokenApi:
         if response.status_code != 200:
             # todo improve error handling
             raise Exception(
-                "refresh token status {} {} {!r}".format(response.status_code, response.data, response.headers)
+                "refresh token status {} {} {!r}".format(
+                    response.status_code, response.data, response.headers
+                )
             )
         # todo validate response is json
         return self.parse_token_response(response.data)
@@ -327,4 +334,4 @@ class OAuth2Token:
         :param token_api: TokenApi instance
         :return: auth2 token dictionary as received from API.
         """
-        return await token_api.refresh_token(self.refresh_token, self.scope)
+        return await token_api.refresh_token(self.refresh_token)

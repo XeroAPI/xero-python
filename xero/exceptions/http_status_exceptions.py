@@ -1,10 +1,9 @@
-# -*- coding: utf-8 -*-
 import json
 from decimal import Decimal
 from string import capwords
 
-from . import ApiException, OAuth2Error
 from ..utils import getvalue
+from . import ApiException, OAuth2Error
 
 
 def translate_status_exception(error, api_instance, api_method):
