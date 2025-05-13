@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from xero import exceptions
 
 

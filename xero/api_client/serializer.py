@@ -1,6 +1,5 @@
-# -*- coding: utf-8 -*-
 import re
-from datetime import datetime, time, date
+from datetime import date, datetime, time
 from enum import Enum
 from functools import singledispatch
 
