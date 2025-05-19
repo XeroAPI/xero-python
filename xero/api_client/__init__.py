@@ -16,6 +16,7 @@ import mimetypes
 import os
 import re
 import tempfile
+from enum import Enum
 from functools import cached_property
 from urllib.parse import quote
 
@@ -310,6 +311,8 @@ class ApiClient:
             return obj.get_secret_value()
         elif isinstance(obj, self.PRIMITIVE_TYPES):
             return obj
+        elif isinstance(obj, Enum):
+            return obj.value
         elif isinstance(obj, list):
             return [self.sanitize_for_serialization(sub_obj) for sub_obj in obj]
         elif isinstance(obj, tuple):
