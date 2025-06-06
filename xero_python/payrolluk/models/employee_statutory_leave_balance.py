@@ -80,6 +80,7 @@ class EmployeeStatutoryLeaveBalance(BaseModel):
             "Maternity",
             "Paternity",
             "Sharedparental",
+            "Bereavement",
             "None",
         ]  # noqa: E501
 
