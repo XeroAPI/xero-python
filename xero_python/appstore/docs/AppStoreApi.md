@@ -165,7 +165,7 @@ api_instance = AppStoreApi(api_client)
 
 subscription_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Subscription object
 subscription_item_id = '00000000-0000-0000-0000-000000000000' # str | The unique identifier of the subscriptionItem
-create_usage_record = { "timestamp": "2022-01-21T13:01:00", "quantity": 10 } # CreateUsageRecord | Contains the quantity for the usage record to create
+create_usage_record = {"timestamp":"2022-01-21T13:01:00","quantity":10} # CreateUsageRecord | Contains the quantity for the usage record to create
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Send metered usage belonging to this subscription and subscription item
@@ -233,7 +233,7 @@ api_instance = AppStoreApi(api_client)
 subscription_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for Subscription object
 subscription_item_id = '00000000-0000-0000-0000-000000000000' # str | The unique identifier of the subscriptionItem
 usage_record_id = '00000000-0000-0000-0000-000000000000' # str | The unique identifier of the usage record
-update_usage_record = { "quantity": 10 } # UpdateUsageRecord | Contains the quantity for the usage record to update
+update_usage_record = {"quantity":10} # UpdateUsageRecord | Contains the quantity for the usage record to update
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Update and existing metered usage belonging to this subscription and subscription item

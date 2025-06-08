@@ -1634,7 +1634,10 @@ This allows you to safely retry requests without the risk of duplicate processin
       "schema" : {
         "$ref" : "#/components/schemas/CreateUsageRecord"
       },
-      "example" : "{ \"timestamp\": \"2022-01-21T13:01:00\", \"quantity\": 10 }"
+      "example" : {
+        "timestamp" : "2022-01-21T13:01:00",
+        "quantity" : 10
+      }
     }
   },
   "required" : true
@@ -1846,7 +1849,9 @@ This allows you to safely retry requests without the risk of duplicate processin
       "schema" : {
         "$ref" : "#/components/schemas/UpdateUsageRecord"
       },
-      "example" : "{ \"quantity\": 10 }"
+      "example" : {
+        "quantity" : 10
+      }
     }
   },
   "required" : true
