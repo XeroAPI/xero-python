@@ -23,40 +23,40 @@ jobs:
                 repository: XeroAPI/xero-python
                 path: xero-python
 
-            # - name: Set up Python environment
-            #   uses: actions/setup-python@v5
-            #   with:
-            #     python-version: '3.8'
-            #     cache: 'pip'
+            - name: Set up Python environment
+              uses: actions/setup-python@v5
+              with:
+                python-version: '3.8'
+                cache: 'pip'
 
-            # - name: Install dependencies
-            #   run: |
-            #     python -m venv venv
-            #     source venv/bin/activate
-            #     pip install --upgrade pip
-            #     sudo pip install twine
-            #   working-directory: xero-python
+            - name: Install dependencies
+              run: |
+                python -m venv venv
+                source venv/bin/activate
+                pip install --upgrade pip
+                sudo pip install twine
+              working-directory: xero-python
 
-            # - name: Fetch Latest release number
-            #   id: get_latest_release_number
-            #   run: |
-            #     latest_version=$(gh release view --json tagName --jq '.tagName')
-            #     echo "Latest release version is - $latest_version"
-            #     echo "::set-output name=release_tag::$latest_version"
-            #   working-directory: xero-python
-            #   env:
-            #    GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+            - name: Fetch Latest release number
+              id: get_latest_release_number
+              run: |
+                latest_version=$(gh release view --json tagName --jq '.tagName')
+                echo "Latest release version is - $latest_version"
+                echo "::set-output name=release_tag::$latest_version"
+              working-directory: xero-python
+              env:
+               GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
-            # - name: Build Package
-            #   run: python setup.py sdist
-            #   working-directory: xero-python
+            - name: Build Package
+              run: python setup.py sdist
+              working-directory: xero-python
 
-            # - name: Publish to PyPi
-            #   env:
-            #     TWINE_USERNAME: __token__
-            #     TWINE_PASSWORD: ${{ secrets.PYPI_APIKEY }}
-            #   run: twine upload dist/*
-            #   working-directory: xero-python
+            - name: Publish to PyPi
+              env:
+                TWINE_USERNAME: __token__
+                TWINE_PASSWORD: ${{ secrets.PYPI_APIKEY }}
+              run: twine upload dist/*
+              working-directory: xero-python
 
     notify-slack-on-success:
      runs-on: ubuntu-latest
@@ -153,7 +153,7 @@ jobs:
                   "status": "${{needs.publish.result}}",
                   "deployer": "xero-codegen-bot",
                   "url": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
-                  "environment": "test",
+                  "environment": "prod",
                   "sdk_type": "python",
                   "cab_key": "${{ github.event.inputs.cab_id }}"
                   }
