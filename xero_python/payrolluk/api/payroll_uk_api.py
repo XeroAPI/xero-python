@@ -21,7 +21,7 @@ except ImportError:
 """
 
 """
-    OpenAPI spec version: 8.1.0
+    OpenAPI spec version: 8.2.0
 """
 
 
