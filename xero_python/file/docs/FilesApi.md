@@ -686,7 +686,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_files**
-> Files get_files(xero_tenant_id, pagesize=pagesize, page=page, sort=sort)
+> Files get_files(xero_tenant_id, pagesize=pagesize, page=page, sort=sort, direction=direction)
 
 Retrieves files
 
@@ -719,10 +719,11 @@ api_instance = FilesApi(api_client)
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 pagesize = 50 # int | pass an optional page size value (optional)
 page = 2 # int | number of records to skip for pagination (optional)
-sort = 'CreatedDateUTC DESC' # str | values to sort by (optional)
+sort = 'CreatedDateUTC' # str | values to sort by (optional)
+direction = 'ASC' # str | sort direction (optional)
 try:
     # Retrieves files
-    api_response = api_instance.get_files(xero_tenant_id, pagesize=pagesize, page=page, sort=sort)
+    api_response = api_instance.get_files(xero_tenant_id, pagesize=pagesize, page=page, sort=sort, direction=direction)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FilesApi->get_files: %s\n" % e)
@@ -736,6 +737,7 @@ Name | Type | Description  | Notes
  **pagesize** | **int**| pass an optional page size value | [optional] 
  **page** | **int**| number of records to skip for pagination | [optional] 
  **sort** | **str**| values to sort by | [optional] 
+ **direction** | **str**| sort direction | [optional] 
 
 ### Return type
 
