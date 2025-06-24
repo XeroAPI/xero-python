@@ -1170,7 +1170,7 @@ ul.nav-tabs {
           <nav id="scrollingNav">
             <ul class="sidenav nav nav-list">
               <li class="nav-header" data-group="Files"><strong>SDK: </strong><span id='sdk-name'></span></li>
-              <li class="nav-header" data-group="Files"><strong>VSN: </strong>8.2.0</li>
+              <li class="nav-header" data-group="Files"><strong>VSN: </strong>8.3.0</li>
               <li class="nav-header" data-group="Files"><a href="#api-Files">Methods</a></li>
               <li data-group="Files" data-name="createFileAssociation" class="">
                 <a href="#api-Files-createFileAssociation">createFileAssociation</a>
@@ -2741,10 +2741,11 @@ api_client.set_oauth2_token("YOUR_ACCESS_TOKEN")
 def accounting_get_files():
     api_instance = FilesApi(api_client)
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
-    sort = 'CreatedDateUTC DESC'
+    sort = 'CreatedDateUTC'
+    direction = 'ASC'
     
     try:
-        api_response = api_instance.get_files(xero_tenant_id, pagesize, page, sort)
+        api_response = api_instance.get_files(xero_tenant_id, pagesize, page, sort, direction)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling FilesApi->getFiles: %s\n" % e)</code></pre>
@@ -2854,6 +2855,26 @@ number of records to skip for pagination
 
                     <div class="inner description marked">
 values to sort by
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">direction</td>
+<td>
+
+
+    <div id="d2e199_getFiles_direction">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description marked">
+sort direction
                     </div>
             </div>
         </div>

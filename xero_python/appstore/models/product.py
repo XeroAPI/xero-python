@@ -141,7 +141,7 @@ class Product(BaseModel):
     def type(self):
         """Gets the type of this Product.  # noqa: E501
 
-        The pricing model of the product: * FIXED: Customers are charged a fixed amount for each billing period * PER_SEAT: Customers are charged based on the number of units they purchase * METERED: Customers are charged per use of this product   # noqa: E501
+        The pricing model of the product: * FIXED: Customers are charged a fixed amount for each billing period * PER_SEAT: Customers are charged based on the number of units they purchase * METERED: Customers are charged per use of this product * SIMPLE: Customers are charged on a fixed amount for each billing period with an optional add-on feature   # noqa: E501
 
         :return: The type of this Product.  # noqa: E501
         :rtype: str
@@ -152,12 +152,18 @@ class Product(BaseModel):
     def type(self, type):
         """Sets the type of this Product.
 
-        The pricing model of the product: * FIXED: Customers are charged a fixed amount for each billing period * PER_SEAT: Customers are charged based on the number of units they purchase * METERED: Customers are charged per use of this product   # noqa: E501
+        The pricing model of the product: * FIXED: Customers are charged a fixed amount for each billing period * PER_SEAT: Customers are charged based on the number of units they purchase * METERED: Customers are charged per use of this product * SIMPLE: Customers are charged on a fixed amount for each billing period with an optional add-on feature   # noqa: E501
 
         :param type: The type of this Product.  # noqa: E501
         :type: str
         """
-        allowed_values = ["FIXED", "PER_SEAT", "METERED", "None"]  # noqa: E501
+        allowed_values = [
+            "FIXED",
+            "PER_SEAT",
+            "METERED",
+            "SIMPLE",
+            "None",
+        ]  # noqa: E501
 
         if type:
             if type not in allowed_values:

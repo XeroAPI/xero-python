@@ -21,7 +21,7 @@ except ImportError:
 """
 
 """
-    OpenAPI spec version: 8.2.0
+    OpenAPI spec version: 8.3.0
 """
 
 
@@ -885,6 +885,7 @@ class FilesApi(object):
         pagesize=empty,
         page=empty,
         sort=empty,
+        direction=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -895,6 +896,7 @@ class FilesApi(object):
         :param int pagesize: pass an optional page size value
         :param int page: number of records to skip for pagination
         :param str sort: values to sort by
+        :param str direction: sort direction
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -935,6 +937,9 @@ class FilesApi(object):
 
         if sort is not empty:
             query_params.append(("sort", sort))
+
+        if direction is not empty:
+            query_params.append(("direction", direction))
 
         header_params = {
             "xero-tenant-id": xero_tenant_id,

@@ -251,6 +251,7 @@ class User(BaseModel):
             "MANAGEDCLIENT",
             "CASHBOOKCLIENT",
             "UNKNOWN",
+            "REMOVED",
             "None",
         ]  # noqa: E501
 

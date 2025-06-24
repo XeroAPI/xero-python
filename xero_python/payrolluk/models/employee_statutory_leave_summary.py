@@ -158,6 +158,7 @@ class EmployeeStatutoryLeaveSummary(BaseModel):
             "Paternity",
             "Sharedparental",
             "Bereavement",
+            "NeonatalCare",
             "None",
         ]  # noqa: E501
 
