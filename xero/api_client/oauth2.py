@@ -58,6 +58,7 @@ class TokenApi:
             )
         return await response.json()
 
+
     async def revoke_token(self, refresh_token):
         """
         Call xero identity API to revoke access tokens and remove all a user's connections using refresh token
@@ -69,25 +70,24 @@ class TokenApi:
             "client_id": self.client_id,
             "client_secret": self.client_secret,
         }
-        response: ApiResponse = await self.api_client.call_api(
-            self.revoke_token_url,
+        response: ClientResponse = await self.api_client.request(
             "POST",
-            header_params={
+            self.revoke_token_url,
+            query_params=None,
+            headers={
                 "Accept": "application/json",
                 "Content-Type": "application/x-www-form-urlencoded",
             },
             post_params=post_data,
-            auth_settings=None,  # important to prevent infinite recursive loop
             _preload_content=False,
         )
-        if response.status_code != 200:
-            # todo improve error handling
+        if response.status != 200:
             raise Exception(
                 "refresh token status {} {} {!r}".format(
-                    response.status_code, response.data, response.headers
+                    response.status, await response.text(), response.headers
                 )
             )
-        return response.status_code
+        return response.status
 
     async def get_client_credentials_token(self, app_store_billing):
         """
