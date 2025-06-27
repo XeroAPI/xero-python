@@ -48,7 +48,7 @@ jobs:
               run: npm install -g @stoplight/prism-cli
 
             - name: Start PRISM Server
-              run: ./start-prism.sh feature/prism-changes & sleep 15
+              run: ./start-prism.sh feature/prism-changes-mt-v2 & sleep 15
               working-directory: xero-python/tests/utils
 
             - name: Run Test
