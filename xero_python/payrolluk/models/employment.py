@@ -62,16 +62,12 @@ class Employment(BaseModel):
         self._ni_categories = None
         self.discriminator = None
 
-        if payroll_calendar_id is not None:
-            self.payroll_calendar_id = payroll_calendar_id
-        if start_date is not None:
-            self.start_date = start_date
-        if employee_number is not None:
-            self.employee_number = employee_number
+        self.payroll_calendar_id = payroll_calendar_id
+        self.start_date = start_date
+        self.employee_number = employee_number
         if ni_category is not None:
             self.ni_category = ni_category
-        if ni_categories is not None:
-            self.ni_categories = ni_categories
+        self.ni_categories = ni_categories
 
     @property
     def payroll_calendar_id(self):
@@ -93,6 +89,10 @@ class Employment(BaseModel):
         :param payroll_calendar_id: The payroll_calendar_id of this Employment.  # noqa: E501
         :type: str
         """
+        if payroll_calendar_id is None:
+            raise ValueError(
+                "Invalid value for `payroll_calendar_id`, must not be `None`"
+            )  # noqa: E501
 
         self._payroll_calendar_id = payroll_calendar_id
 
@@ -116,6 +116,10 @@ class Employment(BaseModel):
         :param start_date: The start_date of this Employment.  # noqa: E501
         :type: date
         """
+        if start_date is None:
+            raise ValueError(
+                "Invalid value for `start_date`, must not be `None`"
+            )  # noqa: E501
 
         self._start_date = start_date
 
@@ -139,6 +143,10 @@ class Employment(BaseModel):
         :param employee_number: The employee_number of this Employment.  # noqa: E501
         :type: str
         """
+        if employee_number is None:
+            raise ValueError(
+                "Invalid value for `employee_number`, must not be `None`"
+            )  # noqa: E501
 
         self._employee_number = employee_number
 
@@ -183,5 +191,9 @@ class Employment(BaseModel):
         :param ni_categories: The ni_categories of this Employment.  # noqa: E501
         :type: list[NICategory]
         """
+        if ni_categories is None:
+            raise ValueError(
+                "Invalid value for `ni_categories`, must not be `None`"
+            )  # noqa: E501
 
         self._ni_categories = ni_categories

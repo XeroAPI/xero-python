@@ -4,13 +4,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **employee_id** | **str** | Xero unique identifier for the employee | [optional] 
-**title** | **str** | Title of the employee | [optional] 
-**first_name** | **str** | First name of employee | [optional] 
-**last_name** | **str** | Last name of employee | [optional] 
-**date_of_birth** | **date** | Date of birth of the employee (YYYY-MM-DD) | [optional] 
-**address** | [**Address**](Address.md) |  | [optional] 
+**title** | **str** | Title of the employee | 
+**first_name** | **str** | First name of employee | 
+**last_name** | **str** | Last name of employee | 
+**date_of_birth** | **date** | Date of birth of the employee (YYYY-MM-DD) | 
+**address** | [**Address**](Address.md) |  | 
 **email** | **str** | The email address for the employee | [optional] 
-**gender** | **str** | The employee’s gender | [optional] 
+**gender** | **str** | The employee’s gender | 
 **phone_number** | **str** | Employee phone number | [optional] 
 **start_date** | **date** | Employment start date of the employee at the time it was requested | [optional] 
 **end_date** | **date** | Employment end date of the employee at the time it was requested | [optional] 

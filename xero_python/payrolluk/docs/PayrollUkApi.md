@@ -173,7 +173,7 @@ api_client = ApiClient(
 api_instance = PayrollUkApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
-benefit = { "name": "My Big Bennie", "category": "StakeholderPension", "liabilityAccountId": "e0faa299-ca0d-4b0a-9e32-0dfabdf9179a", "expenseAccountId": "4b03500d-32fd-4616-8d70-e1e56e0519c6", "standardAmount": 50, "percentage": 25, "calculationType": "PercentageOfGross" } # Benefit | 
+benefit = {"name":"My Big Bennie","category":"StakeholderPension","liabilityAccountId":"e0faa299-ca0d-4b0a-9e32-0dfabdf9179a","expenseAccountId":"4b03500d-32fd-4616-8d70-e1e56e0519c6","standardAmount":50,"percentage":25,"calculationType":"PercentageOfGross"} # Benefit | 
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates a new employee benefit
@@ -238,7 +238,7 @@ api_client = ApiClient(
 api_instance = PayrollUkApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
-deduction = { "deductionName": "My new deduction", "deductionCategory": "SalarySacrifice", "liabilityAccountId": "e0faa299-ca0d-4b0a-9e32-0dfabdf9179a", "calculationType": "FixedAmount" } # Deduction | 
+deduction = {"deductionName":"My new deduction","deductionCategory":"SalarySacrifice","liabilityAccountId":"e0faa299-ca0d-4b0a-9e32-0dfabdf9179a","calculationType":"FixedAmount"} # Deduction | 
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates a new deduction
@@ -303,7 +303,7 @@ api_client = ApiClient(
 api_instance = PayrollUkApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
-earnings_rate = { "name": "My Earnings Rate", "earningsType": "RegularEarnings", "rateType": "RatePerUnit", "typeOfUnits": "hours", "expenseAccountID": "4b03500d-32fd-4616-8d70-e1e56e0519c6" } # EarningsRate | 
+earnings_rate = {"name":"My Earnings Rate","earningsType":"RegularEarnings","rateType":"RatePerUnit","typeOfUnits":"hours","expenseAccountID":"4b03500d-32fd-4616-8d70-e1e56e0519c6"} # EarningsRate | 
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates a new earnings rate
@@ -368,7 +368,7 @@ api_client = ApiClient(
 api_instance = PayrollUkApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
-employee = { "title":"Mr", "firstName":"Mike", "lastName":"Fancy", "dateOfBirth":"1999-01-01T00:00:00", "gender":"M", "email":"mike@starkindustries.com", "isOffPayrollWorker": false, "address": { "addressLine1": "171 Midsummer", "city": "Milton Keyness", "postCode": "MK9 1EB" } } # Employee | 
+employee = {"title":"Mr","firstName":"Mike","lastName":"Fancy","dateOfBirth":"1999-01-01T00:00:00Z","gender":"M","email":"mike@starkindustries.com","isOffPayrollWorker":false,"address":{"addressLine1":"171 Midsummer","city":"Milton Keyness","postCode":"MK9 1EB"}} # Employee | 
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates employees
@@ -501,7 +501,7 @@ api_instance = PayrollUkApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Employee id for single object
-employee_leave = { "leaveTypeID": "1d2778ee-86ea-45c0-bbf8-1045485f6b3f", "description": "Creating a Description", "startDate": "2020-03-24", "endDate": "2020-03-26" } # EmployeeLeave | 
+employee_leave = {"leaveTypeID":"1d2778ee-86ea-45c0-bbf8-1045485f6b3f","description":"Creating a Description","startDate":"2020-03-24","endDate":"2020-03-26"} # EmployeeLeave | 
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates leave records for a specific employee
@@ -568,7 +568,7 @@ api_instance = PayrollUkApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Employee id for single object
-employee_leave_type = { "leaveTypeID": "4918f233-bd31-43f9-9633-bcc6de1178f2", "scheduleOfAccrual": "BeginningOfCalendarYear", "hoursAccruedAnnually": 10 } # EmployeeLeaveType | 
+employee_leave_type = {"leaveTypeID":"4918f233-bd31-43f9-9633-bcc6de1178f2","scheduleOfAccrual":"BeginningOfCalendarYear","hoursAccruedAnnually":10} # EmployeeLeaveType | 
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates employee leave type records
@@ -635,7 +635,7 @@ api_instance = PayrollUkApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Employee id for single object
-employee_opening_balances = { "statutoryAdoptionPay": 10, "statutoryMaternityPay": 10, "statutoryPaternityPay": 10, "statutorySharedParentalPay": 10, "statutorySickPay": 10, "priorEmployeeNumber": 10 } # EmployeeOpeningBalances | 
+employee_opening_balances = {"statutoryAdoptionPay":10,"statutoryMaternityPay":10,"statutoryPaternityPay":10,"statutorySharedParentalPay":10,"statutorySickPay":10,"priorEmployeeNumber":10} # EmployeeOpeningBalances | 
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates an opening balance for a specific employee
@@ -702,7 +702,7 @@ api_instance = PayrollUkApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Employee id for single object
-payment_method = { "paymentMethod": "Electronically", "bankAccounts": [ { "accountName": "Sid BofA", "accountNumber": "24987654", "sortCode": "287654" } ] } # PaymentMethod | 
+payment_method = {"paymentMethod":"Electronically","bankAccounts":[{"accountName":"Sid BofA","accountNumber":"24987654","sortCode":"287654"}]} # PaymentMethod | 
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates an employee payment method
@@ -769,7 +769,7 @@ api_instance = PayrollUkApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Employee id for single object
-salary_and_wage = { "earningsRateID": "87f5b43a-cf51-4b74-92de-94c819e82d27", "numberOfUnitsPerWeek": 2, "ratePerUnit": 10, "numberOfUnitsPerDay": 2, "effectiveFrom": "2020-05-01", "annualSalary": 100, "status": "ACTIVE", "paymentType": "Salary" } # SalaryAndWage | 
+salary_and_wage = {"earningsRateID":"87f5b43a-cf51-4b74-92de-94c819e82d27","numberOfUnitsPerWeek":2,"ratePerUnit":10,"numberOfUnitsPerDay":2,"effectiveFrom":"2020-05-01","annualSalary":100,"status":"ACTIVE","paymentType":"Salary"} # SalaryAndWage | 
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates a salary and wage record for a specific employee
@@ -835,7 +835,7 @@ api_client = ApiClient(
 api_instance = PayrollUkApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
-employee_statutory_sick_leave = { "employeeID": "aad6b292-7b94-408b-93f6-e489867e3fb0", "leaveTypeID": "aab78802-e9d3-4bbd-bc87-df858054988f", "startDate": "2020-04-21", "endDate": "2020-04-24", "workPattern": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" ], "isPregnancyRelated": false, "sufficientNotice": true } # EmployeeStatutorySickLeave | 
+employee_statutory_sick_leave = {"employeeID":"aad6b292-7b94-408b-93f6-e489867e3fb0","leaveTypeID":"aab78802-e9d3-4bbd-bc87-df858054988f","startDate":"2020-04-21","endDate":"2020-04-24","workPattern":["Monday","Tuesday","Wednesday","Thursday","Friday"],"isPregnancyRelated":false,"sufficientNotice":true} # EmployeeStatutorySickLeave | 
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates statutory sick leave records
@@ -901,7 +901,7 @@ api_instance = PayrollUkApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Employee id for single object
-employment = { "PayrollCalendarID": "216d80e6-af55-47b1-b718-9457c3f5d2fe", "StartDate": "2020-04-01", "NICategories": [ { "NICategory": "A", "StartDate": "2020-05-01" } ], "EmployeeNumber": "123ABC" } # Employment | 
+employment = {"payrollCalendarID":"cdfb8371-0b21-4b8a-8903-1024df6c391e","startDate":"2024-04-01","niCategories":[{"niCategory":"I","startDate":"2020-05-01","workplacePostcode":"SW1A 1AA"}],"employeeNumber":"123ABC"} # Employment | 
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates employment detail for a specific employee using a unique employee ID
@@ -967,7 +967,7 @@ api_client = ApiClient(
 api_instance = PayrollUkApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
-leave_type = { "name": "My opebvwbfxf Leave", "isPaidLeave": false, "showOnPayslip": true } # LeaveType | 
+leave_type = {"name":"My opebvwbfxf Leave","isPaidLeave":false,"showOnPayslip":true} # LeaveType | 
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates a new leave type
@@ -1099,7 +1099,7 @@ api_client = ApiClient(
 api_instance = PayrollUkApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
-pay_run_calendar = { "name": "My Weekly Cal", "calendarType": "Weekly", "periodStartDate": "2020-05-01", "paymentDate": "2020-05-15" } # PayRunCalendar | 
+pay_run_calendar = {"name":"My Weekly Cal","calendarType":"Weekly","periodStartDate":"2020-05-01","paymentDate":"2020-05-15"} # PayRunCalendar | 
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates a new payrun calendar
@@ -1164,7 +1164,7 @@ api_client = ApiClient(
 api_instance = PayrollUkApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
-reimbursement = { "name": "My new Reimburse", "accountID": "9ee28149-32a9-4661-8eab-a28738696983" } # Reimbursement | 
+reimbursement = {"name":"My new Reimburse","accountID":"9ee28149-32a9-4661-8eab-a28738696983"} # Reimbursement | 
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates a new reimbursement
@@ -1229,7 +1229,7 @@ api_client = ApiClient(
 api_instance = PayrollUkApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
-timesheet = { "payrollCalendarID": "216d80e6-af55-47b1-b718-9457c3f5d2fe", "employeeID": "aad6b292-7b94-408b-93f6-e489867e3fb0", "startDate": "2020-04-13", "endDate": "2020-04-19", "timesheetLines": [ { "date": "2020-04-13", "earningsRateID": "87f5b43a-cf51-4b74-92de-94c819e82d27", "numberOfUnits": 8 }, { "date": "2020-04-15", "earningsRateID": "87f5b43a-cf51-4b74-92de-94c819e82d27", "numberOfUnits": 6 } ] } # Timesheet | 
+timesheet = {"payrollCalendarID":"216d80e6-af55-47b1-b718-9457c3f5d2fe","employeeID":"aad6b292-7b94-408b-93f6-e489867e3fb0","startDate":"2020-04-13","endDate":"2020-04-19","timesheetLines":[{"date":"2020-04-13","earningsRateID":"87f5b43a-cf51-4b74-92de-94c819e82d27","numberOfUnits":8},{"date":"2020-04-15","earningsRateID":"87f5b43a-cf51-4b74-92de-94c819e82d27","numberOfUnits":6}]} # Timesheet | 
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates a new timesheet
@@ -1295,7 +1295,7 @@ api_instance = PayrollUkApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 timesheet_id = 'timesheet_id_example' # str | Identifier for the timesheet
-timesheet_line = { "date": "2020-04-14", "earningsRateID": "87f5b43a-cf51-4b74-92de-94c819e82d27", "numberOfUnits": 1 } # TimesheetLine | 
+timesheet_line = {"date":"2020-04-14","earningsRateID":"87f5b43a-cf51-4b74-92de-94c819e82d27","numberOfUnits":1} # TimesheetLine | 
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates a new timesheet line for a specific timesheet using a unique timesheet ID
@@ -4172,7 +4172,7 @@ api_instance = PayrollUkApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Employee id for single object
-employee = { "title": "Mr.", "firstName": "TestDataUK", "lastName": "Tester", "dateOfBirth": "1992-11-22T00:00:00", "gender": "M", "email": "tester@gmail.com", "phoneNumber": "0400123456", "isOffPayrollWorker": false, "address": { "addressLine1": "171 Midsummer", "city": "Milton Keyness", "postCode": "MK9 1EB" } } # Employee | 
+employee = {"title":"Mr.","firstName":"TestDataUK","lastName":"Tester","dateOfBirth":"1992-11-22T00:00:00Z","gender":"M","email":"tester@gmail.com","phoneNumber":"0400123456","isOffPayrollWorker":false,"address":{"addressLine1":"171 Midsummer","city":"Milton Keyness","postCode":"MK9 1EB"}} # Employee | 
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Updates a specific employee's detail
@@ -4240,7 +4240,7 @@ api_instance = PayrollUkApi(api_client)
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Employee id for single object
 pay_template_earning_id = '3fa85f64-5717-4562-b3fc-2c963f66afa6' # str | Id for single pay template earnings object
-earnings_template = { "ratePerUnit": 30, "numberOfUnits": 4, "earningsRateID": "87f5b43a-cf51-4b74-92de-94c819e82d27" } # EarningsTemplate | 
+earnings_template = {"ratePerUnit":30,"numberOfUnits":4,"earningsRateID":"87f5b43a-cf51-4b74-92de-94c819e82d27"} # EarningsTemplate | 
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Updates a specific employee's earnings template records
@@ -4309,7 +4309,7 @@ api_instance = PayrollUkApi(api_client)
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Employee id for single object
 leave_id = 'c4be24e5-e840-4c92-9eaa-2d86cd596314' # str | Leave id for single object
-employee_leave = { "leaveTypeID": "ed08dffe-788e-4b24-9630-f0fa2f4d164c", "description": "Creating a Description", "startDate": "2020-04-24", "endDate": "2020-04-26", "periods": [ { "periodStartDate": "2020-04-20", "periodEndDate": "2020-04-26", "numberOfUnits": 1, "periodStatus": "Approved" } ] } # EmployeeLeave | 
+employee_leave = {"leaveTypeID":"ed08dffe-788e-4b24-9630-f0fa2f4d164c","description":"Creating a Description","startDate":"2020-04-24","endDate":"2020-04-26","periods":[{"periodStartDate":"2020-04-20","periodEndDate":"2020-04-26","numberOfUnits":1,"periodStatus":"Approved"}]} # EmployeeLeave | 
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Updates a specific employee's leave records
@@ -4377,7 +4377,7 @@ api_instance = PayrollUkApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Employee id for single object
-employee_opening_balances = { "statutoryAdoptionPay": 20, "statutoryMaternityPay": 20, "statutoryPaternityPay": 20, "statutorySharedParentalPay": 20, "statutorySickPay": 20, "priorEmployeeNumber": 20 } # EmployeeOpeningBalances | 
+employee_opening_balances = {"statutoryAdoptionPay":20,"statutoryMaternityPay":20,"statutoryPaternityPay":20,"statutorySharedParentalPay":20,"statutorySickPay":20,"priorEmployeeNumber":20} # EmployeeOpeningBalances | 
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Updates a specific employee's opening balances
@@ -4445,7 +4445,7 @@ api_instance = PayrollUkApi(api_client)
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Employee id for single object
 salary_and_wages_id = '3fa85f64-5717-4562-b3fc-2c963f66afa6' # str | Id for single pay template earnings object
-salary_and_wage = { "earningsRateID": "87f5b43a-cf51-4b74-92de-94c819e82d27", "numberOfUnitsPerWeek": 3, "ratePerUnit": 11, "effectiveFrom": "2020-05-15", "annualSalary": 101, "status": "ACTIVE", "paymentType": "Salary" } # SalaryAndWage | 
+salary_and_wage = {"earningsRateID":"87f5b43a-cf51-4b74-92de-94c819e82d27","numberOfUnitsPerWeek":3,"ratePerUnit":11,"effectiveFrom":"2020-05-15","annualSalary":101,"status":"ACTIVE","paymentType":"Salary"} # SalaryAndWage | 
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Updates salary and wages record for a specific employee
@@ -4513,7 +4513,7 @@ api_instance = PayrollUkApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 pay_run_id = 'pay_run_id_example' # str | Identifier for the pay run
-pay_run = { "paymentDate": "2020-05-01" } # PayRun | 
+pay_run = {"paymentDate":"2020-05-01"} # PayRun | 
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Updates a specific pay run
@@ -4581,7 +4581,7 @@ api_instance = PayrollUkApi(api_client)
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 timesheet_id = 'timesheet_id_example' # str | Identifier for the timesheet
 timesheet_line_id = 'timesheet_line_id_example' # str | Identifier for the timesheet line
-timesheet_line = { "date": "2020-04-14", "earningsRateID": "87f5b43a-cf51-4b74-92de-94c819e82d27", "numberOfUnits": 2 } # TimesheetLine | 
+timesheet_line = {"date":"2020-04-14","earningsRateID":"87f5b43a-cf51-4b74-92de-94c819e82d27","numberOfUnits":2} # TimesheetLine | 
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Updates a specific timesheet line for a specific timesheet
