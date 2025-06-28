@@ -7272,6 +7272,10 @@ def accounting_create_account_attachment_by_file_name():
     file_name = 'xero-dev.jpg'
     idempotency_key = 'KEY_VALUE'
     
+    path_to_upload = Path(__file__).resolve().parent.joinpath(fileName)
+    open_file = open(path_to_upload, 'rb')
+        body = open_file.read()
+    
     try:
         api_response = api_instance.create_account_attachment_by_file_name(xero_tenant_id, account_id, file_name, body, idempotency_key)
         print(api_response)
@@ -7407,7 +7411,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     <div class="json-schema-view">
       <div class="primitive">
         <span class="type">
-        File
+        byte[]
         </span>
         <div class="inner description marked">
           Byte array of file in body of request
@@ -7424,7 +7428,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     "application/octet-stream" : {
       "schema" : {
         "type" : "string",
-        "format" : "binary"
+        "format" : "byte"
       }
     }
   },
@@ -7477,6 +7481,10 @@ def accounting_create_bank_transaction_attachment_by_file_name():
     bank_transaction_id = '00000000-0000-0000-0000-000000000000'
     file_name = 'xero-dev.jpg'
     idempotency_key = 'KEY_VALUE'
+    
+    path_to_upload = Path(__file__).resolve().parent.joinpath(fileName)
+    open_file = open(path_to_upload, 'rb')
+        body = open_file.read()
     
     try:
         api_response = api_instance.create_bank_transaction_attachment_by_file_name(xero_tenant_id, bank_transaction_id, file_name, body, idempotency_key)
@@ -7613,7 +7621,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     <div class="json-schema-view">
       <div class="primitive">
         <span class="type">
-        File
+        byte[]
         </span>
         <div class="inner description marked">
           Byte array of file in body of request
@@ -7630,7 +7638,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     "application/octet-stream" : {
       "schema" : {
         "type" : "string",
-        "format" : "binary"
+        "format" : "byte"
       }
     }
   },
@@ -8317,6 +8325,10 @@ def accounting_create_bank_transfer_attachment_by_file_name():
     file_name = 'xero-dev.jpg'
     idempotency_key = 'KEY_VALUE'
     
+    path_to_upload = Path(__file__).resolve().parent.joinpath(fileName)
+    open_file = open(path_to_upload, 'rb')
+        body = open_file.read()
+    
     try:
         api_response = api_instance.create_bank_transfer_attachment_by_file_name(xero_tenant_id, bank_transfer_id, file_name, body, idempotency_key)
         print(api_response)
@@ -8452,7 +8464,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     <div class="json-schema-view">
       <div class="primitive">
         <span class="type">
-        File
+        byte[]
         </span>
         <div class="inner description marked">
           Byte array of file in body of request
@@ -8469,7 +8481,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     "application/octet-stream" : {
       "schema" : {
         "type" : "string",
-        "format" : "binary"
+        "format" : "byte"
       }
     }
   },
@@ -9331,6 +9343,10 @@ def accounting_create_contact_attachment_by_file_name():
     file_name = 'xero-dev.jpg'
     idempotency_key = 'KEY_VALUE'
     
+    path_to_upload = Path(__file__).resolve().parent.joinpath(fileName)
+    open_file = open(path_to_upload, 'rb')
+        body = open_file.read()
+    
     try:
         api_response = api_instance.create_contact_attachment_by_file_name(xero_tenant_id, contact_id, file_name, body, idempotency_key)
         print(api_response)
@@ -9466,7 +9482,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     <div class="json-schema-view">
       <div class="primitive">
         <span class="type">
-        File
+        byte[]
         </span>
         <div class="inner description marked">
           Byte array of file in body of request
@@ -9483,7 +9499,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     "application/octet-stream" : {
       "schema" : {
         "type" : "string",
-        "format" : "binary"
+        "format" : "byte"
       }
     }
   },
@@ -10563,6 +10579,10 @@ def accounting_create_credit_note_attachment_by_file_name():
     include_online = 'True'
     idempotency_key = 'KEY_VALUE'
     
+    path_to_upload = Path(__file__).resolve().parent.joinpath(fileName)
+    open_file = open(path_to_upload, 'rb')
+        body = open_file.read()
+    
     try:
         api_response = api_instance.create_credit_note_attachment_by_file_name(xero_tenant_id, credit_note_id, file_name, body, include_online, idempotency_key)
         print(api_response)
@@ -10698,7 +10718,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     <div class="json-schema-view">
       <div class="primitive">
         <span class="type">
-        File
+        byte[]
         </span>
         <div class="inner description marked">
           Byte array of file in body of request
@@ -10715,7 +10735,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     "application/octet-stream" : {
       "schema" : {
         "type" : "string",
-        "format" : "binary"
+        "format" : "byte"
       }
     }
   },
@@ -11937,6 +11957,10 @@ def accounting_create_invoice_attachment_by_file_name():
     include_online = 'True'
     idempotency_key = 'KEY_VALUE'
     
+    path_to_upload = Path(__file__).resolve().parent.joinpath(fileName)
+    open_file = open(path_to_upload, 'rb')
+        body = open_file.read()
+    
     try:
         api_response = api_instance.create_invoice_attachment_by_file_name(xero_tenant_id, invoice_id, file_name, body, include_online, idempotency_key)
         print(api_response)
@@ -12072,7 +12096,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     <div class="json-schema-view">
       <div class="primitive">
         <span class="type">
-        File
+        byte[]
         </span>
         <div class="inner description marked">
           Byte array of file in body of request
@@ -12089,7 +12113,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     "application/octet-stream" : {
       "schema" : {
         "type" : "string",
-        "format" : "binary"
+        "format" : "byte"
       }
     }
   },
@@ -13179,6 +13203,10 @@ def accounting_create_manual_journal_attachment_by_file_name():
     file_name = 'xero-dev.jpg'
     idempotency_key = 'KEY_VALUE'
     
+    path_to_upload = Path(__file__).resolve().parent.joinpath(fileName)
+    open_file = open(path_to_upload, 'rb')
+        body = open_file.read()
+    
     try:
         api_response = api_instance.create_manual_journal_attachment_by_file_name(xero_tenant_id, manual_journal_id, file_name, body, idempotency_key)
         print(api_response)
@@ -13314,7 +13342,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     <div class="json-schema-view">
       <div class="primitive">
         <span class="type">
-        File
+        byte[]
         </span>
         <div class="inner description marked">
           Byte array of file in body of request
@@ -13331,7 +13359,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     "application/octet-stream" : {
       "schema" : {
         "type" : "string",
-        "format" : "binary"
+        "format" : "byte"
       }
     }
   },
@@ -15376,6 +15404,10 @@ def accounting_create_purchase_order_attachment_by_file_name():
     file_name = 'xero-dev.jpg'
     idempotency_key = 'KEY_VALUE'
     
+    path_to_upload = Path(__file__).resolve().parent.joinpath(fileName)
+    open_file = open(path_to_upload, 'rb')
+        body = open_file.read()
+    
     try:
         api_response = api_instance.create_purchase_order_attachment_by_file_name(xero_tenant_id, purchase_order_id, file_name, body, idempotency_key)
         print(api_response)
@@ -15511,7 +15543,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     <div class="json-schema-view">
       <div class="primitive">
         <span class="type">
-        File
+        byte[]
         </span>
         <div class="inner description marked">
           Byte array of file in body of request
@@ -15528,7 +15560,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     "application/octet-stream" : {
       "schema" : {
         "type" : "string",
-        "format" : "binary"
+        "format" : "byte"
       }
     }
   },
@@ -15984,6 +16016,10 @@ def accounting_create_quote_attachment_by_file_name():
     file_name = 'xero-dev.jpg'
     idempotency_key = 'KEY_VALUE'
     
+    path_to_upload = Path(__file__).resolve().parent.joinpath(fileName)
+    open_file = open(path_to_upload, 'rb')
+        body = open_file.read()
+    
     try:
         api_response = api_instance.create_quote_attachment_by_file_name(xero_tenant_id, quote_id, file_name, body, idempotency_key)
         print(api_response)
@@ -16119,7 +16155,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     <div class="json-schema-view">
       <div class="primitive">
         <span class="type">
-        File
+        byte[]
         </span>
         <div class="inner description marked">
           Byte array of file in body of request
@@ -16136,7 +16172,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     "application/octet-stream" : {
       "schema" : {
         "type" : "string",
-        "format" : "binary"
+        "format" : "byte"
       }
     }
   },
@@ -16811,6 +16847,10 @@ def accounting_create_receipt_attachment_by_file_name():
     file_name = 'xero-dev.jpg'
     idempotency_key = 'KEY_VALUE'
     
+    path_to_upload = Path(__file__).resolve().parent.joinpath(fileName)
+    open_file = open(path_to_upload, 'rb')
+        body = open_file.read()
+    
     try:
         api_response = api_instance.create_receipt_attachment_by_file_name(xero_tenant_id, receipt_id, file_name, body, idempotency_key)
         print(api_response)
@@ -16946,7 +16986,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     <div class="json-schema-view">
       <div class="primitive">
         <span class="type">
-        File
+        byte[]
         </span>
         <div class="inner description marked">
           Byte array of file in body of request
@@ -16963,7 +17003,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     "application/octet-stream" : {
       "schema" : {
         "type" : "string",
-        "format" : "binary"
+        "format" : "byte"
       }
     }
   },
@@ -17209,6 +17249,10 @@ def accounting_create_repeating_invoice_attachment_by_file_name():
     file_name = 'xero-dev.jpg'
     idempotency_key = 'KEY_VALUE'
     
+    path_to_upload = Path(__file__).resolve().parent.joinpath(fileName)
+    open_file = open(path_to_upload, 'rb')
+        body = open_file.read()
+    
     try:
         api_response = api_instance.create_repeating_invoice_attachment_by_file_name(xero_tenant_id, repeating_invoice_id, file_name, body, idempotency_key)
         print(api_response)
@@ -17344,7 +17388,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     <div class="json-schema-view">
       <div class="primitive">
         <span class="type">
-        File
+        byte[]
         </span>
         <div class="inner description marked">
           Byte array of file in body of request
@@ -17361,7 +17405,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     "application/octet-stream" : {
       "schema" : {
         "type" : "string",
-        "format" : "binary"
+        "format" : "byte"
       }
     }
   },
@@ -40768,6 +40812,10 @@ def accounting_update_account_attachment_by_file_name():
     file_name = 'xero-dev.jpg'
     idempotency_key = 'KEY_VALUE'
     
+    path_to_upload = Path(__file__).resolve().parent.joinpath(fileName)
+    open_file = open(path_to_upload, 'rb')
+        body = open_file.read()
+    
     try:
         api_response = api_instance.update_account_attachment_by_file_name(xero_tenant_id, account_id, file_name, body, idempotency_key)
         print(api_response)
@@ -40903,7 +40951,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     <div class="json-schema-view">
       <div class="primitive">
         <span class="type">
-        File
+        byte[]
         </span>
         <div class="inner description marked">
           Byte array of file in body of request
@@ -40920,7 +40968,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     "application/octet-stream" : {
       "schema" : {
         "type" : "string",
-        "format" : "binary"
+        "format" : "byte"
       }
     }
   },
@@ -41277,6 +41325,10 @@ def accounting_update_bank_transaction_attachment_by_file_name():
     file_name = 'xero-dev.jpg'
     idempotency_key = 'KEY_VALUE'
     
+    path_to_upload = Path(__file__).resolve().parent.joinpath(fileName)
+    open_file = open(path_to_upload, 'rb')
+        body = open_file.read()
+    
     try:
         api_response = api_instance.update_bank_transaction_attachment_by_file_name(xero_tenant_id, bank_transaction_id, file_name, body, idempotency_key)
         print(api_response)
@@ -41412,7 +41464,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     <div class="json-schema-view">
       <div class="primitive">
         <span class="type">
-        File
+        byte[]
         </span>
         <div class="inner description marked">
           Byte array of file in body of request
@@ -41429,7 +41481,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     "application/octet-stream" : {
       "schema" : {
         "type" : "string",
-        "format" : "binary"
+        "format" : "byte"
       }
     }
   },
@@ -41482,6 +41534,10 @@ def accounting_update_bank_transfer_attachment_by_file_name():
     bank_transfer_id = '00000000-0000-0000-0000-000000000000'
     file_name = 'xero-dev.jpg'
     idempotency_key = 'KEY_VALUE'
+    
+    path_to_upload = Path(__file__).resolve().parent.joinpath(fileName)
+    open_file = open(path_to_upload, 'rb')
+        body = open_file.read()
     
     try:
         api_response = api_instance.update_bank_transfer_attachment_by_file_name(xero_tenant_id, bank_transfer_id, file_name, body, idempotency_key)
@@ -41618,7 +41674,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     <div class="json-schema-view">
       <div class="primitive">
         <span class="type">
-        File
+        byte[]
         </span>
         <div class="inner description marked">
           Byte array of file in body of request
@@ -41635,7 +41691,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     "application/octet-stream" : {
       "schema" : {
         "type" : "string",
-        "format" : "binary"
+        "format" : "byte"
       }
     }
   },
@@ -41883,6 +41939,10 @@ def accounting_update_contact_attachment_by_file_name():
     file_name = 'xero-dev.jpg'
     idempotency_key = 'KEY_VALUE'
     
+    path_to_upload = Path(__file__).resolve().parent.joinpath(fileName)
+    open_file = open(path_to_upload, 'rb')
+        body = open_file.read()
+    
     try:
         api_response = api_instance.update_contact_attachment_by_file_name(xero_tenant_id, contact_id, file_name, body, idempotency_key)
         print(api_response)
@@ -42018,7 +42078,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     <div class="json-schema-view">
       <div class="primitive">
         <span class="type">
-        File
+        byte[]
         </span>
         <div class="inner description marked">
           Byte array of file in body of request
@@ -42035,7 +42095,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     "application/octet-stream" : {
       "schema" : {
         "type" : "string",
-        "format" : "binary"
+        "format" : "byte"
       }
     }
   },
@@ -42531,6 +42591,10 @@ def accounting_update_credit_note_attachment_by_file_name():
     file_name = 'xero-dev.jpg'
     idempotency_key = 'KEY_VALUE'
     
+    path_to_upload = Path(__file__).resolve().parent.joinpath(fileName)
+    open_file = open(path_to_upload, 'rb')
+        body = open_file.read()
+    
     try:
         api_response = api_instance.update_credit_note_attachment_by_file_name(xero_tenant_id, credit_note_id, file_name, body, idempotency_key)
         print(api_response)
@@ -42666,7 +42730,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     <div class="json-schema-view">
       <div class="primitive">
         <span class="type">
-        File
+        byte[]
         </span>
         <div class="inner description marked">
           Byte array of file in body of request
@@ -42683,7 +42747,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     "application/octet-stream" : {
       "schema" : {
         "type" : "string",
-        "format" : "binary"
+        "format" : "byte"
       }
     }
   },
@@ -43170,6 +43234,10 @@ def accounting_update_invoice_attachment_by_file_name():
     file_name = 'xero-dev.jpg'
     idempotency_key = 'KEY_VALUE'
     
+    path_to_upload = Path(__file__).resolve().parent.joinpath(fileName)
+    open_file = open(path_to_upload, 'rb')
+        body = open_file.read()
+    
     try:
         api_response = api_instance.update_invoice_attachment_by_file_name(xero_tenant_id, invoice_id, file_name, body, idempotency_key)
         print(api_response)
@@ -43305,7 +43373,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     <div class="json-schema-view">
       <div class="primitive">
         <span class="type">
-        File
+        byte[]
         </span>
         <div class="inner description marked">
           Byte array of file in body of request
@@ -43322,7 +43390,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     "application/octet-stream" : {
       "schema" : {
         "type" : "string",
-        "format" : "binary"
+        "format" : "byte"
       }
     }
   },
@@ -43999,6 +44067,10 @@ def accounting_update_manual_journal_attachment_by_file_name():
     file_name = 'xero-dev.jpg'
     idempotency_key = 'KEY_VALUE'
     
+    path_to_upload = Path(__file__).resolve().parent.joinpath(fileName)
+    open_file = open(path_to_upload, 'rb')
+        body = open_file.read()
+    
     try:
         api_response = api_instance.update_manual_journal_attachment_by_file_name(xero_tenant_id, manual_journal_id, file_name, body, idempotency_key)
         print(api_response)
@@ -44134,7 +44206,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     <div class="json-schema-view">
       <div class="primitive">
         <span class="type">
-        File
+        byte[]
         </span>
         <div class="inner description marked">
           Byte array of file in body of request
@@ -44151,7 +44223,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     "application/octet-stream" : {
       "schema" : {
         "type" : "string",
-        "format" : "binary"
+        "format" : "byte"
       }
     }
   },
@@ -46563,6 +46635,10 @@ def accounting_update_purchase_order_attachment_by_file_name():
     file_name = 'xero-dev.jpg'
     idempotency_key = 'KEY_VALUE'
     
+    path_to_upload = Path(__file__).resolve().parent.joinpath(fileName)
+    open_file = open(path_to_upload, 'rb')
+        body = open_file.read()
+    
     try:
         api_response = api_instance.update_purchase_order_attachment_by_file_name(xero_tenant_id, purchase_order_id, file_name, body, idempotency_key)
         print(api_response)
@@ -46698,7 +46774,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     <div class="json-schema-view">
       <div class="primitive">
         <span class="type">
-        File
+        byte[]
         </span>
         <div class="inner description marked">
           Byte array of file in body of request
@@ -46715,7 +46791,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     "application/octet-stream" : {
       "schema" : {
         "type" : "string",
-        "format" : "binary"
+        "format" : "byte"
       }
     }
   },
@@ -46970,6 +47046,10 @@ def accounting_update_quote_attachment_by_file_name():
     file_name = 'xero-dev.jpg'
     idempotency_key = 'KEY_VALUE'
     
+    path_to_upload = Path(__file__).resolve().parent.joinpath(fileName)
+    open_file = open(path_to_upload, 'rb')
+        body = open_file.read()
+    
     try:
         api_response = api_instance.update_quote_attachment_by_file_name(xero_tenant_id, quote_id, file_name, body, idempotency_key)
         print(api_response)
@@ -47105,7 +47185,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     <div class="json-schema-view">
       <div class="primitive">
         <span class="type">
-        File
+        byte[]
         </span>
         <div class="inner description marked">
           Byte array of file in body of request
@@ -47122,7 +47202,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     "application/octet-stream" : {
       "schema" : {
         "type" : "string",
-        "format" : "binary"
+        "format" : "byte"
       }
     }
   },
@@ -47404,6 +47484,10 @@ def accounting_update_receipt_attachment_by_file_name():
     file_name = 'xero-dev.jpg'
     idempotency_key = 'KEY_VALUE'
     
+    path_to_upload = Path(__file__).resolve().parent.joinpath(fileName)
+    open_file = open(path_to_upload, 'rb')
+        body = open_file.read()
+    
     try:
         api_response = api_instance.update_receipt_attachment_by_file_name(xero_tenant_id, receipt_id, file_name, body, idempotency_key)
         print(api_response)
@@ -47539,7 +47623,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     <div class="json-schema-view">
       <div class="primitive">
         <span class="type">
-        File
+        byte[]
         </span>
         <div class="inner description marked">
           Byte array of file in body of request
@@ -47556,7 +47640,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     "application/octet-stream" : {
       "schema" : {
         "type" : "string",
-        "format" : "binary"
+        "format" : "byte"
       }
     }
   },
@@ -47837,6 +47921,10 @@ def accounting_update_repeating_invoice_attachment_by_file_name():
     file_name = 'xero-dev.jpg'
     idempotency_key = 'KEY_VALUE'
     
+    path_to_upload = Path(__file__).resolve().parent.joinpath(fileName)
+    open_file = open(path_to_upload, 'rb')
+        body = open_file.read()
+    
     try:
         api_response = api_instance.update_repeating_invoice_attachment_by_file_name(xero_tenant_id, repeating_invoice_id, file_name, body, idempotency_key)
         print(api_response)
@@ -47972,7 +48060,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     <div class="json-schema-view">
       <div class="primitive">
         <span class="type">
-        File
+        byte[]
         </span>
         <div class="inner description marked">
           Byte array of file in body of request
@@ -47989,7 +48077,7 @@ This allows you to safely retry requests without the risk of duplicate processin
     "application/octet-stream" : {
       "schema" : {
         "type" : "string",
-        "format" : "binary"
+        "format" : "byte"
       }
     }
   },
