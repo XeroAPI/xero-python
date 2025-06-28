@@ -551,7 +551,7 @@ Steps to Run Test(s)
 * Navigate to **tests--> utils--> ** folder in the terminal
 * Execute the script **./start-prism.sh**
 * This will start the PRISM Server in Local
-* Run **pytest** to run the dotnet test cases.
+* Run **pytest** to run the Python test cases.
 
 ### Querying & Filtering
 
