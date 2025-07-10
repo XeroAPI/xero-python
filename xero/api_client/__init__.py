@@ -16,6 +16,7 @@ import mimetypes
 import os
 import re
 import tempfile
+from decimal import Decimal
 from enum import Enum
 from functools import cached_property
 from urllib.parse import quote
@@ -64,7 +65,7 @@ class ApiClient:
         to the API
     """
 
-    PRIMITIVE_TYPES = (float, bool, bytes, str, int)
+    BASE_TYPES = (float, bool, bytes, str, int, Decimal)
     NATIVE_TYPES_MAPPING = {
         "int": int,
         "float": float,
@@ -309,7 +310,7 @@ class ApiClient:
             return None
         elif isinstance(obj, SecretStr):
             return obj.get_secret_value()
-        elif isinstance(obj, self.PRIMITIVE_TYPES):
+        elif isinstance(obj, self.BASE_TYPES):
             return obj
         elif isinstance(obj, Enum):
             return obj.value
@@ -330,11 +331,10 @@ class ApiClient:
             # model definition for request.
             if hasattr(obj, "to_dict") and callable(getattr(obj, "to_dict")):
                 obj_dict = obj.to_dict()
+            elif hasattr(obj, '__dict__'):
+                obj_dict = obj.__dict__
             else:
-                if hasattr(obj, '__dict__'):
-                    obj_dict = obj.__dict__
-                else:
-                    return None
+                return None
 
         return {
             key: self.sanitize_for_serialization(val) for key, val in obj_dict.items()
