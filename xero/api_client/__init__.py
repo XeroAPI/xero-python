@@ -331,7 +331,10 @@ class ApiClient:
             if hasattr(obj, "to_dict") and callable(getattr(obj, "to_dict")):
                 obj_dict = obj.to_dict()
             else:
-                obj_dict = obj.__dict__
+                if hasattr(obj, '__dict__'):
+                    obj_dict = obj.__dict__
+                else:
+                    return None
 
         return {
             key: self.sanitize_for_serialization(val) for key, val in obj_dict.items()
