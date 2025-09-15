@@ -1663,6 +1663,8 @@ Name | Type | Description  | Notes
 
 Creates new employees used in Xero payrun
 
+This endpoint is deprecated and will be removed April 28, 2026
+
 ### Example
 
 * OAuth Authentication (OAuth2): 
@@ -7730,6 +7732,8 @@ Name | Type | Description  | Notes
 
 Retrieves a specific employee used in Xero payrun using a unique employee Id
 
+This endpoint is deprecated and will be removed April 28, 2026
+
 ### Example
 
 * OAuth Authentication (OAuth2): 
@@ -7792,6 +7796,8 @@ Name | Type | Description  | Notes
 > Employees get_employees(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order)
 
 Retrieves employees used in Xero payrun
+
+This endpoint is deprecated and will be removed April 28, 2026
 
 ### Example
 
@@ -14745,6 +14751,8 @@ Name | Type | Description  | Notes
 > Employees update_or_create_employees(xero_tenant_id, employees, summarize_errors=summarize_errors, idempotency_key=idempotency_key)
 
 Creates a single new employees used in Xero payrun
+
+This endpoint is deprecated and will be removed April 28, 2026
 
 ### Example
 
