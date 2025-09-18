@@ -21,7 +21,7 @@ except ImportError:
 """
 
 """
-    OpenAPI spec version: 9.0.0
+    OpenAPI spec version: 9.1.0
 """
 
 
@@ -2075,6 +2075,7 @@ class AccountingApi(object):
     ):
         """Creates new employees used in Xero payrun  # noqa: E501
         OAuth2 scope: accounting.settings
+        This endpoint is deprecated and will be removed April 28, 2026  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param Employees employees: Employees with array of Employee object in body of request (required)
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
@@ -10152,6 +10153,7 @@ class AccountingApi(object):
     ):
         """Retrieves a specific employee used in Xero payrun using a unique employee Id  # noqa: E501
         OAuth2 scope: accounting.settings, accounting.settings.read
+        This endpoint is deprecated and will be removed April 28, 2026  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Unique identifier for a Employee (required)
         :param bool _return_http_data_only: return received data only
@@ -10230,6 +10232,7 @@ class AccountingApi(object):
     ):
         """Retrieves employees used in Xero payrun  # noqa: E501
         OAuth2 scope: accounting.settings, accounting.settings.read
+        This endpoint is deprecated and will be removed April 28, 2026  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param datetime if_modified_since: Only records created or modified since this timestamp will be returned
         :param str where: Filter by an any element
@@ -19266,6 +19269,7 @@ class AccountingApi(object):
     ):
         """Creates a single new employees used in Xero payrun  # noqa: E501
         OAuth2 scope: accounting.settings
+        This endpoint is deprecated and will be removed April 28, 2026  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param Employees employees: Employees with array of Employee object in body of request (required)
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
