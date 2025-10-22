@@ -72,7 +72,6 @@ Method | HTTP request | Description
 [**update_employee_leave**](PayrollUkApi.md#update_employee_leave) | **PUT** /Employees/{EmployeeID}/Leave/{LeaveID} | Updates a specific employee&#39;s leave records
 [**update_employee_opening_balances**](PayrollUkApi.md#update_employee_opening_balances) | **PUT** /Employees/{EmployeeID}/ukopeningbalances | Updates a specific employee&#39;s opening balances
 [**update_employee_salary_and_wage**](PayrollUkApi.md#update_employee_salary_and_wage) | **PUT** /Employees/{EmployeeID}/SalaryAndWages/{SalaryAndWagesID} | Updates salary and wages record for a specific employee
-[**update_pay_run**](PayrollUkApi.md#update_pay_run) | **PUT** /PayRuns/{PayRunID} | Updates a specific pay run
 [**update_timesheet_line**](PayrollUkApi.md#update_timesheet_line) | **PUT** /Timesheets/{TimesheetID}/Lines/{TimesheetLineID} | Updates a specific timesheet line for a specific timesheet
 
 
@@ -4468,73 +4467,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SalaryAndWageObject**](SalaryAndWageObject.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **update_pay_run**
-> PayRunObject update_pay_run(xero_tenant_id, pay_run_id, pay_run, idempotency_key=idempotency_key)
-
-Updates a specific pay run
-
-### Example
-
-* OAuth Authentication (OAuth2): 
-```python
-from xero_python.api_client import Configuration, ApiClient
-from xero_python.api_client.oauth2 import OAuth2Token
-from xero_python.exceptions import ApiException
-from xero_python.payrolluk import PayrollUkApi
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: OAuth2
-# simplified version, `xero_oauth2_token` represents permanent global token storage
-xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
-# create client configuration with client id and client secret for automatic token refresh
-api_config = Configuration(oauth2_token=OAuth2Token(
-    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
-))
-# configure xero-python sdk client
-api_client = ApiClient(
-    api_config,
-    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
-    oauth2_token_getter=lambda : xero_oauth2_token
-)
-# create an instance of the API class
-api_instance = PayrollUkApi(api_client)
-
-xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
-pay_run_id = 'pay_run_id_example' # str | Identifier for the pay run
-pay_run = {"paymentDate":"2020-05-01"} # PayRun | 
-idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
-try:
-    # Updates a specific pay run
-    api_response = api_instance.update_pay_run(xero_tenant_id, pay_run_id, pay_run, idempotency_key=idempotency_key)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PayrollUkApi->update_pay_run: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xero_tenant_id** | **str**| Xero identifier for Tenant | 
- **pay_run_id** | [**str**](.md)| Identifier for the pay run | 
- **pay_run** | [**PayRun**](PayRun.md)|  | 
- **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
-
-### Return type
-
-[**PayRunObject**](PayRunObject.md)
 
 ### Authorization
 

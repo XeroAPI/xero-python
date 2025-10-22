@@ -21,7 +21,7 @@ except ImportError:
 """
 
 """
-    OpenAPI spec version: 9.1.0
+    OpenAPI spec version: 9.1.1
 """
 
 
@@ -5674,100 +5674,6 @@ class PayrollUkApi(object):
             raise translate_status_exception(
                 error, self, "update_employee_salary_and_wage"
             )
-
-    def update_pay_run(
-        self,
-        xero_tenant_id,
-        pay_run_id,
-        pay_run,
-        idempotency_key=empty,
-        _return_http_data_only=True,
-        _preload_content=True,
-        _request_timeout=None,
-    ):
-        """Updates a specific pay run  # noqa: E501
-        OAuth2 scope: payroll.payruns
-        :param str xero_tenant_id: Xero identifier for Tenant (required)
-        :param str pay_run_id: Identifier for the pay run (required)
-        :param PayRun pay_run: (required)
-        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
-        :param bool _return_http_data_only: return received data only
-        :param bool _preload_content: load received data in models
-        :param bool _request_timeout: maximum wait time for response
-        :return: PayRunObject
-        """
-
-        # verify the required parameter 'xero_tenant_id' is set
-        if xero_tenant_id is None:
-            raise ValueError(
-                "Missing the required parameter `xero_tenant_id` "
-                "when calling `update_pay_run`"
-            )
-        # verify the required parameter 'pay_run_id' is set
-        if pay_run_id is None:
-            raise ValueError(
-                "Missing the required parameter `pay_run_id` "
-                "when calling `update_pay_run`"
-            )
-        # verify the required parameter 'pay_run' is set
-        if pay_run is None:
-            raise ValueError(
-                "Missing the required parameter `pay_run` "
-                "when calling `update_pay_run`"
-            )
-
-        collection_formats = {}
-        path_params = {
-            "PayRunID": pay_run_id,
-        }
-
-        query_params = []
-
-        header_params = {
-            "Xero-Tenant-Id": xero_tenant_id,
-        }
-
-        if idempotency_key is not empty:
-            header_params["Idempotency-Key"] = idempotency_key
-
-        local_var_files = {}
-        form_params = []
-
-        body_params = pay_run
-        # HTTP header `Accept`
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
-
-        # HTTP header `Content-Type`
-        header_params["Content-Type"] = self.api_client.select_header_content_type(
-            ["application/json"]
-        )
-
-        # Authentication setting
-        auth_settings = ["OAuth2"]
-        url = self.get_resource_url("/PayRuns/{PayRunID}")
-
-        try:
-            return self.api_client.call_api(
-                url,
-                "PUT",
-                path_params,
-                query_params,
-                header_params,
-                body=body_params,
-                post_params=form_params,
-                files=local_var_files,
-                response_type="PayRunObject",
-                response_model_finder=self.get_model_finder(),
-                auth_settings=auth_settings,
-                _return_http_data_only=_return_http_data_only,
-                _preload_content=_preload_content,
-                _request_timeout=_request_timeout,
-                collection_formats=collection_formats,
-            )
-        except exceptions.HTTPStatusException as error:
-            raise translate_status_exception(error, self, "update_pay_run")
 
     def update_timesheet_line(
         self,
