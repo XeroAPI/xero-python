@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **contact_persons** | [**list[ContactPerson]**](ContactPerson.md) | See contact persons | [optional] 
 **bank_account_details** | **str** | Bank account number of contact | [optional] 
 **tax_number** | **str** | Tax number of contact – this is also known as the ABN (Australia), GST Number (New Zealand), VAT Number (UK) or Tax ID Number (US and global) in the Xero UI depending on which regionalized version of Xero you are using (max length &#x3D; 50) | [optional] 
+**tax_number_type** | **str** | Identifier of the regional type of tax number, such as US, UK, or other regional tax identifiers | [optional] 
 **accounts_receivable_tax_type** | **str** | The tax type from TaxRates | [optional] 
 **accounts_payable_tax_type** | **str** | The tax type from TaxRates | [optional] 
 **addresses** | [**list[Address]**](Address.md) | Store certain address types for a contact – see address types | [optional] 
