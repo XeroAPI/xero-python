@@ -25,11 +25,16 @@ from xero_python.payrolluk.models.benefit import Benefit
 from xero_python.payrolluk.models.benefit_line import BenefitLine
 from xero_python.payrolluk.models.benefit_object import BenefitObject
 from xero_python.payrolluk.models.benefits import Benefits
+from xero_python.payrolluk.models.contract_type import ContractType
+from xero_python.payrolluk.models.contracts import Contracts
 from xero_python.payrolluk.models.court_order_line import CourtOrderLine
 from xero_python.payrolluk.models.deduction import Deduction
 from xero_python.payrolluk.models.deduction_line import DeductionLine
 from xero_python.payrolluk.models.deduction_object import DeductionObject
 from xero_python.payrolluk.models.deductions import Deductions
+from xero_python.payrolluk.models.developmental_role_details import (
+    DevelopmentalRoleDetails,
+)
 from xero_python.payrolluk.models.earnings_line import EarningsLine
 from xero_python.payrolluk.models.earnings_order import EarningsOrder
 from xero_python.payrolluk.models.earnings_order_object import EarningsOrderObject
@@ -88,6 +93,7 @@ from xero_python.payrolluk.models.employee_tax_object import EmployeeTaxObject
 from xero_python.payrolluk.models.employees import Employees
 from xero_python.payrolluk.models.employment import Employment
 from xero_python.payrolluk.models.employment_object import EmploymentObject
+from xero_python.payrolluk.models.employment_status import EmploymentStatus
 from xero_python.payrolluk.models.invalid_field import InvalidField
 from xero_python.payrolluk.models.leave_accrual_line import LeaveAccrualLine
 from xero_python.payrolluk.models.leave_earnings_line import LeaveEarningsLine

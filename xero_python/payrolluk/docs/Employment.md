@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **employee_number** | **str** | The employment number of the employee | 
 **ni_category** | [**NICategoryLetter**](NICategoryLetter.md) |  | [optional] 
 **ni_categories** | [**list[NICategory]**](NICategory.md) | The employee&#39;s NI categories | 
+**contracts** | [**list[Contracts]**](Contracts.md) | The employee&#39;s contracts | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
