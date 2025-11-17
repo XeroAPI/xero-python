@@ -35,6 +35,7 @@ class Employment(BaseModel):
         "employee_number": "str",
         "ni_category": "NICategoryLetter",
         "ni_categories": "list[NICategory]",
+        "contracts": "list[Contracts]",
     }
 
     attribute_map = {
@@ -43,6 +44,7 @@ class Employment(BaseModel):
         "employee_number": "employeeNumber",
         "ni_category": "niCategory",
         "ni_categories": "niCategories",
+        "contracts": "contracts",
     }
 
     def __init__(
@@ -52,6 +54,7 @@ class Employment(BaseModel):
         employee_number=None,
         ni_category=None,
         ni_categories=None,
+        contracts=None,
     ):  # noqa: E501
         """Employment - a model defined in OpenAPI"""  # noqa: E501
 
@@ -60,6 +63,7 @@ class Employment(BaseModel):
         self._employee_number = None
         self._ni_category = None
         self._ni_categories = None
+        self._contracts = None
         self.discriminator = None
 
         self.payroll_calendar_id = payroll_calendar_id
@@ -68,6 +72,8 @@ class Employment(BaseModel):
         if ni_category is not None:
             self.ni_category = ni_category
         self.ni_categories = ni_categories
+        if contracts is not None:
+            self.contracts = contracts
 
     @property
     def payroll_calendar_id(self):
@@ -197,3 +203,26 @@ class Employment(BaseModel):
             )  # noqa: E501
 
         self._ni_categories = ni_categories
+
+    @property
+    def contracts(self):
+        """Gets the contracts of this Employment.  # noqa: E501
+
+        The employee's contracts  # noqa: E501
+
+        :return: The contracts of this Employment.  # noqa: E501
+        :rtype: list[Contracts]
+        """
+        return self._contracts
+
+    @contracts.setter
+    def contracts(self, contracts):
+        """Sets the contracts of this Employment.
+
+        The employee's contracts  # noqa: E501
+
+        :param contracts: The contracts of this Employment.  # noqa: E501
+        :type: list[Contracts]
+        """
+
+        self._contracts = contracts

@@ -48,6 +48,7 @@ class Employee(BaseModel):
         "ni_categories": "list[NICategory]",
         "national_insurance_number": "str",
         "is_off_payroll_worker": "bool",
+        "contracts": "list[Contracts]",
     }
 
     attribute_map = {
@@ -69,6 +70,7 @@ class Employee(BaseModel):
         "ni_categories": "niCategories",
         "national_insurance_number": "nationalInsuranceNumber",
         "is_off_payroll_worker": "isOffPayrollWorker",
+        "contracts": "contracts",
     }
 
     def __init__(
@@ -91,6 +93,7 @@ class Employee(BaseModel):
         ni_categories=None,
         national_insurance_number=None,
         is_off_payroll_worker=None,
+        contracts=None,
     ):  # noqa: E501
         """Employee - a model defined in OpenAPI"""  # noqa: E501
 
@@ -112,6 +115,7 @@ class Employee(BaseModel):
         self._ni_categories = None
         self._national_insurance_number = None
         self._is_off_payroll_worker = None
+        self._contracts = None
         self.discriminator = None
 
         if employee_id is not None:
@@ -144,6 +148,8 @@ class Employee(BaseModel):
             self.national_insurance_number = national_insurance_number
         if is_off_payroll_worker is not None:
             self.is_off_payroll_worker = is_off_payroll_worker
+        if contracts is not None:
+            self.contracts = contracts
 
     @property
     def employee_id(self):
@@ -587,3 +593,26 @@ class Employee(BaseModel):
         """
 
         self._is_off_payroll_worker = is_off_payroll_worker
+
+    @property
+    def contracts(self):
+        """Gets the contracts of this Employee.  # noqa: E501
+
+        The employee's contracts  # noqa: E501
+
+        :return: The contracts of this Employee.  # noqa: E501
+        :rtype: list[Contracts]
+        """
+        return self._contracts
+
+    @contracts.setter
+    def contracts(self, contracts):
+        """Sets the contracts of this Employee.
+
+        The employee's contracts  # noqa: E501
+
+        :param contracts: The contracts of this Employee.  # noqa: E501
+        :type: list[Contracts]
+        """
+
+        self._contracts = contracts

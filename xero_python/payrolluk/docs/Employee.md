@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **ni_categories** | [**list[NICategory]**](NICategory.md) | The employee&#39;s NI categories | [optional] 
 **national_insurance_number** | **str** | National insurance number of the employee | [optional] 
 **is_off_payroll_worker** | **bool** | Whether the employee is an off payroll worker | [optional] 
+**contracts** | [**list[Contracts]**](Contracts.md) | The employee&#39;s contracts | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
