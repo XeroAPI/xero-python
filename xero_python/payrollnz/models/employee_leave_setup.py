@@ -34,8 +34,6 @@ class EmployeeLeaveSetup(BaseModel):
         "holiday_pay_opening_balance": "float",
         "annual_leave_opening_balance": "float",
         "negative_annual_leave_balance_paid_amount": "float",
-        "sick_leave_hours_to_accrue_annually": "float",
-        "sick_leave_maximum_hours_to_accrue": "float",
         "sick_leave_to_accrue_annually": "float",
         "sick_leave_maximum_to_accrue": "float",
         "sick_leave_opening_balance": "float",
@@ -49,8 +47,6 @@ class EmployeeLeaveSetup(BaseModel):
         "holiday_pay_opening_balance": "holidayPayOpeningBalance",
         "annual_leave_opening_balance": "annualLeaveOpeningBalance",
         "negative_annual_leave_balance_paid_amount": "negativeAnnualLeaveBalancePaidAmount",
-        "sick_leave_hours_to_accrue_annually": "sickLeaveHoursToAccrueAnnually",
-        "sick_leave_maximum_hours_to_accrue": "sickLeaveMaximumHoursToAccrue",
         "sick_leave_to_accrue_annually": "SickLeaveToAccrueAnnually",
         "sick_leave_maximum_to_accrue": "SickLeaveMaximumToAccrue",
         "sick_leave_opening_balance": "sickLeaveOpeningBalance",
@@ -65,8 +61,6 @@ class EmployeeLeaveSetup(BaseModel):
         holiday_pay_opening_balance=None,
         annual_leave_opening_balance=None,
         negative_annual_leave_balance_paid_amount=None,
-        sick_leave_hours_to_accrue_annually=None,
-        sick_leave_maximum_hours_to_accrue=None,
         sick_leave_to_accrue_annually=None,
         sick_leave_maximum_to_accrue=None,
         sick_leave_opening_balance=None,
@@ -80,8 +74,6 @@ class EmployeeLeaveSetup(BaseModel):
         self._holiday_pay_opening_balance = None
         self._annual_leave_opening_balance = None
         self._negative_annual_leave_balance_paid_amount = None
-        self._sick_leave_hours_to_accrue_annually = None
-        self._sick_leave_maximum_hours_to_accrue = None
         self._sick_leave_to_accrue_annually = None
         self._sick_leave_maximum_to_accrue = None
         self._sick_leave_opening_balance = None
@@ -100,12 +92,6 @@ class EmployeeLeaveSetup(BaseModel):
             self.negative_annual_leave_balance_paid_amount = (
                 negative_annual_leave_balance_paid_amount
             )
-        if sick_leave_hours_to_accrue_annually is not None:
-            self.sick_leave_hours_to_accrue_annually = (
-                sick_leave_hours_to_accrue_annually
-            )
-        if sick_leave_maximum_hours_to_accrue is not None:
-            self.sick_leave_maximum_hours_to_accrue = sick_leave_maximum_hours_to_accrue
         if sick_leave_to_accrue_annually is not None:
             self.sick_leave_to_accrue_annually = sick_leave_to_accrue_annually
         if sick_leave_maximum_to_accrue is not None:
@@ -214,52 +200,6 @@ class EmployeeLeaveSetup(BaseModel):
         self._negative_annual_leave_balance_paid_amount = (
             negative_annual_leave_balance_paid_amount
         )
-
-    @property
-    def sick_leave_hours_to_accrue_annually(self):
-        """Gets the sick_leave_hours_to_accrue_annually of this EmployeeLeaveSetup.  # noqa: E501
-
-        Deprecated use SickLeaveToAccrueAnnually  # noqa: E501
-
-        :return: The sick_leave_hours_to_accrue_annually of this EmployeeLeaveSetup.  # noqa: E501
-        :rtype: float
-        """
-        return self._sick_leave_hours_to_accrue_annually
-
-    @sick_leave_hours_to_accrue_annually.setter
-    def sick_leave_hours_to_accrue_annually(self, sick_leave_hours_to_accrue_annually):
-        """Sets the sick_leave_hours_to_accrue_annually of this EmployeeLeaveSetup.
-
-        Deprecated use SickLeaveToAccrueAnnually  # noqa: E501
-
-        :param sick_leave_hours_to_accrue_annually: The sick_leave_hours_to_accrue_annually of this EmployeeLeaveSetup.  # noqa: E501
-        :type: float
-        """
-
-        self._sick_leave_hours_to_accrue_annually = sick_leave_hours_to_accrue_annually
-
-    @property
-    def sick_leave_maximum_hours_to_accrue(self):
-        """Gets the sick_leave_maximum_hours_to_accrue of this EmployeeLeaveSetup.  # noqa: E501
-
-        Deprecated use SickLeaveMaximumToAccrue  # noqa: E501
-
-        :return: The sick_leave_maximum_hours_to_accrue of this EmployeeLeaveSetup.  # noqa: E501
-        :rtype: float
-        """
-        return self._sick_leave_maximum_hours_to_accrue
-
-    @sick_leave_maximum_hours_to_accrue.setter
-    def sick_leave_maximum_hours_to_accrue(self, sick_leave_maximum_hours_to_accrue):
-        """Sets the sick_leave_maximum_hours_to_accrue of this EmployeeLeaveSetup.
-
-        Deprecated use SickLeaveMaximumToAccrue  # noqa: E501
-
-        :param sick_leave_maximum_hours_to_accrue: The sick_leave_maximum_hours_to_accrue of this EmployeeLeaveSetup.  # noqa: E501
-        :type: float
-        """
-
-        self._sick_leave_maximum_hours_to_accrue = sick_leave_maximum_hours_to_accrue
 
     @property
     def sick_leave_to_accrue_annually(self):

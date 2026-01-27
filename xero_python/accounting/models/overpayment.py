@@ -48,6 +48,7 @@ class Overpayment(BaseModel):
         "applied_amount": "float",
         "payments": "list[Payment]",
         "has_attachments": "bool",
+        "reference": "str",
         "attachments": "list[Attachment]",
     }
 
@@ -70,6 +71,7 @@ class Overpayment(BaseModel):
         "applied_amount": "AppliedAmount",
         "payments": "Payments",
         "has_attachments": "HasAttachments",
+        "reference": "Reference",
         "attachments": "Attachments",
     }
 
@@ -93,6 +95,7 @@ class Overpayment(BaseModel):
         applied_amount=None,
         payments=None,
         has_attachments=False,
+        reference=None,
         attachments=None,
     ):  # noqa: E501
         """Overpayment - a model defined in OpenAPI"""  # noqa: E501
@@ -115,6 +118,7 @@ class Overpayment(BaseModel):
         self._applied_amount = None
         self._payments = None
         self._has_attachments = None
+        self._reference = None
         self._attachments = None
         self.discriminator = None
 
@@ -154,6 +158,8 @@ class Overpayment(BaseModel):
             self.payments = payments
         if has_attachments is not None:
             self.has_attachments = has_attachments
+        if reference is not None:
+            self.reference = reference
         if attachments is not None:
             self.attachments = attachments
 
@@ -587,6 +593,29 @@ class Overpayment(BaseModel):
         """
 
         self._has_attachments = has_attachments
+
+    @property
+    def reference(self):
+        """Gets the reference of this Overpayment.  # noqa: E501
+
+        An optional description for Overpayment  # noqa: E501
+
+        :return: The reference of this Overpayment.  # noqa: E501
+        :rtype: str
+        """
+        return self._reference
+
+    @reference.setter
+    def reference(self, reference):
+        """Sets the reference of this Overpayment.
+
+        An optional description for Overpayment  # noqa: E501
+
+        :param reference: The reference of this Overpayment.  # noqa: E501
+        :type: str
+        """
+
+        self._reference = reference
 
     @property
     def attachments(self):

@@ -504,7 +504,7 @@ api_instance = PayrollNzApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Employee id for single object
-employee_leave_setup = {"holidayPayOpeningBalance":10,"annualLeaveOpeningBalance":100,"sickLeaveHoursToAccrueAnnually":20,"sickLeaveToAccrueAnnually":20,"sickLeaveOpeningBalance":10,"sickLeaveScheduleOfAccrual":"OnAnniversaryDate","sickLeaveAnniversaryDate":"2023-12-31","annualLeaveAnniversaryDate":"2023-12-31"} # EmployeeLeaveSetup | 
+employee_leave_setup = {"holidayPayOpeningBalance":10,"annualLeaveOpeningBalance":100,"sickLeaveToAccrueAnnually":20,"sickLeaveOpeningBalance":10,"sickLeaveScheduleOfAccrual":"OnAnniversaryDate","sickLeaveAnniversaryDate":"2023-12-31","annualLeaveAnniversaryDate":"2023-12-31"} # EmployeeLeaveSetup | 
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates a leave set-up for a specific employee. This is required before viewing, configuring and requesting leave for an employee
@@ -571,7 +571,7 @@ api_instance = PayrollNzApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Employee id for single object
-employee_leave_type = {"leaveTypeID":"35da97ae-05b9-427f-9a98-69157ba42cec","scheduleOfAccrual":"AnnuallyAfter6Months","hoursAccruedAnnually":10,"unitsAccruedAnnually":10,"typeOfUnitsToAccrue":"Hours","openingBalanceTypeOfUnits":"Hours","maximumToAccrue":80,"openingBalance":100,"rateAccruedHourly":3.5} # EmployeeLeaveType | 
+employee_leave_type = {"leaveTypeID":"35da97ae-05b9-427f-9a98-69157ba42cec","scheduleOfAccrual":"AnnuallyAfter6Months","unitsAccruedAnnually":10,"typeOfUnitsToAccrue":"Hours","openingBalanceTypeOfUnits":"Hours","maximumToAccrue":80,"openingBalance":100,"rateAccruedHourly":null} # EmployeeLeaveType | 
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates leave type records for a specific employee

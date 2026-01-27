@@ -32,7 +32,6 @@ class EmployeeLeaveType(BaseModel):
     openapi_types = {
         "leave_type_id": "str",
         "schedule_of_accrual": "str",
-        "hours_accrued_annually": "float",
         "units_accrued_annually": "float",
         "type_of_units_to_accrue": "str",
         "maximum_to_accrue": "float",
@@ -49,8 +48,7 @@ class EmployeeLeaveType(BaseModel):
     attribute_map = {
         "leave_type_id": "leaveTypeID",
         "schedule_of_accrual": "scheduleOfAccrual",
-        "hours_accrued_annually": "hoursAccruedAnnually",
-        "units_accrued_annually": "UnitsAccruedAnnually",
+        "units_accrued_annually": "unitsAccruedAnnually",
         "type_of_units_to_accrue": "typeOfUnitsToAccrue",
         "maximum_to_accrue": "maximumToAccrue",
         "opening_balance": "openingBalance",
@@ -67,7 +65,6 @@ class EmployeeLeaveType(BaseModel):
         self,
         leave_type_id=None,
         schedule_of_accrual=None,
-        hours_accrued_annually=None,
         units_accrued_annually=None,
         type_of_units_to_accrue=None,
         maximum_to_accrue=None,
@@ -84,7 +81,6 @@ class EmployeeLeaveType(BaseModel):
 
         self._leave_type_id = None
         self._schedule_of_accrual = None
-        self._hours_accrued_annually = None
         self._units_accrued_annually = None
         self._type_of_units_to_accrue = None
         self._maximum_to_accrue = None
@@ -102,8 +98,6 @@ class EmployeeLeaveType(BaseModel):
             self.leave_type_id = leave_type_id
         if schedule_of_accrual is not None:
             self.schedule_of_accrual = schedule_of_accrual
-        if hours_accrued_annually is not None:
-            self.hours_accrued_annually = hours_accrued_annually
         if units_accrued_annually is not None:
             self.units_accrued_annually = units_accrued_annually
         if type_of_units_to_accrue is not None:
@@ -187,29 +181,6 @@ class EmployeeLeaveType(BaseModel):
                 )
 
         self._schedule_of_accrual = schedule_of_accrual
-
-    @property
-    def hours_accrued_annually(self):
-        """Gets the hours_accrued_annually of this EmployeeLeaveType.  # noqa: E501
-
-        Deprecated use UnitsAccruedAnnually  # noqa: E501
-
-        :return: The hours_accrued_annually of this EmployeeLeaveType.  # noqa: E501
-        :rtype: float
-        """
-        return self._hours_accrued_annually
-
-    @hours_accrued_annually.setter
-    def hours_accrued_annually(self, hours_accrued_annually):
-        """Sets the hours_accrued_annually of this EmployeeLeaveType.
-
-        Deprecated use UnitsAccruedAnnually  # noqa: E501
-
-        :param hours_accrued_annually: The hours_accrued_annually of this EmployeeLeaveType.  # noqa: E501
-        :type: float
-        """
-
-        self._hours_accrued_annually = hours_accrued_annually
 
     @property
     def units_accrued_annually(self):
@@ -330,7 +301,7 @@ class EmployeeLeaveType(BaseModel):
     def rate_accrued_hourly(self):
         """Gets the rate_accrued_hourly of this EmployeeLeaveType.  # noqa: E501
 
-        The number of hours added to the leave balance for every hour worked by the employee. This is normally 0, unless the scheduleOfAccrual chosen is \"OnHourWorked\"  # noqa: E501
+        not supported in Payroll NZ  # noqa: E501
 
         :return: The rate_accrued_hourly of this EmployeeLeaveType.  # noqa: E501
         :rtype: float
@@ -341,7 +312,7 @@ class EmployeeLeaveType(BaseModel):
     def rate_accrued_hourly(self, rate_accrued_hourly):
         """Sets the rate_accrued_hourly of this EmployeeLeaveType.
 
-        The number of hours added to the leave balance for every hour worked by the employee. This is normally 0, unless the scheduleOfAccrual chosen is \"OnHourWorked\"  # noqa: E501
+        not supported in Payroll NZ  # noqa: E501
 
         :param rate_accrued_hourly: The rate_accrued_hourly of this EmployeeLeaveType.  # noqa: E501
         :type: float

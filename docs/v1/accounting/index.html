@@ -4357,6 +4357,11 @@ ul.nav-tabs {
       "example" : false,
       "default" : false
     },
+    "Reference" : {
+      "type" : "string",
+      "description" : "An optional description for Overpayment",
+      "example" : "Ref for payment"
+    },
     "Attachments" : {
       "type" : "array",
       "description" : "See Attachments",
@@ -6344,7 +6349,7 @@ ul.nav-tabs {
           <nav id="scrollingNav">
             <ul class="sidenav nav nav-list">
               <li class="nav-header" data-group="Accounting"><strong>SDK: </strong><span id='sdk-name'></span></li>
-              <li class="nav-header" data-group="Accounting"><strong>VSN: </strong>9.3.0</li>
+              <li class="nav-header" data-group="Accounting"><strong>VSN: </strong>9.4.0</li>
               <li class="nav-header" data-group="Accounting"><a href="#api-Accounting">Methods</a></li>
               <li data-group="Accounting" data-name="createAccount" class="">
                 <a href="#api-Accounting-createAccount">createAccount</a>
@@ -32134,9 +32139,10 @@ def accounting_get_overpayments():
     if_modified_since = dateutil.parser.parse("2020-02-06T12:17:43.202-08:00")
     where = 'Status=="AUTHORISED"'
     order = 'Status ASC'
+    references = [&quot;Ref1&quot;, &quot;Ref2&quot;]
     
     try:
-        api_response = api_instance.get_overpayments(xero_tenant_id, if_modified_since, where, order, page, unitdp, pageSize)
+        api_response = api_instance.get_overpayments(xero_tenant_id, if_modified_since, where, order, page, unitdp, pageSize, references)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->getOverpayments: %s\n" % e)</code></pre>
@@ -32309,6 +32315,26 @@ e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal place
 
                     <div class="inner description marked">
 Number of records to retrieve per page
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">References</td>
+<td>
+
+
+    <div id="d2e199_getOverpayments_references">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    array[String]
+                </span>
+
+                    <div class="inner description marked">
+Filter by a comma-separated list of References
                     </div>
             </div>
         </div>
