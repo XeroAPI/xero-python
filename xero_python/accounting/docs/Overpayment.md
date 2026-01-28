@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **applied_amount** | **float** | The amount of applied to an invoice | [optional] 
 **payments** | [**list[Payment]**](Payment.md) | See Payments | [optional] 
 **has_attachments** | **bool** | boolean to indicate if a overpayment has an attachment | [optional] [default to False]
+**reference** | **str** | An optional description for Overpayment | [optional] 
 **attachments** | [**list[Attachment]**](Attachment.md) | See Attachments | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

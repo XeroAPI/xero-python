@@ -9887,7 +9887,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_overpayments**
-> Overpayments get_overpayments(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp, page_size=page_size)
+> Overpayments get_overpayments(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp, page_size=page_size, references=references)
 
 Retrieves overpayments
 
@@ -9924,9 +9924,10 @@ order = 'Status ASC' # str | Order by an any element (optional)
 page = 1 # int | e.g. page=1 – Up to 100 overpayments will be returned in a single API call with line items shown for each overpayment (optional)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 page_size = 100 # int | Number of records to retrieve per page (optional)
+references = ['&quot;Ref1&quot;, &quot;Ref2&quot;'] # list[str] | Filter by a comma-separated list of References (optional)
 try:
     # Retrieves overpayments
-    api_response = api_instance.get_overpayments(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp, page_size=page_size)
+    api_response = api_instance.get_overpayments(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp, page_size=page_size, references=references)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->get_overpayments: %s\n" % e)
@@ -9943,6 +9944,7 @@ Name | Type | Description  | Notes
  **page** | **int**| e.g. page&#x3D;1 – Up to 100 overpayments will be returned in a single API call with line items shown for each overpayment | [optional] 
  **unitdp** | **int**| e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts | [optional] 
  **page_size** | **int**| Number of records to retrieve per page | [optional] 
+ **references** | [**list[str]**](str.md)| Filter by a comma-separated list of References | [optional] 
 
 ### Return type
 
