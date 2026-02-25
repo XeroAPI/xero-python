@@ -554,6 +554,7 @@ class Organisation(BaseModel):
             "IGNITE",
             "GROW",
             "COMPREHENSIVE",
+            "SIMPLE",
             "None",
         ]
         if _class:
