@@ -265,7 +265,7 @@ api_client = ApiClient(
 api_instance = PayrollAuApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
-pay_item = {"EarningsRates":[{"Name":"MyRate","AccountCode":"400","TypeOfUnits":"4.00","IsExemptFromTax":true,"IsExemptFromSuper":true,"IsReportableAsW1":false,"AllowanceContributesToAnnualLeaveRate":false,"AllowanceContributesToOvertimeRate":false,"EarningsType":"ORDINARYTIMEEARNINGS","EarningsRateID":"1fa4e226-b711-46ba-a8a7-4344c9c5fb87","RateType":"MULTIPLE","RatePerUnit":"10.0","Multiplier":1.5,"Amount":5,"EmploymentTerminationPaymentType":"O"}]} # PayItem | 
+pay_item = {"EarningsRates":[{"Name":"MyRate","AccountCode":"400","TypeOfUnits":"4.00","IsExemptFromTax":false,"IsExemptFromSuper":true,"IsReportableAsW1":false,"IsQualifyingEarnings":true,"AllowanceContributesToAnnualLeaveRate":false,"AllowanceContributesToOvertimeRate":false,"EarningsType":"ORDINARYTIMEEARNINGS","EarningsRateID":"1fa4e226-b711-46ba-a8a7-4344c9c5fb87","RateType":"MULTIPLE","RatePerUnit":"10.0","Multiplier":1.5,"Amount":5,"EmploymentTerminationPaymentType":"O"}]} # PayItem | 
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates a pay item

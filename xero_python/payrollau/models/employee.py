@@ -61,7 +61,6 @@ class Employee(BaseModel):
         "country_of_residence": "CountryOfResidence",
         "is_stp2_qualified": "bool",
         "leave_balances": "list[LeaveBalance]",
-        "leave_lines": "list[LeaveLine]",
         "super_memberships": "list[SuperMembership]",
         "status": "EmployeeStatus",
         "updated_date_utc": "datetime[ms-format]",
@@ -100,7 +99,6 @@ class Employee(BaseModel):
         "country_of_residence": "CountryOfResidence",
         "is_stp2_qualified": "IsSTP2Qualified",
         "leave_balances": "LeaveBalances",
-        "leave_lines": "LeaveLines",
         "super_memberships": "SuperMemberships",
         "status": "Status",
         "updated_date_utc": "UpdatedDateUTC",
@@ -140,7 +138,6 @@ class Employee(BaseModel):
         country_of_residence=None,
         is_stp2_qualified=None,
         leave_balances=None,
-        leave_lines=None,
         super_memberships=None,
         status=None,
         updated_date_utc=None,
@@ -179,7 +176,6 @@ class Employee(BaseModel):
         self._country_of_residence = None
         self._is_stp2_qualified = None
         self._leave_balances = None
-        self._leave_lines = None
         self._super_memberships = None
         self._status = None
         self._updated_date_utc = None
@@ -247,8 +243,6 @@ class Employee(BaseModel):
             self.is_stp2_qualified = is_stp2_qualified
         if leave_balances is not None:
             self.leave_balances = leave_balances
-        if leave_lines is not None:
-            self.leave_lines = leave_lines
         if super_memberships is not None:
             self.super_memberships = super_memberships
         if status is not None:
@@ -982,27 +976,6 @@ class Employee(BaseModel):
         """
 
         self._leave_balances = leave_balances
-
-    @property
-    def leave_lines(self):
-        """Gets the leave_lines of this Employee.  # noqa: E501
-
-
-        :return: The leave_lines of this Employee.  # noqa: E501
-        :rtype: list[LeaveLine]
-        """
-        return self._leave_lines
-
-    @leave_lines.setter
-    def leave_lines(self, leave_lines):
-        """Sets the leave_lines of this Employee.
-
-
-        :param leave_lines: The leave_lines of this Employee.  # noqa: E501
-        :type: list[LeaveLine]
-        """
-
-        self._leave_lines = leave_lines
 
     @property
     def super_memberships(self):

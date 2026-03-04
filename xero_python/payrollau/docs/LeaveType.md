@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **current_record** | **bool** | Is the current record | [optional] 
 **leave_category_code** | [**LeaveCategoryCode**](LeaveCategoryCode.md) |  | [optional] 
 **sgc_exempt** | **bool** | Set this to indicate that the leave type is exempt from superannuation guarantee contribution | [optional] 
+**is_qualifying_earnings** | **bool** | Optional Boolean to determine if the earnings rate is considered as qualifying earnings for superannuation guarantee calculations. When not specified value is calculated based on earnings type and superannuation settings | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

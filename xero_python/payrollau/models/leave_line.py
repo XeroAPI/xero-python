@@ -35,6 +35,7 @@ class LeaveLine(BaseModel):
         "entitlement_final_pay_payout_type": "EntitlementFinalPayPayoutType",
         "employment_termination_payment_type": "EmploymentTerminationPaymentType",
         "include_superannuation_guarantee_contribution": "bool",
+        "is_qualifying_earnings": "bool",
         "number_of_units": "float",
         "annual_number_of_units": "float",
         "full_time_number_of_units_per_period": "float",
@@ -46,6 +47,7 @@ class LeaveLine(BaseModel):
         "entitlement_final_pay_payout_type": "EntitlementFinalPayPayoutType",
         "employment_termination_payment_type": "EmploymentTerminationPaymentType",
         "include_superannuation_guarantee_contribution": "IncludeSuperannuationGuaranteeContribution",
+        "is_qualifying_earnings": "IsQualifyingEarnings",
         "number_of_units": "NumberOfUnits",
         "annual_number_of_units": "AnnualNumberOfUnits",
         "full_time_number_of_units_per_period": "FullTimeNumberOfUnitsPerPeriod",
@@ -58,6 +60,7 @@ class LeaveLine(BaseModel):
         entitlement_final_pay_payout_type=None,
         employment_termination_payment_type=None,
         include_superannuation_guarantee_contribution=None,
+        is_qualifying_earnings=None,
         number_of_units=None,
         annual_number_of_units=None,
         full_time_number_of_units_per_period=None,
@@ -69,6 +72,7 @@ class LeaveLine(BaseModel):
         self._entitlement_final_pay_payout_type = None
         self._employment_termination_payment_type = None
         self._include_superannuation_guarantee_contribution = None
+        self._is_qualifying_earnings = None
         self._number_of_units = None
         self._annual_number_of_units = None
         self._full_time_number_of_units_per_period = None
@@ -88,6 +92,8 @@ class LeaveLine(BaseModel):
             self.include_superannuation_guarantee_contribution = (
                 include_superannuation_guarantee_contribution
             )
+        if is_qualifying_earnings is not None:
+            self.is_qualifying_earnings = is_qualifying_earnings
         if number_of_units is not None:
             self.number_of_units = number_of_units
         if annual_number_of_units is not None:
@@ -209,6 +215,29 @@ class LeaveLine(BaseModel):
         self._include_superannuation_guarantee_contribution = (
             include_superannuation_guarantee_contribution
         )
+
+    @property
+    def is_qualifying_earnings(self):
+        """Gets the is_qualifying_earnings of this LeaveLine.  # noqa: E501
+
+        Optional Boolean to determine if the earnings rate is considered as qualifying earnings for superannuation guarantee calculations. When not specified value is calculated based on superannuation settings  # noqa: E501
+
+        :return: The is_qualifying_earnings of this LeaveLine.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_qualifying_earnings
+
+    @is_qualifying_earnings.setter
+    def is_qualifying_earnings(self, is_qualifying_earnings):
+        """Sets the is_qualifying_earnings of this LeaveLine.
+
+        Optional Boolean to determine if the earnings rate is considered as qualifying earnings for superannuation guarantee calculations. When not specified value is calculated based on superannuation settings  # noqa: E501
+
+        :param is_qualifying_earnings: The is_qualifying_earnings of this LeaveLine.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_qualifying_earnings = is_qualifying_earnings
 
     @property
     def number_of_units(self):
