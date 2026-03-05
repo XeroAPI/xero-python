@@ -62,6 +62,9 @@ from xero_python.payrollau.models.leave_type_contribution_type import (
     LeaveTypeContributionType,
 )
 from xero_python.payrollau.models.manual_tax_type import ManualTaxType
+from xero_python.payrollau.models.opening_balance_leave_line import (
+    OpeningBalanceLeaveLine,
+)
 from xero_python.payrollau.models.opening_balances import OpeningBalances
 from xero_python.payrollau.models.paid_leave_earnings_line import PaidLeaveEarningsLine
 from xero_python.payrollau.models.pay_item import PayItem

@@ -36,6 +36,7 @@ class EarningsRate(BaseModel):
         "is_exempt_from_tax": "bool",
         "is_exempt_from_super": "bool",
         "is_reportable_as_w1": "bool",
+        "is_qualifying_earnings": "bool",
         "allowance_contributes_to_annual_leave_rate": "bool",
         "allowance_contributes_to_overtime_rate": "bool",
         "earnings_type": "EarningsType",
@@ -59,6 +60,7 @@ class EarningsRate(BaseModel):
         "is_exempt_from_tax": "IsExemptFromTax",
         "is_exempt_from_super": "IsExemptFromSuper",
         "is_reportable_as_w1": "IsReportableAsW1",
+        "is_qualifying_earnings": "IsQualifyingEarnings",
         "allowance_contributes_to_annual_leave_rate": "AllowanceContributesToAnnualLeaveRate",
         "allowance_contributes_to_overtime_rate": "AllowanceContributesToOvertimeRate",
         "earnings_type": "EarningsType",
@@ -83,6 +85,7 @@ class EarningsRate(BaseModel):
         is_exempt_from_tax=None,
         is_exempt_from_super=None,
         is_reportable_as_w1=None,
+        is_qualifying_earnings=None,
         allowance_contributes_to_annual_leave_rate=None,
         allowance_contributes_to_overtime_rate=None,
         earnings_type=None,
@@ -106,6 +109,7 @@ class EarningsRate(BaseModel):
         self._is_exempt_from_tax = None
         self._is_exempt_from_super = None
         self._is_reportable_as_w1 = None
+        self._is_qualifying_earnings = None
         self._allowance_contributes_to_annual_leave_rate = None
         self._allowance_contributes_to_overtime_rate = None
         self._earnings_type = None
@@ -134,6 +138,8 @@ class EarningsRate(BaseModel):
             self.is_exempt_from_super = is_exempt_from_super
         if is_reportable_as_w1 is not None:
             self.is_reportable_as_w1 = is_reportable_as_w1
+        if is_qualifying_earnings is not None:
+            self.is_qualifying_earnings = is_qualifying_earnings
         if allowance_contributes_to_annual_leave_rate is not None:
             self.allowance_contributes_to_annual_leave_rate = (
                 allowance_contributes_to_annual_leave_rate
@@ -316,6 +322,29 @@ class EarningsRate(BaseModel):
         """
 
         self._is_reportable_as_w1 = is_reportable_as_w1
+
+    @property
+    def is_qualifying_earnings(self):
+        """Gets the is_qualifying_earnings of this EarningsRate.  # noqa: E501
+
+        Optional Boolean to determine if the earnings rate is considered as qualifying earnings for superannuation guarantee calculations. When not specified value is calculated based on earnings type and superannuation settings  # noqa: E501
+
+        :return: The is_qualifying_earnings of this EarningsRate.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_qualifying_earnings
+
+    @is_qualifying_earnings.setter
+    def is_qualifying_earnings(self, is_qualifying_earnings):
+        """Sets the is_qualifying_earnings of this EarningsRate.
+
+        Optional Boolean to determine if the earnings rate is considered as qualifying earnings for superannuation guarantee calculations. When not specified value is calculated based on earnings type and superannuation settings  # noqa: E501
+
+        :param is_qualifying_earnings: The is_qualifying_earnings of this EarningsRate.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_qualifying_earnings = is_qualifying_earnings
 
     @property
     def allowance_contributes_to_annual_leave_rate(self):

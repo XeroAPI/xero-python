@@ -34,7 +34,6 @@ Name | Type | Description | Notes
 **country_of_residence** | [**CountryOfResidence**](CountryOfResidence.md) |  | [optional] 
 **is_stp2_qualified** | **bool** | Indicates if the employee has been updated for STP Phase 2 compliance. Doesn&#39;t indicate that the employee is payable. | [optional] 
 **leave_balances** | [**list[LeaveBalance]**](LeaveBalance.md) |  | [optional] 
-**leave_lines** | [**list[LeaveLine]**](LeaveLine.md) |  | [optional] 
 **super_memberships** | [**list[SuperMembership]**](SuperMembership.md) |  | [optional] 
 **status** | [**EmployeeStatus**](EmployeeStatus.md) |  | [optional] 
 **updated_date_utc** | **datetime** | Last modified timestamp | [optional] 

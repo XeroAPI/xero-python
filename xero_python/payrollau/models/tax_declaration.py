@@ -51,6 +51,7 @@ class TaxDeclaration(BaseModel):
         "has_student_startup_loan": "bool",
         "has_loan_or_student_debt": "bool",
         "updated_date_utc": "datetime[ms-format]",
+        "include_leave_loading_in_qualifying_earnings": "bool",
     }
 
     attribute_map = {
@@ -75,6 +76,7 @@ class TaxDeclaration(BaseModel):
         "has_student_startup_loan": "HasStudentStartupLoan",
         "has_loan_or_student_debt": "HasLoanOrStudentDebt",
         "updated_date_utc": "UpdatedDateUTC",
+        "include_leave_loading_in_qualifying_earnings": "IncludeLeaveLoadingInQualifyingEarnings",
     }
 
     def __init__(
@@ -100,6 +102,7 @@ class TaxDeclaration(BaseModel):
         has_student_startup_loan=None,
         has_loan_or_student_debt=None,
         updated_date_utc=None,
+        include_leave_loading_in_qualifying_earnings=None,
     ):  # noqa: E501
         """TaxDeclaration - a model defined in OpenAPI"""  # noqa: E501
 
@@ -124,6 +127,7 @@ class TaxDeclaration(BaseModel):
         self._has_student_startup_loan = None
         self._has_loan_or_student_debt = None
         self._updated_date_utc = None
+        self._include_leave_loading_in_qualifying_earnings = None
         self.discriminator = None
 
         if employee_id is not None:
@@ -174,6 +178,10 @@ class TaxDeclaration(BaseModel):
             self.has_loan_or_student_debt = has_loan_or_student_debt
         if updated_date_utc is not None:
             self.updated_date_utc = updated_date_utc
+        if include_leave_loading_in_qualifying_earnings is not None:
+            self.include_leave_loading_in_qualifying_earnings = (
+                include_leave_loading_in_qualifying_earnings
+            )
 
     @property
     def employee_id(self):
@@ -657,3 +665,30 @@ class TaxDeclaration(BaseModel):
         """
 
         self._updated_date_utc = updated_date_utc
+
+    @property
+    def include_leave_loading_in_qualifying_earnings(self):
+        """Gets the include_leave_loading_in_qualifying_earnings of this TaxDeclaration.  # noqa: E501
+
+        Optional Boolean to determine if leave loading is considered as qualifying earnings for superannuation guarantee calculations  # noqa: E501
+
+        :return: The include_leave_loading_in_qualifying_earnings of this TaxDeclaration.  # noqa: E501
+        :rtype: bool
+        """
+        return self._include_leave_loading_in_qualifying_earnings
+
+    @include_leave_loading_in_qualifying_earnings.setter
+    def include_leave_loading_in_qualifying_earnings(
+        self, include_leave_loading_in_qualifying_earnings
+    ):
+        """Sets the include_leave_loading_in_qualifying_earnings of this TaxDeclaration.
+
+        Optional Boolean to determine if leave loading is considered as qualifying earnings for superannuation guarantee calculations  # noqa: E501
+
+        :param include_leave_loading_in_qualifying_earnings: The include_leave_loading_in_qualifying_earnings of this TaxDeclaration.  # noqa: E501
+        :type: bool
+        """
+
+        self._include_leave_loading_in_qualifying_earnings = (
+            include_leave_loading_in_qualifying_earnings
+        )

@@ -17,8 +17,6 @@ from xero_python.finance.api.finance_api import FinanceApi
 
 
 # import models into sdk package
-from xero_python.finance.models.account_usage import AccountUsage
-from xero_python.finance.models.account_usage_response import AccountUsageResponse
 from xero_python.finance.models.balance_sheet_account_detail import (
     BalanceSheetAccountDetail,
 )
@@ -50,27 +48,21 @@ from xero_python.finance.models.current_statement_response import (
     CurrentStatementResponse,
 )
 from xero_python.finance.models.data_source_response import DataSourceResponse
-from xero_python.finance.models.history_record_response import HistoryRecordResponse
 from xero_python.finance.models.income_by_contact_response import (
     IncomeByContactResponse,
 )
 from xero_python.finance.models.invoice_response import InvoiceResponse
 from xero_python.finance.models.line_item_response import LineItemResponse
-from xero_python.finance.models.lock_history_model import LockHistoryModel
-from xero_python.finance.models.lock_history_response import LockHistoryResponse
 from xero_python.finance.models.manual_journal_total import ManualJournalTotal
 from xero_python.finance.models.overpayment_response import OverpaymentResponse
 from xero_python.finance.models.payment_response import PaymentResponse
 from xero_python.finance.models.pnl_account import PnlAccount
 from xero_python.finance.models.pnl_account_class import PnlAccountClass
 from xero_python.finance.models.pnl_account_type import PnlAccountType
-from xero_python.finance.models.practice_response import PracticeResponse
 from xero_python.finance.models.prepayment_response import PrepaymentResponse
 from xero_python.finance.models.problem import Problem
 from xero_python.finance.models.problem_type import ProblemType
 from xero_python.finance.models.profit_and_loss_response import ProfitAndLossResponse
-from xero_python.finance.models.report_history_model import ReportHistoryModel
-from xero_python.finance.models.report_history_response import ReportHistoryResponse
 from xero_python.finance.models.statement_balance_response import (
     StatementBalanceResponse,
 )
@@ -83,5 +75,3 @@ from xero_python.finance.models.trial_balance_account import TrialBalanceAccount
 from xero_python.finance.models.trial_balance_entry import TrialBalanceEntry
 from xero_python.finance.models.trial_balance_movement import TrialBalanceMovement
 from xero_python.finance.models.trial_balance_response import TrialBalanceResponse
-from xero_python.finance.models.user_activities_response import UserActivitiesResponse
-from xero_python.finance.models.user_response import UserResponse

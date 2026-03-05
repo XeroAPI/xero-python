@@ -36,7 +36,7 @@ class OpeningBalances(BaseModel):
         "deduction_lines": "list[DeductionLine]",
         "super_lines": "list[SuperLine]",
         "reimbursement_lines": "list[ReimbursementLine]",
-        "leave_lines": "list[LeaveLine]",
+        "leave_lines": "list[OpeningBalanceLeaveLine]",
         "paid_leave_earnings_lines": "list[PaidLeaveEarningsLine]",
     }
 
@@ -227,7 +227,7 @@ class OpeningBalances(BaseModel):
 
 
         :return: The leave_lines of this OpeningBalances.  # noqa: E501
-        :rtype: list[LeaveLine]
+        :rtype: list[OpeningBalanceLeaveLine]
         """
         return self._leave_lines
 
@@ -237,7 +237,7 @@ class OpeningBalances(BaseModel):
 
 
         :param leave_lines: The leave_lines of this OpeningBalances.  # noqa: E501
-        :type: list[LeaveLine]
+        :type: list[OpeningBalanceLeaveLine]
         """
 
         self._leave_lines = leave_lines
