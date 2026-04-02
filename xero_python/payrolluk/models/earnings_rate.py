@@ -198,6 +198,7 @@ class EarningsRate(BaseModel):
             "TerminationPay",
             "StatutoryNeonatalCarePay",
             "StatutoryNeonatalCarePayNonPensionable",
+            "StatutoryBereavementPayNorthernIreland",
             "None",
         ]  # noqa: E501
 

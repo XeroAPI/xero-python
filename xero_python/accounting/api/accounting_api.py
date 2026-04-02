@@ -21,7 +21,7 @@ except ImportError:
 """
 
 """
-    OpenAPI spec version: 11.1.0
+    OpenAPI spec version: 12.0.0
 """
 
 
@@ -13418,6 +13418,7 @@ class AccountingApi(object):
         page=empty,
         unitdp=empty,
         page_size=empty,
+        invoice_numbers=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -13431,6 +13432,7 @@ class AccountingApi(object):
         :param int page: e.g. page=1 – Up to 100 prepayments will be returned in a single API call with line items shown for each overpayment
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
         :param int page_size: Number of records to retrieve per page
+        :param list[str] invoice_numbers: Filter by a comma-separated list of InvoiceNumbers
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -13444,7 +13446,9 @@ class AccountingApi(object):
                 "when calling `get_prepayments`"
             )
 
-        collection_formats = {}
+        collection_formats = {
+            "InvoiceNumbers": "csv",
+        }
         path_params = {}
 
         query_params = []
@@ -13463,6 +13467,9 @@ class AccountingApi(object):
 
         if page_size is not empty:
             query_params.append(("pageSize", page_size))
+
+        if invoice_numbers is not empty:
+            query_params.append(("InvoiceNumbers", invoice_numbers))
 
         header_params = {
             "xero-tenant-id": xero_tenant_id,

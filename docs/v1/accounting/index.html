@@ -4758,6 +4758,11 @@ ul.nav-tabs {
       "description" : "Returns Invoice number field. Reference field isn't available.",
       "readOnly" : true
     },
+    "InvoiceNumber" : {
+      "type" : "string",
+      "description" : "Returns Invoice number for prepayment receive document only.",
+      "readOnly" : true
+    },
     "UpdatedDateUTC" : {
       "type" : "string",
       "description" : "UTC timestamp of last update to the prepayment",
@@ -6350,7 +6355,7 @@ ul.nav-tabs {
           <nav id="scrollingNav">
             <ul class="sidenav nav nav-list">
               <li class="nav-header" data-group="Accounting"><strong>SDK: </strong><span id='sdk-name'></span></li>
-              <li class="nav-header" data-group="Accounting"><strong>VSN: </strong>10.0.0</li>
+              <li class="nav-header" data-group="Accounting"><strong>VSN: </strong>11.0.0</li>
               <li class="nav-header" data-group="Accounting"><a href="#api-Accounting">Methods</a></li>
               <li data-group="Accounting" data-name="createAccount" class="">
                 <a href="#api-Accounting-createAccount">createAccount</a>
@@ -33203,9 +33208,10 @@ def accounting_get_prepayments():
     if_modified_since = dateutil.parser.parse("2020-02-06T12:17:43.202-08:00")
     where = 'Status=="AUTHORISED"'
     order = 'Reference ASC'
+    invoice_numbers = [&quot;INV-001&quot;, &quot;INV-002&quot;]
     
     try:
-        api_response = api_instance.get_prepayments(xero_tenant_id, if_modified_since, where, order, page, unitdp, pageSize)
+        api_response = api_instance.get_prepayments(xero_tenant_id, if_modified_since, where, order, page, unitdp, pageSize, invoice_numbers)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->getPrepayments: %s\n" % e)</code></pre>
@@ -33378,6 +33384,26 @@ e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal place
 
                     <div class="inner description marked">
 Number of records to retrieve per page
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">InvoiceNumbers</td>
+<td>
+
+
+    <div id="d2e199_getPrepayments_invoiceNumbers">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    array[String]
+                </span>
+
+                    <div class="inner description marked">
+Filter by a comma-separated list of InvoiceNumbers
                     </div>
             </div>
         </div>

@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **total_tax** | **float** | The total tax on the prepayment | [optional] 
 **total** | **float** | The total of the prepayment(subtotal + total tax) | [optional] 
 **reference** | **str** | Returns Invoice number field. Reference field isn&#39;t available. | [optional] 
+**invoice_number** | **str** | Returns Invoice number for prepayment receive document only. | [optional] 
 **updated_date_utc** | **datetime** | UTC timestamp of last update to the prepayment | [optional] 
 **currency_code** | [**CurrencyCode**](CurrencyCode.md) |  | [optional] 
 **prepayment_id** | **str** | Xero generated unique identifier | [optional] 
