@@ -40,6 +40,7 @@ class Prepayment(BaseModel):
         "total_tax": "float",
         "total": "float",
         "reference": "str",
+        "invoice_number": "str",
         "updated_date_utc": "datetime[ms-format]",
         "currency_code": "CurrencyCode",
         "prepayment_id": "str",
@@ -63,6 +64,7 @@ class Prepayment(BaseModel):
         "total_tax": "TotalTax",
         "total": "Total",
         "reference": "Reference",
+        "invoice_number": "InvoiceNumber",
         "updated_date_utc": "UpdatedDateUTC",
         "currency_code": "CurrencyCode",
         "prepayment_id": "PrepaymentID",
@@ -87,6 +89,7 @@ class Prepayment(BaseModel):
         total_tax=None,
         total=None,
         reference=None,
+        invoice_number=None,
         updated_date_utc=None,
         currency_code=None,
         prepayment_id=None,
@@ -110,6 +113,7 @@ class Prepayment(BaseModel):
         self._total_tax = None
         self._total = None
         self._reference = None
+        self._invoice_number = None
         self._updated_date_utc = None
         self._currency_code = None
         self._prepayment_id = None
@@ -142,6 +146,8 @@ class Prepayment(BaseModel):
             self.total = total
         if reference is not None:
             self.reference = reference
+        if invoice_number is not None:
+            self.invoice_number = invoice_number
         if updated_date_utc is not None:
             self.updated_date_utc = updated_date_utc
         if currency_code is not None:
@@ -412,6 +418,29 @@ class Prepayment(BaseModel):
         """
 
         self._reference = reference
+
+    @property
+    def invoice_number(self):
+        """Gets the invoice_number of this Prepayment.  # noqa: E501
+
+        Returns Invoice number for prepayment receive document only.  # noqa: E501
+
+        :return: The invoice_number of this Prepayment.  # noqa: E501
+        :rtype: str
+        """
+        return self._invoice_number
+
+    @invoice_number.setter
+    def invoice_number(self, invoice_number):
+        """Sets the invoice_number of this Prepayment.
+
+        Returns Invoice number for prepayment receive document only.  # noqa: E501
+
+        :param invoice_number: The invoice_number of this Prepayment.  # noqa: E501
+        :type: str
+        """
+
+        self._invoice_number = invoice_number
 
     @property
     def updated_date_utc(self):

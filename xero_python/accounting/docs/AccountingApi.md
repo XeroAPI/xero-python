@@ -10346,7 +10346,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_prepayments**
-> Prepayments get_prepayments(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp, page_size=page_size)
+> Prepayments get_prepayments(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp, page_size=page_size, invoice_numbers=invoice_numbers)
 
 Retrieves prepayments
 
@@ -10383,9 +10383,10 @@ order = 'Reference ASC' # str | Order by an any element (optional)
 page = 1 # int | e.g. page=1 – Up to 100 prepayments will be returned in a single API call with line items shown for each overpayment (optional)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 page_size = 100 # int | Number of records to retrieve per page (optional)
+invoice_numbers = ['&quot;INV-001&quot;, &quot;INV-002&quot;'] # list[str] | Filter by a comma-separated list of InvoiceNumbers (optional)
 try:
     # Retrieves prepayments
-    api_response = api_instance.get_prepayments(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp, page_size=page_size)
+    api_response = api_instance.get_prepayments(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp, page_size=page_size, invoice_numbers=invoice_numbers)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->get_prepayments: %s\n" % e)
@@ -10402,6 +10403,7 @@ Name | Type | Description  | Notes
  **page** | **int**| e.g. page&#x3D;1 – Up to 100 prepayments will be returned in a single API call with line items shown for each overpayment | [optional] 
  **unitdp** | **int**| e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts | [optional] 
  **page_size** | **int**| Number of records to retrieve per page | [optional] 
+ **invoice_numbers** | [**list[str]**](str.md)| Filter by a comma-separated list of InvoiceNumbers | [optional] 
 
 ### Return type
 
