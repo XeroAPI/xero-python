@@ -422,18 +422,26 @@ class Organisation(BaseModel):
         """
         allowed_values = [
             "ACCOUNTING_PRACTICE",
+            "CCORPORATIONLLC",
             "COMPANY",
             "CHARITY",
             "CLUB_OR_SOCIETY",
             "INDIVIDUAL",
+            "LLC",
             "LOOK_THROUGH_COMPANY",
             "NOT_FOR_PROFIT",
+            "NOTLLC",
             "PARTNERSHIP",
+            "PARTNERSHIPLLC",
+            "PERSONAL",
             "S_CORPORATION",
+            "SCORPORATIONLLC",
             "SELF_MANAGED_SUPERANNUATION_FUND",
+            "SINGLEMEMBERLLC",
             "SOLE_TRADER",
             "SUPERANNUATION_FUND",
             "TRUST",
+            "UNSPECIFIED",
             "None",
         ]  # noqa: E501
 
@@ -899,18 +907,26 @@ class Organisation(BaseModel):
         """
         allowed_values = [
             "ACCOUNTING_PRACTICE",
+            "CCORPORATIONLLC",
             "COMPANY",
             "CHARITY",
             "CLUB_OR_SOCIETY",
             "INDIVIDUAL",
+            "LLC",
             "LOOK_THROUGH_COMPANY",
             "NOT_FOR_PROFIT",
+            "NOTLLC",
             "PARTNERSHIP",
+            "PARTNERSHIPLLC",
+            "PERSONAL",
             "S_CORPORATION",
+            "SCORPORATIONLLC",
             "SELF_MANAGED_SUPERANNUATION_FUND",
+            "SINGLEMEMBERLLC",
             "SOLE_TRADER",
             "SUPERANNUATION_FUND",
             "TRUST",
+            "UNSPECIFIED",
             "None",
         ]  # noqa: E501
 
