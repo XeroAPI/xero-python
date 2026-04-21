@@ -434,6 +434,14 @@ class Organisation(BaseModel):
             "SOLE_TRADER",
             "SUPERANNUATION_FUND",
             "TRUST",
+            "PERSONAL",
+            "SINGLEMEMBERLLC",
+            "CCORPORATIONLLC",
+            "PARTNERSHIPLLC",
+            "SCORPORATIONLLC",
+            "LLC",
+            "NOTLLC",
+            "UNSPECIFIED",
             "None",
         ]  # noqa: E501
 
@@ -911,6 +919,14 @@ class Organisation(BaseModel):
             "SOLE_TRADER",
             "SUPERANNUATION_FUND",
             "TRUST",
+            "PERSONAL",
+            "SINGLEMEMBERLLC",
+            "CCORPORATIONLLC",
+            "PARTNERSHIPLLC",
+            "SCORPORATIONLLC",
+            "LLC",
+            "NOTLLC",
+            "UNSPECIFIED",
             "None",
         ]  # noqa: E501
 
