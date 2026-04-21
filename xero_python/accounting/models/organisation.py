@@ -441,6 +441,16 @@ class Organisation(BaseModel):
             "SOLE_TRADER",
             "SUPERANNUATION_FUND",
             "TRUST",
+<<<<<<< Updated upstream
+=======
+            "PERSONAL",
+            "SINGLEMEMBERLLC",
+            "CCORPORATIONLLC",
+            "PARTNERSHIPLLC",
+            "SCORPORATIONLLC",
+            "LLC",
+            "NOTLLC",
+>>>>>>> Stashed changes
             "UNSPECIFIED",
             "None",
         ]  # noqa: E501
@@ -926,6 +936,16 @@ class Organisation(BaseModel):
             "SOLE_TRADER",
             "SUPERANNUATION_FUND",
             "TRUST",
+<<<<<<< Updated upstream
+=======
+            "PERSONAL",
+            "SINGLEMEMBERLLC",
+            "CCORPORATIONLLC",
+            "PARTNERSHIPLLC",
+            "SCORPORATIONLLC",
+            "LLC",
+            "NOTLLC",
+>>>>>>> Stashed changes
             "UNSPECIFIED",
             "None",
         ]  # noqa: E501
