@@ -44,6 +44,7 @@ class Prepayment(BaseModel):
         "updated_date_utc": "datetime[ms-format]",
         "currency_code": "CurrencyCode",
         "prepayment_id": "str",
+        "branding_theme_id": "str",
         "currency_rate": "float",
         "remaining_credit": "float",
         "allocations": "list[Allocation]",
@@ -68,6 +69,7 @@ class Prepayment(BaseModel):
         "updated_date_utc": "UpdatedDateUTC",
         "currency_code": "CurrencyCode",
         "prepayment_id": "PrepaymentID",
+        "branding_theme_id": "BrandingThemeID",
         "currency_rate": "CurrencyRate",
         "remaining_credit": "RemainingCredit",
         "allocations": "Allocations",
@@ -93,6 +95,7 @@ class Prepayment(BaseModel):
         updated_date_utc=None,
         currency_code=None,
         prepayment_id=None,
+        branding_theme_id=None,
         currency_rate=None,
         remaining_credit=None,
         allocations=None,
@@ -117,6 +120,7 @@ class Prepayment(BaseModel):
         self._updated_date_utc = None
         self._currency_code = None
         self._prepayment_id = None
+        self._branding_theme_id = None
         self._currency_rate = None
         self._remaining_credit = None
         self._allocations = None
@@ -154,6 +158,8 @@ class Prepayment(BaseModel):
             self.currency_code = currency_code
         if prepayment_id is not None:
             self.prepayment_id = prepayment_id
+        if branding_theme_id is not None:
+            self.branding_theme_id = branding_theme_id
         if currency_rate is not None:
             self.currency_rate = currency_rate
         if remaining_credit is not None:
@@ -508,6 +514,29 @@ class Prepayment(BaseModel):
         """
 
         self._prepayment_id = prepayment_id
+
+    @property
+    def branding_theme_id(self):
+        """Gets the branding_theme_id of this Prepayment.  # noqa: E501
+
+        The unique identifier of the branding template applied to a receive prepayment  # noqa: E501
+
+        :return: The branding_theme_id of this Prepayment.  # noqa: E501
+        :rtype: str
+        """
+        return self._branding_theme_id
+
+    @branding_theme_id.setter
+    def branding_theme_id(self, branding_theme_id):
+        """Sets the branding_theme_id of this Prepayment.
+
+        The unique identifier of the branding template applied to a receive prepayment  # noqa: E501
+
+        :param branding_theme_id: The branding_theme_id of this Prepayment.  # noqa: E501
+        :type: str
+        """
+
+        self._branding_theme_id = branding_theme_id
 
     @property
     def currency_rate(self):

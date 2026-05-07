@@ -25,7 +25,6 @@ Method | HTTP request | Description
 [**create_credit_note_history**](AccountingApi.md#create_credit_note_history) | **PUT** /CreditNotes/{CreditNoteID}/History | Retrieves history records of a specific credit note
 [**create_credit_notes**](AccountingApi.md#create_credit_notes) | **PUT** /CreditNotes | Creates a new credit note
 [**create_currency**](AccountingApi.md#create_currency) | **PUT** /Currencies | Create a new currency for a Xero organisation
-[**create_employees**](AccountingApi.md#create_employees) | **PUT** /Employees | Creates new employees used in Xero payrun
 [**create_expense_claim_history**](AccountingApi.md#create_expense_claim_history) | **PUT** /ExpenseClaims/{ExpenseClaimID}/History | Creates a history record for a specific expense claim
 [**create_expense_claims**](AccountingApi.md#create_expense_claims) | **PUT** /ExpenseClaims | Creates expense claims
 [**create_invoice_attachment_by_file_name**](AccountingApi.md#create_invoice_attachment_by_file_name) | **PUT** /Invoices/{InvoiceID}/Attachments/{FileName} | Creates an attachment for a specific invoice or purchase bill by filename
@@ -117,8 +116,6 @@ Method | HTTP request | Description
 [**get_credit_note_history**](AccountingApi.md#get_credit_note_history) | **GET** /CreditNotes/{CreditNoteID}/History | Retrieves history records of a specific credit note
 [**get_credit_notes**](AccountingApi.md#get_credit_notes) | **GET** /CreditNotes | Retrieves any credit notes
 [**get_currencies**](AccountingApi.md#get_currencies) | **GET** /Currencies | Retrieves currencies for your Xero organisation
-[**get_employee**](AccountingApi.md#get_employee) | **GET** /Employees/{EmployeeID} | Retrieves a specific employee used in Xero payrun using a unique employee Id
-[**get_employees**](AccountingApi.md#get_employees) | **GET** /Employees | Retrieves employees used in Xero payrun
 [**get_expense_claim**](AccountingApi.md#get_expense_claim) | **GET** /ExpenseClaims/{ExpenseClaimID} | Retrieves a specific expense claim using a unique expense claim Id
 [**get_expense_claim_history**](AccountingApi.md#get_expense_claim_history) | **GET** /ExpenseClaims/{ExpenseClaimID}/History | Retrieves history records of a specific expense claim
 [**get_expense_claims**](AccountingApi.md#get_expense_claims) | **GET** /ExpenseClaims | Retrieves expense claims
@@ -223,7 +220,6 @@ Method | HTTP request | Description
 [**update_or_create_bank_transactions**](AccountingApi.md#update_or_create_bank_transactions) | **POST** /BankTransactions | Updates or creates one or more spent or received money transaction
 [**update_or_create_contacts**](AccountingApi.md#update_or_create_contacts) | **POST** /Contacts | Updates or creates one or more contacts in a Xero organisation
 [**update_or_create_credit_notes**](AccountingApi.md#update_or_create_credit_notes) | **POST** /CreditNotes | Updates or creates one or more credit notes
-[**update_or_create_employees**](AccountingApi.md#update_or_create_employees) | **POST** /Employees | Creates a single new employees used in Xero payrun
 [**update_or_create_invoices**](AccountingApi.md#update_or_create_invoices) | **POST** /Invoices | Updates or creates one or more sales invoices or purchase bills
 [**update_or_create_items**](AccountingApi.md#update_or_create_items) | **POST** /Items | Updates or creates one or more items
 [**update_or_create_manual_journals**](AccountingApi.md#update_or_create_manual_journals) | **POST** /ManualJournals | Updates or creates a single manual journal
@@ -1646,75 +1642,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Currencies**](Currencies.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **create_employees**
-> Employees create_employees(xero_tenant_id, employees, summarize_errors=summarize_errors, idempotency_key=idempotency_key)
-
-Creates new employees used in Xero payrun
-
-This endpoint is deprecated and will be removed April 28, 2026
-
-### Example
-
-* OAuth Authentication (OAuth2): 
-```python
-from xero_python.api_client import Configuration, ApiClient
-from xero_python.api_client.oauth2 import OAuth2Token
-from xero_python.exceptions import ApiException
-from xero_python.accounting import AccountingApi
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: OAuth2
-# simplified version, `xero_oauth2_token` represents permanent global token storage
-xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
-# create client configuration with client id and client secret for automatic token refresh
-api_config = Configuration(oauth2_token=OAuth2Token(
-    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
-))
-# configure xero-python sdk client
-api_client = ApiClient(
-    api_config,
-    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
-    oauth2_token_getter=lambda : xero_oauth2_token
-)
-# create an instance of the API class
-api_instance = AccountingApi(api_client)
-
-xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-employees = {"Employees":[{"FirstName":"Nick","LastName":"Fury","ExternalLink":{"Url":"http://twitter.com/#!/search/Nick+Fury"}}]} # Employees | Employees with array of Employee object in body of request
-summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
-idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
-try:
-    # Creates new employees used in Xero payrun
-    api_response = api_instance.create_employees(xero_tenant_id, employees, summarize_errors=summarize_errors, idempotency_key=idempotency_key)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AccountingApi->create_employees: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xero_tenant_id** | **str**| Xero identifier for Tenant | 
- **employees** | [**Employees**](Employees.md)| Employees with array of Employee object in body of request | 
- **summarize_errors** | **bool**| If false return 200 OK and mix of successfully created objects and any with validation errors | [optional] [default to False]
- **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
-
-### Return type
-
-[**Employees**](Employees.md)
 
 ### Authorization
 
@@ -7715,140 +7642,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Currencies**](Currencies.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_employee**
-> Employees get_employee(xero_tenant_id, employee_id)
-
-Retrieves a specific employee used in Xero payrun using a unique employee Id
-
-This endpoint is deprecated and will be removed April 28, 2026
-
-### Example
-
-* OAuth Authentication (OAuth2): 
-```python
-from xero_python.api_client import Configuration, ApiClient
-from xero_python.api_client.oauth2 import OAuth2Token
-from xero_python.exceptions import ApiException
-from xero_python.accounting import AccountingApi
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: OAuth2
-# simplified version, `xero_oauth2_token` represents permanent global token storage
-xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
-# create client configuration with client id and client secret for automatic token refresh
-api_config = Configuration(oauth2_token=OAuth2Token(
-    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
-))
-# configure xero-python sdk client
-api_client = ApiClient(
-    api_config,
-    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
-    oauth2_token_getter=lambda : xero_oauth2_token
-)
-# create an instance of the API class
-api_instance = AccountingApi(api_client)
-
-xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-employee_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier for a Employee
-try:
-    # Retrieves a specific employee used in Xero payrun using a unique employee Id
-    api_response = api_instance.get_employee(xero_tenant_id, employee_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AccountingApi->get_employee: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xero_tenant_id** | **str**| Xero identifier for Tenant | 
- **employee_id** | [**str**](.md)| Unique identifier for a Employee | 
-
-### Return type
-
-[**Employees**](Employees.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_employees**
-> Employees get_employees(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order)
-
-Retrieves employees used in Xero payrun
-
-This endpoint is deprecated and will be removed April 28, 2026
-
-### Example
-
-* OAuth Authentication (OAuth2): 
-```python
-from xero_python.api_client import Configuration, ApiClient
-from xero_python.api_client.oauth2 import OAuth2Token
-from xero_python.exceptions import ApiException
-from xero_python.accounting import AccountingApi
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: OAuth2
-# simplified version, `xero_oauth2_token` represents permanent global token storage
-xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
-# create client configuration with client id and client secret for automatic token refresh
-api_config = Configuration(oauth2_token=OAuth2Token(
-    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
-))
-# configure xero-python sdk client
-api_client = ApiClient(
-    api_config,
-    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
-    oauth2_token_getter=lambda : xero_oauth2_token
-)
-# create an instance of the API class
-api_instance = AccountingApi(api_client)
-
-xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-if_modified_since = '2020-02-06T12:17:43.202-08:00' # datetime | Only records created or modified since this timestamp will be returned (optional)
-where = 'Status==\"ACTIVE\"' # str | Filter by an any element (optional)
-order = 'LastName ASC' # str | Order by an any element (optional)
-try:
-    # Retrieves employees used in Xero payrun
-    api_response = api_instance.get_employees(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AccountingApi->get_employees: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xero_tenant_id** | **str**| Xero identifier for Tenant | 
- **if_modified_since** | **datetime**| Only records created or modified since this timestamp will be returned | [optional] 
- **where** | **str**| Filter by an any element | [optional] 
- **order** | **str**| Order by an any element | [optional] 
-
-### Return type
-
-[**Employees**](Employees.md)
 
 ### Authorization
 
@@ -14739,75 +14532,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CreditNotes**](CreditNotes.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **update_or_create_employees**
-> Employees update_or_create_employees(xero_tenant_id, employees, summarize_errors=summarize_errors, idempotency_key=idempotency_key)
-
-Creates a single new employees used in Xero payrun
-
-This endpoint is deprecated and will be removed April 28, 2026
-
-### Example
-
-* OAuth Authentication (OAuth2): 
-```python
-from xero_python.api_client import Configuration, ApiClient
-from xero_python.api_client.oauth2 import OAuth2Token
-from xero_python.exceptions import ApiException
-from xero_python.accounting import AccountingApi
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: OAuth2
-# simplified version, `xero_oauth2_token` represents permanent global token storage
-xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
-# create client configuration with client id and client secret for automatic token refresh
-api_config = Configuration(oauth2_token=OAuth2Token(
-    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
-))
-# configure xero-python sdk client
-api_client = ApiClient(
-    api_config,
-    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
-    oauth2_token_getter=lambda : xero_oauth2_token
-)
-# create an instance of the API class
-api_instance = AccountingApi(api_client)
-
-xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-employees = {"Employees":[{"FirstName":"Nick","LastName":"Fury","ExternalLink":{"Url":"http://twitter.com/#!/search/Nick+Fury"}}]} # Employees | Employees with array of Employee object in body of request
-summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
-idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
-try:
-    # Creates a single new employees used in Xero payrun
-    api_response = api_instance.update_or_create_employees(xero_tenant_id, employees, summarize_errors=summarize_errors, idempotency_key=idempotency_key)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AccountingApi->update_or_create_employees: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xero_tenant_id** | **str**| Xero identifier for Tenant | 
- **employees** | [**Employees**](Employees.md)| Employees with array of Employee object in body of request | 
- **summarize_errors** | **bool**| If false return 200 OK and mix of successfully created objects and any with validation errors | [optional] [default to False]
- **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
-
-### Return type
-
-[**Employees**](Employees.md)
 
 ### Authorization
 
