@@ -2,4 +2,4 @@
 
 __author__ = """Xero Developer API"""
 __email__ = "api@xero.com"
-__version__ = "11.0.1"
+__version__ = "12.0.0"

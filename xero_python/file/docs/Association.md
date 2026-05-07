@@ -6,6 +6,8 @@ Name | Type | Description | Notes
 **send_with_object** | **bool** | Boolean flag to determines whether the file is sent with the document it is attached to on client facing communications. Note- The SendWithObject element is only returned when using /Associations/{ObjectId} endpoint. | [optional] 
 **name** | **str** | The name of the associated file. Note- The Name element is only returned when using /Associations/{ObjectId} endpoint. | [optional] 
 **size** | **int** | The size of the associated file in bytes. Note- The Size element is only returned when using /Associations/{ObjectId} endpoint. | [optional] 
+**created_date_utc** | **datetime** | The date the file was created (UTC). Note- The CreatedDateUtc element is only returned when using /Associations/{ObjectId} endpoint. | [optional] 
+**association_date_utc** | **datetime** | The date the file was associated with the object (UTC). Note- The AssociationDateUtc element is only returned when using /Associations/{ObjectId} endpoint. | [optional] 
 **file_id** | **str** | The unique identifier of the file | [optional] 
 **object_id** | **str** | The identifier of the object that the file is being associated with (e.g. InvoiceID, BankTransactionID, ContactID) | [optional] 
 **object_group** | [**ObjectGroup**](ObjectGroup.md) |  | [optional] 

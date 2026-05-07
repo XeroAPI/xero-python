@@ -391,7 +391,7 @@ xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 object_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Object id for single object
 pagesize = 50 # int | pass an optional page size value (optional)
 page = 2 # int | number of records to skip for pagination (optional)
-sort = 'Associations/{ObjectId}?sort=CreatedDateUtc' # str | values to sort by (optional)
+sort = 'CreatedDateUtc' # str | values to sort by (optional) (default to 'CreatedDateUtc')
 direction = 'Associations/{ObjectId}?sort=CreatedDateUtc&direction=DESC' # str | direction to sort by (optional)
 try:
     # Retrieves an association object using a unique object ID
@@ -409,7 +409,7 @@ Name | Type | Description  | Notes
  **object_id** | [**str**](.md)| Object id for single object | 
  **pagesize** | **int**| pass an optional page size value | [optional] 
  **page** | **int**| number of records to skip for pagination | [optional] 
- **sort** | **str**| values to sort by | [optional] 
+ **sort** | **str**| values to sort by | [optional] [default to &#39;CreatedDateUtc&#39;]
  **direction** | **str**| direction to sort by | [optional] 
 
 ### Return type

@@ -33,6 +33,8 @@ class Association(BaseModel):
         "send_with_object": "bool",
         "name": "str",
         "size": "int",
+        "created_date_utc": "datetime",
+        "association_date_utc": "datetime",
         "file_id": "str",
         "object_id": "str",
         "object_group": "ObjectGroup",
@@ -43,6 +45,8 @@ class Association(BaseModel):
         "send_with_object": "SendWithObject",
         "name": "Name",
         "size": "Size",
+        "created_date_utc": "CreatedDateUtc",
+        "association_date_utc": "AssociationDateUtc",
         "file_id": "FileId",
         "object_id": "ObjectId",
         "object_group": "ObjectGroup",
@@ -54,6 +58,8 @@ class Association(BaseModel):
         send_with_object=None,
         name=None,
         size=None,
+        created_date_utc=None,
+        association_date_utc=None,
         file_id=None,
         object_id=None,
         object_group=None,
@@ -64,6 +70,8 @@ class Association(BaseModel):
         self._send_with_object = None
         self._name = None
         self._size = None
+        self._created_date_utc = None
+        self._association_date_utc = None
         self._file_id = None
         self._object_id = None
         self._object_group = None
@@ -76,6 +84,10 @@ class Association(BaseModel):
             self.name = name
         if size is not None:
             self.size = size
+        if created_date_utc is not None:
+            self.created_date_utc = created_date_utc
+        if association_date_utc is not None:
+            self.association_date_utc = association_date_utc
         if file_id is not None:
             self.file_id = file_id
         if object_id is not None:
@@ -153,6 +165,52 @@ class Association(BaseModel):
         """
 
         self._size = size
+
+    @property
+    def created_date_utc(self):
+        """Gets the created_date_utc of this Association.  # noqa: E501
+
+        The date the file was created (UTC). Note- The CreatedDateUtc element is only returned when using /Associations/{ObjectId} endpoint.  # noqa: E501
+
+        :return: The created_date_utc of this Association.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._created_date_utc
+
+    @created_date_utc.setter
+    def created_date_utc(self, created_date_utc):
+        """Sets the created_date_utc of this Association.
+
+        The date the file was created (UTC). Note- The CreatedDateUtc element is only returned when using /Associations/{ObjectId} endpoint.  # noqa: E501
+
+        :param created_date_utc: The created_date_utc of this Association.  # noqa: E501
+        :type: datetime
+        """
+
+        self._created_date_utc = created_date_utc
+
+    @property
+    def association_date_utc(self):
+        """Gets the association_date_utc of this Association.  # noqa: E501
+
+        The date the file was associated with the object (UTC). Note- The AssociationDateUtc element is only returned when using /Associations/{ObjectId} endpoint.  # noqa: E501
+
+        :return: The association_date_utc of this Association.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._association_date_utc
+
+    @association_date_utc.setter
+    def association_date_utc(self, association_date_utc):
+        """Sets the association_date_utc of this Association.
+
+        The date the file was associated with the object (UTC). Note- The AssociationDateUtc element is only returned when using /Associations/{ObjectId} endpoint.  # noqa: E501
+
+        :param association_date_utc: The association_date_utc of this Association.  # noqa: E501
+        :type: datetime
+        """
+
+        self._association_date_utc = association_date_utc
 
     @property
     def file_id(self):

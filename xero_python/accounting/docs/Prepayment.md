@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **updated_date_utc** | **datetime** | UTC timestamp of last update to the prepayment | [optional] 
 **currency_code** | [**CurrencyCode**](CurrencyCode.md) |  | [optional] 
 **prepayment_id** | **str** | Xero generated unique identifier | [optional] 
+**branding_theme_id** | **str** | The unique identifier of the branding template applied to a receive prepayment | [optional] 
 **currency_rate** | **float** | The currency rate for a multicurrency prepayment. If no rate is specified, the XE.com day rate is used | [optional] 
 **remaining_credit** | **float** | The remaining credit balance on the prepayment | [optional] 
 **allocations** | [**list[Allocation]**](Allocation.md) | See Allocations | [optional] 
