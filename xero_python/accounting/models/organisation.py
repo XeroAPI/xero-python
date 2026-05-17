@@ -1005,6 +1005,7 @@ class Organisation(BaseModel):
             "GROW",
             "COMPREHENSIVE",
             "SIMPLE",
+            "BASICLITE",
             "None",
         ]  # noqa: E501
 

@@ -48,8 +48,7 @@ class EmployeePayTemplate(BaseModel):
 
         if employee_id is not None:
             self.employee_id = employee_id
-        if earning_templates is not None:
-            self.earning_templates = earning_templates
+        self.earning_templates = earning_templates
 
     @property
     def employee_id(self):
@@ -92,5 +91,9 @@ class EmployeePayTemplate(BaseModel):
         :param earning_templates: The earning_templates of this EmployeePayTemplate.  # noqa: E501
         :type: list[EarningsTemplate]
         """
+        if earning_templates is None:
+            raise ValueError(
+                "Invalid value for `earning_templates`, must not be `None`"
+            )  # noqa: E501
 
         self._earning_templates = earning_templates
