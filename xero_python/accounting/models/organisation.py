@@ -1006,6 +1006,7 @@ class Organisation(BaseModel):
             "COMPREHENSIVE",
             "SIMPLE",
             "BASICLITE",
+            "ULTRA",
             "None",
         ]  # noqa: E501
 
