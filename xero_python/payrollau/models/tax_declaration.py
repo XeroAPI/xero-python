@@ -670,7 +670,7 @@ class TaxDeclaration(BaseModel):
     def include_leave_loading_in_qualifying_earnings(self):
         """Gets the include_leave_loading_in_qualifying_earnings of this TaxDeclaration.  # noqa: E501
 
-        Optional Boolean to determine if leave loading is considered as qualifying earnings for superannuation guarantee calculations  # noqa: E501
+        Boolean to determine if leave loading is considered as qualifying earnings for superannuation guarantee calculations. Required when IncludeLeaveLoadingInSGC is specified in the payload  # noqa: E501
 
         :return: The include_leave_loading_in_qualifying_earnings of this TaxDeclaration.  # noqa: E501
         :rtype: bool
@@ -683,7 +683,7 @@ class TaxDeclaration(BaseModel):
     ):
         """Sets the include_leave_loading_in_qualifying_earnings of this TaxDeclaration.
 
-        Optional Boolean to determine if leave loading is considered as qualifying earnings for superannuation guarantee calculations  # noqa: E501
+        Boolean to determine if leave loading is considered as qualifying earnings for superannuation guarantee calculations. Required when IncludeLeaveLoadingInSGC is specified in the payload  # noqa: E501
 
         :param include_leave_loading_in_qualifying_earnings: The include_leave_loading_in_qualifying_earnings of this TaxDeclaration.  # noqa: E501
         :type: bool

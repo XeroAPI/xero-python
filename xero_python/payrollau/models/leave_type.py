@@ -112,8 +112,7 @@ class LeaveType(BaseModel):
             self.leave_category_code = leave_category_code
         if sgc_exempt is not None:
             self.sgc_exempt = sgc_exempt
-        if is_qualifying_earnings is not None:
-            self.is_qualifying_earnings = is_qualifying_earnings
+        self.is_qualifying_earnings = is_qualifying_earnings
 
     @property
     def name(self):
@@ -375,7 +374,7 @@ class LeaveType(BaseModel):
     def is_qualifying_earnings(self):
         """Gets the is_qualifying_earnings of this LeaveType.  # noqa: E501
 
-        Optional Boolean to determine if the earnings rate is considered as qualifying earnings for superannuation guarantee calculations. When not specified value is calculated based on earnings type and superannuation settings  # noqa: E501
+        Boolean to determine if the leave type is considered as qualifying earnings for superannuation guarantee calculations  # noqa: E501
 
         :return: The is_qualifying_earnings of this LeaveType.  # noqa: E501
         :rtype: bool
@@ -386,10 +385,14 @@ class LeaveType(BaseModel):
     def is_qualifying_earnings(self, is_qualifying_earnings):
         """Sets the is_qualifying_earnings of this LeaveType.
 
-        Optional Boolean to determine if the earnings rate is considered as qualifying earnings for superannuation guarantee calculations. When not specified value is calculated based on earnings type and superannuation settings  # noqa: E501
+        Boolean to determine if the leave type is considered as qualifying earnings for superannuation guarantee calculations  # noqa: E501
 
         :param is_qualifying_earnings: The is_qualifying_earnings of this LeaveType.  # noqa: E501
         :type: bool
         """
+        if is_qualifying_earnings is None:
+            raise ValueError(
+                "Invalid value for `is_qualifying_earnings`, must not be `None`"
+            )  # noqa: E501
 
         self._is_qualifying_earnings = is_qualifying_earnings

@@ -92,8 +92,7 @@ class LeaveLine(BaseModel):
             self.include_superannuation_guarantee_contribution = (
                 include_superannuation_guarantee_contribution
             )
-        if is_qualifying_earnings is not None:
-            self.is_qualifying_earnings = is_qualifying_earnings
+        self.is_qualifying_earnings = is_qualifying_earnings
         if number_of_units is not None:
             self.number_of_units = number_of_units
         if annual_number_of_units is not None:
@@ -220,7 +219,7 @@ class LeaveLine(BaseModel):
     def is_qualifying_earnings(self):
         """Gets the is_qualifying_earnings of this LeaveLine.  # noqa: E501
 
-        Optional Boolean to determine if the earnings rate is considered as qualifying earnings for superannuation guarantee calculations. When not specified value is calculated based on superannuation settings  # noqa: E501
+        Boolean to determine if the leave line is considered as qualifying earnings for superannuation guarantee calculations  # noqa: E501
 
         :return: The is_qualifying_earnings of this LeaveLine.  # noqa: E501
         :rtype: bool
@@ -231,11 +230,15 @@ class LeaveLine(BaseModel):
     def is_qualifying_earnings(self, is_qualifying_earnings):
         """Sets the is_qualifying_earnings of this LeaveLine.
 
-        Optional Boolean to determine if the earnings rate is considered as qualifying earnings for superannuation guarantee calculations. When not specified value is calculated based on superannuation settings  # noqa: E501
+        Boolean to determine if the leave line is considered as qualifying earnings for superannuation guarantee calculations  # noqa: E501
 
         :param is_qualifying_earnings: The is_qualifying_earnings of this LeaveLine.  # noqa: E501
         :type: bool
         """
+        if is_qualifying_earnings is None:
+            raise ValueError(
+                "Invalid value for `is_qualifying_earnings`, must not be `None`"
+            )  # noqa: E501
 
         self._is_qualifying_earnings = is_qualifying_earnings
 
