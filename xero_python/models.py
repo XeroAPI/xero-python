@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 import pprint
+from enum import Enum
 from functools import singledispatch
+from uuid import UUID
 
 
 class BaseModel:
@@ -67,3 +69,13 @@ def serialize_tuple_to_dict(value):
 @serialize_to_dict.register(dict)
 def serialize_dict_to_dict(value):
     return {key: serialize_to_dict(val) for key, val in value.items()}
+
+
+@serialize_to_dict.register(Enum)
+def serialize_enum_to_dict(value):
+    return value.value
+
+
+@serialize_to_dict.register(UUID)
+def serialize_uuid_to_dict(value):
+    return str(value)
