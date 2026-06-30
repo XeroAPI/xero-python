@@ -250,8 +250,17 @@ def deserialize_datetime_ms(data_type, data, model_finder):
             tz_info = tz.UTC
 
         timestamp_ms = int(match.groupdict()["timestamp"])
-        timestamp_s = timestamp_ms / 1000
-        return datetime.datetime.fromtimestamp(timestamp_s, tz=tz_info)
+        # datetime.fromtimestamp is bounded by the platform's C library and
+        # leaks OSError/OverflowError for out-of-range or (on Windows)
+        # pre-1970 timestamps. Build the datetime from the epoch instead so
+        # the conversion is platform independent, and surface the documented
+        # ValueError for values python's datetime cannot represent.
+        epoch = datetime.datetime(1970, 1, 1, tzinfo=tz.UTC)
+        try:
+            utc_datetime = epoch + datetime.timedelta(milliseconds=timestamp_ms)
+        except (OverflowError, OSError) as error:
+            raise ValueError("Invalid datetime value {!r}".format(data)) from error
+        return utc_datetime.astimezone(tz_info)
     elif DATE_WITH_NO_DAY_RE.match(str(data)):
         return datetime.datetime.strptime(data + "-01", "%Y-%m-%d")
     else:
