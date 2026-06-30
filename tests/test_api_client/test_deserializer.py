@@ -111,6 +111,13 @@ def test_deserialize_list_key_error():
         deserialize_list(data_type, data, model_finder)
 
 
+def test_deserialize_list_none():
+    # regression for #131: the Xero API can return null for a list field
+    # (e.g. "LeaveApplications": None); deserializing must not raise.
+    result = deserialize_list("list[number]", None, model_finder=None)
+    assert result is None
+
+
 # deserialize_int tests
 @pytest.mark.parametrize("data,expected", [(n, int(n)) for n in ("1", "-1", 2)])
 def test_deserialize_int(data, expected):
