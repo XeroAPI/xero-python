@@ -3,6 +3,7 @@ from contextlib import contextmanager
 from datetime import date, datetime, timedelta
 from decimal import Decimal
 from unittest import mock
+from uuid import UUID
 
 import pytest
 from dateutil import tz
@@ -389,3 +390,14 @@ def test_serialize_enum_model(value, expected):
     # then correct enum value expected
     assert isinstance(result, str)
     assert result == expected
+
+
+# serialize UUID tests (regression for #161)
+def test_serialize_uuid():
+    # given a UUID value (e.g. an invoice id returned by the Xero API)
+    value = UUID("12345678-1234-5678-1234-567812345678")
+    # when serializing it
+    result = serialize(value)
+    # then it becomes the canonical hyphenated string, not a ValueError
+    assert isinstance(result, str)
+    assert result == "12345678-1234-5678-1234-567812345678"

@@ -3,6 +3,7 @@ import re
 from datetime import datetime, time, date
 from enum import Enum
 from functools import singledispatch
+from uuid import UUID
 
 from dateutil import tz
 
@@ -221,3 +222,15 @@ def serialize_enum_model(model):
     :return: serialized object
     """
     return model.value
+
+
+@serialize_model.register(UUID)
+def serialize_uuid_model(model):
+    """Serializes a UUID into a json serializable string.
+
+    Uses the canonical 8-4-4-4-12 hyphenated form expected by the Xero API.
+
+    :param model: UUID instance to serialize
+    :return: serialized object
+    """
+    return str(model)
