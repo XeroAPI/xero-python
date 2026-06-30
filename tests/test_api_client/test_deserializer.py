@@ -327,6 +327,25 @@ def test_deserialize_datetime_ms_error(data):
         deserialize_datetime_ms(data_type, data, model_finder=None)
 
 
+def test_deserialize_datetime_ms_pre_epoch():
+    # regression for #59: a timestamp before 1970 (negative ms) must convert
+    # cleanly on every platform instead of leaking OSError (datetime.fromtimestamp
+    # rejects negative timestamps on Windows).
+    result = deserialize_datetime_ms(
+        "datetime[ms-format]", "/Date(-2208988800000)/", model_finder=None
+    )
+    assert result == datetime(1900, 1, 1, tzinfo=tz.UTC)
+
+
+def test_deserialize_datetime_ms_out_of_range_raises_value_error():
+    # regression for #59: an out-of-range timestamp must raise the documented
+    # ValueError, not leak OSError / OverflowError from the platform C library.
+    with pytest.raises(ValueError):
+        deserialize_datetime_ms(
+            "datetime[ms-format]", "/Date(67768036191676800000)/", model_finder=None
+        )
+
+
 # deserialize_model tests
 def test_deserialize_model():
     # given test model and test data
