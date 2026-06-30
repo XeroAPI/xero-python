@@ -70,6 +70,8 @@ def deserialize_list(data_type, data, model_finder):
     :return: deserialized list
 
     """
+    if data is None:
+        return None
     try:
         sub_data_type = LIST_DATA_TYPE.match(data_type).group(1)
     except AttributeError:
