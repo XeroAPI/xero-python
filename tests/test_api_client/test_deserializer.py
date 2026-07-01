@@ -360,6 +360,44 @@ def test_deserialize_model_error(data):
         deserialize_model(Model, data, model_finder=None)
 
 
+def test_deserialize_model_tolerates_unknown_enum():
+    # A generated model whose setter rejects unknown enum values, mimicking the
+    # real SDK models (Contact.tax_number_type, LinkedTransaction...). The Xero
+    # API can return values the SDK predates, e.g. "TAXNUMBERTYPE/SSN" (#203,
+    # #205, #206) — deserialization must not crash on them.
+    class Model:
+        openapi_types = {"tax_number_type": "str"}
+        attribute_map = {"tax_number_type": "TaxNumberType"}
+        allowed_values = ["SSN", "EIN"]
+
+        def __init__(self, tax_number_type=None):
+            self._tax_number_type = None
+            if tax_number_type is not None:
+                self.tax_number_type = tax_number_type
+
+        @property
+        def tax_number_type(self):
+            return self._tax_number_type
+
+        @tax_number_type.setter
+        def tax_number_type(self, value):
+            if value and value not in self.allowed_values:
+                raise ValueError("Invalid value for `tax_number_type` ({})".format(value))
+            self._tax_number_type = value
+
+    with mock_deserialize():
+        result = deserialize_model(
+            Model, {"TaxNumberType": "TAXNUMBERTYPE/SSN"}, model_finder=None
+        )
+    # tolerated: no crash, raw value preserved for the caller
+    assert result.tax_number_type == "TAXNUMBERTYPE/SSN"
+
+    # control: a valid value still passes through the setter unchanged
+    with mock_deserialize():
+        ok = deserialize_model(Model, {"TaxNumberType": "EIN"}, model_finder=None)
+    assert ok.tax_number_type == "EIN"
+
+
 class Shape(Enum):
     """
     Test enum class to mimic Enum API model

@@ -284,5 +284,19 @@ def deserialize_model(model, data, model_finder):
             value = data[attr_key]
             kwargs[attr] = deserialize(attr_type, value, model_finder)
 
-    instance = model(**kwargs)
+    try:
+        instance = model(**kwargs)
+    except ValueError:
+        # The Xero API can return enum values this generated SDK predates
+        # (e.g. new/unexpected tax_number_type or source_transaction_type_code
+        # values). The per-attribute setters reject those with ValueError, which
+        # otherwise crashes deserialization of an otherwise-valid response and
+        # forces callers to monkey-patch the SDK. Build the model tolerantly
+        # instead, preserving the raw value the API sent. (#203, #205, #206)
+        instance = model()
+        for attr, value in kwargs.items():
+            try:
+                setattr(instance, attr, value)
+            except ValueError:
+                setattr(instance, "_" + attr, value)
     return instance
