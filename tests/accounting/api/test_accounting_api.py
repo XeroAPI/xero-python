@@ -382,6 +382,7 @@ def test_get_invoices(sandbox_accounting_api: AccountingApi, xero_tenant_id):
                 total_tax=Decimal(0),
                 type="ACCREC",
                 updated_date_utc=datetime.datetime(2018, 11, 2, 16, 31, 30, 160000, tzinfo=tz.UTC),
+                updated_date_utc_string="2018-11-02T16:31:30Z",
             ),
             Invoice(
                 amount_credited=Decimal(0),
@@ -431,6 +432,7 @@ def test_get_invoices(sandbox_accounting_api: AccountingApi, xero_tenant_id):
                 total_tax=Decimal(6),
                 type="ACCREC",
                 updated_date_utc=datetime.datetime(2018, 11, 2, 16, 36, 32, 690000, tzinfo=tz.UTC),
+                updated_date_utc_string="2018-11-02T16:36:32Z",
             ),
             Invoice(
                 amount_credited=Decimal(0),
@@ -467,7 +469,8 @@ def test_get_invoices(sandbox_accounting_api: AccountingApi, xero_tenant_id):
                 total=Decimal(115),
                 total_tax=Decimal(15),
                 type="ACCREC",
-                updated_date_utc=datetime.datetime(2018, 11, 2, 16, 37, 28, 927000, tzinfo=tz.UTC)
+                updated_date_utc=datetime.datetime(2018, 11, 2, 16, 37, 28, 927000, tzinfo=tz.UTC),
+                updated_date_utc_string="2018-11-02T16:37:28Z"
             )
         ],
         pagination= Pagination(
@@ -629,6 +632,7 @@ def test_update_or_create_invoices(
                 updated_date_utc=datetime.datetime(
                     2019, 3, 11, 17, 58, 46, 117000, tzinfo=tz.UTC
                 ),
+                updated_date_utc_string="2019-03-11T17:58:46Z",
             )
         ]
     )
