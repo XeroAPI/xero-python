@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **total_tax** | **float** | The total tax on the overpayment | [optional] 
 **total** | **float** | The total of the overpayment (subtotal + total tax) | [optional] 
 **updated_date_utc** | **datetime** | UTC timestamp of last update to the overpayment | [optional] 
+**updated_date_utc_string** | **str** | UTC ISO-8601 formatted timestamp of last update to the overpayment | [optional] 
 **currency_code** | [**CurrencyCode**](CurrencyCode.md) |  | [optional] 
 **overpayment_id** | **str** | Xero generated unique identifier | [optional] 
 **currency_rate** | **float** | The currency rate for a multicurrency overpayment. If no rate is specified, the XE.com day rate is used | [optional] 

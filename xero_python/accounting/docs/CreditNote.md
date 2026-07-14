@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **cis_deduction** | **float** | CIS deduction for UK contractors | [optional] 
 **cis_rate** | **float** | CIS Deduction rate for the organisation | [optional] 
 **updated_date_utc** | **datetime** | UTC timestamp of last update to the credit note | [optional] 
+**updated_date_utc_string** | **str** | UTC ISO-8601 formatted timestamp of last update to the credit note | [optional] 
 **currency_code** | [**CurrencyCode**](CurrencyCode.md) |  | [optional] 
 **fully_paid_on_date** | **date** | Date when credit note was fully paid(UTC format) | [optional] 
 **credit_note_id** | **str** | Xero generated unique identifier | [optional] 

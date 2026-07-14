@@ -43,6 +43,9 @@ class BankTransfer(BaseModel):
         "reference": "str",
         "has_attachments": "bool",
         "created_date_utc": "datetime[ms-format]",
+        "status": "str",
+        "from_tracking": "list[TrackingReference]",
+        "to_tracking": "list[TrackingReference]",
         "validation_errors": "list[ValidationError]",
     }
 
@@ -60,6 +63,9 @@ class BankTransfer(BaseModel):
         "reference": "Reference",
         "has_attachments": "HasAttachments",
         "created_date_utc": "CreatedDateUTC",
+        "status": "Status",
+        "from_tracking": "FromTracking",
+        "to_tracking": "ToTracking",
         "validation_errors": "ValidationErrors",
     }
 
@@ -78,6 +84,9 @@ class BankTransfer(BaseModel):
         reference=None,
         has_attachments=False,
         created_date_utc=None,
+        status=None,
+        from_tracking=None,
+        to_tracking=None,
         validation_errors=None,
     ):  # noqa: E501
         """BankTransfer - a model defined in OpenAPI"""  # noqa: E501
@@ -95,6 +104,9 @@ class BankTransfer(BaseModel):
         self._reference = None
         self._has_attachments = None
         self._created_date_utc = None
+        self._status = None
+        self._from_tracking = None
+        self._to_tracking = None
         self._validation_errors = None
         self.discriminator = None
 
@@ -121,6 +133,12 @@ class BankTransfer(BaseModel):
             self.has_attachments = has_attachments
         if created_date_utc is not None:
             self.created_date_utc = created_date_utc
+        if status is not None:
+            self.status = status
+        if from_tracking is not None:
+            self.from_tracking = from_tracking
+        if to_tracking is not None:
+            self.to_tracking = to_tracking
         if validation_errors is not None:
             self.validation_errors = validation_errors
 
@@ -430,6 +448,84 @@ class BankTransfer(BaseModel):
         """
 
         self._created_date_utc = created_date_utc
+
+    @property
+    def status(self):
+        """Gets the status of this BankTransfer.  # noqa: E501
+
+        AUTHORISED or DELETED (read-only). New bank transfers will have a status of AUTHORISED.  # noqa: E501
+
+        :return: The status of this BankTransfer.  # noqa: E501
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this BankTransfer.
+
+        AUTHORISED or DELETED (read-only). New bank transfers will have a status of AUTHORISED.  # noqa: E501
+
+        :param status: The status of this BankTransfer.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["AUTHORISED", "DELETED", "None"]  # noqa: E501
+
+        if status:
+            if status not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `status` ({0}), must be one of {1}".format(  # noqa: E501
+                        status, allowed_values
+                    )
+                )
+
+        self._status = status
+
+    @property
+    def from_tracking(self):
+        """Gets the from_tracking of this BankTransfer.  # noqa: E501
+
+        Optional Tracking Category for the source account – see Tracking. A bank transfer can have a maximum of 2 tracking categories per account.  # noqa: E501
+
+        :return: The from_tracking of this BankTransfer.  # noqa: E501
+        :rtype: list[TrackingReference]
+        """
+        return self._from_tracking
+
+    @from_tracking.setter
+    def from_tracking(self, from_tracking):
+        """Sets the from_tracking of this BankTransfer.
+
+        Optional Tracking Category for the source account – see Tracking. A bank transfer can have a maximum of 2 tracking categories per account.  # noqa: E501
+
+        :param from_tracking: The from_tracking of this BankTransfer.  # noqa: E501
+        :type: list[TrackingReference]
+        """
+
+        self._from_tracking = from_tracking
+
+    @property
+    def to_tracking(self):
+        """Gets the to_tracking of this BankTransfer.  # noqa: E501
+
+        Optional Tracking Category for the destination account – see Tracking. A bank transfer can have a maximum of 2 tracking categories per account.  # noqa: E501
+
+        :return: The to_tracking of this BankTransfer.  # noqa: E501
+        :rtype: list[TrackingReference]
+        """
+        return self._to_tracking
+
+    @to_tracking.setter
+    def to_tracking(self, to_tracking):
+        """Sets the to_tracking of this BankTransfer.
+
+        Optional Tracking Category for the destination account – see Tracking. A bank transfer can have a maximum of 2 tracking categories per account.  # noqa: E501
+
+        :param to_tracking: The to_tracking of this BankTransfer.  # noqa: E501
+        :type: list[TrackingReference]
+        """
+
+        self._to_tracking = to_tracking
 
     @property
     def validation_errors(self):

@@ -43,6 +43,7 @@ class CreditNote(BaseModel):
         "cis_deduction": "float",
         "cis_rate": "float",
         "updated_date_utc": "datetime[ms-format]",
+        "updated_date_utc_string": "str",
         "currency_code": "CurrencyCode",
         "fully_paid_on_date": "date[ms-format]",
         "credit_note_id": "str",
@@ -77,6 +78,7 @@ class CreditNote(BaseModel):
         "cis_deduction": "CISDeduction",
         "cis_rate": "CISRate",
         "updated_date_utc": "UpdatedDateUTC",
+        "updated_date_utc_string": "UpdatedDateUTCString",
         "currency_code": "CurrencyCode",
         "fully_paid_on_date": "FullyPaidOnDate",
         "credit_note_id": "CreditNoteID",
@@ -112,6 +114,7 @@ class CreditNote(BaseModel):
         cis_deduction=None,
         cis_rate=None,
         updated_date_utc=None,
+        updated_date_utc_string=None,
         currency_code=None,
         fully_paid_on_date=None,
         credit_note_id=None,
@@ -146,6 +149,7 @@ class CreditNote(BaseModel):
         self._cis_deduction = None
         self._cis_rate = None
         self._updated_date_utc = None
+        self._updated_date_utc_string = None
         self._currency_code = None
         self._fully_paid_on_date = None
         self._credit_note_id = None
@@ -192,6 +196,8 @@ class CreditNote(BaseModel):
             self.cis_rate = cis_rate
         if updated_date_utc is not None:
             self.updated_date_utc = updated_date_utc
+        if updated_date_utc_string is not None:
+            self.updated_date_utc_string = updated_date_utc_string
         if currency_code is not None:
             self.currency_code = currency_code
         if fully_paid_on_date is not None:
@@ -549,6 +555,29 @@ class CreditNote(BaseModel):
         """
 
         self._updated_date_utc = updated_date_utc
+
+    @property
+    def updated_date_utc_string(self):
+        """Gets the updated_date_utc_string of this CreditNote.  # noqa: E501
+
+        UTC ISO-8601 formatted timestamp of last update to the credit note  # noqa: E501
+
+        :return: The updated_date_utc_string of this CreditNote.  # noqa: E501
+        :rtype: str
+        """
+        return self._updated_date_utc_string
+
+    @updated_date_utc_string.setter
+    def updated_date_utc_string(self, updated_date_utc_string):
+        """Sets the updated_date_utc_string of this CreditNote.
+
+        UTC ISO-8601 formatted timestamp of last update to the credit note  # noqa: E501
+
+        :param updated_date_utc_string: The updated_date_utc_string of this CreditNote.  # noqa: E501
+        :type: str
+        """
+
+        self._updated_date_utc_string = updated_date_utc_string
 
     @property
     def currency_code(self):

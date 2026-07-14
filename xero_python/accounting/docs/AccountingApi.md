@@ -60,6 +60,8 @@ Method | HTTP request | Description
 [**create_tracking_category**](AccountingApi.md#create_tracking_category) | **PUT** /TrackingCategories | Create tracking categories
 [**create_tracking_options**](AccountingApi.md#create_tracking_options) | **PUT** /TrackingCategories/{TrackingCategoryID}/Options | Creates options for a specific tracking category
 [**delete_account**](AccountingApi.md#delete_account) | **DELETE** /Accounts/{AccountID} | Deletes a chart of accounts
+[**delete_bank_transfer**](AccountingApi.md#delete_bank_transfer) | **POST** /BankTransfers/{BankTransferID} | Deletes a specific bank transfer
+[**delete_bank_transfers**](AccountingApi.md#delete_bank_transfers) | **POST** /BankTransfers | Deletes one or more bank transfers
 [**delete_batch_payment**](AccountingApi.md#delete_batch_payment) | **POST** /BatchPayments | Updates a specific batch payment for invoices and credit notes
 [**delete_batch_payment_by_url_param**](AccountingApi.md#delete_batch_payment_by_url_param) | **POST** /BatchPayments/{BatchPaymentID} | Updates a specific batch payment for invoices and credit notes
 [**delete_contact_group_contact**](AccountingApi.md#delete_contact_group_contact) | **DELETE** /ContactGroups/{ContactGroupID}/Contacts/{ContactID} | Deletes a specific contact from a contact group using a unique contact Id
@@ -610,7 +612,7 @@ api_client = ApiClient(
 api_instance = AccountingApi(api_client)
 
 xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
-bank_transfers = {"BankTransfers":[{"FromBankAccount":{"Code":"090","Name":"My Savings","AccountID":"00000000-0000-0000-0000-000000000000","Type":"BANK","BankAccountNumber":"123455","Status":"ACTIVE","BankAccountType":"BANK","CurrencyCode":"USD","TaxType":"NONE","EnablePaymentsToAccount":false,"ShowInExpenseClaims":false,"Class":"ASSET","ReportingCode":"ASS","ReportingCodeName":"Assets","HasAttachments":false,"UpdatedDateUTC":"2016-10-17T13:45:33.993-07:00"},"ToBankAccount":{"Code":"088","Name":"Business Wells Fargo","AccountID":"00000000-0000-0000-0000-000000000000","Type":"BANK","BankAccountNumber":"123455","Status":"ACTIVE","BankAccountType":"BANK","CurrencyCode":"USD","TaxType":"NONE","EnablePaymentsToAccount":false,"ShowInExpenseClaims":false,"Class":"ASSET","ReportingCode":"ASS","ReportingCodeName":"Assets","HasAttachments":false,"UpdatedDateUTC":"2016-06-03T08:31:14.517-07:00"},"Amount":"50.00","FromIsReconciled":true,"ToIsReconciled":true,"Reference":"Sub 098801"}]} # BankTransfers | BankTransfers with array of BankTransfer objects in request body
+bank_transfers = {"BankTransfers":[{"FromBankAccount":{"Code":"090","Name":"My Savings","AccountID":"00000000-0000-0000-0000-000000000000","Type":"BANK","BankAccountNumber":"123455","Status":"ACTIVE","BankAccountType":"BANK","CurrencyCode":"USD","TaxType":"NONE","EnablePaymentsToAccount":false,"ShowInExpenseClaims":false,"Class":"ASSET","ReportingCode":"ASS","ReportingCodeName":"Assets","HasAttachments":false,"UpdatedDateUTC":"2016-10-17T13:45:33.993-07:00"},"ToBankAccount":{"Code":"088","Name":"Business Wells Fargo","AccountID":"00000000-0000-0000-0000-000000000000","Type":"BANK","BankAccountNumber":"123455","Status":"ACTIVE","BankAccountType":"BANK","CurrencyCode":"USD","TaxType":"NONE","EnablePaymentsToAccount":false,"ShowInExpenseClaims":false,"Class":"ASSET","ReportingCode":"ASS","ReportingCodeName":"Assets","HasAttachments":false,"UpdatedDateUTC":"2016-06-03T08:31:14.517-07:00"},"Amount":"50.00","FromIsReconciled":true,"ToIsReconciled":true,"Reference":"Sub 098801","FromTracking":[{"TrackingCategoryID":"e2f2f732-e92a-4f3a-9c4d-ee4da0182a13","TrackingOptionID":"cd0a4b7e-3c6b-4b3c-8e2a-1f2d3c4b5a69"}],"ToTracking":[{"TrackingCategoryID":"e2f2f732-e92a-4f3a-9c4d-ee4da0182a13","TrackingOptionID":"9f8e7d6c-5b4a-3c2d-1e0f-a9b8c7d6e5f4"}]}]} # BankTransfers | BankTransfers with array of BankTransfer objects in request body
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Creates a bank transfer
@@ -4005,6 +4007,140 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **delete_bank_transfer**
+> BankTransfers delete_bank_transfer(xero_tenant_id, bank_transfer_id, bank_transfer_delete_by_url_param, idempotency_key=idempotency_key)
+
+Deletes a specific bank transfer
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.accounting import AccountingApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = AccountingApi(api_client)
+
+xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
+bank_transfer_id = '00000000-0000-0000-0000-000000000000' # str | Xero generated unique identifier for a bank transfer
+bank_transfer_delete_by_url_param = {"Status":"DELETED"} # BankTransferDeleteByUrlParam | 
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
+try:
+    # Deletes a specific bank transfer
+    api_response = api_instance.delete_bank_transfer(xero_tenant_id, bank_transfer_id, bank_transfer_delete_by_url_param, idempotency_key=idempotency_key)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AccountingApi->delete_bank_transfer: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **bank_transfer_id** | [**str**](.md)| Xero generated unique identifier for a bank transfer | 
+ **bank_transfer_delete_by_url_param** | [**BankTransferDeleteByUrlParam**](BankTransferDeleteByUrlParam.md)|  | 
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
+
+### Return type
+
+[**BankTransfers**](BankTransfers.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_bank_transfers**
+> BankTransfers delete_bank_transfers(xero_tenant_id, bank_transfers_delete, summarize_errors=summarize_errors, idempotency_key=idempotency_key)
+
+Deletes one or more bank transfers
+
+### Example
+
+* OAuth Authentication (OAuth2): 
+```python
+from xero_python.api_client import Configuration, ApiClient
+from xero_python.api_client.oauth2 import OAuth2Token
+from xero_python.exceptions import ApiException
+from xero_python.accounting import AccountingApi
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: OAuth2
+# simplified version, `xero_oauth2_token` represents permanent global token storage
+xero_oauth2_token = {} # set to valid xero oauth2 token dictionary
+# create client configuration with client id and client secret for automatic token refresh
+api_config = Configuration(oauth2_token=OAuth2Token(
+    client_id="YOUR_API_CLIENT_ID", client_secret="YOUR_API_CLIENT_SECRET"
+))
+# configure xero-python sdk client
+api_client = ApiClient(
+    api_config,
+    oauth2_token_saver=lambda x: xero_oauth2_token.update(x),
+    oauth2_token_getter=lambda : xero_oauth2_token
+)
+# create an instance of the API class
+api_instance = AccountingApi(api_client)
+
+xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
+bank_transfers_delete = {"BankTransfers":[{"BankTransferID":"6221458a-ef7a-4d5f-9b1c-1b96ce03833c","Status":"DELETED"},{"BankTransferID":"9f0153d5-617c-4903-887b-3875807aa27a","Status":"DELETED"}]} # BankTransfersDelete | BankTransfers with array of BankTransfer objects in request body
+summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
+idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
+try:
+    # Deletes one or more bank transfers
+    api_response = api_instance.delete_bank_transfers(xero_tenant_id, bank_transfers_delete, summarize_errors=summarize_errors, idempotency_key=idempotency_key)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AccountingApi->delete_bank_transfers: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xero_tenant_id** | **str**| Xero identifier for Tenant | 
+ **bank_transfers_delete** | [**BankTransfersDelete**](BankTransfersDelete.md)| BankTransfers with array of BankTransfer objects in request body | 
+ **summarize_errors** | **bool**| If false return 200 OK and mix of successfully created objects and any with validation errors | [optional] [default to False]
+ **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
+
+### Return type
+
+[**BankTransfers**](BankTransfers.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **delete_batch_payment**
 > BatchPayments delete_batch_payment(xero_tenant_id, batch_payment_delete, idempotency_key=idempotency_key)
 
@@ -5892,7 +6028,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_bank_transfers**
-> BankTransfers get_bank_transfers(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order)
+> BankTransfers get_bank_transfers(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, include_deleted=include_deleted)
 
 Retrieves all bank transfers
 
@@ -5926,9 +6062,10 @@ xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 if_modified_since = '2020-02-06T12:17:43.202-08:00' # datetime | Only records created or modified since this timestamp will be returned (optional)
 where = 'HasAttachments==true' # str | Filter by an any element (optional)
 order = 'Amount ASC' # str | Order by an any element (optional)
+include_deleted = true # bool | e.g. includeDeleted=true - Bank transfers with a status of DELETED will be included in the response (optional)
 try:
     # Retrieves all bank transfers
-    api_response = api_instance.get_bank_transfers(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order)
+    api_response = api_instance.get_bank_transfers(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, include_deleted=include_deleted)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->get_bank_transfers: %s\n" % e)
@@ -5942,6 +6079,7 @@ Name | Type | Description  | Notes
  **if_modified_since** | **datetime**| Only records created or modified since this timestamp will be returned | [optional] 
  **where** | **str**| Filter by an any element | [optional] 
  **order** | **str**| Order by an any element | [optional] 
+ **include_deleted** | **bool**| e.g. includeDeleted&#x3D;true - Bank transfers with a status of DELETED will be included in the response | [optional] 
 
 ### Return type
 
