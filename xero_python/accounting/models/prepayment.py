@@ -42,6 +42,7 @@ class Prepayment(BaseModel):
         "reference": "str",
         "invoice_number": "str",
         "updated_date_utc": "datetime[ms-format]",
+        "updated_date_utc_string": "str",
         "currency_code": "CurrencyCode",
         "prepayment_id": "str",
         "branding_theme_id": "str",
@@ -67,6 +68,7 @@ class Prepayment(BaseModel):
         "reference": "Reference",
         "invoice_number": "InvoiceNumber",
         "updated_date_utc": "UpdatedDateUTC",
+        "updated_date_utc_string": "UpdatedDateUTCString",
         "currency_code": "CurrencyCode",
         "prepayment_id": "PrepaymentID",
         "branding_theme_id": "BrandingThemeID",
@@ -93,6 +95,7 @@ class Prepayment(BaseModel):
         reference=None,
         invoice_number=None,
         updated_date_utc=None,
+        updated_date_utc_string=None,
         currency_code=None,
         prepayment_id=None,
         branding_theme_id=None,
@@ -118,6 +121,7 @@ class Prepayment(BaseModel):
         self._reference = None
         self._invoice_number = None
         self._updated_date_utc = None
+        self._updated_date_utc_string = None
         self._currency_code = None
         self._prepayment_id = None
         self._branding_theme_id = None
@@ -154,6 +158,8 @@ class Prepayment(BaseModel):
             self.invoice_number = invoice_number
         if updated_date_utc is not None:
             self.updated_date_utc = updated_date_utc
+        if updated_date_utc_string is not None:
+            self.updated_date_utc_string = updated_date_utc_string
         if currency_code is not None:
             self.currency_code = currency_code
         if prepayment_id is not None:
@@ -470,6 +476,29 @@ class Prepayment(BaseModel):
         """
 
         self._updated_date_utc = updated_date_utc
+
+    @property
+    def updated_date_utc_string(self):
+        """Gets the updated_date_utc_string of this Prepayment.  # noqa: E501
+
+        UTC ISO-8601 formatted timestamp of last update to the prepayment  # noqa: E501
+
+        :return: The updated_date_utc_string of this Prepayment.  # noqa: E501
+        :rtype: str
+        """
+        return self._updated_date_utc_string
+
+    @updated_date_utc_string.setter
+    def updated_date_utc_string(self, updated_date_utc_string):
+        """Sets the updated_date_utc_string of this Prepayment.
+
+        UTC ISO-8601 formatted timestamp of last update to the prepayment  # noqa: E501
+
+        :param updated_date_utc_string: The updated_date_utc_string of this Prepayment.  # noqa: E501
+        :type: str
+        """
+
+        self._updated_date_utc_string = updated_date_utc_string
 
     @property
     def currency_code(self):

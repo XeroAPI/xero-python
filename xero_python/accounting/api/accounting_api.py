@@ -21,7 +21,7 @@ except ImportError:
 """
 
 """
-    OpenAPI spec version: 16.0.0
+    OpenAPI spec version: 16.1.0
 """
 
 
@@ -5343,6 +5343,189 @@ class AccountingApi(object):
         except exceptions.HTTPStatusException as error:
             raise translate_status_exception(error, self, "delete_account")
 
+    def delete_bank_transfer(
+        self,
+        xero_tenant_id,
+        bank_transfer_id,
+        bank_transfer_delete_by_url_param,
+        idempotency_key=empty,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
+        """Deletes a specific bank transfer  # noqa: E501
+        OAuth2 scope: accounting.transactions
+        :param str xero_tenant_id: Xero identifier for Tenant (required)
+        :param str bank_transfer_id: Xero generated unique identifier for a bank transfer (required)
+        :param BankTransferDeleteByUrlParam bank_transfer_delete_by_url_param: (required)
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+        :param bool _return_http_data_only: return received data only
+        :param bool _preload_content: load received data in models
+        :param bool _request_timeout: maximum wait time for response
+        :return: BankTransfers
+        """
+
+        # verify the required parameter 'xero_tenant_id' is set
+        if xero_tenant_id is None:
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `delete_bank_transfer`"
+            )
+        # verify the required parameter 'bank_transfer_id' is set
+        if bank_transfer_id is None:
+            raise ValueError(
+                "Missing the required parameter `bank_transfer_id` "
+                "when calling `delete_bank_transfer`"
+            )
+        # verify the required parameter 'bank_transfer_delete_by_url_param' is set
+        if bank_transfer_delete_by_url_param is None:
+            raise ValueError(
+                "Missing the required parameter `bank_transfer_delete_by_url_param` "
+                "when calling `delete_bank_transfer`"
+            )
+
+        collection_formats = {}
+        path_params = {
+            "BankTransferID": bank_transfer_id,
+        }
+
+        query_params = []
+
+        header_params = {
+            "xero-tenant-id": xero_tenant_id,
+        }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
+
+        local_var_files = {}
+        form_params = []
+
+        body_params = bank_transfer_delete_by_url_param
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/BankTransfers/{BankTransferID}")
+
+        try:
+            return self.api_client.call_api(
+                url,
+                "POST",
+                path_params,
+                query_params,
+                header_params,
+                body=body_params,
+                post_params=form_params,
+                files=local_var_files,
+                response_type="BankTransfers",
+                response_model_finder=self.get_model_finder(),
+                auth_settings=auth_settings,
+                _return_http_data_only=_return_http_data_only,
+                _preload_content=_preload_content,
+                _request_timeout=_request_timeout,
+                collection_formats=collection_formats,
+            )
+        except exceptions.HTTPStatusException as error:
+            raise translate_status_exception(error, self, "delete_bank_transfer")
+
+    def delete_bank_transfers(
+        self,
+        xero_tenant_id,
+        bank_transfers_delete,
+        summarize_errors=empty,
+        idempotency_key=empty,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+    ):
+        """Deletes one or more bank transfers  # noqa: E501
+        OAuth2 scope: accounting.transactions
+        :param str xero_tenant_id: Xero identifier for Tenant (required)
+        :param BankTransfersDelete bank_transfers_delete: BankTransfers with array of BankTransfer objects in request body (required)
+        :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
+        :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+        :param bool _return_http_data_only: return received data only
+        :param bool _preload_content: load received data in models
+        :param bool _request_timeout: maximum wait time for response
+        :return: BankTransfers
+        """
+
+        # verify the required parameter 'xero_tenant_id' is set
+        if xero_tenant_id is None:
+            raise ValueError(
+                "Missing the required parameter `xero_tenant_id` "
+                "when calling `delete_bank_transfers`"
+            )
+        # verify the required parameter 'bank_transfers_delete' is set
+        if bank_transfers_delete is None:
+            raise ValueError(
+                "Missing the required parameter `bank_transfers_delete` "
+                "when calling `delete_bank_transfers`"
+            )
+
+        collection_formats = {}
+        path_params = {}
+
+        query_params = []
+
+        if summarize_errors is not empty:
+            query_params.append(("summarizeErrors", summarize_errors))
+
+        header_params = {
+            "xero-tenant-id": xero_tenant_id,
+        }
+
+        if idempotency_key is not empty:
+            header_params["Idempotency-Key"] = idempotency_key
+
+        local_var_files = {}
+        form_params = []
+
+        body_params = bank_transfers_delete
+        # HTTP header `Accept`
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        # HTTP header `Content-Type`
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json"]
+        )
+
+        # Authentication setting
+        auth_settings = ["OAuth2"]
+        url = self.get_resource_url("/BankTransfers")
+
+        try:
+            return self.api_client.call_api(
+                url,
+                "POST",
+                path_params,
+                query_params,
+                header_params,
+                body=body_params,
+                post_params=form_params,
+                files=local_var_files,
+                response_type="BankTransfers",
+                response_model_finder=self.get_model_finder(),
+                auth_settings=auth_settings,
+                _return_http_data_only=_return_http_data_only,
+                _preload_content=_preload_content,
+                _request_timeout=_request_timeout,
+                collection_formats=collection_formats,
+            )
+        except exceptions.HTTPStatusException as error:
+            raise translate_status_exception(error, self, "delete_bank_transfers")
+
     def delete_batch_payment(
         self,
         xero_tenant_id,
@@ -7840,6 +8023,7 @@ class AccountingApi(object):
         if_modified_since=empty,
         where=empty,
         order=empty,
+        include_deleted=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -7850,6 +8034,7 @@ class AccountingApi(object):
         :param datetime if_modified_since: Only records created or modified since this timestamp will be returned
         :param str where: Filter by an any element
         :param str order: Order by an any element
+        :param bool include_deleted: e.g. includeDeleted=true - Bank transfers with a status of DELETED will be included in the response
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -7873,6 +8058,9 @@ class AccountingApi(object):
 
         if order is not empty:
             query_params.append(("order", order))
+
+        if include_deleted is not empty:
+            query_params.append(("includeDeleted", include_deleted))
 
         header_params = {
             "xero-tenant-id": xero_tenant_id,

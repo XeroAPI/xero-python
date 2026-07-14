@@ -48,6 +48,7 @@ class Payment(BaseModel):
         "status": "str",
         "payment_type": "str",
         "updated_date_utc": "datetime[ms-format]",
+        "updated_date_utc_string": "str",
         "payment_id": "str",
         "batch_payment_id": "str",
         "bank_account_number": "str",
@@ -79,6 +80,7 @@ class Payment(BaseModel):
         "status": "Status",
         "payment_type": "PaymentType",
         "updated_date_utc": "UpdatedDateUTC",
+        "updated_date_utc_string": "UpdatedDateUTCString",
         "payment_id": "PaymentID",
         "batch_payment_id": "BatchPaymentID",
         "bank_account_number": "BankAccountNumber",
@@ -111,6 +113,7 @@ class Payment(BaseModel):
         status=None,
         payment_type=None,
         updated_date_utc=None,
+        updated_date_utc_string=None,
         payment_id=None,
         batch_payment_id=None,
         bank_account_number=None,
@@ -142,6 +145,7 @@ class Payment(BaseModel):
         self._status = None
         self._payment_type = None
         self._updated_date_utc = None
+        self._updated_date_utc_string = None
         self._payment_id = None
         self._batch_payment_id = None
         self._bank_account_number = None
@@ -190,6 +194,8 @@ class Payment(BaseModel):
             self.payment_type = payment_type
         if updated_date_utc is not None:
             self.updated_date_utc = updated_date_utc
+        if updated_date_utc_string is not None:
+            self.updated_date_utc_string = updated_date_utc_string
         if payment_id is not None:
             self.payment_id = payment_id
         if batch_payment_id is not None:
@@ -640,6 +646,29 @@ class Payment(BaseModel):
         """
 
         self._updated_date_utc = updated_date_utc
+
+    @property
+    def updated_date_utc_string(self):
+        """Gets the updated_date_utc_string of this Payment.  # noqa: E501
+
+        UTC ISO-8601 formatted timestamp of last update to the payment  # noqa: E501
+
+        :return: The updated_date_utc_string of this Payment.  # noqa: E501
+        :rtype: str
+        """
+        return self._updated_date_utc_string
+
+    @updated_date_utc_string.setter
+    def updated_date_utc_string(self, updated_date_utc_string):
+        """Sets the updated_date_utc_string of this Payment.
+
+        UTC ISO-8601 formatted timestamp of last update to the payment  # noqa: E501
+
+        :param updated_date_utc_string: The updated_date_utc_string of this Payment.  # noqa: E501
+        :type: str
+        """
+
+        self._updated_date_utc_string = updated_date_utc_string
 
     @property
     def payment_id(self):

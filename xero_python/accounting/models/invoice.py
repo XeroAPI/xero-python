@@ -64,6 +64,7 @@ class Invoice(BaseModel):
         "fully_paid_on_date": "date[ms-format]",
         "amount_credited": "float",
         "updated_date_utc": "datetime[ms-format]",
+        "updated_date_utc_string": "str",
         "credit_notes": "list[CreditNote]",
         "attachments": "list[Attachment]",
         "has_errors": "bool",
@@ -108,6 +109,7 @@ class Invoice(BaseModel):
         "fully_paid_on_date": "FullyPaidOnDate",
         "amount_credited": "AmountCredited",
         "updated_date_utc": "UpdatedDateUTC",
+        "updated_date_utc_string": "UpdatedDateUTCString",
         "credit_notes": "CreditNotes",
         "attachments": "Attachments",
         "has_errors": "HasErrors",
@@ -153,6 +155,7 @@ class Invoice(BaseModel):
         fully_paid_on_date=None,
         amount_credited=None,
         updated_date_utc=None,
+        updated_date_utc_string=None,
         credit_notes=None,
         attachments=None,
         has_errors=False,
@@ -197,6 +200,7 @@ class Invoice(BaseModel):
         self._fully_paid_on_date = None
         self._amount_credited = None
         self._updated_date_utc = None
+        self._updated_date_utc_string = None
         self._credit_notes = None
         self._attachments = None
         self._has_errors = None
@@ -274,6 +278,8 @@ class Invoice(BaseModel):
             self.amount_credited = amount_credited
         if updated_date_utc is not None:
             self.updated_date_utc = updated_date_utc
+        if updated_date_utc_string is not None:
+            self.updated_date_utc_string = updated_date_utc_string
         if credit_notes is not None:
             self.credit_notes = credit_notes
         if attachments is not None:
@@ -1087,7 +1093,7 @@ class Invoice(BaseModel):
     def updated_date_utc(self):
         """Gets the updated_date_utc of this Invoice.  # noqa: E501
 
-        Last modified date UTC format  # noqa: E501
+        UTC timestamp of last update to the invoice  # noqa: E501
 
         :return: The updated_date_utc of this Invoice.  # noqa: E501
         :rtype: datetime
@@ -1098,13 +1104,36 @@ class Invoice(BaseModel):
     def updated_date_utc(self, updated_date_utc):
         """Sets the updated_date_utc of this Invoice.
 
-        Last modified date UTC format  # noqa: E501
+        UTC timestamp of last update to the invoice  # noqa: E501
 
         :param updated_date_utc: The updated_date_utc of this Invoice.  # noqa: E501
         :type: datetime
         """
 
         self._updated_date_utc = updated_date_utc
+
+    @property
+    def updated_date_utc_string(self):
+        """Gets the updated_date_utc_string of this Invoice.  # noqa: E501
+
+        UTC ISO-8601 formatted timestamp of last update to the invoice  # noqa: E501
+
+        :return: The updated_date_utc_string of this Invoice.  # noqa: E501
+        :rtype: str
+        """
+        return self._updated_date_utc_string
+
+    @updated_date_utc_string.setter
+    def updated_date_utc_string(self, updated_date_utc_string):
+        """Sets the updated_date_utc_string of this Invoice.
+
+        UTC ISO-8601 formatted timestamp of last update to the invoice  # noqa: E501
+
+        :param updated_date_utc_string: The updated_date_utc_string of this Invoice.  # noqa: E501
+        :type: str
+        """
+
+        self._updated_date_utc_string = updated_date_utc_string
 
     @property
     def credit_notes(self):

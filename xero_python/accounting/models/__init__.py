@@ -32,7 +32,12 @@ from xero_python.accounting.models.balances import Balances
 from xero_python.accounting.models.bank_transaction import BankTransaction
 from xero_python.accounting.models.bank_transactions import BankTransactions
 from xero_python.accounting.models.bank_transfer import BankTransfer
+from xero_python.accounting.models.bank_transfer_delete import BankTransferDelete
+from xero_python.accounting.models.bank_transfer_delete_by_url_param import (
+    BankTransferDeleteByUrlParam,
+)
 from xero_python.accounting.models.bank_transfers import BankTransfers
+from xero_python.accounting.models.bank_transfers_delete import BankTransfersDelete
 from xero_python.accounting.models.batch_payment import BatchPayment
 from xero_python.accounting.models.batch_payment_delete import BatchPaymentDelete
 from xero_python.accounting.models.batch_payment_delete_by_url_param import (
@@ -151,6 +156,7 @@ from xero_python.accounting.models.tracking_categories import TrackingCategories
 from xero_python.accounting.models.tracking_category import TrackingCategory
 from xero_python.accounting.models.tracking_option import TrackingOption
 from xero_python.accounting.models.tracking_options import TrackingOptions
+from xero_python.accounting.models.tracking_reference import TrackingReference
 from xero_python.accounting.models.user import User
 from xero_python.accounting.models.users import Users
 from xero_python.accounting.models.validation_error import ValidationError
