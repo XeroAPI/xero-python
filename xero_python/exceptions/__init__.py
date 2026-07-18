@@ -35,7 +35,7 @@ class ApiException(OpenApiException):
 
     @property
     def headers(self):
-        return self.http_resp.getheaders() if self.http_resp else None
+        return self.http_resp.headers if self.http_resp else None
 
     @property
     def error_message(self):
