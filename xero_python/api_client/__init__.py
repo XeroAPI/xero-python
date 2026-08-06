@@ -603,10 +603,15 @@ class ApiClient(object):
 
         content_disposition = response.getheader("Content-Disposition")
         if content_disposition:
-            filename = re.search(
-                r'filename=[\'"]?([^\'"\s]+)[\'"]?', content_disposition
-            ).group(1)
-            path = os.path.join(os.path.dirname(path), filename)
+            match = re.search(
+                r'filename=[\'"]?([^\'"\s]+)[\'"]?',
+                content_disposition,
+                flags=re.IGNORECASE,
+            )
+            if match:
+                filename = os.path.basename(match.group(1))
+                if filename not in ("", ".", ".."):
+                    path = os.path.join(os.path.dirname(path), filename)
 
         with open(path, "wb") as f:
             f.write(response.data)
