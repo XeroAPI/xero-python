@@ -34,7 +34,7 @@ jobs:
                 python -m venv venv
                 source venv/bin/activate
                 pip install --upgrade pip
-                sudo pip install twine
+                pip install twine
               working-directory: xero-python
 
             - name: Fetch Latest release number
