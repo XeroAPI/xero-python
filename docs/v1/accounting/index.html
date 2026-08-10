@@ -3519,9 +3519,21 @@ ul.nav-tabs {
     },
     "QuantityOnHand" : {
       "type" : "number",
-      "description" : "The quantity of the item on hand",
+      "description" : "The quantity of the item on hand. This will be 0 if `QuantityOnBackOrder` is greater than 0.",
       "format" : "double",
       "x-is-money" : true
+    },
+    "QuantityAvailable" : {
+      "type" : "number",
+      "description" : "The quantity of the item available. This is equal to `QuantityOnHand` - `QuantityOnBackOrder`. This value will be negative if `QuantityOnBackOrder` is greater than 0.",
+      "format" : "double",
+      "readOnly" : true
+    },
+    "QuantityOnBackOrder" : {
+      "type" : "number",
+      "description" : "The quantity of the item on backorder. This will be 0 if `QuantityOnHand` is greater than 0.",
+      "format" : "double",
+      "readOnly" : true
     },
     "UpdatedDateUTC" : {
       "type" : "string",
@@ -6494,7 +6506,7 @@ ul.nav-tabs {
           <nav id="scrollingNav">
             <ul class="sidenav nav nav-list">
               <li class="nav-header" data-group="Accounting"><strong>SDK: </strong><span id='sdk-name'></span></li>
-              <li class="nav-header" data-group="Accounting"><strong>VSN: </strong>15.0.0</li>
+              <li class="nav-header" data-group="Accounting"><strong>VSN: </strong>15.1.0</li>
               <li class="nav-header" data-group="Accounting"><a href="#api-Accounting">Methods</a></li>
               <li data-group="Accounting" data-name="createAccount" class="">
                 <a href="#api-Accounting-createAccount">createAccount</a>
@@ -12350,6 +12362,7 @@ def accounting_create_invoices():
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
     summarize_errors = 'True'
     idempotency_key = 'KEY_VALUE'
+    allow_backorders = 'true'
     date_value = dateutil.parser.parse('2020-10-10T00:00:00Z')
     due_date_value = dateutil.parser.parse('2020-10-28T00:00:00Z')
 
@@ -12386,7 +12399,7 @@ def accounting_create_invoices():
         invoices = [invoice])
     
     try:
-        api_response = api_instance.create_invoices(xero_tenant_id, invoices, summarize_errors, unitdp, idempotency_key)
+        api_response = api_instance.create_invoices(xero_tenant_id, invoices, summarize_errors, unitdp, idempotency_key, allow_backorders)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->createInvoices: %s\n" % e)</code></pre>
@@ -12547,6 +12560,26 @@ If false return 200 OK and mix of successfully created objects and any with vali
 
                     <div class="inner description marked">
 e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">allowBackorders</td>
+<td>
+
+
+    <div id="d2e199_createInvoices_allowBackorders">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    Boolean
+                </span>
+
+                    <div class="inner description marked">
+Allows an invoice to be created even when one or more line items contain tracked inventory where the invoice quantity would cause the available quantity to go negative
                     </div>
             </div>
         </div>
@@ -22217,9 +22250,10 @@ def accounting_get_bank_transactions():
     if_modified_since = dateutil.parser.parse("2020-02-06T12:17:43.202-08:00")
     where = 'Status=="AUTHORISED"'
     order = 'Type ASC'
+    references = [&quot;Ref1&quot;, &quot;Ref2&quot;]
     
     try:
-        api_response = api_instance.get_bank_transactions(xero_tenant_id, if_modified_since, where, order, page, unitdp, pageSize)
+        api_response = api_instance.get_bank_transactions(xero_tenant_id, if_modified_since, where, order, page, unitdp, pageSize, references)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->getBankTransactions: %s\n" % e)</code></pre>
@@ -22392,6 +22426,26 @@ e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal place
 
                     <div class="inner description marked">
 Number of records to retrieve per page
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">References</td>
+<td>
+
+
+    <div id="d2e199_getBankTransactions_references">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    array[String]
+                </span>
+
+                    <div class="inner description marked">
+Filter by a comma-separated list of References
                     </div>
             </div>
         </div>
@@ -33260,9 +33314,10 @@ def accounting_get_prepayments():
     where = 'Status=="AUTHORISED"'
     order = 'Reference ASC'
     invoice_numbers = [&quot;INV-001&quot;, &quot;INV-002&quot;]
+    references = [&quot;Ref1&quot;, &quot;Ref2&quot;]
     
     try:
-        api_response = api_instance.get_prepayments(xero_tenant_id, if_modified_since, where, order, page, unitdp, pageSize, invoice_numbers)
+        api_response = api_instance.get_prepayments(xero_tenant_id, if_modified_since, where, order, page, unitdp, pageSize, invoice_numbers, references)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->getPrepayments: %s\n" % e)</code></pre>
@@ -33394,7 +33449,7 @@ Order by an any element
                 </span>
 
                     <div class="inner description marked">
-e.g. page=1 – Up to 100 prepayments will be returned in a single API call with line items shown for each overpayment
+e.g. page=1 – Up to 100 prepayments will be returned in a single API call with line items shown for each prepayment
                     </div>
             </div>
         </div>
@@ -33455,6 +33510,26 @@ Number of records to retrieve per page
 
                     <div class="inner description marked">
 Filter by a comma-separated list of InvoiceNumbers
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">References</td>
+<td>
+
+
+    <div id="d2e199_getPrepayments_references">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    array[String]
+                </span>
+
+                    <div class="inner description marked">
+Filter by a comma-separated list of References
                     </div>
             </div>
         </div>
@@ -43119,6 +43194,7 @@ def accounting_update_invoice():
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
     invoice_id = '00000000-0000-0000-0000-000000000000'
     idempotency_key = 'KEY_VALUE'
+    allow_backorders = 'true'
 
     invoice = Invoice(
         reference = "I am Iron man")
@@ -43127,7 +43203,7 @@ def accounting_update_invoice():
         invoices = [invoice])
     
     try:
-        api_response = api_instance.update_invoice(xero_tenant_id, invoice_id, invoices, unitdp, idempotency_key)
+        api_response = api_instance.update_invoice(xero_tenant_id, invoice_id, invoices, unitdp, idempotency_key, allow_backorders)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->updateInvoice: %s\n" % e)</code></pre>
@@ -43289,6 +43365,26 @@ This allows you to safely retry requests without the risk of duplicate processin
 
                     <div class="inner description marked">
 e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">allowBackorders</td>
+<td>
+
+
+    <div id="d2e199_updateInvoice_allowBackorders">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    Boolean
+                </span>
+
+                    <div class="inner description marked">
+Allows an invoice to be created even when one or more line items contain tracked inventory where the invoice quantity would cause the available quantity to go negative
                     </div>
             </div>
         </div>
@@ -45063,6 +45159,7 @@ def accounting_update_or_create_invoices():
     xero_tenant_id = 'YOUR_XERO_TENANT_ID'
     summarize_errors = 'True'
     idempotency_key = 'KEY_VALUE'
+    allow_backorders = 'true'
     date_value = dateutil.parser.parse('2020-10-10T00:00:00Z')
     due_date_value = dateutil.parser.parse('2020-10-28T00:00:00Z')
 
@@ -45091,7 +45188,7 @@ def accounting_update_or_create_invoices():
         invoices = [invoice])
     
     try:
-        api_response = api_instance.update_or_create_invoices(xero_tenant_id, invoices, summarize_errors, unitdp, idempotency_key)
+        api_response = api_instance.update_or_create_invoices(xero_tenant_id, invoices, summarize_errors, unitdp, idempotency_key, allow_backorders)
         print(api_response)
     except AccountingBadRequestException as e:
         print("Exception when calling AccountingApi->updateOrCreateInvoices: %s\n" % e)</code></pre>
@@ -45251,6 +45348,26 @@ If false return 200 OK and mix of successfully created objects and any with vali
 
                     <div class="inner description marked">
 e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                    <tr><td style="width:150px;">allowBackorders</td>
+<td>
+
+
+    <div id="d2e199_updateOrCreateInvoices_allowBackorders">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    Boolean
+                </span>
+
+                    <div class="inner description marked">
+Allows an invoice to be created even when one or more line items contain tracked inventory where the invoice quantity would cause the available quantity to go negative
                     </div>
             </div>
         </div>
