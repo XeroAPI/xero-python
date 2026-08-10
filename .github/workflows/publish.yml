@@ -35,6 +35,7 @@ jobs:
                 source venv/bin/activate
                 pip install --upgrade pip
                 pip install twine
+                echo "$PWD/venv/bin" >> "$GITHUB_PATH"
               working-directory: xero-python
 
             - name: Fetch Latest release number
