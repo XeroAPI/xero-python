@@ -1927,7 +1927,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_invoices**
-> Invoices create_invoices(xero_tenant_id, invoices, summarize_errors=summarize_errors, unitdp=unitdp, idempotency_key=idempotency_key)
+> Invoices create_invoices(xero_tenant_id, invoices, summarize_errors=summarize_errors, unitdp=unitdp, idempotency_key=idempotency_key, allow_backorders=allow_backorders)
 
 Creates one or more sales invoices or purchase bills
 
@@ -1962,9 +1962,10 @@ invoices = {"Invoices":[{"Type":"ACCREC","Contact":{"ContactID":"430fa14a-f945-4
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
+allow_backorders = true # bool | Allows an invoice to be created even when one or more line items contain tracked inventory where the invoice quantity would cause the available quantity to go negative (optional)
 try:
     # Creates one or more sales invoices or purchase bills
-    api_response = api_instance.create_invoices(xero_tenant_id, invoices, summarize_errors=summarize_errors, unitdp=unitdp, idempotency_key=idempotency_key)
+    api_response = api_instance.create_invoices(xero_tenant_id, invoices, summarize_errors=summarize_errors, unitdp=unitdp, idempotency_key=idempotency_key, allow_backorders=allow_backorders)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->create_invoices: %s\n" % e)
@@ -1979,6 +1980,7 @@ Name | Type | Description  | Notes
  **summarize_errors** | **bool**| If false return 200 OK and mix of successfully created objects and any with validation errors | [optional] [default to False]
  **unitdp** | **int**| e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts | [optional] 
  **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
+ **allow_backorders** | **bool**| Allows an invoice to be created even when one or more line items contain tracked inventory where the invoice quantity would cause the available quantity to go negative | [optional] 
 
 ### Return type
 
@@ -5569,7 +5571,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_bank_transactions**
-> BankTransactions get_bank_transactions(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp, page_size=page_size)
+> BankTransactions get_bank_transactions(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp, page_size=page_size, references=references)
 
 Retrieves any spent or received money transactions
 
@@ -5606,9 +5608,10 @@ order = 'Type ASC' # str | Order by an any element (optional)
 page = 1 # int | Up to 100 bank transactions will be returned in a single API call with line items details (optional)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 page_size = 100 # int | Number of records to retrieve per page (optional)
+references = ['&quot;Ref1&quot;, &quot;Ref2&quot;'] # list[str] | Filter by a comma-separated list of References (optional)
 try:
     # Retrieves any spent or received money transactions
-    api_response = api_instance.get_bank_transactions(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp, page_size=page_size)
+    api_response = api_instance.get_bank_transactions(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp, page_size=page_size, references=references)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->get_bank_transactions: %s\n" % e)
@@ -5625,6 +5628,7 @@ Name | Type | Description  | Notes
  **page** | **int**| Up to 100 bank transactions will be returned in a single API call with line items details | [optional] 
  **unitdp** | **int**| e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts | [optional] 
  **page_size** | **int**| Number of records to retrieve per page | [optional] 
+ **references** | [**list[str]**](str.md)| Filter by a comma-separated list of References | [optional] 
 
 ### Return type
 
@@ -10277,7 +10281,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_prepayments**
-> Prepayments get_prepayments(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp, page_size=page_size, invoice_numbers=invoice_numbers)
+> Prepayments get_prepayments(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp, page_size=page_size, invoice_numbers=invoice_numbers, references=references)
 
 Retrieves prepayments
 
@@ -10311,13 +10315,14 @@ xero_tenant_id = 'YOUR_XERO_TENANT_ID' # str | Xero identifier for Tenant
 if_modified_since = '2020-02-06T12:17:43.202-08:00' # datetime | Only records created or modified since this timestamp will be returned (optional)
 where = 'Status==\"AUTHORISED\"' # str | Filter by an any element (optional)
 order = 'Reference ASC' # str | Order by an any element (optional)
-page = 1 # int | e.g. page=1 – Up to 100 prepayments will be returned in a single API call with line items shown for each overpayment (optional)
+page = 1 # int | e.g. page=1 – Up to 100 prepayments will be returned in a single API call with line items shown for each prepayment (optional)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 page_size = 100 # int | Number of records to retrieve per page (optional)
 invoice_numbers = ['&quot;INV-001&quot;, &quot;INV-002&quot;'] # list[str] | Filter by a comma-separated list of InvoiceNumbers (optional)
+references = ['&quot;Ref1&quot;, &quot;Ref2&quot;'] # list[str] | Filter by a comma-separated list of References (optional)
 try:
     # Retrieves prepayments
-    api_response = api_instance.get_prepayments(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp, page_size=page_size, invoice_numbers=invoice_numbers)
+    api_response = api_instance.get_prepayments(xero_tenant_id, if_modified_since=if_modified_since, where=where, order=order, page=page, unitdp=unitdp, page_size=page_size, invoice_numbers=invoice_numbers, references=references)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->get_prepayments: %s\n" % e)
@@ -10331,10 +10336,11 @@ Name | Type | Description  | Notes
  **if_modified_since** | **datetime**| Only records created or modified since this timestamp will be returned | [optional] 
  **where** | **str**| Filter by an any element | [optional] 
  **order** | **str**| Order by an any element | [optional] 
- **page** | **int**| e.g. page&#x3D;1 – Up to 100 prepayments will be returned in a single API call with line items shown for each overpayment | [optional] 
+ **page** | **int**| e.g. page&#x3D;1 – Up to 100 prepayments will be returned in a single API call with line items shown for each prepayment | [optional] 
  **unitdp** | **int**| e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts | [optional] 
  **page_size** | **int**| Number of records to retrieve per page | [optional] 
  **invoice_numbers** | [**list[str]**](str.md)| Filter by a comma-separated list of InvoiceNumbers | [optional] 
+ **references** | [**list[str]**](str.md)| Filter by a comma-separated list of References | [optional] 
 
 ### Return type
 
@@ -14068,7 +14074,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_invoice**
-> Invoices update_invoice(xero_tenant_id, invoice_id, invoices, unitdp=unitdp, idempotency_key=idempotency_key)
+> Invoices update_invoice(xero_tenant_id, invoice_id, invoices, unitdp=unitdp, idempotency_key=idempotency_key, allow_backorders=allow_backorders)
 
 Updates a specific sales invoices or purchase bills
 
@@ -14103,9 +14109,10 @@ invoice_id = '00000000-0000-0000-0000-000000000000' # str | Unique identifier fo
 invoices = {"Invoices":[{"Reference":"May the force be with you","InvoiceID":"00000000-0000-0000-0000-000000000000","LineItems":[],"Contact":{},"Type":"ACCPAY"}]} # Invoices | 
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
+allow_backorders = true # bool | Allows an invoice to be created even when one or more line items contain tracked inventory where the invoice quantity would cause the available quantity to go negative (optional)
 try:
     # Updates a specific sales invoices or purchase bills
-    api_response = api_instance.update_invoice(xero_tenant_id, invoice_id, invoices, unitdp=unitdp, idempotency_key=idempotency_key)
+    api_response = api_instance.update_invoice(xero_tenant_id, invoice_id, invoices, unitdp=unitdp, idempotency_key=idempotency_key, allow_backorders=allow_backorders)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->update_invoice: %s\n" % e)
@@ -14120,6 +14127,7 @@ Name | Type | Description  | Notes
  **invoices** | [**Invoices**](Invoices.md)|  | 
  **unitdp** | **int**| e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts | [optional] 
  **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
+ **allow_backorders** | **bool**| Allows an invoice to be created even when one or more line items contain tracked inventory where the invoice quantity would cause the available quantity to go negative | [optional] 
 
 ### Return type
 
@@ -14683,7 +14691,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_or_create_invoices**
-> Invoices update_or_create_invoices(xero_tenant_id, invoices, summarize_errors=summarize_errors, unitdp=unitdp, idempotency_key=idempotency_key)
+> Invoices update_or_create_invoices(xero_tenant_id, invoices, summarize_errors=summarize_errors, unitdp=unitdp, idempotency_key=idempotency_key, allow_backorders=allow_backorders)
 
 Updates or creates one or more sales invoices or purchase bills
 
@@ -14718,9 +14726,10 @@ invoices = {"Invoices":[{"Type":"ACCREC","Contact":{"ContactID":"430fa14a-f945-4
 summarize_errors = False # bool | If false return 200 OK and mix of successfully created objects and any with validation errors (optional) (default to False)
 unitdp = 4 # int | e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
+allow_backorders = true # bool | Allows an invoice to be created even when one or more line items contain tracked inventory where the invoice quantity would cause the available quantity to go negative (optional)
 try:
     # Updates or creates one or more sales invoices or purchase bills
-    api_response = api_instance.update_or_create_invoices(xero_tenant_id, invoices, summarize_errors=summarize_errors, unitdp=unitdp, idempotency_key=idempotency_key)
+    api_response = api_instance.update_or_create_invoices(xero_tenant_id, invoices, summarize_errors=summarize_errors, unitdp=unitdp, idempotency_key=idempotency_key, allow_backorders=allow_backorders)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountingApi->update_or_create_invoices: %s\n" % e)
@@ -14735,6 +14744,7 @@ Name | Type | Description  | Notes
  **summarize_errors** | **bool**| If false return 200 OK and mix of successfully created objects and any with validation errors | [optional] [default to False]
  **unitdp** | **int**| e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts | [optional] 
  **idempotency_key** | **str**| This allows you to safely retry requests without the risk of duplicate processing. 128 character max. | [optional] 
+ **allow_backorders** | **bool**| Allows an invoice to be created even when one or more line items contain tracked inventory where the invoice quantity would cause the available quantity to go negative | [optional] 
 
 ### Return type
 

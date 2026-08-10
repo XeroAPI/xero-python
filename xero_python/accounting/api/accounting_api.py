@@ -21,7 +21,7 @@ except ImportError:
 """
 
 """
-    OpenAPI spec version: 16.1.0
+    OpenAPI spec version: 16.2.0
 """
 
 
@@ -2454,6 +2454,7 @@ class AccountingApi(object):
         summarize_errors=empty,
         unitdp=empty,
         idempotency_key=empty,
+        allow_backorders=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -2465,6 +2466,7 @@ class AccountingApi(object):
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
         :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+        :param bool allow_backorders: Allows an invoice to be created even when one or more line items contain tracked inventory where the invoice quantity would cause the available quantity to go negative
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -2494,6 +2496,9 @@ class AccountingApi(object):
 
         if unitdp is not empty:
             query_params.append(("unitdp", unitdp))
+
+        if allow_backorders is not empty:
+            query_params.append(("allowBackorders", allow_backorders))
 
         header_params = {
             "xero-tenant-id": xero_tenant_id,
@@ -7426,6 +7431,7 @@ class AccountingApi(object):
         page=empty,
         unitdp=empty,
         page_size=empty,
+        references=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -7439,6 +7445,7 @@ class AccountingApi(object):
         :param int page: Up to 100 bank transactions will be returned in a single API call with line items details
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
         :param int page_size: Number of records to retrieve per page
+        :param list[str] references: Filter by a comma-separated list of References
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -7452,7 +7459,9 @@ class AccountingApi(object):
                 "when calling `get_bank_transactions`"
             )
 
-        collection_formats = {}
+        collection_formats = {
+            "References": "csv",
+        }
         path_params = {}
 
         query_params = []
@@ -7471,6 +7480,9 @@ class AccountingApi(object):
 
         if page_size is not empty:
             query_params.append(("pageSize", page_size))
+
+        if references is not empty:
+            query_params.append(("References", references))
 
         header_params = {
             "xero-tenant-id": xero_tenant_id,
@@ -13358,6 +13370,7 @@ class AccountingApi(object):
         unitdp=empty,
         page_size=empty,
         invoice_numbers=empty,
+        references=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -13368,10 +13381,11 @@ class AccountingApi(object):
         :param datetime if_modified_since: Only records created or modified since this timestamp will be returned
         :param str where: Filter by an any element
         :param str order: Order by an any element
-        :param int page: e.g. page=1 – Up to 100 prepayments will be returned in a single API call with line items shown for each overpayment
+        :param int page: e.g. page=1 – Up to 100 prepayments will be returned in a single API call with line items shown for each prepayment
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
         :param int page_size: Number of records to retrieve per page
         :param list[str] invoice_numbers: Filter by a comma-separated list of InvoiceNumbers
+        :param list[str] references: Filter by a comma-separated list of References
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -13387,6 +13401,7 @@ class AccountingApi(object):
 
         collection_formats = {
             "InvoiceNumbers": "csv",
+            "References": "csv",
         }
         path_params = {}
 
@@ -13409,6 +13424,9 @@ class AccountingApi(object):
 
         if invoice_numbers is not empty:
             query_params.append(("InvoiceNumbers", invoice_numbers))
+
+        if references is not empty:
+            query_params.append(("References", references))
 
         header_params = {
             "xero-tenant-id": xero_tenant_id,
@@ -18340,6 +18358,7 @@ class AccountingApi(object):
         invoices,
         unitdp=empty,
         idempotency_key=empty,
+        allow_backorders=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -18351,6 +18370,7 @@ class AccountingApi(object):
         :param Invoices invoices: (required)
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
         :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+        :param bool allow_backorders: Allows an invoice to be created even when one or more line items contain tracked inventory where the invoice quantity would cause the available quantity to go negative
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -18385,6 +18405,9 @@ class AccountingApi(object):
 
         if unitdp is not empty:
             query_params.append(("unitdp", unitdp))
+
+        if allow_backorders is not empty:
+            query_params.append(("allowBackorders", allow_backorders))
 
         header_params = {
             "xero-tenant-id": xero_tenant_id,
@@ -19217,6 +19240,7 @@ class AccountingApi(object):
         summarize_errors=empty,
         unitdp=empty,
         idempotency_key=empty,
+        allow_backorders=empty,
         _return_http_data_only=True,
         _preload_content=True,
         _request_timeout=None,
@@ -19228,6 +19252,7 @@ class AccountingApi(object):
         :param bool summarize_errors: If false return 200 OK and mix of successfully created objects and any with validation errors
         :param int unitdp: e.g. unitdp=4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
         :param str idempotency_key: This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+        :param bool allow_backorders: Allows an invoice to be created even when one or more line items contain tracked inventory where the invoice quantity would cause the available quantity to go negative
         :param bool _return_http_data_only: return received data only
         :param bool _preload_content: load received data in models
         :param bool _request_timeout: maximum wait time for response
@@ -19257,6 +19282,9 @@ class AccountingApi(object):
 
         if unitdp is not empty:
             query_params.append(("unitdp", unitdp))
+
+        if allow_backorders is not empty:
+            query_params.append(("allowBackorders", allow_backorders))
 
         header_params = {
             "xero-tenant-id": xero_tenant_id,
