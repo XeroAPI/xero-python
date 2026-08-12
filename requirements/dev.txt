@@ -1,5 +1,5 @@
 -r test.txt
 -r flake8.txt
 build
-pip-audit
+pip-audit==2.10.1
 tox
