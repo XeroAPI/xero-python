@@ -306,6 +306,7 @@ def test_serialize_datetime(value, expected):
     "value,expected",
     [
         (datetime.fromtimestamp(0.0), "/Date(0)/"),
+        (datetime(1960, 1, 1, tzinfo=tz.UTC), "/Date(-315619200000+0000)/"),
         (datetime.fromtimestamp(1439424000.0), "/Date(1439424000000)/"),
         (datetime.fromtimestamp(1439434356.790), "/Date(1439434356790)/"),
         (datetime(2015, 8, 13, tzinfo=tz.UTC), "/Date(1439424000000+0000)/"),

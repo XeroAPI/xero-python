@@ -12,6 +12,14 @@ from xero_python.single_dispatch_str import single_dispatch_str
 DICT_DATA_TYPE = re.compile(r"^dict(?:\[(.*)\])?$")
 LIST_DATA_TYPE = re.compile(r"^list(?:\[(.*)\])?$")
 TUPLE_DATA_TYPE = re.compile(r"^tuple(?:\[(.*)\])?$")
+UNIX_EPOCH = datetime(1970, 1, 1, tzinfo=tz.UTC)
+
+
+def datetime_timestamp(value):
+    """Return seconds from the Unix epoch without platform timestamp limits."""
+    if value.tzinfo is None:
+        value = value.replace(tzinfo=tz.tzlocal())
+    return (value.astimezone(tz.UTC) - UNIX_EPOCH).total_seconds()
 
 
 def data_type(value, explicit_type=None):
@@ -159,7 +167,7 @@ def serialize_datetime_ms(value, explicit_type=None):
     :return: serialized object
     """
     tz_str = value.strftime("%z")
-    timestamp_s = value.timestamp()
+    timestamp_s = datetime_timestamp(value)
     timestamp_ms = int(timestamp_s * 1000)
     return "/Date({}{})/".format(timestamp_ms, tz_str)
 
@@ -180,7 +188,7 @@ def serialize_date_ms(value, explicit_type=None):
     else:
         raise ValueError("Can't serialize {!r} into Microsoft date json format")
 
-    timestamp_s = datetime_value.timestamp()
+    timestamp_s = datetime_timestamp(datetime_value)
     timestamp_ms = int(timestamp_s * 1000)
     return "/Date({})/".format(timestamp_ms)
 
