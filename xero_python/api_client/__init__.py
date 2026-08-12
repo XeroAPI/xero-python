@@ -13,10 +13,14 @@
 import datetime
 import json
 import mimetypes
+import ntpath
 import os
+import posixpath
 import re
 import tempfile
+import unicodedata
 from decimal import Decimal
+from email.message import Message
 from multiprocessing.pool import ThreadPool
 from urllib.parse import quote
 
@@ -26,6 +30,48 @@ from xero_python.api_client.configuration import Configuration
 from xero_python.api_client.deserializer import deserialize
 from xero_python.api_client.serializer import serialize
 from xero_python.exceptions import OAuth2TokenGetterError, OAuth2TokenSaverError
+
+WINDOWS_RESERVED_FILENAMES = {"CON", "PRN", "AUX", "NUL"}
+WINDOWS_RESERVED_FILENAMES.update("COM{}".format(number) for number in range(1, 10))
+WINDOWS_RESERVED_FILENAMES.update("LPT{}".format(number) for number in range(1, 10))
+
+
+def safe_download_filename(content_disposition):
+    message = Message()
+    message["Content-Disposition"] = content_disposition
+    filename = message.get_filename()
+    if not filename or any(
+        unicodedata.category(character).startswith("C") for character in filename
+    ):
+        return None
+    if (
+        posixpath.isabs(filename)
+        or ntpath.isabs(filename)
+        or ntpath.splitdrive(filename)[0]
+    ):
+        return None
+
+    filename = re.split(r"[\\/]", filename)[-1]
+    if filename in ("", ".", "..") or filename != filename.rstrip(" ."):
+        return None
+    if any(character in '<>:"|?*' for character in filename):
+        return None
+    if filename.split(".", 1)[0].upper() in WINDOWS_RESERVED_FILENAMES:
+        return None
+    return filename
+
+
+def safe_download_path(directory, filename):
+    directory = os.path.realpath(directory)
+    path = os.path.join(directory, filename)
+    try:
+        if os.path.commonpath((directory, os.path.realpath(path))) != directory:
+            return None
+    except ValueError:
+        return None
+    if os.path.islink(path) or (os.path.lexists(path) and not os.path.isfile(path)):
+        return None
+    return path
 
 
 class ModelFinder:
@@ -598,23 +644,29 @@ class ApiClient(object):
         :return: file path.
         """
         fd, path = tempfile.mkstemp(dir=self.configuration.temp_folder_path)
-        os.close(fd)
-        os.remove(path)
+
+        try:
+            with os.fdopen(fd, "wb") as file_handle:
+                file_handle.write(response.data)
+        except Exception:
+            os.remove(path)
+            raise
 
         content_disposition = response.getheader("Content-Disposition")
         if content_disposition:
-            match = re.search(
-                r'filename=[\'"]?([^\'"\s]+)[\'"]?',
-                content_disposition,
-                flags=re.IGNORECASE,
+            filename = safe_download_filename(content_disposition)
+            destination = (
+                safe_download_path(os.path.dirname(path), filename)
+                if filename
+                else None
             )
-            if match:
-                filename = os.path.basename(match.group(1))
-                if filename not in ("", ".", ".."):
-                    path = os.path.join(os.path.dirname(path), filename)
-
-        with open(path, "wb") as f:
-            f.write(response.data)
+            if destination:
+                try:
+                    os.replace(path, destination)
+                except Exception:
+                    os.remove(path)
+                    raise
+                path = destination
 
         return path
 
