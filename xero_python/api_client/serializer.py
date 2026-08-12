@@ -25,6 +25,11 @@ def local_timezone():
 
 def datetime_timestamp(value):
     """Return seconds from the Unix epoch without platform timestamp limits."""
+    try:
+        # Preserve the platform's existing naive-local DST and fold semantics.
+        return value.timestamp()
+    except (OSError, OverflowError):
+        pass
     if value.tzinfo is None:
         value = value.replace(tzinfo=local_timezone())
     return (value.astimezone(tz.UTC) - UNIX_EPOCH).total_seconds()

@@ -350,6 +350,23 @@ def test_serialize_naive_pre_epoch_datetime_ms_uses_local_timezone():
     assert serialize_datetime_ms(value) == "/Date({})/".format(expected_ms)
 
 
+@pytest.mark.parametrize(
+    "value",
+    [
+        datetime(1971, 1, 1, 12, 30),
+        datetime(2015, 8, 13, 12, 30),
+        datetime(2024, 4, 7, 2, 30, fold=0),
+        datetime(2024, 4, 7, 2, 30, fold=1),
+        datetime(2024, 10, 6, 2, 30, fold=0),
+        datetime(2024, 10, 6, 2, 30, fold=1),
+    ],
+)
+def test_serialize_naive_datetime_ms_preserves_platform_timestamp_semantics(value):
+    expected_ms = int(value.timestamp() * 1000)
+
+    assert serialize_datetime_ms(value) == "/Date({})/".format(expected_ms)
+
+
 # serialize_date_ms tests
 @pytest.mark.parametrize(
     "value,expected",
