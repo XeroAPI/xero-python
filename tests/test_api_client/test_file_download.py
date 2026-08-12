@@ -123,6 +123,36 @@ def test_deserialize_file_does_not_follow_existing_symlink(api_client, tmp_path)
     assert target.read_bytes() == b"do not overwrite"
 
 
+def test_deserialize_file_preserves_existing_regular_file(api_client, tmp_path):
+    destination = tmp_path / "report.csv"
+    destination.write_bytes(b"do not overwrite")
+
+    path = deserialize_file(
+        api_client, FakeResponse('attachment; filename="report.csv"')
+    )
+
+    assert path != destination
+    assert path.parent == tmp_path
+    assert path.read_bytes() == b"file contents"
+    assert destination.read_bytes() == b"do not overwrite"
+
+
+@pytest.mark.parametrize(
+    "header",
+    [
+        'attachment; filename="unterminated',
+        "attachment; filename*=UTF-8''bad%ZZname",
+    ],
+)
+def test_deserialize_file_handles_malformed_content_disposition_safely(
+    api_client, tmp_path, header
+):
+    path = deserialize_file(api_client, FakeResponse(header))
+
+    assert path.parent == tmp_path
+    assert path.read_bytes() == b"file contents"
+
+
 def test_deserialize_file_uses_generated_filename_without_filename_parameter(
     api_client, tmp_path
 ):
