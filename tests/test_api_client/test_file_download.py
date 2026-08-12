@@ -151,6 +151,26 @@ def test_copy_download_preserves_destination_created_after_validation(tmp_path):
     assert destination.read_bytes() == b"created by racer"
 
 
+def test_copy_download_preserves_replacement_when_atomic_claim_fails(
+    tmp_path, monkeypatch
+):
+    source = tmp_path / "secure-random-file"
+    source.write_bytes(b"file contents")
+    destination = tmp_path / "report.csv"
+
+    def replace_name_and_fail(source_path, destination_path, follow_symlinks):
+        Path(destination_path).write_bytes(b"created by racer")
+        raise OSError("injected atomic-claim failure")
+
+    monkeypatch.setattr("xero_python.api_client.os.link", replace_name_and_fail)
+
+    copied = copy_download_without_overwrite(str(source), str(destination))
+
+    assert not copied
+    assert source.read_bytes() == b"file contents"
+    assert destination.read_bytes() == b"created by racer"
+
+
 @pytest.mark.parametrize(
     "header",
     [

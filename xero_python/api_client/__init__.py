@@ -76,23 +76,14 @@ def safe_download_path(directory, filename):
 
 def copy_download_without_overwrite(source, destination):
     try:
-        descriptor = os.open(destination, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
-    except FileExistsError:
+        os.link(source, destination, follow_symlinks=False)
+    except OSError:
         return False
 
     try:
-        with open(source, "rb") as source_handle, os.fdopen(
-            descriptor, "wb"
-        ) as destination_handle:
-            destination_handle.write(source_handle.read())
-    except Exception:
-        try:
-            os.close(descriptor)
-        except OSError:
-            pass
-        os.remove(destination)
-        raise
-    os.remove(source)
+        os.remove(source)
+    except OSError:
+        pass
     return True
 
 
