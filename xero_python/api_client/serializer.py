@@ -15,10 +15,18 @@ TUPLE_DATA_TYPE = re.compile(r"^tuple(?:\[(.*)\])?$")
 UNIX_EPOCH = datetime(1970, 1, 1, tzinfo=tz.UTC)
 
 
+def local_timezone():
+    """Return a local timezone that supports pre-epoch dates on Windows."""
+    windows_local = getattr(tz, "tzwinlocal", None)
+    if windows_local is not None:
+        return windows_local()
+    return tz.tzlocal()
+
+
 def datetime_timestamp(value):
     """Return seconds from the Unix epoch without platform timestamp limits."""
     if value.tzinfo is None:
-        value = value.replace(tzinfo=tz.tzlocal())
+        value = value.replace(tzinfo=local_timezone())
     return (value.astimezone(tz.UTC) - UNIX_EPOCH).total_seconds()
 
 

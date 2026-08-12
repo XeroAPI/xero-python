@@ -338,6 +338,18 @@ def test_serialize_datetime_ms(value, expected):
     assert result == expected
 
 
+def test_serialize_naive_pre_epoch_datetime_ms_uses_local_timezone():
+    value = datetime(1960, 1, 1, 12, 30)
+    windows_local = getattr(tz, "tzwinlocal", None)
+    local_tz = windows_local() if windows_local is not None else tz.tzlocal()
+    local_offset = local_tz.utcoffset(value) or timedelta()
+    utc_value = (value - local_offset).replace(tzinfo=tz.UTC)
+    epoch = datetime(1970, 1, 1, tzinfo=tz.UTC)
+    expected_ms = int((utc_value - epoch).total_seconds() * 1000)
+
+    assert serialize_datetime_ms(value) == "/Date({})/".format(expected_ms)
+
+
 # serialize_date_ms tests
 @pytest.mark.parametrize(
     "value,expected",
@@ -355,6 +367,15 @@ def test_serialize_date_ms(value, expected):
     # then expect result to be date string in MS json format
     assert isinstance(result, str)
     assert result == expected
+
+
+def test_serialize_pre_epoch_date_ms_uses_utc_midnight():
+    value = date(1960, 1, 1)
+    utc_value = datetime.combine(value, datetime.min.time()).replace(tzinfo=tz.UTC)
+    epoch = datetime(1970, 1, 1, tzinfo=tz.UTC)
+    expected_ms = int((utc_value - epoch).total_seconds() * 1000)
+
+    assert serialize_date_ms(value) == "/Date({})/".format(expected_ms)
 
 
 # serialize_base_model tests
