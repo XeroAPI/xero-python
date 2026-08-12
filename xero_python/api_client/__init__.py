@@ -71,9 +71,29 @@ def safe_download_path(directory, filename):
             return None
     except ValueError:
         return None
-    if os.path.lexists(path):
-        return None
     return path
+
+
+def copy_download_without_overwrite(source, destination):
+    try:
+        descriptor = os.open(destination, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
+    except FileExistsError:
+        return False
+
+    try:
+        with open(source, "rb") as source_handle, os.fdopen(
+            descriptor, "wb"
+        ) as destination_handle:
+            destination_handle.write(source_handle.read())
+    except Exception:
+        try:
+            os.close(descriptor)
+        except OSError:
+            pass
+        os.remove(destination)
+        raise
+    os.remove(source)
+    return True
 
 
 class ModelFinder:
@@ -663,12 +683,8 @@ class ApiClient(object):
                 else None
             )
             if destination:
-                try:
-                    os.replace(path, destination)
-                except Exception:
-                    os.remove(path)
-                    raise
-                path = destination
+                if copy_download_without_overwrite(path, destination):
+                    path = destination
 
         return path
 

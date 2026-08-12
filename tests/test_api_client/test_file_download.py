@@ -4,6 +4,7 @@ from pathlib import Path
 import pytest
 
 from xero_python.api_client import ApiClient
+from xero_python.api_client import copy_download_without_overwrite
 from xero_python.api_client.configuration import Configuration
 
 
@@ -135,6 +136,19 @@ def test_deserialize_file_preserves_existing_regular_file(api_client, tmp_path):
     assert path.parent == tmp_path
     assert path.read_bytes() == b"file contents"
     assert destination.read_bytes() == b"do not overwrite"
+
+
+def test_copy_download_preserves_destination_created_after_validation(tmp_path):
+    source = tmp_path / "secure-random-file"
+    source.write_bytes(b"file contents")
+    destination = tmp_path / "report.csv"
+
+    destination.write_bytes(b"created by racer")
+    copied = copy_download_without_overwrite(str(source), str(destination))
+
+    assert not copied
+    assert source.read_bytes() == b"file contents"
+    assert destination.read_bytes() == b"created by racer"
 
 
 @pytest.mark.parametrize(
