@@ -342,12 +342,12 @@ def test_get_invoices(sandbox_accounting_api: AccountingApi, xero_tenant_id):
     # When getting all invoices
     result: Invoices = sandbox_accounting_api.get_invoices(xero_tenant_id)
     # Then expect correct invoices received
-    expected = Invoices (
+    expected = Invoices(
         invoices=[
             Invoice(
-                amount_credited = Decimal(0),
-                amount_due = Decimal(0),
-                amount_paid= Decimal(0),
+                amount_credited=Decimal(0),
+                amount_due=Decimal(0),
+                amount_paid=Decimal(0),
                 contact=Contact(
                     addresses=[],
                     contact_groups=[],
@@ -381,7 +381,9 @@ def test_get_invoices(sandbox_accounting_api: AccountingApi, xero_tenant_id):
                 total=Decimal(40),
                 total_tax=Decimal(0),
                 type="ACCREC",
-                updated_date_utc=datetime.datetime(2018, 11, 2, 16, 31, 30, 160000, tzinfo=tz.UTC),
+                updated_date_utc=datetime.datetime(
+                    2018, 11, 2, 16, 31, 30, 160000, tzinfo=tz.UTC
+                ),
                 updated_date_utc_string="2018-11-02T16:31:30Z",
             ),
             Invoice(
@@ -421,17 +423,19 @@ def test_get_invoices(sandbox_accounting_api: AccountingApi, xero_tenant_id):
                         has_validation_errors=False,
                         payment_id="99ea7f6b-c513-4066-bc27-b7c65dcd76c2",
                     )
-                    ],
+                ],
                 prepayments=[],
                 reference="Red Fish, Blue Fish",
-                #repeating_invoice_id="428c0d75-909f-4b04-8403-a48dc27283b0",
+                # repeating_invoice_id="428c0d75-909f-4b04-8403-a48dc27283b0",
                 sent_to_contact=True,
                 status="PAID",
                 sub_total=Decimal(40),
                 total=Decimal(46),
                 total_tax=Decimal(6),
                 type="ACCREC",
-                updated_date_utc=datetime.datetime(2018, 11, 2, 16, 36, 32, 690000, tzinfo=tz.UTC),
+                updated_date_utc=datetime.datetime(
+                    2018, 11, 2, 16, 36, 32, 690000, tzinfo=tz.UTC
+                ),
                 updated_date_utc_string="2018-11-02T16:36:32Z",
             ),
             Invoice(
@@ -469,18 +473,16 @@ def test_get_invoices(sandbox_accounting_api: AccountingApi, xero_tenant_id):
                 total=Decimal(115),
                 total_tax=Decimal(15),
                 type="ACCREC",
-                updated_date_utc=datetime.datetime(2018, 11, 2, 16, 37, 28, 927000, tzinfo=tz.UTC),
-                updated_date_utc_string="2018-11-02T16:37:28Z"
-            )
+                updated_date_utc=datetime.datetime(
+                    2018, 11, 2, 16, 37, 28, 927000, tzinfo=tz.UTC
+                ),
+                updated_date_utc_string="2018-11-02T16:37:28Z",
+            ),
         ],
-        pagination= Pagination(
-            item_count= 3,
-            page = 1,
-            page_count= 1,
-            page_size= 100
-        )
+        pagination=Pagination(item_count=3, page=1, page_count=1, page_size=100),
     )
     assert str(result) == str(expected)
+
 
 @pytest.mark.sandbox
 def test_get_invoice_history(sandbox_accounting_api: AccountingApi, xero_tenant_id):
@@ -493,16 +495,20 @@ def test_get_invoice_history(sandbox_accounting_api: AccountingApi, xero_tenant_
         [
             HistoryRecord(
                 changes="Attached a file",
-                date_utc= datetime.datetime(2018, 11, 8, 15, 1, 21, 470000, tzinfo=tz.UTC),
-                details= "Attached the file sample2.jpg through the Xero API using Xero API Partner",
+                date_utc=datetime.datetime(
+                    2018, 11, 8, 15, 1, 21, 470000, tzinfo=tz.UTC
+                ),
+                details="Attached the file sample2.jpg through the Xero API using Xero API Partner",
                 user="System Generated",
             ),
             HistoryRecord(
                 changes="Credit Applied",
-                date_utc=datetime.datetime(2016, 10, 17, 20, 46, 1, 173000, tzinfo=tz.UTC),
+                date_utc=datetime.datetime(
+                    2016, 10, 17, 20, 46, 1, 173000, tzinfo=tz.UTC
+                ),
                 details="Bank transfer from Business Wells Fargo to My Savings on November 12, 2016 for 20.00.",
                 user="System Generated",
-            )
+            ),
         ]
     )
     assert result == expected
@@ -668,10 +674,14 @@ def test_create_invoice_history(sandbox_accounting_api: AccountingApi, xero_tena
     )
     # Then expect created invoice history records
     expected = HistoryRecords(
-        [HistoryRecord(
-            date_utc=datetime.datetime(2019, 2, 23, 5, 23, 20, 362000, tzinfo=tz.UTC),
-            details="Hello World"
-        )]
+        [
+            HistoryRecord(
+                date_utc=datetime.datetime(
+                    2019, 2, 23, 5, 23, 20, 362000, tzinfo=tz.UTC
+                ),
+                details="Hello World",
+            )
+        ]
     )
     assert result == expected
 

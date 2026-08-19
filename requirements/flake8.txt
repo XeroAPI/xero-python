@@ -1,1 +1,4 @@
-flake8
+flake8-black
+# Pin black so the BLK100 gate tracks this codebase's formatting instead of
+# whatever black released today, and so every matrix leg lints identically.
+black==24.8.0

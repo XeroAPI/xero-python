@@ -151,6 +151,7 @@ def test_auth2_refresh_access_token():
     assert oauth2_token.access_token == new_token["access_token"]
     assert oauth2_token.refresh_token == new_token["refresh_token"]
 
+
 def test_auth2_refresh_access_token_having_scope_as_string():
     # given OAuth2Token with expired access_token
     api_client = FakeClass()
@@ -194,6 +195,7 @@ def test_auth2_refresh_access_token_having_scope_as_string():
     assert oauth2_token.scope == new_token["scope"]
     assert oauth2_token.access_token == new_token["access_token"]
     assert oauth2_token.refresh_token == new_token["refresh_token"]
+
 
 def test_auth2_fetch_access_token():
     # Given OAuth2Token with valid refresh_token
