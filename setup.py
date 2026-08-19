@@ -34,6 +34,8 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Natural Language :: English",
         "Programming Language :: Python :: 3",
+        # Keep in step with the tox envlist, which is what exercises each of
+        # these interpreters. The CI workflow runs a subset of them.
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
