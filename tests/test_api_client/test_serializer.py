@@ -7,8 +7,11 @@ from unittest import mock
 import pytest
 from dateutil import tz
 
+from xero_python.api_client.deserializer import deserialize
 from xero_python.api_client.serializer import (
     data_type,
+    local_timezone,
+    naive_to_utc,
     serialize,
     serialize_routing,
     serialize_dict,
@@ -338,16 +341,39 @@ def test_serialize_datetime_ms(value, expected):
     assert result == expected
 
 
-def test_serialize_naive_pre_epoch_datetime_ms_uses_local_timezone():
-    value = datetime(1960, 1, 1, 12, 30)
-    windows_local = getattr(tz, "tzwinlocal", None)
-    local_tz = windows_local() if windows_local is not None else tz.tzlocal()
-    local_offset = local_tz.utcoffset(value) or timedelta()
-    utc_value = (value - local_offset).replace(tzinfo=tz.UTC)
-    epoch = datetime(1970, 1, 1, tzinfo=tz.UTC)
-    expected_ms = int((utc_value - epoch).total_seconds() * 1000)
+@pytest.mark.parametrize(
+    "value,expected",
+    [
+        # Sydney stayed on UTC+10 all year round until 1971, so noon-thirty
+        # local is 02:30 UTC. Applying today's daylight saving rule instead
+        # would place it an hour earlier, at 01:30 UTC.
+        (datetime(1960, 1, 1, 12, 30), datetime(1960, 1, 1, 2, 30, tzinfo=tz.UTC)),
+        # By 1990 daylight saving was in force each January, so UTC+11 applies.
+        (datetime(1990, 1, 1, 12, 30), datetime(1990, 1, 1, 1, 30, tzinfo=tz.UTC)),
+    ],
+)
+def test_naive_to_utc_uses_historical_offsets_of_a_fixed_timezone(
+    monkeypatch, value, expected
+):
+    monkeypatch.setattr(
+        "xero_python.api_client.serializer.local_timezone",
+        lambda: tz.gettz("Australia/Sydney"),
+    )
 
-    assert serialize_datetime_ms(value) == "/Date({})/".format(expected_ms)
+    assert naive_to_utc(value) == expected
+
+
+def test_local_timezone_agrees_with_the_tz_database_before_the_epoch():
+    zone_name = pytest.importorskip("tzlocal").get_localzone_name()
+    historical_zone = tz.gettz(zone_name)
+    if historical_zone is None:
+        pytest.skip("no tz database entry for {}".format(zone_name))
+    value = datetime(1960, 1, 1, 12, 30)
+
+    assert (
+        value.replace(tzinfo=local_timezone()).utcoffset()
+        == value.replace(tzinfo=historical_zone).utcoffset()
+    )
 
 
 @pytest.mark.parametrize(
@@ -365,6 +391,46 @@ def test_serialize_naive_datetime_ms_preserves_platform_timestamp_semantics(valu
     expected_ms = int(value.timestamp() * 1000)
 
     assert serialize_datetime_ms(value) == "/Date({})/".format(expected_ms)
+
+
+@pytest.mark.parametrize(
+    "value,expected",
+    [
+        # Float seconds truncate towards zero, so these lose the final
+        # millisecond and the error changes sign either side of the epoch.
+        (
+            datetime(1901, 11, 4, 12, 50, 45, 768000, tzinfo=tz.UTC),
+            "/Date(-2150881754232+0000)/",
+        ),
+        (
+            datetime(1935, 5, 6, 15, 50, 10, 433000, tzinfo=tz.UTC),
+            "/Date(-1093680589567+0000)/",
+        ),
+        (
+            datetime(2004, 5, 29, 20, 46, 5, 715000, tzinfo=tz.UTC),
+            "/Date(1085863565715+0000)/",
+        ),
+    ],
+)
+def test_serialize_datetime_ms_keeps_exact_milliseconds(value, expected):
+    assert serialize_datetime_ms(value) == expected
+
+
+@pytest.mark.parametrize(
+    "value",
+    [
+        datetime(1900, 1, 1, tzinfo=tz.UTC),
+        datetime(1901, 11, 4, 12, 50, 45, 768000, tzinfo=tz.UTC),
+        datetime(1960, 1, 1, tzinfo=tz.UTC),
+        datetime(1970, 1, 1, tzinfo=tz.UTC),
+        datetime(2004, 5, 29, 20, 46, 5, 715000, tzinfo=tz.UTC),
+        datetime(2016, 10, 13, 20, 13, 36, 437000, tzinfo=tz.UTC),
+    ],
+)
+def test_datetime_ms_round_trips_through_deserialize(value):
+    assert (
+        deserialize("datetime[ms-format]", serialize_datetime_ms(value), None) == value
+    )
 
 
 # serialize_date_ms tests

@@ -1,5 +1,8 @@
 # make sure content of this file can be parsed by setup.load_requirements
 python-dateutil>=2.7
+# resolves the local IANA timezone name so pre-epoch datetimes use real
+# historical UTC offsets on Windows, which only stores the current DST rule
+tzlocal>=4.0
 urllib3
 certifi
 setuptools>=75.1.0

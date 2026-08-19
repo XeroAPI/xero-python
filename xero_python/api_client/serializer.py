@@ -16,23 +16,54 @@ UNIX_EPOCH = datetime(1970, 1, 1, tzinfo=tz.UTC)
 
 
 def local_timezone():
-    """Return a local timezone that supports pre-epoch dates on Windows."""
-    windows_local = getattr(tz, "tzwinlocal", None)
-    if windows_local is not None:
-        return windows_local()
+    """Return the local timezone including its historical UTC offsets.
+
+    Windows only records the currently active DST rule, so tz.tzwinlocal()
+    applies today's rule to every historical date and shifts pre-1971 values
+    by an hour. Resolve the IANA name for the machine instead and read the
+    real transitions from the tz database bundled with python-dateutil.
+    """
+    try:
+        from tzlocal import get_localzone_name
+
+        zone_name = get_localzone_name()
+    except Exception:
+        zone_name = None
+    if zone_name:
+        zone = tz.gettz(zone_name)
+        if zone is not None:
+            return zone
     return tz.tzlocal()
 
 
-def datetime_timestamp(value):
-    """Return seconds from the Unix epoch without platform timestamp limits."""
-    try:
-        # Preserve the platform's existing naive-local DST and fold semantics.
-        return value.timestamp()
-    except (OSError, OverflowError):
-        pass
+def naive_to_utc(value):
+    """Convert a naive datetime to UTC using the local historical offset."""
+    return value.replace(tzinfo=local_timezone()).astimezone(tz.UTC)
+
+
+def datetime_to_utc(value):
+    """Return value as an aware UTC datetime without platform range limits."""
     if value.tzinfo is None:
-        value = value.replace(tzinfo=local_timezone())
-    return (value.astimezone(tz.UTC) - UNIX_EPOCH).total_seconds()
+        try:
+            # Preserve the platform's existing naive-local DST and fold
+            # semantics for every date it is able to represent.
+            return value.astimezone(tz.UTC)
+        except (OSError, OverflowError, ValueError):
+            return naive_to_utc(value)
+    return value.astimezone(tz.UTC)
+
+
+def datetime_timestamp_ms(value):
+    """Return whole milliseconds from the Unix epoch.
+
+    Uses integer arithmetic throughout. Going via float seconds truncates
+    towards zero, which loses a millisecond on values that are not exactly
+    representable and flips the rounding direction either side of the epoch.
+    """
+    elapsed = datetime_to_utc(value) - UNIX_EPOCH
+    return (
+        elapsed.days * 86400000 + elapsed.seconds * 1000 + elapsed.microseconds // 1000
+    )
 
 
 def data_type(value, explicit_type=None):
@@ -180,8 +211,7 @@ def serialize_datetime_ms(value, explicit_type=None):
     :return: serialized object
     """
     tz_str = value.strftime("%z")
-    timestamp_s = datetime_timestamp(value)
-    timestamp_ms = int(timestamp_s * 1000)
+    timestamp_ms = datetime_timestamp_ms(value)
     return "/Date({}{})/".format(timestamp_ms, tz_str)
 
 
@@ -201,8 +231,7 @@ def serialize_date_ms(value, explicit_type=None):
     else:
         raise ValueError("Can't serialize {!r} into Microsoft date json format")
 
-    timestamp_s = datetime_timestamp(datetime_value)
-    timestamp_ms = int(timestamp_s * 1000)
+    timestamp_ms = datetime_timestamp_ms(datetime_value)
     return "/Date({})/".format(timestamp_ms)
 
 

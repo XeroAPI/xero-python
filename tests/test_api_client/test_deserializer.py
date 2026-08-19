@@ -207,6 +207,9 @@ def test_deserialize_date_error(data):
         ("/Date(315619200000+0000)/", date(1980, 1, 2)),
         ("/Date(1550899400362)/", date(2019, 2, 23)),
         ("/Date(1550899400362+1300)/", date(2019, 2, 23)),
+        # Pre-epoch timestamps are outside the platform range Windows accepts.
+        ("/Date(-2208988800000)/", date(1900, 1, 1)),
+        ("/Date(-315619200000+0000)/", date(1960, 1, 1)),
     ],
 )
 def test_deserialize_date_ms(data, expected):
@@ -305,6 +308,12 @@ def test_deserialize_datetime_error(data):
                 437000,
                 tzinfo=tz.tzoffset(None, timedelta(hours=13)),
             ),
+        ),
+        # Pre-epoch timestamps are outside the platform range Windows accepts.
+        ("/Date(-2208988800000)/", datetime(1900, 1, 1, tzinfo=tz.UTC)),
+        (
+            "/Date(-2150881754232+0000)/",
+            datetime(1901, 11, 4, 12, 50, 45, 768000, tzinfo=tz.UTC),
         ),
     ],
 )
