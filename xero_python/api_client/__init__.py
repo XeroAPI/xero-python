@@ -76,7 +76,7 @@ def safe_download_path(directory, filename):
 
 def copy_download_without_overwrite(source, destination):
     try:
-        os.link(source, destination, follow_symlinks=False)
+        os.link(source, destination)
     except OSError:
         return False
 

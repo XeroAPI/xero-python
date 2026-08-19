@@ -5,6 +5,7 @@ import pytest
 
 from xero_python.api_client import ApiClient
 from xero_python.api_client import copy_download_without_overwrite
+from xero_python.api_client import safe_download_filename
 from xero_python.api_client.configuration import Configuration
 
 
@@ -74,6 +75,59 @@ def test_deserialize_file_rejects_unsafe_cross_platform_names(
         "report.csv.",
     }
     assert path.read_bytes() == b"file contents"
+
+
+@pytest.mark.parametrize(
+    "reserved_name",
+    [
+        "CON",
+        "PRN",
+        "AUX",
+        "NUL",
+        "COM1",
+        "COM2",
+        "COM3",
+        "COM4",
+        "COM5",
+        "COM6",
+        "COM7",
+        "COM8",
+        "COM9",
+        "LPT1",
+        "LPT2",
+        "LPT3",
+        "LPT4",
+        "LPT5",
+        "LPT6",
+        "LPT7",
+        "LPT8",
+        "LPT9",
+    ],
+)
+def test_safe_download_filename_rejects_every_windows_reserved_name(reserved_name):
+    assert (
+        safe_download_filename('attachment; filename="{}.csv"'.format(reserved_name))
+        is None
+    )
+    assert (
+        safe_download_filename(
+            'attachment; filename="{}"'.format(reserved_name.lower())
+        )
+        is None
+    )
+
+
+@pytest.mark.parametrize(
+    "header",
+    [
+        'attachment; filename="."',
+        'attachment; filename=".."',
+        'attachment; filename="reports/"',
+        'attachment; filename="reports\\\\"',
+    ],
+)
+def test_safe_download_filename_rejects_names_sanitising_to_no_filename(header):
+    assert safe_download_filename(header) is None
 
 
 def test_deserialize_file_uses_content_disposition_filename(api_client, tmp_path):
@@ -158,7 +212,7 @@ def test_copy_download_preserves_replacement_when_atomic_claim_fails(
     source.write_bytes(b"file contents")
     destination = tmp_path / "report.csv"
 
-    def replace_name_and_fail(source_path, destination_path, follow_symlinks):
+    def replace_name_and_fail(source_path, destination_path):
         Path(destination_path).write_bytes(b"created by racer")
         raise OSError("injected atomic-claim failure")
 
