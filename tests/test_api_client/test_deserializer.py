@@ -381,3 +381,33 @@ def test_deserialize_model_enum(data, expected):
     # then correct Shape enum expected
     assert isinstance(result, Shape)
     assert result == expected
+
+
+def test_deserialize_contact_strips_tax_number_type_namespace():
+    from xero_python.accounting.models.contact import Contact
+
+    contact = deserialize_model(
+        Contact, {"TaxNumberType": "TAXNUMBERTYPE/SSN"}, model_finder=None
+    )
+
+    assert contact.tax_number_type == "SSN"
+
+
+def test_deserialize_contact_keeps_valid_tax_number_type():
+    from xero_python.accounting.models.contact import Contact
+
+    contact = deserialize_model(Contact, {"TaxNumberType": "EIN"}, model_finder=None)
+
+    assert contact.tax_number_type == "EIN"
+
+
+def test_deserialize_linked_transaction_accepts_receipt_source():
+    from xero_python.accounting.models.linked_transaction import LinkedTransaction
+
+    txn = deserialize_model(
+        LinkedTransaction,
+        {"SourceTransactionTypeCode": "RECEIPT"},
+        model_finder=None,
+    )
+
+    assert txn.source_transaction_type_code == "RECEIPT"

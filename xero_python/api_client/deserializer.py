@@ -284,5 +284,37 @@ def deserialize_model(model, data, model_finder):
             value = data[attr_key]
             kwargs[attr] = deserialize(attr_type, value, model_finder)
 
-    instance = model(**kwargs)
+    try:
+        return model(**kwargs)
+    except ValueError:
+        # Generated setters reject enum members the live API still returns
+        # (xero-python#203, #205, #206). Keep valid data; do not fail the
+        # whole payload because one closed enum is behind the spec.
+        return _deserialize_model_preserving_api_enums(model, kwargs)
+
+
+def _enum_namespace_suffix(value):
+    if isinstance(value, str) and "/" in value:
+        return value.rsplit("/", 1)[-1]
+    return value
+
+
+def _deserialize_model_preserving_api_enums(model, kwargs):
+    instance = model()
+    for attr, value in kwargs.items():
+        try:
+            setattr(instance, attr, value)
+            continue
+        except ValueError as err:
+            stripped = _enum_namespace_suffix(value)
+            if stripped != value:
+                try:
+                    setattr(instance, attr, stripped)
+                    continue
+                except ValueError:
+                    pass
+            private = "_{}".format(attr)
+            if not hasattr(instance, private):
+                raise err
+            setattr(instance, private, value)
     return instance
