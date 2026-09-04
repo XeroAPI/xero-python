@@ -52,6 +52,8 @@ class Invoice(BaseModel):
         "total_tax": "float",
         "total": "float",
         "total_discount": "float",
+        "rounding_amount": "float",
+        "entered_total": "float",
         "invoice_id": "str",
         "repeating_invoice_id": "str",
         "has_attachments": "bool",
@@ -97,6 +99,8 @@ class Invoice(BaseModel):
         "total_tax": "TotalTax",
         "total": "Total",
         "total_discount": "TotalDiscount",
+        "rounding_amount": "RoundingAmount",
+        "entered_total": "EnteredTotal",
         "invoice_id": "InvoiceID",
         "repeating_invoice_id": "RepeatingInvoiceID",
         "has_attachments": "HasAttachments",
@@ -143,6 +147,8 @@ class Invoice(BaseModel):
         total_tax=None,
         total=None,
         total_discount=None,
+        rounding_amount=None,
+        entered_total=None,
         invoice_id=None,
         repeating_invoice_id=None,
         has_attachments=False,
@@ -188,6 +194,8 @@ class Invoice(BaseModel):
         self._total_tax = None
         self._total = None
         self._total_discount = None
+        self._rounding_amount = None
+        self._entered_total = None
         self._invoice_id = None
         self._repeating_invoice_id = None
         self._has_attachments = None
@@ -254,6 +262,10 @@ class Invoice(BaseModel):
             self.total = total
         if total_discount is not None:
             self.total_discount = total_discount
+        if rounding_amount is not None:
+            self.rounding_amount = rounding_amount
+        if entered_total is not None:
+            self.entered_total = entered_total
         if invoice_id is not None:
             self.invoice_id = invoice_id
         if repeating_invoice_id is not None:
@@ -748,7 +760,7 @@ class Invoice(BaseModel):
     def sub_total(self):
         """Gets the sub_total of this Invoice.  # noqa: E501
 
-        Total of invoice excluding taxes  # noqa: E501
+        Total of invoice excluding taxes. Calculated automatically by Xero from the invoice's line items. Only for ACCPAY and ACCREC invoices, where this opt-in capability is enabled for your organisation, can SubTotal be supplied on write – on a SUBMITTED or AUTHORISED invoice supplied together with TotalTax and Total, it is validated against the calculated line item totals (see RoundingAmount); it is ignored in all other cases. This write behaviour, and the returned value reflecting it, only applies to the Create and Update endpoints (POST/PUT) and to retrieving a single invoice by ID (GET by ID) – it does not apply when listing invoices (GET)   # noqa: E501
 
         :return: The sub_total of this Invoice.  # noqa: E501
         :rtype: float
@@ -759,7 +771,7 @@ class Invoice(BaseModel):
     def sub_total(self, sub_total):
         """Sets the sub_total of this Invoice.
 
-        Total of invoice excluding taxes  # noqa: E501
+        Total of invoice excluding taxes. Calculated automatically by Xero from the invoice's line items. Only for ACCPAY and ACCREC invoices, where this opt-in capability is enabled for your organisation, can SubTotal be supplied on write – on a SUBMITTED or AUTHORISED invoice supplied together with TotalTax and Total, it is validated against the calculated line item totals (see RoundingAmount); it is ignored in all other cases. This write behaviour, and the returned value reflecting it, only applies to the Create and Update endpoints (POST/PUT) and to retrieving a single invoice by ID (GET by ID) – it does not apply when listing invoices (GET)   # noqa: E501
 
         :param sub_total: The sub_total of this Invoice.  # noqa: E501
         :type: float
@@ -771,7 +783,7 @@ class Invoice(BaseModel):
     def total_tax(self):
         """Gets the total_tax of this Invoice.  # noqa: E501
 
-        Total tax on invoice  # noqa: E501
+        Total tax on invoice. Calculated automatically by Xero from the invoice's line items. Only for ACCPAY and ACCREC invoices, where this opt-in capability is enabled for your organisation, can TotalTax be supplied on write – on a SUBMITTED or AUTHORISED invoice supplied together with SubTotal and Total, it is validated against the calculated line item totals (see RoundingAmount); it is ignored in all other cases. This write behaviour, and the returned value reflecting it, only applies to the Create and Update endpoints (POST/PUT) and to retrieving a single invoice by ID (GET by ID) – it does not apply when listing invoices (GET)   # noqa: E501
 
         :return: The total_tax of this Invoice.  # noqa: E501
         :rtype: float
@@ -782,7 +794,7 @@ class Invoice(BaseModel):
     def total_tax(self, total_tax):
         """Sets the total_tax of this Invoice.
 
-        Total tax on invoice  # noqa: E501
+        Total tax on invoice. Calculated automatically by Xero from the invoice's line items. Only for ACCPAY and ACCREC invoices, where this opt-in capability is enabled for your organisation, can TotalTax be supplied on write – on a SUBMITTED or AUTHORISED invoice supplied together with SubTotal and Total, it is validated against the calculated line item totals (see RoundingAmount); it is ignored in all other cases. This write behaviour, and the returned value reflecting it, only applies to the Create and Update endpoints (POST/PUT) and to retrieving a single invoice by ID (GET by ID) – it does not apply when listing invoices (GET)   # noqa: E501
 
         :param total_tax: The total_tax of this Invoice.  # noqa: E501
         :type: float
@@ -794,7 +806,7 @@ class Invoice(BaseModel):
     def total(self):
         """Gets the total of this Invoice.  # noqa: E501
 
-        Total of Invoice tax inclusive (i.e. SubTotal + TotalTax). This will be ignored if it doesn’t equal the sum of the LineAmounts  # noqa: E501
+        Total of Invoice tax inclusive (i.e. SubTotal + TotalTax + RoundingAmount). Calculated automatically by Xero from the invoice's line items. Only for ACCPAY and ACCREC invoices, where this opt-in capability is enabled for your organisation, can Total be supplied on write – on a SUBMITTED or AUTHORISED invoice supplied together with SubTotal and TotalTax, it is validated against the calculated line item totals plus RoundingAmount; in all other cases this will be ignored if it does not equal the sum of the LineAmounts. This write behaviour, and the returned value reflecting it, only applies to the Create and Update endpoints (POST/PUT) and to retrieving a single invoice by ID (GET by ID) – it does not apply when listing invoices (GET)   # noqa: E501
 
         :return: The total of this Invoice.  # noqa: E501
         :rtype: float
@@ -805,7 +817,7 @@ class Invoice(BaseModel):
     def total(self, total):
         """Sets the total of this Invoice.
 
-        Total of Invoice tax inclusive (i.e. SubTotal + TotalTax). This will be ignored if it doesn’t equal the sum of the LineAmounts  # noqa: E501
+        Total of Invoice tax inclusive (i.e. SubTotal + TotalTax + RoundingAmount). Calculated automatically by Xero from the invoice's line items. Only for ACCPAY and ACCREC invoices, where this opt-in capability is enabled for your organisation, can Total be supplied on write – on a SUBMITTED or AUTHORISED invoice supplied together with SubTotal and TotalTax, it is validated against the calculated line item totals plus RoundingAmount; in all other cases this will be ignored if it does not equal the sum of the LineAmounts. This write behaviour, and the returned value reflecting it, only applies to the Create and Update endpoints (POST/PUT) and to retrieving a single invoice by ID (GET by ID) – it does not apply when listing invoices (GET)   # noqa: E501
 
         :param total: The total of this Invoice.  # noqa: E501
         :type: float
@@ -835,6 +847,52 @@ class Invoice(BaseModel):
         """
 
         self._total_discount = total_discount
+
+    @property
+    def rounding_amount(self):
+        """Gets the rounding_amount of this Invoice.  # noqa: E501
+
+        An optional rounding adjustment added to SubTotal + TotalTax to give Total (i.e. Total = SubTotal + TotalTax + RoundingAmount). Only applies to ACCPAY and ACCREC invoices, and only if this opt-in capability has been enabled for your organisation. Not validated while the invoice is DRAFT. For SUBMITTED and AUTHORISED invoices, RoundingAmount is only applied when SubTotal, TotalTax and Total are all supplied together, and must be between -0.10 and 0.10 – values outside this range are rejected with a validation error (on DRAFT invoices, an out-of-range value is ignored instead). This field is only settable and only returned via the Create and Update endpoints (POST/PUT) and when retrieving a single invoice by ID (GET by ID) – it is not returned when listing invoices (GET)   # noqa: E501
+
+        :return: The rounding_amount of this Invoice.  # noqa: E501
+        :rtype: float
+        """
+        return self._rounding_amount
+
+    @rounding_amount.setter
+    def rounding_amount(self, rounding_amount):
+        """Sets the rounding_amount of this Invoice.
+
+        An optional rounding adjustment added to SubTotal + TotalTax to give Total (i.e. Total = SubTotal + TotalTax + RoundingAmount). Only applies to ACCPAY and ACCREC invoices, and only if this opt-in capability has been enabled for your organisation. Not validated while the invoice is DRAFT. For SUBMITTED and AUTHORISED invoices, RoundingAmount is only applied when SubTotal, TotalTax and Total are all supplied together, and must be between -0.10 and 0.10 – values outside this range are rejected with a validation error (on DRAFT invoices, an out-of-range value is ignored instead). This field is only settable and only returned via the Create and Update endpoints (POST/PUT) and when retrieving a single invoice by ID (GET by ID) – it is not returned when listing invoices (GET)   # noqa: E501
+
+        :param rounding_amount: The rounding_amount of this Invoice.  # noqa: E501
+        :type: float
+        """
+
+        self._rounding_amount = rounding_amount
+
+    @property
+    def entered_total(self):
+        """Gets the entered_total of this Invoice.  # noqa: E501
+
+        The total amount as originally entered for the invoice, before any RoundingAmount adjustment is applied. Only applies to ACCPAY and ACCREC invoices, and only if this opt-in capability has been enabled for your organisation. Can only be set while the invoice is DRAFT; once the invoice is no longer DRAFT this reflects Total. This field is only settable and only returned via the Create and Update endpoints (POST/PUT) and when retrieving a single invoice by ID (GET by ID) – it is not returned when listing invoices (GET)   # noqa: E501
+
+        :return: The entered_total of this Invoice.  # noqa: E501
+        :rtype: float
+        """
+        return self._entered_total
+
+    @entered_total.setter
+    def entered_total(self, entered_total):
+        """Sets the entered_total of this Invoice.
+
+        The total amount as originally entered for the invoice, before any RoundingAmount adjustment is applied. Only applies to ACCPAY and ACCREC invoices, and only if this opt-in capability has been enabled for your organisation. Can only be set while the invoice is DRAFT; once the invoice is no longer DRAFT this reflects Total. This field is only settable and only returned via the Create and Update endpoints (POST/PUT) and when retrieving a single invoice by ID (GET by ID) – it is not returned when listing invoices (GET)   # noqa: E501
+
+        :param entered_total: The entered_total of this Invoice.  # noqa: E501
+        :type: float
+        """
+
+        self._entered_total = entered_total
 
     @property
     def invoice_id(self):
