@@ -21,7 +21,7 @@ except ImportError:
 """
 
 """
-    OpenAPI spec version: 16.2.0
+    OpenAPI spec version: 19.0.0
 """
 
 

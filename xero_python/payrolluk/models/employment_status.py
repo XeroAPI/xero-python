@@ -27,3 +27,4 @@ class EmploymentStatus(Enum):
     EMPLOYEE = "Employee"
     WORKER = "Worker"
     UNSPECIFIED = "Unspecified"
+    OFFPAYROLLWORKER = "OffPayrollWorker"
