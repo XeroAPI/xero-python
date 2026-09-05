@@ -284,5 +284,23 @@ def deserialize_model(model, data, model_finder):
             value = data[attr_key]
             kwargs[attr] = deserialize(attr_type, value, model_finder)
 
-    instance = model(**kwargs)
-    return instance
+    model_name = "{}.{}".format(model.__module__, model.__name__)
+    if model_name == "xero_python.accounting.models.contact.Contact":
+        value = kwargs.get("tax_number_type")
+        # The API prefixes tax number types; keep the generated setter's validation.
+        if value and value.startswith("TAXNUMBERTYPE/") and value.split("/", 1)[1]:
+            kwargs["tax_number_type"] = value.split("/", 1)[1]
+
+    if (
+        model_name
+        == "xero_python.accounting.models.linked_transaction.LinkedTransaction"
+        and kwargs.get("source_transaction_type_code") == "RECEIPT"
+    ):
+        # Known API value missing from the generated enum (xero-python#206).
+        # Construct normally so every other field is still validated.
+        kwargs.pop("source_transaction_type_code")
+        instance = model(**kwargs)
+        instance._source_transaction_type_code = "RECEIPT"
+        return instance
+
+    return model(**kwargs)

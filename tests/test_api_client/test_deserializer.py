@@ -381,3 +381,117 @@ def test_deserialize_model_enum(data, expected):
     # then correct Shape enum expected
     assert isinstance(result, Shape)
     assert result == expected
+
+
+@pytest.mark.parametrize("tax_number_type", ["SSN", "EIN", "ITIN", "ATIN", "None"])
+def test_deserialize_contact_strips_tax_number_type_namespace(tax_number_type):
+    from xero_python.accounting.models.contact import Contact
+
+    contact = deserialize_model(
+        Contact,
+        {"TaxNumberType": "TAXNUMBERTYPE/" + tax_number_type},
+        model_finder=None,
+    )
+
+    assert contact.tax_number_type == tax_number_type
+
+
+def test_deserialize_contact_keeps_valid_tax_number_type():
+    from xero_python.accounting.models.contact import Contact
+
+    contact = deserialize_model(Contact, {"TaxNumberType": "EIN"}, model_finder=None)
+
+    assert contact.tax_number_type == "EIN"
+
+
+def test_deserialize_linked_transaction_accepts_receipt_source():
+    from xero_python.accounting.models.linked_transaction import LinkedTransaction
+
+    txn = deserialize_model(
+        LinkedTransaction,
+        {"SourceTransactionTypeCode": "RECEIPT"},
+        model_finder=None,
+    )
+
+    assert txn.source_transaction_type_code == "RECEIPT"
+
+
+@pytest.mark.parametrize(
+    "data",
+    [
+        {"TaxNumberType": "UNKNOWN"},
+        {"TaxNumberType": "OTHER/SSN"},
+        {"TaxNumberType": "TAXNUMBERTYPE/UNKNOWN"},
+        {"TaxNumberType": "TAXNUMBERTYPE/"},
+        {"TaxNumberType": "TAXNUMBERTYPE/OTHER/SSN"},
+        {"TaxNumberType": "TAXNUMBERTYPE/SSN", "Name": "x" * 256},
+        {"TaxNumberType": "TAXNUMBERTYPE/SSN", "ContactStatus": "INVALID"},
+    ],
+)
+def test_deserialize_contact_preserves_validation(data):
+    from xero_python.accounting.models.contact import Contact
+
+    with pytest.raises(ValueError):
+        deserialize_model(Contact, data, model_finder=None)
+
+
+@pytest.mark.parametrize(
+    "data",
+    [
+        {"SourceTransactionTypeCode": "UNKNOWN"},
+        {"SourceTransactionTypeCode": "OTHER/SPEND"},
+        {"SourceTransactionTypeCode": "RECEIPT", "Status": "INVALID"},
+    ],
+)
+def test_deserialize_linked_transaction_preserves_validation(data):
+    from xero_python.accounting.models.linked_transaction import LinkedTransaction
+
+    with pytest.raises(ValueError):
+        deserialize_model(LinkedTransaction, data, model_finder=None)
+
+
+def test_deserialize_unrelated_model_preserves_validation():
+    from xero_python.accounting.models.account import Account
+
+    with pytest.raises(ValueError):
+        deserialize_model(Account, {"Status": "INVALID"}, model_finder=None)
+
+
+@pytest.mark.parametrize(
+    "response_type,payload,collection,attribute,expected",
+    [
+        (
+            "Contacts",
+            '{"Contacts":[{"Name":"Example","TaxNumberType":"TAXNUMBERTYPE/SSN"}]}',
+            "contacts",
+            "tax_number_type",
+            "SSN",
+        ),
+        (
+            "LinkedTransactions",
+            '{"LinkedTransactions":[{"Status":"APPROVED","SourceTransactionTypeCode":"RECEIPT"}]}',
+            "linked_transactions",
+            "source_transaction_type_code",
+            "RECEIPT",
+        ),
+    ],
+)
+def test_deserialize_api_response_with_known_enum_variants(
+    api_client, response_type, payload, collection, attribute, expected
+):
+    from types import SimpleNamespace
+
+    from xero_python.accounting import models
+    from xero_python.api_client import ModelFinder
+
+    result = api_client.deserialize(
+        SimpleNamespace(text=payload), response_type, ModelFinder(models)
+    )
+
+    item = getattr(result, collection)[0]
+    assert getattr(item, attribute) == expected
+    assert (
+        item.name == "Example"
+        if collection == "contacts"
+        else item.status == "APPROVED"
+    )
