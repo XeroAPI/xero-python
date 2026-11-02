@@ -21,7 +21,7 @@ except ImportError:
 """
 
 """
-    OpenAPI spec version: 19.0.0
+    OpenAPI spec version: 20.0.0
 """
 
 
@@ -5714,6 +5714,7 @@ class PayrollNzApi(object):
     ):
         """Updates the tax records for a specific employee  # noqa: E501
         OAuth2 scope: payroll.employees
+        Replaces the entire EmployeeTax record. This is not a partial update. Any field omitted from the request is treated as null and overwrites the stored value. To change individual fields, GET the current record, merge your changes, remove deprecated fields such as isEligibleForKiwiSaver, and POST the complete object.  # noqa: E501
         :param str xero_tenant_id: Xero identifier for Tenant (required)
         :param str employee_id: Employee id for single object (required)
         :param EmployeeTax employee_tax: (required)

@@ -48,6 +48,7 @@ class Account(BaseModel):
         "reporting_code_name": "str",
         "has_attachments": "bool",
         "updated_date_utc": "datetime[ms-format]",
+        "created_date_utc": "datetime[ms-format]",
         "add_to_watchlist": "bool",
         "validation_errors": "list[ValidationError]",
     }
@@ -71,6 +72,7 @@ class Account(BaseModel):
         "reporting_code_name": "ReportingCodeName",
         "has_attachments": "HasAttachments",
         "updated_date_utc": "UpdatedDateUTC",
+        "created_date_utc": "CreatedDateUTC",
         "add_to_watchlist": "AddToWatchlist",
         "validation_errors": "ValidationErrors",
     }
@@ -95,6 +97,7 @@ class Account(BaseModel):
         reporting_code_name=None,
         has_attachments=False,
         updated_date_utc=None,
+        created_date_utc=None,
         add_to_watchlist=None,
         validation_errors=None,
     ):  # noqa: E501
@@ -118,6 +121,7 @@ class Account(BaseModel):
         self._reporting_code_name = None
         self._has_attachments = None
         self._updated_date_utc = None
+        self._created_date_utc = None
         self._add_to_watchlist = None
         self._validation_errors = None
         self.discriminator = None
@@ -158,6 +162,8 @@ class Account(BaseModel):
             self.has_attachments = has_attachments
         if updated_date_utc is not None:
             self.updated_date_utc = updated_date_utc
+        if created_date_utc is not None:
+            self.created_date_utc = created_date_utc
         if add_to_watchlist is not None:
             self.add_to_watchlist = add_to_watchlist
         if validation_errors is not None:
@@ -650,6 +656,29 @@ class Account(BaseModel):
         """
 
         self._updated_date_utc = updated_date_utc
+
+    @property
+    def created_date_utc(self):
+        """Gets the created_date_utc of this Account.  # noqa: E501
+
+        Created date UTC format. Only returned by GET Accounts and GET Accounts/{AccountID}, not on POST or PUT responses  # noqa: E501
+
+        :return: The created_date_utc of this Account.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._created_date_utc
+
+    @created_date_utc.setter
+    def created_date_utc(self, created_date_utc):
+        """Sets the created_date_utc of this Account.
+
+        Created date UTC format. Only returned by GET Accounts and GET Accounts/{AccountID}, not on POST or PUT responses  # noqa: E501
+
+        :param created_date_utc: The created_date_utc of this Account.  # noqa: E501
+        :type: datetime
+        """
+
+        self._created_date_utc = created_date_utc
 
     @property
     def add_to_watchlist(self):

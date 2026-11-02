@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **reporting_code_name** | **str** | Shown if set | [optional] 
 **has_attachments** | **bool** | boolean to indicate if an account has an attachment (read only) | [optional] [default to False]
 **updated_date_utc** | **datetime** | Last modified date UTC format | [optional] 
+**created_date_utc** | **datetime** | Created date UTC format. Only returned by GET Accounts and GET Accounts/{AccountID}, not on POST or PUT responses | [optional] 
 **add_to_watchlist** | **bool** | Boolean – describes whether the account is shown in the watchlist widget on the dashboard | [optional] 
 **validation_errors** | [**list[ValidationError]**](ValidationError.md) | Displays array of validation error messages from the API | [optional] 
 

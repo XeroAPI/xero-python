@@ -38,6 +38,7 @@ class EmployeeTax(BaseModel):
         "is_eligible_for_kiwi_saver": "bool",
         "esct_rate_percentage": "float",
         "kiwi_saver_contributions": "str",
+        "kiwi_saver_status": "str",
         "kiwi_saver_employee_contribution_rate_percentage": "float",
         "kiwi_saver_employer_contribution_rate_percentage": "float",
         "kiwi_saver_employer_salary_sacrifice_contribution_rate_percentage": "float",
@@ -46,6 +47,7 @@ class EmployeeTax(BaseModel):
         "has_student_loan_balance": "bool",
         "student_loan_balance": "float",
         "student_loan_as_at": "date",
+        "registered_for_gst": "bool",
     }
 
     attribute_map = {
@@ -57,6 +59,7 @@ class EmployeeTax(BaseModel):
         "is_eligible_for_kiwi_saver": "isEligibleForKiwiSaver",
         "esct_rate_percentage": "esctRatePercentage",
         "kiwi_saver_contributions": "kiwiSaverContributions",
+        "kiwi_saver_status": "kiwiSaverStatus",
         "kiwi_saver_employee_contribution_rate_percentage": "kiwiSaverEmployeeContributionRatePercentage",
         "kiwi_saver_employer_contribution_rate_percentage": "kiwiSaverEmployerContributionRatePercentage",
         "kiwi_saver_employer_salary_sacrifice_contribution_rate_percentage": "kiwiSaverEmployerSalarySacrificeContributionRatePercentage",
@@ -65,6 +68,7 @@ class EmployeeTax(BaseModel):
         "has_student_loan_balance": "hasStudentLoanBalance",
         "student_loan_balance": "studentLoanBalance",
         "student_loan_as_at": "studentLoanAsAt",
+        "registered_for_gst": "registeredForGST",
     }
 
     def __init__(
@@ -77,6 +81,7 @@ class EmployeeTax(BaseModel):
         is_eligible_for_kiwi_saver=None,
         esct_rate_percentage=None,
         kiwi_saver_contributions=None,
+        kiwi_saver_status=None,
         kiwi_saver_employee_contribution_rate_percentage=None,
         kiwi_saver_employer_contribution_rate_percentage=None,
         kiwi_saver_employer_salary_sacrifice_contribution_rate_percentage=None,
@@ -85,6 +90,7 @@ class EmployeeTax(BaseModel):
         has_student_loan_balance=None,
         student_loan_balance=None,
         student_loan_as_at=None,
+        registered_for_gst=None,
     ):  # noqa: E501
         """EmployeeTax - a model defined in OpenAPI"""  # noqa: E501
 
@@ -96,6 +102,7 @@ class EmployeeTax(BaseModel):
         self._is_eligible_for_kiwi_saver = None
         self._esct_rate_percentage = None
         self._kiwi_saver_contributions = None
+        self._kiwi_saver_status = None
         self._kiwi_saver_employee_contribution_rate_percentage = None
         self._kiwi_saver_employer_contribution_rate_percentage = None
         self._kiwi_saver_employer_salary_sacrifice_contribution_rate_percentage = None
@@ -104,6 +111,7 @@ class EmployeeTax(BaseModel):
         self._has_student_loan_balance = None
         self._student_loan_balance = None
         self._student_loan_as_at = None
+        self._registered_for_gst = None
         self.discriminator = None
 
         if ird_number is not None:
@@ -124,6 +132,8 @@ class EmployeeTax(BaseModel):
             self.esct_rate_percentage = esct_rate_percentage
         if kiwi_saver_contributions is not None:
             self.kiwi_saver_contributions = kiwi_saver_contributions
+        if kiwi_saver_status is not None:
+            self.kiwi_saver_status = kiwi_saver_status
         if kiwi_saver_employee_contribution_rate_percentage is not None:
             self.kiwi_saver_employee_contribution_rate_percentage = (
                 kiwi_saver_employee_contribution_rate_percentage
@@ -151,6 +161,8 @@ class EmployeeTax(BaseModel):
             self.student_loan_balance = student_loan_balance
         if student_loan_as_at is not None:
             self.student_loan_as_at = student_loan_as_at
+        if registered_for_gst is not None:
+            self.registered_for_gst = registered_for_gst
 
     @property
     def ird_number(self):
@@ -223,7 +235,7 @@ class EmployeeTax(BaseModel):
     def has_special_student_loan_rate(self):
         """Gets the has_special_student_loan_rate of this EmployeeTax.  # noqa: E501
 
-        Does the employee has a special student loan rate?  # noqa: E501
+        Does the employee have a special student loan rate?  # noqa: E501
 
         :return: The has_special_student_loan_rate of this EmployeeTax.  # noqa: E501
         :rtype: bool
@@ -234,7 +246,7 @@ class EmployeeTax(BaseModel):
     def has_special_student_loan_rate(self, has_special_student_loan_rate):
         """Sets the has_special_student_loan_rate of this EmployeeTax.
 
-        Does the employee has a special student loan rate?  # noqa: E501
+        Does the employee have a special student loan rate?  # noqa: E501
 
         :param has_special_student_loan_rate: The has_special_student_loan_rate of this EmployeeTax.  # noqa: E501
         :type: bool
@@ -273,7 +285,7 @@ class EmployeeTax(BaseModel):
     def is_eligible_for_kiwi_saver(self):
         """Gets the is_eligible_for_kiwi_saver of this EmployeeTax.  # noqa: E501
 
-        The employee eligibility for KiwiSaver.  # noqa: E501
+        The employee eligibility for KiwiSaver. Deprecated, replaced by kiwiSaverStatus. Omit this field from POST requests.  # noqa: E501
 
         :return: The is_eligible_for_kiwi_saver of this EmployeeTax.  # noqa: E501
         :rtype: bool
@@ -284,7 +296,7 @@ class EmployeeTax(BaseModel):
     def is_eligible_for_kiwi_saver(self, is_eligible_for_kiwi_saver):
         """Sets the is_eligible_for_kiwi_saver of this EmployeeTax.
 
-        The employee eligibility for KiwiSaver.  # noqa: E501
+        The employee eligibility for KiwiSaver. Deprecated, replaced by kiwiSaverStatus. Omit this field from POST requests.  # noqa: E501
 
         :param is_eligible_for_kiwi_saver: The is_eligible_for_kiwi_saver of this EmployeeTax.  # noqa: E501
         :type: bool
@@ -353,6 +365,46 @@ class EmployeeTax(BaseModel):
                 )
 
         self._kiwi_saver_contributions = kiwi_saver_contributions
+
+    @property
+    def kiwi_saver_status(self):
+        """Gets the kiwi_saver_status of this EmployeeTax.  # noqa: E501
+
+        KiwiSaver eligibility. Required in POST requests for all tax codes except WT and NSW.  # noqa: E501
+
+        :return: The kiwi_saver_status of this EmployeeTax.  # noqa: E501
+        :rtype: str
+        """
+        return self._kiwi_saver_status
+
+    @kiwi_saver_status.setter
+    def kiwi_saver_status(self, kiwi_saver_status):
+        """Sets the kiwi_saver_status of this EmployeeTax.
+
+        KiwiSaver eligibility. Required in POST requests for all tax codes except WT and NSW.  # noqa: E501
+
+        :param kiwi_saver_status: The kiwi_saver_status of this EmployeeTax.  # noqa: E501
+        :type: str
+        """
+        allowed_values = [
+            "ActiveKiwiSaverMember",
+            "AutomaticallyEnrolledIntoKiwiSaver",
+            "EmployedForLessThan28Days",
+            "NotRequiredToBeAutomaticallyEnrolled",
+            "OptedIntoKiwiSaver",
+            "NotEligibleForKiwiSaver",
+            "None",
+        ]  # noqa: E501
+
+        if kiwi_saver_status:
+            if kiwi_saver_status not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `kiwi_saver_status` ({0}), must be one of {1}".format(  # noqa: E501
+                        kiwi_saver_status, allowed_values
+                    )
+                )
+
+        self._kiwi_saver_status = kiwi_saver_status
 
     @property
     def kiwi_saver_employee_contribution_rate_percentage(self):
@@ -553,3 +605,26 @@ class EmployeeTax(BaseModel):
         """
 
         self._student_loan_as_at = student_loan_as_at
+
+    @property
+    def registered_for_gst(self):
+        """Gets the registered_for_gst of this EmployeeTax.  # noqa: E501
+
+        Is the employee registered for GST? Required in POST requests when taxCode is WT.  # noqa: E501
+
+        :return: The registered_for_gst of this EmployeeTax.  # noqa: E501
+        :rtype: bool
+        """
+        return self._registered_for_gst
+
+    @registered_for_gst.setter
+    def registered_for_gst(self, registered_for_gst):
+        """Sets the registered_for_gst of this EmployeeTax.
+
+        Is the employee registered for GST? Required in POST requests when taxCode is WT.  # noqa: E501
+
+        :param registered_for_gst: The registered_for_gst of this EmployeeTax.  # noqa: E501
+        :type: bool
+        """
+
+        self._registered_for_gst = registered_for_gst
