@@ -4488,6 +4488,8 @@ Name | Type | Description  | Notes
 
 Updates the tax records for a specific employee
 
+Replaces the entire EmployeeTax record. This is not a partial update. Any field omitted from the request is treated as null and overwrites the stored value. To change individual fields, GET the current record, merge your changes, remove deprecated fields such as isEligibleForKiwiSaver, and POST the complete object.
+
 ### Example
 
 * OAuth Authentication (OAuth2): 
@@ -4516,7 +4518,7 @@ api_instance = PayrollNzApi(api_client)
 
 xero_tenant_id = 'xero_tenant_id_example' # str | Xero identifier for Tenant
 employee_id = '4ff1e5cc-9835-40d5-bb18-09fdb118db9c' # str | Employee id for single object
-employee_tax = {"irdNumber":"111111111","taxCode":"M","esctRatePercentage":17.5,"isEligibleForKiwiSaver":true,"hasSpecialStudentLoanRate":false,"specialStudentLoanRatePercentage":null,"specialTaxRatePercentage":null,"kiwiSaverContributions":"MakeContributions","kiwiSaverOptOutDate":null,"kiwiSaverContributionHolidayEndDate":null,"kiwiSaverEmployeeContributionRatePercentage":3,"kiwiSaverEmployerContributionRatePercentage":3,"kiwiSaverEmployerSalarySacrificeContributionRatePercentage":0,"hasStudentLoanBalance":false,"studentLoanBalance":null,"studentLoanAsAt":null} # EmployeeTax | 
+employee_tax = {"irdNumber":"111111111","taxCode":"M","esctRatePercentage":17.5,"hasSpecialStudentLoanRate":false,"specialStudentLoanRatePercentage":null,"specialTaxRatePercentage":null,"kiwiSaverContributions":"MakeContributions","kiwiSaverStatus":"ActiveKiwiSaverMember","kiwiSaverOptOutDate":null,"kiwiSaverContributionHolidayEndDate":null,"kiwiSaverEmployeeContributionRatePercentage":3,"kiwiSaverEmployerContributionRatePercentage":3,"kiwiSaverEmployerSalarySacrificeContributionRatePercentage":0,"hasStudentLoanBalance":false,"studentLoanBalance":null,"studentLoanAsAt":null,"registeredForGST":null} # EmployeeTax | 
 idempotency_key = 'KEY_VALUE' # str | This allows you to safely retry requests without the risk of duplicate processing. 128 character max. (optional)
 try:
     # Updates the tax records for a specific employee
