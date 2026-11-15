@@ -29,39 +29,21 @@ class BudgetBalance(BaseModel):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {
-        "period": "date[ms-format]",
-        "amount": "float",
-        "unit_amount": "float",
-        "notes": "str",
-    }
+    openapi_types = {"period": "date[ms-format]", "amount": "float"}
 
-    attribute_map = {
-        "period": "Period",
-        "amount": "Amount",
-        "unit_amount": "UnitAmount",
-        "notes": "Notes",
-    }
+    attribute_map = {"period": "Period", "amount": "Amount"}
 
-    def __init__(
-        self, period=None, amount=None, unit_amount=None, notes=None
-    ):  # noqa: E501
+    def __init__(self, period=None, amount=None):  # noqa: E501
         """BudgetBalance - a model defined in OpenAPI"""  # noqa: E501
 
         self._period = None
         self._amount = None
-        self._unit_amount = None
-        self._notes = None
         self.discriminator = None
 
         if period is not None:
             self.period = period
         if amount is not None:
             self.amount = amount
-        if unit_amount is not None:
-            self.unit_amount = unit_amount
-        if notes is not None:
-            self.notes = notes
 
     @property
     def period(self):
@@ -108,54 +90,3 @@ class BudgetBalance(BaseModel):
         """
 
         self._amount = amount
-
-    @property
-    def unit_amount(self):
-        """Gets the unit_amount of this BudgetBalance.  # noqa: E501
-
-        Budgeted amount  # noqa: E501
-
-        :return: The unit_amount of this BudgetBalance.  # noqa: E501
-        :rtype: float
-        """
-        return self._unit_amount
-
-    @unit_amount.setter
-    def unit_amount(self, unit_amount):
-        """Sets the unit_amount of this BudgetBalance.
-
-        Budgeted amount  # noqa: E501
-
-        :param unit_amount: The unit_amount of this BudgetBalance.  # noqa: E501
-        :type: float
-        """
-
-        self._unit_amount = unit_amount
-
-    @property
-    def notes(self):
-        """Gets the notes of this BudgetBalance.  # noqa: E501
-
-        Any footnotes associated with this balance  # noqa: E501
-
-        :return: The notes of this BudgetBalance.  # noqa: E501
-        :rtype: str
-        """
-        return self._notes
-
-    @notes.setter
-    def notes(self, notes):
-        """Sets the notes of this BudgetBalance.
-
-        Any footnotes associated with this balance  # noqa: E501
-
-        :param notes: The notes of this BudgetBalance.  # noqa: E501
-        :type: str
-        """
-        if notes is not None and len(notes) > 255:
-            raise ValueError(
-                "Invalid value for `notes`, "
-                "length must be less than or equal to `255`"
-            )  # noqa: E501
-
-        self._notes = notes

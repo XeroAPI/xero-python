@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **budget_id** | **str** | Xero identifier | [optional] 
+**created_in** | **str** | The tool used to create the budget | [optional] 
 **type** | **str** | Type of Budget. OVERALL or TRACKING | [optional] 
 **description** | **str** | The Budget description | [optional] 
 **updated_date_utc** | **datetime** | UTC timestamp of last update to budget | [optional] 
