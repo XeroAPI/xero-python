@@ -31,6 +31,7 @@ class Budget(BaseModel):
     """
     openapi_types = {
         "budget_id": "str",
+        "created_in": "str",
         "type": "str",
         "description": "str",
         "updated_date_utc": "datetime[ms-format]",
@@ -40,6 +41,7 @@ class Budget(BaseModel):
 
     attribute_map = {
         "budget_id": "BudgetID",
+        "created_in": "CreatedIn",
         "type": "Type",
         "description": "Description",
         "updated_date_utc": "UpdatedDateUTC",
@@ -50,6 +52,7 @@ class Budget(BaseModel):
     def __init__(
         self,
         budget_id=None,
+        created_in=None,
         type=None,
         description=None,
         updated_date_utc=None,
@@ -59,6 +62,7 @@ class Budget(BaseModel):
         """Budget - a model defined in OpenAPI"""  # noqa: E501
 
         self._budget_id = None
+        self._created_in = None
         self._type = None
         self._description = None
         self._updated_date_utc = None
@@ -68,6 +72,8 @@ class Budget(BaseModel):
 
         if budget_id is not None:
             self.budget_id = budget_id
+        if created_in is not None:
+            self.created_in = created_in
         if type is not None:
             self.type = type
         if description is not None:
@@ -101,6 +107,38 @@ class Budget(BaseModel):
         """
 
         self._budget_id = budget_id
+
+    @property
+    def created_in(self):
+        """Gets the created_in of this Budget.  # noqa: E501
+
+        The tool used to create the budget  # noqa: E501
+
+        :return: The created_in of this Budget.  # noqa: E501
+        :rtype: str
+        """
+        return self._created_in
+
+    @created_in.setter
+    def created_in(self, created_in):
+        """Sets the created_in of this Budget.
+
+        The tool used to create the budget  # noqa: E501
+
+        :param created_in: The created_in of this Budget.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["XERO_ANALYTICS", "BUDGETS_MANAGER", "None"]  # noqa: E501
+
+        if created_in:
+            if created_in not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `created_in` ({0}), must be one of {1}".format(  # noqa: E501
+                        created_in, allowed_values
+                    )
+                )
+
+        self._created_in = created_in
 
     @property
     def type(self):
