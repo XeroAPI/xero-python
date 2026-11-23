@@ -1,11 +1,6 @@
 name: Publish & Release SDK
 on:
   workflow_dispatch:
-    inputs:
-      cab_id:
-        description: "CAB id for the change/release"
-        required: true
-        type: string
 
 jobs:
     publish:
@@ -155,7 +150,6 @@ jobs:
                   "deployer": "xero-codegen-bot",
                   "url": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
                   "environment": "prod",
-                  "sdk_type": "python",
-                  "cab_key": "${{ github.event.inputs.cab_id }}"
+                  "sdk_type": "python"
                   }
                 }'
