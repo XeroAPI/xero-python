@@ -42,6 +42,7 @@ class RepeatingInvoice(BaseModel):
         "sub_total": "float",
         "total_tax": "float",
         "total": "float",
+        "total_discount": "float",
         "repeating_invoice_id": "str",
         "id": "str",
         "has_attachments": "bool",
@@ -65,6 +66,7 @@ class RepeatingInvoice(BaseModel):
         "sub_total": "SubTotal",
         "total_tax": "TotalTax",
         "total": "Total",
+        "total_discount": "TotalDiscount",
         "repeating_invoice_id": "RepeatingInvoiceID",
         "id": "ID",
         "has_attachments": "HasAttachments",
@@ -89,6 +91,7 @@ class RepeatingInvoice(BaseModel):
         sub_total=None,
         total_tax=None,
         total=None,
+        total_discount=None,
         repeating_invoice_id=None,
         id=None,
         has_attachments=False,
@@ -112,6 +115,7 @@ class RepeatingInvoice(BaseModel):
         self._sub_total = None
         self._total_tax = None
         self._total = None
+        self._total_discount = None
         self._repeating_invoice_id = None
         self._id = None
         self._has_attachments = None
@@ -146,6 +150,8 @@ class RepeatingInvoice(BaseModel):
             self.total_tax = total_tax
         if total is not None:
             self.total = total
+        if total_discount is not None:
+            self.total_discount = total_discount
         if repeating_invoice_id is not None:
             self.repeating_invoice_id = repeating_invoice_id
         if id is not None:
@@ -448,6 +454,29 @@ class RepeatingInvoice(BaseModel):
         """
 
         self._total = total
+
+    @property
+    def total_discount(self):
+        """Gets the total_discount of this RepeatingInvoice.  # noqa: E501
+
+        Total of discounts applied on the invoice line items  # noqa: E501
+
+        :return: The total_discount of this RepeatingInvoice.  # noqa: E501
+        :rtype: float
+        """
+        return self._total_discount
+
+    @total_discount.setter
+    def total_discount(self, total_discount):
+        """Sets the total_discount of this RepeatingInvoice.
+
+        Total of discounts applied on the invoice line items  # noqa: E501
+
+        :param total_discount: The total_discount of this RepeatingInvoice.  # noqa: E501
+        :type: float
+        """
+
+        self._total_discount = total_discount
 
     @property
     def repeating_invoice_id(self):
